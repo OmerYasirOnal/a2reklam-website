@@ -1,18 +1,30 @@
 ---
-title: "HARMANLAMA"
-description: "İstanbul HARMANLAMA imalatı ve montajı. En uygun fiyat ve kaliteli malzeme garantisi ile hizmetinizdeyiz."
+title: "HARMANLAMA Çözümleri"
+description: "A2 Reklam olarak en kaliteli HARMANLAMA modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
 heroImage: "/assets/img/harmanlama/a2reklam-harmanlama-001-1600.webp"
-features:
-  - "Garantili Malzeme"
-  - "Profesyonel Tasarım"
-  - "Hızlı Montaj"
+features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 
-## HARMANLAMA Hakkında
+## HARMANLAMA Çözümleri
 
-A2 Reklam olarak **HARMANLAMA** konusunda yılların verdiği tecrübe ile hizmet sunuyoruz. İstanbul genelinde yüzlerce referansımız ile işletmeniz için en dikkat çekici çözümleri üretiyoruz.
+HARMANLAMA hizmetimizle markanızın görünürlüğünü arttırıyoruz. Profesyonel ekipman ve kaliteli malzeme ile hizmet veriyoruz.
 
-### Neden Biz?
-Kaliteli malzeme, uzman işçilik ve zamanında teslimat prensiplerimizle çalışıyoruz.
+### Kullanılan Malzemeler
+* Pleksi, Paslanmaz, LED, Kompozit gibi projenize uygun malzemeler.
 
-(Bu içerik taslaktır. Detaylandırılmalıdır.)
+### Kullanım Alanları
+* Ticari alanlar, ofisler, dış ve iç mekan uygulamaları.
+
+### Süreç ve Uygulama
+1. **Ücretsiz Keşif**
+1. **Özel Tasarım**
+1. **Hassas Üretim**
+1. **Profesyonel Montaj**
+
+### Garanti Bilgileri
+2 Yıl Garantili Hizmet.
+
+### Sıkça Sorulan Sorular
+
+#### Fiyat nasıl belirlenir?
+Kullanılan malzeme ve ölçülere göre en uygun fiyat çalışması yapılır.

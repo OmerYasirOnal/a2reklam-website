@@ -1,13 +1,30 @@
 ---
-title: "Kapi Isimlik"
-description: "Professional Kapi Isimlik services in Istanbul. High quality manufacturing and installation."
+title: "Kapi Isimlik Solutions"
+description: "As A2 Advertising, we design the highest quality Kapi Isimlik models specifically for your brand with our expert team."
 heroImage: "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-001-1600.webp"
-features:
-  - "Guaranteed Materials"
-  - "Professional Design"
-  - "Fast Installation"
+features: ["Free Discovery","Custom Design","Precision Production","Professional Installation"]
 ---
 
-## About Kapi Isimlik
+## Kapi Isimlik Solutions
 
-As A2 Advertising, we offer professional solutions for **Kapi Isimlik**. We help your business stand out with our experience and quality.
+We increase your brand's visibility with our Kapi Isimlik service. We serve with professional equipment and quality materials.
+
+### Materials Used
+* Materials suitable for your project such as Plexi, Stainless, LED, Composite.
+
+### Use Cases
+* Commercial areas, offices, outdoor and indoor applications.
+
+### Process and Application
+1. **Free Discovery**
+1. **Custom Design**
+1. **Precision Production**
+1. **Professional Installation**
+
+### Warranty Information
+2 Year Guaranteed Service.
+
+### Frequently Asked Questions
+
+#### How is the price determined?
+The most suitable price study is made according to the materials and dimensions used.

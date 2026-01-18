@@ -1,18 +1,30 @@
 ---
-title: "ÇATI TABELASI"
-description: "İstanbul ÇATI TABELASI imalatı ve montajı. En uygun fiyat ve kaliteli malzeme garantisi ile hizmetinizdeyiz."
+title: "ÇATI TABELASI Çözümleri"
+description: "A2 Reklam olarak en kaliteli ÇATI TABELASI modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
 heroImage: "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-001-1600.webp"
-features:
-  - "Garantili Malzeme"
-  - "Profesyonel Tasarım"
-  - "Hızlı Montaj"
+features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 
-## ÇATI TABELASI Hakkında
+## ÇATI TABELASI Çözümleri
 
-A2 Reklam olarak **ÇATI TABELASI** konusunda yılların verdiği tecrübe ile hizmet sunuyoruz. İstanbul genelinde yüzlerce referansımız ile işletmeniz için en dikkat çekici çözümleri üretiyoruz.
+ÇATI TABELASI hizmetimizle markanızın görünürlüğünü arttırıyoruz. Profesyonel ekipman ve kaliteli malzeme ile hizmet veriyoruz.
 
-### Neden Biz?
-Kaliteli malzeme, uzman işçilik ve zamanında teslimat prensiplerimizle çalışıyoruz.
+### Kullanılan Malzemeler
+* Pleksi, Paslanmaz, LED, Kompozit gibi projenize uygun malzemeler.
 
-(Bu içerik taslaktır. Detaylandırılmalıdır.)
+### Kullanım Alanları
+* Ticari alanlar, ofisler, dış ve iç mekan uygulamaları.
+
+### Süreç ve Uygulama
+1. **Ücretsiz Keşif**
+1. **Özel Tasarım**
+1. **Hassas Üretim**
+1. **Profesyonel Montaj**
+
+### Garanti Bilgileri
+2 Yıl Garantili Hizmet.
+
+### Sıkça Sorulan Sorular
+
+#### Fiyat nasıl belirlenir?
+Kullanılan malzeme ve ölçülere göre en uygun fiyat çalışması yapılır.

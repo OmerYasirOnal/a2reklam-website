@@ -1,13 +1,30 @@
 ---
-title: "Custom Manufacturing"
-description: "Professional Custom Manufacturing services in Istanbul. High quality manufacturing and installation."
+title: "Custom Manufacturing Solutions"
+description: "As A2 Advertising, we design the highest quality Custom Manufacturing models specifically for your brand with our expert team."
 heroImage: "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-001-1600.webp"
-features:
-  - "Guaranteed Materials"
-  - "Professional Design"
-  - "Fast Installation"
+features: ["Free Discovery","Custom Design","Precision Production","Professional Installation"]
 ---
 
-## About Custom Manufacturing
+## Custom Manufacturing Solutions
 
-As A2 Advertising, we offer professional solutions for **Custom Manufacturing**. We help your business stand out with our experience and quality.
+We increase your brand's visibility with our Custom Manufacturing service. We serve with professional equipment and quality materials.
+
+### Materials Used
+* Materials suitable for your project such as Plexi, Stainless, LED, Composite.
+
+### Use Cases
+* Commercial areas, offices, outdoor and indoor applications.
+
+### Process and Application
+1. **Free Discovery**
+1. **Custom Design**
+1. **Precision Production**
+1. **Professional Installation**
+
+### Warranty Information
+2 Year Guaranteed Service.
+
+### Frequently Asked Questions
+
+#### How is the price determined?
+The most suitable price study is made according to the materials and dimensions used.

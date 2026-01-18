@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Hakkımızda | A2 Reklam";
+const description = "2010 yılından beri İstanbul'da tabela ve reklam sektöründe öncü çözümler sunuyoruz. Tecrübemiz ve vizyonumuzla markanızın değerini artırıyoruz.";
+---
+
+<Layout title={title} description={description} lang="tr">
+  <div class="relative py-24 bg-secondary overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-20">
+        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+          BİZ <span class="text-primary">KİMİZ?</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg border-l-2 border-primary pl-4 inline-block">
+          A2 Reklam, reklam ve tabela sektöründe 14 yılı aşkın tecrübesiyle markaların dış dünyadaki yüzü olmaya devam ediyor.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <div class="relative">
+          <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-primary opacity-50"></div>
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-primary opacity-50"></div>
+          <img src="/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp" alt="A2 Reklam Atölye" class="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
+        </div>
+        <div class="space-y-6">
+          <h2 class="font-heading font-bold text-3xl text-white">Tecrübemiz, Markanızın <span class="text-primary">Gücüdür.</span></h2>
+          <p class="text-gray-400 leading-relaxed">
+            2010 yılında İstanbul’da temelleri atılan A2 Reklam, kurulduğu günden bu yana müşteri odaklı yaklaşımı ve yenilikçi tasarım anlayışıyla hizmet vermektedir. Küçük bir atölyeden başlayan hikayemiz, bugün modern üretim tesisimiz ve geniş uzman kadromuzla devam ediyor.
+          </p>
+          <p class="text-gray-400 leading-relaxed">
+            İster butik bir işletme olun, ister dev bir kurumsal yapı; her projeye aynı titizlik ve heyecanla yaklaşıyoruz. Tabela üretimi sadece bir imalat süreci değil, bizim için bir sanat ve iletişim aracıdır.
+          </p>
+          <div class="grid grid-cols-2 gap-6 pt-6">
+            <div class="border-l-2 border-primary pl-4">
+              <span class="block text-white font-black text-2xl">VİZYON</span>
+              <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 leading-relaxed">Sektörde global standartlarda üretim yapan, teknoloji ile tasarımı birleştiren öncü marka olmak.</p>
+            </div>
+            <div class="border-l-2 border-primary pl-4">
+              <span class="block text-white font-black text-2xl">MİSYON</span>
+              <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 leading-relaxed">Müşterilerimizin kurumsal kimliğini en doğru ve en etkileyici şekilde yansıtacak çözümler üretmek.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values Section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        {[
+          { title: 'KALİTELİ ÜRETİM', desc: 'Sadece en iyi malzemeleri kullanarak, uzun ömürlü ve dayanıklı ürünler sunuyoruz.' },
+          { title: 'ZAMANINDA TESLİMAT', desc: 'Projelerimizi söz verdiğimiz süreler içinde, aksatmadan tamamlıyoruz.' },
+          { title: 'ÜRETİCİ GARANTİSİ', desc: 'Kendi atölyemizde ürettiğimiz her ürün için tam destek ve servis garantisi veriyoruz.' }
+        ].map(item => (
+          <div class="p-8 bg-accent-light rounded-2xl border border-white/5 hover:border-primary/30 transition-all">
+            <h3 class="text-white font-bold text-xl mb-3 tracking-tight group-hover:text-primary">{item.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

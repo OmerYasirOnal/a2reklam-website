@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog_en')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const title = "Blog | A2 Advertising";
+const description = "The latest news, guides, and tips from the world of signage, advertising, and design.";
+---
+
+<Layout title={title} description={description} lang="en">
+  <div class="relative py-24 bg-secondary overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-16">
+        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+          A2 <span class="text-primary">BLOG</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg border-l-2 border-primary pl-4 inline-block">
+          Discover our guide content where we share our industry knowledge and current trends.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map(post => (
+          <article class="bg-accent-light rounded-2xl overflow-hidden border border-white/5 flex flex-col group hover:border-primary/50 transition-all transform hover:-translate-y-1">
+            <a href={`/en/blog/${post.slug}/`} class="relative h-56 overflow-hidden block">
+              <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div class="absolute top-4 left-4">
+                <span class="bg-primary text-secondary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+                  {post.data.tags ? post.data.tags[0] : 'Blog'}
+                </span>
+              </div>
+            </a>
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="text-xs text-gray-500 mb-3 flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                {post.data.pubDate.toLocaleDateString('en-US')}
+              </div>
+              <h2 class="text-white font-bold text-xl mb-4 group-hover:text-primary transition-colors line-clamp-2">
+                <a href={`/en/blog/${post.slug}/`}>{post.data.title}</a>
+              </h2>
+              <p class="text-gray-400 text-sm mb-6 line-clamp-3">
+                {post.data.description}
+              </p>
+              <div class="mt-auto pt-4 border-t border-white/5">
+                <a href={`/en/blog/${post.slug}/`} class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-all group-hover:text-white">
+                  Read More
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,13 +1,30 @@
 ---
-title: "Totem Pylon"
-description: "Professional Totem Pylon services in Istanbul. High quality manufacturing and installation."
+title: "Totem and Pylon Sign Manufacturing"
+description: "Durable and eye-catching giant advertising units that allow you to be noticed from a distance."
 heroImage: "/assets/img/totem/a2reklam-totem-001-1600.webp"
-features:
-  - "Guaranteed Materials"
-  - "Professional Design"
-  - "Fast Installation"
+features: ["Soil analysis and foundation pouring","Static calculation","Workshop production","Installation with crane"]
 ---
 
-## About Totem Pylon
+## Totem and Pylon Sign Manufacturing
 
-As A2 Advertising, we offer professional solutions for **Totem Pylon**. We help your business stand out with our experience and quality.
+Totem signs designed for roadsides and large open areas symbolize your brand's prestige.
+
+### Materials Used
+* Heavy steel construction, composite cladding, LED lighting systems.
+
+### Use Cases
+* Fuel stations, shopping mall entrances, factory gardens.
+
+### Process and Application
+1. **Soil analysis and foundation pouring**
+1. **Static calculation**
+1. **Workshop production**
+1. **Installation with crane**
+
+### Warranty Information
+2 years technical service with wind and static strength guarantee.
+
+### Frequently Asked Questions
+
+#### What should the totem sign size be?
+Calculated by our static engineers according to the road speed limit and other surrounding structures.

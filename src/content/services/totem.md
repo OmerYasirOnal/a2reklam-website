@@ -1,18 +1,30 @@
 ---
-title: "TOTEM"
-description: "İstanbul TOTEM imalatı ve montajı. En uygun fiyat ve kaliteli malzeme garantisi ile hizmetinizdeyiz."
+title: "Totem ve Pylon Tabela İmalatı"
+description: "Uzak mesafeden fark edilmenizi sağlayan, dayanıklı ve dikkat çekici dev reklam üniteleri."
 heroImage: "/assets/img/totem/a2reklam-totem-001-1600.webp"
-features:
-  - "Garantili Malzeme"
-  - "Profesyonel Tasarım"
-  - "Hızlı Montaj"
+features: ["Zemin analizi ve temel atımı","Statik hesaplama","Atölye üretimi","Vinç ile montaj"]
 ---
 
-## TOTEM Hakkında
+## Totem ve Pylon Tabela İmalatı
 
-A2 Reklam olarak **TOTEM** konusunda yılların verdiği tecrübe ile hizmet sunuyoruz. İstanbul genelinde yüzlerce referansımız ile işletmeniz için en dikkat çekici çözümleri üretiyoruz.
+Yol kenarları ve geniş açık alanlar için tasarlanan totem tabelalar, markanızın prestijini simgeler.
 
-### Neden Biz?
-Kaliteli malzeme, uzman işçilik ve zamanında teslimat prensiplerimizle çalışıyoruz.
+### Kullanılan Malzemeler
+* Ağır çelik konstrüksiyon, kompozit giydirme, LED aydınlatma sistemleri.
 
-(Bu içerik taslaktır. Detaylandırılmalıdır.)
+### Kullanım Alanları
+* Akaryakıt istasyonları, AVM girişleri, fabrika bahçeleri.
+
+### Süreç ve Uygulama
+1. **Zemin analizi ve temel atımı**
+1. **Statik hesaplama**
+1. **Atölye üretimi**
+1. **Vinç ile montaj**
+
+### Garanti Bilgileri
+Rüzgar ve statik dayanım garantisi ile birlikte 2 yıl teknik servis.
+
+### Sıkça Sorulan Sorular
+
+#### Totem tabela boyutu ne kadar olmalı?
+Yolun hız limitine ve çevredeki diğer yapılara göre statik mühendislerimiz tarafından hesaplanır.

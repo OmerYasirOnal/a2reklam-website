@@ -1,0 +1,31 @@
+{
+    "description": "WordPress to Astro Redirect Map for a2reklam.com",
+    "mappings": [
+        {
+            "old": "/bagcilar-tabela/",
+            "new": "/hizmet-bolgeleri/bagcilar-tabela/",
+            "status": 301
+        },
+        {
+            "old": "/basaksehir-tabela/",
+            "new": "/hizmet-bolgeleri/basaksehir-tabela/",
+            "status": 301
+        },
+        {
+            "old": "/hakkinda/",
+            "new": "/hakkimizda/",
+            "status": 301
+        },
+        {
+            "old": "/iletisim/",
+            "new": "/iletisim/",
+            "status": 200,
+            "note": "Preserved"
+        },
+        {
+            "old": "/tabela-cesitleri/",
+            "new": "/hizmetler/",
+            "status": 301
+        }
+    ]
+}
