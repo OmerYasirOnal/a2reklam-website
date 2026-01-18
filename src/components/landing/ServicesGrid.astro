@@ -1,5 +1,6 @@
 ---
 import { loadImagesManifest } from '../../utils/imagesManifest';
+import { buildImageAlt } from '../../utils/imageSeo';
 
 interface Props {
   lang?: string;
@@ -27,6 +28,7 @@ try {
 
 const title = lang === 'en' ? 'Our Services' : 'Hizmetlerimiz';
 const subtitle = lang === 'en' ? 'Quality production for every need.' : 'Her ihtiyaca uygun kaliteli üretim.';
+const altLang = lang === 'en' ? 'en' : 'tr';
 ---
 
 <section class="py-24 bg-secondary text-white relative overflow-hidden">
@@ -47,7 +49,7 @@ const subtitle = lang === 'en' ? 'Quality production for every need.' : 'Her iht
           <div class="relative h-72 overflow-hidden">
             <img 
               src={cat.paths['960']} 
-              alt={lang === 'en' ? cat.alt_en : cat.alt_tr}
+              alt={buildImageAlt({ category: cat.category, lang: altLang })}
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
               loading="lazy"
             />
