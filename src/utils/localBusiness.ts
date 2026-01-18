@@ -1,0 +1,56 @@
+import {
+  ADDRESS_COUNTRY,
+  ADDRESS_LOCALITY,
+  ADDRESS_REGION,
+  BUSINESS_NAME,
+  BUSINESS_SHORT_NAME,
+  EMAIL,
+  LOGO_PATH,
+  MAPS_URL,
+  PHONE_NUMBER,
+  SITE_DESCRIPTION,
+} from '../consts';
+
+const GEO = null; // Add coordinates when available (e.g., { "@type": "GeoCoordinates", "latitude": 41.0, "longitude": 28.9 }).
+
+function pruneEmpty(value: unknown): unknown {
+  if (Array.isArray(value)) {
+    return value.map(pruneEmpty).filter((item) => item !== undefined);
+  }
+  if (value && typeof value === 'object') {
+    const entries = Object.entries(value as Record<string, unknown>)
+      .map(([key, val]) => [key, pruneEmpty(val)])
+      .filter(([, val]) => val !== undefined);
+    return Object.fromEntries(entries);
+  }
+  if (value === null || value === '') return undefined;
+  return value;
+}
+
+export function getLocalBusinessSchema(siteUrl: URL): Record<string, unknown> {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: BUSINESS_NAME,
+    alternateName: BUSINESS_SHORT_NAME,
+    description: SITE_DESCRIPTION,
+    url: siteUrl.toString(),
+    telephone: PHONE_NUMBER,
+    email: EMAIL,
+    image: new URL(LOGO_PATH, siteUrl).toString(),
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: ADDRESS_LOCALITY,
+      addressRegion: ADDRESS_REGION,
+      addressCountry: ADDRESS_COUNTRY,
+    },
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: ADDRESS_LOCALITY,
+    },
+    hasMap: MAPS_URL,
+    geo: GEO,
+  };
+
+  return pruneEmpty(schema) as Record<string, unknown>;
+}
