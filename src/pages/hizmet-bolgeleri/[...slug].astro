@@ -32,6 +32,9 @@ export async function getStaticPaths() {
 
 const { entry, neighbors } = Astro.props;
 const { Content } = await entry.render();
+const relatedPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
 
 const title = `${entry.data.title} | A2 Reklam`;
 const breadcrumbs = [
@@ -70,6 +73,13 @@ const pricingFactors = [
   'Adet, lokasyon ve montaj erişimi',
   'İşin aciliyeti ve proje kapsamı',
 ];
+const corporateSolutions = [
+  'Cephe tabela ve dış cephe giydirme',
+  'Işıklı kutu harf ve paslanmaz harf',
+  'Totem ve yönlendirme sistemleri',
+  'Kurumsal giriş, banko ve iç mekan uygulamaları',
+  'Araç giydirme ve vitrin çözümleri',
+];
 const faq = [
   {
     question: `${entry.data.districtName} bölgesinde keşif ücretsiz mi?`,
@@ -80,8 +90,16 @@ const faq = [
     answer: 'Üretim tamamlandıktan sonra saha ekibimizle planlı montaj gerçekleştiriyoruz.',
   },
   {
+    question: 'Kurumsal projelerde süreç nasıl planlanıyor?',
+    answer: 'Keşif sonrası tasarım, üretim ve montaj adımlarını proje planına göre yönetiyoruz.',
+  },
+  {
     question: 'Acil işlerde hizmet veriyor musunuz?',
     answer: 'Proje kapsamına göre hızlandırılmış üretim ve montaj planı oluşturabiliyoruz.',
+  },
+  {
+    question: 'Garanti ve bakım desteği sağlıyor musunuz?',
+    answer: 'Malzeme ve işçilik için proje bazlı garanti ve bakım seçenekleri sunuyoruz.',
   },
 ];
 
@@ -146,6 +164,18 @@ const topServices = [
       </div>
 
       <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white">Kurumsal Çözümler</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
+          {corporateSolutions.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full mt-2"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white">Fiyatı Etkileyen Unsurlar</h3>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
           {pricingFactors.map((item) => (
@@ -185,11 +215,23 @@ const topServices = [
         </a>
       </div>
 
+      <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white">İlgili Blog Yazıları</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {relatedPosts.map((post) => (
+            <a href={`/blog/${post.slug}/`} class="block bg-secondary/60 border border-white/5 rounded-lg p-4 text-gray-300 hover:text-white hover:border-primary/50 transition-colors">
+              <div class="text-sm font-semibold">{post.data.title}</div>
+              <div class="text-xs text-gray-500 mt-2">{post.data.description}</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
       <div class="mt-12 p-8 rounded-2xl bg-accent-light border border-white/5 relative overflow-hidden group">
         <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/20 transition-colors"></div>
         <h3 class="font-heading font-bold text-2xl mb-4 text-white relative z-10">{entry.data.districtName} Bölgesi İçin Hemen Keşif İsteyin</h3>
         <p class="text-gray-400 mb-6 relative z-10">
-          Uzman ekibimiz {entry.data.districtName} ve çevresinde ücretsiz keşif hizmeti sunmaktadır. Markanızı en iyi yansıtacak tabela modelini yerinde inceleyerek belirleyelim.
+          Uzman ekibimiz {entry.data.districtName} ve çevresinde ücretsiz keşif hizmeti sunmaktadır. Markanızı en iyi yansıtacak tabela modelini yerinde inceleyerek belirleyelim. Konumunuzu Google Maps üzerinden paylaşmanız planlamayı hızlandırır.
         </p>
         <div class="flex flex-wrap gap-4 relative z-10">
           <a href="/teklif-al/" class="bg-primary text-secondary font-bold py-3 px-8 rounded hover:bg-white transition-all transform hover:-translate-y-1">

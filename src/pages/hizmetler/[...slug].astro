@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { loadImagesManifest } from '../../utils/imagesManifest';
-import { WHATSAPP_LINK } from '../../consts';
+import { PHONE_NUMBER, PHONE_TEL, WHATSAPP_LINK } from '../../consts';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
@@ -23,6 +23,9 @@ export async function getStaticPaths() {
 
 const { entry, images } = Astro.props;
 const { Content } = await entry.render();
+const relatedPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
 
 const title = `${entry.data.title} - A2 Reklam`;
 const breadcrumbs = [
@@ -31,11 +34,31 @@ const breadcrumbs = [
   { name: entry.data.title, item: `/hizmetler/${entry.slug}/` },
 ];
 
-const quickAnswer = `${entry.data.title} hizmeti, keşiften tasarım ve üretime, montajdan teslimata kadar tek noktadan sunulur. İstanbul genelinde ölçü ve uygulama desteği sağlıyoruz.`;
+const quickAnswer = `${entry.data.title} hizmeti, keşiften tasarım onayına, üretimden güvenli montaja kadar tek ekip tarafından yürütülür. İstanbul genelinde kurumsal tabela ve yönlendirme ihtiyaçlarını analiz ederek doğru malzeme ve uygulama planını çıkarırız. Dayanıklılık, görünürlük ve marka bütünlüğünü aynı anda hedefleyen çözümler sunarız.`;
 const quickFacts = [
   { label: 'Hizmet Kapsamı', value: 'Keşif, tasarım, üretim ve montaj.' },
   { label: 'Uygulama Alanı', value: 'İç ve dış mekan projeleri.' },
   { label: 'Teslim Süresi', value: 'Ölçü ve malzeme netleşince planlanır.' },
+];
+const useCases = [
+  'Zincir mağaza ve perakende şubeleri',
+  'Otel, hastane ve sağlık kuruluşları',
+  'Fabrika, üretim tesisi ve depolar',
+  'Plaza, ofis ve showroom projeleri',
+  'Eğitim kurumları ve kamu binaları',
+];
+const materials = [
+  'Paslanmaz çelik, alüminyum ve kompozit panel',
+  'Pleksi ve akrilik yüzeyler',
+  'LED aydınlatma ve güç altyapısı',
+  'Vinil, folyo ve UV baskı uygulamaları',
+  'Cam, ahşap ve özel kaplamalar',
+];
+const processSteps = [
+  'Keşif ve ihtiyaç analizi',
+  'Tasarım ve teknik onay',
+  'Üretim ve kalite kontrol',
+  'Montaj ve teslim',
 ];
 const pricingFactors = [
   'Ölçüler ve montaj yüksekliği',
@@ -44,6 +67,7 @@ const pricingFactors = [
   'Adet ve montaj lokasyonu',
   'Özel üretim ve hızlandırılmış teslimat ihtiyaçları',
 ];
+const warrantyNote = 'Malzeme ve işçilik için proje bazlı garanti ve bakım planı sunarız; koşullar uygulama ihtiyaçlarına göre netleştirilir.';
 const faq = [
   {
     question: `${entry.data.title} için üretim süresi ne kadar?`,
@@ -54,9 +78,25 @@ const faq = [
     answer: 'Evet, İstanbul genelinde kendi ekibimizle güvenli montaj hizmeti sağlıyoruz.',
   },
   {
-    question: 'Garanti ve bakım desteği var mı?',
-    answer: 'Malzeme ve işçilik için projeye özel garanti ve bakım seçenekleri sunuyoruz.',
+    question: 'Kurumsal projelerde tasarım onayı nasıl ilerliyor?',
+    answer: 'Tasarım seçeneklerini marka kimliğine göre hazırlıyor, ölçü ve aplikasyon detaylarını onayınıza sunuyoruz.',
   },
+  {
+    question: 'Garanti ve bakım desteği var mı?',
+    answer: 'Malzeme ve işçilik için projeye özel garanti ve bakım seçenekleri sunuyoruz; planlar uygulama detaylarına göre belirlenir.',
+  },
+  {
+    question: 'Keşif sürecinde hangi bilgiler gerekli?',
+    answer: 'Konum, ölçüler, kullanım amacı, aydınlatma gereksinimi ve marka standartları keşifte netleştirilir.',
+  },
+];
+const topDistricts = [
+  { label: 'Kâğıthane', href: '/hizmet-bolgeleri/kagithane-tabela/' },
+  { label: 'Şişli', href: '/hizmet-bolgeleri/sisli-tabela/' },
+  { label: 'Beşiktaş', href: '/hizmet-bolgeleri/besiktas-tabela/' },
+  { label: 'Kadıköy', href: '/hizmet-bolgeleri/kadikoy-tabela/' },
+  { label: 'Başakşehir', href: '/hizmet-bolgeleri/basaksehir-tabela/' },
+  { label: 'Ümraniye', href: '/hizmet-bolgeleri/umraniye-tabela/' },
 ];
 ---
 
@@ -129,6 +169,56 @@ const faq = [
       <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Kurumsal Kullanım Alanları
+        </h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
+          {useCases.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full mt-2"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Malzeme ve Seçenekler
+        </h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
+          {materials.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full mt-2"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Süreç
+        </h3>
+        <ol class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm list-decimal list-inside">
+          {processSteps.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Garanti ve Bakım
+        </h3>
+        <p class="text-gray-300 text-sm">{warrantyNote}</p>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Fiyatı Etkileyen Unsurlar
         </h3>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
@@ -153,6 +243,56 @@ const faq = [
               <p class="text-gray-400 text-sm mt-2">{item.answer}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          İstanbul'da Öne Çıkan Hizmet Bölgeleri
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          {topDistricts.map((district) => (
+            <a href={district.href} class="px-4 py-2 rounded-full border border-white/10 text-sm text-gray-300 hover:border-primary/60 hover:text-white transition-colors">
+              {district.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          İlgili Blog Yazıları
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {relatedPosts.map((post) => (
+            <a href={`/blog/${post.slug}/`} class="block bg-secondary/60 border border-white/5 rounded-lg p-4 text-gray-300 hover:text-white hover:border-primary/50 transition-colors">
+              <div class="text-sm font-semibold">{post.data.title}</div>
+              <div class="text-xs text-gray-500 mt-2">{post.data.description}</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Hemen Teklif ve Keşif
+        </h3>
+        <p class="text-gray-300 text-sm mb-6">
+          Projeniz için hızlı teklif almak veya ücretsiz keşif planlamak isterseniz ekibimizle iletişime geçebilirsiniz.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/teklif-al/" class="bg-primary text-secondary font-bold py-3 px-6 rounded-lg hover:bg-white transition-all">
+            Teklif Al
+          </a>
+          <a href={`tel:${PHONE_TEL}`} class="border border-white/20 text-white font-bold py-3 px-6 rounded-lg hover:border-white transition-all">
+            Ara: {PHONE_NUMBER}
+          </a>
+          <a href={WHATSAPP_LINK} class="bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-500 transition-all">
+            WhatsApp
+          </a>
         </div>
       </div>
 
