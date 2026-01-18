@@ -1,0 +1,60 @@
+---
+import fs from 'fs';
+import path from 'path';
+
+interface Props {
+  lang?: string;
+}
+const { lang = 'tr' } = Astro.props;
+
+// Read manifest to get categories and representative images
+const manifestPath = path.join(process.cwd(), 'public', 'images-manifest.json');
+let categories = [];
+
+try {
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+  
+  // Group by category
+  const groups: Record<string, any> = {};
+  manifest.forEach((item: any) => {
+    if (!groups[item.category]) {
+      groups[item.category] = item; // Take first one as representative
+    }
+  });
+
+  categories = Object.values(groups);
+} catch (e) {
+  console.error('Could not read image manifest:', e);
+}
+
+const title = lang === 'en' ? 'Our Services' : 'Hizmetlerimiz';
+const subtitle = lang === 'en' ? 'Quality production for every need.' : 'Her ihtiyaca uygun kaliteli üretim.';
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-secondary mb-4">{title}</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">{subtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {categories.map((cat: any) => (
+        <a href={lang === 'en' ? `/en/services/${cat.category}/` : `/hizmetler/${cat.category}/`} class="group block bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-1">
+          <div class="relative h-64 overflow-hidden">
+            <img 
+              src={cat.paths['960']} 
+              alt={lang === 'en' ? cat.alt_en : cat.alt_tr}
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-80"></div>
+            <div class="absolute bottom-4 left-4 text-white">
+              <h3 class="font-heading font-bold text-xl">{lang === 'en' ? cat.category_en : cat.category_tr}</h3>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

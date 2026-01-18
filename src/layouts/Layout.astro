@@ -1,0 +1,32 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+import SEO from '../components/common/SEO.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+	lang?: string;
+  image?: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, lang = 'tr', image } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang} class="scroll-smooth">
+	<head>
+    <SEO title={title} description={description} lang={lang} image={image} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-white text-secondary font-sans antialiased flex flex-col min-h-screen">
+    <Header lang={lang} />
+    <main class="flex-grow">
+		  <slot />
+    </main>
+    <Footer lang={lang} />
+	</body>
+</html>

@@ -1,0 +1,71 @@
+---
+import { SIZES } from '../../consts'; 
+// We can't easily import from public in build time for logic unless we use fs, 
+// but we can just hardcode a hero image path if we know it, or read the file.
+// For now, let's pick a nice known category image or hardcode the logic to pick one.
+// Actually, since this is server-side, fs works.
+
+import fs from 'fs';
+import path from 'path';
+
+// Read manifest to select a hero image
+const manifestPath = path.join(process.cwd(), 'public', 'images-manifest.json');
+let heroImage = '/assets/img/hero-placeholder.jpg'; // Fallback
+
+try {
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+  // Prefer 'cephe-tabela' or 'totem' for impact
+  const candidates = manifest.filter((m: any) => 
+    ['cephe-tabela', 'totem'].includes(m.category)
+  );
+  if (candidates.length > 0) {
+    const random = candidates[Math.floor(Math.random() * candidates.length)];
+    heroImage = random.paths['1600'];
+  }
+} catch (e) {
+  console.error('Could not read image manifest for Hero:', e);
+}
+
+interface Props {
+  lang?: string;
+}
+const { lang = 'tr' } = Astro.props;
+
+const content = {
+  tr: {
+    title: 'Özel İşleriniz İçin Profesyonel Tabela Çözümleri',
+    subtitle: 'İstanbul’un önde gelen tabela ve reklam üreticisi. Tasarımdan montaja tam hizmet.',
+    cta: 'Hemen Teklif Al',
+    link: '/teklif-al/'
+  },
+  en: {
+    title: 'Professional Signage Solutions for Your Brand',
+    subtitle: 'Leading signage manufacturer in Istanbul. Full service from design to installation.',
+    cta: 'Get a Quote',
+    link: '/en/get-quote/'
+  }
+};
+
+const t = lang === 'en' ? content.en : content.tr;
+---
+
+<section class="relative h-[600px] flex items-center justify-center text-white overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src={heroImage} alt="A2 Reklam Workshop" class="w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-4 text-center">
+    <h1 class="font-heading font-extrabold text-4xl md:text-6xl mb-6 leading-tight">
+      {t.title}
+    </h1>
+    <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+      {t.subtitle}
+    </p>
+    <a href={t.link} class="inline-block bg-primary hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg transition-transform transform hover:scale-105 shadow-lg">
+      {t.cta}
+    </a>
+  </div>
+</section>
