@@ -6,35 +6,54 @@ interface Props {
 const { lang = 'tr' } = Astro.props;
 ---
 
-<footer class="bg-secondary text-white py-12 border-t border-gray-800">
-	<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+<footer class="bg-secondary/95 text-white py-16 border-t border-white/10 backdrop-blur-sm">
+	<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
     
     <div>
-      <h3 class="font-heading font-bold text-xl mb-4">A2 REKLAM</h3>
-      <p class="text-gray-400 text-sm leading-relaxed">
+      <h3 class="font-heading font-black text-2xl mb-6 flex items-center gap-2">
+        <span class="text-primary text-3xl">A2</span> REKLAM
+      </h3>
+      <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
         {lang === 'en' 
-          ? 'Professional signage and advertising production services in Istanbul.' 
-          : 'İstanbul\'da profesyonel tabela ve reklam üretim hizmetleri.'}
+          ? 'Professional signage and advertising production services in Istanbul. Quality manufacturing since 2010.' 
+          : 'İstanbul\'da profesyonel tabela ve reklam üretim hizmetleri. 2010\'dan beri kaliteli üretim.'}
       </p>
     </div>
 
     <div>
-      <h4 class="font-bold mb-4">{lang === 'en' ? 'Quick Links' : 'Hızlı Bağlantılar'}</h4>
-      <ul class="space-y-2 text-sm text-gray-400">
-        <li><a href={lang === 'en' ? '/en/services/' : '/hizmetler/'} class="hover:text-white transition-colors">{lang === 'en' ? 'Services' : 'Hizmetler'}</a></li>
-        <li><a href={lang === 'en' ? '/en/portfolio/' : '/referanslar/'} class="hover:text-white transition-colors">{lang === 'en' ? 'Portfolio' : 'Referanslar'}</a></li>
-        <li><a href={lang === 'en' ? '/en/blog/' : '/blog/'} class="hover:text-white transition-colors">{lang === 'en' ? 'Blog' : 'Blog'}</a></li>
-        <li><a href={lang === 'en' ? '/en/contact/' : '/iletisim/'} class="hover:text-white transition-colors">{lang === 'en' ? 'Contact' : 'İletişim'}</a></li>
+      <h4 class="font-bold mb-6 text-lg border-b border-primary/30 inline-block pb-2">{lang === 'en' ? 'Quick Links' : 'Hızlı Bağlantılar'}</h4>
+      <ul class="space-y-3 text-sm text-gray-400">
+        <li><a href={lang === 'en' ? '/en/services/' : '/hizmetler/'} class="hover:text-primary transition-colors flex items-center gap-2">
+          <span class="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+          {lang === 'en' ? 'Services' : 'Hizmetler'}
+        </a></li>
+        <li><a href={lang === 'en' ? '/en/portfolio/' : '/referanslar/'} class="hover:text-primary transition-colors flex items-center gap-2">
+          {lang === 'en' ? 'Portfolio' : 'Referanslar'}
+        </a></li>
+        <li><a href={lang === 'en' ? '/en/blog/' : '/blog/'} class="hover:text-primary transition-colors flex items-center gap-2">
+          {lang === 'en' ? 'Blog' : 'Blog'}
+        </a></li>
+        <li><a href={lang === 'en' ? '/en/contact/' : '/iletisim/'} class="hover:text-primary transition-colors flex items-center gap-2">
+          {lang === 'en' ? 'Contact' : 'İletişim'}
+        </a></li>
       </ul>
     </div>
 
     <div>
-      <h4 class="font-bold mb-4">{lang === 'en' ? 'Contact' : 'İletişim'}</h4>
-      <ul class="space-y-2 text-sm text-gray-400">
-        <li>A2 Reklam</li>
-        <li>İstanbul, Türkiye</li>
-        <li><a href="tel:+905555555555" class="hover:text-white">+90 555 555 55 55</a></li>
-        <li><a href="mailto:info@a2reklam.com" class="hover:text-white">info@a2reklam.com</a></li>
+      <h4 class="font-bold mb-6 text-lg border-b border-primary/30 inline-block pb-2">{lang === 'en' ? 'Contact' : 'İletişim'}</h4>
+      <ul class="space-y-4 text-sm text-gray-400">
+        <li class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          <span>İstanbul, Türkiye</span>
+        </li>
+        <li class="flex items-center gap-3">
+          <svg class="w-5 h-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+          <a href="tel:+905555555555" class="hover:text-white hover:underline decoration-primary">+90 555 555 55 55</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <svg class="w-5 h-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          <a href="mailto:info@a2reklam.com" class="hover:text-white hover:underline decoration-primary">info@a2reklam.com</a>
+        </li>
       </ul>
     </div>
 
