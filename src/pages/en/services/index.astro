@@ -1,0 +1,143 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import { loadImagesManifest } from '../../../utils/imagesManifest';
+
+const services = await getCollection('services_en');
+const sortedServices = services.sort((a, b) => a.data.title.localeCompare(b.data.title, 'en'));
+
+const manifest = loadImagesManifest();
+const representativeByCategory = new Map<string, any>();
+manifest.forEach((item: any) => {
+  if (!representativeByCategory.has(item.category)) {
+    representativeByCategory.set(item.category, item);
+  }
+});
+
+const serviceCards = sortedServices.map((entry) => {
+  const media = representativeByCategory.get(entry.slug);
+  return {
+    slug: entry.slug,
+    title: entry.data.title,
+    description: entry.data.description,
+    image: media?.paths?.['960'] ?? entry.data.heroImage,
+    alt: media?.alt_en ?? `Example ${entry.data.title} application`,
+  };
+});
+
+const title = 'Services | A2 Advertising';
+const description = 'Explore our corporate signage, facade applications, and wayfinding services across Istanbul. Discover all services here.';
+const breadcrumbs = [
+  { name: 'Home', item: '/en/' },
+  { name: 'Services', item: '/en/services/' },
+];
+
+const topDistricts = [
+  { label: 'Kağıthane', href: '/en/service-areas/kagithane-tabela/' },
+  { label: 'Şişli', href: '/en/service-areas/sisli-tabela/' },
+  { label: 'Beşiktaş', href: '/en/service-areas/besiktas-tabela/' },
+  { label: 'Kadıköy', href: '/en/service-areas/kadikoy-tabela/' },
+  { label: 'Başakşehir', href: '/en/service-areas/basaksehir-tabela/' },
+  { label: 'Ümraniye', href: '/en/service-areas/umraniye-tabela/' },
+];
+
+const faq = [
+  {
+    question: 'Which signage services can I request a quote for?',
+    answer: 'You can request quotes for facade signage, illuminated and non-illuminated signs, wayfinding systems, totem signs, and custom manufacturing.',
+  },
+  {
+    question: 'Do you serve outside Istanbul?',
+    answer: 'Our primary service area is Istanbul. We evaluate out-of-city projects case by case depending on scope and logistics.',
+  },
+  {
+    question: 'How does the site discovery process work?',
+    answer: 'After understanding your location and needs, we plan an on-site discovery to take measurements and define the right material and production plan.',
+  },
+  {
+    question: 'What affects production and installation timelines?',
+    answer: 'Timelines depend on dimensions, materials, lighting requirements, and installation conditions. A clear plan is created after discovery.',
+  },
+  {
+    question: 'Do you provide project management for corporate rollouts?',
+    answer: 'Yes. We coordinate design approval, production planning, installation, and delivery as a single workflow.',
+  },
+];
+---
+
+<Layout title={title} description={description} lang="en" breadcrumbs={breadcrumbs} faq={faq}>
+  <div class="relative py-24 bg-secondary overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-16">
+        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+          OUR <span class="text-primary">SERVICES</span>
+        </h1>
+        <p class="text-gray-400 max-w-3xl mx-auto text-lg border-l-2 border-primary pl-4 inline-block">
+          We deliver end-to-end corporate signage production and installation across Istanbul. Explore facade applications, wayfinding, and custom manufacturing services.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {serviceCards.map((service) => (
+          <a href={`/en/services/${service.slug}/`} class="group relative block bg-accent-light rounded-xl overflow-hidden shadow-2xl hover:shadow-primary/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/5 hover:border-primary/50">
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.alt}
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-300"></div>
+              <div class="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                <h2 class="font-heading font-bold text-2xl mb-2 text-white border-b-2 border-transparent group-hover:border-primary inline-block pb-1 transition-all">
+                  {service.title}
+                </h2>
+                <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div class="bg-accent-light border border-white/5 rounded-2xl p-8">
+          <h2 class="font-heading font-bold text-3xl text-white mb-4">Single-Source Corporate Delivery</h2>
+          <p class="text-gray-400 mb-6">
+            We support factories, hotels, healthcare facilities, and retail chains with corporate-grade signage. One team handles discovery, design, production, and installation.
+          </p>
+          <a href="/en/get-quote/" class="inline-flex items-center gap-2 bg-primary text-secondary font-bold px-6 py-3 rounded-lg hover:bg-white transition-all">
+            Get a Quote
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+        <div class="bg-accent-light border border-white/5 rounded-2xl p-8">
+          <h3 class="font-heading font-bold text-2xl text-white mb-4">Top Service Areas</h3>
+          <p class="text-gray-400 mb-6">Quick links to districts with frequent corporate projects.</p>
+          <div class="flex flex-wrap gap-3">
+            {topDistricts.map((district) => (
+              <a href={district.href} class="px-4 py-2 rounded-full border border-white/10 text-sm text-gray-300 hover:border-primary/60 hover:text-white transition-colors">
+                {district.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 bg-accent-light border border-white/5 rounded-2xl p-8">
+        <h2 class="font-heading font-bold text-3xl text-white mb-6">FAQ</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {faq.map((item) => (
+            <div class="border border-white/5 rounded-xl p-5 bg-secondary/60">
+              <h3 class="text-white font-semibold">{item.question}</h3>
+              <p class="text-gray-400 text-sm mt-2">{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
