@@ -11,17 +11,6 @@ const services = defineCollection({
     }),
 });
 
-const portfolio = defineCollection({
-    type: 'content',
-    schema: z.object({
-        title: z.string(),
-        category: z.string(),
-        description: z.string().optional(),
-        images: z.array(z.string()).optional(),
-        date: z.date().optional(),
-        location: z.string().optional(),
-    }),
-});
 
 const districts = defineCollection({
     type: 'content',
@@ -80,7 +69,6 @@ const blog = defineCollection({
 export const collections = {
     services,
     services_en,
-    portfolio,
     districts,
     districts_en,
     blog,
