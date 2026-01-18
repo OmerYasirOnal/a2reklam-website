@@ -22,7 +22,7 @@ Facade signs placed on building exteriors are the advertising medium that reflec
 1. **LED lighting integration**
 
 ### Warranty Information
-2 years service and 5 years material non-fade warranty.
+We provide project-specific service and material durability support options.
 
 ### Frequently Asked Questions
 

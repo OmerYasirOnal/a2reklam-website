@@ -22,7 +22,7 @@ Totem signs designed for roadsides and large open areas symbolize your brand's p
 1. **Installation with crane**
 
 ### Warranty Information
-2 years technical service with wind and static strength guarantee.
+We provide production aligned with wind and static strength requirements and project-specific service support.
 
 ### Frequently Asked Questions
 

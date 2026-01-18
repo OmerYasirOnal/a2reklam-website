@@ -22,7 +22,7 @@ Bina dış yüzeylerine yerleştirilen cephe tabelaları, markanızın kurumsal 
 1. **LED aydınlatma entegrasyonu**
 
 ### Garanti Bilgileri
-2 yıl servis ve 5 yıl malzeme solmazlık garantisi.
+Proje bazlı servis ve malzeme dayanımı için bakım ve destek seçenekleri sunuyoruz.
 
 ### Sıkça Sorulan Sorular
 
