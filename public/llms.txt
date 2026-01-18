@@ -1,0 +1,19 @@
+# A2 Reklam
+Site: https://a2reklam.com
+Summary: Istanbul-based signage and advertising manufacturer offering discovery, design, production, and installation.
+
+Primary services:
+- /hizmetler/
+- /en/services/
+
+Service areas:
+- /hizmet-bolgeleri/
+- /en/service-areas/
+
+Portfolio:
+- /referanslar/
+- /en/portfolio/
+
+Contact:
+- /iletisim/
+- /en/contact/

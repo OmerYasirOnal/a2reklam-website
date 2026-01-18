@@ -29,6 +29,11 @@ This public repo ships a small demo image set so CI builds remain green and the 
 
 The site loads `images-manifest.json` when present and falls back to the demo manifest otherwise.
 
+## Security Note
+
+- Private assets must never be committed (the `RES...` archive, `node_modules/`, `dist/`, or full manifests).
+- If private assets ever leak into history, purge them with `git filter-repo` and force-push.
+
 ## Build
 
 ```bash
