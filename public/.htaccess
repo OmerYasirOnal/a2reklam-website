@@ -1,5 +1,10 @@
 # A2 REKLAM HTACCESS
 
+<IfModule mod_alias.c>
+  Redirect 301 /sitemap_index.xml /sitemap-index.xml
+  Redirect 301 /page-sitemap.xml /sitemap-0.xml
+</IfModule>
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
