@@ -4,6 +4,11 @@ import Layout from '../layouts/Layout.astro';
 const title = "Sıkça Sorulan Sorular | A2 Reklam";
 const description = "Tabela üretimi, fiyatları, montaj süreçleri ve kullanılan malzemeler hakkında merak ettiğiniz tüm soruların cevapları.";
 
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Sıkça Sorulan Sorular', item: '/sss/' },
+];
+
 const faqs = [
   {
     category: "Genel Sorular",
@@ -27,9 +32,19 @@ const faqs = [
     ]
   }
 ];
+
+const faqItems = faqs.flatMap((cat) =>
+  cat.items.map((item) => ({ question: item.q, answer: item.a })),
+);
 ---
 
-<Layout title={title} description={description} lang="tr">
+<Layout
+  title={title}
+  description={description}
+  lang="tr"
+  breadcrumbs={breadcrumbs}
+  faq={faqItems}
+>
   <div class="relative py-24 bg-secondary overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     

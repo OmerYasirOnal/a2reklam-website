@@ -1,13 +1,35 @@
 ---
+import { getLocalBusinessSchema } from '../../utils/localBusiness';
+
+interface BreadcrumbItem {
+  name: string;
+  item: string;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 interface Props {
   title: string;
   description: string;
   lang: string;
   image?: string;
   article?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
+  faq?: FAQItem[];
 }
 
-const { title, description, lang, image = '/assets/img/default-og.jpg', article = false } = Astro.props;
+const {
+  title,
+  description,
+  lang,
+  image = '/assets/img/default-og.jpg',
+  article = false,
+  breadcrumbs = [],
+  faq = [],
+} = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
@@ -29,6 +51,36 @@ if (lang === 'en') {
   trURL = new URL(pathStr, Astro.site);
   enURL = new URL(`/en${relative}`, Astro.site);
 }
+
+const localBusinessSchema = Astro.site ? getLocalBusinessSchema(Astro.site) : null;
+
+const breadcrumbSchema = breadcrumbs.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.name,
+        item: new URL(crumb.item, Astro.site).toString(),
+      })),
+    }
+  : null;
+
+const faqSchema = faq.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    }
+  : null;
 ---
 
 <!-- Global Metadata -->
@@ -67,3 +119,15 @@ if (lang === 'en') {
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+{localBusinessSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+)}
+
+{breadcrumbSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}
+
+{faqSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+)}

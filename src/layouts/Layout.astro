@@ -10,15 +10,34 @@ interface Props {
 	description?: string;
 	lang?: string;
   image?: string;
+  article?: boolean;
+  breadcrumbs?: { name: string; item: string }[];
+  faq?: { question: string; answer: string }[];
 }
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, lang = 'tr', image } = Astro.props;
+const {
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  lang = 'tr',
+  image,
+  article = false,
+  breadcrumbs,
+  faq,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang} class="scroll-smooth">
 	<head>
-    <SEO title={title} description={description} lang={lang} image={image} />
+    <SEO
+      title={title}
+      description={description}
+      lang={lang}
+      image={image}
+      article={article}
+      breadcrumbs={breadcrumbs}
+      faq={faq}
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
