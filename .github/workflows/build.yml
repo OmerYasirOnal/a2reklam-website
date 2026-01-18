@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Repo safety check
+        run: npm run repo:safety
+
       - name: Verify demo manifest
         run: test -f public/images-manifest.demo.json
           

@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "process-images": "node scripts/process-images.js"
+    "process-images": "node scripts/process-images.js",
+    "repo:safety": "node scripts/repo-safety.js"
   },
   "keywords": [],
   "author": "",
