@@ -1,22 +1,107 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { WHATSAPP_LINK } from '../../consts';
 
 export async function getStaticPaths() {
   const districts = await getCollection('districts');
-  return districts.map(entry => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  const sorted = [...districts].sort((a, b) =>
+    a.data.districtName.localeCompare(b.data.districtName, 'tr'),
+  );
+
+  return sorted.map((entry, index) => {
+    const neighbors = [];
+    let offset = 1;
+    while (neighbors.length < 4 && offset < sorted.length) {
+      const neighbor = sorted[(index + offset) % sorted.length];
+      if (neighbor.slug !== entry.slug) {
+        neighbors.push({
+          name: neighbor.data.districtName,
+          slug: neighbor.slug,
+        });
+      }
+      offset += 1;
+    }
+
+    return {
+      params: { slug: entry.slug },
+      props: { entry, neighbors },
+    };
+  });
 }
 
-const { entry } = Astro.props;
+const { entry, neighbors } = Astro.props;
 const { Content } = await entry.render();
 
 const title = `${entry.data.title} | A2 Reklam`;
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Hizmet Bölgeleri', item: '/hizmet-bolgeleri/' },
+  { name: entry.data.districtName, item: `/hizmet-bolgeleri/${entry.slug}/` },
+];
+
+const focusProfiles = [
+  'OSB ve üretim tesisleri, atölyeler, lojistik depolar ve teknik servis noktaları için dayanıklı tabela çözümleri sunuyoruz.',
+  'Otel, hastane, klinik ve eğitim kurumları için yönlendirme, cephe ve iç mekan tabela sistemleri planlıyoruz.',
+  'AVM, zincir mağazalar ve perakende markaları için kurumsal kimliğe uygun tabela ve vitrin uygulamaları üretiyoruz.',
+  'Plaza, ofis ve showroom projelerinde marka görünürlüğünü artıran modern tabela ve iç mekan uygulamaları sağlıyoruz.',
+];
+const introTemplates = [
+  (name: string) => `${name} bölgesinde keşif, tasarım, üretim ve montaj süreçlerini tek ekip halinde yönetiyoruz.`,
+  (name: string) => `${name} için tabela ve reklam çözümlerini proje bazlı planlayıp hızlı uygulama sağlıyoruz.`,
+  (name: string) => `${name} ilçesinde işletmenizin görünürlüğünü artıracak tabela sistemlerini anahtar teslim sunuyoruz.`,
+  (name: string) => `${name} bölgesinde farklı sektörlere uygun tabela tasarımı ve montaj hizmeti veriyoruz.`,
+];
+
+const slugScore = entry.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+const introParagraph = introTemplates[slugScore % introTemplates.length](entry.data.districtName);
+const b2bFocusParagraph = focusProfiles[slugScore % focusProfiles.length];
+
+const quickAnswer = `${entry.data.districtName} bölgesinde tabela, cephe ve yönlendirme ihtiyaçlarını keşiften montaja kadar tek noktadan karşılıyoruz.`;
+const quickFacts = [
+  { label: 'Hizmet Kapsamı', value: 'Keşif, tasarım, üretim ve montaj.' },
+  { label: 'Servis Alanı', value: `${entry.data.districtName} ve çevre mahalleler.` },
+  { label: 'Teslim Süresi', value: 'Ölçü ve malzeme netleşince planlanır.' },
+];
+const pricingFactors = [
+  'Uygulama alanı ve montaj yüksekliği',
+  'Malzeme türü ve üretim tekniği',
+  'Aydınlatma tipi ve güç altyapısı',
+  'Adet, lokasyon ve montaj erişimi',
+  'İşin aciliyeti ve proje kapsamı',
+];
+const faq = [
+  {
+    question: `${entry.data.districtName} bölgesinde keşif ücretsiz mi?`,
+    answer: 'İstanbul genelinde ücretsiz keşif sunuyor, ölçü ve ihtiyaçlara göre net teklif hazırlıyoruz.',
+  },
+  {
+    question: 'Montaj süreci nasıl ilerliyor?',
+    answer: 'Üretim tamamlandıktan sonra saha ekibimizle planlı montaj gerçekleştiriyoruz.',
+  },
+  {
+    question: 'Acil işlerde hizmet veriyor musunuz?',
+    answer: 'Proje kapsamına göre hızlandırılmış üretim ve montaj planı oluşturabiliyoruz.',
+  },
+];
+
+const topServices = [
+  { label: 'Işıklı Tabela', href: '/hizmetler/isikli-isiksiz-tabelalar/' },
+  { label: 'Paslanmaz Harf', href: '/hizmetler/paslanmaz-harfler/' },
+  { label: 'Totem Tabela', href: '/hizmetler/totem/' },
+  { label: 'Cephe Tabela', href: '/hizmetler/cephe-tabela/' },
+  { label: 'Araç Giydirme', href: '/hizmetler/arac-giydirme/' },
+  { label: 'Yönlendirme', href: '/hizmetler/yonlendirme/' },
+];
 ---
 
-<Layout title={title} description={entry.data.description} lang="tr">
+<Layout
+  title={title}
+  description={entry.data.description}
+  lang="tr"
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
   <!-- Hero Section -->
   <div class="relative h-[40vh] flex items-center justify-center text-white overflow-hidden bg-secondary">
     <div class="absolute inset-0 z-0">
@@ -40,8 +125,66 @@ const title = `${entry.data.title} | A2 Reklam`;
   <div class="container mx-auto px-4 py-20 grid grid-cols-1 lg:grid-cols-3 gap-12">
     <!-- Main Content -->
     <div class="lg:col-span-2 prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-bold prose-a:text-primary prose-strong:text-white prose-p:text-gray-400">
+      <div class="not-prose bg-accent-light border border-white/5 rounded-2xl p-8 mb-10">
+        <p class="text-gray-200 text-lg leading-relaxed">{introParagraph}</p>
+        <p class="text-gray-400 mt-4 leading-relaxed">{b2bFocusParagraph}</p>
+      </div>
+
       <Content />
-      
+
+      <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white">Hızlı Cevap</h3>
+        <p class="text-gray-300">{quickAnswer}</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+          {quickFacts.map((fact) => (
+            <div class="bg-secondary/60 rounded-lg p-4 border border-white/5">
+              <div class="text-xs text-gray-400 uppercase tracking-widest">{fact.label}</div>
+              <div class="text-white font-semibold mt-2">{fact.value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white">Fiyatı Etkileyen Unsurlar</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
+          {pricingFactors.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full mt-2"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-6 text-white">Sık Sorulan Sorular</h3>
+        <div class="space-y-5">
+          {faq.map((item) => (
+            <div class="border border-white/5 rounded-lg p-4 bg-secondary/60">
+              <h4 class="text-white font-semibold">{item.question}</h4>
+              <p class="text-gray-400 text-sm mt-2">{item.answer}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white">{entry.data.districtName} Bölgesinde Öne Çıkan Hizmetler</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {topServices.map((service) => (
+            <a href={service.href} class="flex items-center justify-between bg-secondary/60 border border-white/5 rounded-lg px-4 py-3 text-gray-300 hover:text-primary transition-colors">
+              <span>{service.label}</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </a>
+          ))}
+        </div>
+        <a href="/teklif-al/" class="inline-flex items-center gap-2 mt-6 bg-primary text-secondary font-bold px-6 py-3 rounded-lg hover:bg-white transition-all">
+          Teklif Al
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
+      </div>
+
       <div class="mt-12 p-8 rounded-2xl bg-accent-light border border-white/5 relative overflow-hidden group">
         <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/20 transition-colors"></div>
         <h3 class="font-heading font-bold text-2xl mb-4 text-white relative z-10">{entry.data.districtName} Bölgesi İçin Hemen Keşif İsteyin</h3>
@@ -52,9 +195,20 @@ const title = `${entry.data.title} | A2 Reklam`;
           <a href="/teklif-al/" class="bg-primary text-secondary font-bold py-3 px-8 rounded hover:bg-white transition-all transform hover:-translate-y-1">
             Teklif Al
           </a>
-          <a href="https://wa.me/905555555555" class="bg-green-600 text-white font-bold py-3 px-8 rounded hover:bg-green-500 transition-all flex items-center gap-2">
+          <a href={WHATSAPP_LINK} class="bg-green-600 text-white font-bold py-3 px-8 rounded hover:bg-green-500 transition-all flex items-center gap-2">
              WhatsApp
           </a>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white">Yakındaki İlçeler</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {neighbors.map((neighbor) => (
+            <a href={`/hizmet-bolgeleri/${neighbor.slug}/`} class="text-gray-300 hover:text-primary transition-colors text-sm">
+              {neighbor.name}
+            </a>
+          ))}
         </div>
       </div>
     </div>
