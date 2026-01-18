@@ -1,0 +1,55 @@
+---
+import { SITE_TITLE } from '../../consts';
+
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'tr' } = Astro.props;
+
+const navItems = {
+  tr: [
+    { href: '/', label: 'Anasayfa' },
+    { href: '/hakkimizda/', label: 'Hakkımızda' },
+    { href: '/hizmetler/', label: 'Hizmetler' },
+    { href: '/referanslar/', label: 'Referanslar' },
+    { href: '/iletisim/', label: 'İletişim' },
+  ],
+  en: [
+    { href: '/en/', label: 'Home' },
+    { href: '/en/about-us/', label: 'About Us' },
+    { href: '/en/services/', label: 'Services' },
+    { href: '/en/portfolio/', label: 'Portfolio' },
+    { href: '/en/contact/', label: 'Contact' },
+  ]
+};
+
+const items = lang === 'en' ? navItems.en : navItems.tr;
+const switchLangLink = lang === 'en' ? '/' : '/en/'; // Naive switcher for now
+const switchLangLabel = lang === 'en' ? 'TR' : 'EN';
+---
+
+<header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+  <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+    <a href={lang === 'en' ? '/en/' : '/'} class="font-heading font-bold text-2xl tracking-tighter text-primary">
+      A2 REKLAM
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8">
+      {items.map(item => (
+        <a href={item.href} class="text-sm font-medium text-gray-700 hover:text-primary transition-colors">
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-4">
+      <a href={switchLangLink} class="text-xs font-bold border border-gray-200 px-2 py-1 rounded hover:bg-gray-100 transition-colors">
+        {switchLangLabel}
+      </a>
+      <a href={lang === 'en' ? '/en/get-quote/' : '/teklif-al/'} class="hidden md:inline-flex bg-primary text-white px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-red-700 transition-colors">
+        {lang === 'en' ? 'Get Quote' : 'Teklif Al'}
+      </a>
+    </div>
+  </div>
+</header>

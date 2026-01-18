@@ -1,0 +1,58 @@
+---
+const today = new Date();
+interface Props {
+  lang?: string;
+}
+const { lang = 'tr' } = Astro.props;
+---
+
+<footer class="bg-secondary text-white py-12 border-t border-gray-800">
+	<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+    
+    <div>
+      <h3 class="font-heading font-bold text-xl mb-4">A2 REKLAM</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        {lang === 'en' 
+          ? 'Professional signage and advertising production services in Istanbul.' 
+          : 'İstanbul\'da profesyonel tabela ve reklam üretim hizmetleri.'}
+      </p>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">{lang === 'en' ? 'Quick Links' : 'Hızlı Bağlantılar'}</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li><a href={lang === 'en' ? '/en/services/' : '/hizmetler/'} class="hover:text-white transition-colors">{lang === 'en' ? 'Services' : 'Hizmetler'}</a></li>
+        <li><a href={lang === 'en' ? '/en/portfolio/' : '/referanslar/'} class="hover:text-white transition-colors">{lang === 'en' ? 'Portfolio' : 'Referanslar'}</a></li>
+        <li><a href={lang === 'en' ? '/en/blog/' : '/blog/'} class="hover:text-white transition-colors">{lang === 'en' ? 'Blog' : 'Blog'}</a></li>
+        <li><a href={lang === 'en' ? '/en/contact/' : '/iletisim/'} class="hover:text-white transition-colors">{lang === 'en' ? 'Contact' : 'İletişim'}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">{lang === 'en' ? 'Contact' : 'İletişim'}</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li>A2 Reklam</li>
+        <li>İstanbul, Türkiye</li>
+        <li><a href="tel:+905555555555" class="hover:text-white">+90 555 555 55 55</a></li>
+        <li><a href="mailto:info@a2reklam.com" class="hover:text-white">info@a2reklam.com</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-4">{lang === 'en' ? 'Social' : 'Sosyal'}</h4>
+      <div class="flex gap-4">
+        <!-- Social Icons placeholders -->
+        <a href="#" class="text-gray-400 hover:text-white" aria-label="Instagram">
+          <span class="w-6 h-6 block bg-gray-700 rounded-full"></span>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-white" aria-label="Facebook">
+          <span class="w-6 h-6 block bg-gray-700 rounded-full"></span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
+    &copy; {today.getFullYear()} A2 Reklam. {lang === 'en' ? 'All rights reserved.' : 'Tüm hakları saklıdır.'}
+  </div>
+</footer>

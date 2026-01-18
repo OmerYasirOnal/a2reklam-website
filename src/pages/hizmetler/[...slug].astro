@@ -1,0 +1,108 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import fs from 'fs';
+import path from 'path';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+
+  // Load manifest for images
+  const manifestPath = path.join(process.cwd(), 'public', 'images-manifest.json');
+  let manifest = [];
+  try {
+    manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+  } catch (e) {
+    console.error('Manifest load error', e);
+  }
+
+  return services.map(entry => {
+    // Filter images for this category
+    const categoryImages = manifest.filter((m: any) => m.category === entry.slug);
+    
+    return {
+      params: { slug: entry.slug },
+      props: { entry, images: categoryImages },
+    };
+  });
+}
+
+const { entry, images } = Astro.props;
+const { Content } = await entry.render();
+
+const title = `${entry.data.title} - A2 Reklam`;
+---
+
+<Layout title={title} description={entry.data.description} lang="tr">
+  <!-- Hero Section -->
+  <div class="relative h-[400px] flex items-center justify-center text-white">
+    <div class="absolute inset-0 z-0">
+      <img src={entry.data.heroImage} alt={entry.data.title} class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-secondary/70"></div>
+    </div>
+    <div class="relative z-10 container mx-auto px-4">
+      <h1 class="font-heading font-bold text-4xl md:text-5xl mb-4">{entry.data.title}</h1>
+      <ul class="flex gap-2 text-sm text-gray-300">
+        <li><a href="/" class="hover:text-white">Anasayfa</a></li>
+        <li>/</li>
+        <li><a href="/hizmetler/" class="hover:text-white">Hizmetler</a></li>
+        <li>/</li>
+        <li>{entry.data.title}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+    <!-- Main Content -->
+    <div class="lg:col-span-2 prose prose-lg prose-red max-w-none">
+      <Content />
+      
+      {entry.data.features && (
+        <div class="my-8 bg-gray-50 p-6 rounded-xl border border-gray-100 not-prose">
+          <h3 class="font-bold text-xl mb-4">Özellikler</h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {entry.data.features.map((f: string) => (
+              <li class="flex items-center gap-2 text-gray-700">
+                <svg class="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <!-- Gallery Grid -->
+      <div class="mt-16 not-prose">
+        <h2 class="font-heading font-bold text-2xl mb-8">İlgili Referans Görseller</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          {images.map((img: any) => (
+            <div class="aspect-square overflow-hidden rounded-lg bg-gray-100 group">
+              <img 
+                src={img.paths['480']} 
+                alt={img.alt_tr} 
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy" 
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="space-y-8">
+      <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 sticky top-24">
+        <h3 class="font-bold text-xl mb-4">Hemen Teklif Alın</h3>
+        <p class="text-gray-600 mb-6 text-sm">
+          {entry.data.title} işleriniz için profesyonel destek ve fiyat teklifi almak için bize ulaşın.
+        </p>
+        <a href="/teklif-al/" class="block w-full text-center bg-primary text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors">
+          Teklif İste
+        </a>
+        <a href="https://wa.me/905555555555" class="block w-full text-center mt-3 bg-green-500 text-white font-bold py-3 rounded-lg hover:bg-green-600 transition-colors">
+          WhatsApp'tan Yaz
+        </a>
+      </div>
+    </aside>
+  </div>
+</Layout>
