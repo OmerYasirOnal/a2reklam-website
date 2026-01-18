@@ -1,5 +1,13 @@
 ---
-import { ADDRESS, EMAIL, PHONE_NUMBER, PHONE_TEL } from '../../consts';
+import {
+  ADDRESS,
+  EMAIL,
+  PHONE_NUMBER,
+  PHONE_TEL,
+  SOCIAL_FACEBOOK_URL,
+  SOCIAL_INSTAGRAM_URL,
+  SOCIAL_LINKEDIN_URL,
+} from '../../consts';
 
 const today = new Date();
 interface Props {
@@ -62,11 +70,13 @@ const { lang = 'tr' } = Astro.props;
     <div>
       <h4 class="font-bold mb-4">{lang === 'en' ? 'Social' : 'Sosyal'}</h4>
       <div class="flex gap-4">
-        <!-- Social Icons placeholders -->
-        <a href="#" class="text-gray-400 hover:text-white" aria-label="Instagram">
+        <a href={SOCIAL_INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="Instagram">
           <span class="w-6 h-6 block bg-gray-700 rounded-full"></span>
         </a>
-        <a href="#" class="text-gray-400 hover:text-white" aria-label="Facebook">
+        <a href={SOCIAL_FACEBOOK_URL} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="Facebook">
+          <span class="w-6 h-6 block bg-gray-700 rounded-full"></span>
+        </a>
+        <a href={SOCIAL_LINKEDIN_URL} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white" aria-label="LinkedIn">
           <span class="w-6 h-6 block bg-gray-700 rounded-full"></span>
         </a>
       </div>
