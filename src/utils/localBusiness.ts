@@ -1,4 +1,5 @@
 import {
+  ADDRESS,
   ADDRESS_COUNTRY,
   ADDRESS_LOCALITY,
   ADDRESS_REGION,
@@ -9,6 +10,9 @@ import {
   MAPS_URL,
   PHONE_NUMBER,
   SITE_DESCRIPTION,
+  SOCIAL_FACEBOOK_URL,
+  SOCIAL_INSTAGRAM_URL,
+  SOCIAL_LINKEDIN_URL,
 } from '../consts';
 
 const GEO = null; // Add coordinates when available (e.g., { "@type": "GeoCoordinates", "latitude": 41.0, "longitude": 28.9 }).
@@ -40,15 +44,17 @@ export function getLocalBusinessSchema(siteUrl: URL): Record<string, unknown> {
     image: new URL(LOGO_PATH, siteUrl).toString(),
     address: {
       '@type': 'PostalAddress',
+      streetAddress: ADDRESS,
       addressLocality: ADDRESS_LOCALITY,
       addressRegion: ADDRESS_REGION,
       addressCountry: ADDRESS_COUNTRY,
     },
     areaServed: {
       '@type': 'AdministrativeArea',
-      name: ADDRESS_LOCALITY,
+      name: ADDRESS_REGION,
     },
     hasMap: MAPS_URL,
+    sameAs: [SOCIAL_INSTAGRAM_URL, SOCIAL_FACEBOOK_URL, SOCIAL_LINKEDIN_URL],
     geo: GEO,
   };
 
