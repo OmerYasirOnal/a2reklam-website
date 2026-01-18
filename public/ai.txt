@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 Preferred-URLs: trailing-slash
 Sitemap: https://a2reklam.com/sitemap-index.xml
+Summary: Istanbul-based B2B signage manufacturer for corporate facade, wayfinding, and custom projects.
+Key-URLs: /, /hizmetler/, /en/services/, /ar/services/, /iletisim/, /en/contact/, /ar/contact/, /teklif-al/, /en/get-quote/, /ar/get-quote/
