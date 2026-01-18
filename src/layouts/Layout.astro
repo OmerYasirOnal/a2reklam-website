@@ -3,6 +3,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
 import SEO from '../components/common/SEO.astro';
+import MobileCTA from '../components/common/MobileCTA.astro';
 
 interface Props {
 	title?: string;
@@ -28,5 +29,6 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, lang = 'tr', image }
 		  <slot />
     </main>
     <Footer lang={lang} />
+    <MobileCTA lang={lang} />
 	</body>
 </html>

@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = "About Us | A2 Advertising";
+const description = "Providing leading signage and advertising solutions in Istanbul since 2010. We increase the value of your brand with our experience and vision.";
+---
+
+<Layout title={title} description={description} lang="en">
+  <div class="relative py-24 bg-secondary overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-20">
+        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+          WHO <span class="text-primary">ARE WE?</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg border-l-2 border-primary pl-4 inline-block">
+          With over 14 years of experience in the signage and advertising industry, A2 Advertising continues to be the face of brands to the outside world.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <div class="relative">
+          <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-primary opacity-50"></div>
+          <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-primary opacity-50"></div>
+          <img src="/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp" alt="A2 Advertising Workshop" class="rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700" />
+        </div>
+        <div class="space-y-6">
+          <h2 class="font-heading font-bold text-3xl text-white">Our Experience is Your Brand's <span class="text-primary">Strength.</span></h2>
+          <p class="text-gray-400 leading-relaxed">
+            Founded in Istanbul in 2010, A2 Advertising has been serving with a customer-oriented approach and an innovative design perspective since its establishment. Our story, which started in a small workshop, continues today with our modern production facility and a large expert staff.
+          </p>
+          <p class="text-gray-400 leading-relaxed">
+            Whether you are a boutique business or a giant corporate structure, we approach every project with the same care and excitement. Signage production is not just a manufacturing process; for us, it is an art and a communication tool.
+          </p>
+          <div class="grid grid-cols-2 gap-6 pt-6">
+            <div class="border-l-2 border-primary pl-4">
+              <span class="block text-white font-black text-2xl">VISION</span>
+              <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 leading-relaxed">To be the leading brand that manufactures at global standards and combines technology with design.</p>
+            </div>
+            <div class="border-l-2 border-primary pl-4">
+              <span class="block text-white font-black text-2xl">MISSION</span>
+              <p class="text-xs text-gray-500 uppercase tracking-widest mt-1 leading-relaxed">To produce solutions that will reflect the corporate identity of our customers in the most accurate and impressive way.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values Section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        {[
+          { title: 'QUALITY PRODUCTION', desc: 'Using only the best materials, we offer long-lasting and durable products.' },
+          { title: 'ON-TIME DELIVERY', desc: 'We complete our projects within the promised time frames without delay.' },
+          { title: 'MANUFACTURER WARRANTY', desc: 'We give full support and service warranty for every product we produce in our own workshop.' }
+        ].map(item => (
+          <div class="p-8 bg-accent-light rounded-2xl border border-white/5 hover:border-primary/30 transition-all">
+            <h3 class="text-white font-bold text-xl mb-3 tracking-tight group-hover:text-primary">{item.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

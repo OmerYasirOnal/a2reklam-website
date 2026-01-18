@@ -7,24 +7,25 @@ interface Props {
 
 const { lang = 'tr' } = Astro.props;
 
-const navItems = {
-  tr: [
-    { href: '/', label: 'Anasayfa' },
-    { href: '/hakkimizda/', label: 'Hakkımızda' },
-    { href: '/hizmetler/', label: 'Hizmetler' },
-    { href: '/referanslar/', label: 'Referanslar' },
-    { href: '/iletisim/', label: 'İletişim' },
-  ],
-  en: [
-    { href: '/en/', label: 'Home' },
-    { href: '/en/about-us/', label: 'About Us' },
-    { href: '/en/services/', label: 'Services' },
-    { href: '/en/portfolio/', label: 'Portfolio' },
-    { href: '/en/contact/', label: 'Contact' },
-  ]
-};
+const items_tr = [
+  { label: 'Anasayfa', href: '/' },
+  { label: 'Hizmetler', href: '/hizmetler/' },
+  { label: 'Hizmet Bölgeleri', href: '/hizmet-bolgeleri/' },
+  { label: 'Hakkımızda', href: '/hakkimizda/' },
+  { label: 'S.S.S', href: '/sss/' },
+  { label: 'İletişim', href: '/iletisim/' },
+];
 
-const items = lang === 'en' ? navItems.en : navItems.tr;
+const items_en = [
+  { label: 'Home', href: '/en/' },
+  { label: 'Services', href: '/en/services/' },
+  { label: 'Service Areas', href: '/en/service-areas/' },
+  { label: 'About Us', href: '/en/about/' },
+  { label: 'F.A.Q', href: '/en/faq/' },
+  { label: 'Contact', href: '/en/contact/' },
+];
+
+const items = lang === 'en' ? items_en : items_tr;
 const switchLangLink = lang === 'en' ? '/' : '/en/'; // Naive switcher for now
 const switchLangLabel = lang === 'en' ? 'TR' : 'EN';
 ---

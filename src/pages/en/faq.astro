@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = "Frequently Asked Questions | A2 Advertising";
+const description = "Answers to all your questions about signage production, prices, installation processes, and materials used.";
+
+const faqs = [
+  {
+    category: "General Questions",
+    items: [
+      { q: "How long does the signage production process take?", a: "The process varies depending on the type and complexity of the sign. Generally, production and installation are completed within 7-15 business days after design approval." },
+      { q: "Do you have a free discovery service?", a: "Yes, our expert team performs on-site discovery for all your projects in Istanbul to determine the most suitable solution and price." }
+    ]
+  },
+  {
+    category: "Pricing",
+    items: [
+      { q: "How are signage prices determined?", a: "Prices are calculated according to the size of the sign, the type of material used (plexiglass, chrome, stainless steel, etc.), the lighting system (LED, direct, indirect), and installation difficulty." },
+      { q: "What are your payment options?", a: "We work with a down payment at the beginning of the project and the remaining balance is paid after installation. We have credit card and bank transfer options." }
+    ]
+  },
+  {
+    category: "Technical Questions",
+    items: [
+      { q: "How durable are the signs?", a: "We use weather-resistant, UV-protected, and stainless materials in our outdoor signs. The average life is between 5-10 years depending on its maintenance." },
+      { q: "Do you provide support for legal permits?", a: "We provide consultancy on the compliance of the sign with advertising tax and municipal laws, but official applications must be made by the property owner or operator." }
+    ]
+  }
+];
+---
+
+<Layout title={title} description={description} lang="en">
+  <div class="relative py-24 bg-secondary overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-16">
+        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+          FREQUENTLY ASKED <span class="text-primary">QUESTIONS</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg border-l-2 border-primary pl-4 inline-block">
+          You can find everything you wonder about your signage and advertising projects here.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto space-y-12">
+        {faqs.map(cat => (
+          <div>
+            <h2 class="font-heading font-bold text-2xl text-white mb-6 border-b border-primary/30 pb-2 uppercase tracking-wide">
+              {cat.category}
+            </h2>
+            <div class="space-y-4">
+              {cat.items.map(item => (
+                <details class="group bg-accent-light border border-white/5 rounded-xl overflow-hidden shadow-lg transition-all">
+                  <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                    <h3 class="font-bold text-gray-200 group-hover:text-primary transition-colors pr-4">{item.q}</h3>
+                    <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-primary group-open:rotate-180 transition-transform">
+                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                    </div>
+                  </summary>
+                  <div class="px-6 pb-6 text-gray-400 leading-relaxed border-t border-white/5 pt-4">
+                    {item.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-20 text-center">
+        <p class="text-gray-400 mb-6 italic">Couldn't find the answer you were looking for?</p>
+        <a href="/en/contact/" class="bg-primary text-secondary font-black py-4 px-10 rounded-lg hover:bg-white transition-all shadow-lg shadow-primary/20">
+          ASK US DIRECTLY
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

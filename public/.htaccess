@@ -1,0 +1,39 @@
+# A2 REKLAM HTACCESS
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URL} [L,R=301]
+
+  # Canonical Host (Choose one and uncomment)
+  # RewriteCond %{HTTP_HOST} !^www\. [NC]
+  # RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+  # PRESERVE WORDPRESS SLUGS (301 REDIRECT MAP)
+  # Add old URLs here if they changed. Example:
+  # Redirect 301 /bagcilar-tabela/ /hizmet-bolgeleri/bagcilar-tabela/
+  # Redirect 301 /totem-tabela-nedir/ /blog/post-1/
+
+  # Handle pretty URLs for Astro static build (if needed by server)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)/$ $1.html [L]
+</IfModule>
+
+# Caching for assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# Security Headers
+Header set X-Content-Type-Options "nosniff"
+Header set X-Frame-Options "SAMEORIGIN"
+Header set X-XSS-Protection "1; mode=block"

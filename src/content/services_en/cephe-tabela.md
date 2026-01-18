@@ -1,13 +1,33 @@
 ---
-title: "Facade Signage"
-description: "Professional Facade Signage services in Istanbul. High quality manufacturing and installation."
+title: "Facade Signage Solutions"
+description: "Modern and durable solutions for facade signs, the greatest representative of your brand to the outside world."
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
-features:
-  - "Guaranteed Materials"
-  - "Professional Design"
-  - "Fast Installation"
+features: ["On-site measurement","Graphic design and 3D modeling","Laser cutting and assembly","LED lighting integration"]
 ---
 
-## About Facade Signage
+## Facade Signage Solutions
 
-As A2 Advertising, we offer professional solutions for **Facade Signage**. We help your business stand out with our experience and quality.
+Facade signs placed on building exteriors are the advertising medium that reflects your brand's corporate identity most clearly.
+
+### Materials Used
+* Composite panel, plexiglass, stainless steel, aluminum, and vinyl tension options.
+
+### Use Cases
+* Shops, factories, office buildings, and showrooms.
+
+### Process and Application
+1. **On-site measurement**
+1. **Graphic design and 3D modeling**
+1. **Laser cutting and assembly**
+1. **LED lighting integration**
+
+### Warranty Information
+2 years service and 5 years material non-fade warranty.
+
+### Frequently Asked Questions
+
+#### Is a permit required for facade signage?
+You must submit a declaration for every sign for which you are responsible for municipal advertising tax.
+
+#### Should it be illuminated?
+LED lighting is strongly recommended for night visibility.
