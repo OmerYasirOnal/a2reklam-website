@@ -1,1 +1,30 @@
-node_modules
+node_modules/
+dist/
+.astro/
+.DS_Store
+.env
+.env.*
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Private assets (local-only source archive)
+RES*/
+
+# Generated or private image outputs (keep demo only)
+public/assets/img/*
+!public/assets/img/demo/
+!public/assets/img/demo/**
+public/assets/generated/
+public/assets/img/generated/
+
+# Private/full manifest (demo manifest is tracked)
+public/images-manifest.json
