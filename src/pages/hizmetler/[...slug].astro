@@ -1,20 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import fs from 'fs';
-import path from 'path';
+import { loadImagesManifest } from '../../utils/imagesManifest';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
 
   // Load manifest for images
-  const manifestPath = path.join(process.cwd(), 'public', 'images-manifest.json');
-  let manifest = [];
-  try {
-    manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
-  } catch (e) {
-    console.error('Manifest load error', e);
-  }
+  const manifest = loadImagesManifest();
 
   return services.map(entry => {
     // Filter images for this category

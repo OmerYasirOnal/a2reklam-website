@@ -19,16 +19,10 @@ jobs:
           cache: 'npm'
           
       - name: Install dependencies
-        run: npm install
-        
-      - name: Process Images (Generate Manifest)
-        run: npm run process-images
-        
-      - name: Generate Districts & Blog
-        run: |
-          node scripts/generate-districts.js
-          node scripts/generate-blog.js
-          node scripts/refine-services.js
+        run: npm ci
+
+      - name: Verify demo manifest
+        run: test -f public/images-manifest.demo.json
           
       - name: Build site
         run: npm run build

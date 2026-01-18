@@ -1,0 +1,197 @@
+[
+  {
+    "id": "demo-arac-giydirme-001",
+    "category": "arac-giydirme",
+    "category_tr": "ARAÇ GİYDİRME",
+    "category_en": "Vehicle Wrapping",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-arac-giydirme-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-arac-giydirme-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-arac-giydirme-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ARAÇ GİYDİRME - Örnek 1",
+    "alt_en": "A2 Advertising Vehicle Wrapping - Example 1"
+  },
+  {
+    "id": "demo-ayakli-a-pano-001",
+    "category": "ayakli-a-pano",
+    "category_tr": "AYAKLI A PANO",
+    "category_en": "Ayakli A Pano",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-ayakli-a-pano-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-ayakli-a-pano-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-ayakli-a-pano-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam AYAKLI A PANO - Örnek 1",
+    "alt_en": "A2 Advertising Ayakli A Pano - Example 1"
+  },
+  {
+    "id": "demo-banko-uygulamalari-001",
+    "category": "banko-uygulamalari",
+    "category_tr": "BANKO UYGULAMALARI",
+    "category_en": "Counter Branding",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-banko-uygulamalari-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-banko-uygulamalari-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-banko-uygulamalari-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam BANKO UYGULAMALARI - Örnek 1",
+    "alt_en": "A2 Advertising Counter Branding - Example 1"
+  },
+  {
+    "id": "demo-cephe-tabela-001",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-cephe-tabela-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-cephe-tabela-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 1",
+    "alt_en": "A2 Advertising Facade Signage - Example 1"
+  },
+  {
+    "id": "demo-cati-tabelasi-001",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-cati-tabelasi-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-cati-tabelasi-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-cati-tabelasi-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 1",
+    "alt_en": "A2 Advertising Roof Signage - Example 1"
+  },
+  {
+    "id": "demo-fener-tabela-001",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-fener-tabela-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-fener-tabela-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-fener-tabela-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 1",
+    "alt_en": "A2 Advertising Blade Signs - Example 1"
+  },
+  {
+    "id": "demo-harmanlama-001",
+    "category": "harmanlama",
+    "category_tr": "HARMANLAMA",
+    "category_en": "Harmanlama",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-harmanlama-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-harmanlama-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-harmanlama-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam HARMANLAMA - Örnek 1",
+    "alt_en": "A2 Advertising Harmanlama - Example 1"
+  },
+  {
+    "id": "demo-isikli-isiksiz-tabelalar-001",
+    "category": "isikli-isiksiz-tabelalar",
+    "category_tr": "IŞIKLI  IŞIKSIZ TABELALAR",
+    "category_en": "Isikli Isiksiz Tabelalar",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-isikli-isiksiz-tabelalar-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-isikli-isiksiz-tabelalar-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-isikli-isiksiz-tabelalar-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI  IŞIKSIZ TABELALAR - Örnek 1",
+    "alt_en": "A2 Advertising Isikli Isiksiz Tabelalar - Example 1"
+  },
+  {
+    "id": "demo-kabartma-pleksiglass-001",
+    "category": "kabartma-pleksiglass",
+    "category_tr": "KABARTMA PLEKSİGLASS",
+    "category_en": "Kabartma Pleksiglass",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-kabartma-pleksiglass-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-kabartma-pleksiglass-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-kabartma-pleksiglass-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KABARTMA PLEKSİGLASS - Örnek 1",
+    "alt_en": "A2 Advertising Kabartma Pleksiglass - Example 1"
+  },
+  {
+    "id": "demo-kapi-isimlik-001",
+    "category": "kapi-isimlik",
+    "category_tr": "KAPI İSİMLİK",
+    "category_en": "Kapi Isimlik",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-kapi-isimlik-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-kapi-isimlik-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-kapi-isimlik-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KAPI İSİMLİK - Örnek 1",
+    "alt_en": "A2 Advertising Kapi Isimlik - Example 1"
+  },
+  {
+    "id": "demo-ofis-kumlama-folyolari-001",
+    "category": "ofis-kumlama-folyolari",
+    "category_tr": "OFİS KUMLAMA FOLYOLARI",
+    "category_en": "Ofis Kumlama Folyolari",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-ofis-kumlama-folyolari-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-ofis-kumlama-folyolari-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-ofis-kumlama-folyolari-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam OFİS KUMLAMA FOLYOLARI - Örnek 1",
+    "alt_en": "A2 Advertising Ofis Kumlama Folyolari - Example 1"
+  },
+  {
+    "id": "demo-ozel-imalatlar-001",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-ozel-imalatlar-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-ozel-imalatlar-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-ozel-imalatlar-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 1",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 1"
+  },
+  {
+    "id": "demo-paslanmaz-harfler-001",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-paslanmaz-harfler-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-paslanmaz-harfler-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-paslanmaz-harfler-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 1",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 1"
+  },
+  {
+    "id": "demo-totem-001",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-totem-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-totem-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-totem-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 1",
+    "alt_en": "A2 Advertising Totem Pylon - Example 1"
+  },
+  {
+    "id": "demo-yonlendirme-001",
+    "category": "yonlendirme",
+    "category_tr": "YÖNLENDİRME",
+    "category_en": "Wayfinding",
+    "paths": {
+      "480": "/assets/img/demo/a2reklam-yonlendirme-001-480.webp",
+      "960": "/assets/img/demo/a2reklam-yonlendirme-001-960.webp",
+      "1600": "/assets/img/demo/a2reklam-yonlendirme-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam YÖNLENDİRME - Örnek 1",
+    "alt_en": "A2 Advertising Wayfinding - Example 1"
+  }
+]

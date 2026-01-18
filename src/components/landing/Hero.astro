@@ -1,29 +1,18 @@
 ---
-import { SIZES } from '../../consts'; 
-// We can't easily import from public in build time for logic unless we use fs, 
-// but we can just hardcode a hero image path if we know it, or read the file.
-// For now, let's pick a nice known category image or hardcode the logic to pick one.
-// Actually, since this is server-side, fs works.
-
-import fs from 'fs';
-import path from 'path';
+import { SIZES } from '../../consts';
+import { loadImagesManifest } from '../../utils/imagesManifest';
 
 // Read manifest to select a hero image
-const manifestPath = path.join(process.cwd(), 'public', 'images-manifest.json');
-let heroImage = '/assets/img/hero-placeholder.jpg'; // Fallback
+const manifest = loadImagesManifest();
+let heroImage = manifest[0]?.paths?.['1600'] || '/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp';
 
-try {
-  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
-  // Prefer 'cephe-tabela' or 'totem' for impact
-  const candidates = manifest.filter((m: any) => 
-    ['cephe-tabela', 'totem'].includes(m.category)
-  );
-  if (candidates.length > 0) {
-    const random = candidates[Math.floor(Math.random() * candidates.length)];
-    heroImage = random.paths['1600'];
-  }
-} catch (e) {
-  console.error('Could not read image manifest for Hero:', e);
+// Prefer 'cephe-tabela' or 'totem' for impact
+const candidates = manifest.filter((m: any) =>
+  ['cephe-tabela', 'totem'].includes(m.category)
+);
+if (candidates.length > 0) {
+  const random = candidates[Math.floor(Math.random() * candidates.length)];
+  heroImage = random.paths['1600'];
 }
 
 interface Props {

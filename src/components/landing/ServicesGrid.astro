@@ -1,6 +1,5 @@
 ---
-import fs from 'fs';
-import path from 'path';
+import { loadImagesManifest } from '../../utils/imagesManifest';
 
 interface Props {
   lang?: string;
@@ -8,11 +7,10 @@ interface Props {
 const { lang = 'tr' } = Astro.props;
 
 // Read manifest to get categories and representative images
-const manifestPath = path.join(process.cwd(), 'public', 'images-manifest.json');
 let categories = [];
 
 try {
-  const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+  const manifest = loadImagesManifest();
   
   // Group by category
   const groups: Record<string, any> = {};
