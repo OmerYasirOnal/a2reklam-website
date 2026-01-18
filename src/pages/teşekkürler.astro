@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Teşekkürler | A2 Reklam";
+const description = "Talebiniz alındı. Ekibimiz en kısa sürede size dönüş yapacaktır.";
+---
+
+<Layout title={title} description={description} lang="tr">
+  <div class="relative py-24 bg-secondary overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center bg-accent-light border border-white/5 rounded-3xl p-10 md:p-14 shadow-2xl">
+        <h1 class="font-heading font-black text-3xl md:text-5xl text-white mb-4">
+          Teşekkürler!
+        </h1>
+        <p class="text-gray-400 text-lg mb-8">
+          Talebiniz bize ulaştı. Proje detaylarınızı inceleyip en kısa sürede dönüş yapacağız.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <a href="/" class="bg-primary text-secondary font-bold py-3 px-6 rounded-lg hover:bg-white transition-all">
+            Anasayfaya Dön
+          </a>
+          <a href="/iletisim/" class="border border-white/20 text-white font-bold py-3 px-6 rounded-lg hover:border-white transition-all">
+            İletişim
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

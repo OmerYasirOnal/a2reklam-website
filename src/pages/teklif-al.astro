@@ -1,8 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { EMAIL, PHONE_NUMBER, PHONE_TEL, WHATSAPP_LINK } from '../consts';
 
 const title = "Hızlı Teklif Al | A2 Reklam";
 const description = "Projeniz için ücretsiz keşif ve fiyat teklifi alın. Tabela, reklam ve dijital baskı çözümlerimiz için formu doldurmanız yeterli.";
+const formEndpoint = import.meta.env.PUBLIC_FORM_ENDPOINT ?? '';
+const hasEndpoint = Boolean(formEndpoint);
+const formAction = hasEndpoint ? formEndpoint : `mailto:${EMAIL}`;
+const redirectUrl = Astro.site ? new URL('/teşekkürler/', Astro.site).toString() : '/teşekkürler/';
 ---
 
 <Layout title={title} description={description} lang="tr">
@@ -21,18 +26,41 @@ const description = "Projeniz için ücretsiz keşif ve fiyat teklifi alın. Tab
 
       <div class="max-w-3xl mx-auto bg-accent-light p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl relative">
         <div class="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
+
+        {!hasEndpoint && (
+          <div class="mb-8 border border-primary/30 bg-secondary/70 rounded-2xl p-5 text-sm text-gray-300">
+            Form altyapısı henüz aktif değil. Bu sırada <a href={`mailto:${EMAIL}`} class="text-primary hover:underline">e-posta</a> veya <a href={WHATSAPP_LINK} class="text-primary hover:underline">WhatsApp</a> üzerinden hızlıca ulaşabilirsiniz.
+            <div class="mt-3 flex flex-wrap gap-3">
+              <a href={`tel:${PHONE_TEL}`} class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">Ara: {PHONE_NUMBER}</a>
+              <a href={`mailto:${EMAIL}`} class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">E-posta</a>
+              <a href={WHATSAPP_LINK} class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">WhatsApp</a>
+            </div>
+          </div>
+        )}
         
-        <form class="space-y-8 relative z-10">
+        <form class="space-y-8 relative z-10" action={formAction} method="POST" enctype={hasEndpoint ? 'application/x-www-form-urlencoded' : 'text/plain'}>
+          {hasEndpoint && <input type="hidden" name="_redirect" value={redirectUrl} />}
+          {hasEndpoint && <input type="hidden" name="_subject" value="Yeni teklif talebi" />}
+
           <div class="space-y-6">
             <h2 class="text-white font-bold text-xl flex items-center gap-3">
               <span class="w-8 h-8 rounded-full bg-primary text-secondary flex items-center justify-center text-sm">1</span>
               İletişim Bilgileri
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <input type="text" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="Ad Soyad" required />
-              <input type="tel" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="Telefon Numarası" required />
+              <div>
+                <label for="full-name" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Ad Soyad</label>
+                <input id="full-name" name="fullName" type="text" autocomplete="name" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="Ad Soyad" required />
+              </div>
+              <div>
+                <label for="phone" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Telefon</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="05XX XXX XX XX" required />
+              </div>
             </div>
-            <input type="email" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="E-posta Adresi" required />
+            <div>
+              <label for="email" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">E-posta</label>
+              <input id="email" name="email" type="email" autocomplete="email" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="E-posta Adresi" required />
+            </div>
           </div>
 
           <div class="space-y-6">
@@ -41,19 +69,28 @@ const description = "Projeniz için ücretsiz keşif ve fiyat teklifi alın. Tab
               Proje Detayları
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <select class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all">
-                <option value="">Hizmet Seçiniz</option>
-                <option>Işıklı Tabela</option>
-                <option>Kutu Harf</option>
-                <option>Paslanmaz Harf / Tabela</option>
-                <option>Totem Tabela</option>
-                <option>Araç Giydirme</option>
-                <option>Cephe Tabela / Kompozit</option>
-                <option>Diğer</option>
-              </select>
-              <input type="text" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="Yaklaşık Ölçüler (örn: 200x50cm)" />
+              <div>
+                <label for="service" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Hizmet Türü</label>
+                <select id="service" name="serviceType" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" required>
+                  <option value="">Hizmet Seçiniz</option>
+                  <option>Işıklı Tabela</option>
+                  <option>Kutu Harf</option>
+                  <option>Paslanmaz Harf / Tabela</option>
+                  <option>Totem Tabela</option>
+                  <option>Araç Giydirme</option>
+                  <option>Cephe Tabela / Kompozit</option>
+                  <option>Diğer</option>
+                </select>
+              </div>
+              <div>
+                <label for="dimensions" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Yaklaşık Ölçü</label>
+                <input id="dimensions" name="dimensions" type="text" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="Yaklaşık Ölçüler (örn: 200x50cm)" />
+              </div>
             </div>
-            <textarea rows="4" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="İstediğiniz tabela hakkında ek detaylar (renk, aydınlatma türü vb.)"></textarea>
+            <div>
+              <label for="details" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Ek Detaylar</label>
+              <textarea id="details" name="details" rows="4" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="İstediğiniz tabela hakkında ek detaylar (renk, aydınlatma türü vb.)" required></textarea>
+            </div>
           </div>
 
           <div class="pt-4">
