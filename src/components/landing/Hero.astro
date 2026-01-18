@@ -49,23 +49,38 @@ const content = {
 const t = lang === 'en' ? content.en : content.tr;
 ---
 
-<section class="relative h-[600px] flex items-center justify-center text-white overflow-hidden">
+<section class="relative min-h-[75vh] flex items-center justify-center text-white overflow-hidden bg-secondary">
   <!-- Background Image with Overlay -->
   <div class="absolute inset-0 z-0">
-    <img src={heroImage} alt="A2 Reklam Workshop" class="w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute inset-0 bg-secondary/80 mix-blend-multiply z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent z-20"></div>
+    <img src={heroImage} alt="A2 Reklam Workshop" class="w-full h-full object-cover opacity-60" />
   </div>
 
   <!-- Content -->
-  <div class="relative z-10 container mx-auto px-4 text-center">
-    <h1 class="font-heading font-extrabold text-4xl md:text-6xl mb-6 leading-tight">
-      {t.title}
+  <div class="relative z-30 container mx-auto px-4 text-center">
+    <div class="inline-block mb-4 px-4 py-1 border border-primary/30 rounded-full bg-black/30 backdrop-blur text-primary text-sm font-semibold tracking-wider uppercase animate-fade-in-up">
+      {lang === 'en' ? 'Since 2010' : '2010\'dan beri'}
+    </div>
+    
+    <h1 class="font-heading font-black text-5xl md:text-7xl mb-6 leading-tight max-w-4xl mx-auto drop-shadow-2xl">
+      {lang === 'en' 
+        ? <span set:html="Premium <span class='text-primary'>Signage</span> & Advertising Solutions" />
+        : <span set:html="Premium <span class='text-primary'>Tabela</span> ve Reklam Çözümleri" />
+      }
     </h1>
-    <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+    
+    <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
       {t.subtitle}
     </p>
-    <a href={t.link} class="inline-block bg-primary hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg transition-transform transform hover:scale-105 shadow-lg">
-      {t.cta}
-    </a>
+    
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+      <a href={t.link} class="bg-primary text-secondary font-bold py-4 px-10 rounded text-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(207,181,59,0.3)]">
+        {t.cta}
+      </a>
+      <a href={lang === 'en' ? '/en/contact/' : '/iletisim/'} class="border border-white/20 hover:border-white text-white font-bold py-4 px-10 rounded text-lg transition-all backdrop-blur-sm bg-white/5 hover:bg-white/10">
+        {lang === 'en' ? 'Contact Us' : 'Bize Ulaşın'}
+      </a>
+    </div>
   </div>
 </section>
