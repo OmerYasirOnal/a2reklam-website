@@ -1,9 +1,11 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, GTM_CONTAINER_ID, TRACKING_ENABLED } from '../consts';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
 import SEO from '../components/common/SEO.astro';
 import MobileCTA from '../components/common/MobileCTA.astro';
+import Tracking from '../components/common/Tracking.astro';
+import TrackingEvents from '../components/common/TrackingEvents.astro';
 
 interface Props {
 	title?: string;
@@ -24,11 +26,14 @@ const {
   breadcrumbs,
   faq,
 } = Astro.props;
+
+const isRtl = lang === 'ar';
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-smooth">
+<html lang={lang} dir={isRtl ? 'rtl' : 'ltr'} class="scroll-smooth">
 	<head>
+    <Tracking />
     <SEO
       title={title}
       description={description}
@@ -40,14 +45,28 @@ const {
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-secondary text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-primary selection:text-white">
+	<body class:list={[
+    'bg-secondary text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-primary selection:text-white pb-16 md:pb-0',
+    isRtl && 'font-arabic text-right',
+  ]}>
+    {TRACKING_ENABLED && (
+      <noscript>
+        <iframe
+          src={`https://www.googletagmanager.com/ns.html?id=${GTM_CONTAINER_ID}`}
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden"
+        ></iframe>
+      </noscript>
+    )}
     <Header lang={lang} />
     <main class="flex-grow">
 		  <slot />
     </main>
     <Footer lang={lang} />
     <MobileCTA lang={lang} />
+    <TrackingEvents />
 	</body>
 </html>

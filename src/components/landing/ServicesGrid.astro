@@ -1,6 +1,6 @@
 ---
 import { loadImagesManifest } from '../../utils/imagesManifest';
-import { buildImageAlt } from '../../utils/imageSeo';
+import { buildImageAlt, getCategoryLabel } from '../../utils/imageSeo';
 
 interface Props {
   lang?: string;
@@ -26,9 +26,28 @@ try {
   console.error('Could not read image manifest:', e);
 }
 
-const title = lang === 'en' ? 'Our Services' : 'Hizmetlerimiz';
-const subtitle = lang === 'en' ? 'Quality production for every need.' : 'Her ihtiyaca uygun kaliteli üretim.';
-const altLang = lang === 'en' ? 'en' : 'tr';
+const text = {
+  tr: {
+    heading: { first: 'Hizmet', second: 'lerimiz', joiner: '' },
+    subtitle: 'Her ihtiyaca uygun kaliteli üretim.',
+    view: 'İncele →',
+  },
+  en: {
+    heading: { first: 'Our', second: 'Services', joiner: ' ' },
+    subtitle: 'Quality production for every need.',
+    view: 'View Details →',
+  },
+  ar: {
+    heading: { first: 'خدماتنا', second: '', joiner: '' },
+    subtitle: 'إنتاج احترافي يلائم احتياجات علامتك في إسطنبول.',
+    view: 'عرض التفاصيل ←',
+  },
+};
+
+const t = lang === 'ar' ? text.ar : lang === 'en' ? text.en : text.tr;
+const altLang = lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'tr';
+const linkBase = lang === 'ar' ? '/en/services/' : lang === 'en' ? '/en/services/' : '/hizmetler/';
+const subtitleClass = lang === 'ar' ? 'border-r-2 pr-4 text-right' : 'border-l-2 pl-4';
 ---
 
 <section class="py-24 bg-secondary text-white relative overflow-hidden">
@@ -38,14 +57,17 @@ const altLang = lang === 'en' ? 'en' : 'tr';
   <div class="container mx-auto px-4 relative z-10">
     <div class="text-center mb-16">
       <h2 class="font-heading font-black text-4xl md:text-5xl mb-4 text-white uppercase tracking-tight">
-        {lang === 'en' ? <span class="text-primary">Our</span> : <span class="text-primary">Hizmet</span>} {title.replace('Hizmetlerimiz', '').replace('Our Services', 'Services')}
+        <span class="text-primary">{t.heading.first}</span>
+        {t.heading.second ? `${t.heading.joiner}${t.heading.second}` : ''}
       </h2>
-      <p class="text-gray-400 max-w-2xl mx-auto text-lg border-l-2 border-primary pl-4 inline-block">{subtitle}</p>
+      <p class:list={['text-gray-400 max-w-2xl mx-auto text-lg inline-block', subtitleClass]}>
+        {t.subtitle}
+      </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {categories.map((cat: any) => ( // Using 'any' for now to match script logic, can tighten later
-        <a href={lang === 'en' ? `/en/services/${cat.category}/` : `/hizmetler/${cat.category}/`} class="group relative block bg-accent-light rounded-xl overflow-hidden shadow-2xl hover:shadow-primary/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/5 hover:border-primary/50">
+        <a href={`${linkBase}${cat.category}/`} class="group relative block bg-accent-light rounded-xl overflow-hidden shadow-2xl hover:shadow-primary/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/5 hover:border-primary/50">
           <div class="relative h-72 overflow-hidden">
             <img 
               src={cat.paths['960']} 
@@ -57,10 +79,10 @@ const altLang = lang === 'en' ? 'en' : 'tr';
             
             <div class="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
               <h3 class="font-heading font-bold text-2xl mb-1 text-white border-b-2 border-transparent group-hover:border-primary inline-block pb-1 transition-all">
-                {lang === 'en' ? cat.category_en : cat.category_tr}
+                {getCategoryLabel(cat.category, altLang)}
               </h3>
               <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100 mt-2">
-                {lang === 'en' ? 'View Details →' : 'İncele →'}
+                {t.view}
               </p>
             </div>
           </div>

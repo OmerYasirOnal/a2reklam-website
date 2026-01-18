@@ -34,11 +34,18 @@ const content = {
     subtitle: 'Leading signage manufacturer in Istanbul. Full service from design to installation.',
     cta: 'Get a Quote',
     link: '/en/get-quote/'
-  }
+  },
+  ar: {
+    title: 'حلول لافتات احترافية لعلامتك التجارية',
+    subtitle: 'مصنّع لافتات في إسطنبول يقدم الخدمة من التصميم حتى التركيب.',
+    cta: 'احصل على عرض سعر',
+    link: '/ar/get-quote/'
+  },
 };
 
-const t = lang === 'en' ? content.en : content.tr;
-const heroAlt = buildImageAlt({ category: heroCategory, lang: lang === 'en' ? 'en' : 'tr' });
+const t = lang === 'ar' ? content.ar : lang === 'en' ? content.en : content.tr;
+const heroAlt = buildImageAlt({ category: heroCategory, lang: lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'tr' });
+const isRtl = lang === 'ar';
 ---
 
 <section class="relative min-h-[75vh] flex items-center justify-center text-white overflow-hidden bg-secondary">
@@ -50,15 +57,17 @@ const heroAlt = buildImageAlt({ category: heroCategory, lang: lang === 'en' ? 'e
   </div>
 
   <!-- Content -->
-  <div class="relative z-30 container mx-auto px-4 text-center">
+  <div class:list={['relative z-30 container mx-auto px-4 text-center', isRtl && 'text-right']}>
     <div class="inline-block mb-4 px-4 py-1 border border-primary/30 rounded-full bg-black/30 backdrop-blur text-primary text-sm font-semibold tracking-wider uppercase animate-fade-in-up">
-      {lang === 'en' ? 'Since 2010' : '2010\'dan beri'}
+      {lang === 'ar' ? 'منذ 2010' : lang === 'en' ? 'Since 2010' : '2010\'dan beri'}
     </div>
     
     <h1 class="font-heading font-black text-5xl md:text-7xl mb-6 leading-tight max-w-4xl mx-auto drop-shadow-2xl">
       {lang === 'en' 
         ? <span set:html="Premium <span class='text-primary'>Signage</span> & Advertising Solutions" />
-        : <span set:html="Premium <span class='text-primary'>Tabela</span> ve Reklam Çözümleri" />
+        : lang === 'ar'
+          ? <span set:html="<span class='text-primary'>حلول</span> لافتات وإعلانات متميزة" />
+          : <span set:html="Premium <span class='text-primary'>Tabela</span> ve Reklam Çözümleri" />
       }
     </h1>
     
@@ -67,11 +76,17 @@ const heroAlt = buildImageAlt({ category: heroCategory, lang: lang === 'en' ? 'e
     </p>
     
     <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-      <a href={t.link} class="bg-primary text-secondary font-bold py-4 px-10 rounded text-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(207,181,59,0.3)]">
+      <a
+        href={t.link}
+        data-track="lead-click"
+        data-lead-type="quote"
+        data-lang={lang}
+        class="bg-primary text-secondary font-bold py-4 px-10 rounded text-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(207,181,59,0.3)]"
+      >
         {t.cta}
       </a>
-      <a href={lang === 'en' ? '/en/contact/' : '/iletisim/'} class="border border-white/20 hover:border-white text-white font-bold py-4 px-10 rounded text-lg transition-all backdrop-blur-sm bg-white/5 hover:bg-white/10">
-        {lang === 'en' ? 'Contact Us' : 'Bize Ulaşın'}
+      <a href={lang === 'ar' ? '/ar/contact/' : lang === 'en' ? '/en/contact/' : '/iletisim/'} class="border border-white/20 hover:border-white text-white font-bold py-4 px-10 rounded text-lg transition-all backdrop-blur-sm bg-white/5 hover:bg-white/10">
+        {lang === 'ar' ? 'تواصل معنا' : lang === 'en' ? 'Contact Us' : 'Bize Ulaşın'}
       </a>
     </div>
   </div>
