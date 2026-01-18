@@ -16,3 +16,7 @@ export const LOGO_PATH = '/brand/a2reklam-logo.png';
 export const SOCIAL_FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61560990926799';
 export const SOCIAL_INSTAGRAM_URL = 'https://www.instagram.com/a2_reklam/';
 export const SOCIAL_LINKEDIN_URL = 'https://www.linkedin.com/in/osman-%C5%9Fahin-5a460930a/?originalSubdomain=tr';
+export const TRACKING_ENABLED = true;
+export const GTM_CONTAINER_ID = 'GTM-MXT449F9';
+export const GOOGLE_ADS_ID = 'AW-17854412453';
+export const GA4_MEASUREMENT_ID = 'G-TC9GJP3GLT';

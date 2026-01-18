@@ -1,0 +1,42 @@
+---
+import { TRACKING_ENABLED } from '../../consts';
+---
+
+{TRACKING_ENABLED && (
+  <script type="module">
+    import { trackLeadClick, trackLeadSubmit } from '../../utils/tracking';
+
+    const getLang = (el) =>
+      el?.getAttribute('data-lang') || document.documentElement.lang || 'tr';
+    const getPage = () => window.location.pathname || '/';
+
+    const bindLeadClicks = () => {
+      document.querySelectorAll('[data-track="lead-click"]').forEach((el) => {
+        el.addEventListener('click', () => {
+          const type = el.getAttribute('data-lead-type') || 'cta';
+          trackLeadClick({ type, lang: getLang(el), page: getPage() });
+        });
+      });
+    };
+
+    const bindLeadSubmits = () => {
+      document.querySelectorAll('form[data-track="lead-submit"]').forEach((form) => {
+        form.addEventListener('submit', () => {
+          const type = form.getAttribute('data-lead-type') || 'quote';
+          trackLeadSubmit({ type, lang: getLang(form), page: getPage() });
+        });
+      });
+    };
+
+    const init = () => {
+      bindLeadClicks();
+      bindLeadSubmits();
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+)}

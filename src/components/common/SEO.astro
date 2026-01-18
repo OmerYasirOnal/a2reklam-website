@@ -1,5 +1,6 @@
 ---
 import { getLocalBusinessSchema } from '../../utils/localBusiness';
+import { getLocaleAlternates } from '../../utils/localeRoutes';
 
 interface BreadcrumbItem {
   name: string;
@@ -32,25 +33,11 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
-// Hreflang logic
-// If current path is /foo/ -> en is /en/foo/
-// If current path is /en/foo/ -> tr is /foo/
-let trURL = Astro.site; // Fallback
-let enURL = new URL('/en/', Astro.site); // Fallback
-
-const pathStr = Astro.url.pathname;
-if (lang === 'en') {
-  // logic to strip /en/
-  const relative = pathStr.replace(/^\/en/, '') || '/';
-  trURL = new URL(relative, Astro.site);
-  enURL = new URL(pathStr, Astro.site);
-} else {
-  // logic to add /en/
-  const relative = pathStr === '/' ? '' : pathStr;
-  trURL = new URL(pathStr, Astro.site);
-  enURL = new URL(`/en${relative}`, Astro.site);
-}
+const alternates = getLocaleAlternates(Astro.url.pathname);
+const trURL = alternates.tr ? new URL(alternates.tr, Astro.site) : null;
+const enURL = alternates.en ? new URL(alternates.en, Astro.site) : null;
+const arURL = alternates.ar ? new URL(alternates.ar, Astro.site) : null;
+const xDefaultURL = trURL ?? enURL ?? arURL ?? canonicalURL;
 
 const localBusinessSchema = Astro.site ? getLocalBusinessSchema(Astro.site) : null;
 
@@ -97,9 +84,10 @@ const faqSchema = faq.length
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Alternate Language Links -->
-<link rel="alternate" hreflang="tr" href={trURL} />
-<link rel="alternate" hreflang="en" href={enURL} />
-<link rel="alternate" hreflang="x-default" href={trURL} />
+{trURL && <link rel="alternate" hreflang="tr" href={trURL} />}
+{enURL && <link rel="alternate" hreflang="en" href={enURL} />}
+{arURL && <link rel="alternate" hreflang="ar" href={arURL} />}
+<link rel="alternate" hreflang="x-default" href={xDefaultURL} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
