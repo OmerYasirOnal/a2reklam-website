@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 import { loadImagesManifest } from '../../../utils/imagesManifest';
 import { buildImageAlt } from '../../../utils/imageSeo';
-import { WHATSAPP_LINK } from '../../../consts';
+import { PHONE_NUMBER, PHONE_TEL, WHATSAPP_LINK } from '../../../consts';
 
 export async function getStaticPaths() {
   const services = await getCollection('services_en');
@@ -24,6 +24,9 @@ export async function getStaticPaths() {
 
 const { entry, images } = Astro.props;
 const { Content } = await entry.render();
+const relatedPosts = (await getCollection('blog_en'))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
 
 const title = `${entry.data.title} - A2 Advertising`;
 const breadcrumbs = [
@@ -32,11 +35,31 @@ const breadcrumbs = [
   { name: entry.data.title, item: `/en/services/${entry.slug}/` },
 ];
 
-const quickAnswer = `${entry.data.title} covers discovery, design, production, and on-site installation through a single team. We provide measurement and application support across Istanbul.`;
+const quickAnswer = `${entry.data.title} is delivered by a single team from discovery and design approval to production and safe on-site installation. We analyze corporate signage needs across Istanbul, define the right materials and application details, and focus on durable, brand-aligned results that improve visibility and wayfinding.`;
 const quickFacts = [
   { label: 'Scope', value: 'Discovery, design, production, installation.' },
   { label: 'Use Cases', value: 'Indoor and outdoor projects.' },
   { label: 'Lead Time', value: 'Planned after measurements and materials are confirmed.' },
+];
+const useCases = [
+  'Retail chains and branded branches',
+  'Hotels, hospitals, and healthcare facilities',
+  'Factories, production sites, and warehouses',
+  'Plazas, offices, and showrooms',
+  'Education and public buildings',
+];
+const materials = [
+  'Stainless steel, aluminum, and composite panels',
+  'Acrylic and plexi surfaces',
+  'LED lighting and electrical infrastructure',
+  'Vinyl, foil, and UV print applications',
+  'Glass, wood, and custom finishes',
+];
+const processSteps = [
+  'Discovery and needs analysis',
+  'Design and technical approval',
+  'Production and quality control',
+  'Installation and delivery',
 ];
 const pricingFactors = [
   'Dimensions and installation height',
@@ -45,6 +68,7 @@ const pricingFactors = [
   'Quantity and installation location',
   'Custom production and expedited delivery needs',
 ];
+const warrantyNote = 'We provide project-specific warranty and maintenance plans based on materials, usage conditions, and installation details.';
 const faq = [
   {
     question: `How long does ${entry.data.title} production take?`,
@@ -55,9 +79,25 @@ const faq = [
     answer: 'Yes. Our in-house team provides safe installation across Istanbul.',
   },
   {
-    question: 'Do you offer warranty and maintenance?',
-    answer: 'We provide project-specific warranty and maintenance options for materials and workmanship.',
+    question: 'How does design approval work for corporate projects?',
+    answer: 'We prepare options aligned with brand guidelines and present technical drawings and placement details for approval.',
   },
+  {
+    question: 'Do you offer warranty and maintenance?',
+    answer: 'We provide project-specific warranty and maintenance options based on materials and workmanship.',
+  },
+  {
+    question: 'Which details are needed during discovery?',
+    answer: 'Location, measurements, intended use, lighting needs, and brand requirements are confirmed during discovery.',
+  },
+];
+const topDistricts = [
+  { label: 'Kağıthane', href: '/en/service-areas/kagithane-tabela/' },
+  { label: 'Şişli', href: '/en/service-areas/sisli-tabela/' },
+  { label: 'Beşiktaş', href: '/en/service-areas/besiktas-tabela/' },
+  { label: 'Kadıköy', href: '/en/service-areas/kadikoy-tabela/' },
+  { label: 'Başakşehir', href: '/en/service-areas/basaksehir-tabela/' },
+  { label: 'Ümraniye', href: '/en/service-areas/umraniye-tabela/' },
 ];
 ---
 
@@ -130,6 +170,56 @@ const faq = [
       <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Corporate Use Cases
+        </h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
+          {useCases.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full mt-2"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Materials & Options
+        </h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
+          {materials.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full mt-2"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Process
+        </h3>
+        <ol class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm list-decimal list-inside">
+          {processSteps.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Warranty & Maintenance
+        </h3>
+        <p class="text-gray-300 text-sm">{warrantyNote}</p>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Pricing Factors
         </h3>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
@@ -154,6 +244,56 @@ const faq = [
               <p class="text-gray-400 text-sm mt-2">{item.answer}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Top Service Areas in Istanbul
+        </h3>
+        <div class="flex flex-wrap gap-3">
+          {topDistricts.map((district) => (
+            <a href={district.href} class="px-4 py-2 rounded-full border border-white/10 text-sm text-gray-300 hover:border-primary/60 hover:text-white transition-colors">
+              {district.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Related Blog Posts
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {relatedPosts.map((post) => (
+            <a href={`/en/blog/${post.slug}/`} class="block bg-secondary/60 border border-white/5 rounded-lg p-4 text-gray-300 hover:text-white hover:border-primary/50 transition-colors">
+              <div class="text-sm font-semibold">{post.data.title}</div>
+              <div class="text-xs text-gray-500 mt-2">{post.data.description}</div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
+          <span class="w-1 h-8 bg-primary block rounded-full"></span>
+          Quick Quote & Discovery
+        </h3>
+        <p class="text-gray-300 text-sm mb-6">
+          Contact our team for a fast quote or to plan an on-site discovery across Istanbul.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/en/get-quote/" class="bg-primary text-secondary font-bold py-3 px-6 rounded-lg hover:bg-white transition-all">
+            Get a Quote
+          </a>
+          <a href={`tel:${PHONE_TEL}`} class="border border-white/20 text-white font-bold py-3 px-6 rounded-lg hover:border-white transition-all">
+            Call: {PHONE_NUMBER}
+          </a>
+          <a href={WHATSAPP_LINK} class="bg-green-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-500 transition-all">
+            WhatsApp
+          </a>
         </div>
       </div>
 

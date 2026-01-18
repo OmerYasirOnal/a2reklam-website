@@ -32,6 +32,9 @@ export async function getStaticPaths() {
 
 const { entry, neighbors } = Astro.props;
 const { Content } = await entry.render();
+const relatedPosts = (await getCollection('blog_en'))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
 
 const title = `${entry.data.title} | A2 Advertising`;
 const breadcrumbs = [
@@ -70,6 +73,13 @@ const pricingFactors = [
   'Quantity, location, and access conditions',
   'Urgency and project scope',
 ];
+const corporateSolutions = [
+  'Facade signage and exterior branding',
+  'Illuminated channel letters and stainless letters',
+  'Totem signs and wayfinding systems',
+  'Reception desk and interior branding',
+  'Vehicle wraps and storefront solutions',
+];
 const faq = [
   {
     question: `Is discovery free in ${entry.data.districtName}?`,
@@ -80,8 +90,16 @@ const faq = [
     answer: 'After production, our field team schedules and completes the on-site installation.',
   },
   {
+    question: 'How do you plan corporate signage projects?',
+    answer: 'We define the scope after discovery and manage design, production, and installation as a single plan.',
+  },
+  {
     question: 'Can you handle urgent projects?',
     answer: 'Depending on scope and materials, we can create an accelerated production plan.',
+  },
+  {
+    question: 'Do you provide warranty and maintenance?',
+    answer: 'We offer project-specific warranty and maintenance options based on materials and use conditions.',
   },
 ];
 
@@ -146,6 +164,18 @@ const topServices = [
       </div>
 
       <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white">Corporate Solutions</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
+          {corporateSolutions.map((item) => (
+            <li class="flex items-start gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full mt-2"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white">Pricing Factors</h3>
         <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-300 text-sm">
           {pricingFactors.map((item) => (
@@ -184,12 +214,24 @@ const topServices = [
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>
       </div>
+
+      <div class="mt-12 bg-accent-light p-8 rounded-2xl border border-white/5 not-prose">
+        <h3 class="font-heading font-bold text-2xl mb-4 text-white">Related Blog Posts</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {relatedPosts.map((post) => (
+            <a href={`/en/blog/${post.slug}/`} class="block bg-secondary/60 border border-white/5 rounded-lg p-4 text-gray-300 hover:text-white hover:border-primary/50 transition-colors">
+              <div class="text-sm font-semibold">{post.data.title}</div>
+              <div class="text-xs text-gray-500 mt-2">{post.data.description}</div>
+            </a>
+          ))}
+        </div>
+      </div>
       
       <div class="mt-12 p-8 rounded-2xl bg-accent-light border border-white/5 relative overflow-hidden group">
         <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-primary/20 transition-colors"></div>
         <h3 class="font-heading font-bold text-2xl mb-4 text-white relative z-10 text-balance">Get a Free Discovery in {entry.data.districtName}</h3>
         <p class="text-gray-400 mb-6 relative z-10">
-          Our expert team provides free discovery services in and around {entry.data.districtName}. Let's determine the signage model that best represents your brand by on-site inspection.
+          Our expert team provides free discovery services in and around {entry.data.districtName}. Let's determine the signage model that best represents your brand by on-site inspection. Sharing your location via Google Maps helps us plan faster.
         </p>
         <div class="flex flex-wrap gap-4 relative z-10">
           <a href="/en/get-quote/" class="bg-primary text-secondary font-bold py-3 px-8 rounded hover:bg-white transition-all transform hover:-translate-y-1">

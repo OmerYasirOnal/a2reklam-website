@@ -22,7 +22,7 @@ Yol kenarları ve geniş açık alanlar için tasarlanan totem tabelalar, markan
 1. **Vinç ile montaj**
 
 ### Garanti Bilgileri
-Rüzgar ve statik dayanım garantisi ile birlikte 2 yıl teknik servis.
+Rüzgar ve statik dayanım gereksinimlerine uygun üretim ve proje bazlı servis desteği sağlıyoruz.
 
 ### Sıkça Sorulan Sorular
 
