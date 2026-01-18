@@ -3,10 +3,10 @@
 <IfModule mod_alias.c>
   Redirect 301 /sitemap_index.xml /sitemap-index.xml
   Redirect 301 /page-sitemap.xml /sitemap-0.xml
-  Redirect 301 /bagcilar-tabela/ /hizmet-bolgeleri/bagcilar-tabela/
-  Redirect 301 /basaksehir-tabela/ /hizmet-bolgeleri/basaksehir-tabela/
+  Redirect 301 /iletisim-tabela/ /iletisim/
   Redirect 301 /hakkinda/ /hakkimizda/
   Redirect 301 /tabela-cesitleri/ /hizmetler/
+  RedirectMatch 301 ^/([a-z0-9-]+-tabela)/?$ /hizmet-bolgeleri/$1/
 </IfModule>
 
 <IfModule mod_rewrite.c>
