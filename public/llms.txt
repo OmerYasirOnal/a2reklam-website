@@ -1,19 +1,28 @@
-# A2 Reklam
+# A2 Reklam - Tabela ve Reklam Sistemleri
 Site: https://a2reklam.com
-Summary: Istanbul-based signage and advertising manufacturer offering discovery, design, production, and installation.
+Summary: Istanbul-based B2B signage manufacturer offering discovery, design, production, and installation.
 
 Primary services:
 - /hizmetler/
 - /en/services/
+- /ar/services/
 
-Service areas:
+Service areas (Istanbul):
 - /hizmet-bolgeleri/
 - /en/service-areas/
 
-Portfolio:
-- /referanslar/
-- /en/portfolio/
-
-Contact:
+Lead & contact:
+- /teklif-al/
+- /en/get-quote/
+- /ar/get-quote/
 - /iletisim/
 - /en/contact/
+- /ar/contact/
+
+About:
+- /hakkimizda/
+- /en/about/
+
+Blog:
+- /blog/
+- /en/blog/
