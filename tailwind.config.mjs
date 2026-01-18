@@ -25,6 +25,7 @@ export default {
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
                 heading: ['Montserrat', 'sans-serif'],
+                arabic: ['Cairo', 'sans-serif'],
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

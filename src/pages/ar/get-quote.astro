@@ -1,0 +1,123 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { EMAIL, PHONE_NUMBER, PHONE_TEL, WHATSAPP_LINK } from '../../consts';
+
+const title = "احصل على عرض سعر | A2 Reklam";
+const description = "اطلب معاينة وتسعيرًا لمشروعك في إسطنبول عبر تعبئة النموذج، وسنعود إليك بسرعة.";
+const formEndpoint = import.meta.env.PUBLIC_FORM_ENDPOINT ?? '';
+const hasEndpoint = Boolean(formEndpoint);
+const formAction = hasEndpoint ? formEndpoint : `mailto:${EMAIL}`;
+const redirectUrl = Astro.site ? new URL('/ar/thank-you/', Astro.site).toString() : '/ar/thank-you/';
+---
+
+<Layout title={title} description={description} lang="ar">
+  <div class="relative py-24 bg-secondary overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center mb-16">
+        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+          احصل على <span class="text-primary">عرض سعر</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg text-balance">
+          شارك تفاصيل مشروعك وسنقدّم لك دراسة تكلفة وخطة تنفيذ مناسبة لعلامتك.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto bg-accent-light p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl relative">
+        <div class="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
+
+        {!hasEndpoint && (
+          <div class="mb-8 border border-primary/30 bg-secondary/70 rounded-2xl p-5 text-sm text-gray-300">
+            لم يتم إعداد نموذج الإرسال بعد. يمكنك التواصل عبر <a href={`mailto:${EMAIL}`} class="text-primary hover:underline">البريد الإلكتروني</a> أو <a href={WHATSAPP_LINK} data-track="lead-click" data-lead-type="whatsapp" data-lang="ar" class="text-primary hover:underline">واتساب</a> للحصول على رد سريع.
+            <div class="mt-3 flex flex-wrap gap-3">
+              <a href={`tel:${PHONE_TEL}`} data-track="lead-click" data-lead-type="call" data-lang="ar" class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">اتصل: {PHONE_NUMBER}</a>
+              <a href={`mailto:${EMAIL}`} class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">البريد</a>
+              <a href={WHATSAPP_LINK} data-track="lead-click" data-lead-type="whatsapp" data-lang="ar" class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">واتساب</a>
+            </div>
+          </div>
+        )}
+        
+        <form class="space-y-8 relative z-10" data-track="lead-submit" data-lead-type="quote" data-lang="ar" action={formAction} method="POST" enctype={hasEndpoint ? 'application/x-www-form-urlencoded' : 'text/plain'}>
+          {hasEndpoint && <input type="hidden" name="_redirect" value={redirectUrl} />}
+          {hasEndpoint && <input type="hidden" name="_subject" value="طلب عرض سعر جديد" />}
+
+          <div class="space-y-6">
+            <h2 class="text-white font-bold text-xl flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-primary text-secondary flex items-center justify-center text-sm">1</span>
+              معلومات التواصل
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="full-name" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">الاسم الكامل</label>
+                <input id="full-name" name="fullName" type="text" autocomplete="name" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="الاسم الكامل" required />
+              </div>
+              <div>
+                <label for="phone" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">الهاتف</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="رقم الهاتف" required />
+              </div>
+            </div>
+            <div>
+              <label for="email" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">البريد الإلكتروني</label>
+              <input id="email" name="email" type="email" autocomplete="email" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="name@example.com" required />
+            </div>
+          </div>
+
+          <div class="space-y-6">
+            <h2 class="text-white font-bold text-xl flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-primary text-secondary flex items-center justify-center text-sm">2</span>
+              تفاصيل المشروع
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="service" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">نوع الخدمة</label>
+                <select id="service" name="serviceType" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" required>
+                  <option value="">اختر الخدمة</option>
+                  <option>لوحات مضيئة</option>
+                  <option>حروف بارزة</option>
+                  <option>حروف ستانلس / لوحات</option>
+                  <option>لوحات توتم</option>
+                  <option>تغليف مركبات</option>
+                  <option>واجهات / كومبوزيت</option>
+                  <option>أخرى</option>
+                </select>
+              </div>
+              <div>
+                <label for="dimensions" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">الأبعاد التقريبية</label>
+                <input id="dimensions" name="dimensions" type="text" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="مثال: 200x50 سم" />
+              </div>
+            </div>
+            <div>
+              <label for="details" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">تفاصيل إضافية</label>
+              <textarea id="details" name="details" rows="4" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" placeholder="تفاصيل إضافية حول المشروع (الألوان، الإضاءة، إلخ)" required></textarea>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <button type="submit" class="w-full bg-primary text-secondary font-black py-5 rounded-xl hover:bg-white transition-all transform hover:-translate-y-1 shadow-xl shadow-primary/20 uppercase tracking-widest text-lg">
+              إرسال الطلب
+            </button>
+            <p class="text-center text-gray-500 text-xs mt-6 px-10 leading-relaxed">
+              بإرسال النموذج، توافق على مشاركة بياناتك معنا للتواصل بخصوص المشروع.
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div class="space-y-2">
+          <div class="text-primary font-black text-3xl">مجاني</div>
+          <p class="text-gray-400 text-sm">معاينة وتصميم</p>
+        </div>
+        <div class="space-y-2">
+          <div class="text-primary font-black text-3xl">سريع</div>
+          <p class="text-gray-400 text-sm">عملية الإنتاج</p>
+        </div>
+        <div class="space-y-2">
+          <div class="text-primary font-black text-3xl">موثوق</div>
+          <p class="text-gray-400 text-sm">تنفيذ محترف</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
