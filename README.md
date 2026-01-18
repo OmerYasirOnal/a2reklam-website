@@ -41,6 +41,15 @@ npm run build
 ```
 Output is written to `dist/`.
 
+## Lead Forms (Static Hosting)
+
+Set `PUBLIC_FORM_ENDPOINT` to your form provider endpoint (Formspree/Getform/etc.). Example:
+```bash
+PUBLIC_FORM_ENDPOINT="https://formspree.io/f/your-id"
+```
+
+If not set, the forms fall back to mailto and WhatsApp links. Successful submissions redirect to `/teşekkürler/` and `/en/thank-you/`.
+
 ## Deployment (cPanel)
 
 1. Run `npm run build`.
