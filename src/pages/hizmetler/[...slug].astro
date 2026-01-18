@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { loadImagesManifest } from '../../utils/imagesManifest';
+import { buildImageAlt } from '../../utils/imageSeo';
 import { WHATSAPP_LINK } from '../../consts';
 
 export async function getStaticPaths() {
@@ -165,7 +166,7 @@ const faq = [
               <img 
                 src={img.paths['480']} 
                 data-full={img.paths['1600']}
-                alt={img.alt_tr} 
+                alt={buildImageAlt({ category: entry.slug, lang: 'tr' })} 
                 class="gallery-img w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                 loading="lazy" 
               />
