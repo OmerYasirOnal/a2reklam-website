@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { PHONE_TEL } from '../../consts';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -14,9 +15,21 @@ const post = Astro.props;
 const { Content } = await post.render();
 
 const title = `${post.data.title} | A2 Reklam Blog`;
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Blog', item: '/blog/' },
+  { name: post.data.title, item: `/blog/${post.slug}/` },
+];
 ---
 
-<Layout title={title} description={post.data.description} lang="tr" image={post.data.heroImage}>
+<Layout
+  title={title}
+  description={post.data.description}
+  lang="tr"
+  image={post.data.heroImage}
+  article={true}
+  breadcrumbs={breadcrumbs}
+>
   <div class="relative py-24 bg-secondary overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     
@@ -74,7 +87,7 @@ const title = `${post.data.title} | A2 Reklam Blog`;
             <a href="/teklif-al/" class="bg-primary text-secondary font-black py-4 px-10 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 uppercase tracking-widest text-sm">
               TEKLİF AL
             </a>
-            <a href="tel:+905555555555" class="border border-white/20 hover:border-white text-white font-bold py-4 px-10 rounded-lg transition-all text-sm uppercase tracking-widest">
+            <a href={`tel:${PHONE_TEL}`} class="border border-white/20 hover:border-white text-white font-bold py-4 px-10 rounded-lg transition-all text-sm uppercase tracking-widest">
               BİZİ ARAYIN
             </a>
           </div>
