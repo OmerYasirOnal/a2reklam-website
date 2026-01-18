@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Preferred-URLs: trailing-slash
+Sitemap: https://a2reklam.com/sitemap-index.xml
