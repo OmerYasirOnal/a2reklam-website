@@ -1,6 +1,7 @@
 ---
 import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt, getCategoryLabel } from '../../utils/imageSeo';
+import { getServiceLabel } from '../../config/serviceLabels';
 
 interface Props {
   lang?: string;
@@ -53,88 +54,12 @@ const linkBase = lang === 'ar' ? '/ar/services/' : lang === 'en' ? '/en/services
 const subtitleClass = lang === 'ar' ? 'border-r-2 pr-4 text-right' : 'border-l-2 pl-4';
 const priorityOrder = ['cati-tabelasi', 'cephe-tabela', 'isikli-isiksiz-tabelalar'];
 
-const displayLabels: Record<string, { tr: string; en: string; ar: string }> = {
-  'cati-tabelasi': {
-    tr: 'ÇATI TABELASI',
-    en: 'ROOFTOP SIGNAGE',
-    ar: 'لافتات السطح',
-  },
-  'cephe-tabela': {
-    tr: 'KURUMSAL CEPHE TABELASI',
-    en: 'CORPORATE FACADE SIGNAGE',
-    ar: 'لافتات واجهة الشركات',
-  },
-  'isikli-isiksiz-tabelalar': {
-    tr: 'NEON LED TABELA',
-    en: 'NEON & LED SIGNAGE',
-    ar: 'لافتات نيون و LED',
-  },
-  'arac-giydirme': {
-    tr: 'ARAÇ GİYDİRME',
-    en: 'VEHICLE WRAPPING',
-    ar: 'تغليف المركبات',
-  },
-  'ayakli-a-pano': {
-    tr: 'AYAKLI A PANO',
-    en: 'A-FRAME SIGNAGE',
-    ar: 'لوحات A متنقلة',
-  },
-  'banko-uygulamalari': {
-    tr: 'BANKO UYGULAMALARI',
-    en: 'RECEPTION DESK BRANDING',
-    ar: 'تطبيقات الكاونتر',
-  },
-  'fener-tabela': {
-    tr: 'FENER TABELA',
-    en: 'BLADE SIGN',
-    ar: 'لوحات جانبية معلقة',
-  },
-  harmanlama: {
-    tr: 'HARMANLAMA',
-    en: 'HARMANLAMA',
-    ar: 'هارمنلاما',
-  },
-  'kabartma-pleksiglass': {
-    tr: 'KABARTMA PLEKSİGLASS',
-    en: 'RAISED ACRYLIC LETTERING',
-    ar: 'حروف أكريليك بارزة',
-  },
-  'kapi-isimlik': {
-    tr: 'KAPI İSİMLİK',
-    en: 'DOOR NAMEPLATES',
-    ar: 'لوحات أسماء الأبواب',
-  },
-  'ofis-kumlama-folyolari': {
-    tr: 'OFİS KUMLAMA FOLYOLARI',
-    en: 'OFFICE FROSTED FILMS',
-    ar: 'أفلام تعتيم للمكاتب',
-  },
-  'ozel-imalatlar': {
-    tr: 'ÖZEL İMALATLAR',
-    en: 'CUSTOM MANUFACTURING',
-    ar: 'تصنيع مخصص',
-  },
-  'paslanmaz-harfler': {
-    tr: 'PASLANMAZ HARFLER',
-    en: 'STAINLESS STEEL LETTERS',
-    ar: 'حروف ستانلس ستيل',
-  },
-  totem: {
-    tr: 'TOTEM TABELA',
-    en: 'TOTEM SIGNAGE',
-    ar: 'لوحات توتم',
-  },
-  yonlendirme: {
-    tr: 'YÖNLENDİRME',
-    en: 'WAYFINDING SIGNAGE',
-    ar: 'لوحات إرشادية',
-  },
-};
-
 const getDisplayLabel = (category: string) => {
-  const entry = displayLabels[category];
-  if (!entry) return getCategoryLabel(category, altLang);
-  return entry[altLang];
+  const mapped = getServiceLabel(category, altLang as 'tr' | 'en' | 'ar');
+  if (mapped) {
+    return mapped.toUpperCase();
+  }
+  return getCategoryLabel(category, altLang).toUpperCase();
 };
 
 categories = categories.sort((a: any, b: any) => {
