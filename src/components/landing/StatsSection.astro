@@ -1,5 +1,5 @@
 ---
-import { STATS_CONFIG, CLIENT_LOGOS } from '../../consts';
+import { STATS_CONFIG } from '../../consts';
 
 interface Props {
   lang?: 'tr' | 'en' | 'ar';
@@ -15,21 +15,18 @@ const translations = {
     endToEnd: { label: 'Uçtan Uca', sublabel: 'Keşiften Montaja' },
     istanbul: { label: 'İstanbul', sublabel: 'Şehir Geneli Hizmet' },
     quality: { label: 'Kalite', sublabel: 'Malzeme ve İşçilik' },
-    trustedBy: 'Güvenilir Markalar',
   },
   en: {
     corporate: { label: 'Corporate', sublabel: 'B2B Signage Focus' },
     endToEnd: { label: 'End-to-End', sublabel: 'Discovery to Install' },
     istanbul: { label: 'Istanbul', sublabel: 'Citywide Coverage' },
     quality: { label: 'Quality', sublabel: 'Materials & Craft' },
-    trustedBy: 'Trusted By',
   },
   ar: {
     corporate: { label: 'حلول مؤسسية', sublabel: 'مشاريع B2B احترافية' },
     endToEnd: { label: 'تنفيذ متكامل', sublabel: 'من المعاينة إلى التركيب' },
     istanbul: { label: 'إسطنبول', sublabel: 'تغطية شاملة للمدينة' },
     quality: { label: 'جودة التصنيع', sublabel: 'مواد وتقنيات موثوقة' },
-    trustedBy: 'عملاؤنا',
   },
 };
 
@@ -60,7 +57,7 @@ const getGridClass = (count: number) => {
     <div class="container mx-auto px-4 text-center relative z-10">
       <div class:list={['grid gap-8', getGridClass(enabledStats.length)]}>
         {enabledStats.map((stat) => (
-          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
+          <div class="glass-card group p-6">
             <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
               {stat.label}
             </span>
@@ -70,30 +67,6 @@ const getGridClass = (count: number) => {
           </div>
         ))}
       </div>
-
-      {CLIENT_LOGOS && CLIENT_LOGOS.length > 0 && (
-        <div class="mt-12 pt-8 border-t border-white/5">
-          <p class="text-gray-500 text-xs uppercase tracking-widest mb-6">
-            {t.trustedBy}
-          </p>
-          <div class:list={['flex flex-wrap justify-center gap-8 items-center opacity-60', isRtl && 'flex-row-reverse']}>
-            {CLIENT_LOGOS.map((client) => (
-              client.url ? (
-                <img
-                  src={client.url}
-                  alt={client.name}
-                  class="h-8 grayscale hover:grayscale-0 transition-all"
-                  loading="lazy"
-                />
-              ) : (
-                <span class="text-gray-400 font-heading font-bold text-sm uppercase tracking-wider px-4 py-2 border border-white/10 rounded-lg">
-                  {client.name}
-                </span>
-              )
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   </section>
 )}
