@@ -2,7 +2,7 @@
 title: "Esenyurt Signage and Advertising Services"
 description: "Professional signage manufacturing, installation, and advertising solutions in Esenyurt, Istanbul. High-quality sign models with A2 Advertising."
 districtName: "Esenyurt"
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 ---
 
 ## Signage and Advertising Solutions in Esenyurt

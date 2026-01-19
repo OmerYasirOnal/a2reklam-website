@@ -2,7 +2,7 @@
 title: "Bahçelievler Tabela ve Reklam Hizmetleri"
 description: "İstanbul Bahçelievler bölgesinde profesyonel tabela imalatı, montajı ve reklam çözümleri. A2 Reklam ile en kaliteli tabela modelleri."
 districtName: "Bahçelievler"
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 ---
 
 ## Bahçelievler Tabela ve Reklam Çözümleri

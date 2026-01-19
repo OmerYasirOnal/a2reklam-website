@@ -2,7 +2,7 @@
 title: "Beykoz Tabela ve Reklam Hizmetleri"
 description: "İstanbul Beykoz bölgesinde profesyonel tabela imalatı, montajı ve reklam çözümleri. A2 Reklam ile en kaliteli tabela modelleri."
 districtName: "Beykoz"
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 ---
 
 ## Beykoz Tabela ve Reklam Çözümleri

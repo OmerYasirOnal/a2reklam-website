@@ -1,7 +1,7 @@
 ---
 title: "Totem and Pylon Sign Manufacturing"
 description: "Durable and eye-catching giant advertising units that allow you to be noticed from a distance."
-heroImage: "/assets/img/totem/a2reklam-totem-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-totem-001-1600.webp"
 features: ["Soil analysis and foundation pouring","Static calculation","Workshop production","Installation with crane"]
 ---
 

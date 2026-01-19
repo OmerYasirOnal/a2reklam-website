@@ -3,7 +3,7 @@ title: "The Importance of Quality in Digital Printing"
 description: "What you wonder about The Importance of Quality in Digital Printing and professional suggestions."
 pubDate: "2024-01-18"
 tags: ["Info","Guide","Signage"]
-heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
+heroImage: "/assets/img/demo/a2reklam-totem-001-960.webp"
 ---
 
 ## The Importance of Quality in Digital Printing

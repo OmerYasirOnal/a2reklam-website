@@ -1,7 +1,7 @@
 ---
 title: "FENER TABELA Çözümleri"
 description: "A2 Reklam olarak en kaliteli FENER TABELA modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
-heroImage: "/assets/img/fener-tabela/a2reklam-fener-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-fener-tabela-001-1600.webp"
 features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 

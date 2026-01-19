@@ -1,7 +1,7 @@
 ---
 title: "HARMANLAMA Çözümleri"
 description: "A2 Reklam olarak en kaliteli HARMANLAMA modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
-heroImage: "/assets/img/harmanlama/a2reklam-harmanlama-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-harmanlama-001-1600.webp"
 features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 

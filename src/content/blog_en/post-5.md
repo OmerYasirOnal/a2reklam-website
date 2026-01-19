@@ -3,7 +3,7 @@ title: "5 Questions to Ask When Choosing a Sign Maker"
 description: "What you wonder about 5 Questions to Ask When Choosing a Sign Maker and professional suggestions."
 pubDate: "2024-01-18"
 tags: ["Info","Guide","Signage"]
-heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
+heroImage: "/assets/img/demo/a2reklam-totem-001-960.webp"
 ---
 
 ## 5 Questions to Ask When Choosing a Sign Maker

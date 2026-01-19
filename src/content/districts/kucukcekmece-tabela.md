@@ -2,7 +2,7 @@
 title: "Küçükçekmece Tabela ve Reklam Hizmetleri"
 description: "İstanbul Küçükçekmece bölgesinde profesyonel tabela imalatı, montajı ve reklam çözümleri. A2 Reklam ile en kaliteli tabela modelleri."
 districtName: "Küçükçekmece"
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 ---
 
 ## Küçükçekmece Tabela ve Reklam Çözümleri
