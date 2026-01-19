@@ -1,0 +1,71 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = 'tr' } = Astro.props;
+
+// Client references - using text fallback since no logo files available yet
+// When logo files are added to public/assets/references/, update the logo paths
+const clients = [
+  { name: 'Kağıthane Belediyesi', logo: null },
+  { name: 'Pendik Plaza', logo: null },
+  { name: 'Kartal AVM', logo: null },
+  { name: 'Beşiktaş Market', logo: null },
+  { name: 'Fatih Ticaret', logo: null },
+  { name: 'Şişli Center', logo: null },
+  { name: 'Ataşehir Tower', logo: null },
+  { name: 'Kadıköy Office', logo: null },
+];
+
+const headings: Record<string, string> = {
+  tr: 'Güvendikleri Markalar',
+  en: 'Trusted By',
+  ar: 'موثوق به من قبل',
+};
+
+const subheadings: Record<string, string> = {
+  tr: 'İstanbul\'un önde gelen işletmeleri bizi tercih ediyor',
+  en: 'Leading businesses in Istanbul choose us',
+  ar: 'الشركات الرائدة في إسطنبول تختارنا',
+};
+
+const isRtl = lang === 'ar';
+---
+
+<section class="py-16 bg-secondary/50 border-y border-white/5">
+  <div class="container mx-auto px-4">
+    <div class:list={['text-center mb-12', isRtl && 'rtl']}>
+      <p class="text-sm uppercase tracking-widest text-primary/80 font-semibold mb-2">
+        {headings[lang] || headings.tr}
+      </p>
+      <p class="text-gray-500 text-sm">
+        {subheadings[lang] || subheadings.tr}
+      </p>
+    </div>
+
+    <div class:list={['flex flex-wrap justify-center items-center gap-6 md:gap-10', isRtl && 'flex-row-reverse']}>
+      {clients.map(client => (
+        client.logo ? (
+          <div class="group">
+            <img
+              src={client.logo}
+              alt={`${client.name} logo — A2 Reklam referansı`}
+              width="120"
+              height="48"
+              class="h-10 md:h-12 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        ) : (
+          <div class="group px-4 py-2">
+            <span class="text-gray-500/60 group-hover:text-gray-300 font-medium text-sm md:text-base transition-colors duration-300 whitespace-nowrap">
+              {client.name}
+            </span>
+          </div>
+        )
+      ))}
+    </div>
+  </div>
+</section>

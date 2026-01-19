@@ -1,13 +1,13 @@
 ---
-title: "ÇATI TABELASI Çözümleri"
-description: "A2 Reklam olarak en kaliteli ÇATI TABELASI modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
-heroImage: "/assets/img/demo/a2reklam-cati-tabelasi-001-1600.webp"
+title: "Çatı Tabelası İmalatı İstanbul | A2 Reklam"
+description: "İstanbul'da profesyonel çatı tabelası imalatı ve montajı. LED aydınlatmalı, paslanmaz harfli çatı tabelaları. Ücretsiz keşif, 2 yıl garanti."
+heroImage: "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-001-1600.webp"
 features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 
-## ÇATI TABELASI Çözümleri
+## Çatı Tabelası Çözümleri
 
-ÇATI TABELASI hizmetimizle markanızın görünürlüğünü arttırıyoruz. Profesyonel ekipman ve kaliteli malzeme ile hizmet veriyoruz.
+Çatı tabelası hizmetimizle markanızın görünürlüğünü arttırıyoruz. Profesyonel ekipman ve kaliteli malzeme ile hizmet veriyoruz.
 
 ### Kullanılan Malzemeler
 * Pleksi, Paslanmaz, LED, Kompozit gibi projenize uygun malzemeler.

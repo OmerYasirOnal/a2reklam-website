@@ -17,7 +17,11 @@ import {
   SOCIAL_LINKEDIN_URL,
 } from '../consts';
 
-const GEO = null; // Add coordinates when available (e.g., { "@type": "GeoCoordinates", "latitude": 41.0, "longitude": 28.9 }).
+const GEO = {
+  "@type": "GeoCoordinates",
+  "latitude": 41.0820,
+  "longitude": 28.9719
+};
 
 function pruneEmpty(value: unknown): unknown {
   if (Array.isArray(value)) {

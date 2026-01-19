@@ -40,12 +40,28 @@ export const STATS_CONFIG: Record<string, boolean | null> = {
 // References / Clients Section
 // Set to null to hide the section entirely
 export const REFERENCES: Array<{ name: string; logo?: string; website?: string }> | null = [
-  { name: 'Kurumsal Firma A' },
-  { name: 'Restoran B' },
-  { name: 'Mağaza C' },
-  { name: 'Otel D' },
-  { name: 'Klinik E' },
-  { name: 'Market F' },
+  { name: 'PIDEM' },
+  { name: 'AJANS PRESS' },
+  { name: 'BUGABOO' },
+  { name: 'BAĞCILAR BELEDİYESİ' },
+  { name: 'HD İSKENDER' },
+  { name: 'HENKEL' },
+  { name: 'SUNSTOP' },
+  { name: 'ESSENTIAL ENERGY' },
+  { name: 'MCA CEYLAN ASANSÖR' },
+  { name: 'HARMONY' },
+  { name: 'GÜRSOY 1933' },
+  { name: 'ENERGY FOCUS' },
+  { name: 'İKBAL' },
+  { name: 'GKOÇ YAPI' },
+  { name: 'GÜLLÜOĞLU' },
+  { name: 'MUMUS' },
+  { name: 'KISMET BY MILKA' },
+  { name: 'ELECTROLUX' },
+  { name: 'ÖZTÜRK HOLDING' },
+  { name: 'RENEWABLE ENERGY GROUP' },
+  { name: 'QUA GRANITE' },
+  { name: 'TISSOT' },
 ];
 // When logos are ready, add them:
 // export const REFERENCES = [

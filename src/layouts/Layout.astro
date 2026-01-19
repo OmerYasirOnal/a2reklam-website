@@ -4,8 +4,10 @@ import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
 import SEO from '../components/common/SEO.astro';
 import MobileCTA from '../components/common/MobileCTA.astro';
+import WhatsAppAssistant from '../components/common/WhatsAppAssistant.astro';
 import Tracking from '../components/common/Tracking.astro';
 import TrackingEvents from '../components/common/TrackingEvents.astro';
+import { buildWhatsAppLink, buildWhatsAppMessage, sanitizePageTitle } from '../utils/whatsapp';
 import '../styles/global.css';
 
 interface Props {
@@ -16,6 +18,9 @@ interface Props {
   article?: boolean;
   breadcrumbs?: { name: string; item: string }[];
   faq?: { question: string; answer: string }[];
+  whatsappTitle?: string;
+  whatsappLocation?: string;
+  mobileCtaVariant?: 'default' | 'contact';
 }
 
 const {
@@ -26,9 +31,27 @@ const {
   article = false,
   breadcrumbs,
   faq,
+  whatsappTitle,
+  whatsappLocation,
+  mobileCtaVariant = 'default',
 } = Astro.props;
 
 const isRtl = lang === 'ar';
+const sanitizedTitle = sanitizePageTitle(whatsappTitle ?? title);
+const whatsappMessage = buildWhatsAppMessage({
+  lang: lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'tr',
+  pageTitle: sanitizedTitle,
+  location: whatsappLocation ?? null,
+});
+const whatsappLink = buildWhatsAppLink(whatsappMessage);
+const quoteLink =
+  mobileCtaVariant === 'contact'
+    ? '#contact-form'
+    : lang === 'ar'
+      ? '/ar/get-quote/'
+      : lang === 'en'
+        ? '/en/get-quote/'
+        : '/teklif-al/';
 ---
 
 <!doctype html>
@@ -67,7 +90,8 @@ const isRtl = lang === 'ar';
 		  <slot />
     </main>
     <Footer lang={lang} />
-    <MobileCTA lang={lang} />
+    <MobileCTA lang={lang} variant={mobileCtaVariant} whatsappLink={whatsappLink} quoteLink={quoteLink} />
+    <WhatsAppAssistant lang={lang} pageTitle={sanitizedTitle} location={whatsappLocation} />
     <TrackingEvents />
 	</body>
 </html>
