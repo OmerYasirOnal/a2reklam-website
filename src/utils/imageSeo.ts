@@ -7,7 +7,6 @@ const CATEGORY_LABELS: Record<string, { tr: string; en: string; ar: string }> = 
   'cephe-tabela': { tr: 'cephe tabela', en: 'facade signage', ar: 'لوحات واجهة' },
   'cati-tabelasi': { tr: 'çatı tabelası', en: 'rooftop signage', ar: 'لوحات السطح' },
   'fener-tabela': { tr: 'fener tabela', en: 'blade sign', ar: 'لوحة جانبية معلقة' },
-  harmanlama: { tr: 'harmanlama', en: 'Harmanlama', ar: 'هارمنلاما' },
   'isikli-isiksiz-tabelalar': { tr: 'ışıklı ve ışıksız tabelalar', en: 'illuminated and non-illuminated signage', ar: 'لوحات مضيئة وغير مضيئة' },
   'kabartma-pleksiglass': { tr: 'kabartma pleksiglass', en: 'raised acrylic lettering', ar: 'حروف أكريليك بارزة' },
   'kapi-isimlik': { tr: 'kapı isimlik', en: 'door nameplates', ar: 'لوحات أسماء الأبواب' },

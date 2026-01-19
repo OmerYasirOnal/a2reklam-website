@@ -78,19 +78,6 @@
     "alt_en": "A2 Advertising Blade Signs - Example 1"
   },
   {
-    "id": "demo-harmanlama-001",
-    "category": "harmanlama",
-    "category_tr": "HARMANLAMA",
-    "category_en": "Harmanlama",
-    "paths": {
-      "480": "/assets/img/demo/a2reklam-harmanlama-001-480.webp",
-      "960": "/assets/img/demo/a2reklam-harmanlama-001-960.webp",
-      "1600": "/assets/img/demo/a2reklam-harmanlama-001-1600.webp"
-    },
-    "alt_tr": "A2 Reklam HARMANLAMA - Örnek 1",
-    "alt_en": "A2 Advertising Harmanlama - Example 1"
-  },
-  {
     "id": "demo-isikli-isiksiz-tabelalar-001",
     "category": "isikli-isiksiz-tabelalar",
     "category_tr": "IŞIKLI  IŞIKSIZ TABELALAR",
