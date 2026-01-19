@@ -18,15 +18,15 @@ const {
   <style>
     :global(:root) {
       /* Tweak these to tune map colors without editing component code */
-      --map-filter-brightness: 0.72;
-      --map-filter-contrast: 1.1;
-      --map-filter-saturate: 0.85;
-      --map-filter-invert: 0.85;
+      --map-filter-brightness: 0.78;
+      --map-filter-contrast: 1.15;
+      --map-filter-saturate: 0.75;
+      --map-filter-invert: 0.88;
       --map-filter-hue: 175deg;
-      --map-hover-brightness: 0.78;
-      --map-hover-saturate: 0.95;
+      --map-hover-brightness: 0.84;
+      --map-hover-saturate: 0.9;
     }
-    .map-dark {
+    .map-dark iframe {
       filter:
         brightness(var(--map-filter-brightness))
         contrast(var(--map-filter-contrast))
@@ -34,7 +34,7 @@ const {
         invert(var(--map-filter-invert))
         hue-rotate(var(--map-filter-hue));
     }
-    .map-dark:hover {
+    .map-dark:hover iframe {
       filter:
         brightness(var(--map-hover-brightness))
         contrast(var(--map-filter-contrast))
