@@ -3,36 +3,12 @@ import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/landing/Hero.astro';
 import ServicesGrid from '../../components/landing/ServicesGrid.astro';
 import ReviewsSection from '../../components/landing/ReviewsSection.astro';
+import StatsSection from '../../components/landing/StatsSection.astro';
 ---
 
 <Layout title="A2 Advertising - Signage & Print Solutions Istanbul" lang="en">
 	<Hero lang="en" />
   <ServicesGrid lang="en" />
-
-  <!-- Reviews Section -->
   <ReviewsSection lang="en" />
-
-  <section class="py-20 bg-secondary border-t border-white/5 relative">
-    <div class="container mx-auto px-4 text-center relative z-10">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">Corporate</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">B2B Signage Focus</span>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">End-to-End</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">Discovery to Install</span>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">Istanbul</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">Citywide Coverage</span>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">Quality</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">Materials & Craft</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <StatsSection lang="en" />
 </Layout>
