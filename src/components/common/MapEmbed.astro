@@ -14,7 +14,30 @@ const {
 } = Astro.props;
 ---
 
-<div class:list={['h-64 md:h-80 w-full rounded-2xl overflow-hidden grayscale invert border border-white/10 opacity-60', className]}>
+<div class:list={['h-64 md:h-80 w-full rounded-2xl overflow-hidden border border-white/10 map-dark shadow-xl', className]}>
+  <style>
+    :global(:root) {
+      /* Tweak these to tune map colors without editing component code */
+      --map-filter-brightness: 0.75;
+      --map-filter-contrast: 1.05;
+      --map-filter-saturate: 0.8;
+      --map-filter-hue: 170deg;
+    }
+    .map-dark {
+      filter:
+        brightness(var(--map-filter-brightness))
+        contrast(var(--map-filter-contrast))
+        saturate(var(--map-filter-saturate))
+        hue-rotate(var(--map-filter-hue));
+    }
+    .map-dark:hover {
+      filter:
+        brightness(calc(var(--map-filter-brightness) + 0.05))
+        contrast(var(--map-filter-contrast))
+        saturate(calc(var(--map-filter-saturate) + 0.1))
+        hue-rotate(var(--map-filter-hue));
+    }
+  </style>
   <iframe
     src={src}
     title={title}

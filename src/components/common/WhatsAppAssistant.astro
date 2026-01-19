@@ -1,0 +1,196 @@
+---
+import { PHONE_TEL } from '../../consts';
+import { buildWhatsAppLink, buildWhatsAppMessage } from '../../utils/whatsapp';
+
+interface Props {
+  lang?: 'tr' | 'en' | 'ar';
+  pageTitle?: string | null;
+  location?: string | null;
+}
+
+const { lang = 'tr', pageTitle = null, location = null } = Astro.props;
+const currentLang = lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'tr';
+const isRtl = lang === 'ar';
+
+const labels = {
+  tr: {
+    closed: 'Teklif al / WhatsApp',
+    title: 'Hızlı Destek',
+    subtitle: 'Projeni anlat, aynı gün dönüş al.',
+    whatsapp: 'WhatsApp\'tan Yaz',
+    call: 'Hemen Ara',
+    quote: 'Fiyat Teklifi',
+    prompts: ['Çatı tabelası fiyatı?', 'Keşif & montaj süresi?', 'Kağıthane için teklif'],
+  },
+  en: {
+    closed: 'Get Quote / WhatsApp',
+    title: 'Quick Support',
+    subtitle: 'Share your project, hear back fast.',
+    whatsapp: 'Text on WhatsApp',
+    call: 'Call Now',
+    quote: 'Get a Quote',
+    prompts: ['Rooftop signage pricing?', 'Discovery & install timeline?', 'Quote for Kagithane'],
+  },
+  ar: {
+    closed: 'عرض سعر / واتساب',
+    title: 'دعم سريع',
+    subtitle: 'شارك تفاصيل مشروعك وسنعاود التواصل سريعًا.',
+    whatsapp: 'تواصل عبر واتساب',
+    call: 'اتصل الآن',
+    quote: 'عرض سعر',
+    prompts: ['سعر لافتة السطح؟', 'مدة المعاينة والتركيب؟', 'عرض سعر لكاغيتهانة'],
+  },
+};
+
+const t = labels[currentLang];
+const baseMessage = buildWhatsAppMessage({
+  lang: currentLang,
+  pageTitle,
+  location,
+});
+const whatsappLink = buildWhatsAppLink(baseMessage);
+const promptLinks = t.prompts.map((prompt) =>
+  buildWhatsAppLink(
+    buildWhatsAppMessage({
+      lang: currentLang,
+      pageTitle,
+      location,
+      prompt,
+    })
+  )
+);
+
+const quoteLink =
+  currentLang === 'ar'
+    ? '/ar/contact/#contact-form'
+    : currentLang === 'en'
+      ? '/en/contact/#contact-form'
+      : '/iletisim/#contact-form';
+---
+
+<div
+  class:list={[
+    'fixed right-4 z-40 bottom-20 md:bottom-6',
+    isRtl && 'right-auto left-4',
+  ]}
+  data-chat-widget
+>
+  <div class:list={['relative flex flex-col gap-3', isRtl ? 'items-start' : 'items-end']}>
+    <button
+      type="button"
+      data-chat-toggle
+      aria-expanded="false"
+      aria-controls="chat-widget-panel"
+      class:list={[
+        'flex items-center gap-3 rounded-full border border-white/10 bg-secondary/80 px-4 py-2 text-white shadow-lg backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-primary/40',
+        isRtl && 'flex-row-reverse',
+      ]}
+    >
+      <span class="flex h-10 w-10 items-center justify-center rounded-full bg-green-600 shadow-md">
+        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.893-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.414 0 6.556-5.332 11.892-11.893 11.892-1.99 0-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.591 5.405 0 9.801-4.398 9.801-9.805 0-5.403-4.395-9.804-9.801-9.804-5.408 0-9.805 4.398-9.805 9.804 0 2.229.615 4.317 1.784 6.149l-1.109 4.041 4.139-1.08zm9.977-6.862c-.32-.16-1.89-.932-2.185-1.041-.297-.108-.512-.16-.726.16-.215.32-.834 1.042-1.023 1.256-.188.214-.377.241-.697.08-.32-.16-1.35-.497-2.57-1.587-.948-.847-1.59-1.893-1.777-2.214-.188-.321-.02-.494.14-.654.144-.143.32-.375.48-.563.16-.188.214-.321.32-.536.108-.214.054-.401-.027-.562-.08-.16-.726-1.751-.995-2.394-.26-.629-.53-.543-.726-.553-.188-.01-.403-.012-.617-.012s-.564.08-.859.401c-.296.321-1.128 1.102-1.128 2.688 0 1.587 1.155 3.118 1.316 3.332.16.214 2.274 3.472 5.508 4.871.77.333 1.37.532 1.839.681.773.245 1.477.211 2.032.128.618-.093 1.891-.773 2.158-1.517.268-.745.268-1.383.189-1.516-.08-.135-.297-.215-.617-.375z"/></svg>
+      </span>
+      <span class="text-sm font-semibold uppercase tracking-wide">{t.closed}</span>
+    </button>
+
+    <div
+      id="chat-widget-panel"
+      data-chat-panel
+      role="dialog"
+      aria-hidden="true"
+      hidden
+      class:list={[
+        'glass-card w-72 p-5 text-left text-white shadow-2xl animate-fade-in-up',
+        isRtl && 'text-right',
+      ]}
+    >
+      <div class="mb-4">
+        <div class="text-lg font-heading font-bold">{t.title}</div>
+        <p class="text-xs text-gray-400">{t.subtitle}</p>
+      </div>
+
+      <div class="space-y-2">
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-track="lead-click"
+          data-lead-type="whatsapp"
+          data-lang={lang}
+          class="flex items-center justify-center gap-2 rounded-lg bg-green-600 py-2 text-sm font-bold text-white hover:bg-green-500 transition-colors"
+        >
+          {t.whatsapp}
+        </a>
+        <a
+          href={`tel:${PHONE_TEL}`}
+          data-track="lead-click"
+          data-lead-type="call"
+          data-lang={lang}
+          class="flex items-center justify-center gap-2 rounded-lg border border-white/10 py-2 text-sm font-semibold text-white hover:border-primary/60 transition-colors"
+        >
+          {t.call}
+        </a>
+        <a
+          href={quoteLink}
+          data-track="lead-click"
+          data-lead-type="quote"
+          data-lang={lang}
+          class="flex items-center justify-center gap-2 rounded-lg bg-primary py-2 text-sm font-black text-secondary hover:bg-white transition-colors"
+        >
+          {t.quote}
+        </a>
+      </div>
+
+      <div class="mt-4">
+        <div class="text-[11px] uppercase tracking-widest text-gray-500 mb-2">{currentLang === 'ar' ? 'طلبات سريعة' : currentLang === 'en' ? 'Quick Prompts' : 'Hızlı Sorular'}</div>
+        <div class:list={['flex flex-wrap gap-2', isRtl && 'justify-end']}>
+          {t.prompts.map((prompt, index) => (
+            <a
+              href={promptLinks[index]}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full border border-white/10 px-3 py-1 text-[11px] text-gray-300 hover:border-primary/60 hover:text-white transition-colors"
+            >
+              {prompt}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const widget = document.querySelector('[data-chat-widget]');
+      if (!widget) return;
+      const toggle = widget.querySelector('[data-chat-toggle]');
+      const panel = widget.querySelector('[data-chat-panel]');
+      if (!toggle || !panel) return;
+
+      let open = false;
+      const setOpen = (next) => {
+        open = next;
+        panel.hidden = !open;
+        panel.setAttribute('aria-hidden', (!open).toString());
+        toggle.setAttribute('aria-expanded', open.toString());
+      };
+
+      toggle.addEventListener('click', () => {
+        setOpen(!open);
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!open) return;
+        if (widget.contains(event.target)) return;
+        setOpen(false);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (!open) return;
+        if (event.key === 'Escape') {
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+    })();
+  </script>
+</div>

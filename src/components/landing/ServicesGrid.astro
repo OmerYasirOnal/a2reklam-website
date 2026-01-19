@@ -12,7 +12,7 @@ let categories = [];
 
 try {
   const manifest = loadImagesManifest();
-  
+
   // Group by category
   const groups: Record<string, any> = {};
   manifest.forEach((item: any) => {
@@ -51,6 +51,100 @@ const t = lang === 'ar' ? text.ar : lang === 'en' ? text.en : text.tr;
 const altLang = lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'tr';
 const linkBase = lang === 'ar' ? '/ar/services/' : lang === 'en' ? '/en/services/' : '/hizmetler/';
 const subtitleClass = lang === 'ar' ? 'border-r-2 pr-4 text-right' : 'border-l-2 pl-4';
+const priorityOrder = ['cati-tabelasi', 'cephe-tabela', 'isikli-isiksiz-tabelalar'];
+
+const displayLabels: Record<string, { tr: string; en: string; ar: string }> = {
+  'cati-tabelasi': {
+    tr: 'ÇATI TABELASI',
+    en: 'ROOFTOP SIGNAGE',
+    ar: 'لافتات السطح',
+  },
+  'cephe-tabela': {
+    tr: 'KURUMSAL CEPHE TABELASI',
+    en: 'CORPORATE FACADE SIGNAGE',
+    ar: 'لافتات واجهة الشركات',
+  },
+  'isikli-isiksiz-tabelalar': {
+    tr: 'NEON LED TABELA',
+    en: 'NEON & LED SIGNAGE',
+    ar: 'لافتات نيون و LED',
+  },
+  'arac-giydirme': {
+    tr: 'ARAÇ GİYDİRME',
+    en: 'VEHICLE WRAPPING',
+    ar: 'تغليف المركبات',
+  },
+  'ayakli-a-pano': {
+    tr: 'AYAKLI A PANO',
+    en: 'A-FRAME SIGNAGE',
+    ar: 'لوحات A متنقلة',
+  },
+  'banko-uygulamalari': {
+    tr: 'BANKO UYGULAMALARI',
+    en: 'RECEPTION DESK BRANDING',
+    ar: 'تطبيقات الكاونتر',
+  },
+  'fener-tabela': {
+    tr: 'FENER TABELA',
+    en: 'BLADE SIGN',
+    ar: 'لوحات جانبية معلقة',
+  },
+  harmanlama: {
+    tr: 'HARMANLAMA',
+    en: 'HARMANLAMA',
+    ar: 'هارمنلاما',
+  },
+  'kabartma-pleksiglass': {
+    tr: 'KABARTMA PLEKSİGLASS',
+    en: 'RAISED ACRYLIC LETTERING',
+    ar: 'حروف أكريليك بارزة',
+  },
+  'kapi-isimlik': {
+    tr: 'KAPI İSİMLİK',
+    en: 'DOOR NAMEPLATES',
+    ar: 'لوحات أسماء الأبواب',
+  },
+  'ofis-kumlama-folyolari': {
+    tr: 'OFİS KUMLAMA FOLYOLARI',
+    en: 'OFFICE FROSTED FILMS',
+    ar: 'أفلام تعتيم للمكاتب',
+  },
+  'ozel-imalatlar': {
+    tr: 'ÖZEL İMALATLAR',
+    en: 'CUSTOM MANUFACTURING',
+    ar: 'تصنيع مخصص',
+  },
+  'paslanmaz-harfler': {
+    tr: 'PASLANMAZ HARFLER',
+    en: 'STAINLESS STEEL LETTERS',
+    ar: 'حروف ستانلس ستيل',
+  },
+  totem: {
+    tr: 'TOTEM TABELA',
+    en: 'TOTEM SIGNAGE',
+    ar: 'لوحات توتم',
+  },
+  yonlendirme: {
+    tr: 'YÖNLENDİRME',
+    en: 'WAYFINDING SIGNAGE',
+    ar: 'لوحات إرشادية',
+  },
+};
+
+const getDisplayLabel = (category: string) => {
+  const entry = displayLabels[category];
+  if (!entry) return getCategoryLabel(category, altLang);
+  return entry[altLang];
+};
+
+categories = categories.sort((a: any, b: any) => {
+  const aIndex = priorityOrder.indexOf(a.category);
+  const bIndex = priorityOrder.indexOf(b.category);
+  if (aIndex !== -1 || bIndex !== -1) {
+    return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
+  }
+  return getDisplayLabel(a.category).localeCompare(getDisplayLabel(b.category), altLang);
+});
 ---
 
 <section class="py-24 bg-secondary text-white relative overflow-hidden">
@@ -70,7 +164,7 @@ const subtitleClass = lang === 'ar' ? 'border-r-2 pr-4 text-right' : 'border-l-2
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {categories.map((cat: any) => (
-        <a href={`${linkBase}${cat.category}/`} class="group relative block bg-accent-light rounded-xl overflow-hidden shadow-2xl hover:shadow-primary/30 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-3 border border-white/5 hover:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary">
+        <a href={`${linkBase}${cat.category}/`} class="group relative block glass-card overflow-hidden hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-3 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary">
           <div class="relative h-72 overflow-hidden">
             <img
               src={cat.paths['960']}
@@ -79,11 +173,11 @@ const subtitleClass = lang === 'ar' ? 'border-r-2 pr-4 text-right' : 'border-l-2
               loading="lazy"
             />
             <!-- Enhanced overlay for better readability -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-black/85 group-hover:via-black/35 transition-all duration-300"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/75 group-hover:via-black/25 transition-all duration-300"></div>
 
             <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 z-10">
               <h3 class="font-heading font-black text-2xl md:text-3xl lg:text-4xl tracking-tight text-white mb-1 line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] group-hover:drop-shadow-[0_4px_12px_rgba(201,162,39,0.5)] transition-all duration-300">
-                {getCategoryLabel(cat.category, altLang)}
+                {getDisplayLabel(cat.category)}
               </h3>
               <p class="text-xs text-primary/80 font-medium uppercase tracking-wider mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {t.categorySubtitle}
