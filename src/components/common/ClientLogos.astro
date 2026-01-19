@@ -29,35 +29,40 @@ const subheadings: Record<string, string> = {
 const isRtl = lang === 'ar';
 ---
 
-<section class="py-20 bg-secondary/50 border-y border-white/5">
+<section class="py-16 md:py-20 bg-secondary/50 border-y border-white/5">
   <div class="container mx-auto px-4">
-    <div class:list={['text-center mb-12', isRtl && 'rtl']}>
-      <p class="text-sm uppercase tracking-widest text-primary/80 font-semibold mb-2">
+    <!-- Header block: centered and constrained -->
+    <div class:list={['text-center mb-12 md:mb-16 max-w-2xl mx-auto', isRtl && 'rtl']}>
+      <h2 class="text-sm uppercase tracking-widest text-primary font-bold mb-3">
         {headings[lang] || headings.tr}
-      </p>
-      <p class="text-gray-400 text-sm">
+      </h2>
+      <p class="text-gray-400 text-base md:text-lg leading-relaxed">
         {subheadings[lang] || subheadings.tr}
       </p>
     </div>
 
-    <div class:list={['grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 place-items-center', isRtl && 'rtl']}>
+    <!-- Logo grid: balanced and responsive -->
+    <div class:list={['grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6 max-w-7xl mx-auto', isRtl && 'rtl']}>
       {clients.map(client => (
-        <div class="glass-card w-full h-full min-h-[88px] flex items-center justify-center p-4 md:p-6 group">
+        <div class="glass-card w-full aspect-[3/2] flex items-center justify-center p-4 md:p-6 group transition-all duration-300 hover:border-primary/20">
           {client.logo ? (
             <img
               src={client.logo}
               alt={`${client.name} logo`}
               width="160"
-              height="64"
-              class="h-10 md:h-12 lg:h-14 w-auto opacity-85 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              height="80"
+              class="max-h-12 md:max-h-14 lg:max-h-16 w-auto max-w-full object-contain opacity-75 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
               loading="lazy"
               decoding="async"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
             />
-          ) : (
-            <span class="text-gray-300/80 group-hover:text-gray-100 font-semibold text-xs md:text-sm tracking-wide uppercase text-center transition-colors duration-300">
-              {client.name}
-            </span>
-          )}
+          ) : null}
+          <span class:list={[
+            "text-gray-300/80 group-hover:text-primary font-semibold text-xs md:text-sm tracking-wide uppercase text-center transition-colors duration-300",
+            client.logo && "hidden"
+          ]}>
+            {client.name}
+          </span>
         </div>
       ))}
     </div>
