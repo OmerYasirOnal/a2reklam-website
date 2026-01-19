@@ -24,24 +24,24 @@ const description = "İstanbul'da tabela ve reklam çözümleri için bizimle il
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-accent-light p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
         <!-- Contact Form -->
         <div>
-          <form class="space-y-6">
+          <form class="space-y-6" data-track="lead-submit" data-lead-type="contact" data-lang="tr">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Ad Soyad</label>
-                <input type="text" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Adınız Soyadınız" required />
+                <label class="form-label">Ad Soyad</label>
+                <input type="text" name="fullName" autocomplete="name" class="form-input" placeholder="Adınız Soyadınız" required />
               </div>
               <div>
-                <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">E-posta</label>
-                <input type="email" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="ornek@mail.com" required />
+                <label class="form-label">E-posta</label>
+                <input type="email" name="email" autocomplete="email" class="form-input" placeholder="ornek@mail.com" required />
               </div>
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Telefon</label>
-              <input type="tel" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="05XX XXX XX XX" required />
+              <label class="form-label">Telefon</label>
+              <input type="tel" name="phone" autocomplete="tel" class="form-input" placeholder="05XX XXX XX XX" required />
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Hizmet Türü</label>
-              <select class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+              <label class="form-label">Hizmet Türü</label>
+              <select name="serviceType" class="form-select">
                 <option>Işıklı Tabela</option>
                 <option>Kutu Harf</option>
                 <option>Totem Tabela</option>
@@ -50,12 +50,15 @@ const description = "İstanbul'da tabela ve reklam çözümleri için bizimle il
               </select>
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Mesajınız</label>
-              <textarea rows="4" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Projeniz detaylarını buraya yazabilirsiniz..."></textarea>
+              <label class="form-label">Mesajınız</label>
+              <textarea rows="4" name="message" class="form-input" placeholder="Projeniz detaylarını buraya yazabilirsiniz..."></textarea>
             </div>
             <button type="submit" class="w-full bg-primary text-secondary font-black py-4 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 uppercase tracking-widest">
               GÖNDER
             </button>
+            <p class="text-center text-gray-500 text-xs mt-4 px-6 leading-relaxed">
+              Formu göndererek sizinle iletişime geçmemizi kabul etmiş olursunuz. Verileriniz KVKK kapsamında korunmaktadır.
+            </p>
           </form>
         </div>
 

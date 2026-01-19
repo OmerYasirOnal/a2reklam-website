@@ -23,24 +23,24 @@ const description = "تواصل معنا لخدمات اللافتات والإ�
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-accent-light p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
         <div>
-          <form class="space-y-6">
+          <form class="space-y-6" data-track="lead-submit" data-lead-type="contact" data-lang="ar">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">الاسم الكامل</label>
-                <input type="text" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="الاسم الكامل" required />
+                <label class="form-label">الاسم الكامل</label>
+                <input type="text" name="fullName" autocomplete="name" class="form-input" placeholder="الاسم الكامل" required />
               </div>
               <div>
-                <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">البريد الإلكتروني</label>
-                <input type="email" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="name@example.com" required />
+                <label class="form-label">البريد الإلكتروني</label>
+                <input type="email" name="email" autocomplete="email" class="form-input" placeholder="name@example.com" required />
               </div>
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">الهاتف</label>
-              <input type="tel" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+90 5XX XXX XX XX" required />
+              <label class="form-label">الهاتف</label>
+              <input type="tel" name="phone" autocomplete="tel" class="form-input" placeholder="+90 5XX XXX XX XX" required />
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">نوع الخدمة</label>
-              <select class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+              <label class="form-label">نوع الخدمة</label>
+              <select name="serviceType" class="form-select">
                 <option>لوحات مضيئة</option>
                 <option>حروف بارزة</option>
                 <option>لوحات توتم</option>
@@ -49,12 +49,15 @@ const description = "تواصل معنا لخدمات اللافتات والإ�
               </select>
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">الرسالة</label>
-              <textarea rows="4" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="اكتب تفاصيل مشروعك هنا..."></textarea>
+              <label class="form-label">الرسالة</label>
+              <textarea rows="4" name="message" class="form-input" placeholder="اكتب تفاصيل مشروعك هنا..."></textarea>
             </div>
             <button type="submit" class="w-full bg-primary text-secondary font-black py-4 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 uppercase tracking-widest">
               إرسال الرسالة
             </button>
+            <p class="text-center text-gray-500 text-xs mt-4 px-6 leading-relaxed">
+              بإرسال النموذج، توافق على مشاركة بياناتك معنا للتواصل بخصوص المشروع.
+            </p>
           </form>
         </div>
 
