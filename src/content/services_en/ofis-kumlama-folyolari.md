@@ -1,7 +1,7 @@
 ---
 title: "Ofis Kumlama Folyolari Solutions"
 description: "As A2 Advertising, we design the highest quality Ofis Kumlama Folyolari models specifically for your brand with our expert team."
-heroImage: "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-ofis-kumlama-folyolari-001-1600.webp"
 features: ["Free Discovery","Custom Design","Precision Production","Professional Installation"]
 ---
 
