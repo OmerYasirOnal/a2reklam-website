@@ -37,11 +37,24 @@ export const STATS_CONFIG: Record<string, boolean | null> = {
   quality: true,
 };
 
-// Optional: Client logos (text-only badges if no asset URLs)
+// References / Clients Section
 // Set to null to hide the section entirely
-export const CLIENT_LOGOS: Array<{ name: string; url?: string }> | null = null;
-// Example when ready:
-// export const CLIENT_LOGOS = [
-//   { name: 'Client A' },
-//   { name: 'Client B', url: '/assets/logos/client-b.svg' },
+export const REFERENCES: Array<{ name: string; logo?: string; website?: string }> | null = [
+  { name: 'Kurumsal Firma A' },
+  { name: 'Restoran B' },
+  { name: 'Mağaza C' },
+  { name: 'Otel D' },
+  { name: 'Klinik E' },
+  { name: 'Market F' },
+];
+// When logos are ready, add them:
+// export const REFERENCES = [
+//   { name: 'Firma A', logo: '/assets/logos/firma-a.png', website: 'https://...' },
 // ];
+
+// KPI Counters (Customer Satisfaction Stats)
+// Set values or null to hide individual cards
+export const KPI_PROJECTS: number | null = null; // e.g., 500+ projects
+export const KPI_HAPPY_CLIENTS: number | null = null; // e.g., 300+ clients
+export const KPI_DISTRICTS: number = 39; // Istanbul districts served
+export const KPI_SINCE_YEAR: number = 2010; // Established year
