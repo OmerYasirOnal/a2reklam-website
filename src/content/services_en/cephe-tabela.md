@@ -1,7 +1,7 @@
 ---
 title: "Facade Signage Solutions"
 description: "Modern and durable solutions for facade signs, the greatest representative of your brand to the outside world."
-heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
 features: ["On-site measurement","Graphic design and 3D modeling","Laser cutting and assembly","LED lighting integration"]
 ---
 

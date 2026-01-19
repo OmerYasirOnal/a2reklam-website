@@ -1,10 +1,13 @@
 /**
  * Geographic Service Areas Data
  * Single source of truth for all location pages
- * 
+ *
  * Structure:
  * - Istanbul: All 39 districts
- * - Surrounding provinces: Kocaeli, Sakarya, Tekirdağ, Edirne, Kırklareli, Yalova, Bursa
+ * - Surrounding provinces: Kocaeli, Sakarya, Tekirdağ, Yalova, Bursa (major districts only)
+ * - Coverage optimized for strategic areas within 80-100km of Istanbul
+ *
+ * Removed: Edirne (200km+), Kırklareli (150km+), Marmara Ereğlisi, far Bursa districts
  */
 
 export interface District {
@@ -120,7 +123,7 @@ export const LOCATIONS: Province[] = [
     ],
   },
 
-  // Tekirdağ Province
+  // Tekirdağ Province (Marmara Ereğlisi removed - 120km outlier)
   {
     slug: 'tekirdag',
     trName: 'Tekirdağ',
@@ -133,48 +136,10 @@ export const LOCATIONS: Province[] = [
       { slug: 'hayrabolu', trName: 'Hayrabolu', enName: 'Hayrabolu' },
       { slug: 'kapakli', trName: 'Kapaklı', enName: 'Kapakli' },
       { slug: 'malkara', trName: 'Malkara', enName: 'Malkara' },
-      { slug: 'marmaraereglisi', trName: 'Marmara Ereğlisi', enName: 'Marmaraereglisi' },
       { slug: 'muratli', trName: 'Muratlı', enName: 'Muratli' },
       { slug: 'saray', trName: 'Saray', enName: 'Saray' },
       { slug: 'suleymanpasa', trName: 'Süleymanpaşa', enName: 'Suleymanpasa' },
       { slug: 'sarkoy', trName: 'Şarköy', enName: 'Sarkoy' },
-    ],
-  },
-
-  // Edirne Province
-  {
-    slug: 'edirne',
-    trName: 'Edirne',
-    enName: 'Edirne',
-    arName: 'أدرنة',
-    districts: [
-      { slug: 'edirne-merkez', trName: 'Edirne Merkez', enName: 'Edirne Center' },
-      { slug: 'enez', trName: 'Enez', enName: 'Enez' },
-      { slug: 'havsa', trName: 'Havsa', enName: 'Havsa' },
-      { slug: 'ipsala', trName: 'İpsala', enName: 'Ipsala' },
-      { slug: 'kesan', trName: 'Keşan', enName: 'Kesan' },
-      { slug: 'lalapasa', trName: 'Lalapaşa', enName: 'Lalapasa' },
-      { slug: 'meric', trName: 'Meriç', enName: 'Meric' },
-      { slug: 'suloglu', trName: 'Süloğlu', enName: 'Suloglu' },
-      { slug: 'uzunkopru', trName: 'Uzunköprü', enName: 'Uzunkopru' },
-    ],
-  },
-
-  // Kırklareli Province
-  {
-    slug: 'kirklareli',
-    trName: 'Kırklareli',
-    enName: 'Kirklareli',
-    arName: 'قرقلر إيلي',
-    districts: [
-      { slug: 'kirklareli-merkez', trName: 'Kırklareli Merkez', enName: 'Kirklareli Center' },
-      { slug: 'babaeski', trName: 'Babaeski', enName: 'Babaeski' },
-      { slug: 'demirkoy', trName: 'Demirköy', enName: 'Demirkoy' },
-      { slug: 'kofcaz', trName: 'Kofçaz', enName: 'Kofcaz' },
-      { slug: 'luleburgaz', trName: 'Lüleburgaz', enName: 'Luleburgaz' },
-      { slug: 'pehlivankoy', trName: 'Pehlivanköy', enName: 'Pehlivankoy' },
-      { slug: 'pinarhisar', trName: 'Pınarhisar', enName: 'Pinarhisar' },
-      { slug: 'vize', trName: 'Vize', enName: 'Vize' },
     ],
   },
 
@@ -194,7 +159,7 @@ export const LOCATIONS: Province[] = [
     ],
   },
 
-  // Bursa Province (Major districts)
+  // Bursa Province (Major districts only - removed far inland: İnegöl, İznik, Karacabey, Mustafakemalpaşa)
   {
     slug: 'bursa',
     trName: 'Bursa',
@@ -206,12 +171,8 @@ export const LOCATIONS: Province[] = [
       { slug: 'yildirim', trName: 'Yıldırım', enName: 'Yildirim' },
       { slug: 'gemlik', trName: 'Gemlik', enName: 'Gemlik' },
       { slug: 'gursu', trName: 'Gürsu', enName: 'Gursu' },
-      { slug: 'inegol', trName: 'İnegöl', enName: 'Inegol' },
-      { slug: 'iznik', trName: 'İznik', enName: 'Iznik' },
-      { slug: 'karacabey', trName: 'Karacabey', enName: 'Karacabey' },
       { slug: 'kestel', trName: 'Kestel', enName: 'Kestel' },
       { slug: 'mudanya', trName: 'Mudanya', enName: 'Mudanya' },
-      { slug: 'mustafakemalpasa', trName: 'Mustafakemalpaşa', enName: 'Mustafakemalpasa' },
       { slug: 'orhangazi', trName: 'Orhangazi', enName: 'Orhangazi' },
     ],
   },
