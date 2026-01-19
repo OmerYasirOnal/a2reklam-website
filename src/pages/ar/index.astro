@@ -2,34 +2,15 @@
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/landing/Hero.astro';
 import ServicesGrid from '../../components/landing/ServicesGrid.astro';
+import ReviewsSection from '../../components/landing/ReviewsSection.astro';
+import StatsSection from '../../components/landing/StatsSection.astro';
 ---
 
 <Layout title="A2 Reklam - حلول لافتات وإعلانات في إسطنبول" description="حلول لافتات مؤسسية في إسطنبول تشمل التصميم والإنتاج والتركيب." lang="ar">
   <Hero lang="ar" />
   <ServicesGrid lang="ar" />
-
-  <section class="py-20 bg-secondary border-t border-white/5 relative">
-    <div class="container mx-auto px-4 text-center relative z-10">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">حلول مؤسسية</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">مشاريع B2B احترافية</span>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">تنفيذ متكامل</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">من المعاينة إلى التركيب</span>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">إسطنبول</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">تغطية شاملة للمدينة</span>
-        </div>
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">جودة التصنيع</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">مواد وتقنيات موثوقة</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <ReviewsSection lang="ar" />
+  <StatsSection lang="ar" />
 
   <section class="py-20 bg-accent-light border-t border-white/5">
     <div class="container mx-auto px-4">

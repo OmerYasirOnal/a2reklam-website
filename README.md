@@ -56,13 +56,49 @@ PUBLIC_FORM_ENDPOINT="https://formspree.io/f/your-id"
 
 If not set, the forms fall back to mailto and WhatsApp links. Successful submissions redirect to `/teşekkürler/` and `/en/thank-you/`.
 
-## Tracking (GTM + Google Tag)
+## Tracking (GTM-Only)
 
-- GTM Container: `GTM-MXT449F9`
-- Google Ads ID: `AW-17854412453`
-- GA4 Measurement ID: `G-TC9GJP3GLT`
+**Important**: This site injects **ONLY GTM** (`GTM-MXT449F9`). GA4 and Google Ads tags must be configured inside the GTM container to avoid double counting.
 
-Use Tag Assistant to verify both GTM and gtag.js. If GA4/Ads tags are also configured inside GTM, disable duplicate `page_view` in one place to avoid double counting.
+### GTM Configuration Required
+
+In your GTM container, configure:
+- **GA4 Configuration Tag**: Measurement ID `G-TC9GJP3GLT`
+- **Google Ads Conversion Tag**: Conversion ID `AW-17854412453`
+
+### DataLayer Events
+
+The site pushes the following events to `dataLayer`:
+
+1. **lead_click**: Fires when users click lead CTAs (call, WhatsApp, quote buttons)
+   - Properties: `lead_type`, `lang`, `page`
+
+2. **lead_submit**: Fires when quote forms are submitted
+   - Properties: `lead_type`, `lang`, `page`
+
+3. **lead_conversion**: Fires on thank-you pages (once per page load)
+   - Properties: `lead_type: 'quote'`, `lang`, `page`
+   - Pages: `/teşekkürler/`, `/en/thank-you/`, `/ar/thank-you/`
+
+### Tag Assistant Verification
+
+1. Install [Tag Assistant](https://tagassistant.google.com/)
+2. Visit any page on the site
+3. Verify:
+   - ✅ **Single** `page_view` event (not double)
+   - ✅ `lead_click` appears when clicking CTAs
+   - ✅ `lead_submit` appears when submitting forms
+   - ✅ `lead_conversion` appears on thank-you pages
+
+### Google Ads Conversion Setup
+
+**Recommended**: Use GTM to trigger Google Ads conversions on `lead_conversion` event:
+- Create a trigger in GTM: Event = `lead_conversion`
+- Create a Google Ads Conversion Tag in GTM
+- Attach the trigger to the tag
+
+**Alternative**: If using direct conversion URLs, update your conversion rules:
+- Old: `/iletisim-tabela/` → New: `/iletisim/` OR better: `/teşekkürler/` (TR), `/en/thank-you/` (EN), `/ar/thank-you/` (AR)
 
 ## Deployment (cPanel)
 
