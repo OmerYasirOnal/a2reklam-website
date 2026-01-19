@@ -20,3 +20,10 @@ export const TRACKING_ENABLED = true;
 export const GTM_CONTAINER_ID = 'GTM-MXT449F9';
 export const GOOGLE_ADS_ID = 'AW-17854412453';
 export const GA4_MEASUREMENT_ID = 'G-TC9GJP3GLT';
+
+// Google Reviews
+export const GOOGLE_REVIEWS_URL = 'https://share.google/gqYaUAWHtVf9iZ8o6';
+export const GOOGLE_REVIEW_WRITE_URL = 'https://share.google/gqYaUAWHtVf9iZ8o6'; // Same link or update if separate write URL exists
+// Optional: Add actual rating/count when available (default to null to avoid fake numbers)
+export const GOOGLE_RATING: number | null = null; // 1-5 rating
+export const GOOGLE_REVIEW_COUNT: number | null = null; // Total review count

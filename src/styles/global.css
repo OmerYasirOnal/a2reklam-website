@@ -209,6 +209,20 @@
     overflow: hidden;
   }
   
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-5 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
   /* Animation Utilities */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
