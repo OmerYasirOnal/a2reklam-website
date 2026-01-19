@@ -28,4 +28,14 @@ const description = "Talebiniz alındı. Ekibimiz en kısa sürede size dönüş
       </div>
     </div>
   </div>
+  
+  <script type="module">
+    import { trackLeadConversion } from '../utils/tracking';
+    // Fire conversion event once on page load
+    trackLeadConversion({
+      type: 'quote',
+      lang: 'tr',
+      page: location.pathname,
+    });
+  </script>
 </Layout>

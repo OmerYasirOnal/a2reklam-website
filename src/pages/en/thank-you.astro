@@ -28,4 +28,14 @@ const description = "Your request has been received. Our team will get back to y
       </div>
     </div>
   </div>
+  
+  <script type="module">
+    import { trackLeadConversion } from '../../utils/tracking';
+    // Fire conversion event once on page load
+    trackLeadConversion({
+      type: 'quote',
+      lang: 'en',
+      page: location.pathname,
+    });
+  </script>
 </Layout>
