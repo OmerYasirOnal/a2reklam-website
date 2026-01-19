@@ -1,16 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import MapEmbed from '../components/common/MapEmbed.astro';
-import { ADDRESS, EMAIL, PHONE_NUMBER, PHONE_TEL } from '../consts';
+import { ADDRESS, ADDRESS_LOCALITY, EMAIL, PHONE_NUMBER, PHONE_TEL } from '../consts';
 
 const title = "İletişim | A2 Reklam";
 const description = "İstanbul'da tabela ve reklam çözümleri için bizimle iletişime geçin. Ücretsiz keşif ve teklif için formumuzu doldurabilir veya bizi arayabilirsiniz.";
 ---
 
-<Layout title={title} description={description} lang="tr">
+<Layout
+  title={title}
+  description={description}
+  lang="tr"
+  whatsappTitle="İletişim"
+  whatsappLocation={ADDRESS_LOCALITY}
+  mobileCtaVariant="contact"
+>
   <div class="relative py-24 bg-secondary overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-    
+
     <div class="container mx-auto px-4 relative z-10">
       <div class="text-center mb-16">
         <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
@@ -24,7 +31,7 @@ const description = "İstanbul'da tabela ve reklam çözümleri için bizimle il
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-accent-light p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
         <!-- Contact Form -->
         <div>
-          <form class="space-y-6">
+          <form id="contact-form" class="space-y-6" data-track="lead-submit" data-lead-type="contact" data-lang="tr">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Ad Soyad</label>

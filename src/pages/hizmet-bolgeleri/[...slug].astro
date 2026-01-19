@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import { WHATSAPP_LINK } from '../../consts';
+import { buildWhatsAppLink, buildWhatsAppMessage } from '../../utils/whatsapp';
 
 export async function getStaticPaths() {
   const districts = await getCollection('districts');
@@ -111,6 +111,12 @@ const topServices = [
   { label: 'Araç Giydirme', href: '/hizmetler/arac-giydirme/' },
   { label: 'Yönlendirme', href: '/hizmetler/yonlendirme/' },
 ];
+const whatsappMessage = buildWhatsAppMessage({
+  lang: 'tr',
+  pageTitle: entry.data.title,
+  location: entry.data.districtName,
+});
+const whatsappLink = buildWhatsAppLink(whatsappMessage);
 ---
 
 <Layout
@@ -119,6 +125,8 @@ const topServices = [
   lang="tr"
   breadcrumbs={breadcrumbs}
   faq={faq}
+  whatsappTitle={entry.data.title}
+  whatsappLocation={entry.data.districtName}
 >
   <!-- Hero Section -->
   <div class="relative h-[40vh] flex items-center justify-center text-white overflow-hidden bg-secondary">
@@ -237,7 +245,7 @@ const topServices = [
           <a href="/teklif-al/" data-track="lead-click" data-lead-type="quote" data-lang="tr" class="bg-primary text-secondary font-bold py-3 px-8 rounded hover:bg-white transition-all transform hover:-translate-y-1">
             Teklif Al
           </a>
-          <a href={WHATSAPP_LINK} data-track="lead-click" data-lead-type="whatsapp" data-lang="tr" class="bg-green-600 text-white font-bold py-3 px-8 rounded hover:bg-green-500 transition-all flex items-center gap-2">
+          <a href={whatsappLink} data-track="lead-click" data-lead-type="whatsapp" data-lang="tr" class="bg-green-600 text-white font-bold py-3 px-8 rounded hover:bg-green-500 transition-all flex items-center gap-2">
              WhatsApp
           </a>
         </div>

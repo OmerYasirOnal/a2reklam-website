@@ -82,7 +82,7 @@ const faq = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {serviceCards.map((service) => (
-          <a href={`/hizmetler/${service.slug}/`} class="group relative block bg-accent-light rounded-xl overflow-hidden shadow-2xl hover:shadow-primary/20 transition-all duration-500 transform hover:-translate-y-2 border border-white/5 hover:border-primary/50">
+          <a href={`/hizmetler/${service.slug}/`} class="group relative block glass-card overflow-hidden hover:shadow-primary/20 transition-all duration-500 transform hover:-translate-y-2">
             <div class="relative h-64 overflow-hidden">
               <img
                 src={service.image}
@@ -105,7 +105,7 @@ const faq = [
       </div>
 
       <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div class="bg-accent-light border border-white/5 rounded-2xl p-8">
+        <div class="glass-card p-8">
           <h2 class="font-heading font-bold text-3xl text-white mb-4">Kurumsal Projeler İçin Tek Nokta</h2>
           <p class="text-gray-400 mb-6">
             Fabrikalar, oteller, sağlık kuruluşları ve zincir mağazalar için kurumsal standartlarda tabela üretimi ve montajı sağlıyoruz. Keşiften montaja kadar tek ekip, net planlama.
@@ -115,7 +115,7 @@ const faq = [
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </a>
         </div>
-        <div class="bg-accent-light border border-white/5 rounded-2xl p-8">
+        <div class="glass-card p-8">
           <h3 class="font-heading font-bold text-2xl text-white mb-4">Öne Çıkan Hizmet Bölgeleri</h3>
           <p class="text-gray-400 mb-6">Yoğun kurumsal uygulama yaptığımız ilçelerden hızlı bağlantılar.</p>
           <div class="flex flex-wrap gap-3">
@@ -128,7 +128,7 @@ const faq = [
         </div>
       </div>
 
-      <div class="mt-16 bg-accent-light border border-white/5 rounded-2xl p-8">
+      <div class="mt-16 glass-card p-8">
         <h2 class="font-heading font-bold text-3xl text-white mb-6">Sık Sorulan Sorular</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {faq.map((item) => (
