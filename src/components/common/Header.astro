@@ -53,7 +53,7 @@ const languageLinks = languageOrder
   }));
 ---
 
-<header class="sticky top-0 z-50 bg-secondary/95 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+<header class="sticky top-0 z-50 glass-bar transition-all duration-300">
   <div class:list={['container mx-auto px-4 h-20 flex items-center justify-between', isRtl && 'flex-row-reverse']}>
     <a href={homeLink} class="font-heading font-black text-2xl tracking-tighter text-white flex items-center gap-2">
       <span class="text-primary text-3xl">A2</span> REKLAM
@@ -95,7 +95,8 @@ const languageLinks = languageOrder
         type="button"
         class="md:hidden p-2 text-white hover:text-primary transition-colors"
         aria-expanded="false"
-        aria-controls="mobile-menu"
+        aria-controls="mobile-menu-panel"
+        aria-haspopup="dialog"
         aria-label={menuLabel}
       >
         <svg id="hamburger-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -113,106 +114,128 @@ const languageLinks = languageOrder
 <div
   id="mobile-menu"
   class:list={[
-    'fixed inset-0 z-[60] transform transition-transform duration-300 md:hidden',
+    'fixed inset-0 z-[60] transform transition-transform duration-300 md:hidden pointer-events-none',
     isRtl ? '-translate-x-full' : 'translate-x-full'
   ]}
   aria-hidden="true"
+  inert
   data-rtl={isRtl ? 'true' : 'false'}
 >
   <!-- Backdrop -->
   <div
     id="mobile-menu-backdrop"
     class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"
+    aria-hidden="true"
+    tabindex="-1"
   ></div>
 
   <!-- Drawer Panel -->
-  <nav
+  <div
+    id="mobile-menu-panel"
     class:list={[
-      'absolute top-0 h-full w-80 max-w-[85vw] bg-secondary/95 backdrop-blur-lg border-white/10 p-6 flex flex-col',
+      'absolute top-0 h-full w-80 max-w-[85vw] bg-secondary/95 backdrop-blur-lg border-white/10 p-6',
       isRtl ? 'left-0 border-r' : 'right-0 border-l'
     ]}
-    role="navigation"
-    aria-label={menuLabel}
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="mobile-menu-title"
+    tabindex="-1"
   >
-    <!-- Close Button -->
-    <div class:list={['flex justify-end mb-8', isRtl && 'justify-start']}>
-      <button
-        id="mobile-menu-close"
-        type="button"
-        class="p-2 text-gray-400 hover:text-white transition-colors"
-        aria-label={closeLabel}
-      >
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-
-    <!-- Navigation Links -->
-    <div class="flex-1 space-y-1">
-      {items.map(item => (
-        <a
-          href={item.href}
-          class:list={[
-            'block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors',
-            isRtl && 'text-right'
-          ]}
+    <h2 id="mobile-menu-title" class="sr-only">{menuLabel}</h2>
+    <nav class="flex flex-col h-full" aria-label={menuLabel}>
+      <!-- Close Button -->
+      <div class:list={['flex justify-end mb-8', isRtl && 'justify-start']}>
+        <button
+          id="mobile-menu-close"
+          type="button"
+          class="p-2 text-gray-400 hover:text-white transition-colors"
+          aria-label={closeLabel}
         >
-          {item.label}
-        </a>
-      ))}
-    </div>
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
 
-    <!-- Language Switcher (Mobile) -->
-    <div class="border-t border-white/10 pt-6 mt-6">
-      <div class:list={['flex items-center gap-2 mb-4', isRtl && 'flex-row-reverse justify-end']}>
-        {languageLinks.map((link) => (
+      <!-- Navigation Links -->
+      <div class="flex-1 space-y-1">
+        {items.map(item => (
           <a
-            href={link.href}
+            href={item.href}
             class:list={[
-              'text-sm font-bold border px-3 py-1.5 rounded transition-colors',
-              link.locale === lang ? 'border-primary text-primary' : 'border-white/20 text-gray-300 hover:text-white hover:border-white',
+              'block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors',
+              isRtl && 'text-right'
             ]}
-            aria-current={link.locale === lang ? 'page' : undefined}
           >
-            {link.label}
+            {item.label}
           </a>
         ))}
       </div>
 
-      <!-- Quote Button (Mobile) -->
-      <a
-        href={quoteLink}
-        data-track="lead-click"
-        data-lead-type="quote"
-        data-lang={lang}
-        class="block w-full text-center btn btn-primary py-3 text-sm font-bold"
-      >
-        {quoteLabel}
-      </a>
-    </div>
-  </nav>
+      <!-- Language Switcher (Mobile) -->
+      <div class="border-t border-white/10 pt-6 mt-6">
+        <div class:list={['flex items-center gap-2 mb-4', isRtl && 'flex-row-reverse justify-end']}>
+          {languageLinks.map((link) => (
+            <a
+              href={link.href}
+              class:list={[
+                'text-sm font-bold border px-3 py-1.5 rounded transition-colors',
+                link.locale === lang ? 'border-primary text-primary' : 'border-white/20 text-gray-300 hover:text-white hover:border-white',
+              ]}
+              aria-current={link.locale === lang ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        <!-- Quote Button (Mobile) -->
+        <a
+          href={quoteLink}
+          data-track="lead-click"
+          data-lead-type="quote"
+          data-lang={lang}
+          class="block w-full text-center btn btn-primary py-3 text-sm font-bold"
+        >
+          {quoteLabel}
+        </a>
+      </div>
+    </nav>
+  </div>
 </div>
 
 <script>
   function initMobileMenu() {
     const toggle = document.getElementById('mobile-menu-toggle');
     const menu = document.getElementById('mobile-menu');
+    const panel = document.getElementById('mobile-menu-panel');
     const backdrop = document.getElementById('mobile-menu-backdrop');
     const closeBtn = document.getElementById('mobile-menu-close');
     const hamburgerIcon = document.getElementById('hamburger-icon');
     const closeIcon = document.getElementById('close-icon');
 
-    if (!toggle || !menu || !backdrop || !closeBtn) return;
+    if (!toggle || !menu || !panel || !backdrop || !closeBtn) return;
+    if (menu.dataset.initialized === 'true') return;
+    menu.dataset.initialized = 'true';
 
     const isRtl = menu.dataset.rtl === 'true';
     const openClass = 'translate-x-0';
     const closedClass = isRtl ? '-translate-x-full' : 'translate-x-full';
 
+    function getFocusableElements() {
+      return Array.from(
+        panel.querySelectorAll(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      );
+    }
+
     function openMenu() {
       menu.classList.remove(closedClass);
       menu.classList.add(openClass);
       menu.setAttribute('aria-hidden', 'false');
+      menu.classList.remove('pointer-events-none');
+      menu.removeAttribute('inert');
       toggle.setAttribute('aria-expanded', 'true');
       backdrop.classList.remove('opacity-0');
       backdrop.classList.add('opacity-100');
@@ -220,8 +243,9 @@ const languageLinks = languageOrder
       closeIcon?.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
 
-      // Focus first link
-      const firstLink = menu.querySelector('a');
+      // Focus first focusable
+      const focusable = getFocusableElements();
+      const firstLink = focusable[0];
       if (firstLink) firstLink.focus();
     }
 
@@ -229,6 +253,8 @@ const languageLinks = languageOrder
       menu.classList.remove(openClass);
       menu.classList.add(closedClass);
       menu.setAttribute('aria-hidden', 'true');
+      menu.classList.add('pointer-events-none');
+      menu.setAttribute('inert', '');
       toggle.setAttribute('aria-expanded', 'false');
       backdrop.classList.remove('opacity-100');
       backdrop.classList.add('opacity-0');
@@ -256,8 +282,22 @@ const languageLinks = languageOrder
 
     // ESC key
     document.addEventListener('keydown', (e) => {
+      if (toggle.getAttribute('aria-expanded') !== 'true') return;
       if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
         closeMenu();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const focusable = getFocusableElements();
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
       }
     });
 
