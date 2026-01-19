@@ -26,6 +26,18 @@
             "old": "/tabela-cesitleri/",
             "new": "/hizmetler/",
             "status": 301
+        },
+        {
+            "old": "/hizmetler/harmanlama/",
+            "new": "/hizmetler/",
+            "status": 301,
+            "note": "Harmanlama service removed"
+        },
+        {
+            "old": "/en/services/harmanlama/",
+            "new": "/en/services/",
+            "status": 301,
+            "note": "Harmanlama service removed"
         }
     ]
 }

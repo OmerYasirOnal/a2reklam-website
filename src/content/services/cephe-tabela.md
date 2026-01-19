@@ -1,6 +1,6 @@
 ---
-title: "Cephe Tabela Çözümleri"
-description: "Markanızın dış dünyadaki en büyük temsilcisi olan cephe tabelalarında modern ve dayanıklı çözümler."
+title: "Cephe Tabelası İstanbul | Kurumsal Tabela İmalatı | A2 Reklam"
+description: "İstanbul'da profesyonel cephe tabelası ve kurumsal tabela imalatı. Kutu harf, paslanmaz harf, LED aydınlatmalı cephe tabelaları. Ücretsiz keşif."
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
 features: ["Yerinde ölçü alımı","Grafik tasarım ve 3D modelleme","Lazer kesim ve montaj","LED aydınlatma entegrasyonu"]
 ---
