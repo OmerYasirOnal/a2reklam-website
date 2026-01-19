@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { EMAIL, PHONE_NUMBER, PHONE_TEL, WHATSAPP_LINK } from '../consts';
+import { SERVICE_LABELS, getServiceLabel } from '../config/serviceLabels';
 
 const title = "Hızlı Teklif Al | A2 Reklam";
 const description = "Projeniz için ücretsiz keşif ve fiyat teklifi alın. Tabela, reklam ve dijital baskı çözümlerimiz için formu doldurmanız yeterli.";
@@ -73,13 +74,10 @@ const redirectUrl = Astro.site ? new URL('/teşekkürler/', Astro.site).toString
                 <label for="service" class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Hizmet Türü</label>
                 <select id="service" name="serviceType" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary outline-none transition-all" required>
                   <option value="">Hizmet Seçiniz</option>
-                  <option>Işıklı Tabela</option>
-                  <option>Kutu Harf</option>
-                  <option>Paslanmaz Harf / Tabela</option>
-                  <option>Totem Tabela</option>
-                  <option>Araç Giydirme</option>
-                  <option>Cephe Tabela / Kompozit</option>
-                  <option>Diğer</option>
+                  {Object.keys(SERVICE_LABELS).map((slug) => (
+                    <option value={slug}>{getServiceLabel(slug as keyof typeof SERVICE_LABELS, 'tr')}</option>
+                  ))}
+                  <option value="diger">Diğer</option>
                 </select>
               </div>
               <div>

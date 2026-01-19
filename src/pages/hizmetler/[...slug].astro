@@ -6,6 +6,7 @@ import { buildImageAlt } from '../../utils/imageSeo';
 import { PHONE_NUMBER, PHONE_TEL } from '../../consts';
 import { buildWhatsAppLink, buildWhatsAppMessage } from '../../utils/whatsapp';
 import Gallery from '../../components/common/Gallery.astro';
+import { getServiceLabel } from '../../config/serviceLabels';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
@@ -26,16 +27,17 @@ export async function getStaticPaths() {
 
 const { entry, images } = Astro.props;
 const { Content } = await entry.render();
+const displayTitle = getServiceLabel(entry.slug, 'tr') ?? entry.data.title;
 const relatedPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
   .slice(0, 3);
 
-const metaTitle = `${entry.data.title} | Kurumsal Tabela Çözümleri - A2 Reklam`;
+const metaTitle = `${displayTitle} | Kurumsal Tabela Çözümleri - A2 Reklam`;
 const metaDescription = `${entry.data.description} İstanbul genelinde keşif, üretim ve montaj için hızlı teklif alın.`;
 const breadcrumbs = [
   { name: 'Anasayfa', item: '/' },
   { name: 'Hizmetler', item: '/hizmetler/' },
-  { name: entry.data.title, item: `/hizmetler/${entry.slug}/` },
+  { name: displayTitle, item: `/hizmetler/${entry.slug}/` },
 ];
 
 const microAnswerLines = [
@@ -109,7 +111,7 @@ const topDistricts = [
   { label: 'Başakşehir', href: '/hizmet-bolgeleri/basaksehir-tabela/' },
   { label: 'Ümraniye', href: '/hizmet-bolgeleri/umraniye-tabela/' },
 ];
-const whatsappMessage = buildWhatsAppMessage({ lang: 'tr', pageTitle: entry.data.title });
+const whatsappMessage = buildWhatsAppMessage({ lang: 'tr', pageTitle: displayTitle });
 const whatsappLink = buildWhatsAppLink(whatsappMessage);
 ---
 
@@ -129,13 +131,13 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
       <div class="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent"></div>
     </div>
     <div class="relative z-10 container mx-auto px-4 mt-20">
-      <h1 class="font-heading font-black text-4xl md:text-6xl mb-4 drop-shadow-lg">{entry.data.title}</h1>
+      <h1 class="font-heading font-black text-4xl md:text-6xl mb-4 drop-shadow-lg">{displayTitle}</h1>
       <ul class="flex gap-2 text-sm text-gray-300 font-medium tracking-wide">
         <li><a href="/" class="hover:text-primary transition-colors">Anasayfa</a></li>
         <li>/</li>
         <li><a href="/hizmetler/" class="hover:text-primary transition-colors">Hizmetler</a></li>
         <li>/</li>
-        <li class="text-primary">{entry.data.title}</li>
+        <li class="text-primary">{displayTitle}</li>
       </ul>
     </div>
   </div>
