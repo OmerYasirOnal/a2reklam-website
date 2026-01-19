@@ -3,7 +3,7 @@ title: "Tabelanızın Ömrünü Uzatın: Tabela Bakımı Nasıl Yapılır?"
 description: "Dış mekan tabelalarınızın ilk günkü gibi kalması için yapmanız gereken bakım ipuçları ve temizlik önerileri."
 pubDate: "2024-01-18"
 tags: ["Bakım","Tabela","Temizlik"]
-heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
+heroImage: "/assets/img/demo/a2reklam-totem-001-960.webp"
 ---
 
 ## Tabela Bakımı ve Temizliği Neden Önemlidir?

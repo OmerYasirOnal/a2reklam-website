@@ -1,7 +1,7 @@
 ---
 title: "Isikli Isiksiz Tabelalar Solutions"
 description: "As A2 Advertising, we design the highest quality Isikli Isiksiz Tabelalar models specifically for your brand with our expert team."
-heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-isikli-isiksiz-tabelalar-001-1600.webp"
 features: ["Free Discovery","Custom Design","Precision Production","Professional Installation"]
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "AYAKLI A PANO Çözümleri"
 description: "A2 Reklam olarak en kaliteli AYAKLI A PANO modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
-heroImage: "/assets/img/ayakli-a-pano/a2reklam-ayakli-a-pano-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-ayakli-a-pano-001-1600.webp"
 features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 

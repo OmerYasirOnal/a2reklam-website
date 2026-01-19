@@ -2,7 +2,7 @@
 title: "Bayrampaşa Tabela ve Reklam Hizmetleri"
 description: "İstanbul Bayrampaşa bölgesinde profesyonel tabela imalatı, montajı ve reklam çözümleri. A2 Reklam ile en kaliteli tabela modelleri."
 districtName: "Bayrampaşa"
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 ---
 
 ## Bayrampaşa Tabela ve Reklam Çözümleri

@@ -1,0 +1,86 @@
+---
+import { REFERENCES } from '../../consts';
+
+interface Props {
+  lang?: 'tr' | 'en' | 'ar';
+}
+
+const { lang = 'tr' } = Astro.props;
+const isRtl = lang === 'ar';
+
+// Don't render if no references configured
+if (!REFERENCES || REFERENCES.length === 0) {
+  return null;
+}
+
+// Translations
+const translations = {
+  tr: {
+    heading: 'Referanslarımız',
+    subtitle: 'Birlikte çalıştığımız markalar ve kurumlar',
+  },
+  en: {
+    heading: 'References',
+    subtitle: 'Brands and businesses we\'ve delivered for',
+  },
+  ar: {
+    heading: 'عملاؤنا',
+    subtitle: 'علامات وشركات وثقت بنا',
+  },
+};
+
+const t = translations[lang];
+---
+
+<section class="py-20 bg-secondary border-t border-white/5 relative overflow-hidden">
+  <!-- Subtle background glow -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <!-- Section Header -->
+    <div class:list={['text-center mb-12', isRtl && 'text-right']}>
+      <h2 class="font-heading font-black text-4xl md:text-5xl mb-4 text-white uppercase tracking-tight">
+        {t.heading}
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+        {t.subtitle}
+      </p>
+    </div>
+
+    <!-- References Grid with Glass Cards -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {REFERENCES.map((reference) => (
+        <div class="glass-card group">
+          <div class="aspect-[3/2] flex items-center justify-center p-6">
+            {reference.logo ? (
+              <img 
+                src={reference.logo} 
+                alt={`${reference.name} logo`}
+                class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                loading="lazy"
+              />
+            ) : (
+              <div class="text-center">
+                <div class="text-gray-300 font-heading font-bold text-sm md:text-base uppercase tracking-wide group-hover:text-white transition-colors">
+                  {reference.name}
+                </div>
+              </div>
+            )}
+          </div>
+          {reference.website && (
+            <div class="absolute inset-0 flex items-center justify-center bg-secondary/90 opacity-0 group-hover:opacity-100 transition-opacity">
+              <a 
+                href={reference.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:text-white text-sm font-bold uppercase tracking-wider"
+              >
+                {lang === 'ar' ? 'زيارة الموقع ←' : lang === 'en' ? 'Visit Site →' : 'Siteye Git →'}
+              </a>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

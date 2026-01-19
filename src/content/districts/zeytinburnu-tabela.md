@@ -2,7 +2,7 @@
 title: "Zeytinburnu Tabela ve Reklam Hizmetleri"
 description: "İstanbul Zeytinburnu bölgesinde profesyonel tabela imalatı, montajı ve reklam çözümleri. A2 Reklam ile en kaliteli tabela modelleri."
 districtName: "Zeytinburnu"
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 ---
 
 ## Zeytinburnu Tabela ve Reklam Çözümleri

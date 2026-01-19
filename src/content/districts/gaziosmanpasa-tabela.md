@@ -2,7 +2,7 @@
 title: "Gaziosmanpaşa Tabela ve Reklam Hizmetleri"
 description: "İstanbul Gaziosmanpaşa bölgesinde profesyonel tabela imalatı, montajı ve reklam çözümleri. A2 Reklam ile en kaliteli tabela modelleri."
 districtName: "Gaziosmanpaşa"
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 ---
 
 ## Gaziosmanpaşa Tabela ve Reklam Çözümleri

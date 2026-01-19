@@ -1,7 +1,7 @@
 ---
 title: "ARAÇ GİYDİRME Çözümleri"
 description: "A2 Reklam olarak en kaliteli ARAÇ GİYDİRME modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
-heroImage: "/assets/img/arac-giydirme/a2reklam-arac-giydirme-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-arac-giydirme-001-1600.webp"
 features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 

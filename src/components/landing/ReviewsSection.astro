@@ -65,7 +65,7 @@ const t = translations[currentLang];
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
       <!-- Trust Block (Left side on desktop, right on RTL) -->
       <div class:list={['lg:col-span-1', isRtl ? 'lg:order-2' : 'order-2 lg:order-1']}>
-        <div class="bg-surface border border-white/5 rounded-xl p-6 md:p-8 text-center sticky top-24">
+        <div class="glass-card-padded text-center sticky top-24">
           {GOOGLE_RATING && GOOGLE_REVIEW_COUNT ? (
             <>
               <div class="flex items-center justify-center gap-1 mb-3">
@@ -134,7 +134,7 @@ const t = translations[currentLang];
         {displayedReviews.map((review) => {
           const reviewText = review.text[currentLang] || review.text.tr;
           return (
-            <div class="group bg-surface border border-white/5 rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+            <div class="glass-card group p-6">
               {review.rating && (
                 <div class="flex items-center gap-1 mb-4" aria-label={`${review.rating} out of 5 stars`}>
                   {Array.from({ length: 5 }).map((_, i) => (

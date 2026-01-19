@@ -3,7 +3,7 @@ title: "Extend the Life of Your Sign: How to Maintain It?"
 description: "Maintenance tips and cleaning suggestions to keep your outdoor signs looking like the first day."
 pubDate: "2024-01-18"
 tags: ["Maintenance","Signage","Cleaning"]
-heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
+heroImage: "/assets/img/demo/a2reklam-totem-001-960.webp"
 ---
 
 ## Why is Signage Maintenance and Cleaning Important?

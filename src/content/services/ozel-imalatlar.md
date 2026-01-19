@@ -1,7 +1,7 @@
 ---
 title: "ÖZEL İMALATLAR Çözümleri"
 description: "A2 Reklam olarak en kaliteli ÖZEL İMALATLAR modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
-heroImage: "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-ozel-imalatlar-001-1600.webp"
 features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 

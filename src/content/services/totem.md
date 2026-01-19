@@ -1,7 +1,7 @@
 ---
 title: "Totem ve Pylon Tabela İmalatı"
 description: "Uzak mesafeden fark edilmenizi sağlayan, dayanıklı ve dikkat çekici dev reklam üniteleri."
-heroImage: "/assets/img/totem/a2reklam-totem-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-totem-001-1600.webp"
 features: ["Zemin analizi ve temel atımı","Statik hesaplama","Atölye üretimi","Vinç ile montaj"]
 ---
 
