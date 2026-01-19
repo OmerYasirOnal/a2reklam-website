@@ -2,13 +2,15 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 import MapEmbed from '../../../components/common/MapEmbed.astro';
+import { LOCATIONS, getTotalDistrictCount } from '../../../data/locations';
 
 const districts = await getCollection('districts_en');
-// Sort districts alphabetically
+// Sort Istanbul districts alphabetically
 const sortedDistricts = districts.sort((a, b) => a.data.districtName.localeCompare(b.data.districtName, 'en'));
 
+const totalDistrictCount = getTotalDistrictCount();
 const title = "Our Service Areas | A2 Advertising";
-const description = "We provide signage and advertising services in all districts of Istanbul. Check out the areas we serve.";
+const description = `Professional signage and advertising services in ${totalDistrictCount}+ locations across Istanbul and surrounding provinces.`;
 ---
 
 <Layout title={title} description={description} lang="en">
@@ -21,18 +23,53 @@ const description = "We provide signage and advertising services in all district
           SERVICE <span class="text-primary">AREAS</span>
         </h1>
         <p class="text-gray-400 max-w-2xl mx-auto text-lg border-l-2 border-primary pl-4 inline-block">
-          We offer professional signage and advertising solutions with our expert team across all 39 districts of Istanbul.
+          We offer professional signage and advertising solutions with our expert team in {totalDistrictCount}+ locations across Istanbul and surrounding provinces.
         </p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {sortedDistricts.map(d => (
-          <a href={`/en/service-areas/${d.slug}/`} class="group p-6 bg-accent-light border border-white/5 rounded-xl hover:border-primary/50 transition-all transform hover:-translate-y-1 text-center">
-            <span class="block text-lg font-bold text-gray-300 group-hover:text-primary transition-colors">{d.data.districtName}</span>
-            <span class="text-xs text-gray-500 uppercase tracking-widest mt-1 block group-hover:text-gray-400">Signage Services</span>
-          </a>
+      <!-- Quick Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        {LOCATIONS.map(province => (
+          <div class="glass-card p-4 text-center">
+            <div class="text-primary text-2xl font-black mb-1">{province.districts.length}</div>
+            <div class="text-white text-sm font-bold">{province.enName}</div>
+          </div>
         ))}
       </div>
+
+      <!-- Province Sections -->
+      {LOCATIONS.map((province, idx) => (
+        <div class="mb-12">
+          <div class="flex items-center gap-4 mb-6">
+            <h2 class="font-heading font-black text-3xl text-white uppercase">
+              {province.enName}
+            </h2>
+            <span class="text-primary text-sm font-bold px-3 py-1 bg-primary/10 rounded-full">
+              {province.districts.length} Districts
+            </span>
+          </div>
+          
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {province.slug === 'istanbul' ? (
+              // Istanbul uses old route structure
+              sortedDistricts.map(d => (
+                <a href={`/en/service-areas/${d.slug}/`} class="group p-6 glass-card hover:border-primary/50 transition-all transform hover:-translate-y-1 text-center">
+                  <span class="block text-lg font-bold text-gray-300 group-hover:text-primary transition-colors">{d.data.districtName}</span>
+                  <span class="text-xs text-gray-500 uppercase tracking-widest mt-1 block group-hover:text-gray-400">Signage Services</span>
+                </a>
+              ))
+            ) : (
+              // Other provinces use new route structure
+              province.districts.map(district => (
+                <a href={`/en/service-areas/${province.slug}/${district.slug}/`} class="group p-6 glass-card hover:border-primary/50 transition-all transform hover:-translate-y-1 text-center">
+                  <span class="block text-lg font-bold text-gray-300 group-hover:text-primary transition-colors">{district.enName}</span>
+                  <span class="text-xs text-gray-500 uppercase tracking-widest mt-1 block group-hover:text-gray-400">Signage Services</span>
+                </a>
+              ))
+            )}
+          </div>
+        </div>
+      ))}
 
       <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div class="bg-accent-light border border-white/5 rounded-2xl p-8">

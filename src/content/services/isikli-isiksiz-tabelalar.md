@@ -1,7 +1,7 @@
 ---
 title: "IŞIKLI  IŞIKSIZ TABELALAR Çözümleri"
 description: "A2 Reklam olarak en kaliteli IŞIKLI  IŞIKSIZ TABELALAR modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
-heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-isikli-isiksiz-tabelalar-001-1600.webp"
 features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 

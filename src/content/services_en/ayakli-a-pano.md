@@ -1,7 +1,7 @@
 ---
 title: "Ayakli A Pano Solutions"
 description: "As A2 Advertising, we design the highest quality Ayakli A Pano models specifically for your brand with our expert team."
-heroImage: "/assets/img/ayakli-a-pano/a2reklam-ayakli-a-pano-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-ayakli-a-pano-001-1600.webp"
 features: ["Free Discovery","Custom Design","Precision Production","Professional Installation"]
 ---
 

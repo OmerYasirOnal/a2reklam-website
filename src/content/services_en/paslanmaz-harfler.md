@@ -1,7 +1,7 @@
 ---
 title: "Paslanmaz Harfler Solutions"
 description: "As A2 Advertising, we design the highest quality Paslanmaz Harfler models specifically for your brand with our expert team."
-heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-paslanmaz-harfler-001-1600.webp"
 features: ["Free Discovery","Custom Design","Precision Production","Professional Installation"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Sultangazi Tabela ve Reklam Hizmetleri"
 description: "İstanbul Sultangazi bölgesinde profesyonel tabela imalatı, montajı ve reklam çözümleri. A2 Reklam ile en kaliteli tabela modelleri."
 districtName: "Sultangazi"
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 ---
 
 ## Sultangazi Tabela ve Reklam Çözümleri

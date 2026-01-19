@@ -2,7 +2,7 @@
 title: "Ataşehir Tabela ve Reklam Hizmetleri"
 description: "İstanbul Ataşehir bölgesinde profesyonel tabela imalatı, montajı ve reklam çözümleri. A2 Reklam ile en kaliteli tabela modelleri."
 districtName: "Ataşehir"
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 ---
 
 ## Ataşehir Tabela ve Reklam Çözümleri

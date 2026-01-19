@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "process-images": "node scripts/process-images.js",
-    "repo:safety": "node scripts/repo-safety.js"
+    "repo:safety": "node scripts/repo-safety.js",
+    "asset:audit": "node scripts/asset-audit.js",
+    "content:lint": "node scripts/content-lint.js"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +31,8 @@
   "devDependencies": {
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.7",
+    "glob": "^11.0.0",
+    "gray-matter": "^4.0.3",
     "typescript": "^5.7.3"
   }
 }

@@ -1,0 +1,72 @@
+---
+import { STATS_CONFIG } from '../../consts';
+
+interface Props {
+  lang?: 'tr' | 'en' | 'ar';
+}
+
+const { lang = 'tr' } = Astro.props;
+const isRtl = lang === 'ar';
+
+// Translations for each stat
+const translations = {
+  tr: {
+    corporate: { label: 'Kurumsal', sublabel: 'B2B Odaklı Üretim' },
+    endToEnd: { label: 'Uçtan Uca', sublabel: 'Keşiften Montaja' },
+    istanbul: { label: 'İstanbul', sublabel: 'Şehir Geneli Hizmet' },
+    quality: { label: 'Kalite', sublabel: 'Malzeme ve İşçilik' },
+  },
+  en: {
+    corporate: { label: 'Corporate', sublabel: 'B2B Signage Focus' },
+    endToEnd: { label: 'End-to-End', sublabel: 'Discovery to Install' },
+    istanbul: { label: 'Istanbul', sublabel: 'Citywide Coverage' },
+    quality: { label: 'Quality', sublabel: 'Materials & Craft' },
+  },
+  ar: {
+    corporate: { label: 'حلول مؤسسية', sublabel: 'مشاريع B2B احترافية' },
+    endToEnd: { label: 'تنفيذ متكامل', sublabel: 'من المعاينة إلى التركيب' },
+    istanbul: { label: 'إسطنبول', sublabel: 'تغطية شاملة للمدينة' },
+    quality: { label: 'جودة التصنيع', sublabel: 'مواد وتقنيات موثوقة' },
+  },
+};
+
+const t = translations[lang];
+
+// Filter stats based on STATS_CONFIG - only show if value is truthy
+type StatKey = 'corporate' | 'endToEnd' | 'istanbul' | 'quality';
+const statKeys: StatKey[] = ['corporate', 'endToEnd', 'istanbul', 'quality'];
+
+const enabledStats = statKeys
+  .filter((key) => STATS_CONFIG?.[key])
+  .map((key) => ({ key, ...t[key] }));
+
+// Don't render section if no stats enabled
+const shouldRender = enabledStats.length > 0;
+
+// Grid columns based on number of stats
+const getGridClass = (count: number) => {
+  if (count === 4) return 'grid-cols-2 md:grid-cols-4';
+  if (count === 3) return 'grid-cols-1 md:grid-cols-3';
+  if (count === 2) return 'grid-cols-2';
+  return 'grid-cols-1 max-w-md mx-auto';
+};
+---
+
+{shouldRender && (
+  <section class="py-20 bg-secondary border-t border-white/5 relative">
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <div class:list={['grid gap-8', getGridClass(enabledStats.length)]}>
+        {enabledStats.map((stat) => (
+          <div class="glass-card group p-6">
+            <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
+              {stat.label}
+            </span>
+            <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">
+              {stat.sublabel}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
