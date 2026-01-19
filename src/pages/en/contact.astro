@@ -24,24 +24,24 @@ const description = "Contact us for signage and advertising solutions in Istanbu
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-accent-light p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
         <!-- Contact Form -->
         <div>
-          <form class="space-y-6">
+          <form class="space-y-6" data-track="lead-submit" data-lead-type="contact" data-lang="en">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Full Name</label>
-                <input type="text" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Your Name" required />
+                <label class="form-label">Full Name</label>
+                <input type="text" name="fullName" autocomplete="name" class="form-input" placeholder="Your Name" required />
               </div>
               <div>
-                <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Email</label>
-                <input type="email" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="example@mail.com" required />
+                <label class="form-label">Email</label>
+                <input type="email" name="email" autocomplete="email" class="form-input" placeholder="example@mail.com" required />
               </div>
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Phone</label>
-              <input type="tel" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+90 5XX XXX XX XX" required />
+              <label class="form-label">Phone</label>
+              <input type="tel" name="phone" autocomplete="tel" class="form-input" placeholder="+90 5XX XXX XX XX" required />
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Service Type</label>
-              <select class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+              <label class="form-label">Service Type</label>
+              <select name="serviceType" class="form-select">
                 <option>Illuminated Signage</option>
                 <option>Channel Letters</option>
                 <option>Totem Signs</option>
@@ -50,12 +50,15 @@ const description = "Contact us for signage and advertising solutions in Istanbu
               </select>
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">Message</label>
-              <textarea rows="4" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Write your project details here..."></textarea>
+              <label class="form-label">Message</label>
+              <textarea rows="4" name="message" class="form-input" placeholder="Write your project details here..."></textarea>
             </div>
             <button type="submit" class="w-full bg-primary text-secondary font-black py-4 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 uppercase tracking-widest">
               SEND MESSAGE
             </button>
+            <p class="text-center text-gray-500 text-xs mt-4 px-6 leading-relaxed">
+              By submitting this form, you consent to being contacted by our team regarding your inquiry.
+            </p>
           </form>
         </div>
 
