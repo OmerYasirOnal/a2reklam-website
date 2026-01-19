@@ -1,0 +1,263 @@
+---
+import { getAllDistricts, getProvinceBySlug } from '../../../../data/locations';
+import Layout from '../../../../layouts/Layout.astro';
+import { WHATSAPP_LINK, PHONE_TEL } from '../../../../consts';
+
+export async function getStaticPaths() {
+  const allDistricts = getAllDistricts();
+  
+  // Filter out Istanbul districts (they use the old /en/service-areas/[slug] route)
+  const nonIstanbulDistricts = allDistricts.filter(d => d.province !== 'istanbul');
+  
+  return nonIstanbulDistricts.map((district) => {
+    const province = getProvinceBySlug(district.province);
+    if (!province) return null;
+    
+    // Find 4 nearby districts
+    const sameProvinceDistricts = allDistricts.filter(
+      d => d.province === district.province && d.slug !== district.slug
+    );
+    const otherDistricts = allDistricts.filter(
+      d => d.province !== district.province
+    );
+    const neighbors = [...sameProvinceDistricts, ...otherDistricts]
+      .slice(0, 4)
+      .map(d => ({
+        name: d.enName,
+        slug: d.slug,
+        province: d.province,
+      }));
+    
+    return {
+      params: {
+        province: district.province,
+        district: district.slug,
+      },
+      props: {
+        district,
+        province,
+        neighbors,
+      },
+    };
+  }).filter(Boolean);
+}
+
+const { district, province, neighbors } = Astro.props;
+
+const title = `Signage & Advertising in ${district.enName}, ${province.enName} | A2 Reklam`;
+const description = `Professional signage production and installation services in ${district.enName}, ${province.enName}. Facade signs, totems, illuminated signs, and more.`;
+
+const breadcrumbs = [
+  { name: 'Home', item: '/en/' },
+  { name: 'Service Areas', item: '/en/service-areas/' },
+  { name: province.enName, item: `/en/service-areas/${province.slug}/` },
+  { name: district.enName, item: `/en/service-areas/${province.slug}/${district.slug}/` },
+];
+
+// Service highlights
+const districtHash = district.slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+const serviceHighlights = [
+  { name: 'Facade Signs', slug: 'cephe-tabela', icon: '🏢' },
+  { name: 'Totem Signs', slug: 'totem', icon: '📍' },
+  { name: 'Illuminated Signs', slug: 'isikli-isiksiz-tabelalar', icon: '💡' },
+  { name: 'Box Letters', slug: 'paslanmaz-harfler', icon: '✨' },
+  { name: 'Vehicle Wrapping', slug: 'arac-giydirme', icon: '🚗' },
+  { name: 'Wayfinding Systems', slug: 'yonlendirme', icon: '➡️' },
+];
+const selectedServices = [0, 1, 2, 3].map(i => serviceHighlights[(districtHash + i) % serviceHighlights.length]);
+
+// FAQ
+const faqSets = [
+  [
+    {
+      question: `How long does sign installation take in ${district.enName}?`,
+      answer: `Standard sign installation in ${district.enName} is completed within 1-3 business days. Duration may vary based on project size.`,
+    },
+    {
+      question: 'What types of signs do you produce?',
+      answer: 'We produce all types of signage including facade signs, totems, illuminated/non-illuminated signs, box letters, stainless steel letters, vehicle wrapping, and custom fabrications.',
+    },
+    {
+      question: 'Do you offer free site surveys?',
+      answer: `Yes, we provide free site surveys and measurements throughout ${province.enName}. We inspect your project on-site and prepare detailed quotations.`,
+    },
+    {
+      question: 'Do you provide maintenance and repair services?',
+      answer: 'Yes, we offer post-installation maintenance and repair support including lighting repairs, paint renewal, and general maintenance services.',
+    },
+  ],
+  [
+    {
+      question: `Which industries do you serve in ${district.enName}?`,
+      answer: 'We provide specialized signage solutions for retail, restaurants, hotels, healthcare, education, industrial zones, logistics, and all corporate sectors.',
+    },
+    {
+      question: 'Do you provide design services?',
+      answer: 'Yes, our experienced design team creates custom signage designs for your brand. We develop solutions aligned with your corporate identity.',
+    },
+    {
+      question: 'Do you assist with permits and approvals?',
+      answer: `We provide consultancy support for ${district.enName} municipality signage permits and necessary approval processes.`,
+    },
+    {
+      question: 'What are your payment terms?',
+      answer: 'We offer flexible payment options. Typically, we work with 50% deposit and remaining payment upon delivery.',
+    },
+  ],
+];
+const faq = faqSets[districtHash % faqSets.length];
+---
+
+<Layout title={title} description={description} breadcrumbs={breadcrumbs} faq={faq} lang="en">
+  <div class="relative py-24 bg-secondary overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <div class="inline-block mb-4 px-4 py-1 border border-primary/30 rounded-full bg-black/30 backdrop-blur text-primary text-sm font-semibold tracking-wider uppercase">
+          {province.enName} / {district.enName}
+        </div>
+        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+          SIGNAGE & ADVERTISING IN <span class="text-primary">{district.enName}</span>
+        </h1>
+        <p class="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
+          Professional signage production, design, and installation services in {district.enName}, {province.enName}. 
+          We deliver quality and durable signage solutions aligned with your corporate identity.
+        </p>
+      </div>
+
+      <!-- Services Highlight -->
+      <div class="mb-20">
+        <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white text-center uppercase">
+          Our Services
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {selectedServices.map((service) => (
+            <a
+              href={`/en/services/${service.slug}/`}
+              class="glass-card group p-6 text-center hover:scale-105 transition-transform"
+            >
+              <div class="text-4xl mb-3">{service.icon}</div>
+              <h3 class="text-white font-bold text-sm md:text-base group-hover:text-primary transition-colors">
+                {service.name}
+              </h3>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Process Section -->
+      <div class="glass-card p-8 md:p-12 mb-20">
+        <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white text-center uppercase">
+          Our Process
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary text-2xl font-black mx-auto mb-4">
+              1
+            </div>
+            <h3 class="text-white font-bold mb-2">Survey</h3>
+            <p class="text-gray-400 text-sm">Free on-site inspection and measurement</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary text-2xl font-black mx-auto mb-4">
+              2
+            </div>
+            <h3 class="text-white font-bold mb-2">Design</h3>
+            <p class="text-gray-400 text-sm">Custom signage design for your brand</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary text-2xl font-black mx-auto mb-4">
+              3
+            </div>
+            <h3 class="text-white font-bold mb-2">Production</h3>
+            <p class="text-gray-400 text-sm">Careful manufacturing with quality materials</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary text-2xl font-black mx-auto mb-4">
+              4
+            </div>
+            <h3 class="text-white font-bold mb-2">Installation</h3>
+            <p class="text-gray-400 text-sm">Professional setup and testing</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why A2 Reklam -->
+      <div class="mb-20">
+        <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white text-center uppercase">
+          Why <span class="text-primary">A2 Reklam</span>?
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-card p-6">
+            <div class="text-primary text-3xl mb-3">✓</div>
+            <h3 class="text-white font-bold mb-2">14+ Years Experience</h3>
+            <p class="text-gray-400 text-sm">Trusted service since 2010</p>
+          </div>
+          <div class="glass-card p-6">
+            <div class="text-primary text-3xl mb-3">✓</div>
+            <h3 class="text-white font-bold mb-2">Quality Production</h3>
+            <p class="text-gray-400 text-sm">Durable materials and careful workmanship</p>
+          </div>
+          <div class="glass-card p-6">
+            <div class="text-primary text-3xl mb-3">✓</div>
+            <h3 class="text-white font-bold mb-2">Fast Installation</h3>
+            <p class="text-gray-400 text-sm">On-time delivery guarantee</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="glass-card p-8 md:p-12 text-center mb-20">
+        <h2 class="font-heading font-black text-3xl md:text-4xl mb-4 text-white uppercase">
+          Get a <span class="text-primary">Quote</span> Now
+        </h2>
+        <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+          Contact us for a free site survey and detailed quotation for your project in {district.enName}.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <a
+            href={WHATSAPP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-track="lead-click"
+            data-lead-type="whatsapp"
+            data-lang="en"
+            class="btn btn-primary px-8 py-4 text-lg font-bold uppercase"
+          >
+            WhatsApp Contact
+          </a>
+          <a
+            href={`tel:${PHONE_TEL}`}
+            data-track="lead-click"
+            data-lead-type="call"
+            data-lang="en"
+            class="btn btn-secondary px-8 py-4 text-lg font-bold uppercase"
+          >
+            Call Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Nearby Districts -->
+      {neighbors.length > 0 && (
+        <div>
+          <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white text-center uppercase">
+            Nearby Areas
+          </h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {neighbors.map((neighbor) => (
+              <a
+                href={`/en/service-areas/${neighbor.province}/${neighbor.slug}/`}
+                class="glass-card p-4 text-center hover:scale-105 transition-transform"
+              >
+                <span class="text-white font-bold text-sm">{neighbor.name}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</Layout>

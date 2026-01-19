@@ -1,8 +1,10 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z, reference } from 'astro:content';
 
+// Services collection (TR)
+// IDs are auto-generated from filenames with 'tr-service-' prefix
 const services = defineCollection({
     type: 'content',
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         icon: z.string().optional(),
@@ -11,20 +13,11 @@ const services = defineCollection({
     }),
 });
 
-
-const districts = defineCollection({
-    type: 'content',
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        heroImage: z.string().optional(),
-        districtName: z.string(), // For dynamic replacement in templates
-    }),
-});
-
+// Services collection (EN)
+// IDs are auto-generated from filenames with 'en-service-' prefix
 const services_en = defineCollection({
     type: 'content',
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         heroImage: z.string().optional(),
@@ -32,9 +25,23 @@ const services_en = defineCollection({
     }),
 });
 
+// Districts collection (TR)
+// IDs are auto-generated from filenames with 'tr-district-' prefix
+const districts = defineCollection({
+    type: 'content',
+    schema: ({ image }) => z.object({
+        title: z.string(),
+        description: z.string(),
+        heroImage: z.string().optional(),
+        districtName: z.string(), // For dynamic replacement in templates
+    }),
+});
+
+// Districts collection (EN)
+// IDs are auto-generated from filenames with 'en-district-' prefix
 const districts_en = defineCollection({
     type: 'content',
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         heroImage: z.string().optional(),
@@ -42,9 +49,11 @@ const districts_en = defineCollection({
     }),
 });
 
-const blog_en = defineCollection({
+// Blog collection (TR)
+// IDs are auto-generated from filenames with 'tr-blog-' prefix
+const blog = defineCollection({
     type: 'content',
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         pubDate: z.coerce.date(),
@@ -55,9 +64,11 @@ const blog_en = defineCollection({
     }),
 });
 
-const blog = defineCollection({
+// Blog collection (EN)
+// IDs are auto-generated from filenames with 'en-blog-' prefix
+const blog_en = defineCollection({
     type: 'content',
-    schema: z.object({
+    schema: ({ image }) => z.object({
         title: z.string(),
         description: z.string(),
         pubDate: z.coerce.date(),

@@ -1,7 +1,7 @@
 ---
 title: "OFİS KUMLAMA FOLYOLARI Çözümleri"
 description: "A2 Reklam olarak en kaliteli OFİS KUMLAMA FOLYOLARI modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
-heroImage: "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-ofis-kumlama-folyolari-001-1600.webp"
 features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 

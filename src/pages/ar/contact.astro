@@ -28,26 +28,26 @@ const description = "تواصل معنا لخدمات اللافتات والإ�
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-accent-light p-8 md:p-12 rounded-3xl border border-white/5 shadow-2xl">
+      <div class="glass-card grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-12">
         <div>
           <form id="contact-form" class="space-y-6" data-track="lead-submit" data-lead-type="contact" data-lang="ar">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">الاسم الكامل</label>
-                <input type="text" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="الاسم الكامل" required />
+                <label class="form-label">الاسم الكامل</label>
+                <input type="text" name="fullName" autocomplete="name" class="form-input" placeholder="الاسم الكامل" required />
               </div>
               <div>
-                <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">البريد الإلكتروني</label>
-                <input type="email" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="name@example.com" required />
+                <label class="form-label">البريد الإلكتروني</label>
+                <input type="email" name="email" autocomplete="email" class="form-input" placeholder="name@example.com" required />
               </div>
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">الهاتف</label>
-              <input type="tel" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+90 5XX XXX XX XX" required />
+              <label class="form-label">الهاتف</label>
+              <input type="tel" name="phone" autocomplete="tel" class="form-input" placeholder="+90 5XX XXX XX XX" required />
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">نوع الخدمة</label>
-              <select class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+              <label class="form-label">نوع الخدمة</label>
+              <select name="serviceType" class="form-select">
                 <option>لوحات مضيئة</option>
                 <option>حروف بارزة</option>
                 <option>لوحات توتم</option>
@@ -56,32 +56,35 @@ const description = "تواصل معنا لخدمات اللافتات والإ�
               </select>
             </div>
             <div>
-              <label class="block text-sm font-bold text-gray-400 mb-2 uppercase tracking-widest">الرسالة</label>
-              <textarea rows="4" class="w-full bg-secondary border border-white/10 rounded-lg p-4 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="اكتب تفاصيل مشروعك هنا..."></textarea>
+              <label class="form-label">الرسالة</label>
+              <textarea rows="4" name="message" class="form-input" placeholder="اكتب تفاصيل مشروعك هنا..."></textarea>
             </div>
             <button type="submit" class="w-full bg-primary text-secondary font-black py-4 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 uppercase tracking-widest">
               إرسال الرسالة
             </button>
+            <p class="text-center text-gray-500 text-xs mt-4 px-6 leading-relaxed">
+              بإرسال النموذج، توافق على مشاركة بياناتك معنا للتواصل بخصوص المشروع.
+            </p>
           </form>
         </div>
 
         <div class="space-y-10">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-6 bg-secondary/50 rounded-2xl border border-white/5">
+            <div class="glass-card p-6">
               <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-4">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
               </div>
               <h3 class="text-white font-bold mb-2">الهاتف</h3>
               <a href={`tel:${PHONE_TEL}`} data-track="lead-click" data-lead-type="call" data-lang="ar" class="text-gray-400 hover:text-primary transition-colors text-sm">{PHONE_NUMBER}</a>
             </div>
-            <div class="p-6 bg-secondary/50 rounded-2xl border border-white/5">
+            <div class="glass-card p-6">
               <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-4">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
               </div>
               <h3 class="text-white font-bold mb-2">البريد</h3>
               <a href={`mailto:${EMAIL}`} class="text-gray-400 hover:text-primary transition-colors text-sm">{EMAIL}</a>
             </div>
-            <div class="p-6 bg-secondary/50 rounded-2xl border border-white/5">
+            <div class="glass-card p-6">
               <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary mb-4">
                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
               </div>

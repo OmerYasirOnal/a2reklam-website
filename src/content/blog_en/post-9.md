@@ -3,7 +3,7 @@ title: "Signage Bans and Rules in Istanbul"
 description: "What you wonder about Signage Bans and Rules in Istanbul and professional suggestions."
 pubDate: "2024-01-18"
 tags: ["Info","Guide","Signage"]
-heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
+heroImage: "/assets/img/demo/a2reklam-totem-001-960.webp"
 ---
 
 ## Signage Bans and Rules in Istanbul

@@ -3,7 +3,7 @@ title: "Most Popular Sign Models in 2024"
 description: "Discover the most modern sign designs in line with next-gen advertising technologies and 2024 trends."
 pubDate: "2024-01-18"
 tags: ["Trends","Design","2024"]
-heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
+heroImage: "/assets/img/demo/a2reklam-totem-001-960.webp"
 ---
 
 ## Eye-Catching Signage Trends of 2024

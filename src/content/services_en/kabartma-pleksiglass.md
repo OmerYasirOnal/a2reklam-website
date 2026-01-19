@@ -1,7 +1,7 @@
 ---
 title: "Kabartma Pleksiglass Solutions"
 description: "As A2 Advertising, we design the highest quality Kabartma Pleksiglass models specifically for your brand with our expert team."
-heroImage: "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-kabartma-pleksiglass-001-1600.webp"
 features: ["Free Discovery","Custom Design","Precision Production","Professional Installation"]
 ---
 

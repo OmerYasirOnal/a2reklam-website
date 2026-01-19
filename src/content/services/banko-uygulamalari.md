@@ -1,7 +1,7 @@
 ---
 title: "BANKO UYGULAMALARI Çözümleri"
 description: "A2 Reklam olarak en kaliteli BANKO UYGULAMALARI modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
-heroImage: "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-banko-uygulamalari-001-1600.webp"
 features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 
