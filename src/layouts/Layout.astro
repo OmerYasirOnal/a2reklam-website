@@ -6,6 +6,7 @@ import SEO from '../components/common/SEO.astro';
 import MobileCTA from '../components/common/MobileCTA.astro';
 import Tracking from '../components/common/Tracking.astro';
 import TrackingEvents from '../components/common/TrackingEvents.astro';
+import '../styles/global.css';
 
 interface Props {
 	title?: string;
@@ -46,10 +47,14 @@ const isRtl = lang === 'ar';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    {/* Preload hero image on home pages for LCP optimization */}
+    {(Astro.url.pathname === '/' || Astro.url.pathname === '/en/' || Astro.url.pathname === '/ar/') && (
+      <link rel="preload" as="image" href="/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp" type="image/webp" />
+    )}
 	</head>
 	<body class:list={[
     'bg-secondary text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-primary selection:text-white pb-16 md:pb-0',
-    isRtl && 'font-arabic text-right',
+    isRtl && 'font-arabic',
   ]}>
     {TRACKING_ENABLED && (
       <noscript>

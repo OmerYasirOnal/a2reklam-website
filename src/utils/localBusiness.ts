@@ -6,6 +6,8 @@ import {
   BUSINESS_NAME,
   BUSINESS_SHORT_NAME,
   EMAIL,
+  GOOGLE_RATING,
+  GOOGLE_REVIEW_COUNT,
   LOGO_PATH,
   MAPS_URL,
   PHONE_NUMBER,
@@ -56,6 +58,17 @@ export function getLocalBusinessSchema(siteUrl: URL): Record<string, unknown> {
     hasMap: MAPS_URL,
     sameAs: [SOCIAL_INSTAGRAM_URL, SOCIAL_FACEBOOK_URL, SOCIAL_LINKEDIN_URL],
     geo: GEO,
+    // Only include AggregateRating if we have real data
+    aggregateRating:
+      GOOGLE_RATING && GOOGLE_REVIEW_COUNT
+        ? {
+            '@type': 'AggregateRating',
+            ratingValue: GOOGLE_RATING,
+            reviewCount: GOOGLE_REVIEW_COUNT,
+            bestRating: 5,
+            worstRating: 1,
+          }
+        : null,
   };
 
   return pruneEmpty(schema) as Record<string, unknown>;

@@ -65,13 +65,13 @@ const languageLinks = languageOrder
       ))}
     </nav>
 
-    <div class:list={['flex items-center gap-4', isRtl && 'flex-row-reverse']}>
-      <div class="flex items-center gap-2">
+    <div class:list={['flex items-center gap-2 md:gap-4', isRtl && 'flex-row-reverse']}>
+      <div class="flex items-center gap-1 md:gap-2">
         {languageLinks.map((link) => (
           <a
             href={link.href}
             class:list={[
-              'text-xs font-bold border px-3 py-1.5 rounded transition-colors',
+              'text-xs font-bold border px-2 py-1 md:px-3 md:py-1.5 rounded transition-colors whitespace-nowrap',
               link.locale === lang ? 'border-primary text-primary' : 'border-white/20 text-gray-300 hover:text-white hover:border-white',
             ]}
             aria-current={link.locale === lang ? 'page' : undefined}
@@ -80,7 +80,7 @@ const languageLinks = languageOrder
           </a>
         ))}
       </div>
-      <a href={quoteLink} data-track="lead-click" data-lead-type="quote" data-lang={lang} class="hidden md:inline-flex bg-primary text-secondary px-6 py-2.5 rounded text-sm font-bold hover:bg-white hover:text-secondary transition-all transform hover:-translate-y-0.5 shadow-lg shadow-primary/20">
+      <a href={quoteLink} data-track="lead-click" data-lead-type="quote" data-lang={lang} class="hidden md:inline-flex btn btn-primary px-6 py-2.5 text-sm font-bold">
         {quoteLabel}
       </a>
     </div>

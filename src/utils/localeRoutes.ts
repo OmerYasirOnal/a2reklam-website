@@ -47,6 +47,7 @@ export function getLocaleAlternates(pathname: string): Partial<Record<Locale, st
     return {
       tr: normalized,
       en: `/en/services/${slug}/`,
+      ar: `/ar/services/${slug}/`,
     };
   }
 
@@ -56,6 +57,17 @@ export function getLocaleAlternates(pathname: string): Partial<Record<Locale, st
     return {
       tr: `/hizmetler/${slug}/`,
       en: normalized,
+      ar: `/ar/services/${slug}/`,
+    };
+  }
+
+  const arService = normalized.match(/^\/ar\/services\/([^/]+)\/$/);
+  if (arService) {
+    const slug = arService[1];
+    return {
+      tr: `/hizmetler/${slug}/`,
+      en: `/en/services/${slug}/`,
+      ar: normalized,
     };
   }
 
