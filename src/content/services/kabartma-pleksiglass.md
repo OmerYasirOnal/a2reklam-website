@@ -1,7 +1,7 @@
 ---
 title: "KABARTMA PLEKSİGLASS Çözümleri"
 description: "A2 Reklam olarak en kaliteli KABARTMA PLEKSİGLASS modellerini uzman ekibimizle markanıza özel tasarlıyoruz."
-heroImage: "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-kabartma-pleksiglass-001-1600.webp"
 features: ["Ücretsiz Keşif","Özel Tasarım","Hassas Üretim","Profesyonel Montaj"]
 ---
 

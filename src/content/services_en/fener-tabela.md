@@ -1,7 +1,7 @@
 ---
 title: "Blade Signs Solutions"
 description: "As A2 Advertising, we design the highest quality Blade Signs models specifically for your brand with our expert team."
-heroImage: "/assets/img/fener-tabela/a2reklam-fener-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-fener-tabela-001-1600.webp"
 features: ["Free Discovery","Custom Design","Precision Production","Professional Installation"]
 ---
 

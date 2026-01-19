@@ -1,7 +1,7 @@
 ---
 title: "Cephe Tabela Çözümleri"
 description: "Markanızın dış dünyadaki en büyük temsilcisi olan cephe tabelalarında modern ve dayanıklı çözümler."
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 features: ["Yerinde ölçü alımı","Grafik tasarım ve 3D modelleme","Lazer kesim ve montaj","LED aydınlatma entegrasyonu"]
 ---
 

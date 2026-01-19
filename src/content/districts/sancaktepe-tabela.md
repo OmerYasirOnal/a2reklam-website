@@ -2,7 +2,7 @@
 title: "Sancaktepe Tabela ve Reklam Hizmetleri"
 description: "İstanbul Sancaktepe bölgesinde profesyonel tabela imalatı, montajı ve reklam çözümleri. A2 Reklam ile en kaliteli tabela modelleri."
 districtName: "Sancaktepe"
-heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp"
 ---
 
 ## Sancaktepe Tabela ve Reklam Çözümleri

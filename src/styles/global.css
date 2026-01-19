@@ -340,3 +340,77 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-600;
 }
+
+/* ============================================
+   LIQUID GLASS / FROSTED GLASS DESIGN SYSTEM
+   ============================================ */
+
+.glass-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(201, 162, 39, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(201, 162, 39, 0.15), 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* Glass card with padding */
+.glass-card-padded {
+  @apply glass-card p-6 md:p-8;
+}
+
+/* Glass card for stats/KPIs */
+.glass-card.kpi-card {
+  @apply p-8 text-center;
+}
+
+.glass-card.kpi-card:hover .kpi-value {
+  transform: scale(1.05);
+}
+
+.kpi-value {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .glass-card,
+  .glass-card::before,
+  .kpi-value {
+    transition: none;
+  }
+  
+  .glass-card:hover {
+    transform: none;
+  }
+  
+  .glass-card.kpi-card:hover .kpi-value {
+    transform: none;
+  }
+}

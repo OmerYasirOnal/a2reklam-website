@@ -1,0 +1,175 @@
+---
+import { KPI_PROJECTS, KPI_HAPPY_CLIENTS, KPI_DISTRICTS, KPI_SINCE_YEAR } from '../../consts';
+
+interface Props {
+  lang?: 'tr' | 'en' | 'ar';
+}
+
+const { lang = 'tr' } = Astro.props;
+const isRtl = lang === 'ar';
+
+// Build KPI list based on what's configured
+type KPIItem = {
+  value: number;
+  suffix?: string;
+  label: string;
+  sublabel: string;
+};
+
+const currentYear = new Date().getFullYear();
+const yearsInBusiness = currentYear - KPI_SINCE_YEAR;
+
+const translations = {
+  tr: {
+    projects: { label: 'Proje', sublabel: 'Tamamlandı' },
+    clients: { label: 'Mutlu Müşteri', sublabel: 'Güveniyor' },
+    districts: { label: 'İlçe', sublabel: 'Hizmet Veriyoruz' },
+    years: { label: 'Yıl', sublabel: 'Tecrübe' },
+  },
+  en: {
+    projects: { label: 'Projects', sublabel: 'Completed' },
+    clients: { label: 'Happy Clients', sublabel: 'Trust Us' },
+    districts: { label: 'Districts', sublabel: 'We Serve' },
+    years: { label: 'Years', sublabel: 'Experience' },
+  },
+  ar: {
+    projects: { label: 'مشروع', sublabel: 'مكتمل' },
+    clients: { label: 'عميل سعيد', sublabel: 'يثقون بنا' },
+    districts: { label: 'منطقة', sublabel: 'نخدمها' },
+    years: { label: 'سنة', sublabel: 'خبرة' },
+  },
+};
+
+const t = translations[lang];
+
+const kpis: KPIItem[] = [];
+
+if (KPI_PROJECTS) {
+  kpis.push({
+    value: KPI_PROJECTS,
+    suffix: '+',
+    label: t.projects.label,
+    sublabel: t.projects.sublabel,
+  });
+}
+
+if (KPI_HAPPY_CLIENTS) {
+  kpis.push({
+    value: KPI_HAPPY_CLIENTS,
+    suffix: '+',
+    label: t.clients.label,
+    sublabel: t.clients.sublabel,
+  });
+}
+
+if (KPI_DISTRICTS) {
+  kpis.push({
+    value: KPI_DISTRICTS,
+    label: t.districts.label,
+    sublabel: t.districts.sublabel,
+  });
+}
+
+if (KPI_SINCE_YEAR) {
+  kpis.push({
+    value: yearsInBusiness,
+    suffix: '+',
+    label: t.years.label,
+    sublabel: t.years.sublabel,
+  });
+}
+
+// Don't render if no KPIs configured
+if (kpis.length === 0) {
+  return null;
+}
+
+// Grid class based on number of items
+const getGridClass = (count: number) => {
+  if (count === 4) return 'grid-cols-2 md:grid-cols-4';
+  if (count === 3) return 'grid-cols-1 md:grid-cols-3';
+  if (count === 2) return 'grid-cols-2';
+  return 'grid-cols-1 max-w-md mx-auto';
+};
+---
+
+<section class="py-20 bg-accent-light relative overflow-hidden">
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <div class:list={['grid gap-6', getGridClass(kpis.length)]}>
+      {kpis.map((kpi, index) => (
+        <div 
+          class="glass-card kpi-card group"
+          data-target={kpi.value}
+          data-suffix={kpi.suffix || ''}
+        >
+          <span class="block text-5xl md:text-6xl font-heading font-black text-primary mb-2 kpi-value">
+            0{kpi.suffix || ''}
+          </span>
+          <span class="block text-white font-bold text-lg uppercase tracking-wider mb-1">
+            {kpi.label}
+          </span>
+          <span class="block text-gray-400 text-sm uppercase tracking-wider">
+            {kpi.sublabel}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Count-up animation with IntersectionObserver
+  function animateCount(element: HTMLElement, target: number, suffix: string) {
+    const duration = 2000; // 2 seconds
+    const start = 0;
+    const increment = target / (duration / 16); // ~60fps
+    let current = start;
+    
+    const updateCount = () => {
+      current += increment;
+      if (current < target) {
+        element.textContent = Math.floor(current) + suffix;
+        requestAnimationFrame(updateCount);
+      } else {
+        element.textContent = target + suffix;
+      }
+    };
+    
+    updateCount();
+  }
+  
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  if (!prefersReducedMotion) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const card = entry.target as HTMLElement;
+          const valueElement = card.querySelector('.kpi-value');
+          const target = parseInt(card.getAttribute('data-target') || '0');
+          const suffix = card.getAttribute('data-suffix') || '';
+          
+          if (valueElement && !card.classList.contains('animated')) {
+            card.classList.add('animated');
+            animateCount(valueElement as HTMLElement, target, suffix);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    document.querySelectorAll('.kpi-card').forEach((card) => {
+      observer.observe(card);
+    });
+  } else {
+    // No animation: show final values immediately
+    document.querySelectorAll('.kpi-card').forEach((card) => {
+      const valueElement = card.querySelector('.kpi-value');
+      const target = card.getAttribute('data-target') || '0';
+      const suffix = card.getAttribute('data-suffix') || '';
+      if (valueElement) {
+        valueElement.textContent = target + suffix;
+      }
+    });
+  }
+</script>
