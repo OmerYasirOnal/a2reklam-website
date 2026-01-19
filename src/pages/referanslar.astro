@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { loadImagesManifest } from '../utils/imagesManifest';
 import { buildImageAlt } from '../utils/imageSeo';
+import { REFERENCES } from '../consts';
 
 const manifest = loadImagesManifest();
 const categories = [];
@@ -39,6 +40,41 @@ const description = "Tamamladığımız tabela ve reklam projelerimizi inceleyin
           Farklı sektörlerde tamamladığımız tabela ve reklam projelerinden seçilmiş örnekleri inceleyin.
         </p>
       </div>
+
+      {REFERENCES && REFERENCES.length > 0 && (
+        <div class="glass-card p-8 md:p-10 mb-16">
+          <div class="text-center mb-8">
+            <h2 class="font-heading font-black text-3xl md:text-4xl text-white uppercase tracking-tight">
+              ÇALIŞTIĞIMIZ <span class="text-primary">MARKALAR</span>
+            </h2>
+            <p class="text-gray-400 mt-3 text-sm max-w-2xl mx-auto">
+              Kurumsal üretim ve uygulamalarda tercih edilen, düzenli iş birliği yürüttüğümüz referanslar.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {REFERENCES.map((reference) => (
+              <div class="glass-card group">
+                <div class="aspect-[3/2] flex items-center justify-center p-6">
+                  {reference.logo ? (
+                    <img
+                      src={reference.logo}
+                      alt={`${reference.name} logo`}
+                      class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div class="text-center" role="img" aria-label={`${reference.name} logo`}>
+                      <div class="text-gray-300 font-heading font-bold text-xs md:text-sm uppercase tracking-wide group-hover:text-white transition-colors">
+                        {reference.name}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {categories.map(cat => (

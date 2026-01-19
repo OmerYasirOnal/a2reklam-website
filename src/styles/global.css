@@ -9,35 +9,35 @@
   --color-surface: #121826;
   --color-surface-light: #151C2C;
   --color-card: #1A1F2E;
-  
+
   /* Text Colors */
   --color-text-primary: #E5E7EB;
   --color-text-secondary: #9CA3AF;
   --color-text-muted: #6B7280;
-  
+
   /* Accent Colors */
   --color-primary: #C9A227;
   --color-primary-hover: #E0B945;
   --color-primary-light: rgba(201, 162, 39, 0.1);
   --color-primary-dark: #A6891F;
-  
+
   /* Borders & Shadows */
   --border-color: rgba(255, 255, 255, 0.1);
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
-  
+
   /* Spacing */
   --container-max-width: 1280px;
   --section-padding-y: 5rem;
   --section-padding-y-mobile: 3rem;
-  
+
   /* Typography */
   --font-size-h1: clamp(2.5rem, 5vw, 3.75rem);
   --font-size-h2: clamp(2rem, 4vw, 2.5rem);
   --font-size-h3: clamp(1.5rem, 3vw, 1.75rem);
-  
+
   /* Border Radius */
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
@@ -50,71 +50,71 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     @apply bg-secondary text-gray-300 font-sans antialiased;
     background-color: var(--color-base);
     color: var(--color-text-primary);
   }
-  
+
   /* Typography Defaults */
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
     color: var(--color-text-primary);
     line-height: 1.2;
   }
-  
+
   h1 {
     font-size: var(--font-size-h1);
     @apply font-black;
   }
-  
+
   h2 {
     font-size: var(--font-size-h2);
     @apply font-bold;
   }
-  
+
   h3 {
     font-size: var(--font-size-h3);
     @apply font-semibold;
   }
-  
+
   /* Link Styles */
   a {
     @apply transition-colors duration-200;
   }
-  
+
   a:not(.btn):not([class*="bg-"]):not([class*="border-"]) {
     @apply text-primary hover:text-primary-hover;
   }
-  
+
   /* Selection */
   ::selection {
     @apply bg-primary text-white;
   }
-  
+
   ::-moz-selection {
     @apply bg-primary text-white;
   }
-  
+
   /* Image Defaults - Prevent Giant Images */
   img {
     @apply max-w-full h-auto;
   }
-  
+
   /* Prose Overrides - Prevent images from breaking layout */
   .prose img {
     @apply max-w-full h-auto rounded-lg;
     max-height: 600px;
     object-fit: contain;
   }
-  
+
   /* Container */
   .container {
     max-width: var(--container-max-width);
     @apply mx-auto px-4;
   }
-  
+
   /* Section Spacing */
   section {
     @apply py-16 md:py-20;
@@ -128,25 +128,25 @@
     @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
     @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary;
   }
-  
+
   .btn-primary {
     @apply bg-primary text-secondary hover:bg-primary-hover;
     @apply transform hover:-translate-y-0.5;
     box-shadow: 0 4px 12px rgba(201, 162, 39, 0.3);
   }
-  
+
   .btn-secondary {
     @apply border-2 border-white/20 text-white hover:border-white hover:bg-white/10;
   }
-  
+
   .btn-whatsapp {
     @apply bg-green-600 text-white hover:bg-green-500;
   }
-  
+
   .btn-ghost {
     @apply text-gray-300 hover:text-white hover:bg-white/5;
   }
-  
+
   /* Card Styles */
   .card {
     @apply bg-surface-light border border-white/5 rounded-xl p-6;
@@ -178,35 +178,29 @@
     background: rgba(201, 162, 39, 0.1);
   }
 
-  .glass-card {
-    @apply backdrop-blur-sm border border-white/10 rounded-2xl;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  }
-  
   /* Icon Wrapper - Prevent oversized icons */
   .icon {
     @apply w-5 h-5;
     flex-shrink: 0;
   }
-  
+
   .icon-sm {
     @apply w-4 h-4;
   }
-  
+
   .icon-lg {
     @apply w-6 h-6;
   }
-  
+
   .icon-xl {
     @apply w-8 h-8;
   }
-  
+
   /* Prevent prose from affecting gallery sections */
   .not-prose {
     /* Remove prose styles */
   }
-  
+
   .not-prose * {
     /* Remove prose styles */
   }
@@ -217,7 +211,7 @@
   .text-balance {
     text-wrap: balance;
   }
-  
+
   /* Line Clamp Utilities */
   .line-clamp-2 {
     display: -webkit-box;
@@ -225,41 +219,41 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-4 {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   .line-clamp-5 {
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  
+
   /* Animation Utilities */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
   }
-  
+
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out;
   }
-  
+
   .animate-scale-in {
     animation: scaleIn 0.3s ease-out;
   }
-  
+
   /* RTL Support */
   [dir="rtl"] .rtl-mirror {
     transform: scaleX(-1);
@@ -319,4 +313,85 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-600;
+}
+
+/* ============================================
+   LIQUID GLASS / FROSTED GLASS DESIGN SYSTEM
+   ============================================ */
+
+.glass-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(201, 162, 39, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(201, 162, 39, 0.15), 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+@supports not ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+  .glass-card {
+    background: rgba(18, 24, 38, 0.92);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Glass card with padding */
+.glass-card-padded {
+  @apply p-6 md:p-8;
+}
+
+/* Glass card for stats/KPIs */
+.glass-card.kpi-card {
+  @apply p-8 text-center;
+}
+
+.glass-card.kpi-card:hover .kpi-value {
+  transform: scale(1.05);
+}
+
+.kpi-value {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .glass-card,
+  .glass-card::before,
+  .kpi-value {
+    transition: none;
+  }
+
+  .glass-card:hover {
+    transform: none;
+  }
+
+  .glass-card.kpi-card:hover .kpi-value {
+    transform: none;
+  }
 }

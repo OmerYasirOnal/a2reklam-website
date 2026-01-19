@@ -47,6 +47,8 @@ npm run build
 ```
 Output is written to `dist/`.
 
+Packages section is normal; not used for this static site.
+
 ## Lead Forms (Static Hosting)
 
 Set `PUBLIC_FORM_ENDPOINT` to your form provider endpoint (Formspree/Getform/etc.). Example:
