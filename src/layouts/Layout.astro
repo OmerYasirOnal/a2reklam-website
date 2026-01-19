@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION, GTM_CONTAINER_ID, TRACKING_ENABLED } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_DESCRIPTION_EN, SITE_DESCRIPTION_AR, GTM_CONTAINER_ID, TRACKING_ENABLED } from '../consts';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
 import SEO from '../components/common/SEO.astro';
@@ -25,7 +25,7 @@ interface Props {
 
 const {
   title = SITE_TITLE,
-  description = SITE_DESCRIPTION,
+  description: providedDescription,
   lang = 'tr',
   image,
   article = false,
@@ -35,6 +35,10 @@ const {
   whatsappLocation,
   mobileCtaVariant = 'default',
 } = Astro.props;
+
+const description =
+  providedDescription ??
+  (lang === 'en' ? SITE_DESCRIPTION_EN : lang === 'ar' ? SITE_DESCRIPTION_AR : SITE_DESCRIPTION);
 
 const isRtl = lang === 'ar';
 const sanitizedTitle = sanitizePageTitle(whatsappTitle ?? title);

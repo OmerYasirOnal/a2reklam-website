@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import MapEmbed from '../components/common/MapEmbed.astro';
 import { ADDRESS, ADDRESS_LOCALITY, EMAIL, PHONE_NUMBER, PHONE_TEL } from '../consts';
+import { SERVICE_LABELS, getServiceLabel } from '../config/serviceLabels';
 
 const title = "İletişim | A2 Reklam";
 const description = "İstanbul'da tabela ve reklam çözümleri için bizimle iletişime geçin. Ücretsiz keşif ve teklif için formumuzu doldurabilir veya bizi arayabilirsiniz.";
@@ -32,11 +33,11 @@ const description = "İstanbul'da tabela ve reklam çözümleri için bizimle il
         <!-- Contact Form -->
         <div>
           <form id="contact-form" class="space-y-6" data-track="lead-submit" data-lead-type="contact" data-lang="tr">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label class="form-label">Ad Soyad</label>
-                <input type="text" name="fullName" autocomplete="name" class="form-input" placeholder="Adınız Soyadınız" required />
-              </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="form-label">Ad Soyad</label>
+              <input type="text" name="fullName" autocomplete="name" class="form-input" placeholder="Adınız Soyadınız" required />
+            </div>
               <div>
                 <label class="form-label">E-posta</label>
                 <input type="email" name="email" autocomplete="email" class="form-input" placeholder="ornek@mail.com" required />
@@ -49,11 +50,10 @@ const description = "İstanbul'da tabela ve reklam çözümleri için bizimle il
             <div>
               <label class="form-label">Hizmet Türü</label>
               <select name="serviceType" class="form-select">
-                <option>Işıklı Tabela</option>
-                <option>Kutu Harf</option>
-                <option>Totem Tabela</option>
-                <option>Cephe Giydirme</option>
-                <option>Diğer</option>
+                {Object.keys(SERVICE_LABELS).map((slug) => (
+                  <option value={slug}>{getServiceLabel(slug as keyof typeof SERVICE_LABELS, 'tr')}</option>
+                ))}
+                <option value="diger">Diğer</option>
               </select>
             </div>
             <div>

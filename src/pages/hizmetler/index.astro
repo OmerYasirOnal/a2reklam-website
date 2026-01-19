@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt } from '../../utils/imageSeo';
+import { getServiceLabel } from '../../config/serviceLabels';
 
 const services = await getCollection('services');
 const sortedServices = services.sort((a, b) => a.data.title.localeCompare(b.data.title, 'tr'));
@@ -17,9 +18,10 @@ manifest.forEach((item: any) => {
 
 const serviceCards = sortedServices.map((entry) => {
   const media = representativeByCategory.get(entry.slug);
+  const name = getServiceLabel(entry.slug, 'tr') ?? entry.data.title;
   return {
     slug: entry.slug,
-    title: entry.data.title,
+    title: name,
     description: entry.data.description,
     image: media?.paths?.['960'] ?? entry.data.heroImage,
     alt: buildImageAlt({ category: entry.slug, lang: 'tr' }),

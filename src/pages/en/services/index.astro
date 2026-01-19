@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../../layouts/Layout.astro';
 import { loadImagesManifest } from '../../../utils/imagesManifest';
 import { buildImageAlt } from '../../../utils/imageSeo';
+import { getServiceLabel } from '../../../config/serviceLabels';
 
 const services = await getCollection('services_en');
 const sortedServices = services.sort((a, b) => a.data.title.localeCompare(b.data.title, 'en'));
@@ -19,7 +20,7 @@ const serviceCards = sortedServices.map((entry) => {
   const media = representativeByCategory.get(entry.slug);
   return {
     slug: entry.slug,
-    title: entry.data.title,
+    title: getServiceLabel(entry.slug, 'en') ?? entry.data.title,
     description: entry.data.description,
     image: media?.paths?.['960'] ?? entry.data.heroImage,
     alt: buildImageAlt({ category: entry.slug, lang: 'en' }),

@@ -18,23 +18,28 @@ const {
   <style>
     :global(:root) {
       /* Tweak these to tune map colors without editing component code */
-      --map-filter-brightness: 0.75;
-      --map-filter-contrast: 1.05;
-      --map-filter-saturate: 0.8;
-      --map-filter-hue: 170deg;
+      --map-filter-brightness: 0.72;
+      --map-filter-contrast: 1.1;
+      --map-filter-saturate: 0.85;
+      --map-filter-invert: 0.85;
+      --map-filter-hue: 175deg;
+      --map-hover-brightness: 0.78;
+      --map-hover-saturate: 0.95;
     }
     .map-dark {
       filter:
         brightness(var(--map-filter-brightness))
         contrast(var(--map-filter-contrast))
         saturate(var(--map-filter-saturate))
+        invert(var(--map-filter-invert))
         hue-rotate(var(--map-filter-hue));
     }
     .map-dark:hover {
       filter:
-        brightness(calc(var(--map-filter-brightness) + 0.05))
+        brightness(var(--map-hover-brightness))
         contrast(var(--map-filter-contrast))
-        saturate(calc(var(--map-filter-saturate) + 0.1))
+        saturate(var(--map-hover-saturate))
+        invert(var(--map-filter-invert))
         hue-rotate(var(--map-filter-hue));
     }
   </style>

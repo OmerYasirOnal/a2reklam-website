@@ -11,9 +11,9 @@
   --color-card: #1A1F2E;
 
   /* Text Colors */
-  --color-text-primary: #E5E7EB;
-  --color-text-secondary: #9CA3AF;
-  --color-text-muted: #6B7280;
+  --color-text-primary: #F3F4F6;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
 
   /* Accent Colors */
   --color-primary: #C9A227;
@@ -55,6 +55,7 @@
     @apply bg-secondary text-gray-300 font-sans antialiased;
     background-color: var(--color-base);
     color: var(--color-text-primary);
+    line-height: 1.65;
   }
 
   /* Typography Defaults */
@@ -67,16 +68,29 @@
   h1 {
     font-size: var(--font-size-h1);
     @apply font-black;
+    margin-bottom: 0.75rem;
   }
 
   h2 {
     font-size: var(--font-size-h2);
     @apply font-bold;
+    margin-bottom: 0.65rem;
   }
 
   h3 {
     font-size: var(--font-size-h3);
     @apply font-semibold;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: var(--color-text-secondary);
+    max-width: 78ch;
+  }
+
+  ul, ol {
+    color: var(--color-text-secondary);
+    @apply leading-relaxed;
   }
 
   /* Link Styles */
