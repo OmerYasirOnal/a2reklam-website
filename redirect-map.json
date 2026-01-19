@@ -38,6 +38,12 @@
             "new": "/en/services/",
             "status": 301,
             "note": "Harmanlama service removed"
+        },
+        {
+            "old": "/ar/services/harmanlama/",
+            "new": "/ar/services/",
+            "status": 301,
+            "note": "Harmanlama service removed"
         }
     ]
 }
