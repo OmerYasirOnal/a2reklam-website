@@ -36,3 +36,14 @@ export function trackLeadSubmit({ type, lang, page }: LeadEvent): void {
     page,
   });
 }
+
+export function trackLeadConversion({ type, lang, page }: LeadEvent): void {
+  const dataLayer = getDataLayer();
+  if (!dataLayer) return;
+  dataLayer.push({
+    event: 'lead_conversion',
+    lead_type: type,
+    lang,
+    page,
+  });
+}

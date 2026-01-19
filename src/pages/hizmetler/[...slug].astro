@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt } from '../../utils/imageSeo';
 import { PHONE_NUMBER, PHONE_TEL, WHATSAPP_LINK } from '../../consts';
+import Gallery from '../../components/common/Gallery.astro';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
@@ -298,23 +299,22 @@ const topDistricts = [
       </div>
 
       <!-- Gallery Grid -->
-      <div class="mt-20 not-prose">
-        <h2 class="font-heading font-bold text-3xl mb-8 text-white border-b border-white/10 pb-4">İlgili Referans Görseller</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((img: any) => (
-            <div class="aspect-square overflow-hidden rounded-lg bg-accent-light group relative cursor-pointer">
-              <img 
-                src={img.paths['480']} 
-                data-full={img.paths['1600']}
-                alt={buildImageAlt({ category: entry.slug, lang: 'tr' })} 
-                class="gallery-img w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-80 group-hover:opacity-100"
-                loading="lazy" 
-              />
-              <div class="absolute inset-0 ring-1 ring-inset ring-white/10 group-hover:ring-primary/50 transition-all rounded-lg pointer-events-none"></div>
-            </div>
-          ))}
+      {images.length > 0 && (
+        <div class="mt-20">
+          <h2 class="font-heading font-bold text-3xl mb-8 text-white border-b border-white/10 pb-4">İlgili Referans Görseller</h2>
+          <Gallery 
+            images={images.map((img: any) => ({
+              paths: img.paths,
+              category: img.category,
+              alt: buildImageAlt({ category: entry.slug, lang: 'tr' }),
+            }))}
+            lang="tr"
+            category={entry.slug}
+            initialLimit={12}
+            aspectRatio="square"
+          />
         </div>
-      </div>
+      )}
     </div>
 
     <!-- Sidebar -->
@@ -337,48 +337,4 @@ const topDistricts = [
     </aside>
   </div>
 
-  <!-- Lightbox Modal -->
-  <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex-items-center justify-center p-4 cursor-zoom-out">
-    <img id="lightbox-img" src="" alt="Lightbox" class="max-w-full max-h-full object-contain shadow-2xl transition-transform duration-300 transform scale-95" />
-    <button id="close-lightbox" class="absolute top-6 right-6 text-white hover:text-primary transition-colors">
-      <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-    </button>
-  </div>
-
-  <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.getElementById('close-lightbox');
-    const galleryImages = document.querySelectorAll('.gallery-img');
-
-    galleryImages.forEach(img => {
-      img.addEventListener('click', () => {
-        const fullSrc = img.getAttribute('data-full');
-        if (fullSrc) {
-          lightboxImg.src = fullSrc;
-          lightbox.classList.remove('hidden');
-          lightbox.classList.add('flex');
-          setTimeout(() => lightboxImg.classList.remove('scale-95'), 10);
-        }
-      });
-    });
-
-    const close = () => {
-      lightboxImg.classList.add('scale-95');
-      setTimeout(() => {
-        lightbox.classList.add('hidden');
-        lightbox.classList.remove('flex');
-      }, 300);
-    };
-
-    lightbox?.addEventListener('click', (e) => {
-      if (e.target === lightbox || e.target === lightboxImg || e.target === closeBtn) {
-        close();
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') close();
-    });
-  </script>
 </Layout>

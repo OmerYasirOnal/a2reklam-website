@@ -28,4 +28,14 @@ const description = "تم استلام طلبك. سنعاود التواصل م�
       </div>
     </div>
   </div>
+  
+  <script type="module">
+    import { trackLeadConversion } from '../../utils/tracking';
+    // Fire conversion event once on page load
+    trackLeadConversion({
+      type: 'quote',
+      lang: 'ar',
+      page: location.pathname,
+    });
+  </script>
 </Layout>
