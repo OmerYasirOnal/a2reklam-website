@@ -49,7 +49,7 @@ const t = translations[lang];
     </div>
 
     <!-- References Grid with Glass Cards -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
       {references.map((reference) => (
         <div class="glass-card group relative overflow-hidden">
           <div class="aspect-[3/2] flex items-center justify-center p-6">
@@ -57,7 +57,10 @@ const t = translations[lang];
               <img 
                 src={reference.logo} 
                 alt={`${reference.name} logo`}
-                class="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                width="180"
+                height="72"
+                decoding="async"
+                class="max-w-full max-h-full object-contain opacity-85 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500"
                 loading="lazy"
               />
             ) : (
@@ -68,10 +71,10 @@ const t = translations[lang];
               </div>
             )}
           </div>
-          {reference.website && (
+          {reference.url && (
             <div class="absolute inset-0 flex items-center justify-center bg-secondary/90 opacity-0 group-hover:opacity-100 transition-opacity">
               <a 
-                href={reference.website}
+                href={reference.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-primary hover:text-white text-sm font-bold uppercase tracking-wider"
