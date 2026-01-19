@@ -1,22 +1,18 @@
 ---
+import { REFERENCES } from '../../data/references';
+
 interface Props {
   lang?: string;
 }
 
 const { lang = 'tr' } = Astro.props;
 
-// Client references - using text fallback since no logo files available yet
-// When logo files are added to public/assets/references/, update the logo paths
-const clients = [
-  { name: 'Kağıthane Belediyesi', logo: null },
-  { name: 'Pendik Plaza', logo: null },
-  { name: 'Kartal AVM', logo: null },
-  { name: 'Beşiktaş Market', logo: null },
-  { name: 'Fatih Ticaret', logo: null },
-  { name: 'Şişli Center', logo: null },
-  { name: 'Ataşehir Tower', logo: null },
-  { name: 'Kadıköy Office', logo: null },
-];
+// Use centralized references list; render even without logos with text badges
+const clients = REFERENCES ?? [];
+
+if (clients.length === 0) {
+  return null;
+}
 
 const headings: Record<string, string> = {
   tr: 'Güvendikleri Markalar',

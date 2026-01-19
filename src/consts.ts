@@ -1,3 +1,6 @@
+import type { ReferenceItem } from './data/references';
+import { REFERENCES as REFERENCES_DATA } from './data/references';
+
 export const BUSINESS_NAME = 'A2 Reklam - Tabela ve Reklam Sistemleri';
 export const BUSINESS_SHORT_NAME = 'A2 Reklam';
 export const SITE_TITLE = 'A2 Reklam - Tabela ve Reklam Çözümleri';
@@ -38,35 +41,8 @@ export const STATS_CONFIG: Record<string, boolean | null> = {
 };
 
 // References / Clients Section
-// Set to null to hide the section entirely
-export const REFERENCES: Array<{ name: string; logo?: string; website?: string }> | null = [
-  { name: 'PIDEM' },
-  { name: 'AJANS PRESS' },
-  { name: 'BUGABOO' },
-  { name: 'BAĞCILAR BELEDİYESİ' },
-  { name: 'HD İSKENDER' },
-  { name: 'HENKEL' },
-  { name: 'SUNSTOP' },
-  { name: 'ESSENTIAL ENERGY' },
-  { name: 'MCA CEYLAN ASANSÖR' },
-  { name: 'HARMONY' },
-  { name: 'GÜRSOY 1933' },
-  { name: 'ENERGY FOCUS' },
-  { name: 'İKBAL' },
-  { name: 'GKOÇ YAPI' },
-  { name: 'GÜLLÜOĞLU' },
-  { name: 'MUMUS' },
-  { name: 'KISMET BY MILKA' },
-  { name: 'ELECTROLUX' },
-  { name: 'ÖZTÜRK HOLDING' },
-  { name: 'RENEWABLE ENERGY GROUP' },
-  { name: 'QUA GRANITE' },
-  { name: 'TISSOT' },
-];
-// When logos are ready, add them:
-// export const REFERENCES = [
-//   { name: 'Firma A', logo: '/assets/logos/firma-a.png', website: 'https://...' },
-// ];
+// Centralized list lives in src/data/references.ts
+export const REFERENCES: ReferenceItem[] | null = REFERENCES_DATA;
 
 // KPI Counters (Customer Satisfaction Stats)
 // Set values or null to hide individual cards

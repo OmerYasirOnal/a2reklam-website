@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt } from '../../utils/imageSeo';
-import { REFERENCES } from '../../consts';
+import { REFERENCES } from '../../data/references';
 
 const manifest = loadImagesManifest();
 const categories = [];
@@ -25,6 +25,7 @@ manifest.forEach(img => {
 
 const title = "Our Portfolio | A2 Advertising References";
 const description = "Review our completed signage and advertising projects. Illuminated signs, totems, channel letters, and more.";
+const references = REFERENCES ?? [];
 ---
 
 <Layout title={title} description={description} lang="en">
@@ -41,7 +42,7 @@ const description = "Review our completed signage and advertising projects. Illu
         </p>
       </div>
 
-      {REFERENCES && REFERENCES.length > 0 && (
+      {references.length > 0 && (
         <div class="glass-card p-8 md:p-10 mb-16">
           <div class="text-center mb-8">
             <h2 class="font-heading font-black text-3xl md:text-4xl text-white uppercase tracking-tight">
@@ -52,8 +53,8 @@ const description = "Review our completed signage and advertising projects. Illu
             </p>
           </div>
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {REFERENCES.map((reference) => (
-              <div class="glass-card group">
+            {references.map((reference) => (
+              <div class="glass-card group relative overflow-hidden">
                 <div class="aspect-[3/2] flex items-center justify-center p-6">
                   {reference.logo ? (
                     <img
@@ -70,6 +71,18 @@ const description = "Review our completed signage and advertising projects. Illu
                     </div>
                   )}
                 </div>
+                {reference.url && (
+                  <div class="absolute inset-0 bg-secondary/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a
+                      href={reference.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-primary hover:text-white text-xs font-bold uppercase tracking-wider"
+                    >
+                      Visit Site →
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>

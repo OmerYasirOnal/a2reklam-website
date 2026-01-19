@@ -1,9 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { loadImagesManifest } from '../utils/imagesManifest';
 import { buildImageAlt } from '../utils/imageSeo';
-import { REFERENCES } from '../consts';
+import { REFERENCES } from '../data/references';
 
 const manifest = loadImagesManifest();
 const categories = [];
@@ -25,9 +24,30 @@ manifest.forEach(img => {
 
 const title = "Referanslarımız | A2 Reklam Portfolyo";
 const description = "Tamamladığımız tabela ve reklam projelerimizi inceleyin. Işıklı tabela, totem, kutu harf ve daha fazlası.";
+const references = REFERENCES ?? [];
+const siteUrl = Astro.site?.href || 'https://a2reklam.com.tr/';
+const referencesJsonLd = references.map((reference, index) => ({
+  '@type': 'ListItem',
+  position: index + 1,
+  item: {
+    '@type': 'Organization',
+    name: reference.name,
+    ...(reference.url ? { url: reference.url } : {}),
+    ...(reference.logo ? { logo: new URL(reference.logo, siteUrl).toString() } : {}),
+  },
+}));
 ---
 
 <Layout title={title} description={description} lang="tr">
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'A2 Reklam Referansları',
+      itemListElement: referencesJsonLd,
+    })}
+  </script>
+
   <div class="relative py-24 bg-secondary overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     
@@ -41,7 +61,7 @@ const description = "Tamamladığımız tabela ve reklam projelerimizi inceleyin
         </p>
       </div>
 
-      {REFERENCES && REFERENCES.length > 0 && (
+      {references.length > 0 && (
         <div class="glass-card p-8 md:p-10 mb-16">
           <div class="text-center mb-8">
             <h2 class="font-heading font-black text-3xl md:text-4xl text-white uppercase tracking-tight">
@@ -52,8 +72,8 @@ const description = "Tamamladığımız tabela ve reklam projelerimizi inceleyin
             </p>
           </div>
           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {REFERENCES.map((reference) => (
-              <div class="glass-card group">
+            {references.map((reference) => (
+              <div class="glass-card group relative overflow-hidden">
                 <div class="aspect-[3/2] flex items-center justify-center p-6">
                   {reference.logo ? (
                     <img
@@ -70,6 +90,18 @@ const description = "Tamamladığımız tabela ve reklam projelerimizi inceleyin
                     </div>
                   )}
                 </div>
+                {reference.url && (
+                  <div class="absolute inset-0 bg-secondary/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <a
+                      href={reference.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-primary hover:text-white text-xs font-bold uppercase tracking-wider"
+                    >
+                      Siteyi Ziyaret Et →
+                    </a>
+                  </div>
+                )}
               </div>
             ))}
           </div>

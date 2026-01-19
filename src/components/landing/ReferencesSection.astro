@@ -1,5 +1,5 @@
 ---
-import { REFERENCES } from '../../consts';
+import { REFERENCES } from '../../data/references';
 
 interface Props {
   lang?: 'tr' | 'en' | 'ar';
@@ -7,9 +7,10 @@ interface Props {
 
 const { lang = 'tr' } = Astro.props;
 const isRtl = lang === 'ar';
+const references = REFERENCES ?? [];
 
 // Don't render if no references configured
-if (!REFERENCES || REFERENCES.length === 0) {
+if (references.length === 0) {
   return null;
 }
 
@@ -49,8 +50,8 @@ const t = translations[lang];
 
     <!-- References Grid with Glass Cards -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {REFERENCES.map((reference) => (
-        <div class="glass-card group">
+      {references.map((reference) => (
+        <div class="glass-card group relative overflow-hidden">
           <div class="aspect-[3/2] flex items-center justify-center p-6">
             {reference.logo ? (
               <img 
