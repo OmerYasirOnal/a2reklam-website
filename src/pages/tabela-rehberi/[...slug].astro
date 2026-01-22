@@ -42,8 +42,12 @@ const recentArticles = allArticles
             <time datetime={article.data.pubDate.toISOString()}>{new Date(article.data.pubDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
             {article.data.updatedDate && (<span>• Güncelleme: {new Date(article.data.updatedDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>)}
           </div>
-          <!-- Hide first h1 in prose to avoid duplicate title -->
-          <div class="prose prose-invert prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-headings:text-heading prose-h1:hidden prose-h2:text-2xl prose-h2:mb-4 prose-h2:mt-10 prose-h2:border-l-4 prose-h2:border-primary prose-h2:pl-4 prose-h3:text-xl prose-h3:mb-3 prose-h3:mt-6 prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-5 prose-a:text-primary prose-a:no-underline hover:prose-a:text-primary-hover prose-strong:text-heading prose-strong:font-bold prose-ul:text-gray-300 prose-ul:mb-5 prose-ol:text-gray-300 prose-ol:mb-5 prose-li:mb-1.5 prose-img:rounded-xl prose-img:shadow-lg prose-img:my-6 prose-img:max-h-96"><Content /></div>
+          <!-- 
+            Hide first h1 in prose to avoid duplicate title.
+            Template H1 (above) uses frontmatter title for SEO/schema.
+            Markdown H1 is hidden via prose-h1:hidden.
+          -->
+          <div class="article-prose prose prose-invert prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-headings:text-heading prose-h1:hidden prose-h2:text-2xl prose-h2:mb-4 prose-h2:mt-10 prose-h2:border-l-4 prose-h2:border-primary prose-h2:pl-4 prose-h3:text-xl prose-h3:mb-3 prose-h3:mt-6 prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-primary prose-a:no-underline hover:prose-a:text-primary-hover prose-strong:text-heading prose-strong:font-bold prose-ul:text-gray-300 prose-ul:mb-6 prose-ol:text-gray-300 prose-ol:mb-6 prose-li:mb-2"><Content /></div>
           {article.data.tags && article.data.tags.length > 0 && (
             <div class="mt-10 pt-8 border-t border-white/10">
               <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Etiketler</h3>

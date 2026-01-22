@@ -110,7 +110,12 @@
   }
 
   /* Typography Defaults */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
     color: var(--text-primary);
     line-height: 1.2;
@@ -139,7 +144,8 @@
     max-width: 78ch;
   }
 
-  ul, ol {
+  ul,
+  ol {
     color: var(--text-secondary);
     @apply leading-relaxed;
   }
@@ -174,6 +180,28 @@
     object-fit: contain;
   }
 
+  /* Article Prose - Enhanced image framing for Tabela Rehberi articles */
+  .article-prose img {
+    @apply rounded-xl my-8;
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Light mode article images */
+  [data-theme="light"] .article-prose img {
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Ensure images are centered in articles */
+  .article-prose p>img {
+    @apply mx-auto block;
+  }
+
   /* Container */
   .container {
     max-width: var(--container-max-width);
@@ -188,6 +216,7 @@
 
 /* Component Utilities */
 @layer components {
+
   /* Button Styles */
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
@@ -293,7 +322,7 @@
     @apply text-red-400 text-xs mt-1 hidden;
   }
 
-  .form-input:invalid:not(:placeholder-shown) ~ .form-error {
+  .form-input:invalid:not(:placeholder-shown)~.form-error {
     @apply block;
   }
 
@@ -372,21 +401,27 @@
   .bg-secondary {
     background-color: var(--bg-base);
   }
+
   .bg-secondary\/50 {
     background-color: rgba(var(--bg-base-rgb), 0.5);
   }
+
   .bg-secondary\/60 {
     background-color: rgba(var(--bg-base-rgb), 0.6);
   }
+
   .bg-secondary\/70 {
     background-color: rgba(var(--bg-base-rgb), 0.7);
   }
+
   .bg-secondary\/80 {
     background-color: rgba(var(--bg-base-rgb), 0.8);
   }
+
   .bg-secondary\/90 {
     background-color: rgba(var(--bg-base-rgb), 0.9);
   }
+
   .bg-secondary\/95 {
     background-color: rgba(var(--bg-base-rgb), 0.95);
   }
@@ -394,6 +429,7 @@
   .bg-surface {
     background-color: var(--bg-surface);
   }
+
   .bg-surface-light,
   .bg-accent-light {
     background-color: var(--bg-card);
@@ -402,18 +438,23 @@
   .bg-primary {
     background-color: var(--accent-primary);
   }
+
   .bg-primary-hover {
     background-color: var(--accent-hover);
   }
+
   .text-primary {
     color: var(--accent-primary);
   }
+
   .text-primary-hover {
     color: var(--accent-hover);
   }
+
   .border-primary {
     border-color: var(--accent-primary);
   }
+
   .fill-primary {
     fill: var(--accent-primary);
   }
@@ -421,13 +462,16 @@
   .text-white {
     color: var(--text-primary);
   }
+
   .text-gray-100,
   .text-gray-200 {
     color: var(--text-primary);
   }
+
   .text-gray-300 {
     color: var(--text-secondary);
   }
+
   .text-gray-400,
   .text-gray-500,
   .text-gray-600 {
@@ -435,7 +479,12 @@
   }
 
   /* Ensure headings are always visible */
-  h1, h2, h3, h4, h5, h6,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
   .text-heading {
     color: var(--text-primary) !important;
   }
@@ -502,6 +551,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -512,6 +562,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -523,6 +574,7 @@
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -671,6 +723,7 @@
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
+
   .glass-card,
   .glass-card::before,
   .kpi-value {
