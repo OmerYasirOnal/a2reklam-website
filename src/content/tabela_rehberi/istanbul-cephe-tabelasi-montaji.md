@@ -10,7 +10,7 @@ tags: ["cephe tabelası montajı", "tabela izni", "İstanbul tabela", "tabela ru
 
 İstanbul'da cephe tabelası montajı, sadece teknik bir işlem değil, aynı zamanda yasal düzenlemelere uygun bir süreçtir. Bu rehberde, tabela montajının tüm aşamalarını ve gerekli izin prosedürlerini detaylı olarak ele alacağız.
 
-![İstanbul'da profesyonel cephe tabelası montajı](/images/gallery/cephe-tabela/cephe-tabela-2.jpg)
+![İstanbul'da profesyonel cephe tabelası montajı](/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp)
 
 ## Cephe Tabelası Montaj Öncesi Hazırlık
 
@@ -23,7 +23,7 @@ Montaj sürecinin ilk adımı, profesyonel bir keşif ve ölçüm çalışmasıd
 - Elektrik altyapısı kontrol edilir
 - Montaj için gerekli ekipman tespit edilir
 
-![Cephe tabelası keşif çalışması](/images/gallery/cephe-tabela/cephe-tabela-6.jpg)
+![Cephe tabelası keşif çalışması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-960.webp)
 
 ### Tasarım ve Onay
 
@@ -47,7 +47,7 @@ Keşif sonrasında, markanıza uygun tasarım hazırlanır. Tasarım aşamasınd
 5. Yapı kullanım izin belgesi
 6. Kat malikleri kurulu kararı (eğer varsa)
 
-![Tabela montaj izin belgesi örneği](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-1.jpg)
+![Tabela montaj izin belgesi örneği](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp)
 
 ### İlçe Belediyesi Başvurusu
 
@@ -73,7 +73,7 @@ Montaj günü, çalışma alanı güvenlik önlemleri ile çevrelenir. Yüksekte
 
 Tabelanızın uzun ömürlü olması için sağlam bir konstrüksiyon şarttır. Cepheye zarar vermeden, çelik taşıyıcılar ve kimyasal dübeller kullanılarak montaj yapılır.
 
-![Cephe tabelası konstrüksiyon montajı](/images/gallery/cephe-tabela/cephe-tabela-7.jpg)
+![Cephe tabelası konstrüksiyon montajı](/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-960.webp)
 
 ### 3. Tabela Panellerinin Yerleştirilmesi
 
@@ -91,7 +91,7 @@ Montaj tamamlandıktan sonra:
 - Estetik görünüm değerlendirilir
 - Müşteri onayı alınır
 
-![Tamamlanmış cephe tabelası gece görünümü](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-3.jpg)
+![Tamamlanmış cephe tabelası gece görünümü](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-003-960.webp)
 
 ## Montaj Sonrası Hizmetler
 

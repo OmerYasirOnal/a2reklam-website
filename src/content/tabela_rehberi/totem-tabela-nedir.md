@@ -10,7 +10,7 @@ tags: ["totem tabela", "totem", "yönlendirme tabelası", "İstanbul tabela"]
 
 Totem tabela, zemine dikey olarak monte edilen, genellikle yüksek ve dikkat çekici tasarımlara sahip reklam ve bilgilendirme tabelalarıdır. Özellikle AVM'ler, benzin istasyonları, hastaneler ve büyük işletmeler için vazgeçilmez bir tanıtım aracıdır.
 
-![Modern totem tabela uygulaması](/images/gallery/totem/totem-1.jpg)
+![Modern totem tabela uygulaması](/assets/img/totem/a2reklam-totem-001-960.webp)
 
 ## Totem Tabela Nedir?
 
@@ -34,7 +34,7 @@ Bir tarafı duvar veya peyzaja yaslanır, tek yüzü görünür.
 - Duvar kenarları
 - Sınırlı alan uygulamaları
 
-![Tek yüzlü totem tabela](/images/gallery/totem/totem-2.jpg)
+![Tek yüzlü totem tabela](/assets/img/totem/a2reklam-totem-002-960.webp)
 
 ### 2. Çift Yüzlü (Bifaze) Totem
 
@@ -64,7 +64,7 @@ Dairesel kesitli, modern ve estetik tasarımlarda tercih edilir.
 - Lüks konut projeleri
 - Kurumsal kampuslar
 
-![Silindir totem tabela](/images/gallery/totem/totem-3.jpg)
+![Silindir totem tabela](/assets/img/totem/a2reklam-totem-003-960.webp)
 
 ## Totem Tabela Malzemeleri
 
@@ -122,7 +122,7 @@ Dairesel kesitli, modern ve estetik tasarımlarda tercih edilir.
 - AVM'ler
 - Endüstriyel tesisler
 
-![Yüksek totem tabela](/images/gallery/totem/totem-4.jpg)
+![Yüksek totem tabela](/assets/img/totem/a2reklam-totem-004-960.webp)
 
 ### Genişlik ve Derinlik
 
@@ -159,7 +159,7 @@ Dışarıdan projektör ile:
 - Kolay bakım
 - Esnek tasarım
 
-![Işıklı totem tabela gece görünümü](/images/gallery/totem/totem-5.jpg)
+![Işıklı totem tabela gece görünümü](/assets/img/totem/a2reklam-totem-005-960.webp)
 
 ## Totem Tabela Kullanım Alanları
 
@@ -202,7 +202,7 @@ Dışarıdan projektör ile:
 - Drive-thru yönlendirme
 - 24 saat ışıklı
 
-![Fast food totem tabela](/images/gallery/totem/totem-6.jpg)
+![Fast food totem tabela](/assets/img/totem/a2reklam-totem-006-960.webp)
 
 ## Totem Tabela Avantajları
 
@@ -275,7 +275,7 @@ Uzun yıllar sorunsuz kullanım:
 - LED sistem yerleştirme
 - Test ve ayar
 
-![Totem montaj süreci](/images/gallery/totem/totem-7.jpg)
+![Totem montaj süreci](/assets/img/totem/a2reklam-totem-007-960.webp)
 
 ## İzin ve Ruhsat İşlemleri
 

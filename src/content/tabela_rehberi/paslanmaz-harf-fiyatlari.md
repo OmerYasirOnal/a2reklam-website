@@ -10,7 +10,7 @@ tags: ["paslanmaz harf fiyatları", "tabela fiyatları", "kutu harf fiyatı", "b
 
 Paslanmaz harf tabela yatırımı yaparken doğru bütçe planlaması, hem kaliteden ödün vermemek hem de gereksiz harcamalardan kaçınmak için önemlidir. Bu rehberde, 2026 yılı paslanmaz harf fiyatlarını ve maliyet optimizasyon yöntemlerini bulacaksınız.
 
-![Paslanmaz harf tabela örnekleri](/images/gallery/paslanmaz-harf/paslanmaz-harf-1.jpg)
+![Paslanmaz harf tabela örnekleri](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp)
 
 ## Fiyatı Etkileyen Temel Faktörler
 
@@ -50,7 +50,7 @@ Fiyatın en önemli belirleyicisi harfin yüksekliğidir.
 - Siyah Kaplama: +%60-80
 - Özel Renk Kaplama: +%70-100
 
-![Farklı yüzey işlemli harfler](/images/gallery/paslanmaz-harf/paslanmaz-harf-2.jpg)
+![Farklı yüzey işlemli harfler](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-002-960.webp)
 
 ### 4. Harf Tipi
 
@@ -101,7 +101,7 @@ Fiyatın en önemli belirleyicisi harfin yüksekliğidir.
 - Orta harf: 22.000 - 32.000 TL
 - Karmaşık harf: 28.000 - 42.000 TL
 
-![Büyük boy paslanmaz harf](/images/gallery/paslanmaz-harf/paslanmaz-harf-3.jpg)
+![Büyük boy paslanmaz harf](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-003-960.webp)
 
 ### Kutu Harfler (Box Letter)
 
@@ -128,7 +128,7 @@ Fiyatın en önemli belirleyicisi harfin yüksekliğidir.
 **80 cm Yükseklik:**
 - Stand-off montaj + arka LED: 24.000 - 33.000 TL/harf
 
-![Halo efektli paslanmaz harf](/images/gallery/paslanmaz-harf/paslanmaz-harf-4.jpg)
+![Halo efektli paslanmaz harf](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-004-960.webp)
 
 ## Proje Bazlı Fiyat Örnekleri
 
@@ -164,7 +164,7 @@ Fiyatın en önemli belirleyicisi harfin yüksekliğidir.
 - Tasarım: 4.000 TL
 - **Toplam: 159.000 TL**
 
-![Kurumsal paslanmaz harf uygulaması](/images/gallery/paslanmaz-harf/paslanmaz-harf-5.jpg)
+![Kurumsal paslanmaz harf uygulaması](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-005-960.webp)
 
 ### Örnek 3: Lüks Marka Cephesi
 
@@ -213,7 +213,7 @@ Fiyatın en önemli belirleyicisi harfin yüksekliğidir.
 - 20 km arası: 1.200 - 1.800 TL
 - 30+ km: 1.800 - 3.000 TL
 
-![Paslanmaz harf paketleme](/images/gallery/paslanmaz-harf/paslanmaz-harf-6.jpg)
+![Paslanmaz harf paketleme](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-006-960.webp)
 
 ## Maliyet Optimizasyon İpuçları
 
@@ -260,7 +260,7 @@ Kış aylarında talep düşer:
 - Kasım-Şubat: %10-20 indirim
 - Erken rezervasyon: Ek %5 indirim
 
-![Ekonomik paslanmaz harf çözümü](/images/gallery/paslanmaz-harf/paslanmaz-harf-7.jpg)
+![Ekonomik paslanmaz harf çözümü](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-007-960.webp)
 
 ## Ödeme Seçenekleri
 

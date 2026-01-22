@@ -10,7 +10,7 @@ tags: ["tabela bakımı", "cephe tabelası", "tabela temizliği", "İstanbul tab
 
 Kaliteli bir cephe tabelası yatırımınızın uzun yıllar değerini koruması için düzenli bakım şarttır. Bu rehberde, tabelanızın her zaman ilk gün gibi görünmesi ve sorunsuz çalışması için profesyonel bakım önerilerini bulacaksınız.
 
-![Bakımlı ve temiz cephe tabelası](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![Bakımlı ve temiz cephe tabelası](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 ## Neden Düzenli Bakım Önemlidir?
 
@@ -32,7 +32,7 @@ Cephe tabelanız, 7/24 dış hava koşullarına maruz kalır. Yağmur, kar, gün
 - Çizilmelere karşı sert fırça kullanmayın
 - Bol su ile durulayın
 
-![Tabela temizlik işlemi](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-2.jpg)
+![Tabela temizlik işlemi](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-960.webp)
 
 **Paslanmaz Çelik Harfler İçin:**
 - Paslanmaz çelik temizleyici spreyi kullanın
@@ -56,7 +56,7 @@ Işıklı tabelanızın verimli çalışması için:
 4. Timer ve sensör ayarlarını test edin
 5. Trafo ve güç kaynağını inceleyin
 
-![LED ışıklı tabela bakımı](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-4.jpg)
+![LED ışıklı tabela bakımı](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-004-960.webp)
 
 ## Mevsimsel Bakım Tavsiyeleri
 
@@ -89,7 +89,7 @@ Soğuk ve nemli koşullara hazırlık:
 - Sabitleme elemanlarının paslanma kontrolü
 - Kar birikimine karşı önlemler
 
-![Mevsimsel tabela bakımı](/images/gallery/cephe-tabela/cephe-tabela-3.jpg)
+![Mevsimsel tabela bakımı](/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp)
 
 ## Profesyonel Bakım Hizmeti
 
@@ -123,7 +123,7 @@ Yüksekte çalışma gerektiren, özel ekipman ihtiyacı olan ve teknik bilgi ge
 
 **Çözüm:** UV koruyucu film veya boya yenileme işlemi uygulanır.
 
-![Tabela onarım ve bakım hizmeti](/images/gallery/cephe-tabela/cephe-tabela-5.jpg)
+![Tabela onarım ve bakım hizmeti](/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp)
 
 ## Bakım Maliyetlerini Azaltma İpuçları
 

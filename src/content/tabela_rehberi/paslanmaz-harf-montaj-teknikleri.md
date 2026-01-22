@@ -10,7 +10,7 @@ tags: ["paslanmaz harf montajı", "harf montajı", "tabela montajı", "ankraj si
 
 Paslanmaz harf tabelaların görsel etkisi kadar montaj kalitesi de önemlidir. Doğru montaj tekniği, hem estetik hem de uzun ömürlü kullanım için kritiktir. Bu rehberde, profesyonel paslanmaz harf montaj yöntemlerini detaylı olarak inceleyeceğiz.
 
-![Paslanmaz harf montaj uygulaması](/images/gallery/paslanmaz-harf/paslanmaz-harf-1.jpg)
+![Paslanmaz harf montaj uygulaması](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp)
 
 ## Montaj Öncesi Hazırlık
 
@@ -42,7 +42,7 @@ Hassas konumlandırma için şablon şarttır.
 - **MDF Şablon:** Büyük ve karmaşık tasarımlar
 - **Lazer Hizalama:** Profesyonel uygulamalar
 
-![Montaj şablonu uygulaması](/images/gallery/paslanmaz-harf/paslanmaz-harf-2.jpg)
+![Montaj şablonu uygulaması](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-002-960.webp)
 
 **Şablon Hazırlık Adımları:**
 1. Tasarımın 1:1 ölçekte çıktısı
@@ -99,7 +99,7 @@ En yaygın ve güvenli yöntemdir. Harfler cepheye vidalanır.
 - Vidalar sıkıştırılır (aşırı sıkmadan)
 - Nihai hizalama kontrolü
 
-![Ankraj montaj detayı](/images/gallery/paslanmaz-harf/paslanmaz-harf-3.jpg)
+![Ankraj montaj detayı](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-003-960.webp)
 
 **Avantajları:**
 ✅ Çok güvenli ve kalıcı
@@ -143,7 +143,7 @@ Cepheye zarar vermeden montaj.
 - 24-48 saat tam dayanım
 - Bu süre içinde temas yok
 
-![Yapıştırıcı montaj](/images/gallery/paslanmaz-harf/paslanmaz-harf-4.jpg)
+![Yapıştırıcı montaj](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-004-960.webp)
 
 **Avantajları:**
 ✅ Cepheye zarar yok
@@ -195,7 +195,7 @@ Harfler duvardan 1-5cm mesafeli durur, 3D efekt.
 2. Harfler spacer'lara vidalanır
 3. Arka LED ışıklandırma eklenebilir (halo efekt)
 
-![Stand-off montaj detayı](/images/gallery/paslanmaz-harf/paslanmaz-harf-5.jpg)
+![Stand-off montaj detayı](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-005-960.webp)
 
 **Avantajları:**
 ✅ 3D derinlik efekti
@@ -237,7 +237,7 @@ Harfler duvardan 1-5cm mesafeli durur, 3D efekt.
 - Kimyasal dübel şart
 - Su ile soğutmalı delme
 
-![Mermer üzerine montaj](/images/gallery/paslanmaz-harf/paslanmaz-harf-6.jpg)
+![Mermer üzerine montaj](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-006-960.webp)
 
 ### Dış Cephe (Yüksek Bina) Montajı
 
@@ -274,7 +274,7 @@ Harfler duvardan 1-5cm mesafeli durur, 3D efekt.
 - Transformatör gizli montajı
 - Kablo yönetimi
 
-![Işıklı kutu harf montajı](/images/gallery/paslanmaz-harf/paslanmaz-harf-7.jpg)
+![Işıklı kutu harf montajı](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-007-960.webp)
 
 ## Montaj Sonrası Kontroller
 

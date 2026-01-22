@@ -10,7 +10,7 @@ tags: ["tabela imalatı", "üretim süreci", "tabela yapımı", "kalite kontrol"
 
 Kaliteli bir tabelanın arkasında profesyonel bir üretim süreci vardır. Bu rehberde, A2 Reklam'da bir tabelanın nasıl üretildiğini, tasarımdan montaja tüm aşamalarıyla anlatacağız.
 
-![Tabela üretim atölyesi](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![Tabela üretim atölyesi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 ## Adım 1: İlk Görüşme ve İhtiyaç Analizi (1. Gün)
 
@@ -45,7 +45,7 @@ Profesyonel ekibimiz lokasyonunuza gelir.
 **Süre:** 30-60 dakika
 **Maliyet:** Ücretsiz
 
-![Keşif ve ölçüm çalışması](/images/gallery/cephe-tabela/cephe-tabela-2.jpg)
+![Keşif ve ölçüm çalışması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp)
 
 ## Adım 2: Tasarım ve Sunum (2-3. Gün)
 
@@ -77,7 +77,7 @@ Gerçeğe en yakın önizleme.
 
 **Revizyon Hakkı:** 2-3 ücretsiz revizyon
 
-![3D tasarım görselleştirme](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-1.jpg)
+![3D tasarım görselleştirme](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp)
 
 ### Teknik Proje
 
@@ -136,7 +136,7 @@ Siparişiniz planlamaya alınır.
 - Büyük tabela (6+ m²): 15-20 gün
 - Özel tasarım: 20-30 gün
 
-![Üretim planlama](/images/gallery/cephe-tabela/cephe-tabela-3.jpg)
+![Üretim planlama](/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp)
 
 ## Adım 4: Malzeme Tedariki (5-6. Gün)
 
@@ -181,7 +181,7 @@ Gelen malzemeler kontrol edilir.
 - Seviye sapması: Max 2mm/m
 - Boya kalınlığı: 60-80 mikron
 
-![Konstrüksiyon imalatı](/images/gallery/cephe-tabela/cephe-tabela-4.jpg)
+![Konstrüksiyon imalatı](/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp)
 
 ### 5.2. Panel İşleme
 
@@ -223,7 +223,7 @@ Gelen malzemeler kontrol edilir.
 - Homojenlik testi
 - Uzun süreli yanma testi (4-8 saat)
 
-![LED montaj çalışması](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-2.jpg)
+![LED montaj çalışması](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-960.webp)
 
 ### 5.5. Montaj
 
@@ -268,7 +268,7 @@ Müşteri, teslimattan önce ürünü görebilir.
 
 **Opsiyonel:** Atölye ziyareti ve onay
 
-![Kalite kontrol süreci](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-3.jpg)
+![Kalite kontrol süreci](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-003-960.webp)
 
 ## Adım 7: Montaj ve Teslim (17-18. Gün)
 
@@ -316,7 +316,7 @@ Müşteri, teslimattan önce ürünü görebilir.
    - Sigorta bağlantısı
    - Test ve çalıştırma
 
-![Profesyonel montaj](/images/gallery/cephe-tabela/cephe-tabela-5.jpg)
+![Profesyonel montaj](/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp)
 
 ### 7.4. Nihai Kontrol
 
@@ -362,7 +362,7 @@ Müşteri, teslimattan önce ürünü görebilir.
 - LED değişim
 - Onarım hizmetleri
 
-![Teslim ve garanti belgesi](/images/gallery/cephe-tabela/cephe-tabela-6.jpg)
+![Teslim ve garanti belgesi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-960.webp)
 
 ## Üretim Süresi Tablosu
 

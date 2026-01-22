@@ -10,7 +10,7 @@ tags: ["tabela fiyatları", "maliyet faktörleri", "bütçe planlama", "tabela y
 
 Tabela yatırımı yaparken fiyat farklılıklarını anlamak, doğru bütçe planlaması için kritik öneme sahiptir. Bu rehberde, tabela maliyetini etkileyen tüm faktörleri detaylı olarak inceleyeceğiz.
 
-![Farklı fiyat segmentlerinde tabelalar](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![Farklı fiyat segmentlerinde tabelalar](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 ## 1. Boyut ve Metrekare
 
@@ -40,7 +40,7 @@ En önemli maliyet faktörü, tabelanızın fiziksel büyüklüğüdür.
 
 **Önemli Not:** Metrekare artışı doğrusal değil, büyük tabelalar m² başına daha pahalı olabilir (montaj zorluğu, konstrüksiyon güçlendirme).
 
-![Büyük boy cephe tabelası](/images/gallery/cephe-tabela/cephe-tabela-2.jpg)
+![Büyük boy cephe tabelası](/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp)
 
 ## 2. Malzeme Seçimi
 
@@ -113,7 +113,7 @@ Işık seçimi, hem ilk yatırımı hem de işletme maliyetini etkiler.
 - Aylık işletme: 240-360 TL/m²
 - Bakım maliyeti yüksek
 
-![LED ışıklı tabela sistemleri](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-1.jpg)
+![LED ışıklı tabela sistemleri](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp)
 
 ## 4. Tasarım Karmaşıklığı
 
@@ -171,7 +171,7 @@ Montajın yapılacağı yerin özellikleri önemli maliyet kalemidir.
 - Süre: 5-10 gün
 - İş güvenliği uzmanı gerekli
 
-![Yüksek bina montajı](/images/gallery/cephe-tabela/cephe-tabela-3.jpg)
+![Yüksek bina montajı](/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp)
 
 ### Erişim Zorluğu
 
@@ -223,7 +223,7 @@ Bazı bölgelerde ek izin ve ruhsat maliyetleri vardır.
 - Koruma kurulu onayı: Zorunlu
 - Sıkı kısıtlamalar
 
-![Tarihi bölge tabela uygulaması](/images/gallery/cephe-tabela/cephe-tabela-4.jpg)
+![Tarihi bölge tabela uygulaması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp)
 
 ## 7. Özelleştirilmiş Eklentiler
 
@@ -268,7 +268,7 @@ Yılın farklı dönemlerinde fiyatlar değişir.
 - Fiyat: +%10-15 (acil üretim)
 - Mesai dışı çalışma: +%20-30
 
-![Sezonluk tabela kampanyaları](/images/gallery/cephe-tabela/cephe-tabela-5.jpg)
+![Sezonluk tabela kampanyaları](/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp)
 
 ## 9. Garanti ve Bakım Paketleri
 
@@ -316,7 +316,7 @@ Kimle çalıştığınız, hem fiyat hem kaliteyi etkiler.
 - Garanti: Belirsiz
 - Risk: Yüksek
 
-![Profesyonel tabela üretimi](/images/gallery/cephe-tabela/cephe-tabela-6.jpg)
+![Profesyonel tabela üretimi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-960.webp)
 
 ## Maliyet Optimizasyon Stratejileri
 
@@ -360,7 +360,7 @@ Kimle çalıştığınız, hem fiyat hem kaliteyi etkiler.
 3. %30'unu garanti ve bakıma ayırın
 4. Uzun vadeli düşünün
 
-![Kaliteli tabela yatırımı](/images/gallery/cephe-tabela/cephe-tabela-7.jpg)
+![Kaliteli tabela yatırımı](/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-960.webp)
 
 ## A2 Reklam Şeffaf Fiyatlandırma
 

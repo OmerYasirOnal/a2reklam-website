@@ -10,7 +10,7 @@ tags: ["cephe tabelası", "tabela çeşitleri", "tabela fiyatları", "İstanbul 
 
 Cephe tabelası, işletmenizin dış cephesinde yer alan ve markanızı temsil eden en önemli tanıtım aracıdır. Doğru tasarlanmış bir cephe tabelası, hem gündüz hem de gece görünürlüğünüzü artırır ve müşteri çekme gücünüzü önemli ölçüde yükseltir.
 
-![Profesyonel cephe tabelası uygulaması](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![Profesyonel cephe tabelası uygulaması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 ## Cephe Tabelası Çeşitleeri
 
@@ -18,7 +18,7 @@ Cephe tabelası, işletmenizin dış cephesinde yer alan ve markanızı temsil e
 
 LED teknolojisi ile üretilen ışıklı cephe tabelaları, gece görünürlüğü sağlayan en popüler seçenektir. Enerji tasarrufu ve uzun ömürlülük avantajları ile öne çıkar.
 
-![LED ışıklı cephe tabelası örneği](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-2.jpg)
+![LED ışıklı cephe tabelası örneği](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-960.webp)
 
 ### Işıksız Cephe Tabelaları
 
@@ -28,7 +28,7 @@ Bütçe dostu çözümler arayan işletmeler için ideal olan ışıksız tabela
 
 Paslanmaz çelik veya akrilik malzemeden üretilen kabartmalı harfler, modern ve şık bir görünüm sunar. İstanbul'un prestijli bölgelerinde tercih edilen bir çeşittir.
 
-![Kabartmalı harf tabela uygulaması](/images/gallery/cephe-tabela/cephe-tabela-3.jpg)
+![Kabartmalı harf tabela uygulaması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp)
 
 ## Cephe Tabelası Malzemeleri
 
@@ -40,7 +40,7 @@ Paslanmaz çelik veya akrilik malzemeden üretilen kabartmalı harfler, modern v
 
 **Galvaniz Sac:** Endüstriyel tesisler için dayanıklı ve uzun ömürlü bir çözümdür.
 
-![Farklı malzemelerden üretilmiş cephe tabelaları](/images/gallery/cephe-tabela/cephe-tabela-5.jpg)
+![Farklı malzemelerden üretilmiş cephe tabelaları](/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp)
 
 ## Cephe Tabelası Fiyatlarını Etkileyen Faktörler
 
@@ -58,7 +58,7 @@ Paslanmaz çelik veya akrilik malzemeden üretilen kabartmalı harfler, modern v
 
 A2 Reklam olarak İstanbul genelinde, özellikle Beşiktaş, Kadıköy ve Kağıthane bölgelerinde hızlı ve profesyonel cephe tabelası hizmeti sunuyoruz. 20 yılı aşkın tecrübemiz ve uzman ekibimizle markanızı en iyi şekilde temsil edecek tabelalar üretiyoruz.
 
-![İstanbul'da cephe tabelası montajı](/images/gallery/cephe-tabela/cephe-tabela-4.jpg)
+![İstanbul'da cephe tabelası montajı](/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp)
 
 ## Neden A2 Reklam?
 

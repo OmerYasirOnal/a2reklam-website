@@ -10,7 +10,7 @@ tags: ["totem tabela", "totem boyutları", "tabela ölçüleri", "statik hesap"]
 
 Totem tabela yatırımında doğru boyut seçimi, hem görünürlük hem de maliyet açısından kritik öneme sahiptir. Bu rehberde, totem tabela boyutlarını, standartları ve seçim kriterlerini detaylı olarak ele alacağız.
 
-![Farklı boyutlarda totem tabelalar](/images/gallery/totem/totem-1.jpg)
+![Farklı boyutlarda totem tabelalar](/assets/img/totem/a2reklam-totem-001-960.webp)
 
 ## Standart Totem Tabela Ölçüleri
 
@@ -34,7 +34,7 @@ Totem tabela yatırımında doğru boyut seçimi, hem görünürlük hem de mali
 - Kullanım alanı: Benzin istasyonları, AVM'ler
 - Rüzgar yükü: Yüksek (temel derinliği: 150-200 cm)
 
-![Yüksek totem tabela](/images/gallery/totem/totem-2.jpg)
+![Yüksek totem tabela](/assets/img/totem/a2reklam-totem-002-960.webp)
 
 ### Genişlik ve Derinlik Standartları
 
@@ -74,7 +74,7 @@ Totem tabela yatırımında doğru boyut seçimi, hem görünürlük hem de mali
 - Logo alanı: 100x100 cm minimum
 - Otoyoldan okunabilir harf boyutu: 40cm+
 
-![Benzin istasyonu totem tabela](/images/gallery/totem/totem-3.jpg)
+![Benzin istasyonu totem tabela](/assets/img/totem/a2reklam-totem-003-960.webp)
 
 ### Fast Food Restoranlar
 
@@ -113,7 +113,7 @@ Totem tabela yatırımında doğru boyut seçimi, hem görünürlük hem de mali
 - Acil ve ambulans yönlendirmesi
 - Erişilebilirlik sembolleri
 
-![Hastane totem tabela](/images/gallery/totem/totem-4.jpg)
+![Hastane totem tabela](/assets/img/totem/a2reklam-totem-004-960.webp)
 
 ### Otel ve Resortlar
 
@@ -154,7 +154,7 @@ Totem Yüksekliği = (Hedef Mesafe ÷ 20) + 2 metre
 - 100m mesafe → 5 + 2 = 7m totem
 - 200m mesafe → 10 + 2 = 12m totem (maks. 8m belediye limiti)
 
-![Mesafe ve boyut ilişkisi](/images/gallery/totem/totem-5.jpg)
+![Mesafe ve boyut ilişkisi](/assets/img/totem/a2reklam-totem-005-960.webp)
 
 ## Statik Hesaplama ve Rüzgar Yükü
 
@@ -199,7 +199,7 @@ Genişlik (cm) = Totem Genişliği × 1.5
 - 5m totem: 1-1.5 m³ beton
 - 8m totem: 2-3 m³ beton
 
-![Totem temel detayı](/images/gallery/totem/totem-6.jpg)
+![Totem temel detayı](/assets/img/totem/a2reklam-totem-006-960.webp)
 
 ## Konstrüksiyon Profil Seçimi
 
@@ -261,7 +261,7 @@ Genişlik (cm) = Totem Genişliği × 1.5
 - Estetik kurul onayı şart
 - Sınırlı boyut ve tasarım
 
-![Belediye onaylı totem tabela](/images/gallery/totem/totem-7.jpg)
+![Belediye onaylı totem tabela](/assets/img/totem/a2reklam-totem-007-960.webp)
 
 ## Özel Boyut Tasarımı
 

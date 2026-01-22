@@ -10,7 +10,7 @@ tags: ["ışıklı tabela", "LED tabela", "neon tabela", "tabela ışıklandırm
 
 Işıklı tabelalar, gece görünürlüğünüzü artırarak 7/24 müşteri çekmenizi sağlar. Bu rehberde, modern LED ve klasik neon tabela sistemlerini tüm yönleriyle karşılaştırıyor, işletmeniz için en uygun seçimi yapmanıza yardımcı oluyoruz.
 
-![Modern LED ışıklı cephe tabelası](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-3.jpg)
+![Modern LED ışıklı cephe tabelası](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-003-960.webp)
 
 ## LED Işıklı Tabela Sistemleri
 
@@ -32,7 +32,7 @@ En yaygın kullanılan LED tabela tipidir. Akrilik kutunun içine SMD LED modül
 
 Neon görünümü veren, esnek LED şeritlerle üretilir. Vintage ve modern tasarımlar için idealdir.
 
-![LED neon flex tabela uygulaması](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-1.jpg)
+![LED neon flex tabela uygulaması](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp)
 
 **3. LED Kutu Harf Tabelalar**
 
@@ -57,7 +57,7 @@ Her harf ayrı ayrı ışıklandırılır. Lüks ve şık görünüm sunar.
 ✅ **Düşük Bakım:** Çok nadir arıza yapar
 ✅ **Ekonomik:** İlk yatırım ve işletme maliyeti düşük
 
-![LED ışıklı kutu harf tabela](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-2.jpg)
+![LED ışıklı kutu harf tabela](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-960.webp)
 
 ### LED Tabela Dezavantajları
 
@@ -96,7 +96,7 @@ Neon tabelalar, cam tüp içindeki neon gazının elektrikle uyarılarak ışık
 ❌ **Isınma:** Yüzey sıcaklığı 40-60°C'ye çıkabilir
 ❌ **Uzman İhtiyacı:** Montaj ve onarım için uzman gerekir
 
-![Neon efektli tabela](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![Neon efektli tabela](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 ## LED vs Neon: Detaylı Karşılaştırma
 
@@ -137,7 +137,7 @@ Neon tabelalar, cam tüp içindeki neon gazının elektrikle uyarılarak ışık
 - Sabit, sürekli ışık çizgisi
 - Organik ve akışkan formlar
 
-![Işıklı tabela gece görünümü](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-4.jpg)
+![Işıklı tabela gece görünümü](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-004-960.webp)
 
 ## Hangi Işıklı Tabela Sizin İçin Uygun?
 
@@ -168,7 +168,7 @@ Modern LED neon flex teknolojisi, neon estetiğini LED'in avantajlarıyla birle�
 - Kolay montaj ve onarım
 - %40-50 daha ekonomik
 
-![LED neon flex detay](/images/gallery/cephe-tabela/cephe-tabela-3.jpg)
+![LED neon flex detay](/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp)
 
 ## İstanbul'da Işıklı Tabela Hizmeti
 

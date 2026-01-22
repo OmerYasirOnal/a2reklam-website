@@ -10,7 +10,7 @@ tags: ["İstanbul tabela", "tüm ilçeler", "tabela hizmeti", "İstanbul tabelac
 
 A2 Reklam olarak, İstanbul'un 40 ilçesinin tamamında 20+ yıldır profesyonel tabela hizmeti sunuyoruz. Bu rehberde, İstanbul genelindeki hizmetimizi, bölgesel özelliklerimizi ve avantajlarımızı bulacaksınız.
 
-![İstanbul geneli tabela hizmeti](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![İstanbul geneli tabela hizmeti](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 ## İstanbul Genelinde A2 Reklam
 
@@ -36,7 +36,7 @@ Adalar, Ataşehir, Beykoz, Çekmeköy, Kadıköy, Kartal, Maltepe, Pendik, Sanca
 - Anadolu yakası: Kadıköy servis ekibi
 - Mobil ekipler: Her iki yakada
 
-![A2 Reklam üretim merkezi](/images/gallery/cephe-tabela/cephe-tabela-2.jpg)
+![A2 Reklam üretim merkezi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp)
 
 ## Bölgesel Hizmet Özellikleri
 
@@ -78,7 +78,7 @@ Kağıthane, Bayrampaşa, Gaziosmanpaşa, Başakşehir, Tuzla, Pendik
 
 **Ortalama Teslimat:** 12-18 gün
 
-![Sanayi bölgesi tabelası](/images/gallery/cephe-tabela/cephe-tabela-3.jpg)
+![Sanayi bölgesi tabelası](/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp)
 
 ### Konut Bölgeleri
 
@@ -117,7 +117,7 @@ Esenyurt, Beylikdüzü, Çekmeköy, Sancaktepe, Sultangazi
 
 **Ortalama Teslimat:** 12-18 gün
 
-![Modern bölge tabelası](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-1.jpg)
+![Modern bölge tabelası](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp)
 
 ### Uzak İlçeler
 
@@ -176,7 +176,7 @@ Silivri, Çatalca, Şile, Arnavutköy
 - Koruma kurulu onayı
 - Sıkı kısıtlamalar
 
-![İzin belgesi](/images/gallery/cephe-tabela/cephe-tabela-4.jpg)
+![İzin belgesi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp)
 
 ## İstanbul Geneli Fiyatlandırma
 
@@ -230,7 +230,7 @@ Silivri, Çatalca, Şile, Arnavutköy
 - Yedek parça stoğu
 - Hızlı servis
 
-![Kalite belgesi](/images/gallery/cephe-tabela/cephe-tabela-5.jpg)
+![Kalite belgesi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp)
 
 ### Teslimat ve Montaj
 
@@ -279,7 +279,7 @@ Silivri, Çatalca, Şile, Arnavutköy
 - Finans: 15 proje
 - Eğitim: 25 proje
 
-![Referans projeler](/images/gallery/paslanmaz-harf/paslanmaz-harf-1.jpg)
+![Referans projeler](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp)
 
 ### İlçe Bazlı Proje Sayıları (Top 10)
 
@@ -329,7 +329,7 @@ Silivri, Çatalca, Şile, Arnavutköy
 - Yakın ilçeler: 2-4 saat
 - Uzak ilçeler: 4-8 saat
 
-![Servis aracı](/images/gallery/cephe-tabela/cephe-tabela-6.jpg)
+![Servis aracı](/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-960.webp)
 
 ## İstanbul'da Neden A2 Reklam?
 
@@ -369,7 +369,7 @@ Silivri, Çatalca, Şile, Arnavutköy
 - 1 yıl LED
 - Ömür boyu danışmanlık
 
-![Sertifikalar](/images/gallery/cephe-tabela/cephe-tabela-7.jpg)
+![Sertifikalar](/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-960.webp)
 
 ## İstanbul Geneli Özel Kampanyalar
 
