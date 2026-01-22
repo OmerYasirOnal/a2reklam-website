@@ -34,7 +34,7 @@ const selectedHeroImages = heroImages.slice(0, 5).map((img: any) => ({
 
 const content = {
   tr: {
-    badge: '2010\'dan beri',
+    badge: '2005\'ten beri',
     title: 'Premium Tabela ve Reklam Çözümleri',
     subtitle: 'İstanbul\'un önde gelen tabela ve reklam üreticisi. Tasarımdan montaja tam hizmet.',
     cta: 'Teklif Al',
@@ -43,7 +43,7 @@ const content = {
     contactLink: '/iletisim/',
   },
   en: {
-    badge: 'Since 2010',
+    badge: 'Since 2005',
     title: 'Premium Signage & Advertising Solutions',
     subtitle: 'Leading signage manufacturer in Istanbul. Full service from design to installation.',
     cta: 'Get a Quote',
@@ -52,7 +52,7 @@ const content = {
     contactLink: '/en/contact/',
   },
   ar: {
-    badge: 'منذ 2010',
+    badge: 'منذ 2005',
     title: 'حلول لافتات وإعلانات متميزة',
     subtitle: 'مصنّع لافتات في إسطنبول يقدم الخدمة من التصميم حتى التركيب.',
     cta: 'احصل على عرض سعر',
@@ -265,22 +265,32 @@ const isRtl = lang === 'ar';
     opacity: 0.75;
   }
 
-  /* Light mode: make images more visible */
+  /* Light mode: make images more visible, reduce overlay */
   [data-theme="light"] .hero-slide-img {
-    opacity: 0.85;
+    opacity: 0.9;
   }
 
   [data-theme="light"] .hero-overlay {
     background: linear-gradient(to bottom,
-      rgba(248, 249, 250, 0.2),
-      rgba(248, 249, 250, 0.4),
-      rgba(248, 249, 250, 0.7)
+      rgba(248, 249, 250, 0.15),
+      rgba(248, 249, 250, 0.25),
+      rgba(248, 249, 250, 0.5)
     );
   }
 
-  [data-theme="light"] .hero-title,
+  /* Light mode: use dark text with light outline for contrast */
+  [data-theme="light"] .hero-title {
+    color: #1F2937 !important;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+
   [data-theme="light"] .hero-subtitle {
-    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.9), 0 4px 20px rgba(255, 255, 255, 0.6);
+    color: #374151 !important;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+
+  [data-theme="light"] .hero-title .text-primary {
+    color: var(--accent-primary) !important;
   }
 
   /* Respect reduced motion preference */
