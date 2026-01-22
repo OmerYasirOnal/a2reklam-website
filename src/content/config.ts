@@ -79,6 +79,21 @@ const blog_en = defineCollection({
     }),
 });
 
+// Tabela Rehberleri collection (TR only - SEO/AIO focused guides)
+const tabela_rehberi = defineCollection({
+    type: 'content',
+    schema: ({ image }) => z.object({
+        title: z.string(),
+        description: z.string(),
+        pubDate: z.coerce.date(),
+        updatedDate: z.coerce.date().optional(),
+        heroImage: z.string().optional(),
+        category: z.string(), // Category for grouping
+        tags: z.array(z.string()).optional(),
+        faq: z.array(z.object({ question: z.string(), answer: z.string() })).optional(),
+    }),
+});
+
 export const collections = {
     services,
     services_en,
@@ -86,4 +101,5 @@ export const collections = {
     districts_en,
     blog,
     blog_en,
+    tabela_rehberi,
 };
