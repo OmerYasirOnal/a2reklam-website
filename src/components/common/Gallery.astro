@@ -125,7 +125,7 @@ const remainingCount = images.length - initialLimit;
   <!-- Lightbox Modal - WAI-ARIA Compliant -->
   <div
     id="lightbox-modal"
-    class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4 cursor-zoom-out"
+    class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4"
     role="dialog"
     aria-modal="true"
     aria-labelledby="lightbox-title"
@@ -136,7 +136,7 @@ const remainingCount = images.length - initialLimit;
     <button
       type="button"
       id="lightbox-close"
-      class="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-10"
+      class="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] cursor-pointer"
       aria-label={t.close}
     >
       <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -147,7 +147,7 @@ const remainingCount = images.length - initialLimit;
     <button
       type="button"
       id="lightbox-prev"
-      class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-10"
+      class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] cursor-pointer"
       aria-label={t.previous}
     >
       <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -158,7 +158,7 @@ const remainingCount = images.length - initialLimit;
     <button
       type="button"
       id="lightbox-next"
-      class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-10"
+      class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] cursor-pointer"
       aria-label={t.next}
     >
       <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -166,12 +166,12 @@ const remainingCount = images.length - initialLimit;
       </svg>
     </button>
 
-    <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center p-4 md:p-8">
+    <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center p-4 md:p-8 pointer-events-none">
       <img
         id="lightbox-img"
         src=""
         alt=""
-        class="max-w-full max-h-[90vh] w-auto h-auto object-contain shadow-2xl rounded-lg transition-opacity duration-300"
+        class="max-w-full max-h-[90vh] w-auto h-auto object-contain shadow-2xl rounded-lg transition-opacity duration-300 pointer-events-none"
         loading="eager"
       />
       <!-- aria-live region for screen reader announcements -->
@@ -206,9 +206,6 @@ const remainingCount = images.length - initialLimit;
     let currentIndex = 0;
     let lastFocusedElement = null;
     const allImagesData = allImages;
-    let isOpen = false;
-    let keydownHandler = null;
-    let lastValidSrc = '';
 
     // Get all focusable elements within a container
     function getFocusableElements(el) {
@@ -219,17 +216,13 @@ const remainingCount = images.length - initialLimit;
 
     // Open lightbox with accessibility features
     function openLightbox(index, triggerElement) {
-      if (!totalImages) return;
-      if (!lightbox || !lightboxImg) return;
-      const safeIndex = Number.isFinite(index) ? index : 0;
-      currentIndex = safeIndex >= 0 && safeIndex < totalImages ? safeIndex : 0;
+      currentIndex = index;
       lastFocusedElement = triggerElement || document.activeElement;
 
       updateLightboxImage();
       lightbox?.classList.remove('hidden');
       lightbox?.classList.add('flex');
       document.body.style.overflow = 'hidden';
-      isOpen = true;
 
       // Make background content inert
       const mainContent = document.getElementById('main-content');
@@ -239,32 +232,22 @@ const remainingCount = images.length - initialLimit;
 
       // Focus first focusable element (close button)
       lightboxClose?.focus();
-
-      if (keydownHandler) {
-        window.removeEventListener('keydown', keydownHandler);
-      }
-      keydownHandler = handleKeydown;
-      window.addEventListener('keydown', keydownHandler);
     }
 
     // Update lightbox image
     function updateLightboxImage() {
-      if (!lightboxImg || !totalImages) return;
-      if (!allImagesData[currentIndex]) {
-        currentIndex = 0;
+      if (currentIndex < 0 || currentIndex >= totalImages) {
+        currentIndex = Math.max(0, Math.min(currentIndex, totalImages - 1));
       }
 
-      const imgData = allImagesData[currentIndex] || allImagesData[0];
-      if (!imgData) return;
+      const imgData = allImagesData[currentIndex];
+      if (!imgData || !lightboxImg) return;
 
       const src1600 = imgData.paths?.['1600'] || imgData.paths?.['960'] || imgData.paths?.['480'] || '';
-      const resolvedSrc = src1600 || lastValidSrc;
-      if (!resolvedSrc) return;
-
-      // Guard against missing sources so navigation doesn't throw and disable controls.
-      lightboxImg.src = resolvedSrc;
-      lightboxImg.alt = imgData.alt || `Gallery image ${currentIndex + 1}`;
-      lastValidSrc = resolvedSrc;
+      if (src1600) {
+        lightboxImg.src = src1600;
+        lightboxImg.alt = imgData.alt || `Gallery image ${currentIndex + 1}`;
+      }
 
       if (lightboxCurrent) lightboxCurrent.textContent = String(currentIndex + 1);
       if (lightboxTotal) lightboxTotal.textContent = String(totalImages);
@@ -275,7 +258,6 @@ const remainingCount = images.length - initialLimit;
       lightbox?.classList.add('hidden');
       lightbox?.classList.remove('flex');
       document.body.style.overflow = '';
-      isOpen = false;
 
       // Remove inert from background
       const mainContent = document.getElementById('main-content');
@@ -288,14 +270,12 @@ const remainingCount = images.length - initialLimit;
         lastFocusedElement.focus();
       }
       lastFocusedElement = null;
-
-      if (keydownHandler) {
-        window.removeEventListener('keydown', keydownHandler);
-      }
     }
 
-    // Navigate
+    // Navigate with bounds checking
     function navigate(direction) {
+      if (totalImages <= 0) return;
+
       if (direction === 'prev') {
         currentIndex = currentIndex > 0 ? currentIndex - 1 : totalImages - 1;
       } else {
@@ -312,18 +292,28 @@ const remainingCount = images.length - initialLimit;
       });
     });
 
-    // Lightbox controls
-    lightboxClose?.addEventListener('click', closeLightbox);
-    lightboxPrev?.addEventListener('click', () => navigate('prev'));
-    lightboxNext?.addEventListener('click', () => navigate('next'));
+    // Lightbox controls - ensure they work with stopPropagation
+    lightboxClose?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+    lightboxPrev?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigate('prev');
+    });
+    lightboxNext?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigate('next');
+    });
 
     // Close on backdrop click
     lightbox?.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
     });
 
-    function handleKeydown(e) {
-      if (!isOpen || !lightbox || lightbox.classList.contains('hidden')) return;
+    // Keyboard navigation with focus trap
+    document.addEventListener('keydown', (e) => {
+      if (lightbox?.classList.contains('hidden')) return;
 
       if (e.key === 'Escape') {
         e.preventDefault();
@@ -350,7 +340,7 @@ const remainingCount = images.length - initialLimit;
           first.focus();
         }
       }
-    }
+    });
 
     // Load more functionality
     if (loadMoreBtn && galleryGrid) {
