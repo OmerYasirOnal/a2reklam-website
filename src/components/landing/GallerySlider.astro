@@ -187,10 +187,10 @@ const t = {
     <button
       type="button"
       id="slider-lightbox-close"
-      class="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] cursor-pointer"
+      class="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] bg-black/40 backdrop-blur-sm hover:bg-black/60"
       aria-label={t.close}
     >
-      <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <svg class="w-8 h-8 md:w-10 md:h-10 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
@@ -198,10 +198,10 @@ const t = {
     <button
       type="button"
       id="slider-lightbox-prev"
-      class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] cursor-pointer"
+      class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] bg-black/40 backdrop-blur-sm hover:bg-black/60"
       aria-label={t.prev}
     >
-      <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <svg class="w-8 h-8 md:w-10 md:h-10 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
       </svg>
     </button>
@@ -209,20 +209,20 @@ const t = {
     <button
       type="button"
       id="slider-lightbox-next"
-      class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] cursor-pointer"
+      class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] bg-black/40 backdrop-blur-sm hover:bg-black/60"
       aria-label={t.next}
     >
-      <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <svg class="w-8 h-8 md:w-10 md:h-10 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
       </svg>
     </button>
 
-    <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center p-4 md:p-8 pointer-events-none">
+    <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center p-4 md:p-8">
       <img
         id="slider-lightbox-img"
         src=""
         alt=""
-        class="max-w-full max-h-[90vh] w-auto h-auto object-contain shadow-2xl rounded-lg pointer-events-none"
+        class="max-w-full max-h-[90vh] w-auto h-auto object-contain shadow-2xl rounded-lg transition-opacity duration-300 pointer-events-none"
         loading="eager"
       />
       <div
