@@ -146,28 +146,28 @@ categories = categories.sort((a: any, b: any) => {
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {categories.map((cat: any) => (
-        <a href={`${linkBase}${cat.category}/`} class="group relative block glass-card overflow-hidden hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-3 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary">
-          <div class="relative h-72 overflow-hidden">
+        <a href={`${linkBase}${cat.category}/`} class="group block glass-card overflow-hidden hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary">
+          <!-- Image Container -->
+          <div class="relative aspect-[4/3] overflow-hidden">
             <img
               src={cat.paths['960']}
               alt={buildImageAlt({ category: cat.category, lang: altLang })}
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-100"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               loading="lazy"
             />
-            <!-- Enhanced overlay for better readability -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/75 group-hover:via-black/25 transition-all duration-300"></div>
-
-            <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 z-10">
-              <h3 class="font-heading font-black text-2xl md:text-3xl lg:text-4xl tracking-tight text-white mb-2 line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] group-hover:drop-shadow-[0_4px_12px_rgba(201,162,39,0.5)] transition-all duration-300">
-                {getDisplayLabel(cat.category)}
-              </h3>
-              <p class="text-xs md:text-sm text-gray-200 leading-snug mb-3 line-clamp-2 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
-                {getServiceDescription(cat.category)}
-              </p>
-              <p class="text-xs md:text-sm text-primary group-hover:text-primary-hover font-semibold inline-flex items-center gap-1 transition-colors duration-300">
-                {t.view}
-              </p>
-            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:from-primary/20 transition-all duration-300"></div>
+          </div>
+          <!-- Content Below Image -->
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl md:text-2xl text-heading mb-2 group-hover:text-primary transition-colors line-clamp-2">
+              {getDisplayLabel(cat.category)}
+            </h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-4 line-clamp-2">
+              {getServiceDescription(cat.category)}
+            </p>
+            <span class="text-sm text-primary group-hover:text-primary-hover font-semibold inline-flex items-center gap-1 transition-colors">
+              {t.view}
+            </span>
           </div>
         </a>
       ))}
