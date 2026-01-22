@@ -98,7 +98,7 @@ categories = categories.sort((a: any, b: any) => {
               loading="lazy"
             />
             <!-- Enhanced overlay for better readability -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/75 group-hover:via-black/25 transition-all duration-300"></div>
+            <div class="service-card-overlay"></div>
 
             <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 z-10">
               <h3 class="font-heading font-black text-2xl md:text-3xl lg:text-4xl tracking-tight text-white mb-1 line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] group-hover:drop-shadow-[0_4px_12px_rgba(201,162,39,0.5)] transition-all duration-300">
@@ -107,7 +107,7 @@ categories = categories.sort((a: any, b: any) => {
               <p class="text-xs text-primary/80 font-medium uppercase tracking-wider mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {t.categorySubtitle}
               </p>
-              <p class="text-xs md:text-sm text-gray-200/90 group-hover:text-gray-100 group-hover:translate-x-1 transition-all duration-300 delay-100 font-medium inline-flex items-center gap-1">
+              <p class="text-xs md:text-sm service-card-cta group-hover:translate-x-1 transition-all duration-300 delay-100 font-medium inline-flex items-center gap-1">
                 {t.view}
               </p>
             </div>
