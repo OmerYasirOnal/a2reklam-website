@@ -206,6 +206,9 @@ const remainingCount = images.length - initialLimit;
     let currentIndex = 0;
     let lastFocusedElement = null;
     const allImagesData = allImages;
+    let isOpen = false;
+    let keydownHandler = null;
+    let lastValidSrc = '';
 
     // Get all focusable elements within a container
     function getFocusableElements(el) {
@@ -216,13 +219,17 @@ const remainingCount = images.length - initialLimit;
 
     // Open lightbox with accessibility features
     function openLightbox(index, triggerElement) {
-      currentIndex = index;
+      if (!totalImages) return;
+      if (!lightbox || !lightboxImg) return;
+      const safeIndex = Number.isFinite(index) ? index : 0;
+      currentIndex = safeIndex >= 0 && safeIndex < totalImages ? safeIndex : 0;
       lastFocusedElement = triggerElement || document.activeElement;
 
       updateLightboxImage();
       lightbox?.classList.remove('hidden');
       lightbox?.classList.add('flex');
       document.body.style.overflow = 'hidden';
+      isOpen = true;
 
       // Make background content inert
       const mainContent = document.getElementById('main-content');
@@ -232,18 +239,32 @@ const remainingCount = images.length - initialLimit;
 
       // Focus first focusable element (close button)
       lightboxClose?.focus();
+
+      if (keydownHandler) {
+        window.removeEventListener('keydown', keydownHandler);
+      }
+      keydownHandler = handleKeydown;
+      window.addEventListener('keydown', keydownHandler);
     }
 
     // Update lightbox image
     function updateLightboxImage() {
-      const imgData = allImagesData[currentIndex];
-      if (!imgData || !lightboxImg) return;
-
-      const src1600 = imgData.paths?.['1600'] || imgData.paths?.['960'] || '';
-      if (src1600 && lightboxImg) {
-        lightboxImg.src = src1600;
-        lightboxImg.alt = imgData.alt || `Gallery image ${currentIndex + 1}`;
+      if (!lightboxImg || !totalImages) return;
+      if (!allImagesData[currentIndex]) {
+        currentIndex = 0;
       }
+
+      const imgData = allImagesData[currentIndex] || allImagesData[0];
+      if (!imgData) return;
+
+      const src1600 = imgData.paths?.['1600'] || imgData.paths?.['960'] || imgData.paths?.['480'] || '';
+      const resolvedSrc = src1600 || lastValidSrc;
+      if (!resolvedSrc) return;
+
+      // Guard against missing sources so navigation doesn't throw and disable controls.
+      lightboxImg.src = resolvedSrc;
+      lightboxImg.alt = imgData.alt || `Gallery image ${currentIndex + 1}`;
+      lastValidSrc = resolvedSrc;
 
       if (lightboxCurrent) lightboxCurrent.textContent = String(currentIndex + 1);
       if (lightboxTotal) lightboxTotal.textContent = String(totalImages);
@@ -254,6 +275,7 @@ const remainingCount = images.length - initialLimit;
       lightbox?.classList.add('hidden');
       lightbox?.classList.remove('flex');
       document.body.style.overflow = '';
+      isOpen = false;
 
       // Remove inert from background
       const mainContent = document.getElementById('main-content');
@@ -266,6 +288,10 @@ const remainingCount = images.length - initialLimit;
         lastFocusedElement.focus();
       }
       lastFocusedElement = null;
+
+      if (keydownHandler) {
+        window.removeEventListener('keydown', keydownHandler);
+      }
     }
 
     // Navigate
@@ -296,9 +322,8 @@ const remainingCount = images.length - initialLimit;
       if (e.target === lightbox) closeLightbox();
     });
 
-    // Keyboard navigation with focus trap
-    document.addEventListener('keydown', (e) => {
-      if (lightbox?.classList.contains('hidden')) return;
+    function handleKeydown(e) {
+      if (!isOpen || !lightbox || lightbox.classList.contains('hidden')) return;
 
       if (e.key === 'Escape') {
         e.preventDefault();
@@ -325,7 +350,7 @@ const remainingCount = images.length - initialLimit;
           first.focus();
         }
       }
-    });
+    }
 
     // Load more functionality
     if (loadMoreBtn && galleryGrid) {
