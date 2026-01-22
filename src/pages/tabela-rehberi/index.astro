@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const lang = 'tr';
+const allArticles = await getCollection('tabela_rehberi');
+const sortedArticles = allArticles.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const categories = [...new Set(allArticles.map(a => a.data.category))].sort();
+const articlesByCategory: Record<string, typeof allArticles> = {};
+categories.forEach(cat => { articlesByCategory[cat] = allArticles.filter(a => a.data.category === cat); });
+
+const title = 'Tabela Rehberleri | A2 Reklam';
+const description = 'İstanbul\'da tabela imalatı, montajı ve bakımı hakkında kapsamlı rehberler.';
+const breadcrumbs = [{ name: 'Anasayfa', item: '/' }, { name: 'Tabela Rehberleri', item: '/tabela-rehberi/' }];
+const categoryLabels: Record<string, string> = {
+  'Cephe Tabelası': 'Cephe Tabelası Rehberleri',
+  'Işıklı Tabela': 'Işıklı Tabela Rehberleri',
+  'Totem': 'Totem Tabela Rehberleri',
+  'Paslanmaz Harf': 'Paslanmaz Harf Rehberleri',
+  'Fiyatlandırma & Süreç': 'Fiyatlandırma ve Süreç Rehberleri',
+  'İlçe Rehberleri': 'İlçe Bazlı Tabela Hizmetleri',
+};
+---
+<Layout lang={lang} title={title} description={description} breadcrumbs={breadcrumbs}>
+  <section class="relative py-20 md:py-28 bg-secondary overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white"><span class="text-primary">Tabela</span> Rehberleri</h1>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">İstanbul'da tabela imalatı, montajı ve bakımı hakkında bilmeniz gereken her şey.</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          {categories.map(cat => (
+            <a href={`#${cat.toLowerCase().replace(/\s+/g, '-').replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c')}`} class="px-4 py-2 rounded-full border border-primary/30 hover:border-primary text-sm font-semibold text-gray-300 hover:text-primary transition-all">{cat}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-16 bg-secondary">
+    <div class="container mx-auto px-4">
+      {categories.map((category) => (
+        <div id={category.toLowerCase().replace(/\s+/g, '-').replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c')} class="mb-16">
+          <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white border-l-4 border-primary pl-6">{categoryLabels[category] || category}</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {articlesByCategory[category].map((article) => (
+              <a href={`/tabela-rehberi/${article.slug}/`} class="group glass-card p-6 hover:-translate-y-2 transition-all duration-300">
+                <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">{article.data.title}</h3>
+                <p class="text-gray-400 text-sm mb-4 line-clamp-3">{article.data.description}</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-primary font-semibold uppercase tracking-wider">{category}</span>
+                  <span class="text-xs text-gray-500">{new Date(article.data.pubDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+  <section class="py-20 bg-accent-light">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="font-heading font-black text-3xl md:text-4xl mb-6 text-white">Profesyonel Tabela Çözümleri İçin</h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">İstanbul'un 40 ilçesinde hizmet veriyoruz.</p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="/teklif-al/" class="btn btn-primary px-8 py-4 text-lg font-bold">Ücretsiz Teklif Al</a>
+        <a href="/iletisim/" class="btn btn-secondary px-8 py-4 text-lg font-bold">İletişime Geçin</a>
+      </div>
+    </div>
+  </section>
+</Layout>
