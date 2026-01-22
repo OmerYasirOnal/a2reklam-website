@@ -2,104 +2,301 @@
 import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt } from '../../utils/imageSeo';
 
-// Read manifest to select a hero image
-const manifest = loadImagesManifest();
-let heroCategory = manifest[0]?.category || 'cephe-tabela';
-let heroImage = manifest[0]?.paths?.['1600'] || '/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp';
-
-// Prefer 'cephe-tabela' or 'totem' for impact
-const candidates = manifest.filter((m: any) =>
-  ['cephe-tabela', 'totem'].includes(m.category)
-);
-if (candidates.length > 0) {
-  const random = candidates[Math.floor(Math.random() * candidates.length)];
-  heroImage = random.paths['1600'];
-  heroCategory = random.category;
-}
-
 interface Props {
   lang?: string;
 }
 const { lang = 'tr' } = Astro.props;
 
+// Select exactly 5 deterministic hero images (priority: cephe-tabela, totem)
+const manifest = loadImagesManifest();
+const heroCategories = ['cephe-tabela', 'totem', 'isikli-isiksiz-tabelalar'];
+const heroImages: any[] = [];
+
+// First, collect from priority categories
+for (const cat of heroCategories) {
+  const catImages = manifest.filter((m: any) => m.category === cat);
+  heroImages.push(...catImages);
+  if (heroImages.length >= 5) break;
+}
+
+// If not enough, add from remaining categories
+if (heroImages.length < 5) {
+  const remaining = manifest.filter((m: any) => !heroCategories.includes(m.category));
+  heroImages.push(...remaining);
+}
+
+// Take exactly 5 images
+const selectedHeroImages = heroImages.slice(0, 5).map((img: any) => ({
+  src: img.paths?.['1600'] || img.paths?.['960'] || '',
+  alt: buildImageAlt({ category: img.category, lang: lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'tr' }),
+  category: img.category,
+}));
+
 const content = {
   tr: {
-    title: 'Özel İşleriniz İçin Profesyonel Tabela Çözümleri',
+    badge: '2005\'ten beri',
+    title: 'Premium Tabela ve Reklam Çözümleri',
     subtitle: 'İstanbul\'un önde gelen tabela ve reklam üreticisi. Tasarımdan montaja tam hizmet.',
     cta: 'Teklif Al',
-    link: '/teklif-al/'
+    ctaLink: '/teklif-al/',
+    contact: 'Bize Ulaşın',
+    contactLink: '/iletisim/',
   },
   en: {
-    title: 'Professional Signage Solutions for Your Brand',
+    badge: 'Since 2005',
+    title: 'Premium Signage & Advertising Solutions',
     subtitle: 'Leading signage manufacturer in Istanbul. Full service from design to installation.',
     cta: 'Get a Quote',
-    link: '/en/get-quote/'
+    ctaLink: '/en/get-quote/',
+    contact: 'Contact Us',
+    contactLink: '/en/contact/',
   },
   ar: {
-    title: 'حلول لافتات احترافية لعلامتك التجارية',
+    badge: 'منذ 2005',
+    title: 'حلول لافتات وإعلانات متميزة',
     subtitle: 'مصنّع لافتات في إسطنبول يقدم الخدمة من التصميم حتى التركيب.',
     cta: 'احصل على عرض سعر',
-    link: '/ar/get-quote/'
+    ctaLink: '/ar/get-quote/',
+    contact: 'تواصل معنا',
+    contactLink: '/ar/contact/',
   },
 };
 
 const t = lang === 'ar' ? content.ar : lang === 'en' ? content.en : content.tr;
-const heroAlt = buildImageAlt({ category: heroCategory, lang: lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'tr' });
 const isRtl = lang === 'ar';
 ---
 
-<section class="relative min-h-[75vh] flex items-center justify-center text-white overflow-hidden bg-secondary">
-  <!-- Background Image with Overlay -->
-  <div class="absolute inset-0 z-0">
-    <img
-      src={heroImage}
-      alt={heroAlt}
-      class="w-full h-full object-cover opacity-50"
-      loading="eager"
-      fetchpriority="high"
-      decoding="async"
-      width="1600"
-      height="900"
-    />
-    <div class="absolute inset-0 bg-gradient-to-b from-secondary/40 via-secondary/70 to-secondary z-10"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent z-20"></div>
+<section class="hero-slider-section relative min-h-[75vh] flex items-center justify-center text-white overflow-hidden bg-secondary">
+  <!-- Background Slider Container -->
+  <div class="hero-bg-slider absolute inset-0 z-0">
+    {selectedHeroImages.map((img, idx) => (
+      <div
+        class:list={[
+          'hero-slide absolute inset-0 transition-opacity duration-1000',
+          idx === 0 ? 'opacity-100' : 'opacity-0'
+        ]}
+        data-index={idx}
+      >
+        <img
+          src={img.src}
+          alt={img.alt}
+          class="w-full h-full object-cover hero-slide-img"
+          loading={idx === 0 ? 'eager' : 'lazy'}
+          fetchpriority={idx === 0 ? 'high' : 'auto'}
+          decoding="async"
+          width="1600"
+          height="900"
+        />
+        <!-- Light mode: lighter overlay; Dark mode: balanced overlay -->
+        <div class="absolute inset-0 hero-overlay bg-gradient-to-b from-secondary/30 via-secondary/50 to-secondary/80 z-10"></div>
+      </div>
+    ))}
   </div>
 
-  <!-- Content -->
+  <!-- Slider Navigation Arrows -->
+  <button
+    type="button"
+    class="hero-nav-btn hero-nav-prev absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 p-3 md:p-4 rounded-full bg-black/40 hover:bg-black/60 border border-white/20 hover:border-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary text-white hover:text-primary"
+    aria-label="Previous slide"
+  >
+    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
+    </svg>
+  </button>
+
+  <button
+    type="button"
+    class="hero-nav-btn hero-nav-next absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 p-3 md:p-4 rounded-full bg-black/40 hover:bg-black/60 border border-white/20 hover:border-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary text-white hover:text-primary"
+    aria-label="Next slide"
+  >
+    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
+    </svg>
+  </button>
+
+  <!-- Content with glass-effect backdrop for readability -->
   <div class:list={['relative z-30 container mx-auto px-4 text-center', isRtl && 'text-right']}>
     <div class="inline-block mb-4 px-4 py-1 border border-primary/30 rounded-full bg-black/30 backdrop-blur text-primary text-sm font-semibold tracking-wider uppercase animate-fade-in-up">
-      {lang === 'ar' ? 'منذ 2010' : lang === 'en' ? 'Since 2010' : '2010\'dan beri'}
+      {t.badge}
     </div>
-    
-    <h1 class="font-heading font-black text-5xl md:text-7xl mb-6 leading-tight max-w-4xl mx-auto drop-shadow-2xl text-balance">
-      {lang === 'en' 
-        ? <>Premium <span class="text-primary">Signage</span> & Advertising Solutions</>
-        : lang === 'ar'
-          ? <><span class="text-primary">حلول</span> لافتات وإعلانات متميزة</>
-          : <>Premium <span class="text-primary">Tabela</span> ve Reklam Çözümleri</>
-      }
-    </h1>
-    
-    <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-      {t.subtitle}
-    </p>
-    
+
+    <!-- Text container with enhanced shadows for readability -->
+    <div class="max-w-4xl mx-auto">
+      <h1 class="font-heading font-black text-5xl md:text-7xl mb-6 leading-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] text-balance hero-title">
+        {lang === 'en'
+          ? <>Premium <span class="text-primary drop-shadow-[0_2px_10px_rgba(201,162,39,0.5)]">Signage</span> & Advertising Solutions</>
+          : lang === 'ar'
+            ? <><span class="text-primary drop-shadow-[0_2px_10px_rgba(201,162,39,0.5)]">حلول</span> لافتات وإعلانات متميزة</>
+            : <>Premium <span class="text-primary drop-shadow-[0_2px_10px_rgba(201,162,39,0.5)]">Tabela</span> ve Reklam Çözümleri</>
+        }
+      </h1>
+
+      <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] hero-subtitle">
+        {t.subtitle}
+      </p>
+    </div>
+
     <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
       <a
-        href={t.link}
+        href={t.ctaLink}
         data-track="lead-click"
         data-lead-type="quote"
         data-lang={lang}
-        class="btn btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wide"
+        class="btn btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wide shadow-lg shadow-primary/30"
       >
         {t.cta}
       </a>
-      <a 
-        href={lang === 'ar' ? '/ar/contact/' : lang === 'en' ? '/en/contact/' : '/iletisim/'} 
-        class="btn btn-secondary px-8 py-4 text-lg font-bold uppercase tracking-wide"
+      <a
+        href={t.contactLink}
+        class="btn btn-secondary px-8 py-4 text-lg font-bold uppercase tracking-wide backdrop-blur-sm"
       >
-        {lang === 'ar' ? 'تواصل معنا' : lang === 'en' ? 'Contact Us' : 'Bize Ulaşın'}
+        {t.contact}
       </a>
     </div>
   </div>
 </section>
+
+<script define:vars={{ totalSlides: selectedHeroImages.length, isRtl }}>
+  (function() {
+    const section = document.querySelector('.hero-slider-section');
+    if (!section) return;
+
+    const slides = section.querySelectorAll('.hero-slide');
+    const prevBtn = section.querySelector('.hero-nav-prev');
+    const nextBtn = section.querySelector('.hero-nav-next');
+
+    if (slides.length <= 1) {
+      // Hide navigation if only one slide
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+      return;
+    }
+
+    let currentIndex = 0;
+    let autoplayInterval = null;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.remove('opacity-0');
+          slide.classList.add('opacity-100');
+        } else {
+          slide.classList.remove('opacity-100');
+          slide.classList.add('opacity-0');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      showSlide(currentIndex);
+    }
+
+    function startAutoplay() {
+      if (prefersReducedMotion) return;
+      stopAutoplay();
+      autoplayInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoplay() {
+      if (autoplayInterval) {
+        clearInterval(autoplayInterval);
+        autoplayInterval = null;
+      }
+    }
+
+    // Navigation buttons
+    prevBtn?.addEventListener('click', () => {
+      prevSlide();
+      stopAutoplay();
+      startAutoplay();
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      nextSlide();
+      stopAutoplay();
+      startAutoplay();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!section.matches(':hover')) return;
+
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        if (isRtl) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+        stopAutoplay();
+        startAutoplay();
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        if (isRtl) {
+          prevSlide();
+        } else {
+          nextSlide();
+        }
+        stopAutoplay();
+        startAutoplay();
+      }
+    });
+
+    // Pause on hover
+    section.addEventListener('mouseenter', stopAutoplay);
+    section.addEventListener('mouseleave', startAutoplay);
+
+    // Start autoplay if motion is allowed
+    if (!prefersReducedMotion) {
+      startAutoplay();
+    }
+  })();
+</script>
+
+<style>
+  .hero-slide-img {
+    opacity: 0.75;
+  }
+
+  /* Light mode: make images more visible, reduce overlay */
+  [data-theme="light"] .hero-slide-img {
+    opacity: 0.9;
+  }
+
+  [data-theme="light"] .hero-overlay {
+    background: linear-gradient(to bottom,
+      rgba(248, 249, 250, 0.15),
+      rgba(248, 249, 250, 0.25),
+      rgba(248, 249, 250, 0.5)
+    );
+  }
+
+  /* Light mode: use dark text with light outline for contrast */
+  [data-theme="light"] .hero-title {
+    color: #1F2937 !important;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.8);
+  }
+
+  [data-theme="light"] .hero-subtitle {
+    color: #374151 !important;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+
+  [data-theme="light"] .hero-title .text-primary {
+    color: var(--accent-primary) !important;
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slide {
+      transition: none !important;
+    }
+  }
+</style>

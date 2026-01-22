@@ -35,6 +35,8 @@ const translations = {
     previous: 'Önceki',
     next: 'Sonraki',
     of: ' / ',
+    imageViewer: 'Görsel Görüntüleyici',
+    imageOf: 'Görsel',
   },
   en: {
     loadMore: 'Load More',
@@ -42,6 +44,8 @@ const translations = {
     previous: 'Previous',
     next: 'Next',
     of: ' / ',
+    imageViewer: 'Image Viewer',
+    imageOf: 'Image',
   },
   ar: {
     loadMore: 'المزيد',
@@ -49,6 +53,8 @@ const translations = {
     previous: 'السابق',
     next: 'التالي',
     of: ' / ',
+    imageViewer: 'عارض الصور',
+    imageOf: 'صورة',
   },
 };
 
@@ -58,8 +64,8 @@ const visibleImages = images.slice(0, initialLimit);
 const remainingCount = images.length - initialLimit;
 ---
 
-<div class="not-prose">
-  <div 
+<div class="not-prose gallery-container">
+  <div
     id="gallery-grid"
     class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
     data-total={images.length}
@@ -70,17 +76,18 @@ const remainingCount = images.length - initialLimit;
       const src960 = img.paths?.['960'] || img.paths?.['1600'] || '';
       const src1600 = img.paths?.['1600'] || img.paths?.['960'] || '';
       const alt = img.alt || `Gallery image ${idx + 1}`;
-      const srcset = src480 && src960 && src1600 
+      const srcset = src480 && src960 && src1600
         ? `${src480} 480w, ${src960} 960w, ${src1600} 1600w`
         : undefined;
-      
+
       return (
         <button
           type="button"
           class="gallery-item group relative overflow-hidden rounded-xl bg-surface border border-white/5 hover:border-primary/50 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary"
           data-index={idx}
           data-full-src={src1600}
-          aria-label={`${t.previous}${t.of}${t.next}: ${alt}`}
+          data-category={img.category || category}
+          aria-label={`${t.imageOf} ${idx + 1}: ${alt}`}
         >
           <div class={`${aspectClass} overflow-hidden`}>
             <img
@@ -115,21 +122,24 @@ const remainingCount = images.length - initialLimit;
     </div>
   )}
 
-  <!-- Lightbox Modal -->
+  <!-- Lightbox Modal - WAI-ARIA Compliant -->
   <div
     id="lightbox-modal"
-    class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4 cursor-zoom-out"
+    class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4"
     role="dialog"
     aria-modal="true"
-    aria-label={t.close}
+    aria-labelledby="lightbox-title"
   >
+    <!-- Screen reader only title -->
+    <h2 id="lightbox-title" class="sr-only">{t.imageViewer}</h2>
+
     <button
       type="button"
       id="lightbox-close"
-      class="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-10"
+      class="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] bg-black/40 backdrop-blur-sm hover:bg-black/60"
       aria-label={t.close}
     >
-      <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <svg class="w-8 h-8 md:w-10 md:h-10 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
@@ -137,10 +147,10 @@ const remainingCount = images.length - initialLimit;
     <button
       type="button"
       id="lightbox-prev"
-      class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-10"
+      class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] bg-black/40 backdrop-blur-sm hover:bg-black/60"
       aria-label={t.previous}
     >
-      <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <svg class="w-8 h-8 md:w-10 md:h-10 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
       </svg>
     </button>
@@ -148,10 +158,10 @@ const remainingCount = images.length - initialLimit;
     <button
       type="button"
       id="lightbox-next"
-      class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-10"
+      class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] bg-black/40 backdrop-blur-sm hover:bg-black/60"
       aria-label={t.next}
     >
-      <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <svg class="w-8 h-8 md:w-10 md:h-10 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
       </svg>
     </button>
@@ -161,69 +171,111 @@ const remainingCount = images.length - initialLimit;
         id="lightbox-img"
         src=""
         alt=""
-        class="max-w-full max-h-[90vh] w-auto h-auto object-contain shadow-2xl rounded-lg transition-opacity duration-300"
+        class="max-w-full max-h-[90vh] w-auto h-auto object-contain shadow-2xl rounded-lg transition-opacity duration-300 pointer-events-none"
         loading="eager"
       />
-      <div id="lightbox-counter" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm bg-black/70 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10">
+      <!-- aria-live region for screen reader announcements -->
+      <div
+        id="lightbox-counter"
+        class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm bg-black/70 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10"
+        aria-live="polite"
+        aria-atomic="true"
+      >
         <span id="lightbox-current">1</span>{t.of}<span id="lightbox-total">{images.length}</span>
       </div>
     </div>
   </div>
 </div>
 
-<script define:vars={{ allImages: images, totalImages: images.length, initialLimit, aspectRatio, t, isRtl }}>
+<script define:vars={{ allImages: images, totalImages: images.length, initialLimit, aspectRatio, t, isRtl, category }}>
   (function() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightbox-modal');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
-    const lightboxPrev = document.getElementById('lightbox-prev');
-    const lightboxNext = document.getElementById('lightbox-next');
-    const lightboxCounter = document.getElementById('lightbox-counter');
-    const lightboxCurrent = document.getElementById('lightbox-current');
-    const lightboxTotal = document.getElementById('lightbox-total');
-    const loadMoreBtn = document.getElementById('load-more-btn');
-    const galleryGrid = document.getElementById('gallery-grid');
-    
+    const container = document.currentScript?.previousElementSibling?.closest('.gallery-container') || document.querySelector('.gallery-container');
+    if (!container) return;
+
+    const galleryItems = container.querySelectorAll('.gallery-item');
+    const lightbox = container.querySelector('#lightbox-modal');
+    const lightboxImg = container.querySelector('#lightbox-img');
+    const lightboxClose = container.querySelector('#lightbox-close');
+    const lightboxPrev = container.querySelector('#lightbox-prev');
+    const lightboxNext = container.querySelector('#lightbox-next');
+    const lightboxCurrent = container.querySelector('#lightbox-current');
+    const lightboxTotal = container.querySelector('#lightbox-total');
+    const loadMoreBtn = container.querySelector('#load-more-btn');
+    const galleryGrid = container.querySelector('#gallery-grid');
+
     let currentIndex = 0;
+    let lastFocusedElement = null;
     const allImagesData = allImages;
-    
-    // Open lightbox
-    function openLightbox(index: number) {
+
+    // Get all focusable elements within a container
+    function getFocusableElements(el) {
+      return el.querySelectorAll(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+    }
+
+    // Open lightbox with accessibility features
+    function openLightbox(index, triggerElement) {
       currentIndex = index;
+      lastFocusedElement = triggerElement || document.activeElement;
+
       updateLightboxImage();
       lightbox?.classList.remove('hidden');
       lightbox?.classList.add('flex');
       document.body.style.overflow = 'hidden';
-      
-      // Focus trap
+
+      // Make background content inert
+      const mainContent = document.getElementById('main-content');
+      if (mainContent) {
+        mainContent.setAttribute('inert', '');
+      }
+
+      // Focus first focusable element (close button)
       lightboxClose?.focus();
     }
-    
+
     // Update lightbox image
     function updateLightboxImage() {
+      if (currentIndex < 0 || currentIndex >= totalImages) {
+        currentIndex = Math.max(0, Math.min(currentIndex, totalImages - 1));
+      }
+
       const imgData = allImagesData[currentIndex];
       if (!imgData || !lightboxImg) return;
-      
-      const src1600 = imgData.paths?.['1600'] || imgData.paths?.['960'] || '';
-      if (src1600 && lightboxImg) {
+
+      const src1600 = imgData.paths?.['1600'] || imgData.paths?.['960'] || imgData.paths?.['480'] || '';
+      if (src1600) {
         lightboxImg.src = src1600;
         lightboxImg.alt = imgData.alt || `Gallery image ${currentIndex + 1}`;
       }
-      
+
       if (lightboxCurrent) lightboxCurrent.textContent = String(currentIndex + 1);
       if (lightboxTotal) lightboxTotal.textContent = String(totalImages);
     }
-    
-    // Close lightbox
+
+    // Close lightbox with focus return
     function closeLightbox() {
       lightbox?.classList.add('hidden');
       lightbox?.classList.remove('flex');
       document.body.style.overflow = '';
+
+      // Remove inert from background
+      const mainContent = document.getElementById('main-content');
+      if (mainContent) {
+        mainContent.removeAttribute('inert');
+      }
+
+      // Return focus to trigger element
+      if (lastFocusedElement && lastFocusedElement.focus) {
+        lastFocusedElement.focus();
+      }
+      lastFocusedElement = null;
     }
-    
-    // Navigate
-    function navigate(direction: 'prev' | 'next') {
+
+    // Navigate with bounds checking
+    function navigate(direction) {
+      if (totalImages <= 0) return;
+
       if (direction === 'prev') {
         currentIndex = currentIndex > 0 ? currentIndex - 1 : totalImages - 1;
       } else {
@@ -231,54 +283,80 @@ const remainingCount = images.length - initialLimit;
       }
       updateLightboxImage();
     }
-    
+
     // Event listeners for gallery items
-    galleryItems.forEach((item, idx) => {
-      item.addEventListener('click', () => {
-        // Find actual index in full array
-        const actualIdx = Array.from(document.querySelectorAll('.gallery-item')).indexOf(item);
-        openLightbox(actualIdx);
+    galleryItems.forEach((item) => {
+      item.addEventListener('click', function() {
+        const actualIdx = Array.from(container.querySelectorAll('.gallery-item')).indexOf(this);
+        openLightbox(actualIdx, this);
       });
     });
-    
-    // Lightbox controls
-    lightboxClose?.addEventListener('click', closeLightbox);
-    lightboxPrev?.addEventListener('click', () => navigate('prev'));
-    lightboxNext?.addEventListener('click', () => navigate('next'));
-    
+
+    // Lightbox controls - ensure they work with stopPropagation
+    lightboxClose?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+    lightboxPrev?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigate('prev');
+    });
+    lightboxNext?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navigate('next');
+    });
+
     // Close on backdrop click
     lightbox?.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
     });
-    
-    // Keyboard navigation
+
+    // Keyboard navigation with focus trap
     document.addEventListener('keydown', (e) => {
       if (lightbox?.classList.contains('hidden')) return;
-      
+
       if (e.key === 'Escape') {
+        e.preventDefault();
         closeLightbox();
       } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
         navigate(isRtl ? 'next' : 'prev');
       } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
         navigate(isRtl ? 'prev' : 'next');
+      } else if (e.key === 'Tab') {
+        // Focus trap implementation
+        const focusables = getFocusableElements(lightbox);
+        if (focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     });
-    
+
     // Load more functionality
     if (loadMoreBtn && galleryGrid) {
       const limit = parseInt(galleryGrid.getAttribute('data-limit') || '12');
       const total = parseInt(galleryGrid.getAttribute('data-total') || String(totalImages));
       let currentLoaded = initialLimit;
-      
+
       loadMoreBtn.addEventListener('click', () => {
         const remaining = total - currentLoaded;
         const toLoad = Math.min(limit, remaining);
-        
+
         if (toLoad <= 0) {
           if (loadMoreBtn) loadMoreBtn.style.display = 'none';
           return;
         }
-        
+
         // Create and append new items
         for (let i = currentLoaded; i < currentLoaded + toLoad && i < allImagesData.length; i++) {
           const imgData = allImagesData[i];
@@ -286,19 +364,21 @@ const remainingCount = images.length - initialLimit;
           const src960 = imgData.paths?.['960'] || imgData.paths?.['1600'] || '';
           const src1600 = imgData.paths?.['1600'] || imgData.paths?.['960'] || '';
           const alt = imgData.alt || `Gallery image ${i + 1}`;
-          const srcset = src480 && src960 && src1600 
+          const srcset = src480 && src960 && src1600
             ? `${src480} 480w, ${src960} 960w, ${src1600} 1600w`
             : undefined;
-          
+
           const aspectClass = aspectRatio === 'video' ? 'aspect-video' : aspectRatio === 'auto' ? 'aspect-auto' : 'aspect-[4/3]';
-          
+          const itemCategory = imgData.category || category;
+
           const button = document.createElement('button');
           button.type = 'button';
           button.className = 'gallery-item group relative overflow-hidden rounded-xl bg-surface border border-white/5 hover:border-primary/50 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary';
           button.setAttribute('data-index', String(i));
           button.setAttribute('data-full-src', src1600);
-          button.setAttribute('aria-label', `${t.previous}${t.of}${t.next}: ${alt}`);
-          
+          button.setAttribute('data-category', itemCategory);
+          button.setAttribute('aria-label', `${t.imageOf} ${i + 1}: ${alt}`);
+
           button.innerHTML = `
             <div class="${aspectClass} overflow-hidden bg-surface">
               <img
@@ -308,22 +388,24 @@ const remainingCount = images.length - initialLimit;
                 loading="lazy"
                 decoding="async"
                 width="480"
-                height="${aspectRatio === 'video' ? '270' : aspectRatio === 'auto' ? '360' : '360'}"
+                height="${aspectRatio === 'video' ? '270' : '360'}"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="absolute inset-0 ring-1 ring-inset ring-white/10 group-hover:ring-primary/50 transition-all rounded-xl pointer-events-none"></div>
           `;
-          
-          button.addEventListener('click', () => openLightbox(i));
-          
+
+          button.addEventListener('click', function() {
+            openLightbox(i, this);
+          });
+
           if (galleryGrid) galleryGrid.appendChild(button);
         }
-        
+
         currentLoaded += toLoad;
         const remainingAfter = total - currentLoaded;
-        
+
         if (remainingAfter <= 0) {
           if (loadMoreBtn) loadMoreBtn.style.display = 'none';
         } else {
@@ -338,7 +420,7 @@ const remainingCount = images.length - initialLimit;
   #lightbox-modal img {
     animation: fadeIn 0.3s ease-out;
   }
-  
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -347,6 +429,17 @@ const remainingCount = images.length - initialLimit;
     to {
       opacity: 1;
       transform: scale(1);
+    }
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    #lightbox-modal img {
+      animation: none;
+    }
+
+    .gallery-item img {
+      transition: none;
     }
   }
 </style>

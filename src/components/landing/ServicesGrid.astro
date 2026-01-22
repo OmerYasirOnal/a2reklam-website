@@ -62,6 +62,63 @@ const getDisplayLabel = (category: string) => {
   return getCategoryLabel(category, altLang).toUpperCase();
 };
 
+// SEO microcopy for each service (TR/EN/AR)
+const serviceMicrocopy: Record<string, { tr: string; en: string; ar: string }> = {
+  'cati-tabelasi': {
+    tr: 'İstanbul genelinde çatı tabelası imalatı ve montajı. Beşiktaş, Kadıköy ve Kağıthane\'de hızlı hizmet.',
+    en: 'Rooftop signage manufacturing across Istanbul. Fast service in Beşiktaş, Kadıköy and Kağıthane.',
+    ar: 'تصنيع وتركيب لافتات السطح في إسطنبول. خدمة سريعة في بشيكتاش وكاديكوي وكاغيثانة.',
+  },
+  'cephe-tabela': {
+    tr: 'Premium cephe tabelası üretimi. İstanbul\'un 40 ilçesinde profesyonel montaj hizmeti.',
+    en: 'Premium facade signage production. Professional installation across 40 districts in Istanbul.',
+    ar: 'إنتاج لافتات واجهات متميزة. خدمة تركيب احترافية في 40 منطقة بإسطنبول.',
+  },
+  'isikli-isiksiz-tabelalar': {
+    tr: 'LED ve neon tabela çözümleri. Enerji tasarruflu ışıklı tabela sistemleri, İstanbul teslim.',
+    en: 'LED and neon signage solutions. Energy-efficient illuminated signs, delivered across Istanbul.',
+    ar: 'حلول لافتات LED ونيون. أنظمة لافتات مضيئة موفرة للطاقة، تسليم في إسطنبول.',
+  },
+  'paslanmaz-harfler': {
+    tr: 'Paslanmaz harf tabela imalatı. Plaza ve kurumsal binalar için dayanıklı çözümler.',
+    en: 'Stainless steel letter manufacturing. Durable solutions for plazas and corporate buildings.',
+    ar: 'تصنيع حروف ستانلس ستيل. حلول متينة للأبراج والمباني المؤسسية.',
+  },
+  'totem': {
+    tr: 'Totem tabela üretimi ve kurulumu. AVM, plaza ve işletmeler için öne çıkan totem sistemleri.',
+    en: 'Totem signage production and installation. Standout totem systems for malls, plazas and businesses.',
+    ar: 'إنتاج وتركيب لوحات التوتم. أنظمة توتم بارزة للمولات والأبراج والأعمال.',
+  },
+  'arac-giydirme': {
+    tr: 'Profesyonel araç giydirme hizmeti. Reklam tabelası görselliğini taşıyan filosuna taşıyın.',
+    en: 'Professional vehicle wrapping service. Bring signage visibility to your fleet.',
+    ar: 'خدمة تغليف مركبات احترافية. اجلب ظهور اللافتات إلى أسطولك.',
+  },
+  'fener-tabela': {
+    tr: 'Fener tabela imalatı. Dar sokaklar için ideal çift taraflı görünürlük.',
+    en: 'Blade sign manufacturing. Ideal double-sided visibility for narrow streets.',
+    ar: 'تصنيع لافتات جانبية. رؤية مزدوجة مثالية للشوارع الضيقة.',
+  },
+  'kabartma-pleksiglass': {
+    tr: 'Kabartma pleksi harf üretimi. Modern ofis ve mağazalar için şık detay.',
+    en: 'Raised acrylic letter production. Elegant detail for modern offices and stores.',
+    ar: 'إنتاج حروف أكريليك بارزة. تفاصيل أنيقة للمكاتب والمتاجر الحديثة.',
+  },
+};
+
+const getServiceDescription = (category: string) => {
+  const desc = serviceMicrocopy[category];
+  if (!desc) {
+    // Fallback generic description
+    return lang === 'en'
+      ? 'Professional signage solutions in Istanbul with full service support.'
+      : lang === 'ar'
+      ? 'حلول لافتات احترافية في إسطنبول مع دعم خدمة كامل.'
+      : 'İstanbul genelinde profesyonel tabela çözümleri ve tam hizmet desteği.';
+  }
+  return lang === 'ar' ? desc.ar : lang === 'en' ? desc.en : desc.tr;
+};
+
 categories = categories.sort((a: any, b: any) => {
   const aIndex = priorityOrder.indexOf(a.category);
   const bIndex = priorityOrder.indexOf(b.category);
@@ -89,28 +146,28 @@ categories = categories.sort((a: any, b: any) => {
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {categories.map((cat: any) => (
-        <a href={`${linkBase}${cat.category}/`} class="group relative block glass-card overflow-hidden hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-3 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary">
-          <div class="relative h-72 overflow-hidden">
+        <a href={`${linkBase}${cat.category}/`} class="group block glass-card overflow-hidden hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary">
+          <!-- Image Container -->
+          <div class="relative aspect-[4/3] overflow-hidden">
             <img
               src={cat.paths['960']}
               alt={buildImageAlt({ category: cat.category, lang: altLang })}
-              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-100"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               loading="lazy"
             />
-            <!-- Enhanced overlay for better readability -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/75 group-hover:via-black/25 transition-all duration-300"></div>
-
-            <div class="absolute bottom-0 left-0 w-full p-6 md:p-8 z-10">
-              <h3 class="font-heading font-black text-2xl md:text-3xl lg:text-4xl tracking-tight text-white mb-1 line-clamp-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] group-hover:drop-shadow-[0_4px_12px_rgba(201,162,39,0.5)] transition-all duration-300">
-                {getDisplayLabel(cat.category)}
-              </h3>
-              <p class="text-xs text-primary/80 font-medium uppercase tracking-wider mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {t.categorySubtitle}
-              </p>
-              <p class="text-xs md:text-sm text-gray-200/90 group-hover:text-gray-100 group-hover:translate-x-1 transition-all duration-300 delay-100 font-medium inline-flex items-center gap-1">
-                {t.view}
-              </p>
-            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:from-primary/20 transition-all duration-300"></div>
+          </div>
+          <!-- Content Below Image -->
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl md:text-2xl text-heading mb-2 group-hover:text-primary transition-colors line-clamp-2">
+              {getDisplayLabel(cat.category)}
+            </h3>
+            <p class="text-sm text-gray-400 leading-relaxed mb-4 line-clamp-2">
+              {getServiceDescription(cat.category)}
+            </p>
+            <span class="text-sm text-primary group-hover:text-primary-hover font-semibold inline-flex items-center gap-1 transition-colors">
+              {t.view}
+            </span>
           </div>
         </a>
       ))}

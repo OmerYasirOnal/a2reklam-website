@@ -48,7 +48,7 @@ export const REFERENCES: ReferenceItem[] | null = REFERENCES_DATA;
 
 // KPI Counters (Customer Satisfaction Stats)
 // Set values or null to hide individual cards
-export const KPI_PROJECTS: number | null = null; // e.g., 500+ projects
-export const KPI_HAPPY_CLIENTS: number | null = null; // e.g., 300+ clients
-export const KPI_DISTRICTS: number = 39; // Istanbul districts served
-export const KPI_SINCE_YEAR: number = 2010; // Established year
+export const KPI_PROJECTS: number | null = 2500; // 2500+ tabela ve reklam hizmeti
+export const KPI_HAPPY_CLIENTS: number | null = 1200; // 1200+ müşteri memnuniyeti
+export const KPI_DISTRICTS: number = 40; // Istanbul districts served (updated to 40)
+export const KPI_SINCE_YEAR: number = 2005; // Established year (20+ years = 2005)

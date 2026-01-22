@@ -4,6 +4,7 @@ const LOCALES: Locale[] = ['tr', 'en', 'ar'];
 
 const STATIC_ROUTES: Array<Partial<Record<Locale, string>>> = [
   { tr: '/', en: '/en/', ar: '/ar/' },
+  { tr: '/galeri/', en: '/en/gallery/', ar: '/ar/gallery/' },
   { tr: '/hizmetler/', en: '/en/services/', ar: '/ar/services/' },
   { tr: '/iletisim/', en: '/en/contact/', ar: '/ar/contact/' },
   { tr: '/teklif-al/', en: '/en/get-quote/', ar: '/ar/get-quote/' },
