@@ -2,20 +2,16 @@
 import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt } from '../../utils/imageSeo';
 
-// Read manifest to select a hero image
+// Read manifest to select a deterministic hero image
 const manifest = loadImagesManifest();
-let heroCategory = manifest[0]?.category || 'cephe-tabela';
-let heroImage = manifest[0]?.paths?.['1600'] || '/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp';
+const fallbackHero = '/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp';
+const featured =
+  manifest.find((m: any) => m.category === 'cephe-tabela') ||
+  manifest.find((m: any) => ['cephe-tabela', 'totem'].includes(m.category)) ||
+  manifest[0];
 
-// Prefer 'cephe-tabela' or 'totem' for impact
-const candidates = manifest.filter((m: any) =>
-  ['cephe-tabela', 'totem'].includes(m.category)
-);
-if (candidates.length > 0) {
-  const random = candidates[Math.floor(Math.random() * candidates.length)];
-  heroImage = random.paths['1600'];
-  heroCategory = random.category;
-}
+const heroCategory = featured?.category || 'cephe-tabela';
+const heroImage = featured?.paths?.['1600'] || fallbackHero;
 
 interface Props {
   lang?: string;
