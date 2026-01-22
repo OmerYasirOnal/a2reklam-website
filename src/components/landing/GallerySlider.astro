@@ -1,0 +1,473 @@
+---
+import { loadImagesManifest } from '../../utils/imagesManifest';
+import { buildImageAlt, getCategoryLabel } from '../../utils/imageSeo';
+
+interface Props {
+  lang?: 'tr' | 'en' | 'ar';
+  maxImages?: number;
+}
+
+const { lang = 'tr', maxImages = 20 } = Astro.props;
+const isRtl = lang === 'ar';
+
+// Load manifest and select diverse images
+const manifest = loadImagesManifest();
+const categories = [...new Set(manifest.map((m: any) => m.category))];
+
+// Select 2 images per category for diversity
+const selectedImages: any[] = [];
+categories.forEach((cat) => {
+  const catImages = manifest.filter((m: any) => m.category === cat);
+  selectedImages.push(...catImages.slice(0, 2));
+});
+
+// Limit to maxImages and build deterministic alts for lightbox
+const displayImages = selectedImages.slice(0, maxImages).map((img: any) => ({
+  ...img,
+  alt: buildImageAlt({ category: img.category, lang }),
+}));
+
+// Translations
+const t = {
+  tr: {
+    title: 'Projelerimiz',
+    subtitle: 'Örnek çalışmalarımıza göz atın',
+    viewAll: 'Tümünü Gör',
+    viewAllLink: '/galeri/',
+    prev: 'Önceki',
+    next: 'Sonraki',
+    close: 'Kapat',
+    of: ' / ',
+    image: 'Görsel',
+    imageViewer: 'Görsel Görüntüleyici',
+  },
+  en: {
+    title: 'Our Projects',
+    subtitle: 'Browse our sample works',
+    viewAll: 'View All',
+    viewAllLink: '/en/gallery/',
+    prev: 'Previous',
+    next: 'Next',
+    close: 'Close',
+    of: ' / ',
+    image: 'Image',
+    imageViewer: 'Image Viewer',
+  },
+  ar: {
+    title: 'مشاريعنا',
+    subtitle: 'تصفح أعمالنا',
+    viewAll: 'عرض الكل',
+    viewAllLink: '/ar/gallery/',
+    prev: 'السابق',
+    next: 'التالي',
+    close: 'إغلاق',
+    of: ' / ',
+    image: 'صورة',
+    imageViewer: 'عارض الصور',
+  },
+}[lang];
+---
+
+<section class="py-16 bg-secondary/80 border-y border-white/5 overflow-hidden gallery-slider-section">
+  <div class="container mx-auto px-4 mb-8">
+    <div class:list={['flex items-end justify-between gap-4', isRtl && 'flex-row-reverse']}>
+      <div class:list={[isRtl && 'text-right']}>
+        <h2 class="font-heading font-black text-3xl md:text-4xl text-white mb-2">
+          <span class="text-primary">{t.title.split(' ')[0]}</span>{' '}{t.title.split(' ').slice(1).join(' ')}
+        </h2>
+        <p class="text-gray-400">{t.subtitle}</p>
+      </div>
+      <div class:list={['flex items-center gap-3', isRtl && 'flex-row-reverse']}>
+        <a
+          href={t.viewAllLink}
+          class="hidden sm:inline-flex text-sm font-medium text-primary hover:text-primary-hover transition-colors"
+        >
+          {t.viewAll} →
+        </a>
+        <div class:list={['flex gap-2', isRtl && 'flex-row-reverse']}>
+          <button
+            type="button"
+            id="slider-prev"
+            class="slider-nav-btn p-3 rounded-full border border-white/10 text-gray-400 hover:border-primary hover:text-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary"
+            aria-label={t.prev}
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
+            </svg>
+          </button>
+          <button
+            type="button"
+            id="slider-next"
+            class="slider-nav-btn p-3 rounded-full border border-white/10 text-gray-400 hover:border-primary hover:text-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary"
+            aria-label={t.next}
+          >
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="gallery-slider-status" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Slider Track -->
+  <div
+    id="gallery-slider"
+    class:list={[
+      'flex gap-4 overflow-x-auto snap-x scroll-smooth pb-4 px-4 slider-no-scrollbar',
+      isRtl && 'flex-row-reverse'
+    ]}
+    style="scroll-snap-type: x proximity; scroll-padding-inline: 1rem;"
+    role="region"
+    aria-label={t.title}
+  >
+    {displayImages.map((img, idx) => {
+      const src480 = img.paths?.['480'] || img.paths?.['960'] || '';
+      const src960 = img.paths?.['960'] || img.paths?.['1600'] || '';
+      const src1600 = img.paths?.['1600'] || img.paths?.['960'] || '';
+      const alt = img.alt || buildImageAlt({ category: img.category, lang });
+      const categoryLabel = getCategoryLabel(img.category, lang);
+
+      return (
+        <button
+          type="button"
+          class="slider-item group flex-shrink-0 w-72 md:w-80 snap-start relative rounded-xl overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary border border-white/5 hover:border-primary/50 transition-all"
+          data-index={idx}
+          data-full-src={src1600}
+          aria-label={alt}
+        >
+          <div class="aspect-[4/3] overflow-hidden bg-surface">
+            <img
+              src={src480}
+              srcset={`${src480} 480w, ${src960} 960w`}
+              sizes="320px"
+              alt={alt}
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="360"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div class="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+            <span class="text-white text-sm font-medium drop-shadow-lg">
+              {categoryLabel}
+            </span>
+          </div>
+        </button>
+      );
+    })}
+  </div>
+
+  <!-- Mobile View All Link -->
+  <div class="container mx-auto px-4 mt-6 sm:hidden text-center">
+    <a
+      href={t.viewAllLink}
+      class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-hover transition-colors"
+    >
+      {t.viewAll}
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div
+    id="slider-lightbox"
+    class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4 cursor-zoom-out"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="slider-lightbox-title"
+  >
+    <h2 id="slider-lightbox-title" class="sr-only">{t.imageViewer}</h2>
+
+    <button
+      type="button"
+      id="slider-lightbox-close"
+      class="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-10"
+      aria-label={t.close}
+    >
+      <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <button
+      type="button"
+      id="slider-lightbox-prev"
+      class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-10"
+      aria-label={t.prev}
+    >
+      <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
+      </svg>
+    </button>
+
+    <button
+      type="button"
+      id="slider-lightbox-next"
+      class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-10"
+      aria-label={t.next}
+    >
+      <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
+      </svg>
+    </button>
+
+    <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center p-4 md:p-8">
+      <img
+        id="slider-lightbox-img"
+        src=""
+        alt=""
+        class="max-w-full max-h-[90vh] w-auto h-auto object-contain shadow-2xl rounded-lg"
+        loading="eager"
+      />
+      <div
+        id="slider-lightbox-counter"
+        class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm bg-black/70 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <span id="slider-lightbox-current">1</span>{t.of}<span id="slider-lightbox-total">{displayImages.length}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ images: displayImages, totalImages: displayImages.length, isRtl, t }}>
+  (function() {
+    const section = document.querySelector('.gallery-slider-section');
+    if (!section) return;
+
+    const slider = section.querySelector('#gallery-slider');
+    const prevBtn = section.querySelector('#slider-prev');
+    const nextBtn = section.querySelector('#slider-next');
+    const sliderItems = section.querySelectorAll('.slider-item');
+    const sliderStatus = section.querySelector('#gallery-slider-status');
+
+    // Lightbox elements
+    const lightbox = section.querySelector('#slider-lightbox');
+    const lightboxImg = section.querySelector('#slider-lightbox-img');
+    const lightboxClose = section.querySelector('#slider-lightbox-close');
+    const lightboxPrev = section.querySelector('#slider-lightbox-prev');
+    const lightboxNext = section.querySelector('#slider-lightbox-next');
+    const lightboxCurrent = section.querySelector('#slider-lightbox-current');
+    const lightboxTotal = section.querySelector('#slider-lightbox-total');
+
+    let currentIndex = 0;
+    let lastFocusedElement = null;
+    const scrollAmount = 320;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+    let scrollRaf = null;
+
+    // Get focusable elements for focus trap
+    function getFocusableElements(el) {
+      return el.querySelectorAll(
+        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+    }
+
+    function getCurrentIndex() {
+      if (!slider || sliderItems.length === 0) return 0;
+      const sliderRect = slider.getBoundingClientRect();
+      const edge = isRtl ? sliderRect.right : sliderRect.left;
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      sliderItems.forEach((item, idx) => {
+        const rect = item.getBoundingClientRect();
+        const itemEdge = isRtl ? rect.right : rect.left;
+        const distance = Math.abs(itemEdge - edge);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = idx;
+        }
+      });
+
+      return closestIndex;
+    }
+
+    function updateSliderStatus() {
+      if (!sliderStatus || totalImages <= 0) return;
+      const idx = getCurrentIndex();
+      sliderStatus.textContent = `${t.image} ${idx + 1}${t.of}${totalImages}`;
+    }
+
+    function scrollSlider(direction) {
+      const base = direction === 'prev' ? -scrollAmount : scrollAmount;
+      const scrollDir = isRtl ? -base : base;
+      slider?.scrollBy({ left: scrollDir, behavior: scrollBehavior });
+    }
+
+    // Slider navigation
+    prevBtn?.addEventListener('click', () => {
+      scrollSlider('prev');
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      scrollSlider('next');
+    });
+
+    slider?.addEventListener('keydown', (e) => {
+      if (!slider?.contains(document.activeElement)) return;
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        scrollSlider(isRtl ? 'next' : 'prev');
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        scrollSlider(isRtl ? 'prev' : 'next');
+      }
+    });
+
+    slider?.addEventListener('scroll', () => {
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = requestAnimationFrame(updateSliderStatus);
+    });
+
+    updateSliderStatus();
+
+    // Lightbox functions
+    function openLightbox(index, triggerEl) {
+      currentIndex = index;
+      lastFocusedElement = triggerEl || document.activeElement;
+      updateLightboxImage();
+
+      lightbox?.classList.remove('hidden');
+      lightbox?.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      // Make background inert
+      const mainContent = document.getElementById('main-content');
+      if (mainContent) mainContent.setAttribute('inert', '');
+
+      lightboxClose?.focus();
+    }
+
+    function updateLightboxImage() {
+      const imgData = images[currentIndex];
+      if (!imgData || !lightboxImg) return;
+
+      const src1600 = imgData.paths?.['1600'] || imgData.paths?.['960'] || '';
+      lightboxImg.src = src1600;
+      lightboxImg.alt = imgData.alt || `Gallery image ${currentIndex + 1}`;
+
+      if (lightboxCurrent) lightboxCurrent.textContent = String(currentIndex + 1);
+      if (lightboxTotal) lightboxTotal.textContent = String(totalImages);
+    }
+
+    function closeLightbox() {
+      lightbox?.classList.add('hidden');
+      lightbox?.classList.remove('flex');
+      document.body.style.overflow = '';
+
+      // Remove inert
+      const mainContent = document.getElementById('main-content');
+      if (mainContent) mainContent.removeAttribute('inert');
+
+      if (lastFocusedElement?.focus) lastFocusedElement.focus();
+      lastFocusedElement = null;
+    }
+
+    function navigate(direction) {
+      if (direction === 'prev') {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : totalImages - 1;
+      } else {
+        currentIndex = currentIndex < totalImages - 1 ? currentIndex + 1 : 0;
+      }
+      updateLightboxImage();
+    }
+
+    // Slider item clicks
+    sliderItems.forEach((item) => {
+      item.addEventListener('click', function() {
+        const idx = parseInt(this.dataset.index || '0');
+        openLightbox(idx, this);
+      });
+    });
+
+    // Lightbox controls
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightboxPrev?.addEventListener('click', () => navigate('prev'));
+    lightboxNext?.addEventListener('click', () => navigate('next'));
+
+    // Backdrop click
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox?.classList.contains('hidden')) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        navigate(isRtl ? 'next' : 'prev');
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        navigate(isRtl ? 'prev' : 'next');
+      } else if (e.key === 'Tab') {
+        // Focus trap
+        const focusables = getFocusableElements(lightbox);
+        if (focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+  })();
+</script>
+
+<style>
+  .slider-no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .slider-no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  #slider-lightbox img {
+    animation: sliderFadeIn 0.3s ease-out;
+  }
+
+  @keyframes sliderFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    #slider-lightbox img {
+      animation: none;
+    }
+
+    .slider-item img {
+      transition: none;
+    }
+
+    #gallery-slider {
+      scroll-behavior: auto;
+    }
+  }
+</style>
