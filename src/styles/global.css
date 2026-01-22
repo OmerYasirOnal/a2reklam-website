@@ -14,8 +14,11 @@
 
   /* Text */
   --text-primary: #F3F4F6;
+  --text-primary-rgb: 243, 244, 246;
   --text-secondary: #CBD5E1;
+  --text-secondary-rgb: 203, 213, 225;
   --text-muted: #94A3B8;
+  --text-muted-rgb: 148, 163, 184;
 
   /* Accent */
   --accent-primary: #C9A227;
@@ -73,8 +76,11 @@
   --bg-card-rgb: 255, 255, 255;
 
   --text-primary: #1F2937;
+  --text-primary-rgb: 31, 41, 55;
   --text-secondary: #4B5563;
+  --text-secondary-rgb: 75, 85, 99;
   --text-muted: #6B7280;
+  --text-muted-rgb: 107, 114, 128;
 
   --accent-primary: #B8860B;
   --accent-primary-rgb: 184, 134, 11;
@@ -241,6 +247,49 @@
   .glass-primary {
     @apply backdrop-blur-md border border-primary/20;
     background: rgba(var(--accent-primary-rgb), 0.1);
+  }
+
+  .hero-text-panel {
+    @apply border rounded-2xl;
+    border-color: var(--border-subtle);
+    background: linear-gradient(135deg, rgba(var(--bg-base-rgb), 0.7), rgba(var(--bg-base-rgb), 0.4));
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+  }
+
+  [data-theme="light"] .hero-text-panel {
+    background: linear-gradient(135deg, rgba(var(--bg-base-rgb), 0.92), rgba(var(--bg-base-rgb), 0.72));
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .service-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(var(--bg-base-rgb), 0.88),
+      rgba(var(--bg-base-rgb), 0.45),
+      rgba(var(--bg-base-rgb), 0)
+    );
+    transition: background 0.3s ease;
+  }
+
+  .group:hover .service-card-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(var(--bg-base-rgb), 0.92),
+      rgba(var(--bg-base-rgb), 0.52),
+      rgba(var(--bg-base-rgb), 0)
+    );
+  }
+
+  .service-card-cta {
+    color: rgba(var(--text-secondary-rgb), 0.9);
+  }
+
+  .group:hover .service-card-cta {
+    color: var(--text-primary);
   }
 
   /* Icon Wrapper - Prevent oversized icons */
@@ -427,6 +476,12 @@
   }
   .text-gray-300 {
     color: var(--text-secondary);
+  }
+  .text-gray-200\/90 {
+    color: rgba(var(--text-primary-rgb), 0.9);
+  }
+  .text-gray-300\/80 {
+    color: rgba(var(--text-secondary-rgb), 0.8);
   }
   .text-gray-400,
   .text-gray-500,
