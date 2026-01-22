@@ -13,13 +13,6 @@ const isRtl = lang === 'ar';
 
 const manifest = loadImagesManifest();
 const totalImages = manifest.length;
-const fallbackHero = '/assets/img/demo/a2reklam-cephe-tabela-001-1600.webp';
-const heroImageData =
-  manifest.find((img: any) => img.category === 'cephe-tabela') ||
-  manifest.find((img: any) => img.category) ||
-  manifest[0];
-const heroImage = heroImageData?.paths?.['1600'] || fallbackHero;
-const heroAlt = buildImageAlt({ category: heroImageData?.category || 'cephe-tabela', lang });
 
 const counts = new Map<string, number>();
 manifest.forEach((img: any) => {
@@ -101,36 +94,20 @@ const breadcrumbs = [
 
 <Layout title={t.metaTitle} description={t.metaDescription} lang={lang} breadcrumbs={breadcrumbs}>
   <section class="relative py-24 bg-secondary overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img
-        src={heroImage}
-        alt={heroAlt}
-        class="w-full h-full object-cover opacity-70"
-        loading="eager"
-        fetchpriority="high"
-        decoding="async"
-        width="1600"
-        height="900"
-      />
-      <div class="absolute inset-0 bg-gradient-to-b from-secondary/35 via-secondary/70 to-secondary"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(11,15,20,0.35)_100%)]"></div>
-    </div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none z-10"></div>
-    <div class="container mx-auto px-4 relative z-20">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container mx-auto px-4 relative z-10">
       <div class:list={['text-center mb-12', isRtl && 'text-right']}>
-        <div class:list={['hero-text-panel max-w-2xl px-6 py-8 md:px-10 md:py-10', isRtl ? 'ml-auto' : 'mx-auto']}>
-          <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
-            <span class="text-primary">{t.title}</span>
-          </h1>
-          <p
-            class:list={[
-              'text-gray-400 max-w-2xl text-lg inline-block',
-              isRtl ? 'border-r-2 border-primary pr-4' : 'border-l-2 border-primary pl-4',
-            ]}
-          >
-            {t.subtitle}
-          </p>
-        </div>
+        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+          <span class="text-primary">{t.title}</span>
+        </h1>
+        <p
+          class:list={[
+            'text-gray-400 max-w-2xl mx-auto text-lg inline-block',
+            isRtl ? 'border-r-2 border-primary pr-4' : 'border-l-2 border-primary pl-4',
+          ]}
+        >
+          {t.subtitle}
+        </p>
       </div>
     </div>
   </section>
