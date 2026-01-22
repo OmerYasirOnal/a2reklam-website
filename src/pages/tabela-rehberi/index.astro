@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import { loadImagesManifest } from '../../utils/imagesManifest';
 
 const lang = 'tr';
 const allArticles = await getCollection('tabela_rehberi');
@@ -9,8 +10,34 @@ const categories = [...new Set(allArticles.map(a => a.data.category))].sort();
 const articlesByCategory: Record<string, typeof allArticles> = {};
 categories.forEach(cat => { articlesByCategory[cat] = allArticles.filter(a => a.data.category === cat); });
 
+// Load image manifest for thumbnails
+const manifest = loadImagesManifest();
+
+// Map article categories to gallery categories for thumbnails
+const categoryImageMap: Record<string, string> = {
+  'Cephe Tabelası': 'cephe-tabela',
+  'Işıklı Tabela': 'isikli-isiksiz-tabelalar',
+  'Totem': 'totem',
+  'Paslanmaz Harf': 'paslanmaz-harfler',
+  'Fiyatlandırma & Süreç': 'cephe-tabela',
+  'İlçe Rehberleri': 'cephe-tabela',
+};
+
+// Get deterministic image for each article
+function getArticleImage(article: typeof allArticles[0], index: number) {
+  const galleryCategory = categoryImageMap[article.data.category] || 'cephe-tabela';
+  const categoryImages = manifest.filter((m: any) => m.category === galleryCategory);
+  if (categoryImages.length === 0) {
+    const allImages = manifest;
+    const fallback = allImages[index % allImages.length];
+    return fallback?.paths?.['480'] || fallback?.paths?.['960'] || '/brand/a2reklam-logo.png';
+  }
+  const img = categoryImages[index % categoryImages.length];
+  return img?.paths?.['480'] || img?.paths?.['960'] || '/brand/a2reklam-logo.png';
+}
+
 const title = 'Tabela Rehberleri | A2 Reklam';
-const description = 'İstanbul\'da tabela imalatı, montajı ve bakımı hakkında kapsamlı rehberler.';
+const description = 'İstanbul\'da tabela imalatı, montajı ve bakımı hakkında kapsamlı rehberler ve uzman önerileri.';
 const breadcrumbs = [{ name: 'Anasayfa', item: '/' }, { name: 'Tabela Rehberleri', item: '/tabela-rehberi/' }];
 const categoryLabels: Record<string, string> = {
   'Cephe Tabelası': 'Cephe Tabelası Rehberleri',
@@ -42,13 +69,35 @@ const categoryLabels: Record<string, string> = {
         <div id={category.toLowerCase().replace(/\s+/g, '-').replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c')} class="mb-16">
           <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white border-l-4 border-primary pl-6">{categoryLabels[category] || category}</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articlesByCategory[category].map((article) => (
-              <a href={`/tabela-rehberi/${article.slug}/`} class="group glass-card p-6 hover:-translate-y-2 transition-all duration-300">
-                <h3 class="font-heading font-bold text-xl text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">{article.data.title}</h3>
-                <p class="text-gray-400 text-sm mb-4 line-clamp-3">{article.data.description}</p>
-                <div class="flex items-center justify-between">
-                  <span class="text-xs text-primary font-semibold uppercase tracking-wider">{category}</span>
-                  <span class="text-xs text-gray-500">{new Date(article.data.pubDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            {articlesByCategory[category].map((article, idx) => (
+              <a href={`/tabela-rehberi/${article.slug}/`} class="group block glass-card overflow-hidden hover:-translate-y-2 transition-all duration-300">
+                <!-- Thumbnail Image -->
+                <div class="relative aspect-[16/9] overflow-hidden bg-surface">
+                  <img
+                    src={getArticleImage(article, idx)}
+                    alt={article.data.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <span class="absolute top-3 left-3 px-2 py-1 text-xs font-semibold uppercase tracking-wider bg-primary/90 text-secondary rounded">{category}</span>
+                </div>
+                <!-- Content -->
+                <div class="p-6">
+                  <h3 class="font-heading font-bold text-lg text-heading mb-2 group-hover:text-primary transition-colors line-clamp-2">{article.data.title}</h3>
+                  <p class="text-gray-400 text-sm mb-4 line-clamp-2">{article.data.description}</p>
+                  <!-- Tags -->
+                  {article.data.tags && article.data.tags.length > 0 && (
+                    <div class="flex flex-wrap gap-2 mb-3">
+                      {article.data.tags.slice(0, 3).map(tag => (
+                        <span class="text-xs px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-gray-400">{tag}</span>
+                      ))}
+                    </div>
+                  )}
+                  <div class="flex items-center justify-between text-xs text-gray-500">
+                    <span>{new Date(article.data.pubDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+                    <span class="text-primary font-semibold group-hover:text-primary-hover transition-colors">Oku →</span>
+                  </div>
                 </div>
               </a>
             ))}
@@ -68,3 +117,4 @@ const categoryLabels: Record<string, string> = {
     </div>
   </section>
 </Layout>
+
