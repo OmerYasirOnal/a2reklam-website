@@ -61,6 +61,22 @@ const quoteLink =
 <!doctype html>
 <html lang={lang} dir={isRtl ? 'rtl' : 'ltr'} class="scroll-smooth">
 	<head>
+    <script is:inline>
+      (function() {
+        try {
+          var stored = localStorage.getItem('a2-theme');
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored === 'light' || stored === 'dark' ? stored : (prefersDark ? 'dark' : 'light');
+          if (theme === 'light') {
+            document.documentElement.dataset.theme = 'light';
+          } else {
+            document.documentElement.removeAttribute('data-theme');
+          }
+        } catch (err) {
+          // Ignore theme initialization errors.
+        }
+      })();
+    </script>
     <Tracking />
     <SEO
       title={title}
