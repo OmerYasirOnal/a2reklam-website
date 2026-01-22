@@ -10,7 +10,7 @@ tags: ["Kadıköy tabela", "Kadıköy tabelacı", "Anadolu yakası", "hızlı te
 
 Kadıköy, Anadolu yakasının en canlı ticaret ve kültür merkezidir. Bu rehberde, Kadıköy'de tabela hizmeti alırken bilmeniz gereken tüm detayları paylaşıyoruz.
 
-![Kadıköy tabela uygulaması](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![Kadıköy tabela uygulaması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 ## Kadıköy'ün Tabela İhtiyaçları
 
@@ -54,7 +54,7 @@ Kadıköy, Anadolu yakasının en canlı ticaret ve kültür merkezidir. Bu rehb
 - Profesyonel görünüm
 - Kaliteli malzeme
 
-![Kadıköy modern tabela](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-1.jpg)
+![Kadıköy modern tabela](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp)
 
 ## Kadıköy Belediyesi İzin Süreci
 
@@ -81,7 +81,7 @@ Kadıköy Belediyesi Yazı İşleri Müdürlüğü
 Reklam Ruhsat Birimi
 Osmanağa Mahallesi, Söğütlü Çeşme Caddesi No:16
 
-![Belediye başvuru](/images/gallery/cephe-tabela/cephe-tabela-2.jpg)
+![Belediye başvuru](/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp)
 
 ### İzin Süreleri ve Ücretler
 
@@ -134,7 +134,7 @@ Osmanağa Mahallesi, Söğütlü Çeşme Caddesi No:16
 
 **Ortalama Bütçe:** 30.000 - 75.000 TL
 
-![Kadıköy çarşı tabelası](/images/gallery/cephe-tabela/cephe-tabela-3.jpg)
+![Kadıköy çarşı tabelası](/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp)
 
 ### Moda - Butik ve Cafe
 
@@ -166,7 +166,7 @@ Osmanağa Mahallesi, Söğütlü Çeşme Caddesi No:16
 
 **Ortalama Bütçe:** 65.000 - 160.000 TL
 
-![Bağdat Caddesi tabela](/images/gallery/paslanmaz-harf/paslanmaz-harf-1.jpg)
+![Bağdat Caddesi tabela](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp)
 
 ### Caferağa - Sanat Mahallesi
 
@@ -204,7 +204,7 @@ Osmanağa Mahallesi, Söğütlü Çeşme Caddesi No:16
 
 **Avantaj:** Hızlı teslim imkanı
 
-![Kadıköy montaj çalışması](/images/gallery/cephe-tabela/cephe-tabela-4.jpg)
+![Kadıköy montaj çalışması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp)
 
 ## A2 Reklam Kadıköy Hizmeti
 
@@ -244,7 +244,7 @@ Osmanağa Mahallesi, Söğütlü Çeşme Caddesi No:16
 - Bağdat Caddesi: 20+ mağaza
 - Fenerbahçe: 15+ lokal işletme
 
-![Kadıköy referans proje](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-2.jpg)
+![Kadıköy referans proje](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-960.webp)
 
 ## Kadıköy Tabela Trendleri 2026
 
@@ -274,7 +274,7 @@ Osmanağa Mahallesi, Söğütlü Çeşme Caddesi No:16
 - QR kod entegrasyonu
 - Tech-savvy işletmeler
 
-![Trend tabela tasarımları](/images/gallery/cephe-tabela/cephe-tabela-5.jpg)
+![Trend tabela tasarımları](/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp)
 
 ## Kadıköy Fiyat Avantajları
 
@@ -327,7 +327,7 @@ Osmanağa Mahallesi, Söğütlü Çeşme Caddesi No:16
 - Yapısal sorun: 4 saat içinde
 - Hafta sonu/tatil: Aktif
 
-![Bakım hizmeti](/images/gallery/cephe-tabela/cephe-tabela-6.jpg)
+![Bakım hizmeti](/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-960.webp)
 
 ## Kadıköy'de Sık Sorulan Sorular
 
@@ -356,7 +356,7 @@ C: Evet, tüm İstanbul'da hizmetimiz var. Kadıköy'de ek avantajlarımız mevc
 ✅ Erenköy
 ✅ Kozyatağı
 
-![Kadıköy hizmet haritası](/images/gallery/cephe-tabela/cephe-tabela-7.jpg)
+![Kadıköy hizmet haritası](/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-960.webp)
 
 ## Kadıköy'e Özel Hızlı Teklif
 

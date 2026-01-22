@@ -10,7 +10,7 @@ tags: ["ışıklı tabela", "enerji tüketimi", "LED tabela", "elektrik faturas�
 
 Işıklı tabela yatırımı yaparken ilk maliyetin yanı sıra işletme giderleri de kritik öneme sahiptir. Bu rehberde, ışıklı tabela enerji tüketimini, maliyet hesaplama yöntemlerini ve tasarruf tekniklerini detaylı olarak ele alacağız.
 
-![Enerji verimli LED tabela sistemi](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-1.jpg)
+![Enerji verimli LED tabela sistemi](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp)
 
 ## Işıklı Tabela Güç Tüketimi Temelleri
 
@@ -48,7 +48,7 @@ Aylık Maliyet = (200 × 12 × 30) ÷ 1000 × 3.50 = 252 TL
 - 1m² için gerekli modül: 25-30 adet
 - 1m² toplam tüketim: 50-90W
 
-![LED modül tabela sistemi](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-2.jpg)
+![LED modül tabela sistemi](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-960.webp)
 
 ### LED Tabela Boyut Bazlı Tüketim
 
@@ -83,7 +83,7 @@ Neon tüpler, yüksek gerilim transformatörü (balast) kullanır.
 - Transformatör kayıp: %15-20
 - Gerçek tüketim: 70-96W/metre
 
-![Neon tabela enerji tüketimi](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![Neon tabela enerji tüketimi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 **Örnek:** 10 metre neon yazı
 - Tüketim: 700-960W
@@ -122,7 +122,7 @@ Gün ışığında otomatik kapanma sağlar.
 - Akşam/gece açık (14 saat)
 - Ek tasarruf: %20-25
 
-![Timer ve sensörlü tabela sistemi](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-3.jpg)
+![Timer ve sensörlü tabela sistemi](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-003-960.webp)
 
 ### 3. Dimmer (Parlaklık Ayarı)
 
@@ -165,7 +165,7 @@ Gereğinden büyük tabela hem pahalı hem enerji israfıdır.
 
 **Tasarruf: 49.540 TL (3 yıl)**
 
-![Enerji verimli LED tabela uygulaması](/images/gallery/cephe-tabela/cephe-tabela-4.jpg)
+![Enerji verimli LED tabela uygulaması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp)
 
 ## Elektrik Altyapısı Gereksinimleri
 
@@ -208,7 +208,7 @@ Uzak lokasyonlar veya elektrik erişimi olmayan yerlerde:
 
 Elektrik olmayan yerlerde ideal, 2-3 yılda kendini amorti eder.
 
-![Solar panelli tabela sistemi](/images/gallery/totem/totem-2.jpg)
+![Solar panelli tabela sistemi](/assets/img/totem/a2reklam-totem-002-960.webp)
 
 ## A2 Reklam Enerji Verimli Çözümler
 

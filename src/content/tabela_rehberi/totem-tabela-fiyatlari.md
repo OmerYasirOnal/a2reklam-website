@@ -10,7 +10,7 @@ tags: ["totem fiyatları", "totem tabela", "tabela maliyeti", "bütçe planlama"
 
 Totem tabela yatırımı planlarken, doğru bütçe hesaplaması yapmak için tüm maliyet kalemlerini bilmek önemlidir. Bu rehberde, 2026 yılı totem tabela fiyatlarını, maliyet etkileyen faktörleri ve tasarruf ipuçlarını bulacaksınız.
 
-![Profesyonel totem tabela](/images/gallery/totem/totem-1.jpg)
+![Profesyonel totem tabela](/assets/img/totem/a2reklam-totem-001-960.webp)
 
 ## Totem Tabela Fiyatlarını Etkileyen Faktörler
 
@@ -45,7 +45,7 @@ Totem tabelanın fiziksel ölçüleri, fiyatın en önemli belirleyicisidir.
 - LED neon flex: +%40-60
 - RGB değişken renk: +%60-80
 
-![Işıklı totem tabela](/images/gallery/totem/totem-2.jpg)
+![Işıklı totem tabela](/assets/img/totem/a2reklam-totem-002-960.webp)
 
 ### 4. Temel ve Montaj Zorluğu
 
@@ -95,7 +95,7 @@ Totem tabelanın fiziksel ölçüleri, fiyatın en önemli belirleyicisidir.
 - Temel ve montaj
 - Belediye izin danışmanlığı
 
-![Alçak totem tabela](/images/gallery/totem/totem-3.jpg)
+![Alçak totem tabela](/assets/img/totem/a2reklam-totem-003-960.webp)
 
 ### Orta Boy Totem (3-5 Metre)
 
@@ -128,7 +128,7 @@ Totem tabelanın fiziksel ölçüleri, fiyatın en önemli belirleyicisidir.
 - Profesyonel vinç montajı
 - Uzun mesafe görünürlük optimizasyonu
 
-![Yüksek totem tabela](/images/gallery/totem/totem-4.jpg)
+![Yüksek totem tabela](/assets/img/totem/a2reklam-totem-004-960.webp)
 
 ### Premium Totem Tabelalar
 
@@ -168,7 +168,7 @@ Totem tabelanın fiziksel ölçüleri, fiyatın en önemli belirleyicisidir.
 
 **Ortalama Fiyat:** 95.000 - 140.000 TL
 
-![Restoran totem tabela](/images/gallery/totem/totem-5.jpg)
+![Restoran totem tabela](/assets/img/totem/a2reklam-totem-005-960.webp)
 
 ### Otel/Resort Totemi
 
@@ -220,7 +220,7 @@ LED ekran totem içine entegre edilebilir.
 - İçerik yönetim sistemi: +8.000 - 15.000 TL
 - Aylık internet ve bakım: 500 - 1.000 TL
 
-![Dijital ekranlı totem](/images/gallery/totem/totem-6.jpg)
+![Dijital ekranlı totem](/assets/img/totem/a2reklam-totem-006-960.webp)
 
 ### Özel Grafikler ve Baskı
 
@@ -275,7 +275,7 @@ Birden fazla totem veya tabela siparişi:
 - 2+ totem siparişinde indirim
 - **Tasarruf Potansiyeli: %15-20**
 
-![Ekonomik totem çözümü](/images/gallery/totem/totem-7.jpg)
+![Ekonomik totem çözümü](/assets/img/totem/a2reklam-totem-007-960.webp)
 
 ## Finansman ve Ödeme Seçenekleri
 

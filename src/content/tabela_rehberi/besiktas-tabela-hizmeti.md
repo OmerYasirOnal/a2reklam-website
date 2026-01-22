@@ -10,7 +10,7 @@ tags: ["Beşiktaş tabela", "Beşiktaş tabelacı", "Beşiktaş bölgesi", "yere
 
 Beşiktaş, İstanbul'un hem tarihi hem de modern yüzünü barındıran prestijli bir ilçesidir. Bu rehberde, Beşiktaş'ta tabela hizmeti alırken bilmeniz gereken tüm detayları bulacaksınız.
 
-![Beşiktaş tabela uygulaması](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![Beşiktaş tabela uygulaması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 ## Beşiktaş'ın Tabela İhtiyaçları
 
@@ -53,7 +53,7 @@ Beşiktaş, İstanbul'un hem tarihi hem de modern yüzünü barındıran prestij
 - Sıcak ışıklandırma
 - Davetkar tasarım
 
-![Beşiktaş butik tabela](/images/gallery/paslanmaz-harf/paslanmaz-harf-1.jpg)
+![Beşiktaş butik tabela](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp)
 
 ## Beşiktaş Belediyesi İzin Süreci
 
@@ -92,7 +92,7 @@ Beşiktaş'ın birçok bölgesinde estetik kurul onayı gereklidir.
 Beşiktaş Belediyesi İmar ve Şehircilik Müdürlüğü
 Barbaros Bulvarı No:107 Beşiktaş/İstanbul
 
-![Belediye izin belgesi](/images/gallery/cephe-tabela/cephe-tabela-2.jpg)
+![Belediye izin belgesi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp)
 
 ### İzin Süreci ve Süreler
 
@@ -129,7 +129,7 @@ Barbaros Bulvarı No:107 Beşiktaş/İstanbul
 
 **Ortalama Bütçe:** 80.000 - 180.000 TL
 
-![Levent kurumsal tabela](/images/gallery/paslanmaz-harf/paslanmaz-harf-2.jpg)
+![Levent kurumsal tabela](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-002-960.webp)
 
 ### Nişantaşı - Lüks Butik
 
@@ -161,7 +161,7 @@ Barbaros Bulvarı No:107 Beşiktaş/İstanbul
 
 **Ortalama Bütçe:** 45.000 - 110.000 TL
 
-![Etiler restoran tabelası](/images/gallery/isikli-isiksiz-tabelalar/isikli-isiksiz-tabelalar-1.jpg)
+![Etiler restoran tabelası](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp)
 
 ### Beşiktaş Merkez - Karma Ticaret
 
@@ -204,7 +204,7 @@ Barbaros Bulvarı No:107 Beşiktaş/İstanbul
 
 **Ek Maliyet:** +%15-25
 
-![Beşiktaş montaj çalışması](/images/gallery/cephe-tabela/cephe-tabela-3.jpg)
+![Beşiktaş montaj çalışması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp)
 
 ### Yüksek Binalar
 
@@ -242,7 +242,7 @@ Barbaros Bulvarı No:107 Beşiktaş/İstanbul
 - Çevre kirliliği yaratmaz
 - Gece estetik görünüm
 
-![Başarılı tabela tasarımı](/images/gallery/cephe-tabela/cephe-tabela-4.jpg)
+![Başarılı tabela tasarımı](/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp)
 
 ## Beşiktaş'ta A2 Reklam Avantajları
 
@@ -280,7 +280,7 @@ Barbaros Bulvarı No:107 Beşiktaş/İstanbul
 - Özgün tasarımlar
 - LED neon uygulamaları
 
-![Beşiktaş referans proje](/images/gallery/paslanmaz-harf/paslanmaz-harf-3.jpg)
+![Beşiktaş referans proje](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-003-960.webp)
 
 ## Beşiktaş Özel Fiyatlandırma
 
@@ -312,7 +312,7 @@ Barbaros Bulvarı No:107 Beşiktaş/İstanbul
 - 4 saat içinde müdahale
 - Yıllık bakım anlaşması: %20 indirim
 
-![Tabela bakım hizmeti](/images/gallery/cephe-tabela/cephe-tabela-5.jpg)
+![Tabela bakım hizmeti](/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp)
 
 ## Beşiktaş'ta Sık Sorulan Sorular
 
@@ -341,7 +341,7 @@ C: Paslanmaz çelik harf, minimal tasarım, halo efekt.
 ✅ Esentepe
 ✅ Balmumcu
 
-![Beşiktaş hizmet alanları](/images/gallery/cephe-tabela/cephe-tabela-6.jpg)
+![Beşiktaş hizmet alanları](/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-960.webp)
 
 ## Beşiktaş'ta Ücretsiz Keşif
 

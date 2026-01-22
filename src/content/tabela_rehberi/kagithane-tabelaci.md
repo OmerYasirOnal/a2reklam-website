@@ -10,7 +10,7 @@ tags: ["Kağıthane tabelacı", "Kağıthane tabela", "yerel hizmet", "sanayi b�
 
 Kağıthane, hem sanayi hem de konut projelerinin yoğun olduğu, hızla gelişen bir ilçedir. A2 Reklam olarak Kağıthane merkezli hizmet veriyor, yerel avantajlarımızı sizinle paylaşıyoruz.
 
-![Kağıthane tabela uygulaması](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![Kağıthane tabela uygulaması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 ## Kağıthane'nin Tabela İhtiyaçları
 
@@ -54,7 +54,7 @@ Kağıthane, hem sanayi hem de konut projelerinin yoğun olduğu, hızla gelişe
 - Ofisler
 - Estetik ve şık tasarımlar
 
-![Kağıthane endüstriyel tabela](/images/gallery/cephe-tabela/cephe-tabela-2.jpg)
+![Kağıthane endüstriyel tabela](/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp)
 
 ## Kağıthane Belediyesi İzin Süreci
 
@@ -96,7 +96,7 @@ Hamidiye Mahallesi, Kağıthane Belediye Binası
 - 10-20 m²: 4.000 - 7.000 TL
 - Totem (6m+): 5.000 - 10.000 TL
 
-![İzin belgesi](/images/gallery/cephe-tabela/cephe-tabela-3.jpg)
+![İzin belgesi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp)
 
 ## A2 Reklam Kağıthane Avantajları
 
@@ -127,7 +127,7 @@ Hamidiye Mahallesi, Kağıthane Belediye Binası
 - Yerel tedarikçiler
 - Optimize süreçler
 
-![A2 Reklam üretim tesisi](/images/gallery/cephe-tabela/cephe-tabela-4.jpg)
+![A2 Reklam üretim tesisi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp)
 
 ### Maliyet Avantajı
 
@@ -159,7 +159,7 @@ Hamidiye Mahallesi, Kağıthane Belediye Binası
 
 **Ortalama Bütçe:** 25.000 - 65.000 TL
 
-![Sanayi tabelası](/images/gallery/cephe-tabela/cephe-tabela-5.jpg)
+![Sanayi tabelası](/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp)
 
 ### Merkez Mahalle - Ticaret
 
@@ -191,7 +191,7 @@ Hamidiye Mahallesi, Kağıthane Belediye Binası
 
 **Ortalama Bütçe:** 60.000 - 150.000 TL
 
-![Modern tabela tasarımı](/images/gallery/paslanmaz-harf/paslanmaz-harf-1.jpg)
+![Modern tabela tasarımı](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp)
 
 ### Gürsel Mahallesi - Konut
 
@@ -230,7 +230,7 @@ Hamidiye Mahallesi, Kağıthane Belediye Binası
 - Metal işleme atölyeleri
 - Lojistik depoları
 
-![Endüstriyel tabela](/images/gallery/cephe-tabela/cephe-tabela-6.jpg)
+![Endüstriyel tabela](/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-960.webp)
 
 ### Totem Tabelalar
 
@@ -267,7 +267,7 @@ Hamidiye Mahallesi, Kağıthane Belediye Binası
 - Prototip üretimi (istek üzerine)
 - Profesyonel montaj
 
-![Özel tasarım tabela](/images/gallery/paslanmaz-harf/paslanmaz-harf-2.jpg)
+![Özel tasarım tabela](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-002-960.webp)
 
 ## Kağıthane'de 24/7 Servis
 
@@ -326,7 +326,7 @@ Hamidiye Mahallesi, Kağıthane Belediye Binası
 - İç-dış yönlendirme sistemi (10 adet)
 - Güvenlik tabelaları (5 adet)
 
-![Sanayi tabela paketi](/images/gallery/totem/totem-1.jpg)
+![Sanayi tabela paketi](/assets/img/totem/a2reklam-totem-001-960.webp)
 
 ## Kağıthane'de Sık Sorulan Sorular
 
@@ -357,7 +357,7 @@ C: Evet, özellikle sanayi bölgesinde hafta sonu çalışmak daha pratik. Ek ü
 - Kurumsal: 30 proje
 - Perakende: 40 proje
 
-![Kağıthane referanslar](/images/gallery/cephe-tabela/cephe-tabela-7.jpg)
+![Kağıthane referanslar](/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-960.webp)
 
 ## Kağıthane Hizmet Alanları
 

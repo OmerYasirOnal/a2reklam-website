@@ -10,7 +10,7 @@ tags: ["tabela izni", "tabela ruhsatı", "İstanbul belediye", "yasal düzenleme
 
 İstanbul'da tabela montajı için belediye izni almak yasal bir zorunluluktur. Bu rehberde, izin sürecini, gerekli belgeleri ve püf noktalarını detaylı olarak anlatacağız.
 
-![Belediye onaylı tabela](/images/gallery/cephe-tabela/cephe-tabela-1.jpg)
+![Belediye onaylı tabela](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
 ## Tabela İzni Neden Gereklidir?
 
@@ -51,7 +51,7 @@ tags: ["tabela izni", "tabela ruhsatı", "İstanbul belediye", "yasal düzenleme
 - Kiracı iseniz: Noter onaylı kira sözleşmesi
 - İşyeri adresi ile örtüşmeli
 
-![Gerekli belgeler](/images/gallery/cephe-tabela/cephe-tabela-2.jpg)
+![Gerekli belgeler](/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp)
 
 **4. Tabela Projesi (Teknik Çizim)**
 - Ölçekli çizim (1/20 veya 1/50)
@@ -103,7 +103,7 @@ Yukarıda belirtilen tüm belgeleri hazırlayın.
 **Profesyonel Destek:**
 A2 Reklam olarak, ücretsiz teknik proje ve başvuru desteği sağlıyoruz.
 
-![Teknik proje hazırlama](/images/gallery/cephe-tabela/cephe-tabela-3.jpg)
+![Teknik proje hazırlama](/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp)
 
 ### Adım 3: Başvuru
 
@@ -152,7 +152,7 @@ Onay çıktıktan sonra ruhsat bedeli ödenir.
 - Banka havalesi
 - Kredi kartı (online)
 
-![Ruhsat belgesi](/images/gallery/cephe-tabela/cephe-tabela-4.jpg)
+![Ruhsat belgesi](/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp)
 
 ### Adım 6: Ruhsat Teslimi
 
@@ -191,7 +191,7 @@ Kadıköy Belediyesi Yazı İşleri Müdürlüğü, Reklam Ruhsat Birimi
 
 **Ortalama Süre:** 10-15 gün
 
-![Kadıköy tabela uygulaması](/images/gallery/cephe-tabela/cephe-tabela-5.jpg)
+![Kadıköy tabela uygulaması](/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp)
 
 ### Kağıthane
 
@@ -247,7 +247,7 @@ Fatih Belediyesi Koruma, Uygulama ve Denetim Müdürlüğü
 - Yüksekliği artırın (2.5m+ zemin üstü)
 - Konumu değiştirin
 
-![Belediye onaylı tasarım](/images/gallery/cephe-tabela/cephe-tabela-6.jpg)
+![Belediye onaylı tasarım](/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-960.webp)
 
 ## İzinsiz Tabela Denetimi
 
@@ -298,7 +298,7 @@ Başvurunuzdan önce kontrol edin:
 ✅ Kat malikleri onayı alındı mı?
 ✅ Ruhsat ücreti biliniyor mu?
 
-![İzin belgesi örneği](/images/gallery/cephe-tabela/cephe-tabela-7.jpg)
+![İzin belgesi örneği](/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-960.webp)
 
 ## Hızlı İzin İçin İpuçları
 
