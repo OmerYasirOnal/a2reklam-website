@@ -462,6 +462,39 @@
     --text-secondary: #E2E8F0;
     --text-muted: #CBD5E1;
   }
+
+  /* Light mode button styling overrides */
+  [data-theme="light"] .btn-secondary {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+  }
+
+  [data-theme="light"] .btn-secondary:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background-color: rgba(var(--accent-primary-rgb), 0.1);
+  }
+
+  [data-theme="light"] .btn-ghost {
+    color: var(--text-secondary);
+  }
+
+  [data-theme="light"] .btn-ghost:hover {
+    color: var(--text-primary);
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* Light mode form input styling */
+  [data-theme="light"] .form-input,
+  [data-theme="light"] .form-select {
+    background-color: var(--bg-surface);
+    border-color: var(--border-subtle);
+    color: var(--text-primary);
+  }
+
+  [data-theme="light"] .form-input::placeholder {
+    color: var(--text-muted);
+  }
 }
 
 /* Animations */
