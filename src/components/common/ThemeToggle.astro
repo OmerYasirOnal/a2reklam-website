@@ -1,0 +1,164 @@
+---
+interface Props {
+  lang?: 'tr' | 'en' | 'ar';
+}
+
+const { lang = 'tr' } = Astro.props;
+
+const t = {
+  tr: {
+    toLight: 'Açık temaya geç',
+    toDark: 'Koyu temaya geç',
+    lightOn: 'Açık tema etkin',
+    darkOn: 'Koyu tema etkin',
+  },
+  en: {
+    toLight: 'Switch to light theme',
+    toDark: 'Switch to dark theme',
+    lightOn: 'Light theme enabled',
+    darkOn: 'Dark theme enabled',
+  },
+  ar: {
+    toLight: 'التبديل إلى النسق الفاتح',
+    toDark: 'التبديل إلى النسق الداكن',
+    lightOn: 'تم تفعيل النسق الفاتح',
+    darkOn: 'تم تفعيل النسق الداكن',
+  },
+}[lang];
+---
+
+<div class="relative">
+  <button
+    type="button"
+    data-theme-toggle
+    class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:text-white hover:border-primary/60 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary"
+    aria-pressed="false"
+    aria-label={t.toLight}
+  >
+    <svg
+      data-theme-icon="sun"
+      class="hidden h-5 w-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364-1.414 1.414M7.05 16.95l-1.414 1.414m12.728 0-1.414-1.414M7.05 7.05 5.636 5.636M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"
+      />
+    </svg>
+    <svg
+      data-theme-icon="moon"
+      class="h-5 w-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"
+      />
+    </svg>
+  </button>
+  <span class="sr-only" data-theme-status aria-live="polite" aria-atomic="true"></span>
+</div>
+
+<script define:vars={{ t }}>
+  (function() {
+    function initThemeToggle() {
+      if (document.documentElement.dataset.themeToggleInit === 'true') return;
+      document.documentElement.dataset.themeToggleInit = 'true';
+
+      const toggles = Array.from(document.querySelectorAll('[data-theme-toggle]'));
+      if (toggles.length === 0) return;
+
+      const meta = document.querySelector('meta[name="theme-color"]');
+      const metaLight = meta?.getAttribute('data-theme-light') || '#F8F9FA';
+      const metaDark = meta?.getAttribute('data-theme-dark') || '#0B0F14';
+
+      function getStoredTheme() {
+        try {
+          return localStorage.getItem('a2-theme');
+        } catch (err) {
+          return null;
+        }
+      }
+
+      function getTheme() {
+        return document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
+      }
+
+      function setMeta(theme) {
+        if (!meta) return;
+        meta.setAttribute('content', theme === 'light' ? metaLight : metaDark);
+      }
+
+      function syncToggle(toggle, theme) {
+        const sun = toggle.querySelector('[data-theme-icon="sun"]');
+        const moon = toggle.querySelector('[data-theme-icon="moon"]');
+        const status = toggle.parentElement?.querySelector('[data-theme-status]');
+        const isLight = theme === 'light';
+
+        if (sun && moon) {
+          sun.classList.toggle('hidden', !isLight);
+          moon.classList.toggle('hidden', isLight);
+        }
+
+        toggle.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+        toggle.setAttribute('aria-label', isLight ? t.toDark : t.toLight);
+
+        if (status) {
+          status.textContent = isLight ? t.lightOn : t.darkOn;
+        }
+      }
+
+      function applyTheme(theme, persist) {
+        if (theme === 'light') {
+          document.documentElement.dataset.theme = 'light';
+        } else {
+          delete document.documentElement.dataset.theme;
+        }
+
+        if (persist) {
+          try {
+            localStorage.setItem('a2-theme', theme);
+          } catch (err) {
+            // Ignore write errors (private mode).
+          }
+        }
+
+        toggles.forEach((toggle) => syncToggle(toggle, theme));
+        setMeta(theme);
+      }
+
+      applyTheme(getTheme(), false);
+
+      toggles.forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          const next = getTheme() === 'light' ? 'dark' : 'light';
+          applyTheme(next, true);
+        });
+      });
+
+      const media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+      if (media && media.addEventListener) {
+        media.addEventListener('change', (event) => {
+          if (getStoredTheme()) return;
+          applyTheme(event.matches ? 'dark' : 'light', false);
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initThemeToggle, { once: true });
+    } else {
+      initThemeToggle();
+    }
+  })();
+</script>
