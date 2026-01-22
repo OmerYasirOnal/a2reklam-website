@@ -66,7 +66,7 @@ const t = lang === 'ar' ? content.ar : lang === 'en' ? content.en : content.tr;
 const isRtl = lang === 'ar';
 ---
 
-<section class="hero-slider-section relative min-h-[75vh] flex items-center justify-center text-white overflow-hidden bg-secondary">
+<section class="hero-slider-section relative min-h-[75vh] flex items-center justify-center overflow-hidden">
   <!-- Background Slider Container -->
   <div class="hero-bg-slider absolute inset-0 z-0">
     {selectedHeroImages.map((img, idx) => (
@@ -87,8 +87,8 @@ const isRtl = lang === 'ar';
           width="1600"
           height="900"
         />
-        <!-- Light mode: lighter overlay; Dark mode: balanced overlay -->
-        <div class="absolute inset-0 hero-overlay bg-gradient-to-b from-secondary/30 via-secondary/50 to-secondary/80 z-10"></div>
+        <!-- Theme-agnostic overlay: always dark for contrast -->
+        <div class="absolute inset-0 hero-overlay z-10"></div>
       </div>
     ))}
   </div>
@@ -114,41 +114,41 @@ const isRtl = lang === 'ar';
     </svg>
   </button>
 
-  <!-- Content with glass-effect backdrop for readability -->
-  <div class:list={['relative z-30 container mx-auto px-4 text-center', isRtl && 'text-right']}>
-    <div class="inline-block mb-4 px-4 py-1 border border-primary/30 rounded-full bg-black/30 backdrop-blur text-primary text-sm font-semibold tracking-wider uppercase animate-fade-in-up">
+  <!-- Content with theme-agnostic styling (always white text on dark overlay) -->
+  <div class:list={['hero-content relative z-30 container mx-auto px-4 text-center', isRtl && 'text-right']}>
+    <div class="hero-badge inline-block mb-4 px-4 py-1 border border-primary/30 rounded-full bg-black/40 backdrop-blur-sm text-sm font-semibold tracking-wider uppercase animate-fade-in-up">
       {t.badge}
     </div>
 
     <!-- Text container with enhanced shadows for readability -->
     <div class="max-w-4xl mx-auto">
-      <h1 class="font-heading font-black text-5xl md:text-7xl mb-6 leading-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] text-balance hero-title">
+      <h1 class="hero-title font-heading font-black text-5xl md:text-7xl mb-6 leading-tight text-balance">
         {lang === 'en'
-          ? <>Premium <span class="text-primary drop-shadow-[0_2px_10px_rgba(201,162,39,0.5)]">Signage</span> & Advertising Solutions</>
+          ? <>Premium <span class="hero-accent">Signage</span> & Advertising Solutions</>
           : lang === 'ar'
-            ? <><span class="text-primary drop-shadow-[0_2px_10px_rgba(201,162,39,0.5)]">حلول</span> لافتات وإعلانات متميزة</>
-            : <>Premium <span class="text-primary drop-shadow-[0_2px_10px_rgba(201,162,39,0.5)]">Tabela</span> ve Reklam Çözümleri</>
+            ? <><span class="hero-accent">حلول</span> لافتات وإعلانات متميزة</>
+            : <>Premium <span class="hero-accent">Tabela</span> ve Reklam Çözümleri</>
         }
       </h1>
 
-      <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] hero-subtitle">
+      <p class="hero-subtitle text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
         {t.subtitle}
       </p>
     </div>
 
-    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center hero-cta-group">
       <a
         href={t.ctaLink}
         data-track="lead-click"
         data-lead-type="quote"
         data-lang={lang}
-        class="btn btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wide shadow-lg shadow-primary/30"
+        class="hero-cta-primary px-8 py-4 text-lg font-bold uppercase tracking-wide"
       >
         {t.cta}
       </a>
       <a
         href={t.contactLink}
-        class="btn btn-secondary px-8 py-4 text-lg font-bold uppercase tracking-wide backdrop-blur-sm"
+        class="hero-cta-secondary px-8 py-4 text-lg font-bold uppercase tracking-wide"
       >
         {t.contact}
       </a>
@@ -261,41 +261,112 @@ const isRtl = lang === 'ar';
 </script>
 
 <style>
+  /* ============================================
+     HERO - Theme-Agnostic Styling
+     Text/buttons stay consistent across dark/light
+     ============================================ */
+
   .hero-slide-img {
-    opacity: 0.75;
+    opacity: 0.85;
   }
 
-  /* Light mode: make images more visible, reduce overlay */
-  [data-theme="light"] .hero-slide-img {
-    opacity: 0.9;
-  }
-
-  [data-theme="light"] .hero-overlay {
-    background: linear-gradient(to bottom,
-      rgba(248, 249, 250, 0.15),
-      rgba(248, 249, 250, 0.25),
-      rgba(248, 249, 250, 0.5)
+  /* Theme-agnostic dark gradient overlay for consistent text readability */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(11, 15, 20, 0.35) 0%,
+      rgba(11, 15, 20, 0.55) 40%,
+      rgba(11, 15, 20, 0.75) 100%
     );
   }
 
-  /* Light mode: use dark text with light outline for contrast */
-  [data-theme="light"] .hero-title {
-    color: #1F2937 !important;
-    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.8);
+  /* Hero Title - Always white with strong shadow */
+  .hero-title {
+    color: #FFFFFF !important;
+    text-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.8),
+      0 4px 20px rgba(0, 0, 0, 0.6);
   }
 
-  [data-theme="light"] .hero-subtitle {
-    color: #374151 !important;
-    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.8);
+  /* Hero Accent (gold text) - Theme agnostic */
+  .hero-accent {
+    color: #C9A227 !important;
+    text-shadow:
+      0 2px 10px rgba(201, 162, 39, 0.5),
+      0 0 30px rgba(201, 162, 39, 0.3);
   }
 
-  [data-theme="light"] .hero-title .text-primary {
-    color: var(--accent-primary) !important;
+  /* Hero Subtitle - Always light gray */
+  .hero-subtitle {
+    color: #E5E7EB !important;
+    text-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.7),
+      0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Hero Badge */
+  .hero-badge {
+    color: #C9A227 !important;
+  }
+
+  /* Hero Primary CTA - Gold button */
+  .hero-cta-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C9A227;
+    color: #0B0F14 !important;
+    border-radius: 0.5rem;
+    box-shadow:
+      0 4px 12px rgba(201, 162, 39, 0.4),
+      0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .hero-cta-primary:hover {
+    background-color: #E0B945;
+    transform: translateY(-2px);
+    box-shadow:
+      0 6px 16px rgba(201, 162, 39, 0.5),
+      0 3px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-cta-primary:focus {
+    outline: 2px solid #C9A227;
+    outline-offset: 2px;
+  }
+
+  /* Hero Secondary CTA - White border ghost button */
+  .hero-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #FFFFFF !important;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 0.5rem;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+  }
+
+  .hero-cta-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #FFFFFF;
+  }
+
+  .hero-cta-secondary:focus {
+    outline: 2px solid #FFFFFF;
+    outline-offset: 2px;
   }
 
   /* Respect reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
     .hero-slide {
+      transition: none !important;
+    }
+
+    .hero-cta-primary,
+    .hero-cta-secondary {
       transition: none !important;
     }
   }

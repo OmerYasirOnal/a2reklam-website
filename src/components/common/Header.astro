@@ -56,7 +56,7 @@ const languageLinks = languageOrder
   }));
 ---
 
-<header class="sticky top-0 z-50 glass-bar header-modern transition-all duration-300">
+<header id="main-header" class="sticky top-0 z-50 glass-bar header-modern header-visible">
   <div class:list={['container mx-auto px-4 h-20 flex items-center justify-between', isRtl && 'flex-row-reverse']}>
     <a href={homeLink} class="flex items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary rounded-lg" aria-label="A2 Reklam">
       <img
@@ -329,4 +329,94 @@ const languageLinks = languageOrder
 
   // Re-initialize on Astro page transitions
   document.addEventListener('astro:page-load', initMobileMenu);
+
+  // ============================================
+  // Header Hide-on-Scroll Behavior
+  // ============================================
+  function initHeaderScroll() {
+    const header = document.getElementById('main-header');
+    if (!header) return;
+    if (header.dataset.scrollInitialized === 'true') return;
+    header.dataset.scrollInitialized = 'true';
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    const SCROLL_THRESHOLD = 10; // Minimum scroll distance to trigger hide/show
+    const HEADER_HEIGHT = 80; // Approximate header height
+
+    function updateHeader() {
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollY;
+
+      // Don't hide header if we're near the top
+      if (currentScrollY < HEADER_HEIGHT) {
+        header.classList.remove('header-hidden');
+        header.classList.add('header-visible');
+        lastScrollY = currentScrollY;
+        ticking = false;
+        return;
+      }
+
+      // Check if scroll distance exceeds threshold
+      if (Math.abs(scrollDelta) > SCROLL_THRESHOLD) {
+        if (scrollDelta > 0) {
+          // Scrolling down - hide header
+          header.classList.add('header-hidden');
+          header.classList.remove('header-visible');
+        } else {
+          // Scrolling up - show header
+          header.classList.remove('header-hidden');
+          header.classList.add('header-visible');
+        }
+        lastScrollY = currentScrollY;
+      }
+
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        if (prefersReducedMotion) {
+          updateHeader();
+        } else {
+          requestAnimationFrame(updateHeader);
+        }
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  // Initialize header scroll behavior
+  initHeaderScroll();
+  document.addEventListener('astro:page-load', initHeaderScroll);
 </script>
+
+<style>
+  /* Header show/hide transitions */
+  #main-header {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  #main-header.header-visible {
+    transform: translateY(0);
+  }
+
+  #main-header.header-hidden {
+    transform: translateY(-100%);
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    #main-header {
+      transition: none;
+    }
+
+    #main-header.header-hidden {
+      /* Instant hide for reduced motion users */
+      transform: translateY(-100%);
+    }
+  }
+</style>
