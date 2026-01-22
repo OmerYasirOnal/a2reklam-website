@@ -168,6 +168,27 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
         </ul>
       </div>
 
+      <!-- Gallery Grid - Positioned high for visual impact -->
+      {images.length > 0 && (
+        <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+          <h2 class="font-heading font-bold text-2xl mb-6 text-white flex items-center gap-2">
+            <span class="w-1 h-8 bg-primary block rounded-full"></span>
+            Proje Galerisi
+          </h2>
+          <Gallery
+            images={images.map((img: any) => ({
+              paths: img.paths,
+              category: img.category,
+              alt: buildImageAlt({ category: entry.slug, lang: 'tr' }),
+            }))}
+            lang="tr"
+            category={entry.slug}
+            initialLimit={6}
+            aspectRatio="square"
+          />
+        </div>
+      )}
+
       <Content />
       
       {entry.data.features && (
@@ -333,24 +354,6 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
           </a>
         </div>
       </div>
-
-      <!-- Gallery Grid -->
-      {images.length > 0 && (
-        <div class="mt-20">
-          <h2 class="font-heading font-bold text-3xl mb-8 text-white border-b border-white/10 pb-4">İlgili Referans Görseller</h2>
-          <Gallery 
-            images={images.map((img: any) => ({
-              paths: img.paths,
-              category: img.category,
-              alt: buildImageAlt({ category: entry.slug, lang: 'tr' }),
-            }))}
-            lang="tr"
-            category={entry.slug}
-            initialLimit={12}
-            aspectRatio="square"
-          />
-        </div>
-      )}
     </div>
 
     <!-- Sidebar -->

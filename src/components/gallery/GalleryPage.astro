@@ -1,0 +1,212 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Gallery from '../common/Gallery.astro';
+import { loadImagesManifest } from '../../utils/imagesManifest';
+import { buildImageAlt, getCategoryLabel } from '../../utils/imageSeo';
+
+interface Props {
+  lang?: 'tr' | 'en' | 'ar';
+}
+
+const { lang = 'tr' } = Astro.props;
+const isRtl = lang === 'ar';
+
+const manifest = loadImagesManifest();
+const totalImages = manifest.length;
+
+const counts = new Map<string, number>();
+manifest.forEach((img: any) => {
+  counts.set(img.category, (counts.get(img.category) ?? 0) + 1);
+});
+
+const categories: Array<{ category: string; label: string; count: number }> = [];
+const seen = new Set<string>();
+manifest.forEach((img: any) => {
+  if (!seen.has(img.category)) {
+    categories.push({
+      category: img.category,
+      label: getCategoryLabel(img.category, lang),
+      count: counts.get(img.category) ?? 0,
+    });
+    seen.add(img.category);
+  }
+});
+
+const images = manifest.map((img: any) => ({
+  paths: img.paths,
+  category: img.category,
+  alt: buildImageAlt({ category: img.category, lang }),
+}));
+
+const filterStyles = categories
+  .map(
+    (cat) =>
+      `#gallery-page[data-active-category="${cat.category}"] .gallery-item:not([data-category="${cat.category}"]) { display: none; }`
+  )
+  .join('\n');
+
+const content = {
+  tr: {
+    metaTitle: 'Galeri | A2 Reklam Tabela Uygulamaları',
+    metaDescription: 'A2 Reklam proje galerisi: cephe tabela, totem, araç giydirme ve özel uygulamalar.',
+    title: 'Galeri',
+    subtitle: 'Tabela ve reklam projelerimizin seçilmiş örnekleri.',
+    filterLabel: 'Kategoriler',
+    all: 'Tümü',
+    showing: 'Gösterilen',
+    of: ' / ',
+    home: 'Anasayfa',
+    gallery: 'Galeri',
+  },
+  en: {
+    metaTitle: 'Gallery | A2 Advertising Signage Projects',
+    metaDescription: 'Browse A2 Advertising gallery: facade signage, totems, vehicle wraps, and custom signage.',
+    title: 'Gallery',
+    subtitle: 'Selected signage and branding projects.',
+    filterLabel: 'Categories',
+    all: 'All',
+    showing: 'Showing',
+    of: ' of ',
+    home: 'Home',
+    gallery: 'Gallery',
+  },
+  ar: {
+    metaTitle: 'المعرض | مشاريع A2 Reklam',
+    metaDescription: 'تصفح معرض A2 Reklam: لوحات واجهة، توتم، تغليف مركبات، وتنفيذات خاصة.',
+    title: 'المعرض',
+    subtitle: 'نماذج مختارة من أعمال اللافتات والهوية البصرية.',
+    filterLabel: 'الفئات',
+    all: 'الكل',
+    showing: 'عرض',
+    of: ' من ',
+    home: 'الرئيسية',
+    gallery: 'المعرض',
+  },
+};
+
+const t = content[lang];
+
+const breadcrumbs = [
+  { name: t.home, item: lang === 'ar' ? '/ar/' : lang === 'en' ? '/en/' : '/' },
+  { name: t.gallery, item: lang === 'ar' ? '/ar/gallery/' : lang === 'en' ? '/en/gallery/' : '/galeri/' },
+];
+---
+
+<Layout title={t.metaTitle} description={t.metaDescription} lang={lang} breadcrumbs={breadcrumbs}>
+  <section class="relative py-24 bg-secondary overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class:list={['text-center mb-12', isRtl && 'text-right']}>
+        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+          <span class="text-primary">{t.title}</span>
+        </h1>
+        <p
+          class:list={[
+            'text-gray-400 max-w-2xl mx-auto text-lg inline-block',
+            isRtl ? 'border-r-2 border-primary pr-4' : 'border-l-2 border-primary pl-4',
+          ]}
+        >
+          {t.subtitle}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="gallery-page"
+    data-active-category="all"
+    data-total={totalImages}
+    class="py-16 bg-secondary border-t border-white/5"
+  >
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col gap-6">
+        <div class:list={['flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4', isRtl && 'lg:flex-row-reverse']}>
+          <div class:list={['flex flex-col gap-2', isRtl && 'text-right']}>
+            <span class="text-xs uppercase tracking-widest text-gray-500">{t.filterLabel}</span>
+            <h2 class="text-white font-heading font-bold text-2xl">{t.title}</h2>
+          </div>
+          <div class:list={['text-sm text-gray-400', isRtl && 'text-right']} aria-live="polite" aria-atomic="true">
+            {t.showing} <span id="gallery-visible-count">{totalImages}</span>{t.of}<span id="gallery-total-count">{totalImages}</span>
+          </div>
+        </div>
+
+        <div class:list={['flex flex-wrap gap-3', isRtl && 'flex-row-reverse']}>
+          <button
+            type="button"
+            class="filter-btn px-4 py-2 rounded-full border border-white/10 text-gray-300 text-sm font-medium hover:border-primary/60 hover:text-white transition-colors"
+            data-filter="all"
+            data-total={totalImages}
+            aria-pressed="true"
+            aria-controls="gallery-grid"
+          >
+            {t.all} ({totalImages})
+          </button>
+          {categories.map((cat) => (
+            <button
+              type="button"
+              class="filter-btn px-4 py-2 rounded-full border border-white/10 text-gray-300 text-sm font-medium hover:border-primary/60 hover:text-white transition-colors"
+              data-filter={cat.category}
+              data-total={cat.count}
+              aria-pressed="false"
+              aria-controls="gallery-grid"
+            >
+              {cat.label} ({cat.count})
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <Gallery images={images} lang={lang} initialLimit={totalImages} aspectRatio="square" />
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function() {
+      const page = document.getElementById('gallery-page');
+      if (!page) return;
+
+      const buttons = page.querySelectorAll('[data-filter]');
+      const visibleCount = page.querySelector('#gallery-visible-count');
+      const totalCount = page.querySelector('#gallery-total-count');
+      const totalImages = parseInt(page.dataset.total || '0', 10);
+
+      function setCounts(visible, total) {
+        if (visibleCount) visibleCount.textContent = String(visible);
+        if (totalCount) totalCount.textContent = String(total);
+      }
+
+      function setActive(filter, total) {
+        page.dataset.activeCategory = filter;
+        buttons.forEach((button) => {
+          const isActive = button.dataset.filter === filter;
+          button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+        setCounts(total, total);
+      }
+
+      setCounts(totalImages, totalImages);
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const filter = button.dataset.filter || 'all';
+          const total = filter === 'all' ? totalImages : parseInt(button.dataset.total || '0', 10);
+          setActive(filter, total);
+        });
+      });
+    })();
+  </script>
+
+  <style
+    is:inline
+    set:html={`
+      .filter-btn[aria-pressed="true"] {
+        border-color: rgba(201, 162, 39, 0.7);
+        color: #ffffff;
+        background: rgba(201, 162, 39, 0.16);
+      }
+      ${filterStyles}
+    `}
+  />
+</Layout>

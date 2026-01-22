@@ -1,0 +1,115 @@
+---
+import { getCollection } from 'astro:content';
+import { loadImagesManifest } from '../../utils/imagesManifest';
+
+interface Props {
+  lang?: string;
+  limit?: number;
+}
+
+const { lang = 'tr', limit = 4 } = Astro.props;
+
+// Only process data for TR locale
+const shouldRender = lang === 'tr';
+
+// Get latest articles (only if rendering)
+const allArticles = shouldRender ? await getCollection('tabela_rehberi') : [];
+const latestArticles = allArticles
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, limit);
+
+// Load manifest for thumbnails
+const manifest = shouldRender ? loadImagesManifest() : [];
+
+// Map article categories to gallery categories
+const categoryImageMap: Record<string, string> = {
+  'Cephe Tabelası': 'cephe-tabela',
+  'Işıklı Tabela': 'isikli-isiksiz-tabelalar',
+  'Totem': 'totem',
+  'Paslanmaz Harf': 'paslanmaz-harfler',
+  'Fiyatlandırma & Süreç': 'cephe-tabela',
+  'İlçe Rehberleri': 'cephe-tabela',
+};
+
+function getArticleImage(article: typeof allArticles[0], index: number) {
+  const galleryCategory = categoryImageMap[article.data.category] || 'cephe-tabela';
+  const categoryImages = manifest.filter((m: any) => m.category === galleryCategory);
+  if (categoryImages.length === 0) {
+    const allImages = manifest;
+    const fallback = allImages[index % allImages.length];
+    return fallback?.paths?.['480'] || '/brand/a2reklam-logo.png';
+  }
+  const img = categoryImages[index % categoryImages.length];
+  return img?.paths?.['480'] || '/brand/a2reklam-logo.png';
+}
+
+const text = {
+  heading: 'Tabela',
+  headingAccent: 'Rehberleri',
+  subtitle: "İstanbul'da tabela imalatı hakkında uzman rehberler",
+  viewAll: 'Tümünü Gör',
+  viewAllLink: '/tabela-rehberi/',
+  readMore: 'Oku →',
+};
+---
+
+{shouldRender && (
+  <section class="py-20 bg-secondary border-t border-white/5">
+    <div class="container mx-auto px-4">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+        <div>
+          <h2 class="font-heading font-black text-3xl md:text-4xl text-heading mb-2">
+            <span class="text-primary">{text.heading}</span> {text.headingAccent}
+          </h2>
+          <p class="text-gray-400 max-w-xl">{text.subtitle}</p>
+        </div>
+        <a 
+          href={text.viewAllLink}
+          class="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-semibold transition-colors"
+        >
+          {text.viewAll}
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {latestArticles.map((article, idx) => (
+          <a 
+            href={`/tabela-rehberi/${article.slug}/`}
+            class="group block glass-card overflow-hidden hover:-translate-y-2 transition-all duration-300"
+          >
+            <!-- Thumbnail -->
+            <div class="relative aspect-[16/9] overflow-hidden bg-surface">
+              <img
+                src={getArticleImage(article, idx)}
+                alt={article.data.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              <span class="absolute top-2 left-2 px-2 py-0.5 text-xs font-semibold uppercase tracking-wider bg-primary/90 text-secondary rounded">
+                {article.data.category}
+              </span>
+            </div>
+            <!-- Content -->
+            <div class="p-4">
+              <h3 class="font-heading font-bold text-base text-heading mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                {article.data.title}
+              </h3>
+              <p class="text-gray-400 text-sm line-clamp-2 mb-3">
+                {article.data.description}
+              </p>
+              <span class="text-sm text-primary font-semibold group-hover:text-primary-hover transition-colors">
+                {text.readMore}
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
