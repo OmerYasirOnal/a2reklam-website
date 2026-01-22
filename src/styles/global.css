@@ -14,11 +14,8 @@
 
   /* Text */
   --text-primary: #F3F4F6;
-  --text-primary-rgb: 243, 244, 246;
   --text-secondary: #CBD5E1;
-  --text-secondary-rgb: 203, 213, 225;
   --text-muted: #94A3B8;
-  --text-muted-rgb: 148, 163, 184;
 
   /* Accent */
   --accent-primary: #C9A227;
@@ -76,11 +73,8 @@
   --bg-card-rgb: 255, 255, 255;
 
   --text-primary: #1F2937;
-  --text-primary-rgb: 31, 41, 55;
   --text-secondary: #4B5563;
-  --text-secondary-rgb: 75, 85, 99;
   --text-muted: #6B7280;
-  --text-muted-rgb: 107, 114, 128;
 
   --accent-primary: #B8860B;
   --accent-primary-rgb: 184, 134, 11;
@@ -247,60 +241,6 @@
   .glass-primary {
     @apply backdrop-blur-md border border-primary/20;
     background: rgba(var(--accent-primary-rgb), 0.1);
-  }
-
-  .hero-text-panel {
-    @apply border rounded-2xl;
-    border-color: var(--border-subtle);
-    background: linear-gradient(135deg, rgba(var(--bg-base-rgb), 0.7), rgba(var(--bg-base-rgb), 0.4));
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
-  }
-
-  [data-theme="light"] .hero-text-panel {
-    background: linear-gradient(135deg, rgba(var(--bg-base-rgb), 0.92), rgba(var(--bg-base-rgb), 0.72));
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-  }
-
-  .service-card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(var(--bg-base-rgb), 0.88),
-      rgba(var(--bg-base-rgb), 0.45),
-      rgba(var(--bg-base-rgb), 0)
-    );
-    transition: background 0.3s ease;
-  }
-
-  .group:hover .service-card-overlay {
-    background: linear-gradient(
-      to top,
-      rgba(var(--bg-base-rgb), 0.92),
-      rgba(var(--bg-base-rgb), 0.52),
-      rgba(var(--bg-base-rgb), 0)
-    );
-  }
-
-  .service-card-cta {
-    color: rgba(var(--text-secondary-rgb), 0.9);
-  }
-
-  .group:hover .service-card-cta {
-    color: var(--text-primary);
-  }
-
-  .logo-badge {
-    @apply border rounded-lg;
-    border-color: rgba(255, 255, 255, 0.12);
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  [data-theme="light"] .logo-badge {
-    border-color: rgba(0, 0, 0, 0.08);
-    background: rgba(255, 255, 255, 0.75);
   }
 
   /* Icon Wrapper - Prevent oversized icons */
@@ -488,16 +428,25 @@
   .text-gray-300 {
     color: var(--text-secondary);
   }
-  .text-gray-200\/90 {
-    color: rgba(var(--text-primary-rgb), 0.9);
-  }
-  .text-gray-300\/80 {
-    color: rgba(var(--text-secondary-rgb), 0.8);
-  }
   .text-gray-400,
   .text-gray-500,
   .text-gray-600 {
     color: var(--text-muted);
+  }
+
+  /* Ensure headings are always visible */
+  h1, h2, h3, h4, h5, h6,
+  .text-heading {
+    color: var(--text-primary) !important;
+  }
+
+  /* Light mode nav link improvements */
+  [data-theme="light"] nav a {
+    color: var(--text-secondary);
+  }
+
+  [data-theme="light"] nav a:hover {
+    color: var(--accent-primary);
   }
 
   .border-white\/5,
@@ -595,6 +544,22 @@
   pointer-events: none;
 }
 
+/* Light mode header styling */
+[data-theme="light"] .glass-bar,
+[data-theme="light"] .header-modern {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .glass-bar::after,
+[data-theme="light"] .header-modern::after {
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.25), transparent);
+  opacity: 0.5;
+}
+
 .glass-card {
   position: relative;
   background: rgba(255, 255, 255, 0.04);
@@ -634,6 +599,22 @@
     background: rgba(18, 24, 38, 0.92);
     border-color: rgba(255, 255, 255, 0.08);
   }
+}
+
+/* Light mode glass card styling */
+[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .glass-card:hover {
+  border-color: rgba(184, 134, 11, 0.4);
+  box-shadow: 0 8px 30px rgba(184, 134, 11, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .glass-card::before {
+  background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.35), transparent);
 }
 
 /* Glass card with padding */
