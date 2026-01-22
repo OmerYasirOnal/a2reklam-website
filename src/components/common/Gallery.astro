@@ -129,59 +129,49 @@ const remainingCount = images.length - initialLimit;
     role="dialog"
     aria-modal="true"
     aria-labelledby="lightbox-title"
+    data-rtl={isRtl ? 'true' : 'false'}
   >
     <!-- Screen reader only title -->
     <h2 id="lightbox-title" class="sr-only">{t.imageViewer}</h2>
 
+    <!-- Visually hidden close button for accessibility/focus trap (required for WAI-ARIA) -->
     <button
       type="button"
       id="lightbox-close"
-      class="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] bg-black/40 backdrop-blur-sm hover:bg-black/60"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:p-2 focus:bg-black/70 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-primary z-[110]"
       aria-label={t.close}
     >
-      <svg class="w-8 h-8 md:w-10 md:h-10 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
+      {t.close}
     </button>
 
-    <button
-      type="button"
-      id="lightbox-prev"
-      class="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] bg-black/40 backdrop-blur-sm hover:bg-black/60"
-      aria-label={t.previous}
-    >
-      <svg class="w-8 h-8 md:w-10 md:h-10 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
-      </svg>
-    </button>
-
-    <button
-      type="button"
-      id="lightbox-next"
-      class="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-2 z-[110] bg-black/40 backdrop-blur-sm hover:bg-black/60"
-      aria-label={t.next}
-    >
-      <svg class="w-8 h-8 md:w-10 md:h-10 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
-      </svg>
-    </button>
-
-    <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center p-4 md:p-8">
+    <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center p-4 md:p-8" id="lightbox-image-container">
       <img
         id="lightbox-img"
         src=""
         alt=""
-        class="max-w-full max-h-[90vh] w-auto h-auto object-contain shadow-2xl rounded-lg transition-opacity duration-300 pointer-events-none"
+        class="max-w-full max-h-[85vh] w-auto h-auto object-contain shadow-2xl rounded-lg transition-opacity duration-300 select-none"
         loading="eager"
+        draggable="false"
       />
-      <!-- aria-live region for screen reader announcements -->
+      
+      <!-- Counter + Hint overlay -->
       <div
-        id="lightbox-counter"
-        class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm bg-black/70 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10"
+        id="lightbox-hint"
+        class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm bg-black/80 px-5 py-3 rounded-full backdrop-blur-sm border border-white/10 flex flex-col items-center gap-1"
         aria-live="polite"
         aria-atomic="true"
       >
-        <span id="lightbox-current">1</span>{t.of}<span id="lightbox-total">{images.length}</span>
+        <span class="font-medium">
+          <span id="lightbox-current">1</span>{t.of}<span id="lightbox-total">{images.length}</span>
+        </span>
+        <!-- Desktop hint -->
+        <span class="hidden md:block text-xs text-gray-300 opacity-80">
+          {lang === 'ar' ? 'استخدم ← → • Esc للإغلاق' : lang === 'en' ? 'Use ← → keys • Esc to close' : '← → tuşları • Esc kapat'}
+        </span>
+        <!-- Mobile hint -->
+        <span class="block md:hidden text-xs text-gray-300 opacity-80">
+          {lang === 'ar' ? 'اسحب يمين/يسار • انقر خارجاً للإغلاق' : lang === 'en' ? 'Swipe left/right • Tap outside to close' : 'Sağ/sol kaydır • Kapatmak için dışarı dokun'}
+        </span>
       </div>
     </div>
   </div>
@@ -196,16 +186,23 @@ const remainingCount = images.length - initialLimit;
     const lightbox = container.querySelector('#lightbox-modal');
     const lightboxImg = container.querySelector('#lightbox-img');
     const lightboxClose = container.querySelector('#lightbox-close');
-    const lightboxPrev = container.querySelector('#lightbox-prev');
-    const lightboxNext = container.querySelector('#lightbox-next');
     const lightboxCurrent = container.querySelector('#lightbox-current');
     const lightboxTotal = container.querySelector('#lightbox-total');
     const loadMoreBtn = container.querySelector('#load-more-btn');
     const galleryGrid = container.querySelector('#gallery-grid');
+    const lightboxImageContainer = container.querySelector('#lightbox-image-container');
 
     let currentIndex = 0;
     let lastFocusedElement = null;
     const allImagesData = allImages;
+    
+    // Touch/swipe state
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+    const SWIPE_THRESHOLD = 50;
+    const SWIPE_VERTICAL_LIMIT = 100;
 
     // Get all focusable elements within a container
     function getFocusableElements(el) {
@@ -292,38 +289,67 @@ const remainingCount = images.length - initialLimit;
       });
     });
 
-    // Lightbox controls - ensure they work with stopPropagation
+    // Lightbox close button (the visually hidden accessible one)
     lightboxClose?.addEventListener('click', (e) => {
       e.stopPropagation();
       closeLightbox();
     });
-    lightboxPrev?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navigate('prev');
-    });
-    lightboxNext?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navigate('next');
+
+    // Close on backdrop click (lightbox background itself, or image container edges)
+    lightbox?.addEventListener('click', (e) => {
+      // Close if clicking on the backdrop (the lightbox itself) but not on the image or hint
+      const clickedElement = e.target;
+      if (clickedElement === lightbox || clickedElement === lightboxImageContainer) {
+        closeLightbox();
+      }
     });
 
-    // Close on backdrop click
-    lightbox?.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
+    // Touch/Swipe Navigation for Mobile
+    if (lightboxImageContainer) {
+      lightboxImageContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      lightboxImageContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+        handleSwipe();
+      }, { passive: true });
+    }
+
+    function handleSwipe() {
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = Math.abs(touchEndY - touchStartY);
+      
+      // Only trigger swipe if horizontal movement is significant and vertical movement is limited
+      if (Math.abs(deltaX) > SWIPE_THRESHOLD && deltaY < SWIPE_VERTICAL_LIMIT) {
+        const effectiveIsRtl = lightbox?.dataset.rtl === 'true';
+        if (deltaX > 0) {
+          // Swipe right
+          navigate(effectiveIsRtl ? 'next' : 'prev');
+        } else {
+          // Swipe left
+          navigate(effectiveIsRtl ? 'prev' : 'next');
+        }
+      }
+    }
 
     // Keyboard navigation with focus trap
     document.addEventListener('keydown', (e) => {
       if (lightbox?.classList.contains('hidden')) return;
+
+      const effectiveIsRtl = lightbox?.dataset.rtl === 'true';
 
       if (e.key === 'Escape') {
         e.preventDefault();
         closeLightbox();
       } else if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        navigate(isRtl ? 'next' : 'prev');
+        navigate(effectiveIsRtl ? 'next' : 'prev');
       } else if (e.key === 'ArrowRight') {
         e.preventDefault();
-        navigate(isRtl ? 'prev' : 'next');
+        navigate(effectiveIsRtl ? 'prev' : 'next');
       } else if (e.key === 'Tab') {
         // Focus trap implementation
         const focusables = getFocusableElements(lightbox);
