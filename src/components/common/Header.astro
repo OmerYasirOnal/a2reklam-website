@@ -57,8 +57,26 @@ const languageLinks = languageOrder
 
 <header class="sticky top-0 z-50 glass-bar transition-all duration-300">
   <div class:list={['container mx-auto px-4 h-20 flex items-center justify-between', isRtl && 'flex-row-reverse']}>
-    <a href={homeLink} class="font-heading font-black text-2xl tracking-tighter text-white flex items-center gap-2">
-      <span class="text-primary text-3xl">A2</span> REKLAM
+    <a
+      href={homeLink}
+      aria-label="A2 Reklam"
+      class:list={[
+        'font-heading font-black text-2xl tracking-tighter text-white flex items-center gap-3',
+        isRtl && 'flex-row-reverse'
+      ]}
+    >
+      <span class="logo-badge p-1.5 shadow-sm">
+        <img
+          src="/brand/a2reklam-logo.png"
+          alt="A2 Reklam logo"
+          class="h-8 w-8 md:h-9 md:w-9 object-contain"
+          loading="eager"
+          decoding="async"
+        />
+      </span>
+      <span aria-hidden="true">
+        <span class="text-primary text-3xl">A2</span> REKLAM
+      </span>
     </a>
 
     <nav class:list={['hidden md:flex items-center gap-8', isRtl && 'flex-row-reverse']}>
