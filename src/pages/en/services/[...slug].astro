@@ -145,27 +145,6 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
   <div class="container mx-auto px-4 py-20 grid grid-cols-1 lg:grid-cols-3 gap-12">
     <!-- Main Content -->
     <div class="lg:col-span-2 prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-bold prose-a:text-primary prose-strong:text-white">
-      <!-- Gallery Grid - Positioned high for visual impact -->
-      {images.length > 0 && (
-        <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
-          <h2 class="font-heading font-bold text-2xl mb-6 text-white flex items-center gap-2">
-            <span class="w-1 h-8 bg-primary block rounded-full"></span>
-            Project Gallery
-          </h2>
-          <Gallery
-            images={images.map((img: any) => ({
-              paths: img.paths,
-              category: img.category,
-              alt: buildImageAlt({ category: entry.slug, lang: 'en' }),
-            }))}
-            lang="en"
-            category={entry.slug}
-            initialLimit={6}
-            aspectRatio="square"
-          />
-        </div>
-      )}
-
       <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h2 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
@@ -188,6 +167,27 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
           ))}
         </ul>
       </div>
+
+      <!-- Gallery Grid - Positioned high for visual impact -->
+      {images.length > 0 && (
+        <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+          <h2 class="font-heading font-bold text-2xl mb-6 text-white flex items-center gap-2">
+            <span class="w-1 h-8 bg-primary block rounded-full"></span>
+            Project Gallery
+          </h2>
+          <Gallery
+            images={images.map((img: any) => ({
+              paths: img.paths,
+              category: img.category,
+              alt: buildImageAlt({ category: entry.slug, lang: 'en' }),
+            }))}
+            lang="en"
+            category={entry.slug}
+            initialLimit={6}
+            aspectRatio="square"
+          />
+        </div>
+      )}
 
       <Content />
       
