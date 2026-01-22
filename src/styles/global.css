@@ -292,6 +292,17 @@
     color: var(--text-primary);
   }
 
+  .logo-badge {
+    @apply border rounded-lg;
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  [data-theme="light"] .logo-badge {
+    border-color: rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.75);
+  }
+
   /* Icon Wrapper - Prevent oversized icons */
   .icon {
     @apply w-5 h-5;
