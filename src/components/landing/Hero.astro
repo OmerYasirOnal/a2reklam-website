@@ -49,54 +49,60 @@ const isRtl = lang === 'ar';
 ---
 
 <section class="relative min-h-[75vh] flex items-center justify-center text-white overflow-hidden bg-secondary">
-  <!-- Background Image with Overlay -->
+  <!-- Background Image with Enhanced Visibility -->
   <div class="absolute inset-0 z-0">
     <img
       src={heroImage}
       alt={heroAlt}
-      class="w-full h-full object-cover opacity-50"
+      class="w-full h-full object-cover opacity-65"
       loading="eager"
       fetchpriority="high"
       decoding="async"
       width="1600"
       height="900"
     />
-    <div class="absolute inset-0 bg-gradient-to-b from-secondary/40 via-secondary/70 to-secondary z-10"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent z-20"></div>
+    <!-- Reduced gradient intensity for better image visibility -->
+    <div class="absolute inset-0 bg-gradient-to-b from-secondary/25 via-secondary/55 to-secondary z-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent z-20"></div>
+    <!-- Subtle vignette effect -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(11,15,20,0.4)_100%)] z-25"></div>
   </div>
 
-  <!-- Content -->
+  <!-- Content with glass-effect backdrop for readability -->
   <div class:list={['relative z-30 container mx-auto px-4 text-center', isRtl && 'text-right']}>
     <div class="inline-block mb-4 px-4 py-1 border border-primary/30 rounded-full bg-black/30 backdrop-blur text-primary text-sm font-semibold tracking-wider uppercase animate-fade-in-up">
       {lang === 'ar' ? 'منذ 2010' : lang === 'en' ? 'Since 2010' : '2010\'dan beri'}
     </div>
-    
-    <h1 class="font-heading font-black text-5xl md:text-7xl mb-6 leading-tight max-w-4xl mx-auto drop-shadow-2xl text-balance">
-      {lang === 'en' 
-        ? <>Premium <span class="text-primary">Signage</span> & Advertising Solutions</>
-        : lang === 'ar'
-          ? <><span class="text-primary">حلول</span> لافتات وإعلانات متميزة</>
-          : <>Premium <span class="text-primary">Tabela</span> ve Reklam Çözümleri</>
-      }
-    </h1>
-    
-    <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-      {t.subtitle}
-    </p>
-    
+
+    <!-- Text container with enhanced shadows for readability -->
+    <div class="max-w-4xl mx-auto">
+      <h1 class="font-heading font-black text-5xl md:text-7xl mb-6 leading-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] text-balance">
+        {lang === 'en'
+          ? <>Premium <span class="text-primary drop-shadow-[0_2px_10px_rgba(201,162,39,0.5)]">Signage</span> & Advertising Solutions</>
+          : lang === 'ar'
+            ? <><span class="text-primary drop-shadow-[0_2px_10px_rgba(201,162,39,0.5)]">حلول</span> لافتات وإعلانات متميزة</>
+            : <>Premium <span class="text-primary drop-shadow-[0_2px_10px_rgba(201,162,39,0.5)]">Tabela</span> ve Reklam Çözümleri</>
+        }
+      </h1>
+
+      <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+        {t.subtitle}
+      </p>
+    </div>
+
     <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
       <a
         href={t.link}
         data-track="lead-click"
         data-lead-type="quote"
         data-lang={lang}
-        class="btn btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wide"
+        class="btn btn-primary px-8 py-4 text-lg font-bold uppercase tracking-wide shadow-lg shadow-primary/30"
       >
         {t.cta}
       </a>
-      <a 
-        href={lang === 'ar' ? '/ar/contact/' : lang === 'en' ? '/en/contact/' : '/iletisim/'} 
-        class="btn btn-secondary px-8 py-4 text-lg font-bold uppercase tracking-wide"
+      <a
+        href={lang === 'ar' ? '/ar/contact/' : lang === 'en' ? '/en/contact/' : '/iletisim/'}
+        class="btn btn-secondary px-8 py-4 text-lg font-bold uppercase tracking-wide backdrop-blur-sm"
       >
         {lang === 'ar' ? 'تواصل معنا' : lang === 'en' ? 'Contact Us' : 'Bize Ulaşın'}
       </a>
