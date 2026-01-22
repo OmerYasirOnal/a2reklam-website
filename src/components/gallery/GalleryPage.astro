@@ -22,13 +22,14 @@ manifest.forEach((img: any) => {
 const categories: Array<{ category: string; label: string; count: number }> = [];
 const seen = new Set<string>();
 manifest.forEach((img: any) => {
-  if (seen.has(img.category)) return;
-  categories.push({
-    category: img.category,
-    label: getCategoryLabel(img.category, lang),
-    count: counts.get(img.category) ?? 0,
-  });
-  seen.add(img.category);
+  if (!seen.has(img.category)) {
+    categories.push({
+      category: img.category,
+      label: getCategoryLabel(img.category, lang),
+      count: counts.get(img.category) ?? 0,
+    });
+    seen.add(img.category);
+  }
 });
 
 const images = manifest.map((img: any) => ({
@@ -36,6 +37,13 @@ const images = manifest.map((img: any) => ({
   category: img.category,
   alt: buildImageAlt({ category: img.category, lang }),
 }));
+
+const filterStyles = categories
+  .map(
+    (cat) =>
+      `#gallery-page[data-active-category="${cat.category}"] .gallery-item:not([data-category="${cat.category}"]) { display: none; }`
+  )
+  .join('\n');
 
 const content = {
   tr: {
@@ -190,17 +198,15 @@ const breadcrumbs = [
     })();
   </script>
 
-  <style>
-    .filter-btn[aria-pressed="true"] {
-      border-color: rgba(201, 162, 39, 0.7);
-      color: #ffffff;
-      background: rgba(201, 162, 39, 0.16);
-    }
-    {categories
-      .map(
-        (cat) =>
-          `#gallery-page[data-active-category="${cat.category}"] .gallery-item:not([data-category="${cat.category}"]) { display: none; }`
-      )
-      .join('\n')}
-  </style>
+  <style
+    is:inline
+    set:html={`
+      .filter-btn[aria-pressed="true"] {
+        border-color: rgba(201, 162, 39, 0.7);
+        color: #ffffff;
+        background: rgba(201, 162, 39, 0.16);
+      }
+      ${filterStyles}
+    `}
+  />
 </Layout>
