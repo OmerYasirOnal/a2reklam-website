@@ -263,6 +263,9 @@ const t = {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
     let scrollRaf = null;
+    let isOpen = false;
+    let keydownHandler = null;
+    let lastValidSrc = '';
 
     // Get focusable elements for focus trap
     function getFocusableElements(el) {
@@ -332,28 +335,48 @@ const t = {
 
     // Lightbox functions
     function openLightbox(index, triggerEl) {
-      currentIndex = index;
+      if (!totalImages) return;
+      if (!lightbox || !lightboxImg) return;
+      const safeIndex = Number.isFinite(index) ? index : 0;
+      currentIndex = safeIndex >= 0 && safeIndex < totalImages ? safeIndex : 0;
       lastFocusedElement = triggerEl || document.activeElement;
       updateLightboxImage();
 
       lightbox?.classList.remove('hidden');
       lightbox?.classList.add('flex');
       document.body.style.overflow = 'hidden';
+      isOpen = true;
 
       // Make background inert
       const mainContent = document.getElementById('main-content');
       if (mainContent) mainContent.setAttribute('inert', '');
 
       lightboxClose?.focus();
+
+      if (keydownHandler) {
+        window.removeEventListener('keydown', keydownHandler);
+      }
+      keydownHandler = handleKeydown;
+      window.addEventListener('keydown', keydownHandler);
     }
 
     function updateLightboxImage() {
-      const imgData = images[currentIndex];
-      if (!imgData || !lightboxImg) return;
+      if (!lightboxImg || !totalImages) return;
+      if (!images[currentIndex]) {
+        currentIndex = 0;
+      }
 
-      const src1600 = imgData.paths?.['1600'] || imgData.paths?.['960'] || '';
-      lightboxImg.src = src1600;
+      const imgData = images[currentIndex] || images[0];
+      if (!imgData) return;
+
+      const src1600 = imgData.paths?.['1600'] || imgData.paths?.['960'] || imgData.paths?.['480'] || '';
+      const resolvedSrc = src1600 || lastValidSrc;
+      if (!resolvedSrc) return;
+
+      // Guard missing sources so controls keep working across updates.
+      lightboxImg.src = resolvedSrc;
       lightboxImg.alt = imgData.alt || `Gallery image ${currentIndex + 1}`;
+      lastValidSrc = resolvedSrc;
 
       if (lightboxCurrent) lightboxCurrent.textContent = String(currentIndex + 1);
       if (lightboxTotal) lightboxTotal.textContent = String(totalImages);
@@ -363,6 +386,7 @@ const t = {
       lightbox?.classList.add('hidden');
       lightbox?.classList.remove('flex');
       document.body.style.overflow = '';
+      isOpen = false;
 
       // Remove inert
       const mainContent = document.getElementById('main-content');
@@ -370,6 +394,10 @@ const t = {
 
       if (lastFocusedElement?.focus) lastFocusedElement.focus();
       lastFocusedElement = null;
+
+      if (keydownHandler) {
+        window.removeEventListener('keydown', keydownHandler);
+      }
     }
 
     function navigate(direction) {
@@ -399,9 +427,8 @@ const t = {
       if (e.target === lightbox) closeLightbox();
     });
 
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (lightbox?.classList.contains('hidden')) return;
+    function handleKeydown(e) {
+      if (!isOpen || !lightbox || lightbox.classList.contains('hidden')) return;
 
       if (e.key === 'Escape') {
         e.preventDefault();
@@ -428,7 +455,7 @@ const t = {
           first.focus();
         }
       }
-    });
+    }
   })();
 </script>
 
