@@ -29,11 +29,11 @@ const redirectUrl = Astro.site ? new URL('/ar/thank-you/', Astro.site).toString(
 
         {!hasEndpoint && (
           <div class="mb-8 border border-primary/30 bg-secondary/70 rounded-2xl p-5 text-sm text-gray-300">
-            لم يتم إعداد نموذج الإرسال بعد. يمكنك التواصل عبر <a href={`mailto:${EMAIL}`} class="text-primary hover:underline">البريد الإلكتروني</a> أو <a href={WHATSAPP_LINK} data-track="lead-click" data-lead-type="whatsapp" data-lang="ar" class="text-primary hover:underline">واتساب</a> للحصول على رد سريع.
+            لم يتم إعداد نموذج الإرسال بعد. يمكنك التواصل عبر <a href={`mailto:${EMAIL}`} class="text-primary hover:underline">البريد الإلكتروني</a> أو <a href={WHATSAPP_LINK} data-track="whatsapp" data-lang="ar" class="text-primary hover:underline">واتساب</a> للحصول على رد سريع.
             <div class="mt-3 flex flex-wrap gap-3">
-              <a href={`tel:${PHONE_TEL}`} data-track="lead-click" data-lead-type="call" data-lang="ar" class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">اتصل: {PHONE_NUMBER}</a>
+              <a href={`tel:${PHONE_TEL}`} data-track="call" data-lang="ar" class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">اتصل: {PHONE_NUMBER}</a>
               <a href={`mailto:${EMAIL}`} class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">البريد</a>
-              <a href={WHATSAPP_LINK} data-track="lead-click" data-lead-type="whatsapp" data-lang="ar" class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">واتساب</a>
+              <a href={WHATSAPP_LINK} data-track="whatsapp" data-lang="ar" class="px-4 py-2 rounded-full border border-white/10 text-xs uppercase tracking-widest hover:border-primary/60">واتساب</a>
             </div>
           </div>
         )}
