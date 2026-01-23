@@ -6,19 +6,23 @@ Modern multilingual (TR/EN/AR) static-first website for a2reklam.com, built with
 
 ## Quick Start
 
+**Requirements:**
+- Node.js 20.x
+- pnpm 10.x (`npm install -g pnpm`)
+
 1. Install dependencies:
    ```bash
-   npm ci
+   pnpm install --frozen-lockfile
    ```
 
 2. Develop locally:
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 3. Repo safety check (prevents private assets from being tracked):
    ```bash
-   npm run repo:safety
+   pnpm run repo:safety
    ```
 
 ## Demo Assets vs Production Assets
@@ -28,7 +32,7 @@ This public repo ships a small demo image set so CI builds remain green and the 
 - Demo assets live in `public/assets/img/demo/` and `public/images-manifest.demo.json`.
 - Full private assets live locally in `RES.../` and are generated with:
   ```bash
-  npm run process-images
+  pnpm run process-images
   ```
   This writes `public/assets/img/` and `public/images-manifest.json` (both ignored by git).
 
@@ -38,16 +42,14 @@ The site loads `images-manifest.json` when present and falls back to the demo ma
 
 - Private assets must never be committed (the `RES...` archive, `node_modules/`, `dist/`, or full manifests).
 - If private assets ever leak into history, purge them with `git filter-repo` and force-push.
-- CI runs `npm run repo:safety` to block tracked private assets.
+- CI runs `pnpm run repo:safety` to block tracked private assets.
 
 ## Build
 
 ```bash
-npm run build
+pnpm run build
 ```
-Output is written to `dist/`.
-
-Packages section is normal; not used for this static site.
+Output is written to `dist/` (341 static pages).
 
 ## Lead Forms (Static Hosting)
 
@@ -102,11 +104,27 @@ The site pushes the following events to `dataLayer`:
 **Alternative**: If using direct conversion URLs, update your conversion rules:
 - Old: `/iletisim-tabela/` → New: `/iletisim/` OR better: `/teşekkürler/` (TR), `/en/thank-you/` (EN), `/ar/thank-you/` (AR)
 
-## Deployment (cPanel)
+## Deployment
 
-1. Run `npm run build`.
-2. Upload the contents of `dist/` to `public_html`.
-3. Ensure the root `.htaccess` is present (see `public/.htaccess` and `deploy/README.md`).
+### Build Output
+```bash
+pnpm run build
+```
+- Output: `dist/` folder (341 static HTML pages)
+- Dependencies: None (static HTML/CSS/JS only)
+- Node version used: 20.x
+- Package manager: pnpm 10.x
+
+### Deploy to a2reklam.com (cPanel)
+1. Run `pnpm run build` locally
+2. Upload `dist/` contents to `public_html/`
+3. Ensure `.htaccess` is present (from `public/.htaccess`)
+4. No server-side runtime needed (static files only)
+
+### Environment Variables (Optional)
+- `PUBLIC_FORM_ENDPOINT`: Form submission endpoint (Formspree/Getform)
+  - If not set, forms fall back to mailto/WhatsApp
+  - Set in `.env` during build: `PUBLIC_FORM_ENDPOINT="https://formspree.io/f/your-id"`
 
 ## Key Directories
 
