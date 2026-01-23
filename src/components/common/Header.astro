@@ -57,36 +57,39 @@ const languageLinks = languageOrder
 ---
 
 <header id="main-header" class="sticky top-0 z-50 glass-bar header-modern header-visible">
-  <div class:list={['container mx-auto px-4 h-20 flex items-center justify-between', isRtl && 'flex-row-reverse']}>
-    <a href={homeLink} class="flex items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary rounded-lg" aria-label="A2 Reklam">
+  <div class:list={['container mx-auto px-4 h-20 flex items-center justify-between gap-4', isRtl && 'flex-row-reverse']}>
+    <!-- Logo - Never shrinks, always visible -->
+    <a href={homeLink} class="flex-shrink-0 flex items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary rounded-lg" aria-label="A2 Reklam">
       <img
         src="/brand/a2reklam-logo.png"
         alt="A2 Reklam Logo"
         width="140"
         height="50"
-        class="h-12 w-auto"
+        class="h-10 sm:h-12 w-auto"
         loading="eager"
         fetchpriority="high"
       />
     </a>
 
-    <nav class:list={['hidden md:flex items-center gap-8', isRtl && 'flex-row-reverse']}>
+    <!-- Desktop Navigation - Hidden below lg -->
+    <nav class:list={['hidden lg:flex items-center gap-4 xl:gap-6', isRtl && 'flex-row-reverse']}>
       {items.map(item => (
-        <a href={item.href} class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide">
+        <a href={item.href} class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">
           {item.label}
         </a>
       ))}
     </nav>
 
-    <div class:list={['flex items-center gap-2 md:gap-4', isRtl && 'flex-row-reverse']}>
+    <!-- Right Controls - Flexible layout -->
+    <div class:list={['flex items-center gap-2 md:gap-3', isRtl && 'flex-row-reverse']}>
       <!-- Language Switcher + Theme Toggle (desktop) -->
-      <div class:list={['hidden md:flex items-center gap-2', isRtl && 'flex-row-reverse']}>
-        <div class:list={['flex items-center gap-1 md:gap-2', isRtl && 'flex-row-reverse']}>
+      <div class:list={['hidden lg:flex items-center gap-2', isRtl && 'flex-row-reverse']}>
+        <div class:list={['flex items-center gap-1', isRtl && 'flex-row-reverse']}>
           {languageLinks.map((link) => (
             <a
               href={link.href}
               class:list={[
-                'text-xs font-bold border px-2 py-1 md:px-3 md:py-1.5 rounded transition-colors whitespace-nowrap',
+                'text-xs font-bold border px-2 py-1 rounded transition-colors whitespace-nowrap',
                 link.locale === lang ? 'border-primary text-primary' : 'border-white/20 text-gray-300 hover:text-white hover:border-white',
               ]}
               aria-current={link.locale === lang ? 'page' : undefined}
@@ -99,15 +102,15 @@ const languageLinks = languageOrder
       </div>
 
       <!-- Quote Button (desktop only) -->
-      <a href={quoteLink} data-track="lead-click" data-lead-type="quote" data-lang={lang} class="hidden md:inline-flex btn btn-primary px-6 py-2.5 text-sm font-bold">
+      <a href={quoteLink} data-track="lead-click" data-lead-type="quote" data-lang={lang} class="hidden lg:inline-flex btn btn-primary px-4 xl:px-6 py-2.5 text-sm font-bold whitespace-nowrap flex-shrink-0">
         {quoteLabel}
       </a>
 
-      <!-- Mobile Menu Toggle -->
+      <!-- Mobile Menu Toggle - Always visible below lg -->
       <button
         id="mobile-menu-toggle"
         type="button"
-        class="md:hidden p-2 text-white hover:text-primary transition-colors"
+        class="lg:hidden p-2 text-white hover:text-primary transition-colors flex-shrink-0"
         aria-expanded="false"
         aria-controls="mobile-menu-panel"
         aria-haspopup="dialog"
