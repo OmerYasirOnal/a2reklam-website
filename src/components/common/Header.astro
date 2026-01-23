@@ -102,7 +102,7 @@ const languageLinks = languageOrder
       </div>
 
       <!-- Quote Button (desktop only) -->
-      <a href={quoteLink} data-track="lead-click" data-lead-type="quote" data-lang={lang} class="hidden lg:inline-flex btn btn-primary px-4 xl:px-6 py-2.5 text-sm font-bold whitespace-nowrap flex-shrink-0">
+      <a href={quoteLink} data-track="quote" data-lang={lang} class="hidden lg:inline-flex btn btn-primary px-4 xl:px-6 py-2.5 text-sm font-bold whitespace-nowrap flex-shrink-0">
         {quoteLabel}
       </a>
 
@@ -210,8 +210,7 @@ const languageLinks = languageOrder
         <!-- Quote Button (Mobile) -->
         <a
           href={quoteLink}
-          data-track="lead-click"
-          data-lead-type="quote"
+          data-track="quote"
           data-lang={lang}
           class="block w-full text-center btn btn-primary py-3 text-sm font-bold"
         >
