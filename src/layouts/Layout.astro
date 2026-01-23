@@ -6,6 +6,7 @@ import SEO from '../components/common/SEO.astro';
 import MobileCTA from '../components/common/MobileCTA.astro';
 import WhatsAppAssistant from '../components/common/WhatsAppAssistant.astro';
 import Tracking from '../components/common/Tracking.astro';
+import GoogleAdsTracking from '../components/common/GoogleAdsTracking.astro';
 import TrackingEvents from '../components/common/TrackingEvents.astro';
 import { buildWhatsAppLink, buildWhatsAppMessage, sanitizePageTitle } from '../utils/whatsapp';
 import '../styles/global.css';
@@ -78,6 +79,7 @@ const quoteLink =
       })();
     </script>
     <Tracking />
+    <GoogleAdsTracking />
     <SEO
       title={title}
       description={description}
