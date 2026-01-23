@@ -84,23 +84,28 @@ const faq = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {serviceCards.map((service) => (
-          <a href={`/hizmetler/${service.slug}/`} class="group relative block glass-card overflow-hidden hover:shadow-primary/20 transition-all duration-500 transform hover:-translate-y-2">
-            <div class="relative h-64 overflow-hidden">
+          <a href={`/hizmetler/${service.slug}/`} class="group block glass-card overflow-hidden hover:shadow-primary/30 transition-all duration-300 transform hover:-translate-y-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary">
+            <!-- Image Container -->
+            <div class="relative aspect-[4/3] overflow-hidden">
               <img
                 src={service.image}
                 alt={service.alt}
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-300"></div>
-              <div class="absolute bottom-0 left-0 w-full p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                <h2 class="font-heading font-bold text-2xl mb-2 text-white border-b-2 border-transparent group-hover:border-primary inline-block pb-1 transition-all">
-                  {service.title}
-                </h2>
-                <p class="text-sm text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                  {service.description}
-                </p>
-              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:from-primary/20 transition-all duration-300"></div>
+            </div>
+            <!-- Content Below Image -->
+            <div class="p-6">
+              <h2 class="font-heading font-bold text-xl md:text-2xl text-heading mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                {service.title}
+              </h2>
+              <p class="text-sm text-gray-400 leading-relaxed mb-4 line-clamp-2">
+                {service.description}
+              </p>
+              <span class="text-sm text-primary group-hover:text-primary-hover font-semibold inline-flex items-center gap-1 transition-colors">
+                İncele →
+              </span>
             </div>
           </a>
         ))}

@@ -36,10 +36,7 @@ const t = {
     viewAllLink: '/galeri/',
     prev: 'Önceki',
     next: 'Sonraki',
-    close: 'Kapat',
-    of: ' / ',
     image: 'Görsel',
-    imageViewer: 'Görsel Görüntüleyici',
   },
   en: {
     title: 'Our Projects',
@@ -48,10 +45,7 @@ const t = {
     viewAllLink: '/en/gallery/',
     prev: 'Previous',
     next: 'Next',
-    close: 'Close',
-    of: ' / ',
     image: 'Image',
-    imageViewer: 'Image Viewer',
   },
   ar: {
     title: 'مشاريعنا',
@@ -60,10 +54,7 @@ const t = {
     viewAllLink: '/ar/gallery/',
     prev: 'السابق',
     next: 'التالي',
-    close: 'إغلاق',
-    of: ' / ',
     image: 'صورة',
-    imageViewer: 'عارض الصور',
   },
 }[lang];
 ---
@@ -130,11 +121,11 @@ const t = {
       const categoryLabel = getCategoryLabel(img.category, lang);
 
       return (
-        <button
-          type="button"
-          class="slider-item group flex-shrink-0 w-72 md:w-80 snap-start relative rounded-xl overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary border border-white/5 hover:border-primary/50 transition-all"
+        <a
+          href={src1600}
+          class="glightbox slider-item group flex-shrink-0 w-72 md:w-80 snap-start relative rounded-xl overflow-hidden cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary border border-white/5 hover:border-primary/50 transition-all block"
+          data-gallery="a2-gallery-slider"
           data-index={idx}
-          data-full-src={src1600}
           aria-label={alt}
         >
           <div class="aspect-[4/3] overflow-hidden bg-surface">
@@ -156,7 +147,7 @@ const t = {
               {categoryLabel}
             </span>
           </div>
-        </button>
+        </a>
       );
     })}
   </div>
@@ -173,62 +164,9 @@ const t = {
       </svg>
     </a>
   </div>
-
-  <!-- Lightbox Modal -->
-  <div
-    id="slider-lightbox"
-    class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="slider-lightbox-title"
-    data-rtl={isRtl ? 'true' : 'false'}
-  >
-    <h2 id="slider-lightbox-title" class="sr-only">{t.imageViewer}</h2>
-
-    <!-- Visually hidden close button for accessibility/focus trap -->
-    <button
-      type="button"
-      id="slider-lightbox-close"
-      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:p-2 focus:bg-black/70 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-primary z-[110]"
-      aria-label={t.close}
-    >
-      {t.close}
-    </button>
-
-    <div class="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center p-4 md:p-8" id="slider-lightbox-image-container">
-      <img
-        id="slider-lightbox-img"
-        src=""
-        alt=""
-        class="max-w-full max-h-[85vh] w-auto h-auto object-contain shadow-2xl rounded-lg transition-opacity duration-300 select-none"
-        loading="eager"
-        draggable="false"
-      />
-      
-      <!-- Counter + Hint overlay -->
-      <div
-        id="slider-lightbox-hint"
-        class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm bg-black/80 px-5 py-3 rounded-full backdrop-blur-sm border border-white/10 flex flex-col items-center gap-1"
-        aria-live="polite"
-        aria-atomic="true"
-      >
-        <span class="font-medium">
-          <span id="slider-lightbox-current">1</span>{t.of}<span id="slider-lightbox-total">{displayImages.length}</span>
-        </span>
-        <!-- Desktop hint -->
-        <span class="hidden md:block text-xs text-gray-300 opacity-80">
-          {lang === 'ar' ? 'استخدم ← → • Esc للإغلاق' : lang === 'en' ? 'Use ← → keys • Esc to close' : '← → tuşları • Esc kapat'}
-        </span>
-        <!-- Mobile hint -->
-        <span class="block md:hidden text-xs text-gray-300 opacity-80">
-          {lang === 'ar' ? 'اسحب يمين/يسار • انقر خارجاً للإغلاق' : lang === 'en' ? 'Swipe left/right • Tap outside to close' : 'Sağ/sol kaydır • Kapatmak için dışarı dokun'}
-        </span>
-      </div>
-    </div>
-  </div>
 </section>
 
-<script define:vars={{ images: displayImages, totalImages: displayImages.length, isRtl, t }}>
+<script define:vars={{ totalImages: displayImages.length, isRtl, t }}>
   (function() {
     const section = document.querySelector('.gallery-slider-section');
     if (!section) return;
@@ -239,35 +177,10 @@ const t = {
     const sliderItems = section.querySelectorAll('.slider-item');
     const sliderStatus = section.querySelector('#gallery-slider-status');
 
-    // Lightbox elements
-    const lightbox = section.querySelector('#slider-lightbox');
-    const lightboxImg = section.querySelector('#slider-lightbox-img');
-    const lightboxClose = section.querySelector('#slider-lightbox-close');
-    const lightboxCurrent = section.querySelector('#slider-lightbox-current');
-    const lightboxTotal = section.querySelector('#slider-lightbox-total');
-    const lightboxImageContainer = section.querySelector('#slider-lightbox-image-container');
-
-    let currentIndex = 0;
-    let lastFocusedElement = null;
     const scrollAmount = 320;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
     let scrollRaf = null;
-
-    // Touch/swipe state
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let touchEndX = 0;
-    let touchEndY = 0;
-    const SWIPE_THRESHOLD = 50;
-    const SWIPE_VERTICAL_LIMIT = 100;
-
-    // Get focusable elements for focus trap
-    function getFocusableElements(el) {
-      return el.querySelectorAll(
-        'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
-      );
-    }
 
     function getCurrentIndex() {
       if (!slider || sliderItems.length === 0) return 0;
@@ -292,7 +205,7 @@ const t = {
     function updateSliderStatus() {
       if (!sliderStatus || totalImages <= 0) return;
       const idx = getCurrentIndex();
-      sliderStatus.textContent = `${t.image} ${idx + 1}${t.of}${totalImages}`;
+      sliderStatus.textContent = `${t.image} ${idx + 1} / ${totalImages}`;
     }
 
     function scrollSlider(direction) {
@@ -327,149 +240,11 @@ const t = {
     });
 
     updateSliderStatus();
-
-    // Lightbox functions
-    function openLightbox(index, triggerEl) {
-      currentIndex = index;
-      lastFocusedElement = triggerEl || document.activeElement;
-      updateLightboxImage();
-
-      lightbox?.classList.remove('hidden');
-      lightbox?.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-
-      // Make background inert
-      const mainContent = document.getElementById('main-content');
-      if (mainContent) mainContent.setAttribute('inert', '');
-
-      lightboxClose?.focus();
-    }
-
-    function updateLightboxImage() {
-      if (currentIndex < 0 || currentIndex >= totalImages) {
-        currentIndex = Math.max(0, Math.min(currentIndex, totalImages - 1));
-      }
-
-      const imgData = images[currentIndex];
-      if (!imgData || !lightboxImg) return;
-
-      const src1600 = imgData.paths?.['1600'] || imgData.paths?.['960'] || imgData.paths?.['480'] || '';
-      if (src1600) {
-        lightboxImg.src = src1600;
-        lightboxImg.alt = imgData.alt || `Gallery image ${currentIndex + 1}`;
-      }
-
-      if (lightboxCurrent) lightboxCurrent.textContent = String(currentIndex + 1);
-      if (lightboxTotal) lightboxTotal.textContent = String(totalImages);
-    }
-
-    function closeLightbox() {
-      lightbox?.classList.add('hidden');
-      lightbox?.classList.remove('flex');
-      document.body.style.overflow = '';
-
-      // Remove inert
-      const mainContent = document.getElementById('main-content');
-      if (mainContent) mainContent.removeAttribute('inert');
-
-      if (lastFocusedElement?.focus) lastFocusedElement.focus();
-      lastFocusedElement = null;
-    }
-
-    function navigate(direction) {
-      if (totalImages <= 0) return;
-
-      if (direction === 'prev') {
-        currentIndex = currentIndex > 0 ? currentIndex - 1 : totalImages - 1;
-      } else {
-        currentIndex = currentIndex < totalImages - 1 ? currentIndex + 1 : 0;
-      }
-      updateLightboxImage();
-    }
-
-    // Slider item clicks
-    sliderItems.forEach((item) => {
-      item.addEventListener('click', function() {
-        const idx = parseInt(this.dataset.index || '0');
-        openLightbox(idx, this);
-      });
-    });
-
-    // Lightbox close button (visually hidden accessible one)
-    lightboxClose?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      closeLightbox();
-    });
-
-    // Backdrop click
-    lightbox?.addEventListener('click', (e) => {
-      const clickedElement = e.target;
-      if (clickedElement === lightbox || clickedElement === lightboxImageContainer) {
-        closeLightbox();
-      }
-    });
-
-    // Touch/Swipe Navigation for Mobile
-    if (lightboxImageContainer) {
-      lightboxImageContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
-      }, { passive: true });
-
-      lightboxImageContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipe();
-      }, { passive: true });
-    }
-
-    function handleSwipe() {
-      const deltaX = touchEndX - touchStartX;
-      const deltaY = Math.abs(touchEndY - touchStartY);
-      
-      if (Math.abs(deltaX) > SWIPE_THRESHOLD && deltaY < SWIPE_VERTICAL_LIMIT) {
-        const effectiveIsRtl = lightbox?.dataset.rtl === 'true';
-        if (deltaX > 0) {
-          navigate(effectiveIsRtl ? 'next' : 'prev');
-        } else {
-          navigate(effectiveIsRtl ? 'prev' : 'next');
-        }
-      }
-    }
-
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-      if (lightbox?.classList.contains('hidden')) return;
-
-      const effectiveIsRtl = lightbox?.dataset.rtl === 'true';
-
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeLightbox();
-      } else if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        navigate(effectiveIsRtl ? 'next' : 'prev');
-      } else if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        navigate(effectiveIsRtl ? 'prev' : 'next');
-      } else if (e.key === 'Tab') {
-        // Focus trap
-        const focusables = getFocusableElements(lightbox);
-        if (focusables.length === 0) return;
-
-        const first = focusables[0];
-        const last = focusables[focusables.length - 1];
-
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    });
   })();
+</script>
+
+<script>
+  import '../../scripts/glightbox-init';
 </script>
 
 <style>
@@ -481,27 +256,8 @@ const t = {
     scrollbar-width: none;
   }
 
-  #slider-lightbox img {
-    animation: sliderFadeIn 0.3s ease-out;
-  }
-
-  @keyframes sliderFadeIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
   /* Respect reduced motion preference */
   @media (prefers-reduced-motion: reduce) {
-    #slider-lightbox img {
-      animation: none;
-    }
-
     .slider-item img {
       transition: none;
     }

@@ -123,16 +123,16 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
   faq={faq}
   whatsappTitle={entry.data.title}
 >
-  <!-- Hero Section -->
-  <div class="relative h-[50vh] flex items-center justify-center text-white">
+  <!-- Hero Section - Theme-agnostic styling for consistent readability -->
+  <div class="service-hero relative h-[50vh] flex items-center justify-center">
     <div class="absolute inset-0 z-0">
-      <img src={entry.data.heroImage} alt={entry.data.title} class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-secondary/80 mix-blend-multiply"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent"></div>
+      <img src={entry.data.heroImage} alt={entry.data.title} class="w-full h-full object-cover service-hero-img" />
+      <!-- Theme-agnostic dark gradient overlay for text readability -->
+      <div class="service-hero-overlay absolute inset-0"></div>
     </div>
     <div class="relative z-10 container mx-auto px-4 mt-20">
-      <h1 class="font-heading font-black text-4xl md:text-6xl mb-4 drop-shadow-lg">{displayTitle}</h1>
-      <ul class="flex gap-2 text-sm text-gray-300 font-medium tracking-wide">
+      <h1 class="service-hero-title font-heading font-black text-4xl md:text-6xl mb-4">{displayTitle}</h1>
+      <ul class="flex gap-2 text-sm font-medium tracking-wide service-hero-breadcrumbs">
         <li><a href="/" class="hover:text-primary transition-colors">Anasayfa</a></li>
         <li>/</li>
         <li><a href="/hizmetler/" class="hover:text-primary transition-colors">Hizmetler</a></li>
@@ -141,6 +141,44 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
       </ul>
     </div>
   </div>
+
+  <style>
+    /* ============================================
+       SERVICE HERO - Theme-Agnostic Styling
+       Text/overlay stay consistent across dark/light
+       ============================================ */
+
+    .service-hero-img {
+      opacity: 0.85;
+    }
+
+    /* Theme-agnostic dark gradient overlay for consistent text readability */
+    .service-hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(11, 15, 20, 0.4) 0%,
+        rgba(11, 15, 20, 0.6) 40%,
+        rgba(11, 15, 20, 0.8) 100%
+      );
+    }
+
+    /* Hero Title - Always white with strong shadow */
+    .service-hero-title {
+      color: #FFFFFF !important;
+      text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.8),
+        0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Breadcrumbs - Always light gray */
+    .service-hero-breadcrumbs {
+      color: #E5E7EB !important;
+    }
+
+    .service-hero-breadcrumbs li {
+      color: #E5E7EB !important;
+    }
+  </style>
 
   <div class="container mx-auto px-4 py-20 grid grid-cols-1 lg:grid-cols-3 gap-12">
     <!-- Main Content -->
