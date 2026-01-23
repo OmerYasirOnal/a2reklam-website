@@ -205,10 +205,11 @@ const t = {
         draggable="false"
       />
       
-      <!-- Counter + Hint overlay -->
+      <!-- Counter + Hint overlay - Positioned lower with safe-area support -->
       <div
         id="slider-lightbox-hint"
-        class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-sm bg-black/80 px-5 py-3 rounded-full backdrop-blur-sm border border-white/10 flex flex-col items-center gap-1"
+        class="absolute left-1/2 -translate-x-1/2 text-white text-sm bg-black/80 px-5 py-3 rounded-full backdrop-blur-sm border border-white/10 flex flex-col items-center gap-1"
+        style="bottom: max(0.75rem, calc(env(safe-area-inset-bottom, 0) + 0.5rem));"
         aria-live="polite"
         aria-atomic="true"
       >
@@ -254,13 +255,17 @@ const t = {
     const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
     let scrollRaf = null;
 
-    // Touch/swipe state
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let touchEndX = 0;
-    let touchEndY = 0;
-    const SWIPE_THRESHOLD = 50;
-    const SWIPE_VERTICAL_LIMIT = 100;
+    // Pointer-based gesture state (unified touch/mouse handling)
+    let pointerId = null;
+    let startX = 0;
+    let startY = 0;
+    let lastX = 0;
+    let lastY = 0;
+    let isDragging = false;
+    let lastSwipeTime = 0;
+    const MIN_SWIPE_X = 40; // Minimum horizontal distance for swipe
+    const MAX_SWIPE_Y = 110; // Maximum vertical distance allowed
+    const SWIPE_COOLDOWN = 350; // ms to prevent click-after-swipe
 
     // Get focusable elements for focus trap
     function getFocusableElements(el) {
@@ -401,31 +406,96 @@ const t = {
       closeLightbox();
     });
 
-    // Backdrop click
+    // Backdrop click (with swipe cooldown protection)
     lightbox?.addEventListener('click', (e) => {
+      // Prevent click-after-swipe closure
+      const timeSinceSwipe = Date.now() - lastSwipeTime;
+      if (timeSinceSwipe < SWIPE_COOLDOWN) {
+        return;
+      }
+
       const clickedElement = e.target;
       if (clickedElement === lightbox || clickedElement === lightboxImageContainer) {
         closeLightbox();
       }
     });
 
-    // Touch/Swipe Navigation for Mobile
+    // Pointer-based gesture navigation (unified touch/mouse handling)
     if (lightboxImageContainer) {
-      lightboxImageContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
-      }, { passive: true });
+      lightboxImageContainer.addEventListener('pointerdown', (e) => {
+        // Only handle primary pointer (first touch or left mouse button)
+        if (pointerId !== null) return;
 
-      lightboxImageContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        touchEndY = e.changedTouches[0].screenY;
-        handleSwipe();
-      }, { passive: true });
+        pointerId = e.pointerId;
+        startX = e.clientX;
+        startY = e.clientY;
+        lastX = e.clientX;
+        lastY = e.clientY;
+        isDragging = false;
+
+        // Capture pointer for smooth tracking
+        lightboxImageContainer.setPointerCapture(e.pointerId);
+      });
+
+      lightboxImageContainer.addEventListener('pointermove', (e) => {
+        if (e.pointerId !== pointerId) return;
+
+        const deltaX = e.clientX - startX;
+        const deltaY = e.clientY - startY;
+
+        // Mark as dragging if moved significantly
+        if (!isDragging && (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3)) {
+          isDragging = true;
+        }
+
+        lastX = e.clientX;
+        lastY = e.clientY;
+      });
+
+      lightboxImageContainer.addEventListener('pointerup', (e) => {
+        if (e.pointerId !== pointerId) return;
+
+        const deltaX = lastX - startX;
+        const deltaY = Math.abs(lastY - startY);
+
+        // Check if this was a swipe gesture
+        if (isDragging && Math.abs(deltaX) > MIN_SWIPE_X && deltaY < MAX_SWIPE_Y) {
+          const effectiveIsRtl = lightbox?.dataset.rtl === 'true';
+
+          if (deltaX > 0) {
+            // Swipe right
+            navigate(effectiveIsRtl ? 'next' : 'prev');
+          } else {
+            // Swipe left
+            navigate(effectiveIsRtl ? 'prev' : 'next');
+          }
+
+          // Record swipe time to prevent immediate click-close
+          lastSwipeTime = Date.now();
+        }
+
+        // Reset pointer state
+        pointerId = null;
+        isDragging = false;
+
+        if (lightboxImageContainer.hasPointerCapture(e.pointerId)) {
+          lightboxImageContainer.releasePointerCapture(e.pointerId);
+        }
+      });
+
+      lightboxImageContainer.addEventListener('pointercancel', (e) => {
+        if (e.pointerId !== pointerId) return;
+
+        // Reset on cancel (e.g., gesture interrupted)
+        pointerId = null;
+        isDragging = false;
+      });
     }
 
     function handleSwipe() {
-      const deltaX = touchEndX - touchStartX;
-      const deltaY = Math.abs(touchEndY - touchStartY);
+      // Legacy function kept for compatibility but no longer used
+      const deltaX = 0;
+      const deltaY = Math.abs(0);
       
       if (Math.abs(deltaX) > SWIPE_THRESHOLD && deltaY < SWIPE_VERTICAL_LIMIT) {
         const effectiveIsRtl = lightbox?.dataset.rtl === 'true';
@@ -481,8 +551,17 @@ const t = {
     scrollbar-width: none;
   }
 
+  /* Critical: Enable pointer events on mobile by controlling touch actions */
+  #slider-lightbox-image-container {
+    touch-action: pan-y pinch-zoom;
+    /* Allow vertical scroll and pinch zoom, we handle horizontal swipes */
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
   #slider-lightbox img {
     animation: sliderFadeIn 0.3s ease-out;
+    pointer-events: none; /* Prevent image from capturing pointer events */
   }
 
   @keyframes sliderFadeIn {
