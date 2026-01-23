@@ -113,28 +113,23 @@ const quoteLink =
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          data-track="lead-click"
-          data-lead-type="whatsapp"
+          data-track="whatsapp"
           data-lang={lang}
-          data-conversion="whatsapp"
           class="flex items-center justify-center gap-2 rounded-lg bg-green-600 py-2 text-sm font-bold text-white hover:bg-green-500 transition-colors"
         >
           {t.whatsapp}
         </a>
         <a
           href={`tel:${PHONE_TEL}`}
-          data-track="lead-click"
-          data-lead-type="call"
+          data-track="call"
           data-lang={lang}
-          data-conversion="phone"
           class="flex items-center justify-center gap-2 rounded-lg border border-white/10 py-2 text-sm font-semibold text-white hover:border-primary/60 transition-colors"
         >
           {t.call}
         </a>
         <a
           href={quoteLink}
-          data-track="lead-click"
-          data-lead-type="quote"
+          data-track="quote"
           data-lang={lang}
           class="flex items-center justify-center gap-2 rounded-lg bg-primary py-2 text-sm font-black text-secondary hover:bg-white transition-colors"
         >
