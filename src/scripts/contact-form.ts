@@ -2,11 +2,8 @@
  * Contact Form Handler
  *
  * This script handles contact form submission via fetch API.
- * It only fires Google Ads conversion after successful email send.
+ * Pushes GTM event on successful email send.
  */
-
-import { fireConversion } from './ads-conversions';
-import { ADS_CONFIG } from '../config/ads';
 
 // Prevent double initialization
 const INIT_FLAG = '__a2_contact_form_initialized__';
@@ -106,11 +103,15 @@ async function handleSubmit(event: Event): Promise<void> {
       // Clear form fields
       form.reset();
 
-      // Fire Google Ads conversion (ONLY on success)
-      fireConversion(ADS_CONFIG.CONVERSIONS.FORM);
-
-      // Also fire GTM event (already exists from data-track attribute)
-      // The TrackingEvents.astro script handles this on submit
+      // Push GTM event for successful form submission
+      if (typeof window !== 'undefined' && window.dataLayer) {
+        window.dataLayer.push({
+          event: 'form_success',
+          form_type: 'contact',
+          lang: document.documentElement.lang || 'tr',
+          page: window.location.pathname || '/',
+        });
+      }
 
     } else {
       // Error from server

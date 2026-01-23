@@ -15,12 +15,12 @@ import { TRACKING_ENABLED } from '../../consts';
         return win.dataLayer;
       }
 
-      function trackLeadClick(event) {
+      function trackCTAClick(event) {
         const dataLayer = getDataLayer();
         if (!dataLayer) return;
         dataLayer.push({
-          event: 'lead_click',
-          lead_type: event.type,
+          event: 'cta_click',
+          cta_type: event.type,
           lang: event.lang,
           page: event.page,
         });
@@ -41,11 +41,25 @@ import { TRACKING_ENABLED } from '../../consts';
         el?.getAttribute('data-lang') || document.documentElement.lang || 'tr';
       const getPage = () => window.location.pathname || '/';
 
-      const bindLeadClicks = () => {
-        document.querySelectorAll('[data-track="lead-click"]').forEach((el) => {
+      const bindCTAClicks = () => {
+        // Track WhatsApp clicks
+        document.querySelectorAll('[data-track="whatsapp"]').forEach((el) => {
           el.addEventListener('click', () => {
-            const type = el.getAttribute('data-lead-type') || 'cta';
-            trackLeadClick({ type, lang: getLang(el), page: getPage() });
+            trackCTAClick({ type: 'whatsapp', lang: getLang(el), page: getPage() });
+          });
+        });
+
+        // Track phone clicks
+        document.querySelectorAll('[data-track="call"]').forEach((el) => {
+          el.addEventListener('click', () => {
+            trackCTAClick({ type: 'call', lang: getLang(el), page: getPage() });
+          });
+        });
+
+        // Track quote clicks
+        document.querySelectorAll('[data-track="quote"]').forEach((el) => {
+          el.addEventListener('click', () => {
+            trackCTAClick({ type: 'quote', lang: getLang(el), page: getPage() });
           });
         });
       };
@@ -60,7 +74,7 @@ import { TRACKING_ENABLED } from '../../consts';
       };
 
       const init = () => {
-        bindLeadClicks();
+        bindCTAClicks();
         bindLeadSubmits();
       };
 
@@ -72,8 +86,3 @@ import { TRACKING_ENABLED } from '../../consts';
     })();
   </script>
 )}
-
-<!-- Google Ads Conversion Tracking -->
-<script>
-  import '../../scripts/ads-conversions';
-</script>
