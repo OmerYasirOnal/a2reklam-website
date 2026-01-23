@@ -91,75 +91,67 @@ pnpm run dev
 
 On production (cPanel), PHP is available by default and `/api/contact.php` will work automatically.
 
-## Tracking (GTM + Google Ads)
+## Tracking (GTM-Only)
 
-This site uses dual tracking:
-1. **GTM** (`GTM-MXT449F9`) for general analytics and event tracking
-2. **Google Ads gtag.js** (`AW-17854412453`) for direct conversion tracking
+**Important**: This site uses **ONLY Google Tag Manager** (`GTM-MXT449F9`). All analytics and conversion tracking must be configured inside the GTM container to avoid double tracking.
 
-### Google Ads Conversion Setup
+### GTM Setup
 
-**IMPORTANT**: After deploying, you must update conversion labels in `src/config/ads.ts`.
+The site loads a single GTM container. No other tracking scripts (GA4, Google Ads gtag.js) are loaded directly in the code.
 
-1. **Create Conversion Actions in Google Ads:**
-   - Go to Google Ads → Goals → Conversions → New Conversion Action
-   - Create 3 conversion actions:
-     - **Phone Call Click** (category: Phone calls)
-     - **WhatsApp Click** (category: Leads)
-     - **Contact Form Submit** (category: Submit lead form)
+**Configure these tags inside GTM:**
+- **GA4 Configuration Tag**: Use Measurement ID `G-TC9GJP3GLT`
+- **Google Ads Conversion Tags**: Use Conversion ID `AW-17854412453`
 
-2. **Get Conversion Labels:**
-   - Click on each conversion action
-   - Copy the "Event snippet" code
-   - Find the `send_to` value, e.g., `"AW-17854412453/AbC123XyZ"`
-   - The part after `/` is your conversion label
+### CTA Elements for GTM Triggers
 
-3. **Update Configuration:**
-   Edit `src/config/ads.ts` and replace the placeholder labels:
-   ```typescript
-   CONVERSIONS: {
-     PHONE: 'AW-17854412453/YOUR_PHONE_LABEL',
-     WHATSAPP: 'AW-17854412453/YOUR_WHATSAPP_LABEL',
-     FORM: 'AW-17854412453/YOUR_FORM_LABEL',
-   }
-   ```
+All call-to-action elements have stable `data-track` attributes for easy GTM trigger setup:
 
-4. **Rebuild and Deploy:**
-   ```bash
-   pnpm run build
-   # Upload dist/ to production
-   ```
+**WhatsApp Buttons:**
+- Selector: `[data-track="whatsapp"]`
+- Trigger: Click - All Elements matching `data-track` equals `whatsapp`
+- Use this for Google Ads WhatsApp conversion
 
-### Conversion Events Tracked
+**Phone Call Buttons:**
+- Selector: `[data-track="call"]`
+- Trigger: Click - All Elements matching `data-track` equals `call`
+- Use this for Google Ads phone call conversion
 
-1. **Phone Call Click**: Fires when user clicks any phone number link (`tel:`)
-   - Elements: All links with `data-conversion="phone"`
-   - Timing: Before navigating to dialer
+**Quote/Contact Buttons:**
+- Selector: `[data-track="quote"]`
+- Trigger: Click - All Elements matching `data-track` equals `quote`
 
-2. **WhatsApp Click**: Fires when user clicks WhatsApp buttons
-   - Elements: All links with `data-conversion="whatsapp"`
-   - Timing: Before opening WhatsApp
+### GTM Conversion Setup Example
 
-3. **Contact Form Submit**: Fires ONLY on successful email send
-   - Elements: Forms on `/iletisim/`, `/en/contact/`, `/ar/contact/`
-   - Timing: After server confirms email was sent (not on form submit click)
+To track Google Ads conversions for WhatsApp and phone clicks:
 
-### GTM Configuration (Optional)
+1. **Create Click Triggers in GTM:**
+   - Trigger Type: Click - All Elements
+   - Condition: Click Element → matches CSS selector → `[data-track="whatsapp"]`
+   - Repeat for `[data-track="call"]`
 
-In your GTM container, you can also configure:
-- **GA4 Configuration Tag**: Measurement ID `G-TC9GJP3GLT`
+2. **Create Google Ads Conversion Tags:**
+   - Tag Type: Google Ads Conversion Tracking
+   - Conversion ID: `AW-17854412453`
+   - Conversion Label: (get from Google Ads)
+   - Attach the corresponding trigger
 
 ### DataLayer Events
 
-The site pushes the following events to `dataLayer`:
+The site pushes the following events to `dataLayer` for GTM:
 
-1. **lead_click**: Fires when users click lead CTAs (call, WhatsApp, quote buttons)
+1. **cta_click**: Fires when users click CTAs (call, WhatsApp, quote buttons)
+   - Properties: `cta_type` (whatsapp/call/quote), `lang`, `page`
+   - Use in GTM: Create custom event triggers on `cta_click`
+
+2. **lead_submit**: Fires when forms are submitted (not on success, just on submit)
    - Properties: `lead_type`, `lang`, `page`
 
-2. **lead_submit**: Fires when quote forms are submitted
-   - Properties: `lead_type`, `lang`, `page`
+3. **form_success**: Fires ONLY when contact form email is successfully sent
+   - Properties: `form_type: 'contact'`, `lang`, `page`
+   - Use this for Google Ads form submission conversion (success-based)
 
-3. **lead_conversion**: Fires on thank-you pages (once per page load)
+4. **lead_conversion**: Fires on thank-you pages (once per page load)
    - Properties: `lead_type: 'quote'`, `lang`, `page`
    - Pages: `/teşekkürler/`, `/en/thank-you/`, `/ar/thank-you/`
 
@@ -168,20 +160,11 @@ The site pushes the following events to `dataLayer`:
 1. Install [Tag Assistant](https://tagassistant.google.com/)
 2. Visit any page on the site
 3. Verify:
-   - ✅ **Single** `page_view` event (not double)
-   - ✅ `lead_click` appears when clicking CTAs
-   - ✅ `lead_submit` appears when submitting forms
+   - ✅ GTM container loads (GTM-MXT449F9)
+   - ✅ `cta_click` appears when clicking CTAs
+   - ✅ `form_success` appears after successful form submission
    - ✅ `lead_conversion` appears on thank-you pages
-
-### Google Ads Conversion Setup
-
-**Recommended**: Use GTM to trigger Google Ads conversions on `lead_conversion` event:
-- Create a trigger in GTM: Event = `lead_conversion`
-- Create a Google Ads Conversion Tag in GTM
-- Attach the trigger to the tag
-
-**Alternative**: If using direct conversion URLs, update your conversion rules:
-- Old: `/iletisim-tabela/` → New: `/iletisim/` OR better: `/teşekkürler/` (TR), `/en/thank-you/` (EN), `/ar/thank-you/` (AR)
+   - ✅ No duplicate page views or double tracking
 
 ## Deployment
 
@@ -216,14 +199,15 @@ pnpm run build
    - `api/contact.php` should be accessible at `https://a2reklam.com/api/contact.php`
 
 4. **Test Critical Features:**
-   - Phone call button (should track conversion before dialing)
-   - WhatsApp button (should track conversion before opening)
-   - Contact form submission (should send email and track conversion)
+   - Phone call button (should push `cta_click` event to GTM)
+   - WhatsApp button (should push `cta_click` event to GTM)
+   - Contact form submission (should send email and push `form_success` event)
    - Gallery lightbox (GLightbox with swipe/keyboard support)
 
-5. **Google Ads Conversion Labels:**
-   - If you haven't already, update `src/config/ads.ts` with real conversion labels
-   - Rebuild and redeploy if labels were updated
+5. **Configure GTM:**
+   - Set up Google Ads conversion tags inside GTM
+   - Use `[data-track="whatsapp"]` and `[data-track="call"]` as trigger selectors
+   - Use `form_success` custom event for form conversion tracking
 
 **No server-side runtime needed** - everything is static HTML/CSS/JS except for the PHP email endpoint.
 
