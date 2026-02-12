@@ -1,3 +1,4 @@
+```markdown
 # A2 Reklam Astro Rebuild
 
 [![Build](https://github.com/OmerYasirOnal/a2reklam-website/actions/workflows/build.yml/badge.svg)](https://github.com/OmerYasirOnal/a2reklam-website/actions/workflows/build.yml)
@@ -9,6 +10,8 @@ Modern multilingual (TR/EN/AR) static-first website for a2reklam.com, built with
 **Requirements:**
 - Node.js 20.x
 - pnpm 10.x (`npm install -g pnpm`)
+
+### Installation
 
 1. Install dependencies:
    ```bash
@@ -214,19 +217,4 @@ pnpm run build
 ### Environment Variables (Optional)
 - `PUBLIC_FORM_ENDPOINT`: Form submission endpoint (Formspree/Getform)
   - If not set, forms fall back to mailto/WhatsApp
-  - Set in `.env` during build: `PUBLIC_FORM_ENDPOINT="https://formspree.io/f/your-id"`
-
-## Key Directories
-
-- `src/content/`: Markdown content for services, districts, and blog.
-- `src/components/`: Reusable UI components.
-- `public/assets/img/demo/`: Demo images tracked in git.
-- `public/brand/`: Brand source assets used for icons.
-- `scripts/`: Local automation scripts.
-
-## Search Console Checklist
-
-- Verify the domain property.
-- Submit `https://a2reklam.com/sitemap-index.xml`.
-- Confirm canonical + hreflang tags after launch.
-- Monitor coverage and 404s after go-live.
+  - Set in `.env` during build: `PUBLIC_FORM_ENDPOINT="https://formspree.io/f/your-id
