@@ -7,6 +7,10 @@ import rehypeRemoveFirstH1 from './src/utils/rehype-remove-first-h1.mjs';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://a2reklam.com',
+  server: {
+    host: '0.0.0.0',
+    port: 4321,
+  },
   integrations: [
     tailwind({
       applyBaseStyles: false,

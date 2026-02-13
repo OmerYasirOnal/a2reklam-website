@@ -1,0 +1,75 @@
+================================================================================
+COPY-PASTE READY: .HTACCESS SITEMAP REDIRECTS
+================================================================================
+
+IMPORTANT: These redirects are already included in .htaccess-fixed file.
+If editing an existing .htaccess, add this block BEFORE mod_rewrite rules.
+
+================================================================================
+SECTION: LEGACY WORDPRESS REDIRECTS
+================================================================================
+
+<IfModule mod_alias.c>
+  # Sitemap naming standardization (WordPress → Astro)
+  Redirect 301 /sitemap.xml /sitemap-index.xml
+  Redirect 301 /sitemap_index.xml /sitemap-index.xml
+  Redirect 301 /page-sitemap.xml /sitemap-0.xml
+  Redirect 301 /post-sitemap.xml /sitemap-0.xml
+
+  # Legacy page redirects
+  Redirect 301 /iletisim-tabela/ /iletisim/
+  Redirect 301 /hakkinda/ /hakkimizda/
+  Redirect 301 /tabela-cesitleri/ /hizmetler/
+</IfModule>
+
+================================================================================
+VERIFICATION COMMANDS
+================================================================================
+
+# Test sitemap redirects
+curl -I https://a2reklam.com/sitemap.xml
+# Expected: HTTP 301 to /sitemap-index.xml
+
+curl -I https://a2reklam.com/sitemap_index.xml
+# Expected: HTTP 301 to /sitemap-index.xml
+
+# Verify final sitemap loads
+curl -s https://a2reklam.com/sitemap-index.xml | head -3
+# Expected: XML with <sitemapindex>
+
+================================================================================
+ADDITIONAL CONTEXT
+================================================================================
+
+Why these redirects?
+
+1. /sitemap.xml → /sitemap-index.xml
+   WordPress generated /sitemap.xml (single file)
+   Astro generates /sitemap-index.xml (index + sitemaps pattern)
+   Google may still request /sitemap.xml from cache
+
+2. /sitemap_index.xml → /sitemap-index.xml
+   WordPress used underscore naming convention
+   Astro uses hyphen (modern standard)
+   Ensures all variants redirect to canonical URL
+
+3. /page-sitemap.xml → /sitemap-0.xml
+   WordPress split sitemaps by type
+   Astro consolidates into numbered sitemaps
+   Catches requests for old page-specific sitemaps
+
+4. /post-sitemap.xml → /sitemap-0.xml
+   Same pattern for post-type sitemaps
+
+================================================================================
+DEPLOYMENT CHECKLIST
+================================================================================
+
+[ ] Copy these redirects to your .htaccess (or use .htaccess-fixed)
+[ ] Verify <IfModule mod_alias.c> block is present in final .htaccess
+[ ] Upload .htaccess to cPanel /public_html/
+[ ] Run curl verification commands to confirm redirects work
+[ ] Monitor cPanel error logs for any syntax issues
+[ ] Submit new sitemap to Google Search Console within 24 hours
+
+================================================================================

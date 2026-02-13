@@ -17,6 +17,10 @@ pnpm-debug.log*
 *.rar
 *.7z
 
+# Lock files — npm kullanılıyor, pnpm/yarn lock gereksiz
+pnpm-lock.yaml
+yarn.lock
+
 # Private assets (local-only source archive)
 RES*/
 
@@ -29,3 +33,6 @@ public/assets/img/generated/
 
 # Private/full manifest (demo manifest is tracked)
 public/images-manifest.json
+
+# Binary / office docs (audit dokümanları docs/ içinde .docx hariç)
+*.docx
