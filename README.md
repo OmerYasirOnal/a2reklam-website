@@ -1,3 +1,4 @@
+```markdown
 # A2 Reklam Astro Rebuild
 
 [![Build](https://github.com/OmerYasirOnal/a2reklam-website/actions/workflows/build.yml/badge.svg)](https://github.com/OmerYasirOnal/a2reklam-website/actions/workflows/build.yml)
@@ -230,3 +231,4 @@ pnpm run build
 - Submit `https://a2reklam.com/sitemap-index.xml`.
 - Confirm canonical + hreflang tags after launch.
 - Monitor coverage and 404s after go-live.
+```
