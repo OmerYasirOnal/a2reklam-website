@@ -1,0 +1,8 @@
+old_url,new_url,reason,status_code
+/sitemap.xml,/sitemap-index.xml,Sitemap naming standardization (WP→Astro),301
+/sitemap_index.xml,/sitemap-index.xml,Sitemap naming standardization (underscore→dash),301
+/page-sitemap.xml,/sitemap-0.xml,Legacy WP page sitemap consolidation,301
+/post-sitemap.xml,/sitemap-0.xml,Legacy WP post sitemap consolidation,301
+/iletisim-tabela/,/iletisim/,Page renamed and consolidated,301
+/hakkinda/,/hakkimizda/,Page renamed (spelling standardization),301
+/tabela-cesitleri/,/hizmetler/,Category consolidated into services,301

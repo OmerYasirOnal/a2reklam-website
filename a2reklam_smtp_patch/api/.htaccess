@@ -1,0 +1,83 @@
+# A2 Reklam API Security Configuration
+# Apache 2.4+
+
+# Disable directory listing
+Options -Indexes
+
+# Deny access to sensitive files and directories
+<IfModule mod_authz_core.c>
+    # Block access to log files
+    <FilesMatch "\.log$">
+        Require all denied
+    </FilesMatch>
+
+    # Block access to JSON data files (rate limiting)
+    <FilesMatch "\.json$">
+        Require all denied
+    </FilesMatch>
+
+    # Block access to PHP config files (extra protection)
+    <FilesMatch "config\.php$">
+        Require all denied
+    </FilesMatch>
+
+    # Block access to _lib directory
+    <Files "_lib">
+        Require all denied
+    </Files>
+
+    # Block access to _data directory
+    <Files "_data">
+        Require all denied
+    </Files>
+</IfModule>
+
+# Fallback for Apache 2.2
+<IfModule !mod_authz_core.c>
+    <FilesMatch "\.log$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+    <FilesMatch "\.json$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+
+    <FilesMatch "config\.php$">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+</IfModule>
+
+# Block access to vendor directory (PHPMailer source)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Deny direct access to vendor directory
+    RewriteRule ^vendor(/.*)?$ - [F,L]
+
+    # Deny direct access to _lib directory
+    RewriteRule ^_lib(/.*)?$ - [F,L]
+
+    # Deny direct access to _data directory
+    RewriteRule ^_data(/.*)?$ - [F,L]
+</IfModule>
+
+# Additional security headers for API responses
+<IfModule mod_headers.c>
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+
+    # XSS Protection
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Prevent clickjacking
+    Header always set X-Frame-Options "DENY"
+</IfModule>
+
+# Limit request methods to GET and POST only
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_METHOD} !^(GET|POST|OPTIONS)$
+    RewriteRule .* - [F,L]
+</IfModule>
