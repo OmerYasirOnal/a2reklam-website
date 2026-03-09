@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Gallery from '../common/Gallery.astro';
+import FAQ from '../seo/FAQ.astro';
+import Breadcrumb from '../seo/Breadcrumb.astro';
 import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt, getCategoryLabel } from '../../utils/imageSeo';
 
@@ -46,8 +48,8 @@ const filterStyles = categories
 
 const content = {
   tr: {
-    metaTitle: 'Galeri | A2 Reklam Tabela Uygulamaları',
-    metaDescription: 'A2 Reklam proje galerisi: cephe tabela, totem, araç giydirme ve özel uygulamalar.',
+    metaTitle: 'Tabela Galeri | İstanbul Tabela İmalatı Örnekleri - A2 Reklam',
+    metaDescription: 'A2 Reklam tabela galeri: ışıklı tabela, kutu harf, cephe tabelası, totem tabela, araç giydirme ve özel imalat proje örnekleri. İstanbul geneli uygulamalar.',
     title: 'Galeri',
     subtitle: 'Tabela ve reklam projelerimizin seçilmiş örnekleri.',
     filterLabel: 'Kategoriler',
@@ -58,8 +60,8 @@ const content = {
     gallery: 'Galeri',
   },
   en: {
-    metaTitle: 'Gallery | A2 Advertising Signage Projects',
-    metaDescription: 'Browse A2 Advertising gallery: facade signage, totems, vehicle wraps, and custom signage.',
+    metaTitle: 'Signage Gallery | Istanbul Signage Projects - A2 Advertising',
+    metaDescription: 'Browse A2 Advertising gallery: facade signage, channel letters, totems, vehicle wraps and custom signage projects across Istanbul.',
     title: 'Gallery',
     subtitle: 'Selected signage and branding projects.',
     filterLabel: 'Categories',
@@ -71,6 +73,38 @@ const content = {
   },
 };
 
+const galleryFaqs = lang === 'tr' ? [
+  {
+    question: "Tabela projelerinin fotoğraflarını görebilir miyim?",
+    answer: "Evet, bu sayfada A2 Reklam tarafından İstanbul genelinde gerçekleştirilen tabela projelerinin fotoğraflarını inceleyebilirsiniz. Cephe tabelası, ışıklı tabela, kutu harf, totem tabela, araç giydirme ve özel imalat kategorilerinde yüzlerce proje örneği mevcuttur."
+  },
+  {
+    question: "Galerideki tabelalar hangi malzemelerden yapılmış?",
+    answer: "Galerimizde paslanmaz çelik, alüminyum, pleksiglas, kompozit panel ve PVC gibi farklı malzemelerden üretilmiş tabelalar yer almaktadır. Her proje müşterinin ihtiyacına ve bütçesine göre en uygun malzeme ile tasarlanmıştır."
+  },
+  {
+    question: "Benzer bir tabela projesi için teklif alabilir miyim?",
+    answer: "Elbette! Galerimizde beğendiğiniz herhangi bir projenin benzerini sizin için üretebiliriz. WhatsApp üzerinden veya iletişim formu aracılığıyla beğendiğiniz görseli paylaşarak ücretsiz teklif alabilirsiniz. Keşif ve ölçü hizmeti ücretsizdir."
+  },
+  {
+    question: "Tabela montaj fotoğrafları gerçek projelerden mi?",
+    answer: "Evet, galerideki tüm fotoğraflar A2 Reklam ekibinin İstanbul'un çeşitli ilçelerinde gerçekleştirdiği montaj ve imalat projelerine aittir. Her görsel, teslim edilen gerçek çalışmaları yansıtmaktadır."
+  },
+] : [
+  {
+    question: "Can I see photos of your signage projects?",
+    answer: "Yes, this page showcases signage projects completed by A2 Advertising across Istanbul. You can browse hundreds of examples in categories including facade signage, illuminated signs, channel letters, totem signs, vehicle wraps and custom fabrication."
+  },
+  {
+    question: "What materials are used in the gallery projects?",
+    answer: "Our gallery features signs made from stainless steel, aluminum, acrylic (plexiglass), composite panels and PVC. Each project uses the most suitable material based on the client's needs and budget."
+  },
+  {
+    question: "Can I get a quote for a similar signage project?",
+    answer: "Absolutely! We can produce a similar version of any project you see in our gallery. Share the image you like via WhatsApp or our contact form to receive a free quote. Site survey and measurement services are complimentary."
+  },
+];
+
 const t = content[lang];
 
 const breadcrumbs = [
@@ -80,6 +114,9 @@ const breadcrumbs = [
 ---
 
 <Layout title={t.metaTitle} description={t.metaDescription} lang={lang} breadcrumbs={breadcrumbs}>
+  <div class="container mx-auto px-4">
+    <Breadcrumb items={breadcrumbs.map(b => ({ name: b.name, url: b.item }))} />
+  </div>
   <section class="relative py-24 bg-secondary overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     <div class="container mx-auto px-4 relative z-10">
@@ -145,6 +182,54 @@ const breadcrumbs = [
       </div>
     </div>
   </section>
+
+  {/* SEO Content Section */}
+  {lang === 'tr' ? (
+    <section class="py-16 bg-secondary border-t border-white/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-heading font-bold text-2xl md:text-3xl text-white mb-6 text-center uppercase tracking-tight">
+            İstanbul'da <span class="text-primary">Tabela Uygulamaları</span> ve Projelerimiz
+          </h2>
+          <div class="prose prose-invert prose-sm md:prose-base max-w-none text-gray-400 leading-relaxed space-y-4">
+            <p>
+              <strong class="text-white">A2 Reklam</strong> olarak İstanbul genelinde gerçekleştirdiğimiz <strong class="text-white">tabela imalatı</strong> ve montaj projelerinin örneklerini bu galeride inceleyebilirsiniz. <strong class="text-white">Cephe tabelası</strong>, <strong class="text-white">ışıklı tabela</strong>, <strong class="text-white">kutu harf</strong>, <strong class="text-white">totem tabela</strong> ve <strong class="text-white">araç giydirme</strong> kategorilerindeki projelerimiz, farklı sektörlerdeki müşterilerimize sunduğumuz çözümlerin gerçek örnekleridir.
+            </p>
+            <p>
+              Her proje, müşterinin marka kimliğine uygun olarak özel tasarlanmakta ve CNC lazer kesim, LED aydınlatma ve PVD kaplama gibi modern üretim teknolojileri kullanılarak imal edilmektedir. Kağıthane'deki atölyemizden <strong class="text-white">Beşiktaş</strong>, <strong class="text-white">Şişli</strong>, <strong class="text-white">Kadıköy</strong>, <strong class="text-white">Levent</strong>, <strong class="text-white">Maslak</strong> ve İstanbul'un diğer tüm ilçelerine keşif, üretim ve montaj hizmeti sunmaktayız.
+            </p>
+            <p>
+              Galerimizde beğendiğiniz bir proje varsa benzerini sizin için de üretebiliriz. <a href="/iletisim/" class="text-primary hover:text-white transition-colors underline underline-offset-2">Ücretsiz keşif ve teklif</a> için bizimle iletişime geçin.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  ) : (
+    <section class="py-16 bg-secondary border-t border-white/5">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-heading font-bold text-2xl md:text-3xl text-white mb-6 text-center uppercase tracking-tight">
+            Our <span class="text-primary">Signage Projects</span> Across Istanbul
+          </h2>
+          <div class="prose prose-invert prose-sm md:prose-base max-w-none text-gray-400 leading-relaxed space-y-4">
+            <p>
+              Browse our portfolio of <strong class="text-white">signage manufacturing</strong> and installation projects completed across Istanbul. From <strong class="text-white">facade signs</strong> and <strong class="text-white">illuminated channel letters</strong> to <strong class="text-white">totem signs</strong> and <strong class="text-white">vehicle wraps</strong>, each project is custom-designed to match our client's brand identity.
+            </p>
+            <p>
+              If you see a project you like, we can create something similar for your business. <a href="/en/contact/" class="text-primary hover:text-white transition-colors underline underline-offset-2">Contact us</a> for a free site survey and quote.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* FAQ Section */}
+  <FAQ
+    faqs={galleryFaqs}
+    sectionTitle={lang === 'tr' ? 'Galeri Hakkında Sık Sorulan Sorular' : 'Gallery FAQ'}
+  />
 
   <script>
     (function() {
