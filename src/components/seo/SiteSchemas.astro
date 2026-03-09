@@ -1,0 +1,21 @@
+---
+/**
+ * SiteSchemas.astro — WebSite yapılandırılmış veri
+ * Layout.astro'da <head> içine ekleyin
+ *
+ * WebSite schema → @id referans sistemi ile LocalBusiness'a bağlı
+ * NOT: LocalBusiness schema zaten SEO.astro'da mevcut, burada yalnızca WebSite eklenir.
+ */
+---
+
+<!-- WebSite Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://a2reklam.com/#website",
+  "name": "A2 Reklam",
+  "url": "https://a2reklam.com",
+  "description": "İstanbul'da profesyonel tabela imalatı: ışıklı tabela, kutu harf, cephe tabelası, totem tabela ve dijital baskı hizmetleri.",
+  "publisher": { "@id": "https://a2reklam.com/#organization" },
+  "inLanguage": "tr-TR"
+})} />
