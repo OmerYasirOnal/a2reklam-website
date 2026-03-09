@@ -44,3 +44,6 @@ public/images-manifest.json
 
 # SMTP patch (deployed separately)
 a2reklam_smtp_patch/
+
+# Deploy credentials
+.env.deploy
