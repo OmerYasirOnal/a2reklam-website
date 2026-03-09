@@ -48,7 +48,7 @@ const videoGraph = videos.map((video) => ({
   uploadDate: video.uploadDate,
   duration: video.duration,
   contentUrl: `${baseUrl}${video.file}`,
-  embedUrl: `${baseUrl}${routePrefix}#video-${video.id}`,
+  embedUrl: `${baseUrl}/videolar/${video.id}/`,
   publisher: {
     '@type': 'Organization',
     name: 'A2 Reklam - Tabela ve Reklam Sistemleri',

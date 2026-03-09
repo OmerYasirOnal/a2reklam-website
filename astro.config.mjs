@@ -4,6 +4,30 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
 import rehypeRemoveFirstH1 from './src/utils/rehype-remove-first-h1.mjs';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+/** Append video-sitemap.xml reference to the generated sitemap-index.xml */
+function videoSitemapIndex() {
+  return {
+    name: 'video-sitemap-index',
+    hooks: {
+      'astro:build:done': ({ dir }) => {
+        const indexPath = join(dir.pathname, 'sitemap-index.xml');
+        try {
+          let xml = readFileSync(indexPath, 'utf-8');
+          if (!xml.includes('video-sitemap.xml')) {
+            xml = xml.replace(
+              '</sitemapindex>',
+              '<sitemap><loc>https://a2reklam.com/video-sitemap.xml</loc></sitemap></sitemapindex>'
+            );
+            writeFileSync(indexPath, xml, 'utf-8');
+          }
+        } catch { /* sitemap-index not found, skip */ }
+      },
+    },
+  };
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -56,6 +80,7 @@ export default defineConfig({
         return item;
       },
     }),
+    videoSitemapIndex(),
   ],
   markdown: {
     rehypePlugins: [rehypeRemoveFirstH1],
