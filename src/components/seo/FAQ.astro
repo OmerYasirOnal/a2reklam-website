@@ -1,0 +1,160 @@
+---
+/**
+ * FAQ.astro — Sık Sorulan Sorular bileşeni
+ * FAQPage schema ile birlikte gelir → AXS +15-20 puan
+ *
+ * Kullanım: Ana sayfada veya herhangi bir sayfada
+ * <FAQ />
+ *
+ * Veya özel sorularla:
+ * <FAQ faqs={customFaqs} sectionTitle="Işıklı Tabela SSS" />
+ */
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs?: FAQItem[];
+  sectionTitle?: string;
+  sectionId?: string;
+}
+
+const defaultFaqs: FAQItem[] = [
+  {
+    question: "Tabela imalatı ne kadar sürer?",
+    answer: "Tabela imalat süresi projenin kapsamına göre 3 ile 7 iş günü arasında değişir. Standart ışıklı tabelalar 3-5 iş gününde, özel tasarım kutu harf ve totem tabelalar ise 5-7 iş gününde teslim edilir. Acil projeler için hızlandırılmış üretim seçeneğimiz de mevcuttur. Keşif ve ölçü sonrası net süre bilgisi verilmektedir."
+  },
+  {
+    question: "Kutu harf tabela nedir?",
+    answer: "Kutu harf tabela, alüminyum veya paslanmaz çelik kasadan imal edilen, iç kısmında LED aydınlatma bulunan üç boyutlu harf tabeladır. İşletmelerin cephe ve iç mekan markalaşmasında en çok tercih edilen tabela türüdür. Paslanmaz, krom, pleksi ve alüminyum olmak üzere farklı malzeme seçenekleri mevcuttur. Fiyatlar harf boyutuna ve malzemeye göre cm başına 400-800 TL arasında değişir."
+  },
+  {
+    question: "Işıklı tabela fiyatları neye göre değişir?",
+    answer: "Işıklı tabela fiyatlarını belirleyen başlıca faktörler tabela boyutu, kullanılan malzeme türü, LED aydınlatma sistemi kalitesi ve montaj koşullarıdır. Küçük bir ışıklı tabela 3.000 TL'den başlarken, büyük cephe uygulamaları 50.000 TL ve üzerine çıkabilir. A2 Reklam olarak ücretsiz keşif ve fiyat teklifi sunmaktayız."
+  },
+  {
+    question: "Cephe tabelası montajı nasıl yapılır?",
+    answer: "Cephe tabelası montajı dört aşamadan oluşur: önce yerinde keşif ve ölçü alınır, ardından tasarım onayı sonrası üretim başlar, montaj ekibimiz çelik konstrüksiyon veya doğrudan cepheye sabitleme yöntemiyle kurulumu gerçekleştirir ve son olarak elektrik bağlantısı yapılarak test edilir. Tüm montajlarımız iş güvenliği standartlarına uygun şekilde yapılmaktadır."
+  },
+  {
+    question: "Hangi bölgelere hizmet veriyorsunuz?",
+    answer: "A2 Reklam olarak İstanbul'un tüm ilçelerine tabela imalatı ve montaj hizmeti vermekteyiz. Atölyemiz Kağıthane'de bulunmakta olup Beşiktaş, Şişli, Levent, Maslak, Sarıyer, Beyoğlu, Kadıköy, Ataşehir ve diğer tüm ilçelere ücretsiz keşif ve montaj hizmeti sunmaktayız."
+  },
+  {
+    question: "Tabela için belediye izni gerekir mi?",
+    answer: "Evet, İstanbul'da dış cephe tabelaları için ilgili belediyeden ilan-reklam ruhsatı alınması gerekmektedir. Ruhsat başvuru süreci belediyeye göre değişmekle birlikte genellikle 5-15 iş günü sürer. A2 Reklam olarak ruhsat başvuru sürecinde müşterilerimize rehberlik etmekteyiz. Ruhsatsız tabela kullanımı para cezasına neden olabilir."
+  },
+];
+
+const { faqs = defaultFaqs, sectionTitle = "Sık Sorulan Sorular", sectionId = "sss" } = Astro.props;
+
+// FAQPage schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer,
+    }
+  }))
+};
+---
+
+<section class="faq-section" id={sectionId}>
+  <div class="faq-container">
+    <h2 class="faq-title">{sectionTitle}</h2>
+    <div class="faq-list">
+      {faqs.map((faq, i) => (
+        <details class="faq-item" data-index={i}>
+          <summary class="faq-question">
+            <h3>{faq.question}</h3>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            <p>{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<style>
+  .faq-section {
+    padding: 4rem 0;
+  }
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .faq-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .faq-item {
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .faq-item:hover {
+    border-color: rgba(255,255,255,0.2);
+  }
+  .faq-item[open] {
+    border-color: var(--color-primary, #C9A227);
+  }
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    gap: 1rem;
+  }
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+  .faq-question h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .faq-chevron {
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    opacity: 0.5;
+  }
+  .faq-item[open] .faq-chevron {
+    transform: rotate(180deg);
+    opacity: 1;
+  }
+  .faq-answer {
+    padding: 0 1.5rem 1.25rem;
+  }
+  .faq-answer p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    opacity: 0.8;
+    margin: 0;
+  }
+</style>

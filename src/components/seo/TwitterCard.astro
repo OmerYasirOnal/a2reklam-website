@@ -1,0 +1,21 @@
+---
+/**
+ * TwitterCard.astro — Twitter Card meta tag'leri
+ * NOT: SEO.astro zaten Twitter Card meta tag'lerini içerir.
+ * Bu bileşen yalnızca SEO.astro kullanılmayan sayfalarda bağımsız kullanım içindir.
+ */
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const { title, description, image } = Astro.props;
+const imageUrl = image ? new URL(image, Astro.site).href : undefined;
+---
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{imageUrl && <meta name="twitter:image" content={imageUrl} />}

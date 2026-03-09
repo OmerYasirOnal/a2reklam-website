@@ -1,29 +1,36 @@
-# A2 Reklam Astro Rebuild
+# A2 Reklam - Kurumsal Web Sitesi
 
 [![Build](https://github.com/OmerYasirOnal/a2reklam-website/actions/workflows/build.yml/badge.svg)](https://github.com/OmerYasirOnal/a2reklam-website/actions/workflows/build.yml)
 
-Modern multilingual (TR/EN/AR) static-first website for a2reklam.com, built with Astro 5.
+Istanbul merkezli profesyonel tabela imalati ve reklam cozumleri sunan A2 Reklam'in kurumsal web sitesi. Astro 5 ile olusturulmus, Vercel uzerinde deploy edilen statik site.
 
-## Quick Start
+## Tech Stack
 
-**Requirements:**
+- **Framework:** Astro v5 + Tailwind CSS v3 + React (minimal)
+- **Hosting:** Vercel (static) / cPanel (legacy)
+- **SEO:** Schema.org (LocalBusiness, WebSite, FAQPage, BreadcrumbList, Service, BlogPosting)
+- **Analytics:** Google Tag Manager (GTM-MXT449F9), GA4 (G-TC9GJP3GLT)
+- **Form:** PHPMailer SMTP (harici sunucu)
+
+## Kurulum
+
+**Gereksinimler:**
 - Node.js 20.x
-- pnpm 10.x (`npm install -g pnpm`)
+- npm
 
-1. Install dependencies:
-   ```bash
-   pnpm install --frozen-lockfile
-   ```
+```bash
+# Bagimliliklari yukle
+npm install
 
-2. Develop locally:
-   ```bash
-   pnpm run dev
-   ```
+# Gelistirme sunucusunu baslat
+npm run dev
 
-3. Repo safety check (prevents private assets from being tracked):
-   ```bash
-   pnpm run repo:safety
-   ```
+# Production build
+npm run build
+
+# Build onizleme
+npm run preview
+```
 
 ## Demo Assets vs Production Assets
 
@@ -176,59 +183,66 @@ The site pushes the following events to `dataLayer` for GTM:
 
 ## Deployment
 
+### Vercel Deploy (Onerilen)
+
+1. GitHub reposunu Vercel'e baglayin
+2. Framework: **Astro** otomatik algilanir
+3. Build komutu: `npm run build`
+4. Output dizini: Otomatik (`@astrojs/vercel` adapter)
+5. Gerekli ortam degiskenlerini Vercel dashboard'dan ekleyin
+6. Deploy!
+
+`vercel.json` dosyasi guvenlik header'lari, cache ayarlari ve 301 redirect'leri icerir.
+
+### Ortam Degiskenleri
+
+| Degisken | Aciklama | Zorunlu |
+|----------|----------|---------|
+| `PUBLIC_GTM_CONTAINER_ID` | GTM Container ID | Hayir (varsayilan: GTM-MXT449F9) |
+| `PUBLIC_GA4_MEASUREMENT_ID` | GA4 Measurement ID | Hayir (varsayilan: G-TC9GJP3GLT) |
+
+> Not: Tracking ID'leri `src/consts.ts` icinde hardcoded. Vercel'de override etmek icin `import.meta.env` kullanilabilir.
+
+### cPanel Deploy (Legacy)
+
+```bash
+npm run deploy    # FTP upload + server extract
+```
+
+`.env.deploy` dosyasinda FTP bilgileri saklanir (gitignored).
+
 ### Build Output
 ```bash
-pnpm run build
+npm run build
 ```
-- Output: `dist/` folder (341 static HTML pages)
-- Dependencies: None (static HTML/CSS/JS only)
-- Node version used: 20.x
-- Package manager: pnpm 10.x
+- Output: `dist/` + `.vercel/output/` (174+ statik HTML sayfa)
+- Node version: 20.x
 
-### Deploy to a2reklam.com (cPanel)
+## Proje Yapisi
 
-**Step-by-step deployment:**
-
-1. **Build the site locally:**
-   ```bash
-   pnpm run build
-   ```
-   This creates the `dist/` folder with all static files.
-
-2. **Upload to cPanel:**
-   - Connect via FTP/SFTP or use cPanel File Manager
-   - Upload entire `dist/` folder contents to `public_html/`
-   - Important: Upload `public/api/contact.php` to `public_html/api/contact.php`
-     - This PHP file handles contact form email submissions
-     - Ensure the `/api/` directory exists in `public_html/`
-
-3. **Verify Required Files:**
-   - `.htaccess` (for URL rewriting) should be in `public_html/`
-   - `api/contact.php` should be accessible at `https://a2reklam.com/api/contact.php`
-
-4. **Test Critical Features:**
-   - Phone call button (should push `cta_click` event to GTM)
-   - WhatsApp button (should push `cta_click` event to GTM)
-   - Contact form submission (should send email and push `form_success` event)
-   - Gallery lightbox (GLightbox with swipe/keyboard support)
-
-5. **Configure GTM:**
-   - Set up Google Ads conversion tags inside GTM
-   - Use `[data-track="whatsapp"]` and `[data-track="call"]` as trigger selectors
-   - Use `form_success` custom event for form conversion tracking
-   - Create a custom event trigger for `outbound_click` to monitor off-site link performance
-
-**No server-side runtime needed** - everything is static HTML/CSS/JS except for the PHP email endpoint.
-
-### Environment Variables (Optional)
-- `PUBLIC_FORM_ENDPOINT`: Form submission endpoint (Formspree/Getform)
-  - If not set, forms fall back to mailto/WhatsApp
-  - Set in `.env` during build: `PUBLIC_FORM_ENDPOINT="https://formspree.io/f/your-id"`
+```
+src/
+├── components/
+│   ├── common/       # Header, Footer, SEO, CookieConsent, Tracking
+│   ├── landing/      # Hero, ServicesGrid, KPI, Reviews, Gallery
+│   ├── seo/          # FAQ, Breadcrumb, SiteSchemas, ServiceSchema
+│   └── ui/           # UI bilesenleri
+├── content/
+│   ├── blog/         # 66 blog yazisi (Markdown)
+│   ├── services/     # 18 hizmet turu
+│   ├── districts/    # 44 Istanbul ilcesi
+│   └── tabela_rehberi/ # 22 rehber
+├── layouts/          # Layout.astro
+├── pages/            # Route'lar
+├── styles/           # Global CSS
+└── utils/            # Yardimci fonksiyonlar
+```
 
 ## Key Directories
 
 - `src/content/`: Markdown content for services, districts, and blog.
 - `src/components/`: Reusable UI components.
+- `src/components/seo/`: SEO components (FAQ, Breadcrumb, SiteSchemas, ServiceSchema).
 - `public/assets/img/demo/`: Demo images tracked in git.
 - `public/brand/`: Brand source assets used for icons.
 - `scripts/`: Local automation scripts.

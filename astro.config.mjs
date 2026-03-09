@@ -2,11 +2,14 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
+import vercel from '@astrojs/vercel';
 import rehypeRemoveFirstH1 from './src/utils/rehype-remove-first-h1.mjs';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://a2reklam.com',
+  output: 'static',
+  adapter: vercel(),
   server: {
     host: '0.0.0.0',
     port: 4321,

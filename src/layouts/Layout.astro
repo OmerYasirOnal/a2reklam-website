@@ -9,6 +9,7 @@ import BackToTopButton from '../components/common/BackToTopButton.astro';
 import CookieConsent from '../components/common/CookieConsent.astro';
 import Tracking from '../components/common/Tracking.astro';
 import TrackingEvents from '../components/common/TrackingEvents.astro';
+import SiteSchemas from '../components/seo/SiteSchemas.astro';
 import { buildWhatsAppLink, buildWhatsAppMessage, sanitizePageTitle } from '../utils/whatsapp';
 import '../styles/global.css';
 
@@ -96,6 +97,7 @@ const quoteLink =
       breadcrumbs={breadcrumbs}
       faq={faq}
     />
+    <SiteSchemas />
 	</head>
 	<body class="bg-secondary text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-primary selection:text-white pb-12 md:pb-0">
     {TRACKING_ENABLED && (

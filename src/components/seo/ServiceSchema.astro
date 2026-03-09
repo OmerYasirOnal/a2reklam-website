@@ -1,0 +1,74 @@
+---
+/**
+ * ServiceSchema.astro — Hizmet sayfaları için Service schema
+ * Her hizmet sayfasına ekleyin: <ServiceSchema ... />
+ *
+ * @id referansı ile LocalBusiness'a bağlanır
+ */
+
+interface Props {
+  serviceName: string;
+  serviceType: string;
+  description: string;
+  slug: string;
+  image?: string;
+  lowPrice?: string;
+  highPrice?: string;
+  priceUnit?: string;
+  areaServed?: string[];
+}
+
+const {
+  serviceName, serviceType, description, slug,
+  image = "https://a2reklam.com/brand/a2reklam-logo.png",
+  lowPrice, highPrice, priceUnit = "adet başına",
+  areaServed = ["İstanbul"]
+} = Astro.props;
+
+const pageUrl = `https://a2reklam.com/hizmetler/${slug}/`;
+
+const schema: any = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      "name": serviceName,
+      "serviceType": serviceType,
+      "description": description,
+      "image": [image],
+      "provider": { "@id": "https://a2reklam.com/#organization" },
+      "areaServed": areaServed.map(area => ({
+        "@type": area === "İstanbul" ? "City" : "AdministrativeArea",
+        "name": area
+      })),
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "url": pageUrl,
+      "name": `${serviceName} | A2 Reklam`,
+      "isPartOf": { "@id": "https://a2reklam.com/#website" },
+      "about": { "@id": `${pageUrl}#service` }
+    }
+  ]
+};
+
+// Fiyat bilgisi varsa ekle
+if (lowPrice && highPrice) {
+  schema["@graph"][0].offers = {
+    "@type": "AggregateOffer",
+    "priceCurrency": "TRY",
+    "lowPrice": lowPrice,
+    "highPrice": highPrice,
+    "priceSpecification": {
+      "@type": "UnitPriceSpecification",
+      "price": lowPrice,
+      "priceCurrency": "TRY",
+      "unitText": priceUnit
+    }
+  };
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
