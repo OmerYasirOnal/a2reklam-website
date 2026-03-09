@@ -1,3 +1,25 @@
+# Hero Redesign: Diagonal Split Layout — Implementation Plan
+
+> **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
+
+**Goal:** Replace the full-width image slider hero with a modern diagonal split layout: typewriter-animated text (left) + looping video showcase (right).
+
+**Architecture:** Single Astro component rewrite (`Hero.astro`). Left side has dark bg with text content + CTA buttons. Right side uses CSS `clip-path` for diagonal video area. Typewriter animation is vanilla JS (no library). Fully bilingual (TR/EN), responsive, accessible.
+
+**Tech Stack:** Astro, Tailwind CSS, vanilla JS (typewriter), HTML5 `<video>`
+
+---
+
+### Task 1: Rewrite Hero.astro — Structure & Content
+
+**Files:**
+- Modify: `src/components/landing/Hero.astro` (full rewrite)
+
+**Step 1: Replace the entire Hero.astro with new diagonal split structure**
+
+Replace the full contents of `src/components/landing/Hero.astro` with this:
+
+```astro
 ---
 import { PHONE_TEL, WHATSAPP_LINK } from '../../consts';
 
@@ -55,11 +77,11 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
     <!-- Title with typewriter -->
     <h1 class="hero-anim hero-anim-title font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white mb-6">
       {t.titleBefore}{' '}
-      <span class="hero-typewriter-wrapper inline-flex items-baseline">
+      <span class="hero-typewriter-wrapper">
         <span id="hero-typewriter" class="text-primary">{t.words[0]}</span>
         <span class="hero-cursor" aria-hidden="true">|</span>
       </span>
-      <br />
+      <br class="hidden sm:block" />
       {t.titleAfter}
     </h1>
 
@@ -99,7 +121,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
     </div>
   </div>
 
-  <!-- RIGHT SIDE: Video with diagonal clip (desktop only) -->
+  <!-- RIGHT SIDE: Video with diagonal clip -->
   <div class="hero-right hidden lg:block absolute lg:relative w-full lg:w-[45%] h-full min-h-[75vh]">
     <!-- Diagonal gold accent line -->
     <div class="hero-diagonal-accent" aria-hidden="true"></div>
@@ -117,12 +139,12 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
-      <!-- Subtle dark overlay for depth -->
-      <div class="absolute inset-0 bg-black/10 z-10"></div>
+      <!-- Subtle dark overlay -->
+      <div class="absolute inset-0 bg-black/15 z-10"></div>
     </div>
   </div>
 
-  <!-- MOBILE: Video background (shown below lg) -->
+  <!-- MOBILE VIDEO: shown only on mobile/tablet -->
   <div class="hero-mobile-video lg:hidden absolute inset-0 z-0">
     <video
       autoplay
@@ -146,12 +168,13 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
   if (!el) return;
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) return;
+  if (prefersReducedMotion) return; // Leave first word static
 
   const words = JSON.parse(wordsJson);
   let wordIndex = 0;
   let charIndex = words[0].length;
   let isDeleting = false;
+  let timeout = null;
 
   const TYPE_SPEED = 80;
   const DELETE_SPEED = 50;
@@ -162,30 +185,34 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
     const currentWord = words[wordIndex];
 
     if (!isDeleting) {
+      // Typing
       el.textContent = currentWord.slice(0, charIndex);
       charIndex++;
 
       if (charIndex > currentWord.length) {
+        // Done typing — pause then start deleting
         isDeleting = true;
-        setTimeout(tick, PAUSE_AFTER_TYPE);
+        timeout = setTimeout(tick, PAUSE_AFTER_TYPE);
         return;
       }
-      setTimeout(tick, TYPE_SPEED);
+      timeout = setTimeout(tick, TYPE_SPEED);
     } else {
+      // Deleting
       charIndex--;
       el.textContent = currentWord.slice(0, charIndex);
 
       if (charIndex === 0) {
+        // Done deleting — move to next word
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(tick, PAUSE_AFTER_DELETE);
+        timeout = setTimeout(tick, PAUSE_AFTER_DELETE);
         return;
       }
-      setTimeout(tick, DELETE_SPEED);
+      timeout = setTimeout(tick, DELETE_SPEED);
     }
   }
 
-  // Start after initial display pause
+  // Start after initial pause
   setTimeout(() => {
     isDeleting = true;
     tick();
@@ -202,11 +229,11 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
   .hero-cursor {
     color: #C9A227;
     font-weight: 300;
-    animation: heroBlink 1s step-end infinite;
-    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+    margin-left: 1px;
   }
 
-  @keyframes heroBlink {
+  @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
   }
@@ -234,6 +261,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
     width: 100%;
     z-index: 20;
     pointer-events: none;
+    background: none;
   }
 
   .hero-diagonal-accent::before {
@@ -246,34 +274,18 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
     clip-path: polygon(15% 0, calc(15% + 3px) 0, 3px 100%, 0% 100%);
     background: linear-gradient(
       to bottom,
-      rgba(201, 162, 39, 0.5) 0%,
-      rgba(201, 162, 39, 1) 50%,
-      rgba(201, 162, 39, 0.5) 100%
+      rgba(201, 162, 39, 0.6) 0%,
+      rgba(201, 162, 39, 0.9) 50%,
+      rgba(201, 162, 39, 0.6) 100%
     );
-  }
-
-  .hero-diagonal-accent::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    clip-path: polygon(15% 0, calc(15% + 12px) 0, 12px 100%, 0% 100%);
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(201, 162, 39, 0.15) 50%,
-      transparent 100%
-    );
-    filter: blur(4px);
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.4);
   }
 
   /* Entry animations */
   .hero-anim {
     opacity: 0;
     transform: translateX(-30px);
-    animation: heroSlideInLeft 0.7s ease-out forwards;
+    animation: heroFadeInLeft 0.7s ease-out forwards;
   }
 
   .hero-anim-badge { animation-delay: 0.1s; }
@@ -284,24 +296,24 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
   .hero-right {
     opacity: 0;
     transform: translateX(30px);
-    animation: heroSlideInRight 0.7s ease-out 0.2s forwards;
+    animation: heroFadeInRight 0.7s ease-out 0.2s forwards;
   }
 
-  @keyframes heroSlideInLeft {
+  @keyframes heroFadeInLeft {
     to {
       opacity: 1;
       transform: translateX(0);
     }
   }
 
-  @keyframes heroSlideInRight {
+  @keyframes heroFadeInRight {
     to {
       opacity: 1;
       transform: translateX(0);
     }
   }
 
-  /* CTA Buttons — always on dark bg, theme-agnostic */
+  /* CTA Buttons (theme-agnostic, always on dark) */
   .hero-cta-primary {
     display: inline-flex;
     align-items: center;
@@ -323,7 +335,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
       0 3px 6px rgba(0, 0, 0, 0.3);
   }
 
-  .hero-cta-primary:focus-visible {
+  .hero-cta-primary:focus {
     outline: 2px solid #C9A227;
     outline-offset: 2px;
   }
@@ -349,7 +361,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
       0 3px 6px rgba(0, 0, 0, 0.3);
   }
 
-  .hero-cta-whatsapp:focus-visible {
+  .hero-cta-whatsapp:focus {
     outline: 2px solid #22c55e;
     outline-offset: 2px;
   }
@@ -371,7 +383,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
     transform: translateY(-2px);
   }
 
-  .hero-cta-secondary:focus-visible {
+  .hero-cta-secondary:focus {
     outline: 2px solid #FFFFFF;
     outline-offset: 2px;
   }
@@ -397,3 +409,114 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
     }
   }
 </style>
+```
+
+**Step 2: Build and verify no errors**
+
+Run: `npm run build`
+Expected: Build succeeds with no errors
+
+**Step 3: Commit**
+
+```bash
+git add src/components/landing/Hero.astro
+git commit -m "feat(hero): rewrite as diagonal split layout with typewriter animation"
+```
+
+---
+
+### Task 2: Visual QA & Responsive Tweaks
+
+**Files:**
+- Modify: `src/components/landing/Hero.astro` (minor tweaks if needed)
+
+**Step 1: Start dev server and visually inspect**
+
+Run: `npm run dev`
+
+Check:
+- Desktop (1280+): diagonal split with video on right, text on left
+- Tablet (~768px): video hidden, mobile overlay video visible behind text
+- Mobile (~375px): stacked layout, text readable over dark gradient
+
+**Step 2: Fix any spacing/sizing issues discovered**
+
+Adjust padding, font sizes, or clip-path percentages as needed based on visual inspection.
+
+**Step 3: Verify video plays correctly**
+
+Ensure `cephe-tabela-01.mp4` loads, autoplays, and loops. Check poster image shows before video loads.
+
+**Step 4: Test typewriter animation**
+
+Verify words cycle: Tabela → Totem → Cephe Tabelası → Araç Giydirme → Işıklı Harf → repeat
+
+**Step 5: Test bilingual**
+
+Navigate to `/en/` and verify English content and English typewriter words.
+
+**Step 6: Commit fixes if any**
+
+```bash
+git add src/components/landing/Hero.astro
+git commit -m "fix(hero): responsive and visual polish"
+```
+
+---
+
+### Task 3: Light Mode & Accessibility Check
+
+**Files:**
+- Modify: `src/components/landing/Hero.astro` (if issues found)
+
+**Step 1: Toggle light mode and check hero**
+
+The hero uses hardcoded dark bg (#0B0F14), so it should look the same in both modes. Verify text readability and button contrast.
+
+**Step 2: Check keyboard accessibility**
+
+Tab through CTA buttons. Each should have visible focus ring (gold for primary, green for whatsapp, white for ghost).
+
+**Step 3: Check with prefers-reduced-motion**
+
+In dev tools, emulate `prefers-reduced-motion: reduce`. Verify:
+- No entry animations play
+- Cursor doesn't blink
+- Typewriter stays on first word (static)
+
+**Step 4: Commit if any fixes needed**
+
+```bash
+git add src/components/landing/Hero.astro
+git commit -m "fix(hero): accessibility and light mode fixes"
+```
+
+---
+
+### Task 4: Performance Check
+
+**Files:**
+- None (inspection only)
+
+**Step 1: Run Lighthouse on dev build**
+
+Check:
+- LCP: poster image should load fast (eager, high priority)
+- CLS: hero should not shift layout
+- Video should not block page load (preload="metadata")
+
+**Step 2: Verify video file size**
+
+Check that `cephe-tabela-01.mp4` is reasonably sized (ideally < 5MB for hero). If too large, note for future optimization.
+
+**Step 3: Final build**
+
+Run: `npm run build`
+Expected: Clean build, no warnings
+
+**Step 4: Final commit**
+
+```bash
+git add -A
+git commit -m "feat(hero): diagonal split hero with typewriter - complete"
+```
