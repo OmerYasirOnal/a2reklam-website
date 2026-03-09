@@ -1,0 +1,281 @@
+---
+interface Props {
+  lang?: 'tr' | 'en';
+}
+
+const { lang = 'tr' } = Astro.props;
+
+const labels = {
+  tr: {
+    bannerText: 'Bu web sitesi deneyiminizi iyileştirmek için çerezler kullanmaktadır.',
+    acceptAll: 'Kabul Et',
+    settings: 'Ayarlar',
+    policyLink: 'Çerez Politikası',
+    policyHref: '/cerez-politikasi/',
+    modalTitle: 'Çerez Tercihleri',
+    modalDesc: 'Hangi çerezlerin kullanılacağını aşağıdan seçebilirsiniz.',
+    essential: 'Zorunlu Çerezler',
+    essentialDesc: 'Sitenin düzgün çalışması için gerekli çerezler. Devre dışı bırakılamaz.',
+    analytics: 'Analitik Çerezler',
+    analyticsDesc: 'Ziyaretçi istatistiklerini anonim olarak toplamamıza yardımcı olur (Google Analytics).',
+    marketing: 'Pazarlama Çerezleri',
+    marketingDesc: 'Reklam kampanyalarının etkinliğini ölçmemize yardımcı olur (Google Ads).',
+    save: 'Tercihleri Kaydet',
+    rejectAll: 'Tümünü Reddet',
+    alwaysOn: 'Daima aktif',
+  },
+  en: {
+    bannerText: 'This website uses cookies to improve your experience.',
+    acceptAll: 'Accept All',
+    settings: 'Settings',
+    policyLink: 'Cookie Policy',
+    policyHref: '/cerez-politikasi/',
+    modalTitle: 'Cookie Preferences',
+    modalDesc: 'Choose which cookies you want to allow below.',
+    essential: 'Essential Cookies',
+    essentialDesc: 'Required for the site to function properly. Cannot be disabled.',
+    analytics: 'Analytics Cookies',
+    analyticsDesc: 'Helps us collect anonymous visitor statistics (Google Analytics).',
+    marketing: 'Marketing Cookies',
+    marketingDesc: 'Helps us measure the effectiveness of ad campaigns (Google Ads).',
+    save: 'Save Preferences',
+    rejectAll: 'Reject All',
+    alwaysOn: 'Always on',
+  },
+};
+
+const t = labels[lang] || labels.tr;
+---
+
+<!-- Cookie Consent Banner -->
+<div
+  id="cookie-consent-banner"
+  data-cookie-banner
+  role="dialog"
+  aria-label={t.modalTitle}
+  aria-hidden="true"
+  class="cookie-hidden fixed bottom-12 md:bottom-0 left-0 right-0 z-[70] p-3 md:p-0 pointer-events-none"
+>
+  <div class="cookie-glass pointer-events-auto mx-auto max-w-3xl md:mb-6 rounded-2xl p-5 md:p-6 shadow-2xl border border-white/10 animate-cookie-up">
+    <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div class="flex-1 text-sm text-gray-300 leading-relaxed">
+        <p class="mb-0">
+          {t.bannerText}
+          <a href={t.policyHref} class="text-primary hover:text-primary-hover underline decoration-primary/40 ml-1">
+            {t.policyLink}
+          </a>
+        </p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <button
+          type="button"
+          data-cookie-settings-btn
+          class="px-4 py-2.5 text-sm font-semibold rounded-lg border border-white/20 text-white hover:border-primary/60 hover:bg-white/5 transition-all"
+        >
+          {t.settings}
+        </button>
+        <button
+          type="button"
+          data-cookie-accept-all
+          class="px-5 py-2.5 text-sm font-black rounded-lg bg-primary text-secondary hover:bg-primary-hover transform hover:-translate-y-0.5 transition-all shadow-primary"
+        >
+          {t.acceptAll}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div
+  id="cookie-settings-modal"
+  data-cookie-modal
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cookie-modal-title"
+  class="cookie-hidden fixed inset-0 z-[80] flex items-center justify-center p-4"
+>
+  <div data-cookie-backdrop class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+  <div class="cookie-glass relative w-full max-w-lg rounded-2xl p-6 md:p-8 shadow-2xl border border-white/10 animate-scale-in max-h-[85vh] overflow-y-auto">
+    <button
+      type="button"
+      data-cookie-modal-close
+      class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full border border-white/10 hover:border-primary/60 text-gray-400 hover:text-white transition-colors"
+      aria-label="Kapat"
+    >
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <h2 id="cookie-modal-title" class="font-heading font-bold text-xl mb-2 text-white">{t.modalTitle}</h2>
+    <p class="text-sm text-gray-400 mb-6">{t.modalDesc}</p>
+
+    <div class="space-y-3">
+      <!-- Essential (always on) -->
+      <div class="flex items-start justify-between gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+        <div>
+          <div class="font-semibold text-sm text-white">{t.essential}</div>
+          <p class="text-xs text-gray-400 mt-1 mb-0">{t.essentialDesc}</p>
+        </div>
+        <span class="text-xs text-primary font-bold uppercase tracking-wider whitespace-nowrap mt-0.5">{t.alwaysOn}</span>
+      </div>
+
+      <!-- Analytics toggle -->
+      <div class="flex items-start justify-between gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+        <div>
+          <div class="font-semibold text-sm text-white">{t.analytics}</div>
+          <p class="text-xs text-gray-400 mt-1 mb-0">{t.analyticsDesc}</p>
+        </div>
+        <label class="cookie-toggle shrink-0 mt-0.5">
+          <input type="checkbox" data-cookie-toggle="analytics" class="sr-only peer" />
+          <div class="w-11 h-6 rounded-full bg-gray-700 peer-focus:ring-2 peer-focus:ring-primary peer-checked:bg-primary transition-colors after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-transform peer-checked:after:translate-x-5"></div>
+        </label>
+      </div>
+
+      <!-- Marketing toggle -->
+      <div class="flex items-start justify-between gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
+        <div>
+          <div class="font-semibold text-sm text-white">{t.marketing}</div>
+          <p class="text-xs text-gray-400 mt-1 mb-0">{t.marketingDesc}</p>
+        </div>
+        <label class="cookie-toggle shrink-0 mt-0.5">
+          <input type="checkbox" data-cookie-toggle="marketing" class="sr-only peer" />
+          <div class="w-11 h-6 rounded-full bg-gray-700 peer-focus:ring-2 peer-focus:ring-primary peer-checked:bg-primary transition-colors after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-transform peer-checked:after:translate-x-5"></div>
+        </label>
+      </div>
+    </div>
+
+    <div class="flex flex-col-reverse sm:flex-row gap-3 mt-6">
+      <button
+        type="button"
+        data-cookie-reject-all
+        class="flex-1 px-4 py-2.5 text-sm font-semibold rounded-lg border border-white/20 text-gray-400 hover:text-white hover:border-white/40 transition-all"
+      >
+        {t.rejectAll}
+      </button>
+      <button
+        type="button"
+        data-cookie-save-prefs
+        class="flex-1 px-4 py-2.5 text-sm font-black rounded-lg bg-primary text-secondary hover:bg-primary-hover transition-all shadow-primary"
+      >
+        {t.save}
+      </button>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .cookie-hidden {
+    display: none !important;
+  }
+  .cookie-glass {
+    background: rgba(11, 15, 20, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .cookie-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  @keyframes cookieSlideUp {
+    from { opacity: 0; transform: translateY(100%); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .animate-cookie-up { animation: cookieSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  .animate-scale-in { animation: scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+
+  /* Light mode */
+  [data-theme="light"] .cookie-glass {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+  [data-theme="light"] [data-cookie-modal] .bg-white\/5 {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-cookie-up, .animate-scale-in { animation: none; }
+  }
+</style>
+
+<script is:inline>
+(function() {
+  var KEY = 'a2-cookie-consent';
+  var banner = document.querySelector('[data-cookie-banner]');
+  var modal = document.querySelector('[data-cookie-modal]');
+  if (!banner || !modal) return;
+
+  var backdrop = modal.querySelector('[data-cookie-backdrop]');
+  var aToggle = document.querySelector('[data-cookie-toggle="analytics"]');
+  var mToggle = document.querySelector('[data-cookie-toggle="marketing"]');
+
+  function getStored() {
+    try { return JSON.parse(localStorage.getItem(KEY)); } catch(e) { return null; }
+  }
+
+  function store(c) {
+    try { c.timestamp = new Date().toISOString(); localStorage.setItem(KEY, JSON.stringify(c)); } catch(e) {}
+  }
+
+  function updateConsent(c) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        'ad_storage': c.marketing ? 'granted' : 'denied',
+        'ad_user_data': c.marketing ? 'granted' : 'denied',
+        'ad_personalization': c.marketing ? 'granted' : 'denied',
+        'analytics_storage': c.analytics ? 'granted' : 'denied'
+      });
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'cookie_consent_update', cookie_analytics: c.analytics, cookie_marketing: c.marketing });
+  }
+
+  function showBanner() { banner.classList.remove('cookie-hidden'); banner.setAttribute('aria-hidden', 'false'); }
+  function hideBanner() { banner.classList.add('cookie-hidden'); banner.setAttribute('aria-hidden', 'true'); }
+  function openModal() { modal.classList.remove('cookie-hidden'); document.body.style.overflow = 'hidden'; }
+  function closeModal() { modal.classList.add('cookie-hidden'); document.body.style.overflow = ''; }
+
+  function syncToggles(c) {
+    if (aToggle) aToggle.checked = !!c.analytics;
+    if (mToggle) mToggle.checked = !!c.marketing;
+  }
+
+  function acceptAll() {
+    var c = { analytics: true, marketing: true };
+    store(c); updateConsent(c); hideBanner(); closeModal();
+  }
+
+  function rejectAll() {
+    var c = { analytics: false, marketing: false };
+    store(c); updateConsent(c); hideBanner(); closeModal();
+  }
+
+  function savePrefs() {
+    var c = { analytics: aToggle ? aToggle.checked : false, marketing: mToggle ? mToggle.checked : false };
+    store(c); updateConsent(c); hideBanner(); closeModal();
+  }
+
+  // Bindings
+  document.querySelector('[data-cookie-accept-all]')?.addEventListener('click', acceptAll);
+  document.querySelector('[data-cookie-reject-all]')?.addEventListener('click', rejectAll);
+  document.querySelector('[data-cookie-save-prefs]')?.addEventListener('click', savePrefs);
+  document.querySelector('[data-cookie-settings-btn]')?.addEventListener('click', function() {
+    var s = getStored(); if (s) syncToggles(s); openModal();
+  });
+  document.querySelector('[data-cookie-modal-close]')?.addEventListener('click', closeModal);
+  backdrop?.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+
+  // Init
+  if (!getStored()) showBanner();
+})();
+</script>

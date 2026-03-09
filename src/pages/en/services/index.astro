@@ -5,8 +5,8 @@ import { loadImagesManifest } from '../../../utils/imagesManifest';
 import { buildImageAlt } from '../../../utils/imageSeo';
 import { getServiceLabel } from '../../../config/serviceLabels';
 
-const services = await getCollection('services_en');
-const sortedServices = services.sort((a, b) => a.data.title.localeCompare(b.data.title, 'en'));
+const services = await getCollection('services');
+const sortedServices = services.sort((a, b) => a.data.title.localeCompare(b.data.title, 'tr'));
 
 const manifest = loadImagesManifest();
 const representativeByCategory = new Map<string, any>();
@@ -34,14 +34,6 @@ const breadcrumbs = [
   { name: 'Services', item: '/en/services/' },
 ];
 
-const topDistricts = [
-  { label: 'Kağıthane', href: '/en/service-areas/kagithane-tabela/' },
-  { label: 'Şişli', href: '/en/service-areas/sisli-tabela/' },
-  { label: 'Beşiktaş', href: '/en/service-areas/besiktas-tabela/' },
-  { label: 'Kadıköy', href: '/en/service-areas/kadikoy-tabela/' },
-  { label: 'Başakşehir', href: '/en/service-areas/basaksehir-tabela/' },
-  { label: 'Ümraniye', href: '/en/service-areas/umraniye-tabela/' },
-];
 
 const faq = [
   {
@@ -73,7 +65,7 @@ const faq = [
 
     <div class="container mx-auto px-4 relative z-10">
       <div class="text-center mb-16">
-        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+        <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
           OUR <span class="text-primary">SERVICES</span>
         </h1>
         <p class="text-gray-400 max-w-3xl mx-auto text-lg border-l-2 border-primary pl-4 inline-block">
@@ -105,28 +97,15 @@ const faq = [
         ))}
       </div>
 
-      <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        <div class="glass-card p-8">
-          <h2 class="font-heading font-bold text-3xl text-white mb-4">Single-Source Corporate Delivery</h2>
-          <p class="text-gray-400 mb-6">
-            We support factories, hotels, healthcare facilities, and retail chains with corporate-grade signage. One team handles discovery, design, production, and installation.
-          </p>
-          <a href="/en/get-quote/" data-track="quote" data-lang="en" class="inline-flex items-center gap-2 bg-primary text-secondary font-bold px-6 py-3 rounded-lg hover:bg-white transition-all">
-            Get a Quote
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-          </a>
-        </div>
-        <div class="glass-card p-8">
-          <h3 class="font-heading font-bold text-2xl text-white mb-4">Top Service Areas</h3>
-          <p class="text-gray-400 mb-6">Quick links to districts with frequent corporate projects.</p>
-          <div class="flex flex-wrap gap-3">
-            {topDistricts.map((district) => (
-              <a href={district.href} class="px-4 py-2 rounded-full border border-white/10 text-sm text-gray-300 hover:border-primary/60 hover:text-white transition-colors">
-                {district.label}
-              </a>
-            ))}
-          </div>
-        </div>
+      <div class="mt-16 glass-card p-8 text-center">
+        <h2 class="font-heading font-bold text-3xl text-white mb-4">Single-Source Corporate Delivery</h2>
+        <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+          We support factories, hotels, healthcare facilities, and retail chains with corporate-grade signage. One team handles discovery, design, production, and installation.
+        </p>
+        <a href="/en/get-quote/" data-track="quote" data-lang="en" class="inline-flex items-center gap-2 bg-primary text-secondary font-bold px-6 py-3 rounded-lg hover:bg-white transition-all">
+          Get a Quote
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
       </div>
 
       <div class="mt-16 glass-card p-8">

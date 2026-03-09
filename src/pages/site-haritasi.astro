@@ -1,0 +1,125 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const [services, districts, blogPosts, guides] = await Promise.all([
+  getCollection('services'),
+  getCollection('districts'),
+  getCollection('blog'),
+  getCollection('tabela_rehberi'),
+]);
+
+const sortedBlogPosts = [...blogPosts].sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+const sortedGuides = [...guides].sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
+const corePages = [
+  { label: 'Anasayfa', href: '/' },
+  { label: 'Hizmetler', href: '/hizmetler/' },
+  { label: 'Hizmet Bölgeleri', href: '/hizmet-bolgeleri/' },
+  { label: 'Galeri', href: '/galeri/' },
+  { label: 'Proje Videoları', href: '/videolar/' },
+  { label: 'Referanslar', href: '/referanslar/' },
+  { label: 'Tabela Rehberleri', href: '/tabela-rehberi/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'İletişim', href: '/iletisim/' },
+  { label: 'S.S.S', href: '/sss/' },
+  { label: 'Hakkımızda', href: '/hakkimizda/' },
+  { label: 'Gizlilik Politikası', href: '/gizlilik-politikasi/' },
+  { label: 'Kullanım Koşulları', href: '/kullanim-kosullari/' },
+  { label: 'Çerez Politikası', href: '/cerez-politikasi/' },
+  { label: 'KVKK Aydınlatma Metni', href: '/kvkk/' },
+];
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Site Haritası', item: '/site-haritasi/' },
+];
+---
+
+<Layout
+  lang="tr"
+  title="Site Haritası | A2 Reklam"
+  description="A2 Reklam web sitesindeki tüm önemli sayfaları tek ekranda görüntüleyin. Hizmetler, bölgeler, blog ve rehber bağlantıları."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="py-16 md:py-20 bg-secondary">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl text-white mb-5">Site Haritası</h1>
+        <p class="text-gray-400 mb-10 md:mb-12">
+          Bu sayfa Google botlarının ve kullanıcıların tüm önemli içerik kümelerine daha hızlı erişmesini sağlar.
+          XML sitemap’e ek olarak güçlü bir iç link merkezi olarak kullanılır.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <section class="glass-card p-6">
+            <h2 class="text-white text-2xl font-heading font-bold mb-4">Ana Sayfalar</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-300">
+              {corePages.map((item) => (
+                <li><a href={item.href} class="hover:text-primary transition-colors">{item.label}</a></li>
+              ))}
+              <li><a href="/sitemap-index.xml" class="hover:text-primary transition-colors">XML Sitemap</a></li>
+              <li><a href="/video-sitemap.xml" class="hover:text-primary transition-colors">Video Sitemap</a></li>
+            </ul>
+          </section>
+
+          <section class="glass-card p-6">
+            <h2 class="text-white text-2xl font-heading font-bold mb-4">Hizmetler</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-300">
+              {services.map((service) => (
+                <li>
+                  <a href={`/hizmetler/${service.slug}/`} class="hover:text-primary transition-colors">
+                    {service.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section class="glass-card p-6">
+            <h2 class="text-white text-2xl font-heading font-bold mb-4">Hizmet Bölgeleri</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-300">
+              {districts.map((district) => (
+                <li>
+                  <a href={`/hizmet-bolgeleri/${district.slug}/`} class="hover:text-primary transition-colors">
+                    {district.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section class="glass-card p-6">
+            <h2 class="text-white text-2xl font-heading font-bold mb-4">Tabela Rehberleri</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-300">
+              {sortedGuides.map((guide) => (
+                <li>
+                  <a href={`/tabela-rehberi/${guide.slug}/`} class="hover:text-primary transition-colors">
+                    {guide.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section class="glass-card p-6 md:col-span-2">
+            <h2 class="text-white text-2xl font-heading font-bold mb-4">Blog Yazıları</h2>
+            <ul class="columns-1 md:columns-2 xl:columns-3 gap-8 space-y-2 text-gray-300">
+              {sortedBlogPosts.map((post) => (
+                <li class="break-inside-avoid mb-2">
+                  <a href={`/blog/${post.slug}/`} class="hover:text-primary transition-colors">
+                    {post.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

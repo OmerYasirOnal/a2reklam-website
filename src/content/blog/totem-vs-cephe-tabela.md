@@ -144,7 +144,7 @@ Boyutuna bağlı olarak günde 5-20 kWh. Zamanlayıcı ve sensör kullanımıyla
 
 Totem ve cephe tabela, birbirini tamamlayan çözümlerdir. Doğru seçim, lokasyonunuza, bütçenize ve hedeflerinize bağlıdır.
 
-**Hangisinin size uygun olduğunu öğrenmek için ücretsiz keşif talep edin. [Hemen iletişime geçin →](/teklif-al/)**
+**Hangisinin size uygun olduğunu öğrenmek için ücretsiz keşif talep edin. [Hemen iletişime geçin →](/iletisim/)**
 
 [Totem tabela hizmetlerimizi inceleyin →](/hizmetler/totem/)
 

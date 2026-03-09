@@ -5,6 +5,7 @@ import ServicesGrid from '../../components/landing/ServicesGrid.astro';
 import KPISection from '../../components/landing/KPISection.astro';
 import ReviewsSection from '../../components/landing/ReviewsSection.astro';
 import GallerySlider from '../../components/landing/GallerySlider.astro';
+import VideoProjectsSection from '../../components/landing/VideoProjectsSection.astro';
 import ClientLogos from '../../components/common/ClientLogos.astro';
 ---
 
@@ -14,9 +15,7 @@ import ClientLogos from '../../components/common/ClientLogos.astro';
   <KPISection lang="en" />
   <ReviewsSection lang="en" />
   <GallerySlider lang="en" />
-
-  <!-- Client Logos Section -->
-  <ClientLogos lang="en" />
+  <VideoProjectsSection lang="en" />
 
   <section class="py-20 bg-secondary border-t border-white/5 relative">
     <div class="container mx-auto px-4 text-center relative z-10">
@@ -40,5 +39,8 @@ import ClientLogos from '../../components/common/ClientLogos.astro';
       </div>
     </div>
   </section>
+
+  <!-- Client Logos Section -->
+  <ClientLogos lang="en" />
 
 </Layout>

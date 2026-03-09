@@ -306,7 +306,7 @@ A2 Reklam olarak İstanbul genelinde, özellikle Beşiktaş, Kadıköy ve Kağı
 
 ## Teklif Alın
 
-Paslanmaz harf tabela projeniz için [ücretsiz tasarım ve teklif](/teklif-al/) almak üzere [bizimle iletişime geçin](/iletisim/).
+Paslanmaz harf tabela projeniz için [ücretsiz tasarım ve teklif](/iletisim/) almak üzere [bizimle iletişime geçin](/iletisim/).
 
 [Hizmetlerimizi](/hizmetler/) ve [paslanmaz harf referanslarımızı](/galeri/) inceleyin.
 

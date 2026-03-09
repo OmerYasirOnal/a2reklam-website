@@ -2,11 +2,10 @@
 import { KPI_PROJECTS, KPI_HAPPY_CLIENTS, KPI_DISTRICTS, KPI_SINCE_YEAR } from '../../consts';
 
 interface Props {
-  lang?: 'tr' | 'en' | 'ar';
+  lang?: 'tr' | 'en';
 }
 
 const { lang = 'tr' } = Astro.props;
-const isRtl = lang === 'ar';
 
 // Build KPI list based on what's configured
 type KPIItem = {
@@ -31,12 +30,6 @@ const translations = {
     clients: { label: 'Happy Clients', sublabel: 'Trust Us' },
     districts: { label: 'Districts', sublabel: 'We Serve' },
     years: { label: 'Years', sublabel: 'Experience' },
-  },
-  ar: {
-    projects: { label: 'مشروع', sublabel: 'مكتمل' },
-    clients: { label: 'عميل سعيد', sublabel: 'يثقون بنا' },
-    districts: { label: 'منطقة', sublabel: 'نخدمها' },
-    years: { label: 'سنة', sublabel: 'خبرة' },
   },
 };
 

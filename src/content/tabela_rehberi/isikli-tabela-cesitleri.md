@@ -182,7 +182,7 @@ A2 Reklam olarak İstanbul genelinde, özellikle Beşiktaş, Kadıköy ve Kağı
 
 ## Işıklı Tabela Projesi Başlatın
 
-Işıklı tabela seçiminde uzman desteği almak için [ücretsiz keşif ve teklif](/teklif-al/) talebinde bulunun. Enerji verimliliği hesaplamaları ve tasarım önerileri için [bizimle iletişime geçin](/iletisim/).
+Işıklı tabela seçiminde uzman desteği almak için [ücretsiz keşif ve teklif](/iletisim/) talebinde bulunun. Enerji verimliliği hesaplamaları ve tasarım önerileri için [bizimle iletişime geçin](/iletisim/).
 
 [Hizmetlerimizi](/hizmetler/) ve [ışıklı tabela referanslarımızı](/galeri/) inceleyerek ilham alın.
 

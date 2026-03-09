@@ -345,7 +345,7 @@ C: Paslanmaz çelik harf, minimal tasarım, halo efekt.
 
 ## Beşiktaş'ta Ücretsiz Keşif
 
-Beşiktaş'taki işletmeniz için [ücretsiz keşif ve teklif](/teklif-al/) almak üzere [bizimle iletişime geçin](/iletisim/).
+Beşiktaş'taki işletmeniz için [ücretsiz keşif ve teklif](/iletisim/) almak üzere [bizimle iletişime geçin](/iletisim/).
 
 Aynı gün keşif, hızlı teklif, estetik kurul desteği garantisi.
 

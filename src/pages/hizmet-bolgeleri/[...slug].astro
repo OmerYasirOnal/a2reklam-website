@@ -104,12 +104,12 @@ const faq = [
 ];
 
 const topServices = [
-  { label: 'Işıklı Tabela', href: '/hizmetler/isikli-isiksiz-tabelalar/' },
+  { label: 'Işıklı Tabela', href: '/hizmetler/isikli-tabela/' },
+  { label: 'Işıksız Tabela', href: '/hizmetler/isiksiz-tabela/' },
   { label: 'Paslanmaz Harf', href: '/hizmetler/paslanmaz-harfler/' },
   { label: 'Totem Tabela', href: '/hizmetler/totem/' },
   { label: 'Cephe Tabela', href: '/hizmetler/cephe-tabela/' },
   { label: 'Araç Giydirme', href: '/hizmetler/arac-giydirme/' },
-  { label: 'Yönlendirme', href: '/hizmetler/yonlendirme/' },
 ];
 const whatsappMessage = buildWhatsAppMessage({
   lang: 'tr',
@@ -131,7 +131,7 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
   <!-- Hero Section -->
   <div class="relative h-[40vh] flex items-center justify-center text-white overflow-hidden bg-secondary">
     <div class="absolute inset-0 z-0">
-      <img src={entry.data.heroImage} alt={entry.data.title} class="w-full h-full object-cover opacity-30" />
+      <img src={entry.data.heroImage} alt={`${entry.data.districtName} tabela hizmeti - A2 Reklam İstanbul`} class="w-full h-full object-cover opacity-30" loading="eager" fetchpriority="high" decoding="async" width="1920" height="800" />
       <div class="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent"></div>
     </div>
     <div class="relative z-10 container mx-auto px-4 mt-20 text-center">
@@ -150,7 +150,7 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
 
   <div class="container mx-auto px-4 py-20 grid grid-cols-1 lg:grid-cols-3 gap-12">
     <!-- Main Content -->
-    <div class="lg:col-span-2 prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-bold prose-headings:tracking-tight prose-a:text-primary prose-strong:text-white prose-p:text-gray-300 prose-p:leading-relaxed prose-li:text-gray-300 prose-h2:text-white prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-white prose-h3:mt-8 prose-h3:mb-3">
+    <div class="lg:col-span-2 prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-primary prose-strong:text-white prose-p:text-gray-300 prose-p:leading-relaxed prose-li:text-gray-300 prose-h2:text-white prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-white prose-h3:mt-8 prose-h3:mb-3">
       <div class="not-prose bg-accent-light border border-white/5 rounded-2xl p-8 mb-10">
         <p class="text-gray-200 text-lg leading-relaxed">{introParagraph}</p>
         <p class="text-gray-300 mt-4 leading-relaxed">{b2bFocusParagraph}</p>
@@ -217,7 +217,7 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
             </a>
           ))}
         </div>
-        <a href="/teklif-al/" data-track="quote" data-lang="tr" class="inline-flex items-center gap-2 mt-6 bg-primary text-secondary font-bold px-6 py-3 rounded-lg hover:bg-white transition-all">
+        <a href="/iletisim/" data-track="quote" data-lang="tr" class="inline-flex items-center gap-2 mt-6 bg-primary text-secondary font-bold px-6 py-3 rounded-lg hover:bg-white transition-all">
           Teklif Al
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
         </a>
@@ -242,7 +242,7 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
           Uzman ekibimiz {entry.data.districtName} ve çevresinde ücretsiz keşif hizmeti sunmaktadır. Markanızı en iyi yansıtacak tabela modelini yerinde inceleyerek belirleyelim. Konumunuzu Google Maps üzerinden paylaşmanız planlamayı hızlandırır.
         </p>
         <div class="flex flex-wrap gap-4 relative z-10">
-          <a href="/teklif-al/" data-track="quote" data-lang="tr" class="bg-primary text-secondary font-bold py-3 px-8 rounded hover:bg-white transition-all transform hover:-translate-y-1">
+          <a href="/iletisim/" data-track="quote" data-lang="tr" class="bg-primary text-secondary font-bold py-3 px-8 rounded hover:bg-white transition-all transform hover:-translate-y-1">
             Teklif Al
           </a>
           <a href={whatsappLink} data-track="whatsapp" data-lang="tr" class="bg-green-600 text-white font-bold py-3 px-8 rounded hover:bg-green-500 transition-all flex items-center gap-2">
@@ -269,8 +269,8 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
         <h3 class="font-heading font-bold text-xl mb-6 text-white border-b border-primary/30 pb-2">Popüler Hizmetler</h3>
         <ul class="space-y-4">
           {[
-            { label: 'Işıklı Tabela', href: '/hizmetler/isikli-isiksiz-tabelalar/' },
-            { label: 'Kutu Harf', href: '/hizmetler/paslanmaz-harfler/' },
+            { label: 'Işıklı Tabela', href: '/hizmetler/isikli-tabela/' },
+            { label: 'Işıksız Tabela', href: '/hizmetler/isiksiz-tabela/' },
             { label: 'Paslanmaz Harf', href: '/hizmetler/paslanmaz-harfler/' },
             { label: 'Totem Tabela', href: '/hizmetler/totem/' },
             { label: 'Cephe Giydirme', href: '/hizmetler/cephe-tabela/' },

@@ -34,5 +34,13 @@ public/assets/img/generated/
 # Private/full manifest (demo manifest is tracked)
 public/images-manifest.json
 
-# Binary / office docs (audit dokümanları docs/ içinde .docx hariç)
+# Binary / office docs
 *.docx
+
+# Tool directories
+.claude/
+.playwright-cli/
+.review/
+
+# SMTP patch (deployed separately)
+a2reklam_smtp_patch/

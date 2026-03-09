@@ -360,7 +360,7 @@ C: Evet, tüm İstanbul'da hizmetimiz var. Kadıköy'de ek avantajlarımız mevc
 
 ## Kadıköy'e Özel Hızlı Teklif
 
-Kadıköy'deki işletmeniz için [aynı gün keşif ve 24 saat içinde teklif](/teklif-al/) garantisi ile [bizimle iletişime geçin](/iletisim/).
+Kadıköy'deki işletmeniz için [aynı gün keşif ve 24 saat içinde teklif](/iletisim/) garantisi ile [bizimle iletişime geçin](/iletisim/).
 
 **Kadıköy Avantajları:**
 - Ücretsiz nakliye

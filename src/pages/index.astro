@@ -5,44 +5,70 @@ import ServicesGrid from '../components/landing/ServicesGrid.astro';
 import KPISection from '../components/landing/KPISection.astro';
 import ReviewsSection from '../components/landing/ReviewsSection.astro';
 import GallerySlider from '../components/landing/GallerySlider.astro';
+import VideoProjectsSection from '../components/landing/VideoProjectsSection.astro';
 import ClientLogos from '../components/common/ClientLogos.astro';
 import TabelaRehberiPreview from '../components/landing/TabelaRehberiPreview.astro';
 ---
 
-<Layout title="A2 Reklam - İstanbul Tabela ve Reklam Çözümleri">
+<Layout
+  title="A2 Reklam | İstanbul Tabela İmalatı, Işıklı Tabela, Cephe Tabelası"
+  description="İstanbul'da profesyonel tabela imalatı: ışıklı tabela, paslanmaz harf, cephe tabelası, çatı tabelası, totem ve kurumsal tabela çözümleri. 20+ yıl deneyim, 39 ilçeye hizmet. Ücretsiz keşif."
+>
 	<Hero lang="tr" />
   <ServicesGrid lang="tr" />
   <KPISection lang="tr" />
   <ReviewsSection lang="tr" />
   <TabelaRehberiPreview lang="tr" />
   <GallerySlider lang="tr" />
-
-  <!-- Client Logos Section -->
-  <ClientLogos lang="tr" />
+  <VideoProjectsSection lang="tr" />
 
   <!-- Trust/Stats Section -->
   <section class="py-20 bg-secondary border-t border-white/5 relative">
     <div class="container mx-auto px-4 text-center relative z-10">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">Kurumsal</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">B2B Odaklı Üretim</span>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+        <div class="p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
+          <span class="block text-xl sm:text-2xl md:text-4xl font-heading font-bold text-primary mb-1 md:mb-2 group-hover:scale-105 transition-transform duration-300">Kurumsal</span>
+          <span class="text-gray-400 text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">B2B Odaklı Üretim</span>
         </div>
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">Uçtan Uca</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">Keşiften Montaja</span>
+        <div class="p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
+          <span class="block text-xl sm:text-2xl md:text-4xl font-heading font-bold text-primary mb-1 md:mb-2 group-hover:scale-105 transition-transform duration-300">Uçtan Uca</span>
+          <span class="text-gray-400 text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">Keşiften Montaja</span>
         </div>
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">İstanbul</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">Şehir Geneli Hizmet</span>
+        <div class="p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
+          <span class="block text-xl sm:text-2xl md:text-4xl font-heading font-bold text-primary mb-1 md:mb-2 group-hover:scale-105 transition-transform duration-300">İstanbul</span>
+          <span class="text-gray-400 text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">39 İlçeye Hizmet</span>
         </div>
-        <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
-          <span class="block text-4xl font-heading font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">Kalite</span>
-          <span class="text-gray-400 text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">Malzeme ve İşçilik</span>
+        <div class="p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
+          <span class="block text-xl sm:text-2xl md:text-4xl font-heading font-bold text-primary mb-1 md:mb-2 group-hover:scale-105 transition-transform duration-300">Kalite</span>
+          <span class="text-gray-400 text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">Premium Malzeme</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Logos Section -->
+  <ClientLogos lang="tr" />
+
+  <!-- SEO Content Section (AIO/Google-visible text) -->
+  <section class="py-16 bg-secondary border-t border-white/5">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="font-heading font-bold text-2xl md:text-3xl text-white mb-6 text-center uppercase tracking-tight">
+          İstanbul'da <span class="text-primary">Profesyonel Tabela</span> İmalatı
+        </h2>
+        <div class="prose prose-invert prose-sm md:prose-base max-w-none text-gray-400 leading-relaxed space-y-4">
+          <p>
+            <strong class="text-white">A2 Reklam</strong>, İstanbul Kağıthane merkezli atölyesinden 39 ilçeye profesyonel <strong class="text-white">tabela imalatı</strong> ve kurumsal reklam çözümleri sunmaktadır. 20 yılı aşkın sektör deneyimimizle <strong class="text-white">ışıklı tabela</strong>, <strong class="text-white">ışıksız tabela</strong>, <strong class="text-white">paslanmaz harf</strong>, <strong class="text-white">cephe tabelası</strong>, <strong class="text-white">çatı tabelası</strong> ve <strong class="text-white">totem tabela</strong> başta olmak üzere geniş bir ürün yelpazesinde hizmet vermekteyiz.
+          </p>
+          <p>
+            CNC lazer kesim, LED aydınlatma sistemleri ve PVD kaplama teknolojileri ile ürettiğimiz <strong class="text-white">gold harf</strong>, <strong class="text-white">gümüş harf</strong> ve <strong class="text-white">kurumsal tabela</strong> çözümlerimiz; Maslak, Levent, Etiler, Beşiktaş, Sarıyer ve Kağıthane başta olmak üzere İstanbul'un tüm iş merkezleri ve ticari bölgelerinde hizmetinizdedir.
+          </p>
+          <p>
+            <strong class="text-white">Kumlama folyo</strong>, <strong class="text-white">araç giydirme</strong>, ofis yönlendirme ve <strong class="text-white">AVM tabelası</strong> konularında da uzman ekibimizle keşiften montaja kadar uçtan uca hizmet sunuyoruz. Ücretsiz keşif ve 3D tasarım hizmetimizden yararlanmak için <a href="/iletisim/" class="text-primary hover:text-white transition-colors underline underline-offset-2">bizimle iletişime</a> geçin.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
 </Layout>
-

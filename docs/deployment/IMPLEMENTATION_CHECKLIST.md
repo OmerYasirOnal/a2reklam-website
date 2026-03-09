@@ -71,9 +71,10 @@ curl -s https://a2reklam.com/sitemap-0.xml | grep -c "<url>"
 ### Check 5: robots.txt Correct
 ```bash
 curl -s https://a2reklam.com/robots.txt | grep Sitemap
-# Expected: Sitemap: https://a2reklam.com/sitemap-index.xml
+# Expected: sitemap-index.xml and video-sitemap.xml
 ```
 - [ ] Points to https://a2reklam.com/sitemap-index.xml (non-www, dash format)
+- [ ] Points to https://a2reklam.com/video-sitemap.xml
 
 ### Check 6: Homepage Canonical
 ```bash
@@ -95,6 +96,22 @@ curl -s https://a2reklam.com/teklif-al/ | grep 'rel="canonical"'
 # Expected: href="https://a2reklam.com/teklif-al/"
 ```
 - [ ] Shows correct canonical
+
+### Check 9: Video Sitemap Loads
+```bash
+curl -s https://a2reklam.com/video-sitemap.xml | head -5
+# Expected: XML header and <urlset xmlns:video=...>
+```
+- [ ] Returns valid XML with video namespace
+- [ ] Contains `/videolar/` detail URLs
+
+### Check 10: GTM Event Baseline
+- [ ] GTM Preview mode opens without script errors
+- [ ] `cta_click` fired for button-style links/buttons (call/quote/cta)
+- [ ] `phone_click` fired for tel links
+- [ ] `lead_submit` fired on tracked form submit
+- [ ] `form_success` and `lead_conversion` fired on successful contact form response
+- [ ] `outbound_click` fired for external maps/social/reference links
 
 ## Phase 3: Google Search Console (Day 1-2)
 
@@ -142,6 +159,8 @@ curl -s https://a2reklam.com/teklif-al/ | grep 'rel="canonical"'
 - [ ] Use URL Inspection on critical pages
 - [ ] Check GSC Coverage report
 - [ ] Look for any crawl errors
+- [ ] Verify review and Maps CTA links still open direct Place URL (no empty maps route)
+- [ ] Verify mobile/desktop fixed CTA overlap does not occur
 
 ### Success Indicators
 - [ ] GSC discovered 300+ pages (from 61)
@@ -197,6 +216,7 @@ curl -s https://a2reklam.com/teklif-al/ | grep 'rel="canonical"'
 - [ ] Key pages requested for indexing
 - [ ] Monitoring plan is in place
 - [ ] Backup of original files saved (optional)
+- [ ] GTM custom event `outbound_click` verified in preview mode
 
 **Deployment Completed By:** _________________ **Date:** _______
 

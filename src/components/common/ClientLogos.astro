@@ -17,41 +17,75 @@ if (clients.length === 0) {
 const headings: Record<string, string> = {
   tr: 'Güvendikleri Markalar',
   en: 'Trusted Brands',
-  ar: 'موثوق به من قبل',
 };
 
 const subheadings: Record<string, string> = {
   tr: 'İstanbul\'un önde gelen işletmeleri bizi tercih ediyor',
   en: 'Leading businesses in Istanbul choose us',
-  ar: 'الشركات الرائدة في إسطنبول تختارنا',
 };
 
-const isRtl = lang === 'ar';
+const linkLabels: Record<string, string> = {
+  tr: 'Siteyi aç',
+  en: 'Open website',
+};
+
+const cardThemes = [
+  'from-primary/24 via-amber-300/10 to-white/[0.02] border-primary/40',
+  'from-sky-400/20 via-sky-300/10 to-white/[0.02] border-sky-400/40',
+  'from-emerald-400/20 via-emerald-300/10 to-white/[0.02] border-emerald-400/40',
+  'from-rose-400/18 via-rose-300/10 to-white/[0.02] border-rose-400/35',
+  'from-violet-400/18 via-violet-300/10 to-white/[0.02] border-violet-400/35',
+];
+
 ---
 
-<section class="py-16 md:py-20 bg-secondary/50 border-y border-white/5">
-  <div class="container mx-auto px-4">
+<section class="trusted-brands-section relative isolate overflow-hidden py-20 md:py-24 border-y border-white/10">
+  <div class="pointer-events-none absolute inset-0 trusted-brands-section__fx">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_14%_16%,rgba(200,157,15,0.26),transparent_42%),radial-gradient(circle_at_84%_24%,rgba(56,189,248,0.18),transparent_40%),radial-gradient(circle_at_55%_96%,rgba(16,185,129,0.14),transparent_48%)]"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.01)_35%,rgba(2,6,23,0.18)_100%)]"></div>
+    <div class="absolute -top-28 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"></div>
+    <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-secondary/70"></div>
+  </div>
+  <div class="container relative z-10 mx-auto px-4">
     <!-- Header block: centered and constrained -->
-    <div class:list={['text-center mb-12 md:mb-16 max-w-2xl mx-auto', isRtl && 'rtl']}>
+    <div class="text-center mb-10 md:mb-12 max-w-3xl mx-auto">
       <h2 class="text-sm uppercase tracking-widest text-primary font-bold mb-3">
         {headings[lang] || headings.tr}
       </h2>
-      <p class="text-gray-400 text-base md:text-lg leading-relaxed">
+      <p class="trusted-brands-subtitle text-gray-400 text-sm md:text-lg leading-relaxed">
         {subheadings[lang] || subheadings.tr}
       </p>
     </div>
 
     <!-- Logo grid: balanced and responsive -->
-    <div class:list={['grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6 max-w-7xl mx-auto', isRtl && 'rtl']}>
-      {clients.map(client => (
-        <div class="glass-card w-full aspect-[3/2] flex items-center justify-center p-4 md:p-6 group transition-all duration-300 hover:border-primary/20">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
+      {clients.map((client, index) => (
+        <a
+          href={client.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-track="outbound"
+          data-outbound-type="reference"
+          data-outbound-target="client_logo"
+          data-outbound-name={client.name}
+          data-lang={lang}
+          title={`${client.name} - ${linkLabels[lang] || linkLabels.tr}`}
+          aria-label={`${client.name} - ${linkLabels[lang] || linkLabels.tr}`}
+          class:list={[
+            'glass-card relative w-full aspect-[11/6] flex items-center justify-center p-5 md:p-7 group transition-all duration-300 bg-gradient-to-br hover:border-primary/60 hover:shadow-[0_28px_58px_-30px_rgba(200,157,15,0.65)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-secondary',
+            cardThemes[index % cardThemes.length]
+          ]}
+        >
+          <span class="absolute top-2 right-2 text-[9px] md:text-[10px] uppercase tracking-wider text-white/55 group-hover:text-primary transition-colors">
+            {linkLabels[lang] || linkLabels.tr}
+          </span>
           {client.logo ? (
             <img
               src={client.logo}
               alt={`${client.name} logo`}
               width="160"
               height="80"
-              class="max-h-12 md:max-h-14 lg:max-h-16 w-auto max-w-full object-contain opacity-75 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+              class="max-h-20 md:max-h-24 lg:max-h-28 w-auto max-w-full object-contain opacity-100 saturate-[1.2] contrast-[1.1] brightness-[1.05] drop-shadow-[0_10px_20px_rgba(0,0,0,0.24)] group-hover:scale-105 transition-all duration-300"
               loading="lazy"
               decoding="async"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
@@ -63,7 +97,7 @@ const isRtl = lang === 'ar';
           ]}>
             {client.name}
           </span>
-        </div>
+        </a>
       ))}
     </div>
   </div>

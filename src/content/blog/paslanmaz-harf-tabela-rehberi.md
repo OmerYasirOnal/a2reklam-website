@@ -148,6 +148,6 @@ Doğal paslanmaz (gümüş), PVD kaplama ile altın, rose gold, siyah, bakır ve
 
 Paslanmaz harf tabela, ilk maliyeti yüksek olsa da uzun ömrü ve minimum bakım gereksinimiyle toplam sahip olma maliyetinde avantaj sağlar. Kurumsal kimliğinizi kalıcı ve prestijli şekilde yansıtmak istiyorsanız, doğru tercih paslanmaz çeliktir.
 
-**Paslanmaz harf tabela projeniz için [ücretsiz keşif talep edin →](/teklif-al/)**
+**Paslanmaz harf tabela projeniz için [ücretsiz keşif talep edin →](/iletisim/)**
 
 [Paslanmaz harf hizmetlerimizi inceleyin →](/hizmetler/paslanmaz-harfler/)

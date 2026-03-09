@@ -1,0 +1,120 @@
+---
+import { PROJECT_VIDEOS, type SupportedLang } from '../../data/videos';
+
+interface Props {
+  lang?: SupportedLang;
+}
+
+const { lang = 'tr' } = Astro.props;
+const currentLang = lang as SupportedLang;
+
+const t = {
+  tr: {
+    title: 'Saha Uygulama Videoları',
+    subtitle: 'Güncel projelerimizden gerçek uygulama görüntülerini izleyin.',
+    ctaPrimary: 'Teklif Al',
+    ctaSecondary: 'Galeriyi Gör',
+    ctaVideos: 'Tüm Videolar',
+    watchLabel: 'Projeyi izle',
+  },
+  en: {
+    title: 'Project Video Showcase',
+    subtitle: 'Watch real footage from our latest signage installations.',
+    ctaPrimary: 'Get a Quote',
+    ctaSecondary: 'View Gallery',
+    ctaVideos: 'All Videos',
+    watchLabel: 'Watch project',
+  },
+}[currentLang];
+
+const quoteUrl =
+  currentLang === 'en'
+    ? '/en/get-quote/'
+    : '/iletisim/';
+const galleryUrl =
+  currentLang === 'en'
+    ? '/en/gallery/'
+    : '/galeri/';
+const videos = PROJECT_VIDEOS;
+const videosPageUrl = '/videolar/';
+
+const routePrefix = currentLang === 'en' ? '/en/' : '/';
+const baseUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://a2reklam.com';
+const videoGraph = videos.map((video) => ({
+  '@type': 'VideoObject',
+  name: video.title[currentLang],
+  description: video.description[currentLang],
+  thumbnailUrl: [`${baseUrl}${video.poster}`],
+  uploadDate: video.uploadDate,
+  duration: video.duration,
+  contentUrl: `${baseUrl}${video.file}`,
+  embedUrl: `${baseUrl}${routePrefix}#video-${video.id}`,
+  publisher: {
+    '@type': 'Organization',
+    name: 'A2 Reklam - Tabela ve Reklam Sistemleri',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/brand/a2reklam-logo.png`,
+    },
+  },
+}));
+---
+
+<section class="py-20 bg-secondary border-y border-white/5 relative overflow-hidden">
+  <div class="absolute -top-56 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="mb-10 text-left">
+      <h2 class="font-heading font-bold text-3xl md:text-5xl text-white mb-3 uppercase tracking-tight">
+        {t.title}
+      </h2>
+      <p class="text-gray-400 max-w-3xl">
+        {t.subtitle}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {videos.map((video) => (
+        <article class="glass-card p-4 border border-white/10 hover:border-primary/60 transition-colors">
+          <div class="aspect-[9/16] rounded-xl overflow-hidden bg-black/40">
+            <video
+              id={`video-${video.id}`}
+              class="w-full h-full object-cover"
+              controls
+              preload="metadata"
+              playsinline
+              poster={video.poster}
+              aria-label={`${t.watchLabel}: ${video.title[currentLang]}`}
+            >
+              <source src={video.file} type="video/mp4" />
+            </video>
+          </div>
+          <div class="pt-4">
+            <h3 class="text-white font-semibold text-base leading-snug mb-2">
+              {video.title[currentLang]}
+            </h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              {video.description[currentLang]}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-3">
+      <a href={quoteUrl} data-track="quote" data-lang={currentLang} class="btn btn-primary">
+        {t.ctaPrimary}
+      </a>
+      <a href={galleryUrl} class="btn btn-secondary">
+        {t.ctaSecondary}
+      </a>
+      <a href={videosPageUrl} class="btn btn-secondary">
+        {t.ctaVideos}
+      </a>
+    </div>
+  </div>
+</section>
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': videoGraph })}
+/>

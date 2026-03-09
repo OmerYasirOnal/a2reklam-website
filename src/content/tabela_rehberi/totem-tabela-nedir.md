@@ -306,7 +306,7 @@ A2 Reklam olarak İstanbul'un tüm ilçelerinde, özellikle Beşiktaş, Kadıkö
 
 ## Totem Tabela Teklifi Alın
 
-Totem tabela projeniz için [ücretsiz keşif ve teklif](/teklif-al/) alın. Uzman ekibimiz, lokasyonunuza özel tasarım ve statik çözümler sunar.
+Totem tabela projeniz için [ücretsiz keşif ve teklif](/iletisim/) alın. Uzman ekibimiz, lokasyonunuza özel tasarım ve statik çözümler sunar.
 
 [İletişime geçin](/iletisim/), tüm [hizmetlerimizi](/hizmetler/) ve [totem projelerimizi](/galeri/) inceleyin.
 

@@ -140,6 +140,6 @@ Marka tutarlılığı için evet, ancak bina yapısına göre boyut ve montaj ad
 
 Kurumsal tabela, bir kerelik maliyet değil uzun vadeli yatırımdır. Doğru tasarım, kaliteli malzeme ve profesyonel montajla markanızı yıllarca temsil edecek bir tabela mümkün.
 
-**Kurumsal tabelanız için profesyonel destek alın. [Ücretsiz keşif talep edin →](/teklif-al/)**
+**Kurumsal tabelanız için profesyonel destek alın. [Ücretsiz keşif talep edin →](/iletisim/)**
 
 [Cephe tabela hizmetlerimizi inceleyin →](/hizmetler/cephe-tabela/)

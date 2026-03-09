@@ -12,12 +12,8 @@ Service areas (Istanbul):
 - /en/service-areas/
 
 Lead & contact:
-- /teklif-al/
-- /en/get-quote/
-- /ar/get-quote/
 - /iletisim/
 - /en/contact/
-- /ar/contact/
 
 About:
 - /hakkimizda/

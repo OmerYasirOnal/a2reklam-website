@@ -1,0 +1,249 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BUSINESS_SHORT_NAME, BUSINESS_NAME, EMAIL, ADDRESS, PHONE_NUMBER } from '../consts';
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'KVKK Aydınlatma Metni', item: '/kvkk/' },
+];
+---
+
+<Layout
+  title={`KVKK Aydınlatma Metni | ${BUSINESS_SHORT_NAME}`}
+  description="A2 Reklam 6698 sayılı KVKK kapsamında kişisel verilerin işlenmesine ilişkin aydınlatma metni."
+  lang="tr"
+  breadcrumbs={breadcrumbs}
+>
+  <section class="py-16 md:py-20 bg-secondary">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl text-white mb-4">KVKK Aydınlatma Metni</h1>
+        <p class="text-gray-400 mb-10">Son güncelleme: 9 Mart 2026 &mdash; 6698 Sayılı Kişisel Verilerin Korunması Kanunu Kapsamında Aydınlatma Metni</p>
+
+        <div class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary">
+
+          <p>
+            {BUSINESS_SHORT_NAME} olarak, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK")
+            kapsamında, kişisel verilerinizin işlenmesine ilişkin sizi bilgilendirmek amacıyla
+            işbu aydınlatma metnini hazırlamış bulunmaktayız.
+          </p>
+
+          <!-- 1. Veri Sorumlusu -->
+          <h2>1. Veri Sorumlusu</h2>
+          <p>
+            KVKK uyarınca kişisel verileriniz, veri sorumlusu sıfatıyla {BUSINESS_SHORT_NAME}
+            tarafından aşağıda açıklanan amaçlar doğrultusunda, hukuka ve dürüstlük kurallarına
+            uygun şekilde işlenebilecek, kaydedilebilecek, saklanabilecek, sınıflandırılabilecek,
+            güncellenebilecek ve mevzuatın izin verdiği hallerde üçüncü kişilere aktarılabilecektir.
+          </p>
+        </div>
+
+        <div class="not-prose my-8 bg-accent-light p-6 rounded-xl border border-white/5">
+          <h3 class="text-white font-heading font-bold text-lg mb-3">Veri Sorumlusu Bilgileri</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li><strong class="text-white">Unvan:</strong> {BUSINESS_NAME}</li>
+            <li><strong class="text-white">Adres:</strong> {ADDRESS}</li>
+            <li><strong class="text-white">E-posta:</strong> <a href={`mailto:${EMAIL}`} class="text-primary hover:underline">{EMAIL}</a></li>
+            <li><strong class="text-white">Telefon:</strong> <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} class="text-primary hover:underline">{PHONE_NUMBER}</a></li>
+          </ul>
+        </div>
+
+        <div class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary">
+
+          <!-- 2. Kişisel Verilerin İşlenme Amaçları -->
+          <h2>2. Kişisel Verilerin İşlenme Amaçları</h2>
+          <p>
+            Kişisel verileriniz, KVKK'nın 5. ve 6. maddelerinde belirtilen kişisel veri işleme
+            şartları dahilinde, aşağıdaki amaçlarla işlenmektedir:
+          </p>
+          <ul>
+            <li>Teklif taleplerinizin alınması, değerlendirilmesi ve size uygun fiyat teklifinin sunulması</li>
+            <li>Hizmet ve ürünlerimize ilişkin iletişim faaliyetlerinin yürütülmesi</li>
+            <li>Müşteri ilişkileri yönetimi süreçlerinin planlanması ve icrası</li>
+            <li>Sözleşme süreçlerinin yürütülmesi ve hukuki yükümlülüklerin yerine getirilmesi</li>
+            <li>Web sitesi ziyaretçi istatistiklerinin analiz edilmesi ve site performansının iyileştirilmesi</li>
+            <li>Reklam kampanyalarının etkinliğinin ölçülmesi ve optimizasyonu</li>
+            <li>Yasal düzenlemelerden kaynaklanan yükümlülüklerin yerine getirilmesi</li>
+            <li>İletişim taleplerinin yanıtlanması ve müşteri memnuniyetinin sağlanması</li>
+          </ul>
+
+          <!-- 3. İşlenen Kişisel Veri Kategorileri -->
+          <h2>3. İşlenen Kişisel Veri Kategorileri</h2>
+        </div>
+
+        <div class="not-prose my-8 overflow-x-auto">
+          <table class="w-full text-sm text-left text-gray-300 border border-white/10 rounded-xl overflow-hidden">
+            <thead class="text-xs uppercase bg-white/5 text-gray-400">
+              <tr>
+                <th class="px-4 py-3">Veri Kategorisi</th>
+                <th class="px-4 py-3">Açıklama</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-semibold text-white">Kimlik Bilgileri</td>
+                <td class="px-4 py-3">Ad, soyad, unvan</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-semibold text-white">İletişim Bilgileri</td>
+                <td class="px-4 py-3">Telefon numarası, e-posta adresi, adres</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-semibold text-white">Müşteri İşlem Bilgileri</td>
+                <td class="px-4 py-3">Teklif talep detayları, sipariş bilgileri, hizmet geçmişi</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-semibold text-white">Pazarlama Bilgileri</td>
+                <td class="px-4 py-3">Çerez kayıtları, web sitesi ziyaret verileri, reklam dönüşüm verileri</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-semibold text-white">Hukuki İşlem Bilgileri</td>
+                <td class="px-4 py-3">Sözleşme bilgileri, fatura bilgileri</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary">
+
+          <!-- 4. Kişisel Verilerin Toplanma Yöntemleri ve Hukuki Sebepleri -->
+          <h2>4. Kişisel Verilerin Toplanma Yöntemleri ve Hukuki Sebepleri</h2>
+          <p>
+            Kişisel verileriniz; web sitemiz üzerindeki iletişim ve teklif talep formları,
+            e-posta, telefon, WhatsApp ve yüz yüze görüşmeler aracılığıyla otomatik ve
+            otomatik olmayan yöntemlerle toplanmaktadır.
+          </p>
+          <p>
+            Kişisel verilerinizin işlenmesinin hukuki sebepleri, KVKK Madde 5/2 kapsamında
+            aşağıdaki şekildedir:
+          </p>
+          <ul>
+            <li>
+              <strong>Bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması
+              (Madde 5/2-c):</strong> Teklif hazırlama, sipariş yönetimi ve hizmet sunumu süreçleri
+            </li>
+            <li>
+              <strong>Veri sorumlusunun hukuki yükümlülüğünü yerine getirmesi (Madde 5/2-ç):</strong>
+              Vergi mevzuatı, ticaret hukuku ve diğer yasal düzenlemeler kapsamındaki yükümlülükler
+            </li>
+            <li>
+              <strong>İlgili kişinin kendisi tarafından alenileştirilmiş olması (Madde 5/2-d):</strong>
+              Kamuya açık iletişim bilgileri
+            </li>
+            <li>
+              <strong>Bir hakkın tesisi, kullanılması veya korunması (Madde 5/2-e):</strong>
+              Hukuki süreçlerin yürütülmesi ve hakların korunması
+            </li>
+            <li>
+              <strong>Veri sorumlusunun meşru menfaatleri (Madde 5/2-f):</strong> Web sitesi
+              analitik verileri, pazarlama faaliyetleri ve müşteri ilişkileri yönetimi
+            </li>
+          </ul>
+
+          <!-- 5. Kişisel Verilerin Aktarılması -->
+          <h2>5. Kişisel Verilerin Aktarılması</h2>
+          <p>
+            Kişisel verileriniz, KVKK'nın 8. ve 9. maddelerinde belirtilen kişisel veri aktarım
+            şartlarına uygun olarak aşağıdaki taraflara aktarılabilmektedir:
+          </p>
+          <ul>
+            <li>
+              <strong>Google LLC (ABD):</strong> Web sitesi analitik verileri (Google Analytics) ve
+              reklam dönüşüm verileri (Google Ads). Google, AB-ABD Veri Gizliliği Çerçevesi
+              kapsamında yeterli koruma sağlamaktadır.
+            </li>
+            <li>
+              <strong>Hosting Sağlayıcısı:</strong> Web sitesinin barındırılması amacıyla sunucu
+              hizmeti alınan firma ile teknik altyapı verileri paylaşılmaktadır.
+            </li>
+            <li>
+              <strong>Yasal Yükümlülükler:</strong> Yetkili kamu kurum ve kuruluşlarına, mevzuatın
+              zorunlu kıldığı hallerde bilgi aktarımı yapılabilmektedir.
+            </li>
+          </ul>
+
+          <!-- 6. Kişisel Verilerin Saklanma Süresi -->
+          <h2>6. Kişisel Verilerin Saklanma Süresi</h2>
+          <p>
+            Kişisel verileriniz, işlenme amaçlarıyla orantılı olarak ve ilgili mevzuatta öngörülen
+            süre boyunca saklanmaktadır. İşleme amacının ortadan kalkması halinde, yasal saklama
+            süreleri gözetilerek kişisel verileriniz silinir, yok edilir veya anonim hale getirilir.
+          </p>
+          <p>Genel saklama süreleri aşağıdaki gibidir:</p>
+          <ul>
+            <li><strong>Müşteri iletişim ve işlem verileri:</strong> Ticari ilişkinin sona ermesinden itibaren 10 yıl (Türk Ticaret Kanunu)</li>
+            <li><strong>Fatura ve mali kayıtlar:</strong> 10 yıl (Vergi Usul Kanunu)</li>
+            <li><strong>Web sitesi analitik verileri:</strong> Maksimum 26 ay (Google Analytics varsayılan ayarı)</li>
+            <li><strong>İletişim formu verileri:</strong> Talebin sonuçlanmasından itibaren 2 yıl</li>
+          </ul>
+
+          <!-- 7. İlgili Kişinin Hakları -->
+          <h2>7. İlgili Kişinin Hakları</h2>
+          <p>
+            KVKK'nın 11. maddesi uyarınca, kişisel veri sahibi olarak aşağıdaki haklara sahipsiniz:
+          </p>
+          <ol>
+            <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+            <li>Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme</li>
+            <li>Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+            <li>Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme</li>
+            <li>Kişisel verilerinizin eksik veya yanlış işlenmiş olması halinde bunların düzeltilmesini isteme</li>
+            <li>KVKK'nın 7. maddesinde öngörülen şartlar çerçevesinde kişisel verilerinizin silinmesini veya yok edilmesini isteme</li>
+            <li>Düzeltme ve silme işlemlerinin, kişisel verilerinizin aktarıldığı üçüncü kişilere bildirilmesini isteme</li>
+            <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme</li>
+            <li>Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız halinde zararın giderilmesini talep etme</li>
+            <li>Açık rızanızın bulunması halinde, bu rızayı geri alma hakkınızı kullanma</li>
+            <li>Kişisel Verileri Koruma Kurulu'na şikayette bulunma</li>
+          </ol>
+
+          <!-- 8. Başvuru Yöntemi -->
+          <h2>8. Başvuru Yöntemi</h2>
+          <p>
+            Yukarıda belirtilen haklarınızı kullanmak için aşağıdaki yöntemlerden biriyle
+            {BUSINESS_SHORT_NAME}'a başvurabilirsiniz:
+          </p>
+          <ul>
+            <li>
+              <strong>E-posta ile:</strong> <a href={`mailto:${EMAIL}`}>{EMAIL}</a> adresine,
+              başvuru konusunu içeren e-posta göndererek
+            </li>
+            <li>
+              <strong>Yazılı başvuru ile:</strong> <em>{ADDRESS}</em> adresine, kimliğinizi
+              tespit edici belgeler ile birlikte ıslak imzalı dilekçe göndererek
+            </li>
+          </ul>
+        </div>
+
+        <div class="not-prose my-8 bg-accent-light p-6 rounded-xl border border-white/5">
+          <h3 class="text-white font-heading font-bold text-lg mb-3">Başvuru Süreci Hakkında</h3>
+          <ul class="space-y-2 text-gray-300 text-sm">
+            <li>Başvurularınız, talebin niteliğine göre en kısa sürede ve en geç <strong class="text-white">30 (otuz) gün</strong> içinde ücretsiz olarak sonuçlandırılacaktır.</li>
+            <li>İşlemin ayrıca bir maliyet gerektirmesi halinde, Kişisel Verileri Koruma Kurulu tarafından belirlenen tarifedeki ücret alınabilir.</li>
+            <li>Başvuruda; adınız, soyadınız, T.C. kimlik numaranız (yabancı uyruklular için pasaport numarası), tebligata esas yerleşim yeri veya iş yeri adresi, varsa bildirime esas e-posta adresi, telefon numarası ve talep konusu bilgilerine yer verilmesi gerekmektedir.</li>
+          </ul>
+        </div>
+
+        <div class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary">
+
+          <!-- 9. İletişim -->
+          <h2>9. İletişim</h2>
+          <p>
+            KVKK kapsamındaki haklarınız ve kişisel verilerinizin işlenmesi hakkında her türlü
+            soru ve talepleriniz için bizimle iletişime geçebilirsiniz:
+          </p>
+          <ul>
+            <li><strong>Veri Sorumlusu:</strong> {BUSINESS_NAME}</li>
+            <li><strong>E-posta:</strong> <a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+            <li><strong>Telefon:</strong> <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`}>{PHONE_NUMBER}</a></li>
+            <li><strong>Adres:</strong> {ADDRESS}</li>
+          </ul>
+          <p>
+            Ayrıca <a href="/cerez-politikasi/">Çerez Politikası</a> ve
+            <a href="/gizlilik-politikasi/">Gizlilik Politikası</a> sayfalarımızı inceleyerek,
+            verilerinizin nasıl toplandığı ve kullanıldığı hakkında detaylı bilgi alabilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

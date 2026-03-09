@@ -411,7 +411,7 @@ C: Kadıköy, Maltepe ve Bahçelievler en hızlı izin veren ilçeler.
 
 ## Hemen Teklif Alın
 
-İstanbul'un neresinde olursanız olun, [ücretsiz keşif ve teklif](/teklif-al/) için [bizimle iletişime geçin](/iletisim/).
+İstanbul'un neresinde olursanız olun, [ücretsiz keşif ve teklif](/iletisim/) için [bizimle iletişime geçin](/iletisim/).
 
 **40 İlçe, Tek Hizmet Kalitesi**
 

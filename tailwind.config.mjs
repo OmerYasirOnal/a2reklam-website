@@ -35,7 +35,7 @@ export default {
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
-                heading: ['Montserrat', 'sans-serif'],
+                heading: ['Inter', 'sans-serif'],
                 arabic: ['Cairo', 'sans-serif'],
             },
             backgroundImage: {

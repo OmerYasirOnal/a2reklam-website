@@ -1,5 +1,6 @@
 ---
 import { getLocaleAlternates } from '../../utils/localeRoutes';
+import { PHONE_TEL } from '../../consts';
 import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
@@ -8,7 +9,6 @@ interface Props {
 
 const { lang = 'tr' } = Astro.props;
 
-const isRtl = lang === 'ar';
 const alternates = getLocaleAlternates(Astro.url.pathname);
 
 const items_tr = [
@@ -26,27 +26,17 @@ const items_en = [
   { label: 'Services', href: '/en/services/' },
   { label: 'Gallery', href: '/en/gallery/' },
   { label: 'About Us', href: '/en/about/' },
-  { label: 'F.A.Q', href: '/en/faq/' },
   { label: 'Contact', href: '/en/contact/' },
 ];
 
-const items_ar = [
-  { label: 'الرئيسية', href: '/ar/' },
-  { label: 'الخدمات', href: '/ar/services/' },
-  { label: 'المعرض', href: '/ar/gallery/' },
-  { label: 'اتصل بنا', href: '/ar/contact/' },
-  { label: 'احصل على عرض سعر', href: '/ar/get-quote/' },
-];
+const items = lang === 'en' ? items_en : items_tr;
+const homeLink = lang === 'en' ? '/en/' : '/';
+const callLabel = lang === 'en' ? 'Call Now' : 'Hemen Ara';
+const menuLabel = lang === 'en' ? 'Menu' : 'Menü';
+const closeLabel = lang === 'en' ? 'Close' : 'Kapat';
 
-const items = lang === 'en' ? items_en : lang === 'ar' ? items_ar : items_tr;
-const homeLink = lang === 'en' ? '/en/' : lang === 'ar' ? '/ar/' : '/';
-const quoteLink = lang === 'en' ? '/en/get-quote/' : lang === 'ar' ? '/ar/get-quote/' : '/teklif-al/';
-const quoteLabel = lang === 'en' ? 'Get Quote' : lang === 'ar' ? 'احصل على عرض سعر' : 'Teklif Al';
-const menuLabel = lang === 'en' ? 'Menu' : lang === 'ar' ? 'القائمة' : 'Menü';
-const closeLabel = lang === 'en' ? 'Close' : lang === 'ar' ? 'إغلاق' : 'Kapat';
-
-const languageLabels = { tr: 'Türkçe', en: 'English', ar: 'العربية' };
-const languageOrder = ['tr', 'en', 'ar'] as const;
+const languageLabels: Record<string, string> = { tr: 'Türkçe', en: 'English' };
+const languageOrder = ['tr', 'en'] as const;
 const languageLinks = languageOrder
   .filter((locale) => alternates[locale])
   .map((locale) => ({
@@ -57,7 +47,7 @@ const languageLinks = languageOrder
 ---
 
 <header id="main-header" class="sticky top-0 z-50 glass-bar header-modern header-visible">
-  <div class:list={['container mx-auto px-4 h-20 flex items-center justify-between gap-4', isRtl && 'flex-row-reverse']}>
+  <div class="container mx-auto px-4 h-20 flex items-center justify-between gap-4">
     <!-- Logo - Never shrinks, always visible -->
     <a href={homeLink} class="flex-shrink-0 flex items-center focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary rounded-lg" aria-label="A2 Reklam">
       <img
@@ -72,7 +62,7 @@ const languageLinks = languageOrder
     </a>
 
     <!-- Desktop Navigation - Hidden below lg -->
-    <nav class:list={['hidden lg:flex items-center gap-4 xl:gap-6', isRtl && 'flex-row-reverse']}>
+    <nav class="hidden lg:flex items-center gap-4 xl:gap-6">
       {items.map(item => (
         <a href={item.href} class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">
           {item.label}
@@ -81,10 +71,10 @@ const languageLinks = languageOrder
     </nav>
 
     <!-- Right Controls - Flexible layout -->
-    <div class:list={['flex items-center gap-2 md:gap-3', isRtl && 'flex-row-reverse']}>
+    <div class="flex items-center gap-2 md:gap-3">
       <!-- Language Switcher + Theme Toggle (desktop) -->
-      <div class:list={['hidden lg:flex items-center gap-2', isRtl && 'flex-row-reverse']}>
-        <div class:list={['flex items-center gap-1', isRtl && 'flex-row-reverse']}>
+      <div class="hidden lg:flex items-center gap-2">
+        <div class="flex items-center gap-1">
           {languageLinks.map((link) => (
             <a
               href={link.href}
@@ -101,9 +91,9 @@ const languageLinks = languageOrder
         <ThemeToggle lang={lang} />
       </div>
 
-      <!-- Quote Button (desktop only) -->
-      <a href={quoteLink} data-track="quote" data-lang={lang} class="hidden lg:inline-flex btn btn-primary px-4 xl:px-6 py-2.5 text-sm font-bold whitespace-nowrap flex-shrink-0">
-        {quoteLabel}
+      <!-- Call Button (desktop only) -->
+      <a href={`tel:${PHONE_TEL}`} data-track="call" data-lang={lang} class="hidden lg:inline-flex btn btn-primary px-4 xl:px-6 py-2.5 text-sm font-bold whitespace-nowrap flex-shrink-0">
+        {callLabel}
       </a>
 
       <!-- Mobile Menu Toggle - Always visible below lg -->
@@ -130,13 +120,9 @@ const languageLinks = languageOrder
 <!-- Mobile Menu Drawer -->
 <div
   id="mobile-menu"
-  class:list={[
-    'fixed inset-0 z-[60] transform transition-transform duration-300 md:hidden pointer-events-none',
-    isRtl ? '-translate-x-full' : 'translate-x-full'
-  ]}
+  class="fixed inset-0 z-[60] transform transition-transform duration-300 md:hidden pointer-events-none translate-x-full"
   aria-hidden="true"
   inert
-  data-rtl={isRtl ? 'true' : 'false'}
 >
   <!-- Backdrop -->
   <div
@@ -149,10 +135,7 @@ const languageLinks = languageOrder
   <!-- Drawer Panel -->
   <div
     id="mobile-menu-panel"
-    class:list={[
-      'absolute top-0 h-full w-80 max-w-[85vw] bg-secondary/95 backdrop-blur-lg border-white/10 p-6',
-      isRtl ? 'left-0 border-r' : 'right-0 border-l'
-    ]}
+    class="absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-secondary/95 backdrop-blur-lg border-l border-white/10 p-6"
     role="dialog"
     aria-modal="true"
     aria-labelledby="mobile-menu-title"
@@ -161,7 +144,7 @@ const languageLinks = languageOrder
     <h2 id="mobile-menu-title" class="sr-only">{menuLabel}</h2>
     <nav class="flex flex-col h-full" aria-label={menuLabel}>
       <!-- Close Button -->
-      <div class:list={['flex justify-end mb-8', isRtl && 'justify-start']}>
+      <div class="flex justify-end mb-8">
         <button
           id="mobile-menu-close"
           type="button"
@@ -179,10 +162,7 @@ const languageLinks = languageOrder
         {items.map(item => (
           <a
             href={item.href}
-            class:list={[
-              'block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors',
-              isRtl && 'text-right'
-            ]}
+            class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors"
           >
             {item.label}
           </a>
@@ -191,7 +171,7 @@ const languageLinks = languageOrder
 
       <!-- Language Switcher (Mobile) -->
       <div class="border-t border-white/10 pt-6 mt-6">
-        <div class:list={['flex items-center gap-2 mb-4', isRtl && 'flex-row-reverse justify-end']}>
+        <div class="flex items-center gap-2 mb-4">
           {languageLinks.map((link) => (
             <a
               href={link.href}
@@ -207,14 +187,14 @@ const languageLinks = languageOrder
           <ThemeToggle lang={lang} />
         </div>
 
-        <!-- Quote Button (Mobile) -->
+        <!-- Call Button (Mobile) -->
         <a
-          href={quoteLink}
-          data-track="quote"
+          href={`tel:${PHONE_TEL}`}
+          data-track="call"
           data-lang={lang}
           class="block w-full text-center btn btn-primary py-3 text-sm font-bold"
         >
-          {quoteLabel}
+          {callLabel}
         </a>
       </div>
     </nav>
@@ -235,9 +215,8 @@ const languageLinks = languageOrder
     if (menu.dataset.initialized === 'true') return;
     menu.dataset.initialized = 'true';
 
-    const isRtl = menu.dataset.rtl === 'true';
     const openClass = 'translate-x-0';
-    const closedClass = isRtl ? '-translate-x-full' : 'translate-x-full';
+    const closedClass = 'translate-x-full';
 
     function getFocusableElements() {
       return Array.from(

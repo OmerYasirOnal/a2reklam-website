@@ -1,6 +1,6 @@
 ---
 interface Props {
-  lang?: 'tr' | 'en' | 'ar';
+  lang?: 'tr' | 'en';
 }
 
 const { lang = 'tr' } = Astro.props;
@@ -17,12 +17,6 @@ const t = {
     toDark: 'Switch to dark theme',
     lightOn: 'Light theme enabled',
     darkOn: 'Dark theme enabled',
-  },
-  ar: {
-    toLight: 'التبديل إلى النسق الفاتح',
-    toDark: 'التبديل إلى النسق الداكن',
-    lightOn: 'تم تفعيل النسق الفاتح',
-    darkOn: 'تم تفعيل النسق الداكن',
   },
 }[lang];
 ---

@@ -79,7 +79,7 @@ A2 Reklam olarak İstanbul genelinde, özellikle Beşiktaş, Kadıköy ve Kağı
 
 ## Teklif Alın
 
-Cephe tabelası projeleriniz için [ücretsiz teklif almak](/teklif-al/) ve detaylı bilgi almak için hemen bizimle [iletişime geçin](/iletisim/). Uzman ekibimiz size en uygun çözümü sunmak için hazır.
+Cephe tabelası projeleriniz için [ücretsiz teklif almak](/iletisim/) ve detaylı bilgi almak için hemen bizimle [iletişime geçin](/iletisim/). Uzman ekibimiz size en uygun çözümü sunmak için hazır.
 
 [Hizmetlerimizi inceleyin](/hizmetler/) ve [galerimizdeki](/galeri/) referans çalışmalarımıza göz atın.
 

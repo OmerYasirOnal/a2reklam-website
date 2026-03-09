@@ -1,0 +1,88 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PROJECT_VIDEOS, type ProjectVideo } from '../../data/videos';
+
+export function getStaticPaths() {
+  return PROJECT_VIDEOS.map((video) => ({
+    params: { id: video.id },
+    props: { video },
+  }));
+}
+
+interface Props {
+  video: ProjectVideo;
+}
+
+const { video } = Astro.props as Props;
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Videolar', item: '/videolar/' },
+  { name: video.title.tr, item: `/videolar/${video.id}/` },
+];
+const siteBase = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://a2reklam.com';
+const title = `${video.title.tr} | A2 Reklam`;
+const description = video.description.tr;
+const videoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: video.title.tr,
+  description: video.description.tr,
+  thumbnailUrl: [`${siteBase}${video.poster}`],
+  uploadDate: `${video.uploadDate}T00:00:00+00:00`,
+  duration: video.duration,
+  contentUrl: `${siteBase}${video.file}`,
+  embedUrl: `${siteBase}/videolar/${video.id}/`,
+  publisher: {
+    '@type': 'Organization',
+    name: 'A2 Reklam - Tabela ve Reklam Sistemleri',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteBase}/brand/a2reklam-logo.png`,
+    },
+  },
+};
+---
+
+<Layout
+  lang="tr"
+  title={title}
+  description={description}
+  image={video.poster}
+  breadcrumbs={breadcrumbs}
+>
+  <section class="py-16 md:py-20 bg-secondary border-y border-white/5">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="font-heading font-black text-4xl md:text-5xl text-white mb-4">{video.title.tr}</h1>
+        <p class="text-gray-400 mb-8">{video.description.tr}</p>
+
+        <div class="rounded-2xl overflow-hidden border border-white/10 bg-black/50 mb-8">
+          <video
+            class="w-full h-auto"
+            controls
+            preload="metadata"
+            playsinline
+            poster={video.poster}
+            aria-label={video.title.tr}
+          >
+            <source src={video.file} type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="glass-card p-6 md:p-8">
+          <h2 class="font-heading text-2xl text-white mb-3">Proje Notu</h2>
+          <p class="text-gray-400 mb-5">
+            Bu video gerçek saha teslimatından alınmıştır. İmalat kalitesi, montaj güvenliği ve okunabilirlik kriterleri dikkate alınarak üretim tamamlanmıştır.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/iletisim/" class="btn btn-primary">Teklif Al</a>
+            <a href="/galeri/" class="btn btn-secondary">Galeriye Dön</a>
+            <a href="/videolar/" class="btn btn-secondary">Tüm Videolar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+</Layout>

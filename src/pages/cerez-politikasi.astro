@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BUSINESS_SHORT_NAME, EMAIL, ADDRESS, PHONE_NUMBER, GA4_MEASUREMENT_ID, GOOGLE_ADS_ID } from '../consts';
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Çerez Politikası', item: '/cerez-politikasi/' },
+];
+---
+
+<Layout
+  title={`Çerez Politikası | ${BUSINESS_SHORT_NAME}`}
+  description="A2 Reklam web sitesinde kullanılan çerezler, amaçları ve yönetim seçenekleri hakkında bilgi edinin."
+  lang="tr"
+  breadcrumbs={breadcrumbs}
+>
+  <section class="py-16 md:py-20 bg-secondary">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl text-white mb-4">Çerez Politikası</h1>
+        <p class="text-gray-400 mb-10">Son güncelleme: 9 Mart 2026</p>
+
+        <div class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary">
+
+          <p>
+            Bu çerez politikası, {BUSINESS_SHORT_NAME} tarafından işletilen
+            <a href="https://a2reklam.com">a2reklam.com</a> web sitesinde kullanılan çerezlerin
+            türlerini, amaçlarını ve yönetim yöntemlerini açıklamaktadır. Sitemizi ziyaret
+            ederek, bu politikada belirtilen şartları kabul etmiş sayılırsınız.
+          </p>
+
+          <!-- 1. Çerez Nedir? -->
+          <h2>Çerez Nedir?</h2>
+          <p>
+            Çerezler (cookies), web sitelerinin tarayıcınız aracılığıyla cihazınıza yerleştirdiği
+            küçük metin dosyalarıdır. Bu dosyalar, siteyi bir sonraki ziyaretinizde sizi tanımak,
+            tercihlerinizi hatırlamak ve size daha iyi bir kullanıcı deneyimi sunmak amacıyla
+            kullanılır. Çerezler, kişisel dosyalarınıza erişim sağlamaz ve cihazınıza zarar vermez.
+          </p>
+
+          <!-- 2. Kullanılan Çerez Türleri -->
+          <h2>Kullanılan Çerez Türleri</h2>
+          <p>Web sitemizde aşağıdaki çerezler kullanılmaktadır:</p>
+        </div>
+
+        <!-- Çerez Tablosu -->
+        <div class="not-prose my-8 overflow-x-auto">
+          <table class="w-full text-sm text-left text-gray-300 border border-white/10 rounded-xl overflow-hidden">
+            <thead class="text-xs uppercase bg-white/5 text-gray-400">
+              <tr>
+                <th class="px-4 py-3">Çerez Adı</th>
+                <th class="px-4 py-3">Sağlayıcı</th>
+                <th class="px-4 py-3">Amaç</th>
+                <th class="px-4 py-3">Süre</th>
+                <th class="px-4 py-3">Tür</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-mono text-primary">_ga</td>
+                <td class="px-4 py-3">Google Analytics</td>
+                <td class="px-4 py-3">Kullanıcı ayrımı</td>
+                <td class="px-4 py-3">2 yıl</td>
+                <td class="px-4 py-3"><span class="bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded text-xs">Analitik</span></td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-mono text-primary">_gid</td>
+                <td class="px-4 py-3">Google Analytics</td>
+                <td class="px-4 py-3">Kullanıcı ayrımı</td>
+                <td class="px-4 py-3">24 saat</td>
+                <td class="px-4 py-3"><span class="bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded text-xs">Analitik</span></td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-mono text-primary">_gat</td>
+                <td class="px-4 py-3">Google Analytics</td>
+                <td class="px-4 py-3">İstek sınırlama</td>
+                <td class="px-4 py-3">1 dakika</td>
+                <td class="px-4 py-3"><span class="bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded text-xs">Analitik</span></td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-mono text-primary">_gcl_au</td>
+                <td class="px-4 py-3">Google Ads</td>
+                <td class="px-4 py-3">Dönüşüm izleme</td>
+                <td class="px-4 py-3">90 gün</td>
+                <td class="px-4 py-3"><span class="bg-orange-500/20 text-orange-300 px-2 py-0.5 rounded text-xs">Pazarlama</span></td>
+              </tr>
+              <tr class="hover:bg-white/5 transition-colors">
+                <td class="px-4 py-3 font-mono text-primary">a2-theme</td>
+                <td class="px-4 py-3">Site</td>
+                <td class="px-4 py-3">Tema tercihi</td>
+                <td class="px-4 py-3">Kalıcı</td>
+                <td class="px-4 py-3"><span class="bg-green-500/20 text-green-300 px-2 py-0.5 rounded text-xs">Zorunlu</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary">
+
+          <!-- 3. Zorunlu Çerezler -->
+          <h2>Zorunlu Çerezler</h2>
+          <p>
+            Zorunlu çerezler, web sitemizin temel işlevlerinin düzgün çalışması için gereklidir.
+            Bu çerezler olmadan site, istediğiniz şekilde çalışamaz. Zorunlu çerezler arasında
+            tema tercihinizi (açık/koyu mod) saklayan <code>a2-theme</code> çerezi bulunmaktadır.
+          </p>
+          <p>
+            Bu çerezler, herhangi bir kişisel veri toplamaz ve yalnızca sitenin işlevselliğini
+            sağlamak amacıyla kullanılır. Zorunlu çerezler devre dışı bırakılamaz.
+          </p>
+
+          <!-- 4. Analitik Çerezler -->
+          <h2>Analitik Çerezler</h2>
+          <p>
+            Web sitemizde Google Analytics 4 (Ölçüm Kimliği: <code>{GA4_MEASUREMENT_ID}</code>)
+            kullanılmaktadır. Analitik çerezler, ziyaretçi istatistiklerini anonim olarak toplamamıza
+            yardımcı olur. Bu çerezler sayesinde aşağıdaki bilgileri elde ederiz:
+          </p>
+          <ul>
+            <li>Siteyi ziyaret eden kullanıcı sayısı</li>
+            <li>Ziyaret edilen sayfalar ve ziyaret süreleri</li>
+            <li>Kullanıcıların siteye hangi kaynaklardan ulaştığı</li>
+            <li>Cihaz türü ve tarayıcı bilgileri (anonim)</li>
+            <li>Coğrafi konum bilgisi (şehir düzeyinde, anonim)</li>
+          </ul>
+          <p>
+            Google Analytics tarafından toplanan veriler, IP anonimleştirme özelliği aktif olarak
+            işlenir. Bu veriler, site performansını iyileştirmek ve kullanıcı deneyimini geliştirmek
+            amacıyla kullanılır.
+          </p>
+
+          <!-- 5. Pazarlama Çerezleri -->
+          <h2>Pazarlama Çerezleri</h2>
+          <p>
+            Web sitemizde Google Ads (Hesap Kimliği: <code>{GOOGLE_ADS_ID}</code>) dönüşüm takibi
+            kullanılmaktadır. Pazarlama çerezleri, reklam kampanyalarımızın etkinliğini ölçmemize
+            yardımcı olur. Bu çerezler aşağıdaki amaçlarla kullanılır:
+          </p>
+          <ul>
+            <li>Google Ads reklam kampanyalarından gelen dönüşümlerin izlenmesi</li>
+            <li>Reklam performansının ölçülmesi ve optimizasyonu</li>
+            <li>Yeniden pazarlama (remarketing) hedefleme</li>
+          </ul>
+          <p>
+            Bu çerezler, Google tarafından yönetilir ve Google'ın gizlilik politikasına tabidir.
+            Pazarlama çerezleri, tarayıcı ayarlarınızdan devre dışı bırakılabilir.
+          </p>
+
+          <!-- 6. Çerez Yönetimi -->
+          <h2>Çerez Yönetimi</h2>
+          <p>
+            Tarayıcınızın ayarlarını değiştirerek çerezleri yönetebilir, engelleyebilir veya
+            silebilirsiniz. Ancak çerezleri devre dışı bırakmanız durumunda sitemizin bazı
+            özellikleri düzgün çalışmayabilir.
+          </p>
+
+          <h3>Google Chrome</h3>
+          <ol>
+            <li>Tarayıcınızın sağ üst köşesindeki üç nokta menüsüne tıklayın.</li>
+            <li><strong>Ayarlar</strong> &gt; <strong>Gizlilik ve güvenlik</strong> &gt; <strong>Çerezler ve diğer site verileri</strong> yolunu izleyin.</li>
+            <li>Çerez tercihlerinizi buradan yönetebilirsiniz.</li>
+          </ol>
+
+          <h3>Mozilla Firefox</h3>
+          <ol>
+            <li>Tarayıcınızın sağ üst köşesindeki hamburger menüsüne tıklayın.</li>
+            <li><strong>Ayarlar</strong> &gt; <strong>Gizlilik ve Güvenlik</strong> bölümüne gidin.</li>
+            <li><strong>Çerezler ve Site Verileri</strong> kısmından tercihlerinizi ayarlayın.</li>
+          </ol>
+
+          <h3>Safari</h3>
+          <ol>
+            <li>Üst menüden <strong>Safari</strong> &gt; <strong>Tercihler</strong> yolunu izleyin.</li>
+            <li><strong>Gizlilik</strong> sekmesine tıklayın.</li>
+            <li><strong>Web sitesi verilerini yönet</strong> seçeneğinden çerezleri yönetin.</li>
+          </ol>
+        </div>
+
+        <div class="not-prose my-8 bg-accent-light p-6 rounded-xl border border-white/5">
+          <p class="text-gray-300 text-sm">
+            <strong class="text-white">Google Analytics Devre Dışı Bırakma:</strong> Google Analytics
+            çerezlerini devre dışı bırakmak için
+            <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">
+              Google Analytics Opt-out Browser Add-on
+            </a> eklentisini tarayıcınıza yükleyebilirsiniz.
+          </p>
+        </div>
+
+        <div class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary">
+
+          <!-- 7. Çerez Politikası Değişiklikleri -->
+          <h2>Çerez Politikası Değişiklikleri</h2>
+          <p>
+            {BUSINESS_SHORT_NAME}, bu çerez politikasını herhangi bir zamanda güncelleme hakkını
+            saklı tutar. Politikada yapılan değişiklikler, bu sayfada yayımlandığı tarihten itibaren
+            geçerli olur. Değişikliklerden haberdar olmak için bu sayfayı düzenli olarak ziyaret
+            etmenizi öneririz.
+          </p>
+
+          <!-- 8. İletişim -->
+          <h2>İletişim</h2>
+          <p>
+            Çerez politikamız hakkında sorularınız veya talepleriniz için bizimle iletişime
+            geçebilirsiniz:
+          </p>
+          <ul>
+            <li><strong>E-posta:</strong> <a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
+            <li><strong>Telefon:</strong> <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`}>{PHONE_NUMBER}</a></li>
+            <li><strong>Adres:</strong> {ADDRESS}</li>
+          </ul>
+          <p>
+            Kişisel verilerinizin işlenmesi hakkında detaylı bilgi için
+            <a href="/gizlilik-politikasi/">Gizlilik Politikası</a> ve
+            <a href="/kvkk/">KVKK Aydınlatma Metni</a> sayfalarımızı inceleyebilirsiniz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

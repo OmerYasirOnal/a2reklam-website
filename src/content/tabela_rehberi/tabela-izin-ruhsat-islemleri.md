@@ -324,7 +324,7 @@ A2 Reklam ile tüm süreci bize bırakın:
 
 ## İzin Süreci Başlatın
 
-Tabelanız için [izin danışmanlığı ve ücretsiz teknik proje](/teklif-al/) talebi için [bizimle iletişime geçin](/iletisim/).
+Tabelanız için [izin danışmanlığı ve ücretsiz teknik proje](/iletisim/) talebi için [bizimle iletişime geçin](/iletisim/).
 
 [Tüm hizmetlerimizi](/hizmetler/) ve [ruhsatlı projelerimizi](/galeri/) inceleyin.
 

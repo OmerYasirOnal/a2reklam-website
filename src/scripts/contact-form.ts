@@ -104,12 +104,26 @@ async function handleSubmit(event: Event): Promise<void> {
       form.reset();
 
       // Push GTM event for successful form submission
-      if (typeof window !== 'undefined' && window.dataLayer) {
-        window.dataLayer.push({
-          event: 'form_success',
+      if (typeof window !== 'undefined') {
+        if (!Array.isArray(window.dataLayer)) {
+          window.dataLayer = [];
+        }
+
+        const payload = {
           form_type: 'contact',
+          lead_type: 'contact',
           lang: document.documentElement.lang || 'tr',
           page: window.location.pathname || '/',
+        };
+
+        window.dataLayer.push({
+          event: 'form_success',
+          ...payload,
+        });
+
+        window.dataLayer.push({
+          event: 'lead_conversion',
+          ...payload,
         });
       }
 

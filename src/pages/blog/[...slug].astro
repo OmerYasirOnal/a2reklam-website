@@ -28,6 +28,13 @@ const breadcrumbs = [
   lang="tr"
   image={post.data.heroImage}
   article={true}
+  articleMeta={{
+    publishedTime: post.data.pubDate.toISOString(),
+    modifiedTime: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+    authorName: 'A2 Reklam Ekibi',
+    section: 'Tabela Rehberi',
+    tags: post.data.tags ?? [],
+  }}
   breadcrumbs={breadcrumbs}
   faq={post.data.faq}
 >
@@ -44,7 +51,7 @@ const breadcrumbs = [
             <li>/</li>
             <li class="text-white">{post.data.title}</li>
           </ul>
-          <h1 class="font-heading font-black text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
+          <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-8 leading-tight">
             {post.data.title}
           </h1>
           <div class="flex items-center gap-6 text-sm text-gray-400 border-y border-white/5 py-6">
@@ -63,7 +70,7 @@ const breadcrumbs = [
           <img src={post.data.heroImage} alt={post.data.title} class="w-full h-auto" />
         </div>
 
-        <div class="article-prose prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-bold prose-a:text-primary prose-strong:text-white prose-p:text-gray-400">
+        <div class="article-prose prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary prose-strong:text-white prose-p:text-gray-400">
           <Content />
         </div>
 
@@ -85,7 +92,7 @@ const breadcrumbs = [
             Tüm tabela ve reklam ihtiyaçlarınız için uzman ekibimizle yanınızdayız. Ücretsiz keşif avantajından yararlanmak için hemen iletişime geçin.
           </p>
           <div class="flex flex-col md:flex-row justify-center gap-4 relative z-10">
-            <a href="/teklif-al/" class="bg-primary text-secondary font-black py-4 px-10 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 uppercase tracking-widest text-sm">
+            <a href="/iletisim/" class="bg-primary text-secondary font-black py-4 px-10 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 uppercase tracking-widest text-sm">
               TEKLİF AL
             </a>
             <a href={`tel:${PHONE_TEL}`} class="border border-white/20 hover:border-white text-white font-bold py-4 px-10 rounded-lg transition-all text-sm uppercase tracking-widest">

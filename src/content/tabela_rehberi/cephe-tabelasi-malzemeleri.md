@@ -192,7 +192,7 @@ Akrilik, PMMA (polimetil metakrilat) esaslı, şeffaf veya renkli termoplastik b
 
 ## Ücretsiz Malzeme Danışmanlığı
 
-Projeniz için en uygun malzemeyi belirlemek üzere [ücretsiz keşif hizmeti](/teklif-al/) alın. Uzman ekibimiz, bütçenize ve ihtiyaçlarınıza özel çözümler sunar. [İletişime geçin](/iletisim/) ve [hizmetlerimizi](/hizmetler/) inceleyin.
+Projeniz için en uygun malzemeyi belirlemek üzere [ücretsiz keşif hizmeti](/iletisim/) alın. Uzman ekibimiz, bütçenize ve ihtiyaçlarınıza özel çözümler sunar. [İletişime geçin](/iletisim/) ve [hizmetlerimizi](/hizmetler/) inceleyin.
 
 ---
 

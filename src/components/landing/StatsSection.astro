@@ -2,11 +2,10 @@
 import { STATS_CONFIG } from '../../consts';
 
 interface Props {
-  lang?: 'tr' | 'en' | 'ar';
+  lang?: 'tr' | 'en';
 }
 
 const { lang = 'tr' } = Astro.props;
-const isRtl = lang === 'ar';
 
 // Translations for each stat
 const translations = {
@@ -21,12 +20,6 @@ const translations = {
     endToEnd: { label: 'End-to-End', sublabel: 'Discovery to Install' },
     istanbul: { label: 'Istanbul', sublabel: 'Citywide Coverage' },
     quality: { label: 'Quality', sublabel: 'Materials & Craft' },
-  },
-  ar: {
-    corporate: { label: 'حلول مؤسسية', sublabel: 'مشاريع B2B احترافية' },
-    endToEnd: { label: 'تنفيذ متكامل', sublabel: 'من المعاينة إلى التركيب' },
-    istanbul: { label: 'إسطنبول', sublabel: 'تغطية شاملة للمدينة' },
-    quality: { label: 'جودة التصنيع', sublabel: 'مواد وتقنيات موثوقة' },
   },
 };
 

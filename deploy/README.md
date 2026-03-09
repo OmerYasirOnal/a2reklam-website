@@ -4,8 +4,9 @@
    ```bash
    npm run build
    ```
-2. Upload the contents of `dist/` to `public_html/`.
-3. Copy `public/.htaccess` to `public_html/.htaccess` (merge if you already have rules).
+2. Make sure `dist/.htaccess` exists (it should match `.htaccess-fixed` in the repo root).
+3. Upload the contents of `dist/` to `public_html/` (overwrite existing).
+4. In cPanel File Manager, enable "Show Hidden Files" and confirm `public_html/.htaccess` exists.
 4. Verify clean URLs and redirects:
    - `/sitemap-index.xml`
    - `/sitemap-0.xml`
