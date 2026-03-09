@@ -1,10 +1,12 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_DESCRIPTION_EN, SITE_DESCRIPTION_AR, GTM_CONTAINER_ID, TRACKING_ENABLED } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_DESCRIPTION_EN, GTM_CONTAINER_ID, TRACKING_ENABLED } from '../consts';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
 import SEO from '../components/common/SEO.astro';
 import MobileCTA from '../components/common/MobileCTA.astro';
 import WhatsAppAssistant from '../components/common/WhatsAppAssistant.astro';
+import BackToTopButton from '../components/common/BackToTopButton.astro';
+import CookieConsent from '../components/common/CookieConsent.astro';
 import Tracking from '../components/common/Tracking.astro';
 import TrackingEvents from '../components/common/TrackingEvents.astro';
 import { buildWhatsAppLink, buildWhatsAppMessage, sanitizePageTitle } from '../utils/whatsapp';
@@ -16,6 +18,14 @@ interface Props {
 	lang?: string;
   image?: string;
   article?: boolean;
+  noindex?: boolean;
+  articleMeta?: {
+    publishedTime?: string;
+    modifiedTime?: string;
+    authorName?: string;
+    section?: string;
+    tags?: string[];
+  };
   breadcrumbs?: { name: string; item: string }[];
   faq?: { question: string; answer: string }[];
   whatsappTitle?: string;
@@ -29,6 +39,8 @@ const {
   lang = 'tr',
   image,
   article = false,
+  noindex = false,
+  articleMeta,
   breadcrumbs,
   faq,
   whatsappTitle,
@@ -36,14 +48,11 @@ const {
   mobileCtaVariant = 'default',
 } = Astro.props;
 
-const description =
-  providedDescription ??
-  (lang === 'en' ? SITE_DESCRIPTION_EN : lang === 'ar' ? SITE_DESCRIPTION_AR : SITE_DESCRIPTION);
+const description = providedDescription ?? (lang === 'en' ? SITE_DESCRIPTION_EN : SITE_DESCRIPTION);
 
-const isRtl = lang === 'ar';
 const sanitizedTitle = sanitizePageTitle(whatsappTitle ?? title);
 const whatsappMessage = buildWhatsAppMessage({
-  lang: lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'tr',
+  lang: lang === 'en' ? 'en' : 'tr',
   pageTitle: sanitizedTitle,
   location: whatsappLocation ?? null,
 });
@@ -51,15 +60,13 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
 const quoteLink =
   mobileCtaVariant === 'contact'
     ? '#contact-form'
-    : lang === 'ar'
-      ? '/ar/get-quote/'
-      : lang === 'en'
-        ? '/en/get-quote/'
-        : '/teklif-al/';
+    : lang === 'en'
+      ? '/en/get-quote/'
+      : '/iletisim/';
 ---
 
 <!doctype html>
-<html lang={lang} dir={isRtl ? 'rtl' : 'ltr'} class="scroll-smooth">
+<html lang={lang} dir="ltr" class="scroll-smooth">
 	<head>
     <script is:inline>
       (function() {
@@ -84,17 +91,13 @@ const quoteLink =
       lang={lang}
       image={image}
       article={article}
+      noindex={noindex}
+      articleMeta={articleMeta}
       breadcrumbs={breadcrumbs}
       faq={faq}
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 	</head>
-	<body class:list={[
-    'bg-secondary text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-primary selection:text-white pb-16 md:pb-0',
-    isRtl && 'font-arabic',
-  ]}>
+	<body class="bg-secondary text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-primary selection:text-white pb-12 md:pb-0">
     {TRACKING_ENABLED && (
       <noscript>
         <iframe
@@ -112,6 +115,8 @@ const quoteLink =
     <Footer lang={lang} />
     <MobileCTA lang={lang} variant={mobileCtaVariant} whatsappLink={whatsappLink} quoteLink={quoteLink} />
     <WhatsAppAssistant lang={lang} pageTitle={sanitizedTitle} location={whatsappLocation} />
+    <BackToTopButton lang={lang === 'en' ? 'en' : 'tr'} />
     <TrackingEvents />
-	</body>
+    <CookieConsent lang={lang === 'en' ? 'en' : 'tr'} />
+  </body>
 </html>

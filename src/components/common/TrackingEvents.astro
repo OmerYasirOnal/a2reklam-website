@@ -18,12 +18,30 @@ import { TRACKING_ENABLED } from '../../consts';
       function trackCTAClick(event) {
         const dataLayer = getDataLayer();
         if (!dataLayer) return;
-        dataLayer.push({
+        const payload = {
           event: 'cta_click',
           cta_type: event.type,
           lang: event.lang,
           page: event.page,
-        });
+          cta_label: event.label || null,
+          cta_target: event.target || null,
+          element_id: event.elementId || null,
+        };
+
+        if (event.phoneNumber) {
+          payload.phone_number = event.phoneNumber;
+        }
+
+        dataLayer.push(payload);
+
+        if (event.type === 'call') {
+          dataLayer.push({
+            event: 'phone_click',
+            phone_number: event.phoneNumber || null,
+            lang: event.lang,
+            page: event.page,
+          });
+        }
       }
 
       function trackLeadSubmit(event) {
@@ -37,35 +55,214 @@ import { TRACKING_ENABLED } from '../../consts';
         });
       }
 
+      function trackOutboundClick(event) {
+        const dataLayer = getDataLayer();
+        if (!dataLayer) return;
+        dataLayer.push({
+          event: 'outbound_click',
+          outbound_type: event.type || 'external',
+          outbound_target: event.target || null,
+          outbound_name: event.name || null,
+          lang: event.lang,
+          page: event.page,
+        });
+      }
+
       const getLang = (el) =>
         el?.getAttribute('data-lang') || document.documentElement.lang || 'tr';
       const getPage = () => window.location.pathname || '/';
+      const normalizeText = (value) => (value ? value.replace(/\s+/g, ' ').trim() : '');
+      const extractLabel = (el) => {
+        if (!(el instanceof HTMLElement)) return null;
+        const aria = normalizeText(el.getAttribute('aria-label') || '');
+        if (aria) return aria;
+        if (el instanceof HTMLInputElement) {
+          const inputLabel = normalizeText(el.value || '');
+          return inputLabel || null;
+        }
+        const text = normalizeText(el.textContent || '');
+        return text || null;
+      };
+      const extractTarget = (el) => {
+        if (!(el instanceof HTMLElement)) return null;
+        if (el instanceof HTMLAnchorElement) {
+          return el.getAttribute('href') || null;
+        }
+        if (el instanceof HTMLInputElement && el.form) {
+          return el.form.getAttribute('action') || null;
+        }
+        return el.getAttribute('data-track-target') || null;
+      };
+      const extractElementId = (el) => {
+        if (!(el instanceof HTMLElement)) return null;
+        return el.getAttribute('id') || el.getAttribute('data-track-id') || null;
+      };
+      const extractPhoneNumber = (el) => {
+        const href = el?.getAttribute('href') || '';
+        if (href.startsWith('tel:')) {
+          return href.slice(4).replace(/[^\d+]/g, '');
+        }
+        const attr = el?.getAttribute('data-phone') || '';
+        return attr ? attr.replace(/[^\d+]/g, '') : undefined;
+      };
+
+      const bindClickOnce = (elements, handler) => {
+        elements.forEach((el) => {
+          if (el.dataset.trackBound === 'true') return;
+          el.dataset.trackBound = 'true';
+          el.addEventListener('click', () => handler(el));
+        });
+      };
+
+      const inferOutboundType = (url) => {
+        const host = (url.host || '').toLowerCase();
+        const href = (url.href || '').toLowerCase();
+        if (host.includes('google.com') && href.includes('/maps')) return 'google_maps';
+        if (host.includes('instagram.com') || host.includes('facebook.com') || host.includes('linkedin.com')) return 'social';
+        return 'external';
+      };
+      const inferInternalCtaType = (url) => {
+        const targetPath = `${url.pathname || ''}${url.hash || ''}`.toLowerCase();
+        if (/teklif|get-quote|quote|contact#contact-form|iletisim#contact-form/.test(targetPath)) return 'quote';
+        if (/\/iletisim\/|\/contact\//.test(targetPath)) return 'contact';
+        if (/\/galeri\/|\/gallery\//.test(targetPath)) return 'gallery';
+        if (/\/videolar\/|\/videos\//.test(targetPath)) return 'videos';
+        return 'button_link';
+      };
+
+      const decorateAutoTrackingTargets = () => {
+        const pageLang = document.documentElement.lang || 'tr';
+        const elements = document.querySelectorAll(
+          'a[href], button, [role="button"], input[type="button"], input[type="submit"]'
+        );
+
+        elements.forEach((el) => {
+          if (!(el instanceof HTMLElement)) return;
+          if (el.hasAttribute('data-track')) {
+            if (!el.getAttribute('data-lang')) {
+              el.setAttribute('data-lang', pageLang);
+            }
+            return;
+          }
+
+          const href = el instanceof HTMLAnchorElement ? (el.getAttribute('href') || '') : '';
+          const className = typeof el.className === 'string' ? el.className : '';
+          const role = (el.getAttribute('role') || '').toLowerCase();
+          const isButtonLike =
+            el.tagName === 'BUTTON' ||
+            el instanceof HTMLInputElement ||
+            role === 'button' ||
+            /\bbtn\b|button|cta/i.test(className);
+
+          if (el.hasAttribute('data-back-to-top')) {
+            el.setAttribute('data-track', 'cta');
+            el.setAttribute('data-cta-type', 'back_to_top');
+          } else if (href.startsWith('tel:')) {
+            el.setAttribute('data-track', 'call');
+          } else if (/wa\.me|whatsapp/i.test(href)) {
+            el.setAttribute('data-track', 'whatsapp');
+          } else if (href && el instanceof HTMLAnchorElement && !href.startsWith('#')) {
+            try {
+              const url = new URL(href, window.location.href);
+              if (url.origin !== window.location.origin) {
+                el.setAttribute('data-track', 'outbound');
+                el.setAttribute('data-outbound-type', inferOutboundType(url));
+                if (!el.getAttribute('data-outbound-target')) {
+                  el.setAttribute('data-outbound-target', 'external_link');
+                }
+              } else if (isButtonLike) {
+                const inferredType = inferInternalCtaType(url);
+                if (inferredType === 'quote') {
+                  el.setAttribute('data-track', 'quote');
+                } else {
+                  el.setAttribute('data-track', 'cta');
+                  el.setAttribute('data-cta-type', inferredType);
+                }
+              }
+            } catch (error) {
+              // Ignore malformed URLs and continue with explicit tags only.
+            }
+          } else if (isButtonLike) {
+            const actionType = el.getAttribute('data-cta-type') || 'button_click';
+            el.setAttribute('data-track', 'cta');
+            el.setAttribute('data-cta-type', actionType);
+          }
+
+          if (el.hasAttribute('data-track') && !el.getAttribute('data-lang')) {
+            el.setAttribute('data-lang', pageLang);
+          }
+        });
+      };
 
       const bindCTAClicks = () => {
+        decorateAutoTrackingTargets();
+
         // Track WhatsApp clicks
-        document.querySelectorAll('[data-track="whatsapp"]').forEach((el) => {
-          el.addEventListener('click', () => {
-            trackCTAClick({ type: 'whatsapp', lang: getLang(el), page: getPage() });
-          });
+        bindClickOnce(document.querySelectorAll('[data-track="whatsapp"]'), (el) => {
+            trackCTAClick({
+              type: 'whatsapp',
+              lang: getLang(el),
+              page: getPage(),
+              label: extractLabel(el),
+              target: extractTarget(el),
+              elementId: extractElementId(el),
+            });
         });
 
         // Track phone clicks
-        document.querySelectorAll('[data-track="call"]').forEach((el) => {
-          el.addEventListener('click', () => {
-            trackCTAClick({ type: 'call', lang: getLang(el), page: getPage() });
-          });
+        bindClickOnce(document.querySelectorAll('[data-track="call"]'), (el) => {
+            trackCTAClick({
+              type: 'call',
+              lang: getLang(el),
+              page: getPage(),
+              phoneNumber: extractPhoneNumber(el),
+              label: extractLabel(el),
+              target: extractTarget(el),
+              elementId: extractElementId(el),
+            });
         });
 
         // Track quote clicks
-        document.querySelectorAll('[data-track="quote"]').forEach((el) => {
-          el.addEventListener('click', () => {
-            trackCTAClick({ type: 'quote', lang: getLang(el), page: getPage() });
+        bindClickOnce(document.querySelectorAll('[data-track="quote"]'), (el) => {
+            trackCTAClick({
+              type: 'quote',
+              lang: getLang(el),
+              page: getPage(),
+              label: extractLabel(el),
+              target: extractTarget(el),
+              elementId: extractElementId(el),
+            });
+        });
+
+        // Track generic CTA clicks
+        bindClickOnce(document.querySelectorAll('[data-track="cta"]'), (el) => {
+          const ctaType = el.getAttribute('data-cta-type') || 'cta';
+          trackCTAClick({
+            type: ctaType,
+            lang: getLang(el),
+            page: getPage(),
+            label: extractLabel(el),
+            target: extractTarget(el),
+            elementId: extractElementId(el),
+          });
+        });
+
+        // Track outbound clicks (references, maps, social, etc.)
+        bindClickOnce(document.querySelectorAll('[data-track="outbound"]'), (el) => {
+          trackOutboundClick({
+            type: el.getAttribute('data-outbound-type') || 'external',
+            target: el.getAttribute('data-outbound-target') || null,
+            name: el.getAttribute('data-outbound-name') || extractLabel(el),
+            lang: getLang(el),
+            page: getPage(),
           });
         });
       };
 
       const bindLeadSubmits = () => {
         document.querySelectorAll('form[data-track="lead-submit"]').forEach((form) => {
+          if (form.dataset.leadBound === 'true') return;
+          form.dataset.leadBound = 'true';
           form.addEventListener('submit', () => {
             const type = form.getAttribute('data-lead-type') || 'quote';
             trackLeadSubmit({ type, lang: getLang(form), page: getPage() });
@@ -83,6 +280,8 @@ import { TRACKING_ENABLED } from '../../consts';
       } else {
         init();
       }
+
+      document.addEventListener('astro:page-load', init);
     })();
   </script>
 )}

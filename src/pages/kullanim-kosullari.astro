@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BUSINESS_SHORT_NAME, PHONE_NUMBER, EMAIL, ADDRESS } from '../consts';
+
+const title = `Kullanım Koşulları | ${BUSINESS_SHORT_NAME}`;
+const description = `${BUSINESS_SHORT_NAME} web sitesi kullanım koşulları, hizmet şartları ve yasal bilgilendirme sayfası.`;
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Kullanım Koşulları', item: '/kullanim-kosullari/' },
+];
+---
+
+<Layout title={title} description={description} lang="tr" breadcrumbs={breadcrumbs}>
+  <section class="py-16 md:py-20 bg-secondary">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl text-white mb-4">Kullanım Koşulları</h1>
+        <p class="text-gray-400 mb-10">Son güncelleme: 9 Mart 2026</p>
+
+        <div class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary">
+
+          <!-- 1. Genel Hükümler -->
+          <h2>1. Genel Hükümler</h2>
+          <p>
+            Bu web sitesi (<strong>a2reklam.com</strong>), {BUSINESS_SHORT_NAME} tarafından işletilmektedir.
+            Siteyi ziyaret ederek veya kullanarak aşağıda belirtilen kullanım koşullarını kabul etmiş sayılırsınız.
+            Bu koşulları kabul etmiyorsanız siteyi kullanmamanızı rica ederiz.
+          </p>
+          <p>
+            {BUSINESS_SHORT_NAME}, işbu kullanım koşullarını önceden haber vermeksizin güncelleme hakkını saklı tutar.
+            Güncel koşullar her zaman bu sayfada yayımlanır ve siteyi kullanmaya devam etmeniz
+            değişiklikleri kabul ettiğiniz anlamına gelir.
+          </p>
+
+          <!-- 2. Hizmet Tanımı -->
+          <h2>2. Hizmet Tanımı</h2>
+          <p>
+            {BUSINESS_SHORT_NAME}; tabela imalatı, cephe giydirme, totem tabela, kutu harf, dijital baskı,
+            araç giydirme, mimari yönlendirme ve kurumsal reklam çözümleri alanlarında hizmet veren
+            İstanbul merkezli bir tabela ve reklam firmasıdır.
+          </p>
+          <p>
+            Web sitemiz; sunduğumuz hizmetler, referanslarımız, galeri içeriği ve iletişim bilgileri
+            hakkında bilgi sağlamak amacıyla yayımlanmaktadır.
+          </p>
+
+          <!-- 3. Fikri Mülkiyet Hakları -->
+          <h2>3. Fikri Mülkiyet Hakları</h2>
+          <p>
+            Bu web sitesinde yer alan tüm içerikler — metin, görsel, fotoğraf, tasarım, logo, grafik,
+            video ve diğer materyaller dahil — {BUSINESS_SHORT_NAME}'in mülkiyetindedir veya lisanslı
+            olarak kullanılmaktadır. Bu içerikler, 5846 sayılı Fikir ve Sanat Eserleri Kanunu ve
+            ilgili mevzuat kapsamında korunmaktadır.
+          </p>
+
+          <div class="not-prose my-8 bg-accent-light p-6 rounded-xl border border-white/5">
+            <p class="text-gray-300 text-sm leading-relaxed">
+              <strong class="text-white">Önemli:</strong> Site içeriğinin tamamı veya bir kısmı,
+              {BUSINESS_SHORT_NAME}'in yazılı izni olmaksızın kopyalanamaz, çoğaltılamaz, dağıtılamaz
+              veya ticari amaçla kullanılamaz.
+            </p>
+          </div>
+
+          <!-- 4. Kullanıcı Yükümlülükleri -->
+          <h2>4. Kullanıcı Yükümlülükleri</h2>
+          <p>Siteyi kullanan ziyaretçiler aşağıdaki yükümlülükleri kabul eder:</p>
+          <ul>
+            <li>Siteyi yalnızca yasal amaçlarla ve bu koşullara uygun şekilde kullanmak.</li>
+            <li>İletişim ve teklif formları aracılığıyla doğru ve güncel bilgi vermek.</li>
+            <li>Site içeriğini izinsiz kopyalamamak, değiştirmemek veya yeniden yayımlamamak.</li>
+            <li>Sitenin teknik altyapısına zarar verebilecek herhangi bir girişimde bulunmamak.</li>
+            <li>Üçüncü tarafların haklarını ihlal edecek şekilde siteyi kullanmamak.</li>
+          </ul>
+
+          <!-- 5. Teklif ve Fiyatlandırma -->
+          <h2>5. Teklif ve Fiyatlandırma</h2>
+          <p>
+            Web sitemiz üzerinden yapılan teklif talepleri bilgi amaçlı olup bağlayıcı nitelik taşımaz.
+            Nihai fiyatlandırma, yerinde keşif yapıldıktan ve proje detayları (ölçü, malzeme, aydınlatma,
+            montaj koşulları) netleştirildikten sonra belirlenir.
+          </p>
+
+          <div class="not-prose my-8 bg-accent-light p-6 rounded-xl border border-white/5">
+            <p class="text-gray-300 text-sm leading-relaxed">
+              <strong class="text-white">KDV Bilgisi:</strong> Aksi belirtilmedikçe tüm fiyatlar KDV hariç olarak
+              sunulmaktadır. KDV oranı ilgili mevzuata uygun olarak nihai teklife yansıtılır.
+            </p>
+          </div>
+
+          <p>
+            Kampanya ve özel fiyat teklifleri süreleri boyunca geçerli olup belirtilen süre sonunda
+            geçerlilikleri sona erer. {BUSINESS_SHORT_NAME}, fiyat ve hizmet koşullarında önceden
+            bildirimde bulunmaksızın değişiklik yapma hakkını saklı tutar.
+          </p>
+
+          <!-- 6. Sorumluluk Sınırlaması -->
+          <h2>6. Sorumluluk Sınırlaması</h2>
+          <p>
+            Bu web sitesinde yer alan içerikler yalnızca bilgilendirme amacıyla sunulmaktadır.
+            {BUSINESS_SHORT_NAME}, site içeriğinin doğruluğu, güncelliği veya eksiksizliği konusunda
+            açık ya da zımni herhangi bir garanti vermemektedir.
+          </p>
+          <p>
+            Siteyi kullanımınızdan kaynaklanan doğrudan veya dolaylı zararlardan {BUSINESS_SHORT_NAME}
+            sorumlu tutulamaz. Teknik arızalar, erişim kesintileri veya veri kayıpları nedeniyle
+            oluşabilecek zararlarda firmamızın sorumluluğu bulunmamaktadır.
+          </p>
+
+          <!-- 7. Üçüncü Taraf Bağlantıları -->
+          <h2>7. Üçüncü Taraf Bağlantıları</h2>
+          <p>
+            Web sitemiz, üçüncü taraf web sitelerine yönlendiren bağlantılar içerebilir. Bu bağlantılar
+            yalnızca kullanım kolaylığı sağlamak amacıyla sunulmaktadır. {BUSINESS_SHORT_NAME}, bu
+            harici sitelerin içeriği, gizlilik politikaları veya uygulamaları üzerinde herhangi bir
+            kontrol veya sorumluluğa sahip değildir.
+          </p>
+          <p>
+            Üçüncü taraf sitelerine erişim, tamamen kullanıcının kendi sorumluluğundadır.
+          </p>
+
+          <!-- 8. Değişiklik Hakkı -->
+          <h2>8. Değişiklik Hakkı</h2>
+          <p>
+            {BUSINESS_SHORT_NAME}, işbu kullanım koşullarını herhangi bir zamanda, önceden bildirimde
+            bulunmaksızın güncelleme, değiştirme veya yeniden düzenleme hakkını saklı tutar.
+            Yapılan değişiklikler bu sayfada yayımlandığı tarihten itibaren geçerli olur.
+          </p>
+          <p>
+            Kullanıcıların, koşullardaki değişiklikleri takip etmek için bu sayfayı düzenli olarak
+            kontrol etmeleri tavsiye edilir.
+          </p>
+
+          <!-- 9. Uygulanacak Hukuk -->
+          <h2>9. Uygulanacak Hukuk</h2>
+          <p>
+            Bu kullanım koşulları, Türkiye Cumhuriyeti hukukuna tabidir. İşbu koşullardan kaynaklanan
+            veya bunlarla bağlantılı tüm uyuşmazlıkların çözümünde İstanbul Mahkemeleri ve
+            İstanbul İcra Daireleri yetkilidir.
+          </p>
+
+          <!-- 10. İletişim -->
+          <h2>10. İletişim</h2>
+          <p>
+            Kullanım koşullarıyla ilgili sorularınız için aşağıdaki iletişim kanallarından bize ulaşabilirsiniz:
+          </p>
+
+          <div class="not-prose my-8 bg-accent-light p-6 rounded-xl border border-white/5">
+            <ul class="space-y-3 text-sm text-gray-300">
+              <li class="flex items-start gap-3">
+                <span class="text-primary font-bold mt-0.5">Firma:</span>
+                <span>{BUSINESS_SHORT_NAME}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary font-bold mt-0.5">Adres:</span>
+                <span>{ADDRESS}</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary font-bold mt-0.5">Telefon:</span>
+                <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} class="text-primary hover:underline">{PHONE_NUMBER}</a>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-primary font-bold mt-0.5">E-posta:</span>
+                <a href={`mailto:${EMAIL}`} class="text-primary hover:underline">{EMAIL}</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

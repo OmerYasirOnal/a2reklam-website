@@ -327,7 +327,7 @@ Totem tabela, işletmenize nasıl katkı sağlar?
 
 ## Ücretsiz Fiyat Teklifi Alın
 
-Totem tabela projeniz için [detaylı ve şeffaf fiyat teklifi](/teklif-al/) almak üzere [bizimle iletişime geçin](/iletisim/).
+Totem tabela projeniz için [detaylı ve şeffaf fiyat teklifi](/iletisim/) almak üzere [bizimle iletişime geçin](/iletisim/).
 
 Tüm [hizmetlerimizi](/hizmetler/) ve [farklı bütçelerdeki projelerimizi](/galeri/) inceleyerek ilham alın.
 

@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PROJECT_VIDEOS } from '../../data/videos';
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Videolar', item: '/videolar/' },
+];
+---
+
+<Layout
+  lang="tr"
+  title="Proje Videoları | A2 Reklam"
+  description="A2 Reklam tarafından tamamlanan tabela uygulamalarının gerçek proje videolarını izleyin. Cephe tabela, kutu harf ve saha montaj süreçleri."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="py-16 md:py-20 bg-secondary border-y border-white/5">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl text-white mb-4">Proje Videoları</h1>
+        <p class="text-gray-400 mb-10 md:mb-12">
+          Gerçek saha süreçlerinden kısa videolar. Her video sayfası ayrı URL ile indekslenir ve Google Video sonuçlarına uygun yapılandırılmış veri içerir.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {PROJECT_VIDEOS.map((video) => (
+            <article class="glass-card overflow-hidden border border-white/10 hover:border-primary/50 transition-colors">
+              <a href={`/videolar/${video.id}/`} class="block">
+                <div class="aspect-video bg-black/40 overflow-hidden">
+                  <img
+                    src={video.poster}
+                    alt={video.title.tr}
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="p-5">
+                  <h2 class="text-white font-semibold text-lg leading-snug mb-2">{video.title.tr}</h2>
+                  <p class="text-gray-400 text-sm leading-relaxed mb-4">{video.description.tr}</p>
+                  <span class="inline-flex text-primary text-sm font-semibold">Videoyu Aç →</span>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

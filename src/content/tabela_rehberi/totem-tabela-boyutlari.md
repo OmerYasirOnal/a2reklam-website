@@ -302,7 +302,7 @@ Standart dışı formlar:
 
 ## Ücretsiz Keşif ve Teklif
 
-Totem tabela projeniz için [ücretsiz keşif ve statik hesaplama](/teklif-al/) hizmeti alın. Uzman ekibimiz, size en uygun boyutu önerecektir.
+Totem tabela projeniz için [ücretsiz keşif ve statik hesaplama](/iletisim/) hizmeti alın. Uzman ekibimiz, size en uygun boyutu önerecektir.
 
 [İletişime geçin](/iletisim/), [hizmetlerimizi](/hizmetler/) inceleyin ve [farklı boyutlardaki projelerimizi](/galeri/) görün.
 

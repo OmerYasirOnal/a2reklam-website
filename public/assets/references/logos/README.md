@@ -6,14 +6,6 @@ File naming suggestion: use kebab-case matching the display name (e.g., `pidem.s
 
 See `public/assets/references/logos/SOURCES.md` for the download origins of the current assets.
 
-Pending logo assets to collect:
-- Ajans Press (`ajans-press.svg`)
-- Sunstop (`sunstop.svg`)
-- Essential Energy (`essential-energy.svg`)
-- MCA Ceylan Asansör (`mca-ceylan-asansor.svg`)
-- Harmony (`harmony.svg`)
-- Gürsoy (`gursoy.svg`)
-- İkbal (`ikbal.svg`)
-- MUMUS (`mumus.svg`)
-- Öztürk Holding (`ozturk-holding.svg`)
-- QUA Granite (`qua-granite.svg`)
+Fallback logo notes:
+- `sunstop.svg`: custom transparent SVG wordmark fallback (official asset not found from a stable source)
+- `mumus.svg`: custom transparent SVG wordmark fallback (official asset not found from a stable source)

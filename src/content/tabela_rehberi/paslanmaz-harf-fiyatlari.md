@@ -311,7 +311,7 @@ Kış aylarında talep düşer:
 
 ## Ücretsiz Teklif Alın
 
-Paslanmaz harf projeniz için [detaylı ve şeffaf fiyat teklifi](/teklif-al/) almak üzere [bizimle iletişime geçin](/iletisim/).
+Paslanmaz harf projeniz için [detaylı ve şeffaf fiyat teklifi](/iletisim/) almak üzere [bizimle iletişime geçin](/iletisim/).
 
 Bütçenize uygun çözümler için [hizmetlerimizi](/hizmetler/) ve [farklı bütçelerdeki projelerimizi](/galeri/) inceleyin.
 

@@ -59,7 +59,7 @@ const districtHash = district.slug.split('').reduce((acc, char) => acc + char.ch
 const serviceHighlights = [
   { name: 'Cephe Tabelası', slug: 'cephe-tabela', icon: '🏢' },
   { name: 'Totem Tabela', slug: 'totem', icon: '📍' },
-  { name: 'Işıklı Tabela', slug: 'isikli-isiksiz-tabelalar', icon: '💡' },
+  { name: 'Işıklı Tabela', slug: 'isikli-tabela', icon: '💡' },
   { name: 'Kutu Harf', slug: 'paslanmaz-harfler', icon: '✨' },
   { name: 'Araç Giydirme', slug: 'arac-giydirme', icon: '🚗' },
   { name: 'Yönlendirme Sistemleri', slug: 'yonlendirme', icon: '➡️' },
@@ -118,7 +118,7 @@ const faq = faqSets[districtHash % faqSets.length];
         <div class="inline-block mb-4 px-4 py-1 border border-primary/30 rounded-full bg-black/30 backdrop-blur text-primary text-sm font-semibold tracking-wider uppercase">
           {province.trName} / {district.trName}
         </div>
-        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+        <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
           {district.trName} <span class="text-primary">TABELA</span> VE REKLAM
         </h1>
         <p class="text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
@@ -129,7 +129,7 @@ const faq = faqSets[districtHash % faqSets.length];
 
       <!-- Services Highlight -->
       <div class="mb-20">
-        <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white text-center uppercase">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-8 text-white text-center uppercase">
           Hizmetlerimiz
         </h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -149,7 +149,7 @@ const faq = faqSets[districtHash % faqSets.length];
 
       <!-- Process Section -->
       <div class="glass-card p-8 md:p-12 mb-20">
-        <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white text-center uppercase">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-8 text-white text-center uppercase">
           Çalışma Sürecimiz
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -186,7 +186,7 @@ const faq = faqSets[districtHash % faqSets.length];
 
       <!-- Why A2 Reklam -->
       <div class="mb-20">
-        <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white text-center uppercase">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-8 text-white text-center uppercase">
           Neden <span class="text-primary">A2 Reklam</span>?
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -210,7 +210,7 @@ const faq = faqSets[districtHash % faqSets.length];
 
       <!-- CTA Section -->
       <div class="glass-card p-8 md:p-12 text-center mb-20">
-        <h2 class="font-heading font-black text-3xl md:text-4xl mb-4 text-white uppercase">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4 text-white uppercase">
           Hemen <span class="text-primary">Teklif Alın</span>
         </h2>
         <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -241,7 +241,7 @@ const faq = faqSets[districtHash % faqSets.length];
       <!-- Nearby Districts -->
       {neighbors.length > 0 && (
         <div>
-          <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white text-center uppercase">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl mb-8 text-white text-center uppercase">
             Yakın Bölgeler
           </h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">

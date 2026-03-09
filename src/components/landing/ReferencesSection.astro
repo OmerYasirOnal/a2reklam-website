@@ -2,11 +2,10 @@
 import { REFERENCES } from '../../data/references';
 
 interface Props {
-  lang?: 'tr' | 'en' | 'ar';
+  lang?: 'tr' | 'en';
 }
 
 const { lang = 'tr' } = Astro.props;
-const isRtl = lang === 'ar';
 const references = REFERENCES ?? [];
 
 // Don't render if no references configured
@@ -24,10 +23,6 @@ const translations = {
     heading: 'References',
     subtitle: 'Brands and businesses we\'ve delivered for',
   },
-  ar: {
-    heading: 'عملاؤنا',
-    subtitle: 'علامات وشركات وثقت بنا',
-  },
 };
 
 const t = translations[lang];
@@ -39,8 +34,8 @@ const t = translations[lang];
 
   <div class="container mx-auto px-4 relative z-10">
     <!-- Section Header -->
-    <div class:list={['text-center mb-12', isRtl && 'text-right']}>
-      <h2 class="font-heading font-black text-4xl md:text-5xl mb-4 text-white uppercase tracking-tight">
+    <div class="text-center mb-12">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl mb-4 text-white uppercase tracking-tight">
         {t.heading}
       </h2>
       <p class="text-gray-400 max-w-2xl mx-auto text-lg">
@@ -49,41 +44,43 @@ const t = translations[lang];
     </div>
 
     <!-- References Grid with Glass Cards -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 place-items-center">
       {references.map((reference) => (
-        <div class="glass-card group relative overflow-hidden">
-          <div class="aspect-[3/2] flex items-center justify-center p-6">
+        <a
+          href={reference.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-track="outbound"
+          data-outbound-type="reference"
+          data-outbound-target="references_section"
+          data-outbound-name={reference.name}
+          data-lang={lang}
+          class="glass-card group relative w-full overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
+          aria-label={`${reference.name} - ${lang === 'en' ? 'Visit site' : 'Siteyi ziyaret et'}`}
+        >
+          <div class="aspect-[3/2] flex items-center justify-center p-5 md:p-6">
             {reference.logo ? (
-              <img 
-                src={reference.logo} 
+              <img
+                src={reference.logo}
                 alt={`${reference.name} logo`}
                 width="180"
                 height="72"
                 decoding="async"
-                class="max-w-full max-h-full object-contain opacity-85 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500"
+                class="max-w-full max-h-full object-contain opacity-100 saturate-[1.35] contrast-[1.08] group-hover:scale-105 transition-all duration-300"
                 loading="lazy"
               />
             ) : (
               <div class="text-center">
-                <div class="text-gray-300 font-heading font-bold text-sm md:text-base uppercase tracking-wide group-hover:text-white transition-colors">
+                <div class="text-gray-300 font-heading font-bold text-xs md:text-sm uppercase tracking-wide group-hover:text-white transition-colors">
                   {reference.name}
                 </div>
               </div>
             )}
           </div>
-          {reference.url && (
-            <div class="absolute inset-0 flex items-center justify-center bg-secondary/90 opacity-0 group-hover:opacity-100 transition-opacity">
-              <a 
-                href={reference.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-primary hover:text-white text-sm font-bold uppercase tracking-wider"
-              >
-                {lang === 'ar' ? 'زيارة الموقع ←' : lang === 'en' ? 'Visit Site →' : 'Siteye Git →'}
-              </a>
-            </div>
-          )}
-        </div>
+          <span class="absolute top-2 right-2 text-[10px] uppercase tracking-wide text-white/55 group-hover:text-primary transition-colors">
+            {lang === 'en' ? 'Visit site' : 'Siteyi ziyaret et'}
+          </span>
+        </a>
       ))}
     </div>
   </div>

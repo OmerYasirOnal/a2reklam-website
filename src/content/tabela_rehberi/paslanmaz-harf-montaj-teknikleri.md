@@ -322,7 +322,7 @@ A2 Reklam olarak İstanbul genelinde, özellikle Beşiktaş, Kadıköy ve Kağı
 
 ## Montaj Talebi
 
-Paslanmaz harf montajınız için [profesyonel ekip talebi](/teklif-al/) oluşturun veya [bizimle iletişime geçin](/iletisim/).
+Paslanmaz harf montajınız için [profesyonel ekip talebi](/iletisim/) oluşturun veya [bizimle iletişime geçin](/iletisim/).
 
 [Hizmetlerimizi](/hizmetler/) ve [montaj referanslarımızı](/galeri/) inceleyin.
 

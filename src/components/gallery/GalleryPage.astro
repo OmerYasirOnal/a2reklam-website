@@ -5,11 +5,10 @@ import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt, getCategoryLabel } from '../../utils/imageSeo';
 
 interface Props {
-  lang?: 'tr' | 'en' | 'ar';
+  lang?: 'tr' | 'en';
 }
 
 const { lang = 'tr' } = Astro.props;
-const isRtl = lang === 'ar';
 
 const manifest = loadImagesManifest();
 const totalImages = manifest.length;
@@ -70,25 +69,13 @@ const content = {
     home: 'Home',
     gallery: 'Gallery',
   },
-  ar: {
-    metaTitle: 'المعرض | مشاريع A2 Reklam',
-    metaDescription: 'تصفح معرض A2 Reklam: لوحات واجهة، توتم، تغليف مركبات، وتنفيذات خاصة.',
-    title: 'المعرض',
-    subtitle: 'نماذج مختارة من أعمال اللافتات والهوية البصرية.',
-    filterLabel: 'الفئات',
-    all: 'الكل',
-    showing: 'عرض',
-    of: ' من ',
-    home: 'الرئيسية',
-    gallery: 'المعرض',
-  },
 };
 
 const t = content[lang];
 
 const breadcrumbs = [
-  { name: t.home, item: lang === 'ar' ? '/ar/' : lang === 'en' ? '/en/' : '/' },
-  { name: t.gallery, item: lang === 'ar' ? '/ar/gallery/' : lang === 'en' ? '/en/gallery/' : '/galeri/' },
+  { name: t.home, item: lang === 'en' ? '/en/' : '/' },
+  { name: t.gallery, item: lang === 'en' ? '/en/gallery/' : '/galeri/' },
 ];
 ---
 
@@ -96,15 +83,12 @@ const breadcrumbs = [
   <section class="relative py-24 bg-secondary overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     <div class="container mx-auto px-4 relative z-10">
-      <div class:list={['text-center mb-12', isRtl && 'text-right']}>
-        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+      <div class="text-center mb-12">
+        <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
           <span class="text-primary">{t.title}</span>
         </h1>
         <p
-          class:list={[
-            'text-gray-400 max-w-2xl mx-auto text-lg inline-block',
-            isRtl ? 'border-r-2 border-primary pr-4' : 'border-l-2 border-primary pl-4',
-          ]}
+          class="text-gray-400 max-w-2xl mx-auto text-lg inline-block border-l-2 border-primary pl-4"
         >
           {t.subtitle}
         </p>
@@ -120,17 +104,17 @@ const breadcrumbs = [
   >
     <div class="container mx-auto px-4">
       <div class="flex flex-col gap-6">
-        <div class:list={['flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4', isRtl && 'lg:flex-row-reverse']}>
-          <div class:list={['flex flex-col gap-2', isRtl && 'text-right']}>
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+          <div class="flex flex-col gap-2">
             <span class="text-xs uppercase tracking-widest text-gray-500">{t.filterLabel}</span>
             <h2 class="text-white font-heading font-bold text-2xl">{t.title}</h2>
           </div>
-          <div class:list={['text-sm text-gray-400', isRtl && 'text-right']} aria-live="polite" aria-atomic="true">
+          <div class="text-sm text-gray-400" aria-live="polite" aria-atomic="true">
             {t.showing} <span id="gallery-visible-count">{totalImages}</span>{t.of}<span id="gallery-total-count">{totalImages}</span>
           </div>
         </div>
 
-        <div class:list={['flex flex-wrap gap-3', isRtl && 'flex-row-reverse']}>
+        <div class="flex flex-wrap gap-3">
           <button
             type="button"
             class="filter-btn px-4 py-2 rounded-full border border-white/10 text-gray-300 text-sm font-medium hover:border-primary/60 hover:text-white transition-colors"

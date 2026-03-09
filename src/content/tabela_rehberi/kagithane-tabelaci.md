@@ -374,7 +374,7 @@ C: Evet, özellikle sanayi bölgesinde hafta sonu çalışmak daha pratik. Ek ü
 
 ## Aynı Gün Keşif Garantisi
 
-Kağıthane'deki işletmeniz için [aynı gün ücretsiz keşif](/teklif-al/) ve [24 saat içinde teklif](/iletisim/) garantisi.
+Kağıthane'deki işletmeniz için [aynı gün ücretsiz keşif](/iletisim/) ve [24 saat içinde teklif](/iletisim/) garantisi.
 
 **Yerel Avantajlar:**
 - Nakliye ücretsiz

@@ -1,3 +1,4 @@
+@import './fonts.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -53,9 +54,9 @@
   --section-padding-y-mobile: 3rem;
 
   /* Typography */
-  --font-size-h1: clamp(2.5rem, 5vw, 3.75rem);
-  --font-size-h2: clamp(2rem, 4vw, 2.5rem);
-  --font-size-h3: clamp(1.5rem, 3vw, 1.75rem);
+  --font-size-h1: clamp(2.1rem, 4.2vw, 3.2rem);
+  --font-size-h2: clamp(1.7rem, 3.5vw, 2.3rem);
+  --font-size-h3: clamp(1.35rem, 2.8vw, 1.65rem);
 
   /* Border Radius */
   --radius-sm: 0.5rem;
@@ -109,7 +110,7 @@
     font-family: 'Cairo', sans-serif;
   }
 
-  /* Typography Defaults */
+  /* Typography Defaults — Apple-like clean system */
   h1,
   h2,
   h3,
@@ -118,36 +119,57 @@
   h6 {
     @apply font-heading;
     color: var(--text-primary);
-    line-height: 1.2;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   h1 {
     font-size: var(--font-size-h1);
-    @apply font-black;
-    margin-bottom: 0.75rem;
+    @apply font-bold;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.03em;
   }
 
   h2 {
     font-size: var(--font-size-h2);
-    @apply font-bold;
-    margin-bottom: 0.65rem;
+    @apply font-semibold;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
   }
 
   h3 {
     font-size: var(--font-size-h3);
-    @apply font-semibold;
-    margin-bottom: 0.5rem;
+    @apply font-medium;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.015em;
+  }
+
+  h2:first-child,
+  h3:first-child {
+    margin-top: 0;
   }
 
   p {
     color: var(--text-secondary);
     max-width: 78ch;
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 
   ul,
   ol {
     color: var(--text-secondary);
     @apply leading-relaxed;
+    margin-bottom: 1.25rem;
   }
 
   /* Link Styles */
@@ -247,7 +269,7 @@
 
   /* Section Spacing */
   section {
-    @apply py-16 md:py-20;
+    @apply py-12 md:py-16;
   }
 }
 
@@ -256,7 +278,7 @@
 
   /* Button Styles */
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2.5 md:px-5 md:py-3 text-sm md:text-base font-semibold transition-all duration-200;
     @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary;
   }
 
@@ -716,6 +738,35 @@
   opacity: 1;
 }
 
+/* Trusted brands section theme blend */
+.trusted-brands-section {
+  background:
+    radial-gradient(circle at 14% 16%, rgba(200, 157, 15, 0.2), transparent 42%),
+    radial-gradient(circle at 84% 24%, rgba(56, 189, 248, 0.14), transparent 40%),
+    linear-gradient(180deg, rgba(52, 60, 72, 0.95) 0%, rgba(34, 42, 54, 0.97) 48%, rgba(18, 24, 35, 0.98) 100%);
+}
+
+.trusted-brands-subtitle {
+  color: rgba(148, 163, 184, 0.95);
+}
+
+[data-theme='light'] .trusted-brands-section {
+  background:
+    radial-gradient(circle at 15% 14%, rgba(184, 134, 11, 0.18), transparent 44%),
+    radial-gradient(circle at 86% 26%, rgba(59, 130, 246, 0.12), transparent 40%),
+    linear-gradient(180deg, #f6f8fc 0%, #edf2f8 52%, #e5ecf5 100%);
+  border-top-color: rgba(15, 23, 42, 0.08);
+  border-bottom-color: rgba(15, 23, 42, 0.08);
+}
+
+[data-theme='light'] .trusted-brands-subtitle {
+  color: #607089;
+}
+
+[data-theme='light'] .trusted-brands-section__fx {
+  opacity: 0.75;
+}
+
 @supports not ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
   .glass-card {
     background: rgba(18, 24, 38, 0.92);
@@ -741,7 +792,7 @@
 
 /* Glass card with padding */
 .glass-card-padded {
-  @apply p-6 md:p-8;
+  @apply p-5 md:p-6;
 }
 
 /* Glass card for stats/KPIs */

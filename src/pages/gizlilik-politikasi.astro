@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { BUSINESS_SHORT_NAME, ADDRESS, PHONE_NUMBER, EMAIL, GA4_MEASUREMENT_ID, GTM_CONTAINER_ID, GOOGLE_ADS_ID } from '../consts';
+
+const title = `Gizlilik Politikasi | ${BUSINESS_SHORT_NAME}`;
+const description = `${BUSINESS_SHORT_NAME} gizlilik politikasi. Kisisel verilerinizin nasil toplandigi, islendigi ve korunduguyla ilgili tum detaylar.`;
+
+const breadcrumbs = [
+  { name: 'Ana Sayfa', item: '/' },
+  { name: 'Gizlilik Politikasi', item: '/gizlilik-politikasi/' },
+];
+---
+
+<Layout title={title} description={description} lang="tr" breadcrumbs={breadcrumbs}>
+  <section class="py-16 md:py-20 bg-secondary">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+
+        <!-- Hero -->
+        <h1 class="font-heading font-bold text-4xl md:text-5xl text-white uppercase tracking-tight mb-4">
+          Gizlilik <span class="text-primary">Politikasi</span>
+        </h1>
+        <p class="text-gray-400 text-lg mb-10 border-l-2 border-primary pl-4">
+          {BUSINESS_SHORT_NAME} olarak kisisel verilerinizin guvenligi ve gizliligi bizim icin buyuk onem tasimaktadir. Bu politika, web sitemizi kullanimda toplanan verilerin nasil islendigi hakkinda sizi bilgilendirmeyi amaclar.
+        </p>
+
+        <div class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary">
+
+          <!-- 1. Veri Sorumlusu -->
+          <h2>1. Veri Sorumlusu</h2>
+          <p>
+            6698 sayili Kisisel Verilerin Korunmasi Kanunu (KVKK) kapsaminda veri sorumlusu asagidaki kurulustur:
+          </p>
+          <div class="not-prose my-8 bg-accent-light p-6 rounded-xl border border-white/5">
+            <dl class="space-y-3 text-gray-300">
+              <div class="flex flex-col sm:flex-row sm:gap-4">
+                <dt class="font-bold text-white min-w-[140px]">Unvan:</dt>
+                <dd>{BUSINESS_SHORT_NAME}</dd>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:gap-4">
+                <dt class="font-bold text-white min-w-[140px]">Adres:</dt>
+                <dd>{ADDRESS}</dd>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:gap-4">
+                <dt class="font-bold text-white min-w-[140px]">E-posta:</dt>
+                <dd><a href={`mailto:${EMAIL}`} class="text-primary hover:underline">{EMAIL}</a></dd>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:gap-4">
+                <dt class="font-bold text-white min-w-[140px]">Telefon:</dt>
+                <dd><a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} class="text-primary hover:underline">{PHONE_NUMBER}</a></dd>
+              </div>
+            </dl>
+          </div>
+
+          <!-- 2. Toplanan Kisisel Veriler -->
+          <h2>2. Toplanan Kisisel Veriler</h2>
+          <p>
+            Web sitemiz uzerinden asagidaki kisisel veriler toplanabilmektedir:
+          </p>
+
+          <h3>a) Iletisim ve Teklif Formlari Araciligiyla</h3>
+          <ul>
+            <li>Ad ve soyad</li>
+            <li>E-posta adresi</li>
+            <li>Telefon numarasi</li>
+            <li>Mesaj icerigi</li>
+            <li>Proje detaylari (tabela turu, boyut, konum vb.)</li>
+          </ul>
+
+          <h3>b) Otomatik Olarak Toplanan Veriler</h3>
+          <ul>
+            <li>IP adresi</li>
+            <li>Tarayici turu ve surumu</li>
+            <li>Isletim sistemi bilgisi</li>
+            <li>Sayfa goruntulenme verileri</li>
+            <li>Cerezler araciligiyla toplanan kullanim verileri</li>
+          </ul>
+
+          <!-- 3. Verilerin Kullanim Amaclari -->
+          <h2>3. Verilerin Kullanim Amaclari</h2>
+          <p>Toplanan kisisel veriler asagidaki amaclarla islenmektedir:</p>
+          <ul>
+            <li>Teklif hazirlama ve fiyat bilgisi sunma</li>
+            <li>Musterilerimizle iletisim kurma ve proje sureci yonetimi</li>
+            <li>Hizmet kalitesinin artirilmasi ve musteri deneyiminin iyilestirilmesi</li>
+            <li>Web sitesi kullanim analizleri ve performans olcumleri</li>
+            <li>Yasal yukumluluklerin yerine getirilmesi</li>
+          </ul>
+
+          <!-- 4. Cerezler ve Izleme Teknolojileri -->
+          <h2>4. Cerezler ve Izleme Teknolojileri</h2>
+          <p>
+            Web sitemizde asagidaki cerez ve izleme teknolojileri kullanilmaktadir:
+          </p>
+
+          <div class="not-prose my-8 bg-accent-light p-6 rounded-xl border border-white/5">
+            <ul class="space-y-4 text-gray-300">
+              <li class="flex flex-col gap-1">
+                <span class="font-bold text-white">Google Analytics 4 (GA4)</span>
+                <span class="text-sm">Olcum Kimligi: {GA4_MEASUREMENT_ID} &mdash; Ziyaretci davranislarini analiz etmek icin kullanilir.</span>
+              </li>
+              <li class="flex flex-col gap-1">
+                <span class="font-bold text-white">Google Tag Manager (GTM)</span>
+                <span class="text-sm">Kapsayici Kimligi: {GTM_CONTAINER_ID} &mdash; Etiket ve izleme kodlarinin merkezi yonetimi icin kullanilir.</span>
+              </li>
+              <li class="flex flex-col gap-1">
+                <span class="font-bold text-white">Google Ads</span>
+                <span class="text-sm">Reklam Kimligi: {GOOGLE_ADS_ID} &mdash; Reklam donusum olcumleme ve yeniden pazarlama amacli kullanilir.</span>
+              </li>
+            </ul>
+          </div>
+
+          <p>
+            Cerezler hakkinda daha fazla bilgi almak ve cerez tercihlerinizi yonetmek icin <a href="/cerez-politikasi/">Cerez Politikasi</a> sayfamizi ziyaret edebilirsiniz.
+          </p>
+
+          <!-- 5. Verilerin Saklanmasi ve Guvenligi -->
+          <h2>5. Verilerin Saklanmasi ve Guvenligi</h2>
+          <p>
+            Kisisel verilerinizin guvenligini saglamak icin asagidaki onlemler alinmaktadir:
+          </p>
+          <ul>
+            <li><strong>SSL/TLS sifreleme:</strong> Web sitemizdeki tum veri iletimi SSL sertifikasi ile sifrelenmektedir.</li>
+            <li><strong>Sinirli erisim:</strong> Kisisel verilere yalnizca yetkili personel erisebilmektedir.</li>
+            <li><strong>Yasal saklama suresi:</strong> Veriler, ilgili mevzuatin gerektirdigi sure boyunca saklanmakta, sure dolumunda guvenli bir sekilde silinmektedir.</li>
+          </ul>
+
+          <!-- 6. Ucuncu Taraf Paylasimi -->
+          <h2>6. Ucuncu Taraf Paylasimi</h2>
+          <p>
+            Kisisel verileriniz, asagida belirtilen ucuncu taraflarla sinirli amaclarla paylasilabilmektedir:
+          </p>
+          <ul>
+            <li><strong>Google LLC:</strong> Analytics, Tag Manager ve Ads hizmetleri kapsaminda anonim kullanim verileri.</li>
+            <li><strong>Hosting saglayicisi:</strong> Web sitesi barindirma hizmeti kapsaminda teknik veriler.</li>
+          </ul>
+
+          <div class="not-prose my-8 bg-accent-light p-6 rounded-xl border border-white/5">
+            <p class="text-gray-300 text-sm">
+              <span class="font-bold text-white">Yurt disi veri aktarimi:</span> Yukarda belirtilen hizmet saglayicilarin bir kismi yurt disinda (ABD) bulunmaktadir. Veri aktarimi, KVKK'nin 9. maddesi kapsaminda yeterli koruma saglanarak gerceklestirilmektedir.
+            </p>
+          </div>
+
+          <!-- 7. Haklariniz -->
+          <h2>7. Haklariniz</h2>
+          <p>
+            KVKK'nin 11. maddesi kapsaminda asagidaki haklara sahipsiniz:
+          </p>
+          <ul>
+            <li>Kisisel verilerinizin islenip islenmedigini ogrenme</li>
+            <li>Kisisel verileriniz islenmisse buna iliskin bilgi talep etme</li>
+            <li>Kisisel verilerinizin islenme amacini ve bunlarin amacina uygun kullanilip kullanilmadigini ogrenme</li>
+            <li>Yurt icinde veya yurt disinda kisisel verilerinizin aktarildigi ucuncu kisileri bilme</li>
+            <li>Kisisel verilerinizin eksik veya yanlis islenmis olmasi halinde bunlarin duzeltilmesini isteme</li>
+            <li>KVKK'nin 7. maddesinde ongortlen sartlar cercevesinde kisisel verilerinizin silinmesini veya yok edilmesini isteme</li>
+            <li>Islenen verilerin munhasiran otomatik sistemler vasitasiyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya cikmasina itiraz etme</li>
+            <li>Kisisel verilerinizin kanuna aykiri olarak islenmesi sebebiyle zarara ugramaniz halinde zararin giderilmesini talep etme</li>
+          </ul>
+          <p>
+            KVKK kapsamindaki tum haklariniz ve basvuru sureci hakkinda detayli bilgi icin <a href="/kvkk/">KVKK Aydinlatma Metni</a> sayfamizi inceleyebilirsiniz.
+          </p>
+
+          <!-- 8. Iletisim -->
+          <h2>8. Iletisim</h2>
+          <p>
+            Gizlilik politikamiz veya kisisel verilerinizle ilgili sorulariniz icin asagidaki iletisim kanallarindan bize ulasabilirsiniz:
+          </p>
+          <div class="not-prose my-8 bg-accent-light p-6 rounded-xl border border-white/5">
+            <div class="flex flex-col gap-2 text-gray-300">
+              <p>
+                <span class="font-bold text-white">E-posta:</span>{' '}
+                <a href={`mailto:${EMAIL}`} class="text-primary hover:underline">{EMAIL}</a>
+              </p>
+              <p>
+                <span class="font-bold text-white">Telefon:</span>{' '}
+                <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} class="text-primary hover:underline">{PHONE_NUMBER}</a>
+              </p>
+              <p>
+                <span class="font-bold text-white">Adres:</span>{' '}
+                {ADDRESS}
+              </p>
+            </div>
+          </div>
+
+          <!-- Son Guncelleme -->
+          <div class="not-prose mt-12 pt-8 border-t border-white/10">
+            <p class="text-gray-500 text-sm">
+              Son guncelleme tarihi: <time datetime="2026-03-09">9 Mart 2026</time>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

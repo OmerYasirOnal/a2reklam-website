@@ -34,7 +34,7 @@ const references = REFERENCES ?? [];
     
     <div class="container mx-auto px-4 relative z-10">
       <div class="text-center mb-16">
-        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
+        <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
           PROJECT <span class="text-primary">PORTFOLIO</span>
         </h1>
         <p class="text-gray-400 max-w-2xl mx-auto text-lg border-l-2 border-primary pl-4 inline-block">
@@ -45,17 +45,28 @@ const references = REFERENCES ?? [];
       {references.length > 0 && (
         <div class="glass-card p-8 md:p-10 mb-16">
           <div class="text-center mb-8">
-            <h2 class="font-heading font-black text-3xl md:text-4xl text-white uppercase tracking-tight">
+            <h2 class="font-heading font-bold text-3xl md:text-4xl text-white uppercase tracking-tight">
               TRUSTED <span class="text-primary">CLIENTS</span>
             </h2>
             <p class="text-gray-400 mt-3 text-sm max-w-2xl mx-auto">
               B2B references we regularly support with discovery, production, and on-site installation.
             </p>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {references.map((reference) => (
-              <div class="glass-card group relative overflow-hidden">
-                <div class="aspect-[3/2] flex items-center justify-center p-6">
+              <a
+                href={reference.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-track="outbound"
+                data-outbound-type="reference"
+                data-outbound-target="portfolio_page"
+                data-outbound-name={reference.name}
+                data-lang="en"
+                class="glass-card group relative overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
+                aria-label={`Visit ${reference.name} website`}
+              >
+                <div class="aspect-[3/2] flex items-center justify-center p-5 md:p-6">
                   {reference.logo ? (
                     <img
                       src={reference.logo}
@@ -63,7 +74,7 @@ const references = REFERENCES ?? [];
                       width="200"
                       height="80"
                       decoding="async"
-                      class="max-w-full max-h-full object-contain opacity-85 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500"
+                      class="max-w-full max-h-full object-contain opacity-100 saturate-[1.35] contrast-[1.08] group-hover:scale-105 transition-all duration-300"
                       loading="lazy"
                     />
                   ) : (
@@ -74,19 +85,10 @@ const references = REFERENCES ?? [];
                     </div>
                   )}
                 </div>
-                {reference.url && (
-                  <div class="absolute inset-0 bg-secondary/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <a
-                      href={reference.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="text-primary hover:text-white text-xs font-bold uppercase tracking-wider"
-                    >
-                      Visit Site →
-                    </a>
-                  </div>
-                )}
-              </div>
+                <span class="absolute top-2 right-2 text-[10px] uppercase tracking-wide text-white/55 group-hover:text-primary transition-colors">
+                  Visit Site
+                </span>
+              </a>
             ))}
           </div>
         </div>

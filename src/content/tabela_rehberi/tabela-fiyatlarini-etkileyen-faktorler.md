@@ -374,7 +374,7 @@ Kimle çalıştığınız, hem fiyat hem kaliteyi etkiler.
 
 ## Ücretsiz Fiyat Analizi
 
-Projeniz için [detaylı maliyet analizi ve teklif](/teklif-al/) almak üzere [bizimle iletişime geçin](/iletisim/).
+Projeniz için [detaylı maliyet analizi ve teklif](/iletisim/) almak üzere [bizimle iletişime geçin](/iletisim/).
 
 [Hizmetlerimizi](/hizmetler/) ve [farklı bütçelerdeki projelerimizi](/galeri/) inceleyin.
 

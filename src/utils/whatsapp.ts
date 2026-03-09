@@ -1,6 +1,6 @@
 import { WHATSAPP_LINK } from '../consts';
 
-type Lang = 'tr' | 'en' | 'ar';
+type Lang = 'tr' | 'en';
 
 const BRAND_PATTERNS = [
   /\s*[\-|–|—|\|]\s*A2 Reklam.*$/i,
@@ -10,7 +10,6 @@ const BRAND_PATTERNS = [
 const FALLBACK_TOPICS: Record<Lang, string> = {
   tr: 'tabela projesi',
   en: 'signage project',
-  ar: 'مشروع لافتات',
 };
 
 interface WhatsAppMessageOptions {
@@ -46,13 +45,6 @@ export function buildWhatsAppMessage({
     parts.push(`Merhaba, ${topic} için teklif almak istiyorum.`);
     parts.push('Keşif ve montaj süresi hakkında bilgi rica ederim.');
     if (location) parts.push(`Konum: ${location}.`);
-    return parts.join(' ');
-  }
-
-  if (lang === 'ar') {
-    parts.push(`مرحبًا، أود الحصول على عرض سعر لخدمة ${topic}.`);
-    parts.push('هل يمكن مشاركة مدة المعاينة والتركيب؟');
-    if (location) parts.push(`الموقع: ${location}.`);
     return parts.join(' ');
   }
 

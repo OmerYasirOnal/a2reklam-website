@@ -138,7 +138,7 @@ A2 Reklam olarak İstanbul'un tüm ilçelerinde, özellikle Beşiktaş, Kadıkö
 
 ## Bakım ve Onarım Talebi
 
-Cephe tabelanızın bakım ve onarım ihtiyaçları için [hemen teklif alın](/teklif-al/) veya [bizimle iletişime geçin](/iletisim/). Tüm [tabela hizmetlerimizi](/hizmetler/) ve [referans çalışmalarımızı](/galeri/) inceleyin.
+Cephe tabelanızın bakım ve onarım ihtiyaçları için [hemen teklif alın](/iletisim/) veya [bizimle iletişime geçin](/iletisim/). Tüm [tabela hizmetlerimizi](/hizmetler/) ve [referans çalışmalarımızı](/galeri/) inceleyin.
 
 ---
 

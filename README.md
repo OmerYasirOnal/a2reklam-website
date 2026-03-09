@@ -141,19 +141,27 @@ To track Google Ads conversions for WhatsApp and phone clicks:
 The site pushes the following events to `dataLayer` for GTM:
 
 1. **cta_click**: Fires when users click CTAs (call, WhatsApp, quote buttons)
-   - Properties: `cta_type` (whatsapp/call/quote), `lang`, `page`
+   - Properties: `cta_type` (whatsapp/call/quote), `lang`, `page`, `phone_number` (for call clicks)
    - Use in GTM: Create custom event triggers on `cta_click`
 
 2. **lead_submit**: Fires when forms are submitted (not on success, just on submit)
    - Properties: `lead_type`, `lang`, `page`
 
-3. **form_success**: Fires ONLY when contact form email is successfully sent
+3. **phone_click**: Fires when users click any `tel:` CTA
+   - Properties: `phone_number`, `lang`, `page`
+   - Use this for direct phone-call conversion tags in GTM / Google Ads
+
+4. **form_success**: Fires ONLY when contact form email is successfully sent
    - Properties: `form_type: 'contact'`, `lang`, `page`
    - Use this for Google Ads form submission conversion (success-based)
 
-4. **lead_conversion**: Fires on thank-you pages (once per page load)
+5. **lead_conversion**: Fires on thank-you pages (once per page load)
    - Properties: `lead_type: 'quote'`, `lang`, `page`
    - Pages: `/teşekkürler/`, `/en/thank-you/`, `/ar/thank-you/`
+
+6. **outbound_click**: Fires for external outbound links (references, maps, social)
+   - Properties: `outbound_type`, `outbound_target`, `outbound_name`, `lang`, `page`
+   - Use this for measuring off-site referral clicks in GTM/GA4.
 
 ### Tag Assistant Verification
 
@@ -208,6 +216,7 @@ pnpm run build
    - Set up Google Ads conversion tags inside GTM
    - Use `[data-track="whatsapp"]` and `[data-track="call"]` as trigger selectors
    - Use `form_success` custom event for form conversion tracking
+   - Create a custom event trigger for `outbound_click` to monitor off-site link performance
 
 **No server-side runtime needed** - everything is static HTML/CSS/JS except for the PHP email endpoint.
 

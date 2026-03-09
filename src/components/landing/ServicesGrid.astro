@@ -40,22 +40,16 @@ const text = {
     view: 'View Details →',
     categorySubtitle: 'Solutions',
   },
-  ar: {
-    heading: { first: 'خدماتنا', second: '', joiner: '' },
-    subtitle: 'إنتاج احترافي يلائم احتياجات علامتك في إسطنبول.',
-    view: 'عرض التفاصيل ←',
-    categorySubtitle: 'حلول',
-  },
 };
 
-const t = lang === 'ar' ? text.ar : lang === 'en' ? text.en : text.tr;
-const altLang = lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'tr';
-const linkBase = lang === 'ar' ? '/ar/services/' : lang === 'en' ? '/en/services/' : '/hizmetler/';
-const subtitleClass = lang === 'ar' ? 'border-r-2 pr-4 text-right' : 'border-l-2 pl-4';
-const priorityOrder = ['cati-tabelasi', 'cephe-tabela', 'isikli-isiksiz-tabelalar'];
+const t = lang === 'en' ? text.en : text.tr;
+const altLang = lang === 'en' ? 'en' : 'tr';
+const linkBase = lang === 'en' ? '/en/services/' : '/hizmetler/';
+const subtitleClass = 'border-l-2 pl-4';
+const priorityOrder = ['cati-tabelasi', 'cephe-tabela', 'isikli-tabela', 'isiksiz-tabela'];
 
 const getDisplayLabel = (category: string) => {
-  const mapped = getServiceLabel(category, altLang as 'tr' | 'en' | 'ar');
+  const mapped = getServiceLabel(category, altLang as 'tr' | 'en');
   if (mapped) {
     return mapped.toUpperCase();
   }
@@ -63,46 +57,38 @@ const getDisplayLabel = (category: string) => {
 };
 
 // SEO microcopy for each service (TR/EN/AR)
-const serviceMicrocopy: Record<string, { tr: string; en: string; ar: string }> = {
+const serviceMicrocopy: Record<string, { tr: string; en: string }> = {
   'cati-tabelasi': {
     tr: 'İstanbul genelinde çatı tabelası imalatı ve montajı. Beşiktaş, Kadıköy ve Kağıthane\'de hızlı hizmet.',
     en: 'Rooftop signage manufacturing across Istanbul. Fast service in Beşiktaş, Kadıköy and Kağıthane.',
-    ar: 'تصنيع وتركيب لافتات السطح في إسطنبول. خدمة سريعة في بشيكتاش وكاديكوي وكاغيثانة.',
   },
   'cephe-tabela': {
     tr: 'Premium cephe tabelası üretimi. İstanbul\'un 40 ilçesinde profesyonel montaj hizmeti.',
     en: 'Premium facade signage production. Professional installation across 40 districts in Istanbul.',
-    ar: 'إنتاج لافتات واجهات متميزة. خدمة تركيب احترافية في 40 منطقة بإسطنبول.',
   },
   'isikli-isiksiz-tabelalar': {
     tr: 'LED ve neon tabela çözümleri. Enerji tasarruflu ışıklı tabela sistemleri, İstanbul teslim.',
     en: 'LED and neon signage solutions. Energy-efficient illuminated signs, delivered across Istanbul.',
-    ar: 'حلول لافتات LED ونيون. أنظمة لافتات مضيئة موفرة للطاقة، تسليم في إسطنبول.',
   },
   'paslanmaz-harfler': {
     tr: 'Paslanmaz harf tabela imalatı. Plaza ve kurumsal binalar için dayanıklı çözümler.',
     en: 'Stainless steel letter manufacturing. Durable solutions for plazas and corporate buildings.',
-    ar: 'تصنيع حروف ستانلس ستيل. حلول متينة للأبراج والمباني المؤسسية.',
   },
   'totem': {
     tr: 'Totem tabela üretimi ve kurulumu. AVM, plaza ve işletmeler için öne çıkan totem sistemleri.',
     en: 'Totem signage production and installation. Standout totem systems for malls, plazas and businesses.',
-    ar: 'إنتاج وتركيب لوحات التوتم. أنظمة توتم بارزة للمولات والأبراج والأعمال.',
   },
   'arac-giydirme': {
     tr: 'Profesyonel araç giydirme hizmeti. Reklam tabelası görselliğini taşıyan filosuna taşıyın.',
     en: 'Professional vehicle wrapping service. Bring signage visibility to your fleet.',
-    ar: 'خدمة تغليف مركبات احترافية. اجلب ظهور اللافتات إلى أسطولك.',
   },
   'fener-tabela': {
     tr: 'Fener tabela imalatı. Dar sokaklar için ideal çift taraflı görünürlük.',
     en: 'Blade sign manufacturing. Ideal double-sided visibility for narrow streets.',
-    ar: 'تصنيع لافتات جانبية. رؤية مزدوجة مثالية للشوارع الضيقة.',
   },
   'kabartma-pleksiglass': {
     tr: 'Kabartma pleksi harf üretimi. Modern ofis ve mağazalar için şık detay.',
     en: 'Raised acrylic letter production. Elegant detail for modern offices and stores.',
-    ar: 'إنتاج حروف أكريليك بارزة. تفاصيل أنيقة للمكاتب والمتاجر الحديثة.',
   },
 };
 
@@ -112,11 +98,9 @@ const getServiceDescription = (category: string) => {
     // Fallback generic description
     return lang === 'en'
       ? 'Professional signage solutions in Istanbul with full service support.'
-      : lang === 'ar'
-      ? 'حلول لافتات احترافية في إسطنبول مع دعم خدمة كامل.'
       : 'İstanbul genelinde profesyonel tabela çözümleri ve tam hizmet desteği.';
   }
-  return lang === 'ar' ? desc.ar : lang === 'en' ? desc.en : desc.tr;
+  return lang === 'en' ? desc.en : desc.tr;
 };
 
 categories = categories.sort((a: any, b: any) => {
@@ -135,7 +119,7 @@ categories = categories.sort((a: any, b: any) => {
 
   <div class="container mx-auto px-4 relative z-10">
     <div class="text-center mb-16">
-      <h2 class="font-heading font-black text-4xl md:text-5xl mb-4 text-white uppercase tracking-tight">
+      <h2 class="font-heading font-bold text-4xl md:text-5xl mb-4 text-white uppercase tracking-tight">
         <span class="text-primary">{t.heading.first}</span>
         {t.heading.second ? `${t.heading.joiner}${t.heading.second}` : ''}
       </h2>

@@ -4,6 +4,14 @@ import {
   TRACKING_ENABLED,
 } from '../../consts';
 
+// Google Consent Mode v2: Set defaults BEFORE GTM fires.
+// 1. All consent signals start as 'denied'.
+// 2. If user previously accepted, restore from localStorage immediately.
+// 3. Then GTM bootstraps and reads the correct consent state.
+const consentScript = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+try{var c=JSON.parse(localStorage.getItem('a2-cookie-consent'));if(c){gtag('consent','update',{'ad_storage':c.marketing?'granted':'denied','ad_user_data':c.marketing?'granted':'denied','ad_personalization':c.marketing?'granted':'denied','analytics_storage':c.analytics?'granted':'denied'});}}catch(e){}`;
+
 // GTM-only injection: Site loads ONLY GTM container.
 // GA4 & Google Ads tags must be configured in GTM to avoid double counting.
 const gtmScript = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -14,5 +22,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 ---
 
 {TRACKING_ENABLED && (
-  <script set:html={gtmScript} />
+  <Fragment>
+    <script set:html={consentScript} />
+    <script set:html={gtmScript} />
+  </Fragment>
 )}

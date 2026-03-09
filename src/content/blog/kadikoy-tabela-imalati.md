@@ -109,6 +109,6 @@ Yaya trafiği yoğun olduğu için göz hizasında, ışıklı kutu harf veya pr
 
 Kadıköy'de tabela yaptırmak, ilçenin karakterini ve belediye kurallarını bilmeyi gerektirir. Doğru tabela, doğru lokasyonda, doğru tasarımla markanızı öne çıkarır.
 
-**Kadıköy'de işletmeniz için profesyonel tabela çözümleri. [Ücretsiz keşif talep edin →](/teklif-al/)**
+**Kadıköy'de işletmeniz için profesyonel tabela çözümleri. [Ücretsiz keşif talep edin →](/iletisim/)**
 
 [Kadıköy tabela hizmetlerimizi inceleyin →](/hizmet-bolgeleri/kadikoy-tabela/)

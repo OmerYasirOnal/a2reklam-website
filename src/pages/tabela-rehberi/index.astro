@@ -16,7 +16,7 @@ const manifest = loadImagesManifest();
 // Map article categories to gallery categories for thumbnails
 const categoryImageMap: Record<string, string> = {
   'Cephe Tabelası': 'cephe-tabela',
-  'Işıklı Tabela': 'isikli-isiksiz-tabelalar',
+  'Işıklı Tabela': 'isikli-tabela',
   'Totem': 'totem',
   'Paslanmaz Harf': 'paslanmaz-harfler',
   'Fiyatlandırma & Süreç': 'cephe-tabela',
@@ -53,7 +53,7 @@ const categoryLabels: Record<string, string> = {
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white"><span class="text-primary">Tabela</span> Rehberleri</h1>
+        <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 text-white"><span class="text-primary">Tabela</span> Rehberleri</h1>
         <p class="text-xl text-gray-300 mb-8 leading-relaxed">İstanbul'da tabela imalatı, montajı ve bakımı hakkında bilmeniz gereken her şey.</p>
         <div class="flex flex-wrap gap-3 justify-center">
           {categories.map(cat => (
@@ -67,7 +67,7 @@ const categoryLabels: Record<string, string> = {
     <div class="container mx-auto px-4">
       {categories.map((category) => (
         <div id={category.toLowerCase().replace(/\s+/g, '-').replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c')} class="mb-16">
-          <h2 class="font-heading font-black text-3xl md:text-4xl mb-8 text-white border-l-4 border-primary pl-6">{categoryLabels[category] || category}</h2>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl mb-8 text-white border-l-4 border-primary pl-6">{categoryLabels[category] || category}</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articlesByCategory[category].map((article, idx) => (
               <a href={`/tabela-rehberi/${article.slug}/`} class="group block glass-card overflow-hidden hover:-translate-y-2 transition-all duration-300">
@@ -108,10 +108,10 @@ const categoryLabels: Record<string, string> = {
   </section>
   <section class="py-20 bg-accent-light">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="font-heading font-black text-3xl md:text-4xl mb-6 text-white">Profesyonel Tabela Çözümleri İçin</h2>
+      <h2 class="font-heading font-bold text-3xl md:text-4xl mb-6 text-white">Profesyonel Tabela Çözümleri İçin</h2>
       <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">İstanbul'un 40 ilçesinde hizmet veriyoruz.</p>
       <div class="flex flex-col md:flex-row gap-4 justify-center">
-        <a href="/teklif-al/" class="btn btn-primary px-8 py-4 text-lg font-bold">Ücretsiz Teklif Al</a>
+        <a href="/iletisim/" class="btn btn-primary px-8 py-4 text-lg font-bold">Ücretsiz Teklif Al</a>
         <a href="/iletisim/" class="btn btn-secondary px-8 py-4 text-lg font-bold">İletişime Geçin</a>
       </div>
     </div>

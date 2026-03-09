@@ -222,7 +222,7 @@ Elektrik olmayan yerlerde ideal, 2-3 yılda kendini amorti eder.
 
 ## Enerji Hesaplama ve Teklif
 
-Tabelanızın enerji tüketimi ve işletme maliyetlerini öğrenmek için [ücretsiz analiz ve teklif](/teklif-al/) alın. Uzman ekibimiz, en verimli çözümü sizinle paylaşacaktır.
+Tabelanızın enerji tüketimi ve işletme maliyetlerini öğrenmek için [ücretsiz analiz ve teklif](/iletisim/) alın. Uzman ekibimiz, en verimli çözümü sizinle paylaşacaktır.
 
 [İletişime geçin](/iletisim/), [hizmetlerimizi](/hizmetler/) inceleyin ve [enerji verimli projelerimizi](/galeri/) görün.
 

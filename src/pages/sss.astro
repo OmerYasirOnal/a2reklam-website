@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { WHATSAPP_LINK } from '../consts';
 
-const title = "Sıkça Sorulan Sorular | A2 Reklam";
-const description = "Tabela üretimi, fiyatları, montaj süreçleri ve kullanılan malzemeler hakkında merak ettiğiniz tüm soruların cevapları.";
+const title = "Sıkça Sorulan Sorular | Tabela İmalatı SSS | A2 Reklam";
+const description = "Tabela imalatı, fiyatları, montaj süreçleri, malzeme seçenekleri ve yasal izinler hakkında en çok merak edilen soruların detaylı cevapları. A2 Reklam SSS.";
 
 const breadcrumbs = [
   { name: 'Anasayfa', item: '/' },
@@ -13,23 +14,162 @@ const faqs = [
   {
     category: "Planlama ve Süreç",
     items: [
-      { q: "Tabela üretim süreci neye göre planlanır?", a: "Süre; ölçü, malzeme, aydınlatma ve montaj koşullarına göre değişir. Keşif sonrası üretim ve montaj planı netleştirilir." },
-      { q: "Keşif ve tasarım onayı nasıl ilerler?", a: "Yerinde ölçü alınır, tasarım seçenekleri ve teknik detaylar onaya sunulur." }
+      {
+        q: "Tabela üretim süreci neye göre planlanır?",
+        a: "Tabela üretim süreci; işletmenizin konumu, cephe ölçüleri, kullanılacak malzeme türü, aydınlatma ihtiyacı ve belediye yönetmeliklerine göre planlanır. İlk aşamada yerinde keşif yapılır, ardından 3D tasarım hazırlanarak onayınıza sunulur. Onay sonrası üretim süreci başlar ve genellikle 5-15 iş günü içinde montaj tamamlanır."
+      },
+      {
+        q: "Keşif ve tasarım onayı nasıl ilerler?",
+        a: "Uzman ekibimiz işletmenize gelerek cephe ölçümü, elektrik altyapısı kontrolü ve mevcut durumu inceler. Keşif sonrası 3D görselleştirme, malzeme önerileri ve maliyet analizi içeren bir teklif hazırlanır. Revizyon istekleriniz karşılandıktan sonra üretim onayı verilir. İstanbul içi keşif hizmetimiz ücretsizdir."
+      },
+      {
+        q: "Projemi ne kadar sürede teslim edersiniz?",
+        a: "Standart tabela projeleri 5-10 iş günü içinde teslim edilir. Büyük ölçekli cephe giydirme, çatı tabelası veya özel imalat projelerinde süre 15-25 iş gününe uzayabilir. Acil ihtiyaçlar için hızlandırılmış üretim seçeneği de mevcuttur. Keşif sonrası size net bir teslim tarihi bildiririz."
+      },
+      {
+        q: "3D tasarım ve görselleştirme hizmeti sunuyor musunuz?",
+        a: "Evet. Tüm projelerimizde cephenize özel 3D görselleştirme hazırlıyoruz. Gündüz ve gece görünümlerini, farklı renk seçeneklerini ve malzeme alternatiflerini dijital ortamda görerek karar verebilirsiniz. Tasarım hizmetimiz teklif sürecine dahildir."
+      }
     ]
   },
   {
     category: "Fiyatlandırma",
     items: [
-      { q: "Tabela fiyatları nasıl belirlenir?", a: "Fiyatlar; ölçüler, malzeme seçimi, aydınlatma ihtiyacı ve montaj koşullarına göre hesaplanır." },
-      { q: "Teklif çalışması nasıl hazırlanır?", a: "İhtiyaçlar netleştikten sonra malzeme ve uygulama seçenekleriyle teklif hazırlanır." }
+      {
+        q: "Tabela fiyatları nasıl belirlenir?",
+        a: "Tabela fiyatları; boyut, malzeme türü (paslanmaz, alüminyum, akrilik vb.), aydınlatma sistemi (LED, neon), baskı tekniği ve montaj koşullarına göre değişir. Küçük bir kapı tabelası ile büyük bir çatı tabelası arasında doğal olarak fiyat farkı oluşur. Keşif sonrası ihtiyaçlarınıza özel detaylı teklif hazırlanır."
+      },
+      {
+        q: "Teklif almak ücretli mi?",
+        a: "Hayır. İstanbul genelinde keşif ve teklif hizmetimiz tamamen ücretsizdir. Yerimizden keşife gelir, ölçü alır, fotoğraflar ve 3D tasarım hazırlayarak size net fiyat teklifi sunarız. Teklif onaylanmadığı takdirde herhangi bir ücret talep edilmez."
+      },
+      {
+        q: "Ödeme seçenekleri nelerdir?",
+        a: "Nakit, havale/EFT ve kredi kartı ile ödeme kabul ediyoruz. Büyük projelerde taksitli ödeme imkanı sunulmaktadır. Genellikle sipariş onayında %50 kapora, montaj tamamlandığında kalan %50 şeklinde ödeme planı uygulanır."
+      }
     ]
   },
   {
-    category: "Kurulum, Bakım ve İzinler",
+    category: "Malzeme ve Teknik Bilgiler",
     items: [
-      { q: "Montaj hizmeti veriyor musunuz?", a: "İstanbul genelinde kendi ekibimizle güvenli montaj hizmeti sağlıyoruz." },
-      { q: "Bakım ve servis desteği var mı?", a: "Proje bazlı bakım ve kontrol planları sunar, ihtiyaçlara göre periyodik destek sağlarız." },
-      { q: "Yasal izinler için destek veriyor musunuz?", a: "Reklam vergisi ve belediye süreçleri konusunda bilgilendiriyoruz; resmi başvurular işletme sahibince yapılmalıdır." }
+      {
+        q: "Hangi tabela malzemeleri kullanılıyor?",
+        a: "Projelerinizde paslanmaz çelik (304/316), alüminyum kompozit panel (ACM), galvaniz sac, akrilik (pleksiglas), PVC foam board, pirinç ve bakır gibi malzemeler kullanıyoruz. Her malzeme farklı dayanıklılık, estetik ve bütçe avantajları sunar. Dış mekan uygulamalarında UV ve hava koşullarına dayanıklı malzemeler tercih edilir."
+      },
+      {
+        q: "LED aydınlatma mı yoksa neon mu tercih edilmeli?",
+        a: "LED aydınlatma; enerji verimliliği, uzun ömür (50.000+ saat), düşük bakım maliyeti ve çevre dostu olmasıyla en çok tercih edilen sistemdir. Neon ise retro/vintage görünüm isteyen işletmeler için idealdir. LED modüller IP65 dış mekan korumasına sahiptir ve -20°C ile +60°C arasında sorunsuz çalışır."
+      },
+      {
+        q: "Gold harf ve gümüş harf tabela nasıl üretiliyor?",
+        a: "Gold ve gümüş harf tabelalar, paslanmaz çelik veya pirinç üzerine PVD (Physical Vapor Deposition) kaplama yöntemiyle üretilir. CNC lazer kesim ile milimetrik hassasiyette şekillendirilen harfler, vakum ortamında altın veya krom renkli kaplama alır. Sonuç; çizilmeye ve solmaya karşı dayanıklı, uzun ömürlü premium bir görünümdür."
+      },
+      {
+        q: "Kutu harf ve kanal harf arasındaki fark nedir?",
+        a: "Kutu harf, harfin içinden ışık veren kapalı bir yapıya sahiptir (front-lit). Kanal harf ise arka yüzeyin açık bırakılıp duvar ile harf arasından ışığın yayılmasını sağlar (backlit/halo efekti). Her iki tip de LED aydınlatma ile çalışır ve kurumsal kimliğe göre tercih edilir."
+      },
+      {
+        q: "Kumlama folyo nedir, hangi yüzeylere uygulanır?",
+        a: "Kumlama (buzlu) folyo, cama mat görünüm kazandıran özel bir folyodur. Ofis bölmeleri, toplantı odaları, banka gişeleri ve mağaza vitrinlerinde mahremiyet sağlamak için kullanılır. Logo, yazı veya desen şeklinde CNC kesim yapılarak kurumsal kimliğinizi cam yüzeylere yansıtır."
+      }
+    ]
+  },
+  {
+    category: "Işıklı Tabela",
+    items: [
+      {
+        q: "Işıklı tabela türleri nelerdir?",
+        a: "Başlıca ışıklı tabela türleri: kutu harf tabela, kanal harf (halo efektli), lightbox (ışıklı pano), fener tabela, vinil germe kasası ve neon tabela. Her biri farklı aydınlatma etkisi ve estetik sunar. İşletmenizin konumu, cephe yapısı ve marka kimliğine göre en uygun türü birlikte belirleriz."
+      },
+      {
+        q: "Işıklı tabelanın enerji tüketimi ne kadardır?",
+        a: "Modern LED ışıklı tabelalar oldukça düşük enerji tüketir. Ortalama bir mağaza tabelası aylık 15-40 kWh arası elektrik harcar; bu da aylık yaklaşık 10-25 TL'ye karşılık gelir. LED modüllerin ömrü 50.000 saatin üzerindedir, yani günde 12 saat kullanımla yaklaşık 11 yıl sorunsuz çalışır."
+      },
+      {
+        q: "Işıklı tabela dış mekanda dayanıklı mı?",
+        a: "Evet. Kullandığımız LED modüller IP65 koruma sınıfına sahiptir; yani yağmur, kar, toz ve neme karşı tam korumalıdır. Kasa ve harf malzemeleri de UV dayanımlı boyalarla kaplanır. -20°C ile +60°C arasında sorunsuz çalışır."
+      }
+    ]
+  },
+  {
+    category: "Cephe ve Çatı Tabelası",
+    items: [
+      {
+        q: "Cephe tabelası için hangi seçenekler var?",
+        a: "Cephe tabelası türleri: alüminyum kompozit panel (ACM) kaplama, kutu harf, paslanmaz harf, lightbox, dijital baskılı vinil ve cam folyo uygulama. Binanızın mimarisine, belediye yönetmeliklerine ve kurumsal kimliğinize uygun tasarım yapılır. Yüksek katlı binalar için vinç ve iskele ile güvenli montaj sağlanır."
+      },
+      {
+        q: "Çatı tabelası nasıl yapılır?",
+        a: "Çatı tabelaları galvaniz çelik konstrüksiyon üzerine inşa edilir. Rüzgar yükü hesabı yapılarak statik proje hazırlanır. LED aydınlatmalı kutu harf veya paslanmaz harf uygulaması tercih edilebilir. Yükseklik ve görünürlük analizi ile tabelanızın uzaktan okunabilirliği test edilir."
+      },
+      {
+        q: "AVM ve plaza tabelası nasıl farklılık gösterir?",
+        a: "AVM ve plaza tabelaları, yönetim tarafından belirlenen özel tabela yönetmeliklerine uygun üretilir. Boyut, malzeme, aydınlatma ve renk standartları genellikle AVM yönetimi tarafından belirlenir. A2 Reklam olarak tüm büyük AVM ve iş merkezlerinin tabela standartlarına hakim olarak uyumlu çözümler üretiyoruz."
+      }
+    ]
+  },
+  {
+    category: "Kurulum ve Montaj",
+    items: [
+      {
+        q: "Montaj hizmeti veriyor musunuz?",
+        a: "Evet. İstanbul'un tüm ilçelerinde kendi profesyonel montaj ekibimizle hizmet veriyoruz. Yüksek katlı binalarda vinç ve iskele kullanarak güvenli montaj gerçekleştiriyoruz. Montaj ekibimiz ISG (İş Sağlığı ve Güvenliği) sertifikalıdır."
+      },
+      {
+        q: "Eski tabelamın sökümünü de yapıyor musunuz?",
+        a: "Evet. Yeni tabela montajı öncesinde mevcut tabelanızın güvenli sökümünü gerçekleştiriyoruz. Söküm sonrası cephe temizliği ve gerekli onarımları da yaparak yeni tabelanız için temiz bir yüzey hazırlıyoruz."
+      },
+      {
+        q: "İstanbul dışına hizmet veriyor musunuz?",
+        a: "Temel hizmet bölgemiz İstanbul ve çevresidir. Ancak büyük ölçekli kurumsal projeler için Marmara Bölgesi ve diğer illere de hizmet verebiliyoruz. İstanbul dışı projeleriniz için bizimle iletişime geçebilirsiniz."
+      }
+    ]
+  },
+  {
+    category: "Bakım ve Garanti",
+    items: [
+      {
+        q: "Tabelalar için garanti veriyor musunuz?",
+        a: "Evet. Tüm tabelalarımız malzeme ve işçilik garantisi kapsamındadır. LED aydınlatma sistemleri için 2 yıl, mekanik aksam için 3 yıl, paslanmaz çelik malzemeler için 5 yıl garanti sunuyoruz. Garanti kapsamında arıza durumunda ücretsiz onarım yapılır."
+      },
+      {
+        q: "Tabela bakımı ne sıklıkla yapılmalı?",
+        a: "Dış mekan tabelaları için yılda en az 2 kez bakım önerilir. Bakım kapsamında LED modül kontrolü, elektrik bağlantı testi, yüzey temizliği ve renk solması kontrolü yapılır. Düzenli bakım, tabelanızın ömrünü uzatır ve her zaman profesyonel görünmesini sağlar."
+      },
+      {
+        q: "LED arızası durumunda ne yapılır?",
+        a: "Garanti süresi içindeki LED arızaları ücretsiz onarılır. Garanti dışı durumlarda ise uygun maliyetli onarım hizmeti sunuyoruz. LED modüller modüler yapıda olduğundan, arızalı bölüm kolayca değiştirilebilir; tüm sistemin yenilenmesine gerek kalmaz."
+      }
+    ]
+  },
+  {
+    category: "Yasal İzinler ve Mevzuat",
+    items: [
+      {
+        q: "Tabela için belediye izni gerekli mi?",
+        a: "Evet. İstanbul'da tüm dış mekan tabelaları için ilgili ilçe belediyesinden reklam izni (İlan ve Reklam Vergisi beyannamesi) alınması zorunludur. Tabela boyutu, konumu ve aydınlatma türüne göre farklı izin süreçleri uygulanır. İzinsiz tabela cezai yaptırıma tabidir."
+      },
+      {
+        q: "İzin sürecinde destek veriyor musunuz?",
+        a: "Belediye izin süreçleri konusunda müşterilerimizi detaylı bilgilendiriyoruz. Gerekli evrakların hazırlanması, başvuru formu doldurulması ve teknik doküman hazırlığı konusunda destek sağlıyoruz. Resmi başvurular işletme sahibi adına yapılmalıdır."
+      },
+      {
+        q: "Reklam vergisi ne kadardır?",
+        a: "İlan ve Reklam Vergisi, tabelanın boyutu (metrekare) ve türüne (ışıklı/ışıksız) göre her yıl belediyeler tarafından belirlenen tarifeye göre hesaplanır. Işıklı tabelalar, ışıksız olanlara göre daha yüksek vergi tarifesine tabidir. Keşif sırasında tahmini vergi tutarı hakkında bilgilendirme yaparız."
+      }
+    ]
+  },
+  {
+    category: "Hizmet Bölgeleri",
+    items: [
+      {
+        q: "İstanbul'un hangi bölgelerine hizmet veriyorsunuz?",
+        a: "İstanbul'un 39 ilçesinin tamamına hizmet veriyoruz. Kağıthane'deki merkez atölyemiz sayesinde özellikle Şişli, Beşiktaş, Sarıyer, Maslak, Levent, Etiler, Beyoğlu ve çevresine çok hızlı ulaşım sağlıyoruz. Anadolu yakasına da düzenli olarak montaj ekibi gönderiyoruz."
+      },
+      {
+        q: "Maslak ve Levent bölgesinde deneyiminiz var mı?",
+        a: "Evet. Maslak ve Levent, İstanbul'un en yoğun iş merkezi bölgeleridir. Bu bölgelerdeki AVM'ler, iş kuleleri ve plazalar için çok sayıda kurumsal tabela projesi gerçekleştirdik. Büyükdere Caddesi aksındaki iş merkezlerinin tabela standartlarına hakimiz."
+      }
     ]
   }
 ];
@@ -37,6 +177,8 @@ const faqs = [
 const faqItems = faqs.flatMap((cat) =>
   cat.items.map((item) => ({ question: item.q, answer: item.a })),
 );
+
+const totalQuestions = faqItems.length;
 ---
 
 <Layout
@@ -46,56 +188,142 @@ const faqItems = faqs.flatMap((cat) =>
   breadcrumbs={breadcrumbs}
   faq={faqItems}
 >
-  <div class="relative py-24 bg-secondary overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
-    
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="text-center mb-16">
-        <h1 class="font-heading font-black text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
-          SIKÇA SORULAN <span class="text-primary">SORULAR</span>
+  <section class="relative py-16 md:py-24 bg-secondary overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 relative z-10">
+
+      <!-- Hero -->
+      <div class="text-center mb-10 md:mb-14">
+        <h1 class="font-heading font-bold text-3xl sm:text-4xl md:text-6xl mb-4 md:mb-6 text-white uppercase tracking-tight">
+          Sıkça Sorulan <span class="text-primary">Sorular</span>
         </h1>
-        <p class="text-gray-400 max-w-2xl mx-auto text-lg border-l-2 border-primary pl-4 inline-block">
+        <p class="text-gray-300 max-w-xl mx-auto text-base md:text-lg">
           Tabela ve reklam projeleriniz hakkında merak ettiğiniz her şeyi burada bulabilirsiniz.
         </p>
       </div>
 
-      <div class="max-w-4xl mx-auto space-y-12">
-        {faqs.map(cat => (
-          <div>
-            <h2 class="font-heading font-bold text-2xl text-white mb-6 border-b border-primary/30 pb-2 uppercase tracking-wide">
+      <!-- Stats -->
+      <div class="flex flex-wrap justify-center gap-3 md:gap-5 mb-10 md:mb-14">
+        <div class="bg-secondary border border-primary/30 rounded-lg px-4 py-2.5 md:px-6 md:py-3 text-center min-w-[100px]">
+          <span class="block text-primary font-bold text-xl md:text-2xl leading-none">{totalQuestions}</span>
+          <span class="block text-gray-400 text-xs md:text-sm mt-1">Soru & Cevap</span>
+        </div>
+        <div class="bg-secondary border border-primary/30 rounded-lg px-4 py-2.5 md:px-6 md:py-3 text-center min-w-[100px]">
+          <span class="block text-primary font-bold text-xl md:text-2xl leading-none">{faqs.length}</span>
+          <span class="block text-gray-400 text-xs md:text-sm mt-1">Kategori</span>
+        </div>
+        <div class="bg-secondary border border-primary/30 rounded-lg px-4 py-2.5 md:px-6 md:py-3 text-center min-w-[100px]">
+          <span class="block text-primary font-bold text-xl md:text-2xl leading-none">20+</span>
+          <span class="block text-gray-400 text-xs md:text-sm mt-1">Yıl Deneyim</span>
+        </div>
+      </div>
+
+      <!-- Category Quick Nav -->
+      <nav class="max-w-4xl mx-auto mb-10 md:mb-14 overflow-x-auto scrollbar-hide" aria-label="SSS Kategorileri">
+        <div class="flex gap-2 pb-2 min-w-max justify-center">
+          {faqs.map((cat, i) => (
+            <a
+              href={`#cat-${i}`}
+              class="text-xs md:text-sm whitespace-nowrap bg-secondary border border-white/10 text-white hover:text-primary hover:border-primary/40 px-3 py-1.5 md:px-4 md:py-2 rounded-full transition-all"
+            >
               {cat.category}
-            </h2>
-            <div class="space-y-4">
-              {cat.items.map(item => (
-                <details class="group bg-accent-light border border-white/5 rounded-xl overflow-hidden shadow-lg transition-all">
-                  <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
-                    <h3 class="font-bold text-gray-200 group-hover:text-primary transition-colors pr-4">{item.q}</h3>
-                    <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-primary group-open:rotate-180 transition-transform">
-                      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-                    </div>
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      <!-- FAQ Sections -->
+      <div class="max-w-3xl mx-auto space-y-10 md:space-y-14">
+        {faqs.map((cat, catIdx) => (
+          <section id={`cat-${catIdx}`} class="scroll-mt-24">
+            <!-- Category Header -->
+            <div class="flex items-center justify-between mb-5 md:mb-6">
+              <h2 class="font-heading font-bold text-lg sm:text-xl md:text-2xl text-white uppercase tracking-wide">
+                <span class="text-primary mr-1">/</span>{cat.category}
+              </h2>
+              <span class="text-[11px] md:text-xs text-gray-500 border border-white/10 px-2.5 py-1 rounded-full whitespace-nowrap">
+                {cat.items.length} soru
+              </span>
+            </div>
+            <div class="border-t border-white/10"></div>
+
+            <!-- Questions -->
+            <div class="divide-y divide-white/5">
+              {cat.items.map((item) => (
+                <details class="group faq-item">
+                  <summary class="flex items-center justify-between gap-3 py-4 md:py-5 cursor-pointer list-none select-none">
+                    <h3 class="text-sm md:text-base font-semibold text-white group-hover:text-primary transition-colors leading-snug pr-2">
+                      {item.q}
+                    </h3>
+                    <span class="faq-icon w-7 h-7 md:w-8 md:h-8 rounded-full border border-white/10 group-hover:border-primary/40 flex items-center justify-center shrink-0 transition-all">
+                      <svg class="w-4 h-4 text-primary transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
                   </summary>
-                  <div class="px-6 pb-6 text-gray-400 leading-relaxed border-t border-white/5 pt-4">
-                    {item.a}
+                  <div class="pb-4 md:pb-5 pr-10">
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">
+                      {item.a}
+                    </p>
                   </div>
                 </details>
               ))}
             </div>
-          </div>
+          </section>
         ))}
       </div>
 
-      <div class="mt-20 text-center">
-        <p class="text-gray-400 mb-6 italic">Aradığınız cevabı bulamadınız mı?</p>
-        <a href="/iletisim/" class="bg-primary text-secondary font-black py-4 px-10 rounded-lg hover:bg-white transition-all shadow-lg shadow-primary/20">
-          DOĞRUDAN BİZE SORUN
-        </a>
+      <!-- CTA -->
+      <div class="mt-14 md:mt-20 max-w-xl mx-auto text-center">
+        <div class="border border-primary/20 bg-gradient-to-b from-primary/5 to-transparent rounded-2xl p-6 md:p-10">
+          <h2 class="font-heading font-bold text-xl md:text-2xl text-white mb-2">
+            Cevabınızı Bulamadınız mı?
+          </h2>
+          <p class="text-gray-400 text-sm md:text-base mb-6">
+            Tabela projeniz hakkında bize doğrudan sorun.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="/iletisim/"
+              class="bg-primary text-secondary font-bold text-sm md:text-base py-3 px-6 rounded-lg hover:bg-white transition-all shadow-lg shadow-primary/20 text-center"
+            >
+              Bize Ulaşın
+            </a>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-[#25D366] text-white font-bold text-sm md:text-base py-3 px-6 rounded-lg hover:bg-[#20BD5A] transition-all text-center inline-flex items-center justify-center gap-2"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
       </div>
+
     </div>
-  </div>
+  </section>
 </Layout>
 
 <style>
   summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Smooth scroll for category links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar for category nav */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
 </style>

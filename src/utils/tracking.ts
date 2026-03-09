@@ -1,4 +1,4 @@
-type LeadType = 'call' | 'whatsapp' | 'quote' | 'cta';
+type LeadType = 'call' | 'whatsapp' | 'quote' | 'cta' | 'outbound';
 
 interface LeadEvent {
   type: LeadType;
@@ -43,6 +43,27 @@ export function trackLeadConversion({ type, lang, page }: LeadEvent): void {
   dataLayer.push({
     event: 'lead_conversion',
     lead_type: type,
+    lang,
+    page,
+  });
+}
+
+interface OutboundEvent {
+  type: string;
+  target?: string | null;
+  name?: string | null;
+  lang?: string;
+  page?: string;
+}
+
+export function trackOutboundClick({ type, target, name, lang, page }: OutboundEvent): void {
+  const dataLayer = getDataLayer();
+  if (!dataLayer) return;
+  dataLayer.push({
+    event: 'outbound_click',
+    outbound_type: type,
+    outbound_target: target ?? null,
+    outbound_name: name ?? null,
     lang,
     page,
   });

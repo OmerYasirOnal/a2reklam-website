@@ -115,7 +115,7 @@ A2 Reklam olarak montaj sonrasında da yanınızdayız:
 
 ## Hemen Teklif Alın
 
-Cephe tabelası montajı için [ücretsiz keşif ve teklif](/teklif-al/) almak üzere [bizimle iletişime geçin](/iletisim/). [Hizmetlerimiz](/hizmetler/) ve [referans çalışmalarımız](/galeri/) hakkında detaylı bilgi edinin.
+Cephe tabelası montajı için [ücretsiz keşif ve teklif](/iletisim/) almak üzere [bizimle iletişime geçin](/iletisim/). [Hizmetlerimiz](/hizmetler/) ve [referans çalışmalarımız](/galeri/) hakkında detaylı bilgi edinin.
 
 ---
 

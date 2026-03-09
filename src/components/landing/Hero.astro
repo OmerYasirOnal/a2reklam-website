@@ -1,6 +1,7 @@
 ---
 import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt } from '../../utils/imageSeo';
+import { PHONE_TEL, WHATSAPP_LINK } from '../../consts';
 
 interface Props {
   lang?: string;
@@ -9,7 +10,7 @@ const { lang = 'tr' } = Astro.props;
 
 // Select exactly 5 deterministic hero images (priority: cephe-tabela, totem)
 const manifest = loadImagesManifest();
-const heroCategories = ['cephe-tabela', 'totem', 'isikli-isiksiz-tabelalar'];
+const heroCategories = ['cephe-tabela', 'totem', 'isikli-tabela', 'isiksiz-tabela'];
 const heroImages: any[] = [];
 
 // First, collect from priority categories
@@ -28,7 +29,7 @@ if (heroImages.length < 5) {
 // Take exactly 5 images
 const selectedHeroImages = heroImages.slice(0, 5).map((img: any) => ({
   src: img.paths?.['1600'] || img.paths?.['960'] || '',
-  alt: buildImageAlt({ category: img.category, lang: lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'tr' }),
+  alt: buildImageAlt({ category: img.category, lang: lang === 'en' ? 'en' : 'tr' }),
   category: img.category,
 }));
 
@@ -37,33 +38,23 @@ const content = {
     badge: '2005\'ten beri',
     title: 'Premium Tabela ve Reklam Çözümleri',
     subtitle: 'İstanbul\'un önde gelen tabela ve reklam üreticisi. Tasarımdan montaja tam hizmet.',
-    cta: 'Teklif Al',
-    ctaLink: '/teklif-al/',
-    contact: 'Bize Ulaşın',
-    contactLink: '/iletisim/',
+    call: 'Hemen Ara',
+    whatsapp: 'WhatsApp',
+    quote: 'Teklif Al',
+    quoteLink: '/iletisim/',
   },
   en: {
     badge: 'Since 2005',
     title: 'Premium Signage & Advertising Solutions',
     subtitle: 'Leading signage manufacturer in Istanbul. Full service from design to installation.',
-    cta: 'Get a Quote',
-    ctaLink: '/en/get-quote/',
-    contact: 'Contact Us',
-    contactLink: '/en/contact/',
-  },
-  ar: {
-    badge: 'منذ 2005',
-    title: 'حلول لافتات وإعلانات متميزة',
-    subtitle: 'مصنّع لافتات في إسطنبول يقدم الخدمة من التصميم حتى التركيب.',
-    cta: 'احصل على عرض سعر',
-    ctaLink: '/ar/get-quote/',
-    contact: 'تواصل معنا',
-    contactLink: '/ar/contact/',
+    call: 'Call Now',
+    whatsapp: 'WhatsApp',
+    quote: 'Get a Quote',
+    quoteLink: '/en/get-quote/',
   },
 };
 
-const t = lang === 'ar' ? content.ar : lang === 'en' ? content.en : content.tr;
-const isRtl = lang === 'ar';
+const t = lang === 'en' ? content.en : content.tr;
 ---
 
 <section class="hero-slider-section relative min-h-[75vh] flex items-center justify-center overflow-hidden">
@@ -100,7 +91,7 @@ const isRtl = lang === 'ar';
     aria-label="Previous slide"
   >
     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
     </svg>
   </button>
 
@@ -110,24 +101,22 @@ const isRtl = lang === 'ar';
     aria-label="Next slide"
   >
     <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
     </svg>
   </button>
 
   <!-- Content with theme-agnostic styling (always white text on dark overlay) -->
-  <div class:list={['hero-content relative z-30 container mx-auto px-4 text-center', isRtl && 'text-right']}>
+  <div class="hero-content relative z-30 container mx-auto px-4 text-center">
     <div class="hero-badge inline-block mb-4 px-4 py-1 border border-primary/30 rounded-full bg-black/40 backdrop-blur-sm text-sm font-semibold tracking-wider uppercase animate-fade-in-up">
       {t.badge}
     </div>
 
     <!-- Text container with enhanced shadows for readability -->
     <div class="max-w-4xl mx-auto">
-      <h1 class="hero-title font-heading font-black text-5xl md:text-7xl mb-6 leading-tight text-balance">
+      <h1 class="hero-title font-heading font-bold text-5xl md:text-7xl mb-6 leading-tight text-balance">
         {lang === 'en'
           ? <>Premium <span class="hero-accent">Signage</span> & Advertising Solutions</>
-          : lang === 'ar'
-            ? <><span class="hero-accent">حلول</span> لافتات وإعلانات متميزة</>
-            : <>Premium <span class="hero-accent">Tabela</span> ve Reklam Çözümleri</>
+          : <>Premium <span class="hero-accent">Tabela</span> ve Reklam Çözümleri</>
         }
       </h1>
 
@@ -138,24 +127,36 @@ const isRtl = lang === 'ar';
 
     <div class="flex flex-col md:flex-row gap-4 justify-center items-center hero-cta-group">
       <a
-        href={t.ctaLink}
-        data-track="quote"
+        href={`tel:${PHONE_TEL}`}
+        data-track="call"
         data-lang={lang}
         class="hero-cta-primary px-8 py-4 text-lg font-bold uppercase tracking-wide"
       >
-        {t.cta}
+        {t.call}
       </a>
       <a
-        href={t.contactLink}
+        href={WHATSAPP_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-track="whatsapp"
+        data-lang={lang}
+        class="hero-cta-whatsapp px-8 py-4 text-lg font-bold uppercase tracking-wide"
+      >
+        {t.whatsapp}
+      </a>
+      <a
+        href={t.quoteLink}
+        data-track="quote"
+        data-lang={lang}
         class="hero-cta-secondary px-8 py-4 text-lg font-bold uppercase tracking-wide"
       >
-        {t.contact}
+        {t.quote}
       </a>
     </div>
   </div>
 </section>
 
-<script define:vars={{ totalSlides: selectedHeroImages.length, isRtl }}>
+<script define:vars={{ totalSlides: selectedHeroImages.length }}>
   (function() {
     const section = document.querySelector('.hero-slider-section');
     if (!section) return;
@@ -229,20 +230,12 @@ const isRtl = lang === 'ar';
 
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        if (isRtl) {
-          nextSlide();
-        } else {
-          prevSlide();
-        }
+        prevSlide();
         stopAutoplay();
         startAutoplay();
       } else if (e.key === 'ArrowRight') {
         e.preventDefault();
-        if (isRtl) {
-          prevSlide();
-        } else {
-          nextSlide();
-        }
+        nextSlide();
         stopAutoplay();
         startAutoplay();
       }
@@ -332,6 +325,33 @@ const isRtl = lang === 'ar';
 
   .hero-cta-primary:focus {
     outline: 2px solid #C9A227;
+    outline-offset: 2px;
+  }
+
+  /* Hero WhatsApp CTA - Green button */
+  .hero-cta-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #16a34a;
+    color: #FFFFFF !important;
+    border-radius: 0.5rem;
+    box-shadow:
+      0 4px 12px rgba(22, 163, 74, 0.38),
+      0 2px 4px rgba(0, 0, 0, 0.28);
+    transition: all 0.2s ease;
+  }
+
+  .hero-cta-whatsapp:hover {
+    background-color: #22c55e;
+    transform: translateY(-2px);
+    box-shadow:
+      0 6px 16px rgba(22, 163, 74, 0.42),
+      0 3px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-cta-whatsapp:focus {
+    outline: 2px solid #22c55e;
     outline-offset: 2px;
   }
 

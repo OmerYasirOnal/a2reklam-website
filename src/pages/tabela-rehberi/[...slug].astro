@@ -27,7 +27,20 @@ const recentArticles = allArticles
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
   .slice(0, 4);
 ---
-<Layout lang={lang} title={title} description={article.data.description} breadcrumbs={breadcrumbs} article={true}>
+<Layout
+  lang={lang}
+  title={title}
+  description={article.data.description}
+  breadcrumbs={breadcrumbs}
+  article={true}
+  articleMeta={{
+    publishedTime: article.data.pubDate.toISOString(),
+    modifiedTime: (article.data.updatedDate ?? article.data.pubDate).toISOString(),
+    authorName: 'A2 Reklam Ekibi',
+    section: article.data.category,
+    tags: article.data.tags ?? [],
+  }}
+>
   <article class="py-12 md:py-20 bg-secondary">
     <div class="container mx-auto px-4">
       <!-- 2-column grid layout -->
@@ -46,13 +59,40 @@ const recentArticles = allArticles
             First H1 from markdown is removed via rehype plugin (src/utils/rehype-remove-first-h1.mjs).
             Template H1 (above) uses frontmatter title for SEO/schema - this is the only H1 in the DOM.
           -->
-          <div class="article-prose prose prose-invert prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-headings:text-heading prose-h2:text-2xl prose-h2:mb-4 prose-h2:mt-10 prose-h2:border-l-4 prose-h2:border-primary prose-h2:pl-4 prose-h3:text-xl prose-h3:mb-3 prose-h3:mt-6 prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-primary prose-a:no-underline hover:prose-a:text-primary-hover prose-strong:text-heading prose-strong:font-bold prose-ul:text-gray-300 prose-ul:mb-6 prose-ol:text-gray-300 prose-ol:mb-6 prose-li:mb-2"><Content /></div>
+          <div class="article-prose prose prose-invert prose-lg max-w-none prose-headings:font-heading prose-headings:font-semibold prose-headings:text-heading prose-h2:text-2xl prose-h2:mb-4 prose-h2:mt-10 prose-h2:border-l-4 prose-h2:border-primary prose-h2:pl-4 prose-h3:text-xl prose-h3:mb-3 prose-h3:mt-6 prose-p:text-gray-300 prose-p:leading-relaxed prose-p:mb-6 prose-a:text-primary prose-a:no-underline hover:prose-a:text-primary-hover prose-strong:text-heading prose-strong:font-bold prose-ul:text-gray-300 prose-ul:mb-6 prose-ol:text-gray-300 prose-ol:mb-6 prose-li:mb-2"><Content /></div>
           {article.data.tags && article.data.tags.length > 0 && (
             <div class="mt-10 pt-8 border-t border-white/10">
               <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Etiketler</h3>
               <div class="flex flex-wrap gap-2">{article.data.tags.map(tag => (<span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">{tag}</span>))}</div>
             </div>
           )}
+
+          <!-- İlgili ve Son Rehberler (tüm ekranlarda görünür) -->
+          <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {relatedArticles.length > 0 && (
+              <div class="glass-card p-6">
+                <h3 class="font-heading font-bold text-base text-heading mb-4">İlgili Rehberler</h3>
+                <div class="space-y-3">
+                  {relatedArticles.slice(0, 4).map(related => (
+                    <a href={`/tabela-rehberi/${related.slug}/`} class="block group">
+                      <h4 class="text-sm text-gray-300 group-hover:text-primary transition-colors line-clamp-2">{related.data.title}</h4>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div class="glass-card p-6">
+              <h3 class="font-heading font-bold text-base text-heading mb-4">Son Rehberler</h3>
+              <div class="space-y-3">
+                {recentArticles.slice(0, 4).map(recent => (
+                  <a href={`/tabela-rehberi/${recent.slug}/`} class="block group">
+                    <h4 class="text-sm text-gray-300 group-hover:text-primary transition-colors line-clamp-2">{recent.data.title}</h4>
+                    <span class="text-xs text-gray-500">{new Date(recent.data.pubDate).toLocaleDateString('tr-TR', { month: 'short', day: 'numeric' })}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Sidebar (Desktop) -->
@@ -62,7 +102,7 @@ const recentArticles = allArticles
             <div class="glass-card p-5 text-center">
               <h3 class="font-heading font-bold text-base text-heading mb-2 break-words">Ücretsiz Teklif Al</h3>
               <p class="text-sm text-gray-400 mb-4 break-words">İstanbul'un 40 ilçesinde profesyonel tabela hizmeti.</p>
-              <a href="/teklif-al/" class="btn btn-primary w-full text-sm py-2.5">Teklif Al</a>
+              <a href="/iletisim/" class="btn btn-primary w-full text-sm py-2.5">Teklif Al</a>
             </div>
 
             <!-- Categories Widget -->
@@ -75,32 +115,6 @@ const recentArticles = allArticles
               </div>
             </div>
 
-            <!-- Related Posts Widget -->
-            {relatedArticles.length > 0 && (
-              <div class="glass-card p-5">
-                <h3 class="font-heading font-bold text-base text-heading mb-3 break-words">İlgili Rehberler</h3>
-                <div class="space-y-3">
-                  {relatedArticles.slice(0, 3).map(related => (
-                    <a href={`/tabela-rehberi/${related.slug}/`} class="block group">
-                      <h4 class="text-sm text-gray-300 group-hover:text-primary transition-colors line-clamp-2 break-words">{related.data.title}</h4>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <!-- Recent Posts Widget -->
-            <div class="glass-card p-5">
-              <h3 class="font-heading font-bold text-base text-heading mb-3 break-words">Son Rehberler</h3>
-              <div class="space-y-3">
-                {recentArticles.slice(0, 4).map(recent => (
-                  <a href={`/tabela-rehberi/${recent.slug}/`} class="block group">
-                    <h4 class="text-sm text-gray-300 group-hover:text-primary transition-colors line-clamp-2 break-words">{recent.data.title}</h4>
-                    <span class="text-xs text-gray-500 break-words">{new Date(recent.data.pubDate).toLocaleDateString('tr-TR', { month: 'short', day: 'numeric' })}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </aside>
       </div>
@@ -114,29 +128,11 @@ const recentArticles = allArticles
         <h2 class="font-heading font-black text-3xl md:text-4xl mb-4 text-heading">Profesyonel Tabela Hizmeti İçin</h2>
         <p class="text-lg text-gray-300 mb-8">İstanbul'un 40 ilçesinde hizmet veriyoruz.</p>
         <div class="flex flex-col md:flex-row gap-4 justify-center">
-          <a href="/teklif-al/" class="btn btn-primary px-8 py-4 text-lg font-bold">Ücretsiz Teklif Al</a>
+          <a href="/iletisim/" class="btn btn-primary px-8 py-4 text-lg font-bold">Ücretsiz Teklif Al</a>
           <a href="/iletisim/" class="btn btn-secondary px-8 py-4 text-lg font-bold">İletişime Geçin</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Related Articles Section (Mobile) -->
-  {relatedArticles.length > 0 && (
-    <section class="py-16 bg-secondary lg:hidden">
-      <div class="container mx-auto px-4">
-        <h2 class="font-heading font-black text-2xl md:text-3xl mb-8 text-heading text-center">İlgili <span class="text-primary">Rehberler</span></h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {relatedArticles.map((related) => (
-            <a href={`/tabela-rehberi/${related.slug}/`} class="group glass-card p-6 hover:-translate-y-2 transition-all duration-300">
-              <h3 class="font-heading font-bold text-lg text-heading mb-2 group-hover:text-primary transition-colors line-clamp-2">{related.data.title}</h3>
-              <p class="text-gray-400 text-sm mb-3 line-clamp-2">{related.data.description}</p>
-              <span class="text-xs text-primary font-semibold">Oku →</span>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
 </Layout>
-

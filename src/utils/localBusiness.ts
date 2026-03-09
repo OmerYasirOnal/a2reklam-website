@@ -41,6 +41,7 @@ export function getLocalBusinessSchema(siteUrl: URL): Record<string, unknown> {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': `${siteUrl.toString()}#organization`,
     name: BUSINESS_NAME,
     alternateName: BUSINESS_SHORT_NAME,
     description: SITE_DESCRIPTION,
@@ -48,11 +49,13 @@ export function getLocalBusinessSchema(siteUrl: URL): Record<string, unknown> {
     telephone: PHONE_NUMBER,
     email: EMAIL,
     image: new URL(LOGO_PATH, siteUrl).toString(),
+    logo: new URL(LOGO_PATH, siteUrl).toString(),
     address: {
       '@type': 'PostalAddress',
-      streetAddress: ADDRESS,
+      streetAddress: 'Şirintepe, Açelya Sokağı Ugur Apt No:4/a',
       addressLocality: ADDRESS_LOCALITY,
       addressRegion: ADDRESS_REGION,
+      postalCode: '34415',
       addressCountry: ADDRESS_COUNTRY,
     },
     areaServed: {
@@ -62,6 +65,21 @@ export function getLocalBusinessSchema(siteUrl: URL): Record<string, unknown> {
     hasMap: MAPS_URL,
     sameAs: [SOCIAL_INSTAGRAM_URL, SOCIAL_FACEBOOK_URL, SOCIAL_LINKEDIN_URL],
     geo: GEO,
+    priceRange: '₺₺',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '18:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '09:00',
+        closes: '14:00',
+      },
+    ],
     // Only include AggregateRating if we have real data
     aggregateRating:
       GOOGLE_RATING && GOOGLE_REVIEW_COUNT
@@ -73,6 +91,23 @@ export function getLocalBusinessSchema(siteUrl: URL): Record<string, unknown> {
             worstRating: 1,
           }
         : null,
+    makesOffer: [
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/isikli-tabela/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/isiksiz-tabela/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/paslanmaz-harfler/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/totem/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/cephe-tabela/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/arac-giydirme/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/yonlendirme/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/kabartma-pleksiglass/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/ozel-imalatlar/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/ofis-kumlama-folyolari/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/fener-tabela/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/cati-tabelasi/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/kapi-isimlik/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/ayakli-a-pano/#service` },
+      { '@id': `${siteUrl.toString().replace(/\/$/, '')}/hizmetler/banko-uygulamalari/#service` },
+    ],
   };
 
   return pruneEmpty(schema) as Record<string, unknown>;

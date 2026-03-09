@@ -3,12 +3,11 @@ import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt, getCategoryLabel } from '../../utils/imageSeo';
 
 interface Props {
-  lang?: 'tr' | 'en' | 'ar';
+  lang?: 'tr' | 'en';
   maxImages?: number;
 }
 
 const { lang = 'tr', maxImages = 20 } = Astro.props;
-const isRtl = lang === 'ar';
 
 // Load manifest and select diverse images
 const manifest = loadImagesManifest();
@@ -47,35 +46,26 @@ const t = {
     next: 'Next',
     image: 'Image',
   },
-  ar: {
-    title: 'مشاريعنا',
-    subtitle: 'تصفح أعمالنا',
-    viewAll: 'عرض الكل',
-    viewAllLink: '/ar/gallery/',
-    prev: 'السابق',
-    next: 'التالي',
-    image: 'صورة',
-  },
 }[lang];
 ---
 
 <section class="py-16 bg-secondary/80 border-y border-white/5 overflow-hidden gallery-slider-section">
   <div class="container mx-auto px-4 mb-8">
-    <div class:list={['flex items-end justify-between gap-4', isRtl && 'flex-row-reverse']}>
-      <div class:list={[isRtl && 'text-right']}>
-        <h2 class="font-heading font-black text-3xl md:text-4xl text-white mb-2">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl text-white mb-2">
           <span class="text-primary">{t.title.split(' ')[0]}</span>{' '}{t.title.split(' ').slice(1).join(' ')}
         </h2>
         <p class="text-gray-400">{t.subtitle}</p>
       </div>
-      <div class:list={['flex items-center gap-3', isRtl && 'flex-row-reverse']}>
+      <div class="flex items-center gap-3">
         <a
           href={t.viewAllLink}
           class="hidden sm:inline-flex text-sm font-medium text-primary hover:text-primary-hover transition-colors"
         >
           {t.viewAll} →
         </a>
-        <div class:list={['flex gap-2', isRtl && 'flex-row-reverse']}>
+        <div class="flex gap-2">
           <button
             type="button"
             id="slider-prev"
@@ -83,7 +73,7 @@ const t = {
             aria-label={t.prev}
           >
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M9 5l7 7-7 7" : "M15 19l-7-7 7-7"} />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button
@@ -93,7 +83,7 @@ const t = {
             aria-label={t.next}
           >
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
           </button>
         </div>
@@ -105,10 +95,7 @@ const t = {
   <!-- Slider Track -->
   <div
     id="gallery-slider"
-    class:list={[
-      'flex gap-4 overflow-x-auto snap-x scroll-smooth pb-4 px-4 slider-no-scrollbar',
-      isRtl && 'flex-row-reverse'
-    ]}
+    class="flex gap-4 overflow-x-auto snap-x scroll-smooth pb-4 px-4 slider-no-scrollbar"
     style="scroll-snap-type: x proximity; scroll-padding-inline: 1rem;"
     role="region"
     aria-label={t.title}
@@ -160,13 +147,13 @@ const t = {
     >
       {t.viewAll}
       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={isRtl ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
       </svg>
     </a>
   </div>
 </section>
 
-<script define:vars={{ totalImages: displayImages.length, isRtl, t }}>
+<script define:vars={{ totalImages: displayImages.length, t }}>
   (function() {
     const section = document.querySelector('.gallery-slider-section');
     if (!section) return;
@@ -185,13 +172,13 @@ const t = {
     function getCurrentIndex() {
       if (!slider || sliderItems.length === 0) return 0;
       const sliderRect = slider.getBoundingClientRect();
-      const edge = isRtl ? sliderRect.right : sliderRect.left;
+      const edge = sliderRect.left;
       let closestIndex = 0;
       let minDistance = Infinity;
 
       sliderItems.forEach((item, idx) => {
         const rect = item.getBoundingClientRect();
-        const itemEdge = isRtl ? rect.right : rect.left;
+        const itemEdge = rect.left;
         const distance = Math.abs(itemEdge - edge);
         if (distance < minDistance) {
           minDistance = distance;
@@ -209,8 +196,7 @@ const t = {
     }
 
     function scrollSlider(direction) {
-      const base = direction === 'prev' ? -scrollAmount : scrollAmount;
-      const scrollDir = isRtl ? -base : base;
+      const scrollDir = direction === 'prev' ? -scrollAmount : scrollAmount;
       slider?.scrollBy({ left: scrollDir, behavior: scrollBehavior });
     }
 
@@ -227,10 +213,10 @@ const t = {
       if (!slider?.contains(document.activeElement)) return;
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        scrollSlider(isRtl ? 'next' : 'prev');
+        scrollSlider('prev');
       } else if (e.key === 'ArrowRight') {
         e.preventDefault();
-        scrollSlider(isRtl ? 'prev' : 'next');
+        scrollSlider('next');
       }
     });
 

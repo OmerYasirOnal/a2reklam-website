@@ -161,6 +161,6 @@ Tam kaplama 2-3 gün, kısmi kaplama 1 gün, yazı/logo aynı gün tamamlanabili
 
 Araç giydirme, işletmenizi tanıtmanın en maliyet-etkin yollarından biridir. Profesyonel tasarım ve kaliteli malzeme ile yıllarca hizmet veren mobil reklam aracınız olur.
 
-**Filo veya bireysel araç giydirme projeniz için [ücretsiz keşif talep edin →](/teklif-al/)**
+**Filo veya bireysel araç giydirme projeniz için [ücretsiz keşif talep edin →](/iletisim/)**
 
 [Araç giydirme hizmetlerimizi inceleyin →](/hizmetler/arac-giydirme/)

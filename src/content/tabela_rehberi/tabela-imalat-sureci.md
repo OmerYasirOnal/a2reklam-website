@@ -384,7 +384,7 @@ Müşteri, teslimattan önce ürünü görebilir.
 
 ## Sürecinizi Başlatın
 
-Tabela projenizi başlatmak ve [ücretsiz keşif talep etmek](/teklif-al/) için [bizimle iletişime geçin](/iletisim/).
+Tabela projenizi başlatmak ve [ücretsiz keşif talep etmek](/iletisim/) için [bizimle iletişime geçin](/iletisim/).
 
 [Hizmetlerimiz](/hizmetler/) ve [üretim kalitemizi](/galeri/) inceleyin.
 
