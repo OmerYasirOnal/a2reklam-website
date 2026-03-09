@@ -10,7 +10,8 @@
     "process-images": "node scripts/process-images.js",
     "repo:safety": "node scripts/repo-safety.js",
     "asset:audit": "node scripts/asset-audit.js",
-    "content:lint": "node scripts/content-lint.js"
+    "content:lint": "node scripts/content-lint.js",
+    "deploy": "bash scripts/deploy.sh"
   },
   "keywords": [],
   "author": "",

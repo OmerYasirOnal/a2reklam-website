@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ============================================================
+# A2 Reklam — One-command deployment
+# Usage: npm run deploy
+# ============================================================
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+ENV_FILE="$PROJECT_DIR/.env.deploy"
+
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+CYAN='\033[0;36m'
+NC='\033[0m'
+
+log()  { echo -e "${GREEN}[DEPLOY]${NC} $1"; }
+warn() { echo -e "${YELLOW}[WARN]${NC} $1"; }
+err()  { echo -e "${RED}[ERROR]${NC} $1"; exit 1; }
+
+# ---- Load config ----
+if [ ! -f "$ENV_FILE" ]; then
+  err ".env.deploy bulunamadı! Önce oluştur:\n  cp .env.deploy.example .env.deploy"
+fi
+source "$ENV_FILE"
+
+[ -z "${FTP_HOST:-}" ] && err "FTP_HOST tanımlı değil"
+[ -z "${FTP_USER:-}" ] && err "FTP_USER tanımlı değil"
+[ -z "${FTP_PASS:-}" ] && err "FTP_PASS tanımlı değil"
+[ -z "${DEPLOY_SECRET:-}" ] && err "DEPLOY_SECRET tanımlı değil"
+
+# ---- Step 1: Build ----
+log "Building site..."
+cd "$PROJECT_DIR"
+npm run build
+BUILD_PAGES=$(find dist -name "*.html" | wc -l | tr -d ' ')
+log "Build complete — ${BUILD_PAGES} pages"
+
+# ---- Step 2: Create zip ----
+log "Creating dist.zip..."
+cd "$PROJECT_DIR/dist"
+rm -f "$PROJECT_DIR/dist.zip"
+zip -r -q "$PROJECT_DIR/dist.zip" .
+ZIP_SIZE=$(du -h "$PROJECT_DIR/dist.zip" | cut -f1)
+log "Zip created — ${ZIP_SIZE}"
+
+# ---- Step 3: Upload via FTP ----
+log "Uploading to ${FTP_HOST}..."
+curl -s -T "$PROJECT_DIR/dist.zip" \
+  "ftp://${FTP_HOST}${FTP_PATH}/dist.zip" \
+  --user "${FTP_USER}:${FTP_PASS}" \
+  --ssl-reqd --ftp-create-dirs \
+  || curl -s -T "$PROJECT_DIR/dist.zip" \
+    "ftp://${FTP_HOST}${FTP_PATH}/dist.zip" \
+    --user "${FTP_USER}:${FTP_PASS}" \
+    --ftp-create-dirs
+log "Upload complete"
+
+# ---- Step 4: Extract on server ----
+log "Extracting on server..."
+EXTRACT_URL="https://a2reklam.com/api/deploy-extract.php?secret=${DEPLOY_SECRET}"
+RESULT=$(curl -s -m 60 "$EXTRACT_URL")
+
+if echo "$RESULT" | grep -q '"ok":true'; then
+  log "Server extraction successful"
+  echo -e "${CYAN}$RESULT${NC}"
+else
+  err "Server extraction failed:\n$RESULT"
+fi
+
+# ---- Step 5: Cleanup local zip ----
+rm -f "$PROJECT_DIR/dist.zip"
+log "Local zip cleaned up"
+
+# ---- Done ----
+echo ""
+echo -e "${GREEN}════════════════════════════════════════${NC}"
+echo -e "${GREEN}  Deploy tamamlandı!${NC}"
+echo -e "${GREEN}  https://a2reklam.com${NC}"
+echo -e "${GREEN}════════════════════════════════════════${NC}"
