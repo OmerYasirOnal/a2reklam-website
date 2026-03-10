@@ -10,12 +10,12 @@ const posts = (await getCollection('blog')).sort(
 const title = "Blog | A2 Reklam";
 const description = "Tabela, reklam ve tasarım dünyasından en güncel haberler, rehberler ve ipuçları.";
 const breadcrumbs = [
-  { name: 'Ana Sayfa', url: '/' },
-  { name: 'Blog', url: '/blog/' },
+  { name: 'Ana Sayfa', item: '/' },
+  { name: 'Blog', item: '/blog/' },
 ];
 ---
 
-<Layout title={title} description={description} lang="tr" breadcrumbs={breadcrumbs}>
+<Layout title={title} description={description} lang="tr">
   <div class="relative py-24 bg-secondary overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     
