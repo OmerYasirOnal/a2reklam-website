@@ -137,7 +137,7 @@ const breadcrumbs = [
 ];
 ---
 
-<Layout title={t.metaTitle} description={t.metaDescription} lang={lang} breadcrumbs={breadcrumbs}>
+<Layout title={t.metaTitle} description={t.metaDescription} lang={lang}>
   <div class="container mx-auto px-4">
     <Breadcrumb items={breadcrumbs.map(b => ({ name: b.name, url: b.item }))} />
   </div>

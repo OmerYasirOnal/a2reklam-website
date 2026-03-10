@@ -17,6 +17,7 @@
 interface BreadcrumbItem {
   name: string;
   url?: string;
+  item?: string;
 }
 
 interface Props {
@@ -67,18 +68,22 @@ function generateBreadcrumbs(): BreadcrumbItem[] {
 const breadcrumbs = items || generateBreadcrumbs();
 const site = Astro.site?.href || 'https://a2reklam.com';
 
+// Normalize: accept both `url` and `item` keys
+const getUrl = (crumb: BreadcrumbItem) => crumb.url || crumb.item;
+
 // BreadcrumbList schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbs.map((item, index) => {
+  "itemListElement": breadcrumbs.map((crumb, index) => {
+    const href = getUrl(crumb);
     const entry: any = {
       "@type": "ListItem",
       "position": index + 1,
-      "name": item.name,
+      "name": crumb.name,
     };
-    if (item.url) {
-      entry.item = new URL(item.url, site).href;
+    if (href) {
+      entry.item = new URL(href, site).href;
     }
     return entry;
   })
@@ -88,12 +93,12 @@ const breadcrumbSchema = {
 {breadcrumbs.length > 1 && (
   <nav aria-label="Breadcrumb" class="breadcrumb-nav">
     <ol class="breadcrumb-list">
-      {breadcrumbs.map((item, i) => (
+      {breadcrumbs.map((crumb, i) => (
         <li class="breadcrumb-item">
-          {item.url ? (
-            <a href={item.url} class="breadcrumb-link">{item.name}</a>
+          {getUrl(crumb) ? (
+            <a href={getUrl(crumb)} class="breadcrumb-link">{crumb.name}</a>
           ) : (
-            <span class="breadcrumb-current" aria-current="page">{item.name}</span>
+            <span class="breadcrumb-current" aria-current="page">{crumb.name}</span>
           )}
           {i < breadcrumbs.length - 1 && (
             <span class="breadcrumb-sep" aria-hidden="true">
