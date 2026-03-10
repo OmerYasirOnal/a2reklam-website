@@ -147,6 +147,16 @@ Options -MultiViews
 </IfModule>
 
 # ================================================
+# LITESPEED CACHE CONTROL
+# ================================================
+<IfModule LiteSpeed>
+  # Disable server-side cache for HTML (CSS/JS/images still cached)
+  RewriteEngine On
+  RewriteRule \.html$ - [E=cache-control:no-cache]
+  RewriteRule /$ - [E=cache-control:no-cache]
+</IfModule>
+
+# ================================================
 # BROWSER CACHING
 # ================================================
 <IfModule mod_expires.c>
@@ -176,12 +186,23 @@ Options -MultiViews
   ExpiresByType application/javascript "access plus 1 month"
   ExpiresByType text/javascript "access plus 1 month"
 
-  # HTML - 1 hour
-  ExpiresByType text/html "access plus 1 hour"
+  # HTML - no browser cache (content changes on deploy)
+  ExpiresByType text/html "access plus 0 seconds"
 
   # XML (sitemap) - 1 day
   ExpiresByType application/xml "access plus 1 day"
   ExpiresByType text/xml "access plus 1 day"
+</IfModule>
+
+# ================================================
+# HTML CACHE PREVENTION
+# ================================================
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
 </IfModule>
 
 # ================================================

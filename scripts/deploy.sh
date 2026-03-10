@@ -71,7 +71,30 @@ else
   err "Server extraction failed:\n$RESULT"
 fi
 
-# ---- Step 5: Cleanup local zip ----
+# ---- Step 5: Purge LiteSpeed cache ----
+log "Purging server cache..."
+PURGE_URL="https://a2reklam.com/api/cache-purge.php?secret=${DEPLOY_SECRET}"
+PURGE_RESULT=$(curl -s -m 30 "$PURGE_URL" 2>/dev/null || echo '{"ok":false}')
+if echo "$PURGE_RESULT" | grep -q '"ok":true'; then
+  log "Cache purge signal sent"
+fi
+
+# Force-refresh: touch HTML files + .htaccess modification
+REFRESH_URL="https://a2reklam.com/api/force-refresh.php?secret=${DEPLOY_SECRET}"
+REFRESH_RESULT=$(curl -s -m 60 "$REFRESH_URL" 2>/dev/null || echo '{"ok":false}')
+if echo "$REFRESH_RESULT" | grep -q '"ok":true'; then
+  log "Force refresh completed"
+  echo -e "${CYAN}$REFRESH_RESULT${NC}"
+else
+  warn "Force refresh failed (non-critical)"
+fi
+
+echo ""
+warn "LiteSpeed sunucu cache'i shared hosting'de PHP ile temizlenemiyor."
+warn "Eski sayfalar görüyorsanız: cPanel > LiteSpeed Web Cache Manager > Flush All"
+warn "Veya sayfaya ?v=1 ekleyerek güncel içeriği doğrulayın."
+
+# ---- Step 6: Cleanup local zip ----
 rm -f "$PROJECT_DIR/dist.zip"
 log "Local zip cleaned up"
 
