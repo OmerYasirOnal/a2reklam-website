@@ -2,6 +2,7 @@
 title: "Şişli Bölgesinde Işıklı/ışıksız Tabelalar Rehberi: Yerel Dinamikler"
 description: "Şişli için Işıklı/ışıksız Tabelalar planlama, izin ve görünürlük ipuçları."
 pubDate: "2025-02-20"
+updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Bölge", "Yerel", "Rehber"]
 heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"

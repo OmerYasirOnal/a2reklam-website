@@ -2,6 +2,7 @@
 title: "Araç Giydirme Vaka Analizi: dağıtım filosu İşletmesinde Dönüşüm"
 description: "dağıtım filosu örneğinde Araç Giydirme tasarımı, montaj ve sonuçlar."
 pubDate: "2025-03-21"
+updatedDate: "2026-03-10"
 tags: ["Araç Giydirme", "Vaka", "Sektör", "Uygulama"]
 heroImage: "/assets/img/arac-giydirme/a2reklam-arac-giydirme-001-960.webp"
 author: "A2 Reklam Ekibi"

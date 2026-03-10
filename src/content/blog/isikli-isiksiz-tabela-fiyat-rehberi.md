@@ -2,6 +2,7 @@
 title: "Işıklı/ışıksız Tabelalar Fiyat Rehberi: Bütçe ve Teklif Kalemleri"
 description: "Işıklı/ışıksız Tabelalar fiyatını belirleyen metraj, malzeme, aydınlatma ve montaj faktörleri; doğru teklif okuma ipuçları."
 pubDate: "2025-02-11"
+updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Fiyat", "Bütçe", "Teklif"]
 heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"

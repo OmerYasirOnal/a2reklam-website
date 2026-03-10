@@ -2,6 +2,7 @@
 title: "Cephe Tabela Fiyat Rehberi: Bütçe ve Teklif Kalemleri"
 description: "Cephe Tabela fiyatını belirleyen metraj, malzeme, aydınlatma ve montaj faktörleri; doğru teklif okuma ipuçları."
 pubDate: "2025-02-01"
+updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Fiyat", "Bütçe", "Teklif"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

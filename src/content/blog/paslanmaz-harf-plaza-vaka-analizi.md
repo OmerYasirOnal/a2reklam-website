@@ -2,6 +2,7 @@
 title: "Paslanmaz Harfler Vaka Analizi: plaza İşletmesinde Dönüşüm"
 description: "plaza örneğinde Paslanmaz Harfler tasarımı, montaj ve sonuçlar."
 pubDate: "2025-03-11"
+updatedDate: "2026-03-10"
 tags: ["Paslanmaz Harf", "Vaka", "Sektör", "Uygulama"]
 heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp"
 author: "A2 Reklam Ekibi"

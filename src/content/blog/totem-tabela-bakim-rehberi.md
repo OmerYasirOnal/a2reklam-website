@@ -2,6 +2,7 @@
 title: "Totem Tabela Bakım Rehberi: Ömür ve Performans Yönetimi"
 description: "Periyodik temizlik, aydınlatma kontrolleri ve Totem Tabela ömrünü uzatan bakım planı."
 pubDate: "2025-02-26"
+updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Bakım", "Ömür", "Servis"]
 heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
 author: "A2 Reklam Ekibi"

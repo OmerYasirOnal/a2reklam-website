@@ -2,6 +2,7 @@
 title: "Işıklı/ışıksız Tabelalar Vaka Analizi: eczane İşletmesinde Dönüşüm"
 description: "eczane örneğinde Işıklı/ışıksız Tabelalar tasarımı, montaj ve sonuçlar."
 pubDate: "2025-02-19"
+updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Vaka", "Sektör", "Uygulama"]
 heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"

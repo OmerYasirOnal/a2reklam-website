@@ -2,6 +2,7 @@
 title: "Totem Tabela Malzeme Seçimi: Dayanıklılık ve Görünüm"
 description: "Totem Tabela için malzeme karşılaştırması, dış ortam dayanımı ve bakım maliyeti rehberi."
 pubDate: "2025-02-22"
+updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Malzeme", "Dayanıklılık", "Rehber"]
 heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
 author: "A2 Reklam Ekibi"

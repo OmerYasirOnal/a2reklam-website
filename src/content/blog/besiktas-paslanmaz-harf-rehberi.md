@@ -2,6 +2,7 @@
 title: "Beşiktaş Paslanmaz Harf Rehberi: Kurumsal Girişler için Prestij"
 description: "Beşiktaş bölgesinde paslanmaz harf tabela planlama, malzeme seçimi ve montaj adımları. Kurumsal görünürlük için pratik ipuçları."
 pubDate: "2025-02-20"
+updatedDate: "2026-03-10"
 tags: ["Paslanmaz Harf", "Beşiktaş", "Tabela", "Rehber"]
 heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp"
 author: "A2 Reklam Ekibi"

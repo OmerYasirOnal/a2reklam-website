@@ -2,6 +2,7 @@
 title: "Cephe Tabela Yatırım Getirisi: Performans Ölçümü ve KPI"
 description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Cephe Tabela ROI yaklaşımı."
 pubDate: "2025-02-08"
+updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "ROI", "Performans", "Pazarlama"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

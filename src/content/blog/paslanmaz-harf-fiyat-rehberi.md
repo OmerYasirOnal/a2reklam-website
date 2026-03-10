@@ -2,6 +2,7 @@
 title: "Paslanmaz Harfler Fiyat Rehberi: Bütçe ve Teklif Kalemleri"
 description: "Paslanmaz Harfler fiyatını belirleyen metraj, malzeme, aydınlatma ve montaj faktörleri; doğru teklif okuma ipuçları."
 pubDate: "2025-03-03"
+updatedDate: "2026-03-10"
 tags: ["Paslanmaz Harf", "Fiyat", "Bütçe", "Teklif"]
 heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp"
 author: "A2 Reklam Ekibi"

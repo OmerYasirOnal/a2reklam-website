@@ -2,6 +2,7 @@
 title: "Cephe Tabela Malzeme Seçimi: Dayanıklılık ve Görünüm"
 description: "Cephe Tabela için malzeme karşılaştırması, dış ortam dayanımı ve bakım maliyeti rehberi."
 pubDate: "2025-02-02"
+updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Malzeme", "Dayanıklılık", "Rehber"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

@@ -2,6 +2,7 @@
 title: "Kurumsal Tabela Tasarımında 7 Altın Kural | A2 Reklam"
 description: "Profesyonel kurumsal tabela tasarımı için dikkat edilmesi gereken 7 kritik faktör. Marka tutarlılığı, okunabilirlik ve malzeme seçimi rehberi."
 pubDate: "2025-01-17"
+updatedDate: "2026-03-10"
 tags: ["Kurumsal Tabela", "Tabela Tasarımı", "Cephe Tabela", "Marka Kimliği"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

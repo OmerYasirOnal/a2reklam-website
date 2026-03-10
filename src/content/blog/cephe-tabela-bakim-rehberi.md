@@ -2,6 +2,7 @@
 title: "Cephe Tabela Bakım Rehberi: Ömür ve Performans Yönetimi"
 description: "Periyodik temizlik, aydınlatma kontrolleri ve Cephe Tabela ömrünü uzatan bakım planı."
 pubDate: "2025-02-06"
+updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Bakım", "Ömür", "Servis"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

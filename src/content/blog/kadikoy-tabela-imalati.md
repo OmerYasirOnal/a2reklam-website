@@ -2,6 +2,7 @@
 title: "Kadıköy Tabela İmalatı: Yerel İşletmeler İçin Rehber | A2 Reklam"
 description: "Kadıköy'de tabela yaptırmak isteyen işletmeler için kapsamlı rehber. Moda, Bahariye, Caferağa ve Yeldeğirmeni bölgelerinde tabela çözümleri."
 pubDate: "2025-01-16"
+updatedDate: "2026-03-10"
 tags: ["Kadıköy", "Tabela", "İstanbul", "Yerel İşletme", "Moda"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp"
 author: "A2 Reklam Ekibi"

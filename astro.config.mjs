@@ -76,7 +76,7 @@ export default defineConfig({
         }
         // Blog
         if (/\/blog\//.test(item.url)) {
-          return { ...item, changefreq: 'monthly', priority: 0.7 };
+          return { ...item, changefreq: 'monthly', priority: 0.7, lastmod: new Date() };
         }
         // English pages (lower priority)
         if (/\/en\//.test(item.url)) {

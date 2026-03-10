@@ -2,6 +2,7 @@
 title: "Işıklı/ışıksız Tabelalar Tasarımında Okunabilirlik: Tipografi ve Kontrast"
 description: "Okunabilirlik ve marka tutarlılığı için Işıklı/ışıksız Tabelalar tasarım kriterleri ve pratik ipuçları."
 pubDate: "2025-02-14"
+updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Tasarım", "Okunabilirlik", "Marka"]
 heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"

@@ -2,6 +2,7 @@
 title: "Işıklı/ışıksız Tabelalar Yatırım Getirisi: Performans Ölçümü ve KPI"
 description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Işıklı/ışıksız Tabelalar ROI yaklaşımı."
 pubDate: "2025-02-18"
+updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "ROI", "Performans", "Pazarlama"]
 heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"

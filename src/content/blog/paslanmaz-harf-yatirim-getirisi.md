@@ -2,6 +2,7 @@
 title: "Paslanmaz Harfler Yatırım Getirisi: Performans Ölçümü ve KPI"
 description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Paslanmaz Harfler ROI yaklaşımı."
 pubDate: "2025-03-10"
+updatedDate: "2026-03-10"
 tags: ["Paslanmaz Harf", "ROI", "Performans", "Pazarlama"]
 heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp"
 author: "A2 Reklam Ekibi"

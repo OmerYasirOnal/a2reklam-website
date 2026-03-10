@@ -2,6 +2,7 @@
 title: "Kadıköy Bölgesinde Cephe Tabela Rehberi: Yerel Dinamikler"
 description: "Kadıköy için Cephe Tabela planlama, izin ve görünürlük ipuçları."
 pubDate: "2025-02-10"
+updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Bölge", "Yerel", "Rehber"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"
