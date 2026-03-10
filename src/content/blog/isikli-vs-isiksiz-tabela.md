@@ -4,7 +4,7 @@ description: "Işıklı ve ışıksız tabela arasındaki farklar: maliyet, daya
 pubDate: "2026-03-10"
 updatedDate: "2026-03-10"
 tags: ["ışıklı tabela", "ışıksız tabela", "tabela karşılaştırma", "LED tabela"]
-heroImage: "/assets/img/services/isikli-tabela-hero.webp"
+heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"
 faq:
   - question: "Işıklı tabela mı yoksa ışıksız tabela mı daha dayanıklıdır?"

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/seo/Breadcrumb.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -8,13 +9,18 @@ const posts = (await getCollection('blog')).sort(
 
 const title = "Blog | A2 Reklam";
 const description = "Tabela, reklam ve tasarım dünyasından en güncel haberler, rehberler ve ipuçları.";
+const breadcrumbs = [
+  { name: 'Ana Sayfa', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+];
 ---
 
-<Layout title={title} description={description} lang="tr">
+<Layout title={title} description={description} lang="tr" breadcrumbs={breadcrumbs}>
   <div class="relative py-24 bg-secondary overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
     
     <div class="container mx-auto px-4 relative z-10">
+      <Breadcrumb items={breadcrumbs} />
       <div class="text-center mb-16">
         <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6 text-white uppercase tracking-tight">
           A2 <span class="text-primary">BLOG</span>

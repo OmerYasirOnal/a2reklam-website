@@ -4,7 +4,7 @@ description: "Tabela imalatında kullanılan 7 temel malzemenin detaylı karşı
 pubDate: "2026-03-10"
 updatedDate: "2026-03-10"
 tags: ["tabela malzeme", "tabela seçimi", "paslanmaz tabela", "alüminyum tabela", "pleksiglas tabela"]
-heroImage: "/assets/img/services/cephe-tabela-hero.webp"
+heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"
 faq:
   - question: "Dış mekan tabelası için en dayanıklı malzeme hangisidir?"
