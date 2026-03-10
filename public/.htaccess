@@ -109,7 +109,11 @@ Options -MultiViews
   RewriteCond %{REQUEST_URI} !/$
   RewriteRule ^(.*)$ /$1/ [R=301,L]
 
-  # Map trailing slash to .html (works even when directory with same name exists)
+  # Map trailing slash to directory index.html first, then .html fallback
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.*)/$ $1/index.html [L]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
   RewriteRule ^(.*)/$ $1.html [L]
