@@ -4,7 +4,7 @@ description: "Paslanmaz harf ve kutu harf tabela karşılaştırması: malzeme, 
 pubDate: "2026-03-10"
 updatedDate: "2026-03-10"
 tags: ["paslanmaz harf", "kutu harf", "tabela karşılaştırma", "tabela malzeme"]
-heroImage: "/assets/img/services/paslanmaz-harfler-hero.webp"
+heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp"
 author: "A2 Reklam Ekibi"
 faq:
   - question: "Paslanmaz harf tabela dış mekanda paslanır mı?"
