@@ -2,6 +2,7 @@
 title: "2024 Yılının Popüler Tabela Modelleri: Tasarım ve Malzeme Trendleri"
 description: "2024 tabela trendleri: minimal tipografi, sürdürülebilir malzemeler, LED kontur ve modern yüzey çözümleri."
 pubDate: "2024-01-18"
+updatedDate: "2026-03-10"
 tags: ["Trendler", "Tabela", "Tasarım", "2024"]
 heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
 author: "A2 Reklam Ekibi"

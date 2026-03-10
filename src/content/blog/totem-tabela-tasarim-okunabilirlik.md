@@ -2,6 +2,7 @@
 title: "Totem Tabela Tasarımında Okunabilirlik: Tipografi ve Kontrast"
 description: "Okunabilirlik ve marka tutarlılığı için Totem Tabela tasarım kriterleri ve pratik ipuçları."
 pubDate: "2025-02-24"
+updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Tasarım", "Okunabilirlik", "Marka"]
 heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
 author: "A2 Reklam Ekibi"

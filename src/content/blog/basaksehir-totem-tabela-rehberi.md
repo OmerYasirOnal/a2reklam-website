@@ -2,6 +2,7 @@
 title: "Başakşehir Bölgesinde Totem Tabela Rehberi: Yerel Dinamikler"
 description: "Başakşehir için Totem Tabela planlama, izin ve görünürlük ipuçları."
 pubDate: "2025-03-02"
+updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Bölge", "Yerel", "Rehber"]
 heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
 author: "A2 Reklam Ekibi"

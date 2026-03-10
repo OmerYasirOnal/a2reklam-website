@@ -2,6 +2,7 @@
 title: "Işıklı/ışıksız Tabelalar Enerji Verimliliği ve Görünürlük Dengesi"
 description: "LED modül seçimi, güç tüketimi ve görünürlük için Işıklı/ışıksız Tabelalar optimizasyonu."
 pubDate: "2025-02-17"
+updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Enerji", "Verimlilik", "Görünürlük"]
 heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"

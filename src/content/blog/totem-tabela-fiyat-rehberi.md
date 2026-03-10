@@ -2,6 +2,7 @@
 title: "Totem Tabela Fiyat Rehberi: Bütçe ve Teklif Kalemleri"
 description: "Totem Tabela fiyatını belirleyen metraj, malzeme, aydınlatma ve montaj faktörleri; doğru teklif okuma ipuçları."
 pubDate: "2025-02-21"
+updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Fiyat", "Bütçe", "Teklif"]
 heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
 author: "A2 Reklam Ekibi"

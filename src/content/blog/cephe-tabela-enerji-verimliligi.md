@@ -2,6 +2,7 @@
 title: "Cephe Tabela Enerji Verimliliği ve Görünürlük Dengesi"
 description: "LED modül seçimi, güç tüketimi ve görünürlük için Cephe Tabela optimizasyonu."
 pubDate: "2025-02-07"
+updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Enerji", "Verimlilik", "Görünürlük"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

@@ -2,6 +2,7 @@
 title: "Cephe Tabela İçin İzin ve Ruhsat Süreci: Adım Adım Rehber"
 description: "Belediye başvurusu, proje çizimi ve ilan reklam vergisi; Cephe Tabela için izin sürecinin özeti."
 pubDate: "2025-02-03"
+updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Ruhsat", "Yönetmelik", "Süreç"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

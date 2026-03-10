@@ -2,6 +2,7 @@
 title: "Cephe Tabela Tasarımında Okunabilirlik: Tipografi ve Kontrast"
 description: "Okunabilirlik ve marka tutarlılığı için Cephe Tabela tasarım kriterleri ve pratik ipuçları."
 pubDate: "2025-02-04"
+updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Tasarım", "Okunabilirlik", "Marka"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

@@ -2,6 +2,7 @@
 title: "Ataşehir Bölgesinde Paslanmaz Harfler Rehberi: Yerel Dinamikler"
 description: "Ataşehir için Paslanmaz Harfler planlama, izin ve görünürlük ipuçları."
 pubDate: "2025-03-12"
+updatedDate: "2026-03-10"
 tags: ["Paslanmaz Harf", "Bölge", "Yerel", "Rehber"]
 heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp"
 author: "A2 Reklam Ekibi"

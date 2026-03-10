@@ -2,6 +2,7 @@
 title: "Cephe Tabela Vaka Analizi: kafe İşletmesinde Dönüşüm"
 description: "kafe örneğinde Cephe Tabela tasarımı, montaj ve sonuçlar."
 pubDate: "2025-02-09"
+updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Vaka", "Sektör", "Uygulama"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

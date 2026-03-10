@@ -2,6 +2,7 @@
 title: "Cephe Tabela Montaj Güvenliği: Keşif, Statik ve Uygulama"
 description: "Rüzgar yükü, bağlantı ve iş güvenliği odaklı Cephe Tabela montaj rehberi."
 pubDate: "2025-02-05"
+updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Montaj", "Güvenlik", "Uygulama"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

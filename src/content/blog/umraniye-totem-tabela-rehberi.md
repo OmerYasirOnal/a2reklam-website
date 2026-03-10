@@ -2,6 +2,7 @@
 title: "Ümraniye Totem Tabela Rehberi: Trafik, Görünürlük ve Yatırım"
 description: "Ümraniye bölgesinde totem tabela planlama, izin süreçleri ve maliyet kalemleri. Yoğun trafik hatlarında görünürlük stratejisi."
 pubDate: "2025-02-20"
+updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Ümraniye", "Yatırım", "Rehber"]
 heroImage: "/assets/img/totem/a2reklam-totem-002-960.webp"
 author: "A2 Reklam Ekibi"

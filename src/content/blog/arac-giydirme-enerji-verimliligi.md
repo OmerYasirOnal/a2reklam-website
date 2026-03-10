@@ -2,6 +2,7 @@
 title: "Araç Giydirme Enerji Verimliliği ve Görünürlük Dengesi"
 description: "LED modül seçimi, güç tüketimi ve görünürlük için Araç Giydirme optimizasyonu."
 pubDate: "2025-03-19"
+updatedDate: "2026-03-10"
 tags: ["Araç Giydirme", "Enerji", "Verimlilik", "Görünürlük"]
 heroImage: "/assets/img/arac-giydirme/a2reklam-arac-giydirme-001-960.webp"
 author: "A2 Reklam Ekibi"
