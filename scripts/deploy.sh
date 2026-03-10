@@ -89,10 +89,13 @@ else
   warn "Force refresh failed (non-critical)"
 fi
 
-echo ""
-warn "LiteSpeed sunucu cache'i shared hosting'de PHP ile temizlenemiyor."
-warn "Eski sayfalar görüyorsanız: cPanel > LiteSpeed Web Cache Manager > Flush All"
-warn "Veya sayfaya ?v=1 ekleyerek güncel içeriği doğrulayın."
+# Cleanup stale .html files that conflict with directory/index.html
+CLEANUP_URL="https://a2reklam.com/api/cleanup-stale.php?secret=${DEPLOY_SECRET}"
+CLEANUP_RESULT=$(curl -s -m 30 "$CLEANUP_URL" 2>/dev/null || echo '{"ok":false}')
+if echo "$CLEANUP_RESULT" | grep -q '"ok":true'; then
+  log "Stale file cleanup done"
+  echo -e "${CYAN}$CLEANUP_RESULT${NC}"
+fi
 
 # ---- Step 6: Cleanup local zip ----
 rm -f "$PROJECT_DIR/dist.zip"
