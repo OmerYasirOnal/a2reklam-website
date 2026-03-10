@@ -51,6 +51,7 @@ export default defineConfig({
           if (pathname.includes('/tesekkurler/')) return false;
           if (pathname.startsWith('/ar/')) return false;
           if (pathname.includes('/404')) return false;
+          if (pathname.includes('/teklif-al/')) return false;
           return true;
         } catch {
           return true;
@@ -77,6 +78,10 @@ export default defineConfig({
         if (/\/blog\//.test(item.url)) {
           return { ...item, changefreq: 'monthly', priority: 0.7 };
         }
+        // English pages (lower priority)
+        if (/\/en\//.test(item.url)) {
+          return { ...item, changefreq: 'monthly', priority: 0.3 };
+        }
         return item;
       },
     }),
@@ -92,12 +97,47 @@ export default defineConfig({
     '/ar/gallery/': '/galeri/',
     '/ar/contact/': '/iletisim/',
     '/ar/get-quote/': '/iletisim/',
+    '/ar/about/': '/hakkimizda/',
     '/ar/thank-you/': '/tesekkurler/',
     // Removed English pages → Turkish equivalents (301 redirects)
     '/en/blog/': '/blog/',
     '/en/faq/': '/sss/',
     '/en/thank-you/': '/tesekkurler/',
     '/en/service-areas/': '/hizmet-bolgeleri/',
+    // Legacy WordPress URLs
+    '/hakkinda/': '/hakkimizda/',
+    '/tabela-cesitleri/': '/hizmetler/',
+    '/tabelacesitleri/folyo-baski-uygulama/': '/hizmetler/ofis-kumlama-folyolari/',
+    '/tabelacesitleri/pleksi-kutu-harf/': '/hizmetler/kabartma-pleksiglass/',
+    '/tabelacesitleri/kutu-harf/': '/hizmetler/paslanmaz-harfler/',
+    '/tabelacesitleri/isikli-tabela/': '/hizmetler/isikli-tabela/',
+    '/tabelacesitleri/totem-tabela/': '/hizmetler/totem/',
+    '/tabelacesitleri/cephe-tabela/': '/hizmetler/cephe-tabela/',
+    '/tabelacesitleri/arac-giydirme/': '/hizmetler/arac-giydirme/',
+    '/tabelacesitleri/paslanmaz-harf/': '/hizmetler/paslanmaz-harfler/',
+    '/fener-tabela-nedir/': '/hizmetler/fener-tabela/',
+    '/iletisim-tabela/': '/iletisim/',
+    '/teklif-al/': '/iletisim/',
+    // Eski -tabelaci sonekli ilce URL'leri
+    '/uskudar-tabela-tabelaci/': '/hizmet-bolgeleri/uskudar-tabela/',
+    '/sisli-tabela-tabelaci/': '/hizmet-bolgeleri/sisli-tabela/',
+    '/kadikoy-tabela-tabelaci/': '/hizmet-bolgeleri/kadikoy-tabela/',
+    '/besiktas-tabela-tabelaci/': '/hizmet-bolgeleri/besiktas-tabela/',
+    '/beyoglu-tabela-tabelaci/': '/hizmet-bolgeleri/beyoglu-tabela/',
+    '/fatih-tabela-tabelaci/': '/hizmet-bolgeleri/fatih-tabela/',
+    '/bakirkoy-tabela-tabelaci/': '/hizmet-bolgeleri/bakirkoy-tabela/',
+    '/umraniye-tabela-tabelaci/': '/hizmet-bolgeleri/umraniye-tabela/',
+    '/atasehir-tabela-tabelaci/': '/hizmet-bolgeleri/atasehir-tabela/',
+    '/maltepe-tabela-tabelaci/': '/hizmet-bolgeleri/maltepe-tabela/',
+    // Eksik tabelacesitleri redirect'leri
+    '/tabelacesitleri/dijital-baski/': '/hizmetler/',
+    '/tabelacesitleri/neon-tabela/': '/hizmetler/isikli-tabela/',
+    // Istanbul disi il sayfalari
+    '/hizmet-bolgeleri/bursa/': '/hizmet-bolgeleri/',
+    '/hizmet-bolgeleri/kocaeli/': '/hizmet-bolgeleri/',
+    '/hizmet-bolgeleri/sakarya/': '/hizmet-bolgeleri/',
+    '/hizmet-bolgeleri/tekirdag/': '/hizmet-bolgeleri/',
+    '/hizmet-bolgeleri/yalova/': '/hizmet-bolgeleri/',
   },
   trailingSlash: 'always',
   build: {

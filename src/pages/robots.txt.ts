@@ -16,7 +16,14 @@ Allow: /
 Disallow: /ar/
 Disallow: /tesekkurler/
 Disallow: /en/thank-you/
+Disallow: /en/service-areas/
 Disallow: /api/
+Disallow: /tabelacesitleri/
+Disallow: /hizmet-bolgeleri/bursa/
+Disallow: /hizmet-bolgeleri/kocaeli/
+Disallow: /hizmet-bolgeleri/sakarya/
+Disallow: /hizmet-bolgeleri/tekirdag/
+Disallow: /hizmet-bolgeleri/yalova/
 
 Sitemap: ${sitemapURL.href}
 Sitemap: https://a2reklam.com/video-sitemap.xml
