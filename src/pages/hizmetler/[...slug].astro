@@ -390,6 +390,23 @@ const serviceSchema = Astro.site
         </div>
       </div>
 
+      <!-- Hizmet Bölgeleri -->
+      <div class="my-10 not-prose">
+        <h3 class="font-heading font-bold text-xl mb-4 text-white">
+          Bu Hizmeti Verdiğimiz İlçeler
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {topDistricts.map(d => (
+            <a href={`/${d.href.split('/').pop()?.replace(/\/$/, '') || ''}/`} class="text-xs text-gray-400 hover:text-primary transition-colors px-3 py-1.5 rounded-lg border border-white/5 hover:border-primary/30">
+              {d.label}
+            </a>
+          ))}
+          <a href="/istanbul-tabelaci/" class="text-xs text-primary font-bold px-3 py-1.5">
+            +33 ilçe daha →
+          </a>
+        </div>
+      </div>
+
       <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>

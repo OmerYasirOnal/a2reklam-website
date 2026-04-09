@@ -130,3 +130,7 @@ Projeyi teslim aldıktan sonra görünürlük ve dönüşüm verilerini takip et
 - Yüzey temizliğini periyodik plana bağlayın
 - Mesaj yoğunluğunu sadeleştirin
 - Güncel kampanya mesajlarını kısa sürede değiştirilebilir tasarlayın
+
+---
+
+**İlgili Sektör:** [Eczane Tabelası](/sektorel/eczane-tabelasi/) | [Tüm Sektörel Tabelalar](/sektorel/)

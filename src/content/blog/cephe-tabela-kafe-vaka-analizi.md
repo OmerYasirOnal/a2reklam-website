@@ -137,3 +137,7 @@ Farklı saatlerde görünürlük testi yapmak, tabela performansını gerçek ko
 
 - Hafta içi ve hafta sonu görünürlüğünü karşılaştırın
 - Gündüz/gece fotoğraflarıyla okunabilirliği kontrol edin
+
+---
+
+**İlgili Sektör:** [Cafe & Restoran Tabelası](/sektorel/cafe-restoran-tabelasi/) | [Tüm Sektörel Tabelalar](/sektorel/)
