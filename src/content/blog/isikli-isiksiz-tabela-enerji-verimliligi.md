@@ -1,5 +1,5 @@
 ---
-title: "Işıklı/ışıksız Tabelalar Enerji Verimliliği ve Görünürlük Dengesi"
+title: "Işıklı/ışıksız Tabelalar Enerji Verimliliği ve..."
 description: "LED modül seçimi, güç tüketimi ve görünürlük için Işıklı/ışıksız Tabelalar optimizasyonu."
 pubDate: "2025-02-17"
 updatedDate: "2026-03-10"

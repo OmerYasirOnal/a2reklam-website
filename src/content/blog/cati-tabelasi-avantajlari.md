@@ -1,5 +1,5 @@
 ---
-title: "Çatı Tabelası Nedir? Avantajları ve Uygulama Alanları | A2 Reklam"
+title: "Çatı Tabelası Nedir? Avantajları ve Uygulama Alanları"
 description: "Çatı tabelası hakkında bilmeniz gereken her şey: avantajları, malzeme seçenekleri, montaj süreci ve maliyet faktörleri. İstanbul'da profesyonel çatı tabelası imalatı."
 pubDate: "2025-01-19"
 updatedDate: "2026-03-10"

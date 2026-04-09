@@ -1,5 +1,5 @@
 ---
-title: "Paslanmaz Harf Tabela: Avantajları, Türleri ve Bakımı | A2 Reklam"
+title: "Paslanmaz Harf Tabela: Avantajları, Türleri ve Bakımı"
 description: "Paslanmaz çelik harf tabela hakkında her şey: yüzey işlemleri, montaj yöntemleri, bakım önerileri ve malzeme karşılaştırması."
 pubDate: "2025-01-14"
 updatedDate: "2026-03-10"

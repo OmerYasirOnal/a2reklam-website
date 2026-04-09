@@ -1,5 +1,5 @@
 ---
-title: "Cephe Tabela Saha Süreci: Ölçüden Son Kontrole Video Rehberi"
+title: "Cephe Tabela Saha Süreci: Ölçüden Son Kontrole Video..."
 description: "Cephe tabela uygulamasında ölçülendirme, montaj hazırlığı ve son kontrol adımlarını gerçek saha videoları üzerinden adım adım inceleyin."
 pubDate: 2026-02-17
 updatedDate: 2026-02-17

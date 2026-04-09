@@ -1,5 +1,5 @@
 ---
-title: "Işıklı/ışıksız Tabelalar Malzeme Seçimi: Dayanıklılık ve Görünüm"
+title: "Işıklı/ışıksız Tabelalar Malzeme Seçimi: Dayanıklılık..."
 description: "Işıklı/ışıksız Tabelalar için malzeme karşılaştırması, dış ortam dayanımı ve bakım maliyeti rehberi."
 pubDate: "2025-02-12"
 updatedDate: "2026-03-10"

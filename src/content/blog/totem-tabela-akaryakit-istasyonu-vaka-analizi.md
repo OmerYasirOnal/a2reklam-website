@@ -1,5 +1,5 @@
 ---
-title: "Totem Tabela Vaka Analizi: akaryakıt istasyonu İşletmesinde Dönüşüm"
+title: "Totem Tabela Vaka Analizi: akaryakıt istasyonu..."
 description: "akaryakıt istasyonu örneğinde Totem Tabela tasarımı, montaj ve sonuçlar."
 pubDate: "2025-03-01"
 updatedDate: "2026-03-10"

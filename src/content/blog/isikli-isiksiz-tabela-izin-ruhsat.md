@@ -1,5 +1,5 @@
 ---
-title: "Işıklı/ışıksız Tabelalar İçin İzin ve Ruhsat Süreci: Adım Adım Rehber"
+title: "Işıklı/ışıksız Tabelalar İçin İzin ve Ruhsat Süreci:..."
 description: "Belediye başvurusu, proje çizimi ve ilan reklam vergisi; Işıklı/ışıksız Tabelalar için izin sürecinin özeti."
 pubDate: "2025-02-13"
 updatedDate: "2026-03-10"

@@ -1,5 +1,5 @@
 ---
-title: "Totem Tabela Tasarımında Okunabilirlik: Tipografi ve Kontrast"
+title: "Totem Tabela Tasarımında Okunabilirlik: Tipografi ve..."
 description: "Okunabilirlik ve marka tutarlılığı için Totem Tabela tasarım kriterleri ve pratik ipuçları."
 pubDate: "2025-02-24"
 updatedDate: "2026-03-10"

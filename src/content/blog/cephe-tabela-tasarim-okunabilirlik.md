@@ -1,5 +1,5 @@
 ---
-title: "Cephe Tabela Tasarımında Okunabilirlik: Tipografi ve Kontrast"
+title: "Cephe Tabela Tasarımında Okunabilirlik: Tipografi ve..."
 description: "Okunabilirlik ve marka tutarlılığı için Cephe Tabela tasarım kriterleri ve pratik ipuçları."
 pubDate: "2025-02-04"
 updatedDate: "2026-03-10"

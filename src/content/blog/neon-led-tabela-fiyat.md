@@ -1,5 +1,5 @@
 ---
-title: "Neon ve LED Tabela Fiyatlarını Etkileyen 8 Faktör | A2 Reklam"
+title: "Neon ve LED Tabela Fiyatlarını Etkileyen 8 Faktör"
 description: "LED ve neon tabela fiyatlarını belirleyen faktörler: boyut, malzeme, aydınlatma tipi, montaj ve daha fazlası. İstanbul'da ışıklı tabela fiyat rehberi."
 pubDate: "2025-01-18"
 updatedDate: "2026-03-10"

@@ -1,5 +1,5 @@
 ---
-title: "Sarıyer Çatı Tabelası Rehberi: Yükseklik, Rüzgar ve İzin Süreci"
+title: "Sarıyer Çatı Tabelası Rehberi: Yükseklik, Rüzgar ve..."
 description: "Sarıyer bölgesinde çatı tabelası planlama, ruhsat, montaj ve maliyet kalemleri. Boğaz hattında görünürlük için pratik kontrol listesi."
 pubDate: "2025-02-20"
 updatedDate: "2026-03-10"

@@ -1,5 +1,5 @@
 ---
-title: "Başakşehir Bölgesinde Totem Tabela Rehberi: Yerel Dinamikler"
+title: "Başakşehir Bölgesinde Totem Tabela Rehberi: Yerel..."
 description: "Başakşehir için Totem Tabela planlama, izin ve görünürlük ipuçları."
 pubDate: "2025-03-02"
 updatedDate: "2026-03-10"

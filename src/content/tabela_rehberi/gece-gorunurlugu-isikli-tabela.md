@@ -1,5 +1,5 @@
 ---
-title: "Gece Görünürlüğü İçin Işıklı Tabela Seçimi | Profesyonel Rehber"
+title: "Gece Görünürlüğü İçin Işıklı Tabela Seçimi |..."
 description: "İşletmeniz için gece görünürlüğünü maksimize edecek ışıklı tabela seçimi, parlaklık standartları ve LED teknolojisi rehberi."
 pubDate: 2026-01-22
 category: "Işıklı Tabela"

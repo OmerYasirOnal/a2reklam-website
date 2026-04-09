@@ -1,5 +1,5 @@
 ---
-title: "Işıklı/ışıksız Tabelalar Tasarımında Okunabilirlik: Tipografi ve Kontrast"
+title: "Işıklı/ışıksız Tabelalar Tasarımında Okunabilirlik:..."
 description: "Okunabilirlik ve marka tutarlılığı için Işıklı/ışıksız Tabelalar tasarım kriterleri ve pratik ipuçları."
 pubDate: "2025-02-14"
 updatedDate: "2026-03-10"

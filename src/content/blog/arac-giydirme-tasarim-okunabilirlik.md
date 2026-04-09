@@ -1,5 +1,5 @@
 ---
-title: "Araç Giydirme Tasarımında Okunabilirlik: Tipografi ve Kontrast"
+title: "Araç Giydirme Tasarımında Okunabilirlik: Tipografi ve..."
 description: "Okunabilirlik ve marka tutarlılığı için Araç Giydirme tasarım kriterleri ve pratik ipuçları."
 pubDate: "2025-03-16"
 updatedDate: "2026-03-10"

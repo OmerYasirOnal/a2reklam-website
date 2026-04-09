@@ -1,5 +1,5 @@
 ---
-title: "Işıklı/ışıksız Tabelalar Fiyat Rehberi: Bütçe ve Teklif Kalemleri"
+title: "Işıklı/ışıksız Tabelalar Fiyat Rehberi: Bütçe ve..."
 description: "Işıklı/ışıksız Tabelalar fiyatını belirleyen metraj, malzeme, aydınlatma ve montaj faktörleri; doğru teklif okuma ipuçları."
 pubDate: "2025-02-11"
 updatedDate: "2026-03-10"
