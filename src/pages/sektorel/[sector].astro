@@ -14,16 +14,18 @@ export function getStaticPaths() {
 
 const { sector } = Astro.props;
 
-// Hero görseli — sektör slug hash'ine göre döner
+// Hero görseli — sektör slug hash'ine göre gerçek proje fotoğrafından seçilir
 const heroImages = [
-  '/assets/img/demo/a2reklam-cephe-tabela-001-960.webp',
-  '/assets/img/demo/a2reklam-paslanmaz-harfler-001-960.webp',
-  '/assets/img/demo/a2reklam-isikli-isiksiz-tabelalar-001-960.webp',
-  '/assets/img/demo/a2reklam-fener-tabela-001-960.webp',
-  '/assets/img/demo/a2reklam-totem-001-960.webp',
-  '/assets/img/demo/a2reklam-kapi-isimlik-001-960.webp',
-  '/assets/img/demo/a2reklam-arac-giydirme-001-960.webp',
-  '/assets/img/demo/a2reklam-kabartma-pleksiglass-001-960.webp',
+  '/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp',
+  '/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-003-960.webp',
+  '/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp',
+  '/assets/img/fener-tabela/a2reklam-fener-tabela-002-960.webp',
+  '/assets/img/totem/a2reklam-totem-001-960.webp',
+  '/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-003-960.webp',
+  '/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-005-960.webp',
+  '/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-004-960.webp',
+  '/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-005-960.webp',
+  '/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp',
 ];
 const heroHash = sector.slug.split('').reduce((a: number, c: string) => a + c.charCodeAt(0), 0);
 const heroImage = heroImages[heroHash % heroImages.length];
@@ -51,6 +53,13 @@ const serviceSchema = {
     "name": "İstanbul"
   },
   "description": sector.metaDescription,
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "TRY",
+    "lowPrice": "5000",
+    "highPrice": "150000",
+    "offerCount": sector.materialTable?.length ?? 4
+  }
 };
 ---
 
@@ -90,6 +99,8 @@ const serviceSchema = {
             height="540"
             class="w-full h-48 md:h-64 object-cover"
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
           />
         </div>
 
@@ -136,6 +147,55 @@ const serviceSchema = {
                 <p class="text-gray-400 text-sm leading-relaxed">{type.description}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        <!-- Malzeme Karşılaştırma Tablosu -->
+        <section class="mb-10">
+          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+            {sector.name} Malzeme Seçenekleri
+          </h2>
+          <div class="overflow-x-auto rounded-xl border border-white/10">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-accent-light text-left">
+                  <th class="px-4 py-3 text-gray-300 font-bold">Malzeme / Model</th>
+                  <th class="px-4 py-3 text-gray-300 font-bold">Dayanıklılık</th>
+                  <th class="px-4 py-3 text-gray-300 font-bold">Aydınlatma</th>
+                  <th class="px-4 py-3 text-gray-300 font-bold">Fiyat Aralığı</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5">
+                {(sector.materialTable || [
+                  { name: 'Kompozit (Dibond)', durability: '10+ yıl', lighting: 'LED spot / şerit', priceRange: '₺8.000 – ₺25.000' },
+                  { name: 'Paslanmaz Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺15.000 – ₺60.000' },
+                  { name: 'Pleksi Kutu Harf', durability: '8+ yıl', lighting: 'Dahili LED', priceRange: '₺10.000 – ₺40.000' },
+                  { name: 'Neon LED Flex', durability: '5+ yıl', lighting: 'Neon efekt LED', priceRange: '₺5.000 – ₺20.000' },
+                ]).map(row => (
+                  <tr class="hover:bg-white/5 transition-colors">
+                    <td class="px-4 py-3 text-white font-medium">{row.name}</td>
+                    <td class="px-4 py-3 text-gray-400">{row.durability}</td>
+                    <td class="px-4 py-3 text-gray-400">{row.lighting}</td>
+                    <td class="px-4 py-3 text-primary font-bold">{row.priceRange}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-500 text-xs mt-2">* Fiyatlar ölçü, malzeme ve aydınlatma tipine göre değişkenlik gösterir. Güncel fiyat için teklif alın.</p>
+        </section>
+
+        <!-- Fiyat Bilgisi -->
+        <section class="mb-10">
+          <div class="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl p-6 border border-primary/20">
+            <div class="flex items-start gap-4">
+              <div class="text-3xl">{sector.icon}</div>
+              <div>
+                <h3 class="font-heading text-lg font-bold text-white mb-1">{sector.name} Fiyatları</h3>
+                <p class="text-gray-400 text-sm mb-3">Başlangıç fiyatı: <span class="text-primary font-bold text-lg">₺8.000</span>'den itibaren</p>
+                <p class="text-gray-500 text-xs">Fiyat; ölçü, malzeme, aydınlatma ve montaj koşullarına göre belirlenir. Keşif sonrası net fiyat teklifi sunuyoruz.</p>
+              </div>
+            </div>
           </div>
         </section>
 

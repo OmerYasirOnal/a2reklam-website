@@ -27,9 +27,9 @@ export const GA4_MEASUREMENT_ID = 'G-TC9GJP3GLT';
 
 // Search Engine Verification
 // Bing: https://www.bing.com/webmasters → Site ekle → Meta tag doğrulama kodunu al
-export const BING_VERIFICATION = '';
+export const BING_VERIFICATION = '159E4703D7BC3BD5ADE083B11C067ED6';
 // Yandex: https://webmaster.yandex.com → Site ekle → Meta tag doğrulama kodunu al
-export const YANDEX_VERIFICATION = '';
+export const YANDEX_VERIFICATION = '023f91b1b8d630ba';
 
 // Google Reviews (direct place URL to avoid search/deep-link fallback redirects)
 export const GOOGLE_REVIEWS_URL = MAPS_URL;
