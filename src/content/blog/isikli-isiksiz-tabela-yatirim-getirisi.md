@@ -1,5 +1,5 @@
 ---
-title: "Işıklı/ışıksız Tabelalar Yatırım Getirisi: Performans Ölçümü ve KPI"
+title: "Işıklı/ışıksız Tabelalar Yatırım Getirisi: Performans..."
 description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Işıklı/ışıksız Tabelalar ROI yaklaşımı."
 pubDate: "2025-02-18"
 updatedDate: "2026-03-10"

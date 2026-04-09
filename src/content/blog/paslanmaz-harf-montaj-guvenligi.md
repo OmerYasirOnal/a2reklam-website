@@ -1,5 +1,5 @@
 ---
-title: "Paslanmaz Harfler Montaj Güvenliği: Keşif, Statik ve Uygulama"
+title: "Paslanmaz Harfler Montaj Güvenliği: Keşif, Statik ve..."
 description: "Rüzgar yükü, bağlantı ve iş güvenliği odaklı Paslanmaz Harfler montaj rehberi."
 pubDate: "2025-03-07"
 updatedDate: "2026-03-10"

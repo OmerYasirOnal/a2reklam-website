@@ -1,5 +1,5 @@
 ---
-title: "Işıklı/ışıksız Tabelalar Vaka Analizi: eczane İşletmesinde Dönüşüm"
+title: "Işıklı/ışıksız Tabelalar Vaka Analizi: eczane..."
 description: "eczane örneğinde Işıklı/ışıksız Tabelalar tasarımı, montaj ve sonuçlar."
 pubDate: "2025-02-19"
 updatedDate: "2026-03-10"

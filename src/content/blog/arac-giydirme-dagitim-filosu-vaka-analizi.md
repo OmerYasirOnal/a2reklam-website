@@ -1,5 +1,5 @@
 ---
-title: "Araç Giydirme Vaka Analizi: dağıtım filosu İşletmesinde Dönüşüm"
+title: "Araç Giydirme Vaka Analizi: dağıtım filosu..."
 description: "dağıtım filosu örneğinde Araç Giydirme tasarımı, montaj ve sonuçlar."
 pubDate: "2025-03-21"
 updatedDate: "2026-03-10"

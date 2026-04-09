@@ -1,5 +1,5 @@
 ---
-title: "Işıklı/ışıksız Tabelalar Bakım Rehberi: Ömür ve Performans Yönetimi"
+title: "Işıklı/ışıksız Tabelalar Bakım Rehberi: Ömür ve..."
 description: "Periyodik temizlik, aydınlatma kontrolleri ve Işıklı/ışıksız Tabelalar ömrünü uzatan bakım planı."
 pubDate: "2025-02-16"
 updatedDate: "2026-03-10"

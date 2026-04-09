@@ -1,5 +1,5 @@
 ---
-title: "Işıklı/ışıksız Tabelalar Montaj Güvenliği: Keşif, Statik ve Uygulama"
+title: "Işıklı/ışıksız Tabelalar Montaj Güvenliği: Keşif,..."
 description: "Rüzgar yükü, bağlantı ve iş güvenliği odaklı Işıklı/ışıksız Tabelalar montaj rehberi."
 pubDate: "2025-02-15"
 updatedDate: "2026-03-10"

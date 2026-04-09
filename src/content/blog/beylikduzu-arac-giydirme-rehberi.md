@@ -1,5 +1,5 @@
 ---
-title: "Beylikdüzü Bölgesinde Araç Giydirme Rehberi: Yerel Dinamikler"
+title: "Beylikdüzü Bölgesinde Araç Giydirme Rehberi: Yerel..."
 description: "Beylikdüzü için Araç Giydirme planlama, izin ve görünürlük ipuçları."
 pubDate: "2025-03-22"
 updatedDate: "2026-03-10"

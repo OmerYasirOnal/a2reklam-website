@@ -1,5 +1,5 @@
 ---
-title: "Paslanmaz Harfler İçin İzin ve Ruhsat Süreci: Adım Adım Rehber"
+title: "Paslanmaz Harfler İçin İzin ve Ruhsat Süreci: Adım..."
 description: "Belediye başvurusu, proje çizimi ve ilan reklam vergisi; Paslanmaz Harfler için izin sürecinin özeti."
 pubDate: "2025-03-05"
 updatedDate: "2026-03-10"

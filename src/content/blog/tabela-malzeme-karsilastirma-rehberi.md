@@ -1,5 +1,5 @@
 ---
-title: "Tabela Malzeme Seçim Rehberi: 7 Malzemenin Karşılaştırması | A2 Reklam"
+title: "Tabela Malzeme Seçim Rehberi: 7 Malzemenin Karşılaştırması"
 description: "Tabela imalatında kullanılan 7 temel malzemenin detaylı karşılaştırması: paslanmaz çelik, alüminyum, pleksiglas, kompozit panel, galvaniz, PVC ve ahşap."
 pubDate: "2026-03-10"
 updatedDate: "2026-03-10"

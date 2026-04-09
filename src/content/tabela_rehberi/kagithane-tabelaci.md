@@ -1,5 +1,5 @@
 ---
-title: "Kağıthane'de Tabelacı: Yerel Hizmet Avantajları ve Öneriler"
+title: "Kağıthane'de Tabelacı: Yerel Hizmet Avantajları ve..."
 description: "Kağıthane'de tabela imalatı ve montajı. Yerel tabelacı avantajları, hızlı servis ve bölgeye özel çözümler."
 pubDate: 2026-01-22
 category: "İlçe Rehberleri"

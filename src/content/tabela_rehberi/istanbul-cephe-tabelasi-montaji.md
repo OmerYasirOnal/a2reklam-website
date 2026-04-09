@@ -1,5 +1,5 @@
 ---
-title: "İstanbul'da Cephe Tabelası Montajı: Süreç ve İzinler | A2 Reklam"
+title: "İstanbul'da Cephe Tabelası Montajı: Süreç ve İzinler"
 description: "İstanbul'da cephe tabelası montaj süreci, gerekli izinler ve ruhsat işlemleri hakkında profesyonel rehber. Yasal gereklilikleri öğrenin."
 pubDate: 2026-01-22
 category: "Cephe Tabelası"

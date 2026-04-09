@@ -1,5 +1,5 @@
 ---
-title: "Tabela Fiyatlarını Etkileyen 10 Temel Faktör | 2026 Rehberi"
+title: "Tabela Fiyatlarını Etkileyen 10 Temel Faktör | 2026..."
 description: "Tabela fiyatlarını etkileyen faktörler, maliyet optimizasyonu ve bütçe planlama rehberi. Doğru tabela yatırımı için kapsamlı kılavuz."
 pubDate: 2026-01-22
 category: "Fiyatlandırma & Süreç"

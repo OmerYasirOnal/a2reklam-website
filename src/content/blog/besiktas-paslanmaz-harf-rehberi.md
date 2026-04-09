@@ -1,5 +1,5 @@
 ---
-title: "Beşiktaş Paslanmaz Harf Rehberi: Kurumsal Girişler için Prestij"
+title: "Beşiktaş Paslanmaz Harf Rehberi: Kurumsal Girişler..."
 description: "Beşiktaş bölgesinde paslanmaz harf tabela planlama, malzeme seçimi ve montaj adımları. Kurumsal görünürlük için pratik ipuçları."
 pubDate: "2025-02-20"
 updatedDate: "2026-03-10"

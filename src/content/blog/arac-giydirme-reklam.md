@@ -1,5 +1,5 @@
 ---
-title: "Araç Giydirme ile Mobil Reklam: Kapsamlı Rehber | A2 Reklam"
+title: "Araç Giydirme ile Mobil Reklam: Kapsamlı Rehber"
 description: "Araç giydirme hakkında bilmeniz gereken her şey: folyo türleri, tasarım ipuçları, uygulama süreci ve bakım önerileri. İstanbul'da profesyonel araç kaplama."
 pubDate: "2025-01-13"
 updatedDate: "2026-03-10"

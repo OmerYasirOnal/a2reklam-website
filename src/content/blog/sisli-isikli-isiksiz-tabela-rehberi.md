@@ -1,5 +1,5 @@
 ---
-title: "Şişli Bölgesinde Işıklı/ışıksız Tabelalar Rehberi: Yerel Dinamikler"
+title: "Şişli Bölgesinde Işıklı/ışıksız Tabelalar Rehberi:..."
 description: "Şişli için Işıklı/ışıksız Tabelalar planlama, izin ve görünürlük ipuçları."
 pubDate: "2025-02-20"
 updatedDate: "2026-03-10"
