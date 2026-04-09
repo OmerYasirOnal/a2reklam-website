@@ -207,6 +207,9 @@ import { TRACKING_ENABLED } from '../../consts';
               target: extractTarget(el),
               elementId: extractElementId(el),
             });
+            // Google Ads conversion event
+            const dl1 = getDataLayer();
+            if (dl1) dl1.push({ event: 'ads_conversion', conversion_action: 'whatsapp_click', conversion_page: getPage() });
         });
 
         // Track phone clicks
@@ -220,6 +223,9 @@ import { TRACKING_ENABLED } from '../../consts';
               target: extractTarget(el),
               elementId: extractElementId(el),
             });
+            // Google Ads conversion event
+            const dl2 = getDataLayer();
+            if (dl2) dl2.push({ event: 'ads_conversion', conversion_action: 'call_click', conversion_page: getPage() });
         });
 
         // Track quote clicks
@@ -232,6 +238,9 @@ import { TRACKING_ENABLED } from '../../consts';
               target: extractTarget(el),
               elementId: extractElementId(el),
             });
+            // Google Ads conversion event
+            const dl3 = getDataLayer();
+            if (dl3) dl3.push({ event: 'ads_conversion', conversion_action: 'quote_click', conversion_page: getPage() });
         });
 
         // Track generic CTA clicks

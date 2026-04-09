@@ -1,3 +1,10 @@
+export interface MaterialRow {
+  name: string;
+  durability: string;
+  lighting: string;
+  priceRange: string;
+}
+
 export interface Sector {
   slug: string;
   name: string;
@@ -12,6 +19,7 @@ export interface Sector {
     faq: Array<{ question: string; answer: string }>;
   };
   relatedServices: string[];
+  materialTable?: MaterialRow[];
 }
 
 export const sectors: Sector[] = [
@@ -73,6 +81,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'paslanmaz-harfler', 'fener-tabela'],
+    materialTable: [
+      { name: 'Döner Işıklı (Barber Pole)', durability: '5-8 yıl', lighting: 'LED motorlu', priceRange: '₺3.500 – ₺12.000' },
+      { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺8.000 – ₺25.000' },
+      { name: 'Neon Flex Tabela', durability: '5+ yıl', lighting: 'Neon efekt LED', priceRange: '₺5.000 – ₺18.000' },
+      { name: 'Kompozit Panel', durability: '10+ yıl', lighting: 'LED spot (opsiyonel)', priceRange: '₺3.000 – ₺10.000' },
+    ],
   },
   {
     slug: 'kuafor-tabelasi',
@@ -128,6 +142,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'paslanmaz-harfler', 'cephe-tabela'],
+    materialTable: [
+      { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺10.000 – ₺30.000' },
+      { name: 'Neon Flex Tabela', durability: '5+ yıl', lighting: 'Neon efekt LED', priceRange: '₺6.000 – ₺20.000' },
+      { name: 'Işıklı Lightbox', durability: '10+ yıl', lighting: 'Arka LED panel', priceRange: '₺8.000 – ₺22.000' },
+      { name: 'Cam Folyo + LED Spot', durability: '5-7 yıl', lighting: 'Harici LED spot', priceRange: '₺3.000 – ₺8.000' },
+    ],
   },
   {
     slug: 'eczane-tabelasi',
@@ -187,6 +207,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'fener-tabela', 'cephe-tabela'],
+    materialTable: [
+      { name: 'LED Haç Tabela (Tek Renk)', durability: '7-10 yıl', lighting: 'Yeşil LED', priceRange: '₺8.000 – ₺25.000' },
+      { name: 'LED Haç (Çift Renkli)', durability: '7-10 yıl', lighting: 'Yeşil + Kırmızı LED', priceRange: '₺12.000 – ₺35.000' },
+      { name: 'Animasyonlu Haç Tabela', durability: '7-10 yıl', lighting: 'RGB LED programlanabilir', priceRange: '₺28.000 – ₺75.000' },
+      { name: 'LED Kutu Harf (Eczane Adı)', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺10.000 – ₺30.000' },
+    ],
   },
   {
     slug: 'cafe-restoran-tabelasi',
@@ -247,6 +273,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'cephe-tabela', 'fener-tabela', 'yonlendirme'],
+    materialTable: [
+      { name: 'Neon LED Tabela', durability: '5+ yıl', lighting: 'Neon flex LED', priceRange: '₺5.000 – ₺25.000' },
+      { name: 'Ahşap Tabela (Emprenye)', durability: '5-10 yıl', lighting: 'Harici LED spot', priceRange: '₺6.000 – ₺18.000' },
+      { name: 'Paslanmaz Kutu Harf', durability: '15+ yıl', lighting: 'Halo LED aydınlatma', priceRange: '₺15.000 – ₺50.000' },
+      { name: 'Fener Tabela', durability: '10+ yıl', lighting: 'Dahili LED panel', priceRange: '₺4.000 – ₺15.000' },
+    ],
   },
   {
     slug: 'market-tabelasi',
@@ -301,6 +333,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'totem', 'cephe-tabela'],
+    materialTable: [
+      { name: 'Işıklı Lightbox', durability: '10+ yıl', lighting: 'Arka LED panel', priceRange: '₺10.000 – ₺35.000' },
+      { name: 'Vinil Baskı Panel', durability: '5-7 yıl', lighting: 'LED spot (opsiyonel)', priceRange: '₺5.000 – ₺15.000' },
+      { name: 'Totem Tabela', durability: '15+ yıl', lighting: 'Dahili LED', priceRange: '₺25.000 – ₺80.000' },
+      { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺12.000 – ₺40.000' },
+    ],
   },
   {
     slug: 'dis-klinigi-tabelasi',
@@ -355,6 +393,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['paslanmaz-harfler', 'isikli-tabela', 'yonlendirme', 'kapi-isimlik'],
+    materialTable: [
+      { name: 'Paslanmaz Kutu Harf', durability: '15+ yıl', lighting: 'Halo LED aydınlatma', priceRange: '₺12.000 – ₺35.000' },
+      { name: 'Işıklı Lightbox', durability: '10+ yıl', lighting: 'Arka LED panel', priceRange: '₺8.000 – ₺25.000' },
+      { name: 'Cam Folyo + LED Şerit', durability: '5-7 yıl', lighting: 'LED şerit aydınlatma', priceRange: '₺4.000 – ₺12.000' },
+      { name: 'Pleksi Kapı İsimlik', durability: '10+ yıl', lighting: 'Dahili LED', priceRange: '₺2.000 – ₺6.000' },
+    ],
   },
   {
     slug: 'otel-tabelasi',
@@ -415,6 +459,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['cati-tabelasi', 'yonlendirme', 'paslanmaz-harfler', 'kapi-isimlik'],
+    materialTable: [
+      { name: 'Paslanmaz Kutu Harf', durability: '20+ yıl', lighting: 'Halo LED / ön LED', priceRange: '₺20.000 – ₺80.000' },
+      { name: 'Cephe Giydirme + Logo', durability: '15+ yıl', lighting: 'LED spot', priceRange: '₺30.000 – ₺120.000' },
+      { name: 'Totem Tabela', durability: '15+ yıl', lighting: 'Dahili LED panel', priceRange: '₺30.000 – ₺100.000' },
+      { name: 'İç Mekan Yönlendirme', durability: '10+ yıl', lighting: 'Dahili LED', priceRange: '₺5.000 – ₺20.000' },
+    ],
   },
   {
     slug: 'magaza-tabelasi',
@@ -474,6 +524,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'paslanmaz-harfler', 'cephe-tabela', 'fener-tabela'],
+    materialTable: [
+      { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺12.000 – ₺50.000' },
+      { name: 'Işıklı Lightbox', durability: '10+ yıl', lighting: 'Arka LED panel', priceRange: '₺8.000 – ₺30.000' },
+      { name: 'Neon LED Tabela', durability: '5+ yıl', lighting: 'Neon flex LED', priceRange: '₺5.000 – ₺22.000' },
+      { name: 'Fener Tabela', durability: '10+ yıl', lighting: 'Dahili LED', priceRange: '₺4.000 – ₺15.000' },
+    ],
   },
   {
     slug: 'fabrika-tabelasi',
@@ -529,6 +585,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['cephe-tabela', 'totem', 'yonlendirme'],
+    materialTable: [
+      { name: 'Kompozit Panel Cephe', durability: '15-20 yıl', lighting: 'LED spot / şerit', priceRange: '₺800 – ₺1.400 /m²' },
+      { name: 'Galvaniz Trapez Sac', durability: '15-25 yıl', lighting: 'Harici aydınlatma', priceRange: '₺500 – ₺900 /m²' },
+      { name: 'Alüminyum Kaplama', durability: '25-30 yıl', lighting: 'LED spot', priceRange: '₺2.000 – ₺3.000 /m²' },
+      { name: 'Çatı / Cephe Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺20.000 – ₺80.000' },
+    ],
   },
   {
     slug: 'plaza-tabelasi',
@@ -583,6 +645,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['paslanmaz-harfler', 'yonlendirme', 'kapi-isimlik', 'cephe-tabela'],
+    materialTable: [
+      { name: 'Paslanmaz Kutu Harf', durability: '20+ yıl', lighting: 'Halo LED aydınlatma', priceRange: '₺20.000 – ₺70.000' },
+      { name: 'Cephe Giydirme (ACP)', durability: '15+ yıl', lighting: 'LED spot', priceRange: '₺25.000 – ₺90.000' },
+      { name: 'İç Mekan Yönlendirme', durability: '10+ yıl', lighting: 'Dahili LED', priceRange: '₺5.000 – ₺25.000' },
+      { name: 'Totem Tabela', durability: '15+ yıl', lighting: 'Dahili LED panel', priceRange: '₺30.000 – ₺100.000' },
+    ],
   },
   {
     slug: 'avm-tabelasi',
@@ -642,6 +710,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'totem', 'yonlendirme', 'paslanmaz-harfler'],
+    materialTable: [
+      { name: 'LED Kutu Harf (Mağaza)', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺15.000 – ₺60.000' },
+      { name: 'Dijital LED Ekran', durability: '10+ yıl', lighting: 'Full LED panel', priceRange: '₺40.000 – ₺150.000' },
+      { name: 'Fener Tabela', durability: '10+ yıl', lighting: 'Dahili LED', priceRange: '₺5.000 – ₺18.000' },
+      { name: 'Yönlendirme Sistemi', durability: '10+ yıl', lighting: 'LED arka aydınlatma', priceRange: '₺8.000 – ₺30.000' },
+    ],
   },
   {
     slug: 'hastane-tabelasi',
@@ -702,6 +776,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['yonlendirme', 'cephe-tabela', 'kapi-isimlik', 'isikli-tabela'],
+    materialTable: [
+      { name: 'Paslanmaz Kutu Harf', durability: '20+ yıl', lighting: 'Halo LED aydınlatma', priceRange: '₺15.000 – ₺60.000' },
+      { name: 'LED Yönlendirme Tabela', durability: '10+ yıl', lighting: 'Dahili LED panel', priceRange: '₺3.000 – ₺12.000' },
+      { name: 'Acil Işıklı Tabela', durability: '10+ yıl', lighting: 'Sabit LED', priceRange: '₺5.000 – ₺15.000' },
+      { name: 'Totem / Pylon Tabela', durability: '15+ yıl', lighting: 'Dahili LED', priceRange: '₺30.000 – ₺100.000' },
+    ],
   },
   {
     slug: 'okul-tabelasi',
@@ -756,6 +836,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'cephe-tabela', 'yonlendirme', 'kapi-isimlik'],
+    materialTable: [
+      { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺10.000 – ₺35.000' },
+      { name: 'Işıklı Lightbox', durability: '10+ yıl', lighting: 'Arka LED panel', priceRange: '₺8.000 – ₺25.000' },
+      { name: 'Totem Tabela', durability: '15+ yıl', lighting: 'Dahili LED', priceRange: '₺20.000 – ₺60.000' },
+      { name: 'Yönlendirme Tabela', durability: '10+ yıl', lighting: 'Dahili LED', priceRange: '₺3.000 – ₺10.000' },
+    ],
   },
   {
     slug: 'benzin-istasyonu-tabelasi',
@@ -817,6 +903,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['totem', 'isikli-tabela', 'cephe-tabela'],
+    materialTable: [
+      { name: 'Totem / Pylon Tabela', durability: '15+ yıl', lighting: 'Dahili LED panel', priceRange: '₺40.000 – ₺150.000' },
+      { name: 'Kanopi Aydınlatma', durability: '10+ yıl', lighting: 'LED bant / panel', priceRange: '₺20.000 – ₺60.000' },
+      { name: 'Pompa Üstü Tabela', durability: '10+ yıl', lighting: 'Işıklı kutu', priceRange: '₺8.000 – ₺25.000' },
+      { name: 'Cephe Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺15.000 – ₺50.000' },
+    ],
   },
   {
     slug: 'kargo-lojistik-tabelasi',
@@ -871,6 +963,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'cephe-tabela', 'arac-giydirme', 'totem'],
+    materialTable: [
+      { name: 'Cephe Giydirme (ACP)', durability: '15+ yıl', lighting: 'LED spot', priceRange: '₺20.000 – ₺80.000' },
+      { name: 'Totem Tabela', durability: '15+ yıl', lighting: 'Dahili LED panel', priceRange: '₺25.000 – ₺80.000' },
+      { name: 'Araç Giydirme (Filo)', durability: '3-5 yıl', lighting: 'Reflektif folyo', priceRange: '₺8.000 – ₺30.000 /araç' },
+      { name: 'Depo Yönlendirme', durability: '10+ yıl', lighting: 'LED (opsiyonel)', priceRange: '₺2.000 – ₺8.000' },
+    ],
   },
   {
     slug: 'firin-pastane-tabelasi',
@@ -930,6 +1028,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'fener-tabela', 'cephe-tabela'],
+    materialTable: [
+      { name: 'Neon LED Tabela', durability: '5+ yıl', lighting: 'Neon flex LED', priceRange: '₺5.000 – ₺18.000' },
+      { name: 'Ahşap Tabela (Emprenye)', durability: '5-10 yıl', lighting: 'Harici LED spot', priceRange: '₺5.000 – ₺15.000' },
+      { name: 'Fener Tabela', durability: '10+ yıl', lighting: 'Dahili LED panel', priceRange: '₺4.000 – ₺12.000' },
+      { name: 'Işıklı Lightbox', durability: '10+ yıl', lighting: 'Arka LED panel', priceRange: '₺8.000 – ₺22.000' },
+    ],
   },
   {
     slug: 'veteriner-tabelasi',
@@ -984,6 +1088,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'fener-tabela', 'paslanmaz-harfler'],
+    materialTable: [
+      { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺8.000 – ₺25.000' },
+      { name: 'Işıklı Lightbox', durability: '10+ yıl', lighting: 'Arka LED panel', priceRange: '₺6.000 – ₺18.000' },
+      { name: 'Fener Tabela', durability: '10+ yıl', lighting: 'Dahili LED', priceRange: '₺4.000 – ₺12.000' },
+      { name: 'Cam Folyo + LED Şerit', durability: '5-7 yıl', lighting: 'LED şerit', priceRange: '₺3.000 – ₺8.000' },
+    ],
   },
   {
     slug: 'avukat-hukuk-tabelasi',
@@ -1039,6 +1149,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['paslanmaz-harfler', 'kapi-isimlik', 'yonlendirme'],
+    materialTable: [
+      { name: 'Paslanmaz Kutu Harf', durability: '20+ yıl', lighting: 'Halo LED aydınlatma', priceRange: '₺12.000 – ₺40.000' },
+      { name: 'Pleksi Kapı İsimlik', durability: '10+ yıl', lighting: 'Dahili LED', priceRange: '₺2.000 – ₺6.000' },
+      { name: 'Cam Folyo (Kumlama)', durability: '10+ yıl', lighting: 'Işıksız', priceRange: '₺1.500 – ₺5.000' },
+      { name: 'Alüminyum Profil Tabela', durability: '15+ yıl', lighting: 'LED spot', priceRange: '₺5.000 – ₺15.000' },
+    ],
   },
   {
     slug: 'spor-salonu-tabelasi',
@@ -1094,6 +1210,12 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['isikli-tabela', 'cephe-tabela', 'fener-tabela'],
+    materialTable: [
+      { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺12.000 – ₺40.000' },
+      { name: 'Neon LED Tabela', durability: '5+ yıl', lighting: 'Neon flex LED', priceRange: '₺6.000 – ₺22.000' },
+      { name: 'Cephe Giydirme', durability: '15+ yıl', lighting: 'LED spot', priceRange: '₺20.000 – ₺60.000' },
+      { name: 'Dijital / Mekanik Pano', durability: '10+ yıl', lighting: 'LED / mekanik', priceRange: '₺10.000 – ₺35.000' },
+    ],
   },
   {
     slug: 'oto-yikama-galeri-tabelasi',
@@ -1160,5 +1282,11 @@ export const sectors: Sector[] = [
       ],
     },
     relatedServices: ['totem', 'isikli-tabela', 'arac-giydirme', 'cephe-tabela'],
+    materialTable: [
+      { name: 'Totem Tabela', durability: '15+ yıl', lighting: 'Dahili LED panel', priceRange: '₺25.000 – ₺80.000' },
+      { name: 'Işıklı Lightbox', durability: '10+ yıl', lighting: 'Arka LED panel', priceRange: '₺8.000 – ₺30.000' },
+      { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺10.000 – ₺35.000' },
+      { name: 'Araç Üstü Reklam', durability: '3-5 yıl', lighting: 'Reflektif folyo', priceRange: '₺5.000 – ₺15.000' },
+    ],
   },
 ];
