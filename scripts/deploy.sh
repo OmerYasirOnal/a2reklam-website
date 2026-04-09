@@ -101,6 +101,11 @@ fi
 rm -f "$PROJECT_DIR/dist.zip"
 log "Local zip cleaned up"
 
+# ---- Step 7: IndexNow submission (Bing + Yandex) ----
+log "Submitting URLs to IndexNow (Bing/Yandex)..."
+INDEXNOW_RESULT=$(node "$SCRIPT_DIR/submit-indexnow.mjs" 2>&1) || true
+echo -e "${CYAN}$INDEXNOW_RESULT${NC}"
+
 # ---- Done ----
 echo ""
 echo -e "${GREEN}════════════════════════════════════════${NC}"

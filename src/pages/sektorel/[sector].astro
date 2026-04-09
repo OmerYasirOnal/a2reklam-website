@@ -1,0 +1,249 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { sectors } from '../../data/sectors';
+import { districts } from '../../data/districts';
+import { PHONE_TEL } from '../../consts';
+import CallBand from '../../components/common/CallBand.astro';
+
+export function getStaticPaths() {
+  return sectors.map((sector) => ({
+    params: { sector: sector.slug },
+    props: { sector },
+  }));
+}
+
+const { sector } = Astro.props;
+
+// Hero görseli — sektör slug hash'ine göre döner
+const heroImages = [
+  '/assets/img/demo/a2reklam-cephe-tabela-001-960.webp',
+  '/assets/img/demo/a2reklam-paslanmaz-harfler-001-960.webp',
+  '/assets/img/demo/a2reklam-isikli-isiksiz-tabelalar-001-960.webp',
+  '/assets/img/demo/a2reklam-fener-tabela-001-960.webp',
+  '/assets/img/demo/a2reklam-totem-001-960.webp',
+  '/assets/img/demo/a2reklam-kapi-isimlik-001-960.webp',
+  '/assets/img/demo/a2reklam-arac-giydirme-001-960.webp',
+  '/assets/img/demo/a2reklam-kabartma-pleksiglass-001-960.webp',
+];
+const heroHash = sector.slug.split('').reduce((a: number, c: string) => a + c.charCodeAt(0), 0);
+const heroImage = heroImages[heroHash % heroImages.length];
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Sektörel Tabelalar', item: '/sektorel/' },
+  { name: sector.name, item: `/sektorel/${sector.slug}/` },
+];
+
+const topDistricts = districts.filter(d => d.priority <= 2).slice(0, 12);
+
+const whatsappLink = `https://wa.me/905316181672?text=${encodeURIComponent(`Merhaba, ${sector.name} hakkında bilgi almak istiyorum.`)}`;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": sector.name,
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://a2reklam.com/#organization"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "İstanbul"
+  },
+  "description": sector.metaDescription,
+};
+---
+
+<Layout
+  title={sector.title}
+  description={sector.metaDescription}
+  breadcrumbs={breadcrumbs}
+  faq={sector.content.faq}
+  whatsappTitle={sector.name}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-gray-400">
+        <li><a href="/" class="hover:text-primary transition-colors">Ana Sayfa</a></li>
+        <li class="text-gray-600">/</li>
+        <li><a href="/sektorel/" class="hover:text-primary transition-colors">Sektörel Tabelalar</a></li>
+        <li class="text-gray-600">/</li>
+        <li class="text-primary">{sector.name}</li>
+      </ol>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+      <!-- Ana İçerik -->
+      <div class="lg:col-span-2">
+
+        <!-- Hero Görsel -->
+        <div class="mb-8 rounded-xl overflow-hidden border border-white/10">
+          <img
+            src={heroImage}
+            alt={`${sector.name} — A2 Reklam proje örneği`}
+            width="960"
+            height="540"
+            class="w-full h-48 md:h-64 object-cover"
+            loading="eager"
+          />
+        </div>
+
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-4xl">{sector.icon}</span>
+          <h1 class="font-heading text-3xl md:text-4xl font-bold text-white">
+            {sector.h1}
+          </h1>
+        </div>
+
+        <!-- İçerik -->
+        <div class="prose prose-invert prose-lg max-w-none mb-10">
+          {sector.content.intro.split('\n\n').map((paragraph: string) => (
+            <p class="text-gray-300 leading-relaxed mb-4">{paragraph}</p>
+          ))}
+        </div>
+
+        <!-- Avantajlar -->
+        <section class="mb-10">
+          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+            {sector.name} Avantajlarımız
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {sector.content.benefits.map(benefit => (
+              <div class="flex items-start gap-3 glass-card p-4">
+                <div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0 mt-0.5">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <span class="text-gray-300 text-sm">{benefit}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Popüler Tabela Tipleri -->
+        <section class="mb-10">
+          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+            En Çok Tercih Edilen {sector.name} Modelleri
+          </h2>
+          <div class="space-y-4">
+            {sector.content.popularTypes.map(type => (
+              <div class="glass-card p-5">
+                <h3 class="font-bold text-white mb-2">{type.name}</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">{type.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Telefon CTA -->
+        <CallBand context={sector.name} />
+
+        <!-- SSS -->
+        <section class="mb-10">
+          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+            Sıkça Sorulan Sorular
+          </h2>
+          <div class="space-y-4">
+            {sector.content.faq.map((item: { question: string; answer: string }) => (
+              <details class="glass-card p-5 group">
+                <summary class="font-bold text-white cursor-pointer list-none flex justify-between items-center">
+                  {item.question}
+                  <svg class="w-5 h-5 text-primary transition-transform group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </summary>
+                <p class="text-gray-300 mt-3 leading-relaxed">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- Hangi İlçelerde Hizmet Veriyoruz -->
+        <section class="mb-10">
+          <h2 class="font-heading text-xl font-bold text-white mb-4">
+            {sector.name} Hizmet Verdiğimiz İlçeler
+          </h2>
+          <div class="flex flex-wrap gap-2">
+            {topDistricts.map(d => (
+              <a href={`/${d.slug}/`} class="text-xs text-gray-400 hover:text-primary transition-colors px-3 py-1.5 rounded-lg border border-white/5 hover:border-primary/30">
+                {d.name}
+              </a>
+            ))}
+          </div>
+          <a href="/istanbul-tabelaci/" class="inline-block mt-3 text-primary text-sm font-bold hover:text-white transition-colors">
+            Tüm İlçeleri Gör &rarr;
+          </a>
+        </section>
+
+        <!-- Diğer Sektörler -->
+        <section class="py-8 border-t border-white/10">
+          <h2 class="font-heading text-xl font-bold text-white mb-4 text-center">
+            Diğer Sektörel Tabela Çözümlerimiz
+          </h2>
+          <div class="flex flex-wrap justify-center gap-2">
+            {sectors.filter(s => s.slug !== sector.slug).map(s => (
+              <a href={`/sektorel/${s.slug}/`} class="text-xs text-gray-400 hover:text-primary transition-colors px-2 py-1">
+                {s.icon} {s.name}
+              </a>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 space-y-6">
+          <!-- CTA -->
+          <div class="bg-accent-light p-6 rounded-xl border border-white/5 shadow-2xl text-center">
+            <span class="text-4xl block mb-2">{sector.icon}</span>
+            <h3 class="font-heading font-bold text-lg mb-3 text-white uppercase tracking-tight">
+              <span class="text-primary">{sector.name}</span> Teklif Alın
+            </h3>
+            <p class="text-gray-400 mb-5 text-sm leading-relaxed">
+              Ücretsiz keşif ve fiyat teklifi
+            </p>
+            <a href="/iletisim/" class="block w-full text-center bg-primary text-secondary font-black py-3 rounded-lg hover:bg-white transition-all uppercase tracking-widest text-sm mb-3">
+              Teklif İste
+            </a>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full text-center bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-500 transition-all text-sm mb-3">
+              <img src="/assets/icons/social/whatsapp-white.svg" alt="" width="20" height="20" class="w-5 h-5" loading="lazy" decoding="async" aria-hidden="true" />
+              WhatsApp
+            </a>
+            <a href={`tel:${PHONE_TEL}`} class="block text-primary font-bold text-lg hover:text-white transition-colors">
+              0531 618 16 72
+            </a>
+          </div>
+
+          <!-- İlgili Hizmetler -->
+          <div class="glass-card p-5">
+            <h3 class="font-heading font-bold text-base text-white mb-3">İlgili Hizmetler</h3>
+            <div class="space-y-2">
+              {sector.relatedServices.map(slug => (
+                <a href={`/hizmetler/${slug}/`} class="block text-sm text-gray-400 hover:text-primary transition-colors py-1">
+                  &rarr; {slug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Popüler Sektörler -->
+          <div class="glass-card p-5">
+            <h3 class="font-heading font-bold text-base text-white mb-3">Popüler Sektörler</h3>
+            <div class="space-y-2">
+              {sectors.filter(s => s.slug !== sector.slug).slice(0, 8).map(s => (
+                <a href={`/sektorel/${s.slug}/`} class="block text-sm text-gray-400 hover:text-primary transition-colors py-1">
+                  {s.icon} {s.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  </main>
+</Layout>

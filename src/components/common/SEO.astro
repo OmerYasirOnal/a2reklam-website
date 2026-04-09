@@ -1,6 +1,6 @@
 ---
 import { getLocalBusinessSchema } from '../../utils/localBusiness';
-import { getLocaleAlternates } from '../../utils/localeRoutes';
+import { BING_VERIFICATION, YANDEX_VERIFICATION } from '../../consts';
 
 interface BreadcrumbItem {
   name: string;
@@ -15,7 +15,7 @@ interface FAQItem {
 interface Props {
   title: string;
   description: string;
-  lang: string;
+  lang?: string;
   image?: string;
   article?: boolean;
   noindex?: boolean;
@@ -33,7 +33,7 @@ interface Props {
 const {
   title,
   description,
-  lang,
+  lang = 'tr',
   image = '/brand/a2reklam-logo.png',
   article = false,
   noindex = false,
@@ -42,12 +42,7 @@ const {
   faq = [],
 } = Astro.props;
 
-const alternates = getLocaleAlternates(Astro.url.pathname);
-const canonicalPath = alternates[lang as keyof typeof alternates] ?? Astro.url.pathname;
-const canonicalURL = new URL(canonicalPath, Astro.site);
-const trURL = alternates.tr ? new URL(alternates.tr, Astro.site) : null;
-const enURL = alternates.en ? new URL(alternates.en, Astro.site) : null;
-const xDefaultURL = trURL ?? enURL ?? canonicalURL;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const localBusinessSchema = Astro.site ? getLocalBusinessSchema(Astro.site) : null;
 
@@ -125,6 +120,10 @@ const articleSchema =
 />
 <meta name="generator" content={Astro.generator} />
 
+<!-- Search Engine Verification -->
+{BING_VERIFICATION && <meta name="msvalidate.01" content={BING_VERIFICATION} />}
+{YANDEX_VERIFICATION && <meta name="yandex-verification" content={YANDEX_VERIFICATION} />}
+
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 
@@ -132,10 +131,6 @@ const articleSchema =
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-<!-- Alternate Language Links (TR + EN only) -->
-{trURL && <link rel="alternate" hreflang="tr" href={trURL} />}
-{enURL && <link rel="alternate" hreflang="en" href={enURL} />}
-<link rel="alternate" hreflang="x-default" href={xDefaultURL} />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

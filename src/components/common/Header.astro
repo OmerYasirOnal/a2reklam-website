@@ -1,6 +1,7 @@
 ---
-import { getLocaleAlternates } from '../../utils/localeRoutes';
 import { PHONE_TEL } from '../../consts';
+import { districts } from '../../data/districts';
+import { sectors } from '../../data/sectors';
 import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
@@ -9,9 +10,7 @@ interface Props {
 
 const { lang = 'tr' } = Astro.props;
 
-const alternates = getLocaleAlternates(Astro.url.pathname);
-
-const items_tr = [
+const items = [
   { label: 'Anasayfa', href: '/' },
   { label: 'Hizmetler', href: '/hizmetler/' },
   { label: 'Galeri', href: '/galeri/' },
@@ -21,29 +20,13 @@ const items_tr = [
   { label: 'İletişim', href: '/iletisim/' },
 ];
 
-const items_en = [
-  { label: 'Home', href: '/en/' },
-  { label: 'Services', href: '/en/services/' },
-  { label: 'Gallery', href: '/en/gallery/' },
-  { label: 'About Us', href: '/en/about/' },
-  { label: 'Contact', href: '/en/contact/' },
-];
+const topDistricts = districts.filter(d => d.priority === 1).slice(0, 10);
+const topSectors = sectors.slice(0, 8);
 
-const items = lang === 'en' ? items_en : items_tr;
-const homeLink = lang === 'en' ? '/en/' : '/';
-const callLabel = lang === 'en' ? 'Call Now' : 'Hemen Ara';
-const menuLabel = lang === 'en' ? 'Menu' : 'Menü';
-const closeLabel = lang === 'en' ? 'Close' : 'Kapat';
-
-const languageLabels: Record<string, string> = { tr: 'Türkçe', en: 'English' };
-const languageOrder = ['tr', 'en'] as const;
-const languageLinks = languageOrder
-  .filter((locale) => alternates[locale])
-  .map((locale) => ({
-    locale,
-    href: alternates[locale],
-    label: languageLabels[locale],
-  }));
+const homeLink = '/';
+const callLabel = 'Hemen Ara';
+const menuLabel = 'Menü';
+const closeLabel = 'Kapat';
 ---
 
 <header id="main-header" class="sticky top-0 z-50 glass-bar header-modern header-visible">
@@ -63,31 +46,64 @@ const languageLinks = languageOrder
 
     <!-- Desktop Navigation - Hidden below lg -->
     <nav class="hidden lg:flex items-center gap-4 xl:gap-6">
-      {items.map(item => (
-        <a href={item.href} class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">
-          {item.label}
+      <a href="/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">Anasayfa</a>
+      <a href="/hizmetler/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">Hizmetler</a>
+
+      <!-- Hizmet Bölgeleri Dropdown -->
+      <div class="relative group">
+        <a href="/istanbul-tabelaci/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap flex items-center gap-1">
+          Bölgeler
+          <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </a>
-      ))}
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="bg-secondary/95 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl p-4 w-56">
+            {topDistricts.map(d => (
+              <a href={`/${d.slug}/`} class="block py-1.5 px-3 text-sm text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">
+                {d.name} Tabelacı
+              </a>
+            ))}
+            <div class="border-t border-white/10 mt-2 pt-2">
+              <a href="/istanbul-tabelaci/" class="block py-1.5 px-3 text-sm text-primary font-bold hover:text-white transition-colors">
+                Tüm İlçeler &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sektörler Dropdown -->
+      <div class="relative group">
+        <a href="/sektorel/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap flex items-center gap-1">
+          Sektörler
+          <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="bg-secondary/95 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl p-4 w-56">
+            {topSectors.map(s => (
+              <a href={`/sektorel/${s.slug}/`} class="block py-1.5 px-3 text-sm text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">
+                {s.icon} {s.name}
+              </a>
+            ))}
+            <div class="border-t border-white/10 mt-2 pt-2">
+              <a href="/sektorel/" class="block py-1.5 px-3 text-sm text-primary font-bold hover:text-white transition-colors">
+                Tüm Sektörler &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="/galeri/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">Galeri</a>
+      <a href="/tabela-rehberi/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">Rehber</a>
+      <a href="/hakkimizda/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">Hakkımızda</a>
+      <a href="/sss/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">S.S.S</a>
+      <a href="/iletisim/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">İletişim</a>
     </nav>
 
     <!-- Right Controls - Flexible layout -->
     <div class="flex items-center gap-2 md:gap-3">
-      <!-- Language Switcher + Theme Toggle (desktop) -->
+      <!-- Theme Toggle (desktop) -->
       <div class="hidden lg:flex items-center gap-2">
-        <div class="flex items-center gap-1">
-          {languageLinks.map((link) => (
-            <a
-              href={link.href}
-              class:list={[
-                'text-xs font-bold border px-2 py-1 rounded transition-colors whitespace-nowrap',
-                link.locale === lang ? 'border-primary text-primary' : 'border-white/20 text-gray-300 hover:text-white hover:border-white',
-              ]}
-              aria-current={link.locale === lang ? 'page' : undefined}
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
         <ThemeToggle lang={lang} />
       </div>
 
@@ -158,32 +174,56 @@ const languageLinks = languageOrder
       </div>
 
       <!-- Navigation Links -->
-      <div class="flex-1 space-y-1">
-        {items.map(item => (
-          <a
-            href={item.href}
-            class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors"
-          >
-            {item.label}
-          </a>
-        ))}
+      <div class="flex-1 space-y-1 overflow-y-auto">
+        <a href="/" class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">Anasayfa</a>
+        <a href="/hizmetler/" class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">Hizmetler</a>
+
+        <!-- Bölgeler Accordion -->
+        <details class="group">
+          <summary class="py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors cursor-pointer list-none flex justify-between items-center">
+            Bölgeler
+            <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pl-4 space-y-0.5 mt-1">
+            {topDistricts.map(d => (
+              <a href={`/${d.slug}/`} class="block py-2 px-4 text-sm text-gray-400 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">
+                {d.name} Tabelacı
+              </a>
+            ))}
+            <a href="/istanbul-tabelaci/" class="block py-2 px-4 text-sm text-primary font-bold hover:text-white transition-colors">
+              Tüm İlçeler &rarr;
+            </a>
+          </div>
+        </details>
+
+        <!-- Sektörler Accordion -->
+        <details class="group">
+          <summary class="py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors cursor-pointer list-none flex justify-between items-center">
+            Sektörler
+            <svg class="w-4 h-4 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="pl-4 space-y-0.5 mt-1">
+            {topSectors.map(s => (
+              <a href={`/sektorel/${s.slug}/`} class="block py-2 px-4 text-sm text-gray-400 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">
+                {s.icon} {s.name}
+              </a>
+            ))}
+            <a href="/sektorel/" class="block py-2 px-4 text-sm text-primary font-bold hover:text-white transition-colors">
+              Tüm Sektörler &rarr;
+            </a>
+          </div>
+        </details>
+
+        <a href="/galeri/" class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">Galeri</a>
+        <a href="/tabela-rehberi/" class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">Tabela Rehberleri</a>
+        <a href="/hakkimizda/" class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">Hakkımızda</a>
+        <a href="/sss/" class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">S.S.S</a>
+        <a href="/iletisim/" class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">İletişim</a>
       </div>
 
-      <!-- Language Switcher (Mobile) -->
+      <!-- Theme Toggle + Call Button (Mobile) -->
       <div class="border-t border-white/10 pt-6 mt-6">
         <div class="flex items-center gap-2 mb-4">
-          {languageLinks.map((link) => (
-            <a
-              href={link.href}
-              class:list={[
-                'text-sm font-bold border px-3 py-1.5 rounded transition-colors',
-                link.locale === lang ? 'border-primary text-primary' : 'border-white/20 text-gray-300 hover:text-white hover:border-white',
-              ]}
-              aria-current={link.locale === lang ? 'page' : undefined}
-            >
-              {link.label}
-            </a>
-          ))}
           <ThemeToggle lang={lang} />
         </div>
 

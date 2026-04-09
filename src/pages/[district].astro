@@ -1,0 +1,317 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { districts } from '../data/districts';
+import { PHONE_TEL } from '../consts';
+import CallBand from '../components/common/CallBand.astro';
+
+export function getStaticPaths() {
+  return districts.map((district) => ({
+    params: { district: district.slug },
+    props: { district },
+  }));
+}
+
+const { district } = Astro.props;
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Hizmet Bölgeleri', item: '/istanbul-tabelaci/' },
+  { name: `${district.name} Tabelacı`, item: `/${district.slug}/` },
+];
+
+// B7: Coğrafi yakınlığa göre sıralama
+const nearbyDistricts = districts
+  .filter(d => d.slug !== district.slug)
+  .sort((a, b) => {
+    const distA = Math.abs(a.coordinates.lat - district.coordinates.lat) +
+                  Math.abs(a.coordinates.lng - district.coordinates.lng);
+    const distB = Math.abs(b.coordinates.lat - district.coordinates.lat) +
+                  Math.abs(b.coordinates.lng - district.coordinates.lng);
+    return distA - distB;
+  })
+  .slice(0, 8);
+
+// B3: Tüm diğer ilçeler (sayfa altı internal linking)
+const allOtherDistricts = districts.filter(d => d.slug !== district.slug);
+
+const whatsappLink = `https://wa.me/905316181672?text=Merhaba, ${encodeURIComponent(district.name)} bölgesinde tabela hizmeti almak istiyorum.`;
+
+// Hero görseli — ilçe slug hash'ine göre döner
+const heroImages = [
+  '/assets/img/demo/a2reklam-cephe-tabela-001-960.webp',
+  '/assets/img/demo/a2reklam-paslanmaz-harfler-001-960.webp',
+  '/assets/img/demo/a2reklam-totem-001-960.webp',
+  '/assets/img/demo/a2reklam-isikli-isiksiz-tabelalar-001-960.webp',
+  '/assets/img/demo/a2reklam-arac-giydirme-001-960.webp',
+  '/assets/img/demo/a2reklam-fener-tabela-001-960.webp',
+  '/assets/img/demo/a2reklam-kapi-isimlik-001-960.webp',
+  '/assets/img/demo/a2reklam-kabartma-pleksiglass-001-960.webp',
+];
+const heroHash = district.slug.split('').reduce((a: number, c: string) => a + c.charCodeAt(0), 0);
+const heroImage = heroImages[heroHash % heroImages.length];
+
+const serviceLinks = [
+  { title: 'Kutu Harf Tabela', href: '/hizmetler/paslanmaz-harfler/', desc: 'LED aydınlatmalı 3D harf' },
+  { title: 'Işıklı Tabela', href: '/hizmetler/isikli-tabela/', desc: 'Cephe ve vitrin aydınlatma' },
+  { title: 'Totem Tabela', href: '/hizmetler/totem/', desc: 'Serbest duran yönlendirme' },
+  { title: 'Cephe Giydirme', href: '/hizmetler/cephe-tabela/', desc: 'Kompozit ve dibond uygulama' },
+  { title: 'Araç Giydirme', href: '/hizmetler/arac-giydirme/', desc: 'Tam/yarım araç kaplama' },
+  { title: 'Yönlendirme', href: '/hizmetler/yonlendirme/', desc: 'İç ve dış mekan yönlendirme' },
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Tabela İmalatı ve Montaj",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://a2reklam.com/#organization"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": `${district.name}, İstanbul`
+  },
+  "description": `${district.name} bölgesinde profesyonel tabela imalatı, montaj ve bakım hizmetleri.`,
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "TRY",
+    "lowPrice": "8000",
+    "highPrice": "150000"
+  }
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://a2reklam.com/#organization",
+  "name": "A2 Reklam",
+  "url": "https://a2reklam.com",
+  "telephone": "+905316181672",
+  "image": "https://a2reklam.com/brand/a2reklam-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Şirintepe, Açelya Sokağı Ugur Apt No:4/a",
+    "addressLocality": "Kağıthane",
+    "addressRegion": "İstanbul",
+    "postalCode": "34415",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.0820,
+    "longitude": 28.9730
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": district.name + ", İstanbul"
+  },
+  "priceRange": "₺₺",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }
+};
+---
+
+<Layout
+  title={district.title}
+  description={district.metaDescription}
+  breadcrumbs={breadcrumbs}
+  faq={district.content.faq}
+  whatsappTitle={district.title}
+  whatsappLocation={district.name}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Breadcrumb -->
+    <nav class="mb-8 text-sm" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2 text-gray-400">
+        <li><a href="/" class="hover:text-primary transition-colors">Ana Sayfa</a></li>
+        <li class="text-gray-600">/</li>
+        <li><a href="/istanbul-tabelaci/" class="hover:text-primary transition-colors">Hizmet Bölgeleri</a></li>
+        <li class="text-gray-600">/</li>
+        <li class="text-primary">{district.name}</li>
+      </ol>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+      <!-- Ana İçerik -->
+      <div class="lg:col-span-2">
+
+        <!-- Hero Görsel -->
+        <div class="mb-8 rounded-xl overflow-hidden border border-white/10">
+          <img
+            src={heroImage}
+            alt={`${district.name} tabela imalatı — A2 Reklam proje örneği`}
+            width="960"
+            height="540"
+            class="w-full h-48 md:h-64 object-cover"
+            loading="eager"
+          />
+        </div>
+
+        <h1 class="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
+          {district.h1}
+        </h1>
+
+        <!-- İçerik -->
+        <div class="prose prose-invert prose-lg max-w-none mb-12">
+          {district.content.intro.split('\n\n').map((paragraph: string) => (
+            <p class="text-gray-300 leading-relaxed mb-4">{paragraph}</p>
+          ))}
+        </div>
+
+        <!-- Hizmetlerimiz Grid -->
+        <section class="mb-12">
+          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+            {district.name}'de Sunduğumuz Tabela Hizmetleri
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {serviceLinks.map(service => (
+              <a href={service.href} class="glass-card p-4 hover:border-primary/50 transition-all group">
+                <h3 class="font-bold text-white group-hover:text-primary transition-colors">{service.title}</h3>
+                <p class="text-gray-400 text-sm mt-1">{service.desc}</p>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <!-- Ticari Bölgeler -->
+        {district.content.commercialAreas.length > 0 && (
+          <section class="mb-12">
+            <h2 class="font-heading text-2xl font-bold text-white mb-4">
+              {district.name}'de Hizmet Verdiğimiz Bölgeler
+            </h2>
+            <div class="flex flex-wrap gap-2">
+              {district.content.commercialAreas.map((area: string) => (
+                <span class="bg-accent-light text-gray-300 px-3 py-1.5 rounded-lg text-sm border border-white/5">
+                  {area}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Telefon CTA Band -->
+        <CallBand context={`${district.name} tabela`} />
+
+        <!-- SSS -->
+        <section class="mb-12">
+          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+            Sıkça Sorulan Sorular
+          </h2>
+          <div class="space-y-4">
+            {district.content.faq.map((item: { question: string; answer: string }) => (
+              <details class="glass-card p-5 group">
+                <summary class="font-bold text-white cursor-pointer list-none flex justify-between items-center">
+                  {item.question}
+                  <svg class="w-5 h-5 text-primary transition-transform group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                  </svg>
+                </summary>
+                <p class="text-gray-300 mt-3 leading-relaxed">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- Google Map Embed -->
+        <section class="mb-12">
+          <h2 class="font-heading text-2xl font-bold text-white mb-4">
+            {district.name} Konum
+          </h2>
+          <div class="rounded-xl overflow-hidden border border-white/10">
+            <iframe
+              src={`https://maps.google.com/maps?q=tabelac%C4%B1+${encodeURIComponent(district.name)}+istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed`}
+              width="100%"
+              height="350"
+              style="border:0;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title={`${district.name} tabela hizmet bölgesi haritası`}
+            />
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24 space-y-6">
+          <!-- CTA -->
+          <div class="bg-accent-light p-6 rounded-xl border border-white/5 shadow-2xl text-center">
+            <h3 class="font-heading font-bold text-lg mb-3 text-white uppercase tracking-tight">
+              {district.name}'de <span class="text-primary">Tabela</span> Yaptırın
+            </h3>
+            <p class="text-gray-400 mb-5 text-sm leading-relaxed">
+              Ücretsiz keşif ve fiyat teklifi alın
+            </p>
+            <a href="/iletisim/" class="block w-full text-center bg-primary text-secondary font-black py-3 rounded-lg hover:bg-white transition-all uppercase tracking-widest text-sm mb-3">
+              Teklif İste
+            </a>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full text-center bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-500 transition-all text-sm">
+              <img src="/assets/icons/social/whatsapp-white.svg" alt="" width="20" height="20" class="w-5 h-5" loading="lazy" decoding="async" aria-hidden="true" />
+              WhatsApp
+            </a>
+            <a href={`tel:${PHONE_TEL}`} class="block mt-3 text-primary font-bold text-lg hover:text-white transition-colors">
+              0531 618 16 72
+            </a>
+          </div>
+
+          <!-- Diğer İlçeler -->
+          <div class="glass-card p-5">
+            <h3 class="font-heading font-bold text-base text-white mb-3">Diğer Hizmet Bölgeleri</h3>
+            <div class="space-y-2">
+              {nearbyDistricts.map((d) => (
+                <a href={`/${d.slug}/`} class="block text-sm text-gray-400 hover:text-primary transition-colors py-1">
+                  &rarr; {d.name} Tabelacı
+                </a>
+              ))}
+            </div>
+            <a href="/istanbul-tabelaci/" class="block mt-3 text-primary text-sm font-bold hover:text-white transition-colors">
+              Tüm Bölgeleri Gör &rarr;
+            </a>
+          </div>
+
+          <!-- Hizmetler -->
+          <div class="glass-card p-5">
+            <h3 class="font-heading font-bold text-base text-white mb-3">Hizmetlerimiz</h3>
+            <div class="space-y-2">
+              {serviceLinks.map(service => (
+                <a href={service.href} class="block text-sm text-gray-400 hover:text-primary transition-colors py-1">
+                  &rarr; {service.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- B3: Tüm İlçe Linkleri (Internal Linking Boost) -->
+    <section class="py-12 border-t border-white/10 mt-8">
+      <h2 class="font-heading text-xl font-bold text-white mb-4 text-center">
+        İstanbul'da Tabela Hizmet Bölgelerimiz
+      </h2>
+      <div class="flex flex-wrap justify-center gap-2">
+        {allOtherDistricts.map(d => (
+          <a href={`/${d.slug}/`}
+             class="text-xs text-gray-400 hover:text-primary transition-colors px-2 py-1">
+            {d.name} Tabelacı
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-4">
+        <a href="/istanbul-tabelaci/" class="text-primary text-sm font-bold hover:text-white transition-colors">
+          Tüm Hizmet Bölgeleri &rarr;
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>
