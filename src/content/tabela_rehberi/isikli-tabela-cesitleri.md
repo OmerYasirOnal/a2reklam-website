@@ -189,3 +189,7 @@ Işıklı tabela seçiminde uzman desteği almak için [ücretsiz keşif ve tekl
 ---
 
 **A2 Reklam** - Gece de gündüz gibi parlayın.
+
+---
+
+**İlgili Sektör:** [Berber Tabelası](/sektorel/berber-tabelasi/) | [Tüm Sektörel Tabelalar](/sektorel/)
