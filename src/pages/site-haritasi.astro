@@ -1,10 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import { districts } from '../data/districts';
+import { sectors } from '../data/sectors';
 
-const [services, districts, blogPosts, guides] = await Promise.all([
+const [services, blogPosts, guides] = await Promise.all([
   getCollection('services'),
-  getCollection('districts'),
   getCollection('blog'),
   getCollection('tabela_rehberi'),
 ]);
@@ -19,7 +20,7 @@ const sortedGuides = [...guides].sort(
 const corePages = [
   { label: 'Anasayfa', href: '/' },
   { label: 'Hizmetler', href: '/hizmetler/' },
-  { label: 'Hizmet Bölgeleri', href: '/hizmet-bolgeleri/' },
+  { label: 'Hizmet Bölgeleri', href: '/istanbul-tabelaci/' },
   { label: 'Galeri', href: '/galeri/' },
   { label: 'Proje Videoları', href: '/videolar/' },
   { label: 'Referanslar', href: '/referanslar/' },
@@ -85,8 +86,21 @@ const breadcrumbs = [
             <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-300">
               {districts.map((district) => (
                 <li>
-                  <a href={`/hizmet-bolgeleri/${district.slug}/`} class="hover:text-primary transition-colors">
-                    {district.data.title}
+                  <a href={`/${district.slug}/`} class="hover:text-primary transition-colors">
+                    {district.name} Tabelacı
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section class="glass-card p-6">
+            <h2 class="text-white text-2xl font-heading font-bold mb-4">Sektörel Tabelalar</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-gray-300">
+              {sectors.map((sector) => (
+                <li>
+                  <a href={`/sektorel/${sector.slug}/`} class="hover:text-primary transition-colors">
+                    {sector.icon} {sector.name}
                   </a>
                 </li>
               ))}

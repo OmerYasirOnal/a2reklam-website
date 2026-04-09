@@ -8,6 +8,11 @@ import {
   SOCIAL_INSTAGRAM_URL,
   SOCIAL_LINKEDIN_URL,
 } from '../../consts';
+import { districts } from '../../data/districts';
+import { sectors } from '../../data/sectors';
+
+const topDistricts = districts.filter(d => d.priority === 1).slice(0, 10);
+const topSectors = sectors.slice(0, 8);
 
 const today = new Date();
 interface Props {
@@ -15,47 +20,28 @@ interface Props {
 }
 const { lang = 'tr' } = Astro.props;
 
-const content = {
-  tr: {
-    tagline: 'İstanbul\'da profesyonel tabela ve reklam üretim hizmetleri. 2010\'dan beri kaliteli üretim.',
-    quickTitle: 'Hızlı Bağlantılar',
-    quickLinks: [
-      { label: 'Hizmetler', href: '/hizmetler/' },
-      { label: 'Galeri', href: '/galeri/' },
-      { label: 'Videolar', href: '/videolar/' },
-      { label: 'Hizmet Bölgeleri', href: '/hizmet-bolgeleri/' },
-      { label: 'Referanslar', href: '/referanslar/' },
-      { label: 'Blog', href: '/blog/' },
-      { label: 'Site Haritası', href: '/site-haritasi/' },
-      { label: 'Hakkımızda', href: '/hakkimizda/' },
-      { label: 'İletişim', href: '/iletisim/' },
-    ],
-    contactTitle: 'İletişim',
-    socialTitle: 'Sosyal',
-    rights: 'Tüm hakları saklıdır.',
-  },
-  en: {
-    tagline: 'Professional signage and advertising production services in Istanbul. Quality manufacturing since 2010.',
-    quickTitle: 'Quick Links',
-    quickLinks: [
-      { label: 'Services', href: '/en/services/' },
-      { label: 'Gallery', href: '/en/gallery/' },
-      { label: 'Videos', href: '/videolar/' },
-      { label: 'Portfolio', href: '/en/portfolio/' },
-      { label: 'Sitemap', href: '/site-haritasi/' },
-      { label: 'Contact', href: '/en/contact/' },
-    ],
-    contactTitle: 'Contact',
-    socialTitle: 'Social',
-    rights: 'All rights reserved.',
-  },
+const t = {
+  tagline: 'İstanbul\'da profesyonel tabela ve reklam üretim hizmetleri. 2010\'dan beri kaliteli üretim.',
+  quickTitle: 'Hızlı Bağlantılar',
+  quickLinks: [
+    { label: 'Hizmetler', href: '/hizmetler/' },
+    { label: 'Galeri', href: '/galeri/' },
+    { label: 'Videolar', href: '/videolar/' },
+    { label: 'Hizmet Bölgeleri', href: '/istanbul-tabelaci/' },
+    { label: 'Referanslar', href: '/referanslar/' },
+    { label: 'Blog', href: '/blog/' },
+    { label: 'Site Haritası', href: '/site-haritasi/' },
+    { label: 'Hakkımızda', href: '/hakkimizda/' },
+    { label: 'İletişim', href: '/iletisim/' },
+  ],
+  contactTitle: 'İletişim',
+  socialTitle: 'Sosyal',
+  rights: 'Tüm hakları saklıdır.',
 };
-
-const t = lang === 'en' ? content.en : content.tr;
 ---
 
 <footer class="bg-secondary/95 text-white py-16 border-t border-white/10 backdrop-blur-sm">
-	<div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
+	<div class="container mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-10">
     
     <div>
       <h3 class="font-heading font-bold text-2xl mb-6 flex items-center gap-2">
@@ -94,6 +80,44 @@ const t = lang === 'en' ? content.en : content.tr;
         <li class="flex items-center gap-3">
           <svg class="w-5 h-5 text-primary shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
           <a href={`mailto:${EMAIL}`} class="hover:text-white hover:underline decoration-primary">{EMAIL}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-6 text-lg border-b border-primary/30 inline-block pb-2">Hizmet Bölgeleri</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+        {topDistricts.map((d) => (
+          <li>
+            <a href={`/${d.slug}/`} class="group hover:text-primary transition-colors flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+              {d.name} Tabelacı
+            </a>
+          </li>
+        ))}
+        <li>
+          <a href="/istanbul-tabelaci/" class="text-primary font-bold hover:text-white transition-colors">
+            Tüm İlçeler &rarr;
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-bold mb-6 text-lg border-b border-primary/30 inline-block pb-2">Sektörler</h4>
+      <ul class="space-y-2 text-sm text-gray-400">
+        {topSectors.map((s) => (
+          <li>
+            <a href={`/sektorel/${s.slug}/`} class="group hover:text-primary transition-colors flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+              {s.icon} {s.name}
+            </a>
+          </li>
+        ))}
+        <li>
+          <a href="/sektorel/" class="text-primary font-bold hover:text-white transition-colors">
+            Tüm Sektörler &rarr;
+          </a>
         </li>
       </ul>
     </div>
@@ -181,17 +205,15 @@ const t = lang === 'en' ? content.en : content.tr;
 
   </div>
   <div class="container mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
-    <div class="mb-2">&copy; {today.getFullYear()} A2 Reklam. {t.rights}</div>
-    {lang !== 'en' && (
-      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-        <a href="/gizlilik-politikasi/" class="hover:text-primary transition-colors">Gizlilik Politikası</a>
-        <span class="text-gray-700">&middot;</span>
-        <a href="/kullanim-kosullari/" class="hover:text-primary transition-colors">Kullanım Koşulları</a>
-        <span class="text-gray-700">&middot;</span>
-        <a href="/cerez-politikasi/" class="hover:text-primary transition-colors">Çerez Politikası</a>
-        <span class="text-gray-700">&middot;</span>
-        <a href="/kvkk/" class="hover:text-primary transition-colors">KVKK</a>
-      </div>
-    )}
+    <div class="mb-2">&copy; {today.getFullYear()} A2 Reklam. {t.rights} &nbsp;|&nbsp; SEO &amp; Web Tasarım <a href="https://wa.me/905323090261" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-white transition-colors">Ömer Yasir</a></div>
+    <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+      <a href="/gizlilik-politikasi/" class="hover:text-primary transition-colors">Gizlilik Politikası</a>
+      <span class="text-gray-700">&middot;</span>
+      <a href="/kullanim-kosullari/" class="hover:text-primary transition-colors">Kullanım Koşulları</a>
+      <span class="text-gray-700">&middot;</span>
+      <a href="/cerez-politikasi/" class="hover:text-primary transition-colors">Çerez Politikası</a>
+      <span class="text-gray-700">&middot;</span>
+      <a href="/kvkk/" class="hover:text-primary transition-colors">KVKK</a>
+    </div>
   </div>
 </footer>

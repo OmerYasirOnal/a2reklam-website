@@ -1,0 +1,98 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { sectors } from '../../data/sectors';
+import { PHONE_TEL } from '../../consts';
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Sektörel Tabelalar', item: '/sektorel/' },
+];
+
+const faq = [
+  {
+    question: 'Hangi sektörlere tabela hizmeti veriyorsunuz?',
+    answer: 'Berber, kuaför, eczane, cafe-restoran, otel, hastane, fabrika, plaza, AVM, market, okul, spor salonu dahil 20\'den fazla sektöre özel tabela çözümleri sunuyoruz.',
+  },
+  {
+    question: 'Sektöre özel tabela tasarımı yapıyor musunuz?',
+    answer: 'Evet, her sektörün kendine özgü ihtiyaçlarına göre özelleştirilmiş tabela tasarımları üretiyoruz. Örneğin eczaneler için LED haç, berberler için döner ışıklı tabela, oteller için çatı tabelası gibi sektöre özel çözümler sunuyoruz.',
+  },
+  {
+    question: 'Sektörel tabela fiyatları ne kadar?',
+    answer: 'Fiyatlar tabela türüne, boyutuna ve malzemeye göre değişir. Kutu harf tabela 15.000₺\'den, ışıklı tabela 8.000₺\'den başlar. Ücretsiz keşif sonrası detaylı fiyat teklifi sunuyoruz.',
+  },
+];
+---
+
+<Layout
+  title="Sektörel Tabela Çözümleri | A2 Reklam — Her Sektöre Özel Tabela"
+  description="20+ sektöre özel profesyonel tabela imalatı. Berber, eczane, cafe, otel, hastane, fabrika, plaza tabelası. İstanbul geneli ücretsiz keşif. ☎ 0531 618 16 72"
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+>
+
+  <section class="py-16 md:py-20 bg-secondary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-16">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 uppercase tracking-tight">
+          Sektörel <span class="text-primary">Tabela</span> Çözümleri
+        </h1>
+        <p class="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
+          Her sektörün kendine özgü tabela ihtiyacı vardır. A2 Reklam olarak 20'den fazla sektöre özel, profesyonel tabela imalatı ve montaj hizmeti sunuyoruz.
+        </p>
+      </div>
+
+      <!-- Sektör Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        {sectors.map(sector => (
+          <a href={`/sektorel/${sector.slug}/`} class="group glass-card p-5 hover:border-primary/50 transition-all transform hover:-translate-y-1 text-center">
+            <span class="text-3xl block mb-2">{sector.icon}</span>
+            <h2 class="font-heading font-bold text-sm text-white group-hover:text-primary transition-colors">
+              {sector.name}
+            </h2>
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-16 bg-accent-light border border-white/5 rounded-2xl p-8 md:p-12 text-center">
+        <h2 class="font-heading font-bold text-3xl text-white mb-4">
+          Sektörünüze Özel <span class="text-primary">Tabela</span> Çözümü
+        </h2>
+        <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+          İşletmenizin sektörüne uygun, profesyonel ve dikkat çekici tabela çözümleri için hemen bizi arayın.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={`tel:${PHONE_TEL}`} class="btn btn-primary px-8 py-3 text-sm font-bold uppercase tracking-widest">
+            0531 618 16 72
+          </a>
+          <a href="/iletisim/" class="inline-flex items-center justify-center gap-2 border border-primary text-primary font-bold px-8 py-3 rounded-lg hover:bg-primary hover:text-secondary transition-all text-sm">
+            Teklif İste
+          </a>
+        </div>
+      </div>
+
+      <!-- SSS -->
+      <div class="mt-16">
+        <h2 class="font-heading font-bold text-2xl text-white mb-6 uppercase tracking-tight">
+          Sıkça Sorulan <span class="text-primary">Sorular</span>
+        </h2>
+        <div class="space-y-4 max-w-4xl">
+          {faq.map((item) => (
+            <details class="glass-card p-5 group">
+              <summary class="font-bold text-white cursor-pointer list-none flex justify-between items-center">
+                {item.question}
+                <svg class="w-5 h-5 text-primary transition-transform group-open:rotate-180 shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <p class="text-gray-300 mt-3 leading-relaxed">{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>

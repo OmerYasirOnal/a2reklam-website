@@ -12,17 +12,6 @@ const services = defineCollection({
     }),
 });
 
-// Districts collection (TR)
-const districts = defineCollection({
-    type: 'content',
-    schema: ({ image }) => z.object({
-        title: z.string(),
-        description: z.string(),
-        heroImage: z.string().optional(),
-        districtName: z.string(),
-    }),
-});
-
 // Blog collection (TR)
 const blog = defineCollection({
     type: 'content',
@@ -54,7 +43,6 @@ const tabela_rehberi = defineCollection({
 
 export const collections = {
     services,
-    districts,
     blog,
     tabela_rehberi,
 };

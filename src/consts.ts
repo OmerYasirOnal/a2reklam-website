@@ -25,6 +25,12 @@ export const GTM_CONTAINER_ID = 'GTM-MXT449F9';
 export const GOOGLE_ADS_ID = 'AW-17854412453';
 export const GA4_MEASUREMENT_ID = 'G-TC9GJP3GLT';
 
+// Search Engine Verification
+// Bing: https://www.bing.com/webmasters → Site ekle → Meta tag doğrulama kodunu al
+export const BING_VERIFICATION = '';
+// Yandex: https://webmaster.yandex.com → Site ekle → Meta tag doğrulama kodunu al
+export const YANDEX_VERIFICATION = '';
+
 // Google Reviews (direct place URL to avoid search/deep-link fallback redirects)
 export const GOOGLE_REVIEWS_URL = MAPS_URL;
 // Google Business Profile real data (87 reviews, 5.0 rating)

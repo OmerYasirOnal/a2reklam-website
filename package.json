@@ -11,7 +11,9 @@
     "repo:safety": "node scripts/repo-safety.js",
     "asset:audit": "node scripts/asset-audit.js",
     "content:lint": "node scripts/content-lint.js",
-    "deploy": "bash scripts/deploy.sh"
+    "deploy": "bash scripts/deploy.sh",
+    "indexnow": "node scripts/submit-indexnow.mjs",
+    "google-index": "node scripts/submit-google-indexing.mjs"
   },
   "keywords": [],
   "author": "",
