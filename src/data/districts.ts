@@ -947,15 +947,20 @@ export const districts: District[] = [
     h1: 'Adalar Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Adalar, İstanbul'un essiz ada ilçesidir. Buyukada, Heybeliada ve diger adalardaki işletmelere profesyonel tabela çözümleri sunuyoruz. A2 Reklam olarak Adalar'a ozel lojistik planlama ile kutu harf, ışıklı tabela ve magaza tabelasi hizmetleri veriyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Adalar, İstanbul'un Anadolu Yakasi'nda Marmara Denizi'ndeki dort buyuk adadan olusan essiz bir ilçedir. Buyukada, Heybeliada, Burgazada ve Kınalıada'da bulunan butik oteller, sahil kafeleri, restoranlar ve hediyelik esya dukkanları, deniz tasimacılığı ile ulasilan bu bolgede profesyonel tabela çözümlerine ihtiyac duymaktadir. Ozellikle yaz sezonunda yogunlasan turizm faaliyetleri, işletmelerin gorünurlugunu artirmak icin kaliteli tabela yatirimini zorunlu kilmaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Adalar'a ozel lojistik planlama ile hizmet veriyoruz. Kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme projelerinizde deniz tasimacılığına uygun paketleme ve montaj ekibiyle adalardaki işletmenize profesyonel çözümler sunuyoruz. Ucretsiz kesif ve fiyat teklifi icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Büyükada Çarşı', 'Heybeliada İskele', 'Burgazada Merkez'],
+      keyStreets: ['Büyükada Çankaya Caddesi', 'Heybeliada İskele Caddesi'],
+      serviceHighlight: 'Adalara ozel lojistik planlama ile tabela imalat ve montaj',
       faq: [
         {
           question: "Adalar'a tabela montaji yapiyor musunuz?",
           answer:
-            'Evet, ozel lojistik planlama ile Adalar\'daki işletmelere de tabela hizmeti veriyoruz. Detaylar için bizi arayın.',
+            'Evet, ozel lojistik planlama ile Adalar\'daki işletmelere de tabela hizmeti veriyoruz. Deniz tasimacılığına uygun paketleme ve montaj ekibiyle Buyukada, Heybeliada ve diger adalara duzenli servis sağlıyoruz. Detaylar için bizi arayın.',
+        },
+        {
+          question: "Adalar'daki butik oteller icin ne tur tabela yapiyorsunuz?",
+          answer:
+            'Adalardaki butik oteller icin kutu harf tabela, ışıklı tabela, yonlendirme tabelaları ve cephe giydirme hizmetleri sunuyoruz. Ada dokusuna uygun estetik tasarimlar ile otel girisleri ve bahce alanlari icin ozel çözümler uretiyoruz.',
         },
       ],
     },
@@ -970,15 +975,20 @@ export const districts: District[] = [
     h1: 'Arnavutköy Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Arnavutköy, İstanbul Havalimani'na yakınligiyla hizla gelişen bir ilçedir. A2 Reklam olarak Arnavutköy'deki işletmelere kutu harf, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Arnavutköy, İstanbul'un Avrupa Yakasi'nda 3. Havalimanı'na yakinligiyla son yillarda buyuk bir donusum yasayan ilçedir. Hadimkoy sanayi bolgesi, hizla yukselen yeni konut projeleri ve havalimanı cevresindeki ticari yatirimlar, bolgeye her gecen gun yeni işletmeler kazandirmaktadir. Fabrikalar, lojistik firmalari, insaat sirketleri, perakende magazalar ve restoran zincirleri profesyonel tabela çözümlerine artan bir talep gostermektedir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Arnavutköy'e duzenli hizmet veriyoruz. Hadimkoy sanayideki fabrikalara sanayi tabelasi, yeni acilan konut projelerinin yakinindaki ticari alanlara kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri sunuyoruz. Ucretsiz kesif ve fiyat teklifi icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Hadımköy Sanayi', 'İstanbul Havalimanı Çevresi', 'Arnavutköy Merkez'],
+      keyStreets: ['Hadımköy Yolu', 'Arnavutköy Merkez Caddesi'],
+      serviceHighlight: 'Hadimkoy sanayi ve yeni yerlesim alanlarina hizli tabela hizmeti',
       faq: [
         {
           question: "Arnavutköy'de tabela yaptirabilir miyim?",
           answer:
-            'Evet, Arnavutköy ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Arnavutköy ve cevresine duzenli hizmet veriyoruz. Hadimkoy sanayi bolgesi, ilce merkezi ve havalimanı cevresindeki tum isletmelere ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Arnavutköy Hadimkoy'deki fabrikalar icin ne tur tabela yapiyorsunuz?",
+          answer:
+            'Hadimkoy sanayideki fabrika ve atolyeler icin buyuk ebatli kutu harf tabela, ışıklı cephe tabelasi, totem tabela ve sanayi yonlendirme tabelaları imal ediyoruz. Dayanikli malzemelerle uzun omurlu çözümler sunuyoruz.',
         },
       ],
     },
@@ -993,15 +1003,20 @@ export const districts: District[] = [
     h1: 'Avcılar Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Avcılar, universite kampusleri ve ticari merkezleriyle İstanbul'un batisindaki önemli ilçelerdendir. A2 Reklam olarak Avcılar'daki işletmelere kutu harf, ışıklı tabela, totem tabela ve dijital baskı hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Avcılar, İstanbul'un Avrupa Yakasi'nda E-5 otoyolu uzerindeki yogun ticari hayati, universite kampusleri ve Ambarli Limani yakinligiyla onemli bir ilce konumundadir. E-5 uzerindeki magaza ve showroomlar, universite cevresindeki kafe, restoran ve ogrenci isletmeleri, Ambarli Limani bolgelerindeki lojistik ve ticaret firmalari profesyonel tabela çözümlerine surekli ihtiyac duymaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Avcılar'a duzenli hizmet sunuyoruz. E-5 cephesindeki isletmelere buyuk ebatli kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri uretiyoruz. Universite cevresindeki kucuk isletmelere de uygun fiyatli magaza tabelasi ve dijital baski hizmetleri sağlıyoruz. Ucretsiz kesif ve fiyat teklifi icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['E-5 Üzeri Ticaret Alanı', 'Üniversite Çevresi', 'Ambarlı Limanı Bölgesi'],
+      keyStreets: ['E-5 Avcılar Mevkii', 'Avcılar Merkez Caddesi'],
+      serviceHighlight: 'E-5 cephesi ve universite cevresindeki isletmelere ozel tabela çözümleri',
       faq: [
         {
           question: "Avcılar'da tabela yaptirabilir miyim?",
           answer:
-            'Evet, Avcılar ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Avcılar ve cevresine duzenli hizmet veriyoruz. E-5 uzerindeki magazalar, universite cevresi ve Ambarli bolgesi dahil tum Avcılar\'a ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Avcılar E-5 uzerindeki dukkanimiz icin ne tur tabela onerirsiniz?",
+          answer:
+            'E-5 gibi yogun trafik akisina sahip caddelerde gorünurluk icin buyuk ebatli ışıklı kutu harf tabela ve totem tabela en etkili çözümlerdir. Cephe giydirme ile de magaza cephenizi tamamen markalaştırabiliriz.',
         },
       ],
     },
@@ -1016,15 +1031,20 @@ export const districts: District[] = [
     h1: 'Bayrampaşa Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Bayrampaşa, Forum İstanbul AVM ve cevresi ile yogun ticari hayata sahip bir ilçedir. A2 Reklam olarak Bayrampaşa'daki işletmelere kutu harf, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Bayrampaşa, İstanbul'un Avrupa Yakasi'nda Cevizlibag ticaret bolgesi, Forum İstanbul AVM ve cevresindeki yogun ticari hayatiyla one cikan bir ilcedir. Tekstil atolyeleri, toptan ticaret magazalari, restoran ve kafeler ile kucuk sanayi isletmeleri bolgenin baslica tabela ihtiyaci duyan sektorleridir. Ozellikle E-5 otoyoluna yakin konumu sayesinde isletmelerin gorünurlugu buyuk onem tasimaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Bayrampaşa'ya kisa surede ulasim sağlıyoruz. Cevizlibag cevresindeki ticari isletmelere kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz. Tekstil atolyeleri icin sanayi tabelasi, AVM cevresindeki magazalar icin kurumsal tabela çözümleri uretiyoruz. Ucretsiz kesif ve fiyat teklifi icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Cevizlibağ Ticaret Bölgesi', 'Forum İstanbul AVM Çevresi', 'Yıldırım Mahallesi'],
+      keyStreets: ['Cevizlibağ Caddesi', 'Abdi İpekçi Caddesi'],
+      serviceHighlight: 'Cevizlibag ticaret bolgesi ve Forum İstanbul cevresine hizli tabela hizmeti',
       faq: [
         {
           question: "Bayrampaşa'da tabela yaptirabilir miyim?",
           answer:
-            'Evet, Bayrampaşa ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Bayrampaşa ve cevresine duzenli hizmet veriyoruz. Cevizlibag, Forum İstanbul cevresi ve tum Bayrampaşa\'ya ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Bayrampaşa'daki tekstil atolyeleri icin tabela yapıyor musunuz?",
+          answer:
+            'Evet, Bayrampaşa\'daki tekstil atolyeleri ve imalathaneler icin sanayi tabelasi, kutu harf tabela, ışıklı cephe tabelasi ve yonlendirme tabelaları uretiyoruz. Dayanikli ve ekonomik çözümler sunuyoruz.',
         },
       ],
     },
@@ -1039,15 +1059,20 @@ export const districts: District[] = [
     h1: 'Beykoz Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Beykoz, Bogaz kiyisindaki sahil işletmeleri ve Kavacik is merkezleriyle tabela hizmetine ihtiyac duyan bir ilçedir. A2 Reklam olarak Beykoz'daki işletmelere kutu harf, ışıklı tabela ve magaza tabelasi hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Beykoz, İstanbul'un Anadolu Yakasi'nda Bogaz kiyisindaki essiz konumuyla prestijli bir ilce konumundadir. Kavacik is merkezlerindeki ofis ve plazalar, Riva bolgesindeki turizm ve dogal yasam isletmeleri, Pasabahce sahilindeki kafe, restoran ve hediyelik esya dukkanları profesyonel tabela çözümlerine ihtiyac duymaktadir. Bolgenin dogal dokusuna uygun estetik tabela tasarimlari buyuk onem tasimaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Beykoz'a duzenli hizmet veriyoruz. Kavacik'taki kurumsal firmalar icin plaza tabelaları, Riva ve Pasabahce'deki isletmeler icin kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri sunuyoruz. Bolgenin mimarisine uygun ozel tasarim tabela projeleriyle Beykoz'daki isletmelerin gorünurlugunu artiriyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Kavacık İş Merkezleri', 'Riva', 'Paşabahçe Sahil'],
+      keyStreets: ['Kavacık Kavşağı', 'Beykoz Caddesi', 'Paşabahçe Caddesi'],
+      serviceHighlight: 'Kavacik is merkezleri ve Bogaz sahilindeki isletmelere kurumsal tabela çözümleri',
       faq: [
         {
           question: "Beykoz'da tabela yaptirabilir miyim?",
           answer:
-            'Evet, Beykoz ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Beykoz ve cevresine duzenli hizmet veriyoruz. Kavacik, Riva, Pasabahce ve Beykoz merkez dahil tum bolgeye ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Beykoz Kavacik'taki is merkezleri icin ne tur tabela yapiyorsunuz?",
+          answer:
+            'Kavacik\'taki is merkezleri ve plazalar icin kurumsal kutu harf tabela, ışıklı giris tabelaları, yonlendirme sistemleri ve bina cephesi giydirme projeleri uretiyoruz. Profesyonel kurumsal kimlik çözümleri sunuyoruz.',
         },
       ],
     },
@@ -1062,15 +1087,20 @@ export const districts: District[] = [
     h1: 'Büyükçekmece Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Büyükçekmece, sahil seridi ve ticari merkezleriyle İstanbul'un batisindaki önemli ilçelerdendir. A2 Reklam olarak Büyükçekmece'deki işletmelere kutu harf, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Büyükçekmece, İstanbul'un Avrupa Yakasi'nda E-5 otoyolu uzerindeki ticari alanlari, Kumburgaz sahil seridindeki turizm isletmeleri ve hizla buyuyen yeni yerlesim alanlariyla dikkat ceken bir ilcedir. Sahildeki restoran, otel ve kafelerin yani sira E-5 uzerindeki magazalar, showroomlar ve ticari isletmeler profesyonel tabela çözümlerine ihtiyac duymaktadir. Yeni konut projelerinin cevresinde acilan dukkanlar da bolgenin tabela talebini artirmaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Büyükçekmece'ye duzenli hizmet sunuyoruz. E-5 cephesindeki isletmelere buyuk ebatli kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri uretiyoruz. Kumburgaz sahilindeki turizm isletmelerine de mevsimlik ve kalici tabela hizmetleri sağlıyoruz. Ucretsiz kesif ve fiyat teklifi icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['E-5 Üzeri Ticaret Alanı', 'Kumburgaz Sahil', 'Büyükçekmece Merkez'],
+      keyStreets: ['E-5 Büyükçekmece Mevkii', 'Kumburgaz Sahil Yolu'],
+      serviceHighlight: 'E-5 aksı ve Kumburgaz sahilindeki isletmelere ozel tabela çözümleri',
       faq: [
         {
           question: "Büyükçekmece'de tabela yaptirabilir miyim?",
           answer:
-            'Evet, Büyükçekmece ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Büyükçekmece ve cevresine duzenli hizmet veriyoruz. E-5 uzerindeki magazalar, Kumburgaz sahili ve yeni yerlesim alanlari dahil tum bolgeye ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Büyükçekmece sahilindeki restoranlar icin ne tur tabela onerirsiniz?",
+          answer:
+            'Sahil seridindeki restoran ve kafeler icin ışıklı kutu harf tabela, dis mekan totem tabela ve cephe giydirme en etkili çözümlerdir. Deniz havasina dayanikli malzemeler kullanarak uzun omurlu tabelalar uretiyoruz.',
         },
       ],
     },
@@ -1085,15 +1115,20 @@ export const districts: District[] = [
     h1: 'Çatalca Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Çatalca, İstanbul'un en bati ucundaki ilçesi olarak tarim ve sanayi alanlarindaki işletmelere ev sahipliği yapmaktadir. A2 Reklam olarak Çatalca'daki işletmelere kutu harf, ışıklı tabela ve sanayi tabelasi hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Çatalca, İstanbul'un Avrupa Yakasi'nin en batisinda yer alan, tarim ve sanayi faaliyetlerinin bir arada yurutuldugu genis bir ilcedir. Çatalca Merkez'deki esnaf ve ticari isletmeler, Karacakoy sanayi bolgesindeki fabrika ve atolyeler ile bolgedeki tarim isletmeleri profesyonel tabela çözümlerine ihtiyac duymaktadir. Ilcenin kirsal karakterine ragmen sanayi alanlari onemli bir tabela potansiyeli tasimaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Çatalca'ya ozel planlama ile hizmet veriyoruz. Karacakoy sanayideki fabrikalara buyuk ebatli sanayi tabelasi, ilce merkezindeki esnafa kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri sunuyoruz. Tarim isletmeleri icin de dis mekan dayanikli tabela ve yonlendirme tabelaları uretiyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Çatalca Merkez', 'Karacaköy Sanayi', 'Çatalca Çarşı'],
+      keyStreets: ['Çatalca Merkez Caddesi', 'Karacaköy Yolu'],
+      serviceHighlight: 'Çatalca Merkez ve Karacakoy sanayi bolgesine ozel tabela çözümleri',
       faq: [
         {
           question: "Çatalca'ya tabela montaji yapiyor musunuz?",
           answer:
-            'Evet, Çatalca ve cevresine hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Çatalca ve cevresine ozel planlama ile hizmet veriyoruz. Karacakoy sanayi, ilce merkezi ve cevre koylere ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Çatalca'daki sanayi isletmeleri icin hangi tabela turlerini yapiyorsunuz?",
+          answer:
+            'Çatalca\'daki fabrika ve sanayi tesisleri icin buyuk ebatli kutu harf tabela, ışıklı cephe tabelasi, totem tabela ve sanayi yonlendirme levhalari uretiyoruz. Dis mekan kosullarına dayanikli malzemeler kullaniyoruz.',
         },
       ],
     },
@@ -1108,15 +1143,20 @@ export const districts: District[] = [
     h1: 'Çekmeköy Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Çekmeköy, hizla buyuyen konut projeleri ve ticari alanlariyla Anadolu Yakasi'nin gelişen ilçelerindendir. A2 Reklam olarak Çekmeköy'deki işletmelere kutu harf, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Çekmeköy, İstanbul'un Anadolu Yakasi'nda hizla buyuyen konut projeleri ve gelişen ticaret alanlariyla dikkat ceken bir ilcedir. Alemdag aksindaki magazalar, kafe ve restoranlar, yeni yerlesim bolgelerinin cevresinde acilan ticari isletmeler ve Omerli Baraji cevresindeki dogal yasam isletmeleri profesyonel tabela çözümlerine artan bir talep gostermektedir. Bolgenin genclesen nufusu modern ve estetik tabela tasarimlarini zorunlu kilmaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Çekmeköy'e duzenli hizmet sunuyoruz. Alemdag cevresindeki ticari isletmelere kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri uretiyoruz. Yeni konut projeleri cevresinde acilan dukkan ve magazalar icin de uygun fiyatli tabela secenekleri sağlıyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Alemdağ Aksı', 'Çekmeköy Merkez', 'Ömerli Çevresi'],
+      keyStreets: ['Alemdağ Caddesi', 'Çekmeköy Merkez Yolu'],
+      serviceHighlight: 'Alemdag aksi ve yeni yerlesim alanlarina modern tabela çözümleri',
       faq: [
         {
           question: "Çekmeköy'de tabela yaptirabilir miyim?",
           answer:
-            'Evet, Çekmeköy ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Çekmeköy ve cevresine duzenli hizmet veriyoruz. Alemdag, Omerli cevresi ve tum Çekmeköy\'e ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Çekmeköy'deki yeni acilan dukkanlar icin hangi tabela turunu onerirsiniz?",
+          answer:
+            'Yeni acilan dukkanlar icin kutu harf tabela ve ışıklı tabela en etkili çözümlerdir. Magaza cephesinin boyutuna gore ozel tasarim yapıyor, kurumsal kimliginize uygun tabela uretiyoruz. Cephe giydirme ile tam marka gorünumu sağlıyoruz.',
         },
       ],
     },
@@ -1131,15 +1171,20 @@ export const districts: District[] = [
     h1: 'Esenler Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Esenler, İstanbul Otogar cevresi ve yogun ticari hayatiyla önemli bir ilçedir. A2 Reklam olarak Esenler'deki işletmelere kutu harf, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Esenler, İstanbul'un Avrupa Yakasi'nda Buyuk İstanbul Otogar'ina ev sahipliği yapan, yogun ticari faaliyetlerin yasandigi bir ilcedir. Otogar cevresindeki oteller, lokantalar ve ticari isletmeler, Menderes Caddesi uzerindeki magazalar ve tekstil imalat atolyeleri profesyonel tabela çözümlerine surekli ihtiyac duymaktadir. Bolgenin yuksek yaya ve arac trafigi, isletmelerin gorünurlugunu artirmak icin dikkat cekici tabela yatirimini zorunlu kilmaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Esenler'e kisa surede ulasim sağlıyoruz. Otogar cevresindeki isletmelere kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz. Menderes Caddesi uzerindeki magazalara da kurumsal tabela ve dijital baski çözümleri uretiyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Otogar Çevresi', 'Menderes Caddesi', 'Esenler Merkez'],
+      keyStreets: ['Menderes Caddesi', 'Otogar Bağlantı Yolu'],
+      serviceHighlight: 'Otogar cevresi ve Menderes Caddesi isletmelerine hizli tabela hizmeti',
       faq: [
         {
           question: "Esenler'de tabela yaptirabilir miyim?",
           answer:
-            'Evet, Esenler ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Esenler ve cevresine duzenli hizmet veriyoruz. Otogar cevresi, Menderes Caddesi ve tum Esenler\'e ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Esenler Otogar cevresindeki otelimiz icin ne tur tabela onerirsiniz?",
+          answer:
+            'Otogar cevresindeki oteller icin gece ve gunduz gorünur ışıklı kutu harf tabela, giris totem tabelasi ve bina cephesi giydirme en etkili çözümlerdir. Yuksek yaya trafiginde dikkat cekici tasarimlar uretiyoruz.',
         },
       ],
     },
@@ -1154,15 +1199,20 @@ export const districts: District[] = [
     h1: 'Güngören Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Güngören, tekstil ve imalat sektorundeki işletmeleriyle yogun ticari faaliyetlerin yasandigi bir ilçedir. A2 Reklam olarak Güngören'deki işletmelere kutu harf, ışıklı tabela ve sanayi tabelasi hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Güngören, İstanbul'un Avrupa Yakasi'nda Merter tekstil merkezine yakinligi ve kucuk sanayi isletmeleriyle yogun ticari faaliyetlerin yasandigi bir ilcedir. Merter'deki tekstil showroomlari, Gunestepe bolgesindeki imalat atolyeleri ve perakende magazalar, kucuk sanayi sitelerindeki imalat ve ticaret isletmeleri profesyonel tabela çözümlerine surekli ihtiyac duymaktadir. Bolgenin yogun is trafigi, isletmelerin tabela ile gorünurluk saglamasini zorunlu kilmaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Güngören'e kisa surede ulasim sağlıyoruz. Merter tekstil cevresindeki showroomlara kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz. Gunestepe ve kucuk sanayi bolgesindeki imalathanelere de dayanikli sanayi tabelasi çözümleri uretiyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Merter Tekstil', 'Güneştepe', 'Güngören Küçük Sanayi'],
+      keyStreets: ['Merter Caddesi', 'Güneştepe Yolu'],
+      serviceHighlight: 'Merter tekstil cevresi ve kucuk sanayi bolgesine ozel tabela çözümleri',
       faq: [
         {
           question: "Güngören'de tabela yaptirabilir miyim?",
           answer:
-            'Evet, Güngören ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Güngören ve cevresine duzenli hizmet veriyoruz. Merter, Gunestepe ve tum Güngören\'e ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Güngören Merter'deki tekstil showroomumuz icin tabela yapıyor musunuz?",
+          answer:
+            'Evet, Merter\'deki tekstil showroom ve magazalar icin kutu harf tabela, ışıklı cephe tabelasi ve cam giydirme çözümleri uretiyoruz. Kurumsal kimliginize uygun, dikkat cekici tabela tasarimlari yapiyoruz.',
         },
       ],
     },
@@ -1177,15 +1227,20 @@ export const districts: District[] = [
     h1: 'Kartal Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Kartal, kentsel donusum projeleri ve sahil seridindeki ticari alanlariyla Anadolu Yakasi'nin gelişen ilçelerindendir. A2 Reklam olarak Kartal'daki işletmelere kutu harf, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Kartal, İstanbul'un Anadolu Yakasi'nda E-5 otoyolu uzerindeki ticari alanlari, Kartal sahil seridi ve Kordonboyu'ndaki isletmeleriyle dinamik bir ilce konumundadir. E-5 cephesindeki magazalar ve showroomlar, Kordonboyu'ndaki restoran ve kafeler, Soganlık sanayi bolgesindeki imalat isletmeleri profesyonel tabela çözümlerine surekli ihtiyac duymaktadir. Kentsel donusum projeleriyle birlikte bolgeye yeni ticari alanlar da eklenmektedir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Kartal'a duzenli hizmet sunuyoruz. E-5 uzerindeki isletmelere buyuk ebatli kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri uretiyoruz. Kordonboyu sahilindeki isletmelere estetik tabela tasarimlari, Soganlık sanayideki firmalara da dayanikli sanayi tabelasi hizmetleri sağlıyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['E-5 Üzeri Kartal', 'Kartal Sahil / Kordonboyu', 'Soğanlık Sanayi'],
+      keyStreets: ['E-5 Kartal Mevkii', 'Kordonboyu Caddesi', 'Soğanlık Yolu'],
+      serviceHighlight: 'E-5 cephesi, Kordonboyu sahil ve Soganlık sanayi bolgesine tabela hizmeti',
       faq: [
         {
           question: "Kartal'da tabela yaptirabilir miyim?",
           answer:
-            'Evet, Kartal ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Kartal ve cevresine duzenli hizmet veriyoruz. E-5 uzerindeki magazalar, Kordonboyu sahili ve Soganlık sanayi dahil tum Kartal\'a ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Kartal Soganlık sanayideki fabrikamiz icin ne tur tabela yapiyorsunuz?",
+          answer:
+            'Soganlık sanayi bolgesindeki fabrika ve isletmeler icin buyuk ebatli kutu harf tabela, ışıklı cephe tabelasi, totem tabela ve sanayi yonlendirme levhalari uretiyoruz. Dis mekan kosullarına dayanikli, uzun omurlu malzemeler kullaniyoruz.',
         },
       ],
     },
@@ -1200,15 +1255,20 @@ export const districts: District[] = [
     h1: 'Küçükçekmece Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Küçükçekmece, E-5 otoyolu uzerindeki ticari alanlari ve gol cevresindeki işletmeleriyle yogun tabela ihtiyaci olan bir ilçedir. A2 Reklam olarak Küçükçekmece'deki işletmelere kutu harf, ışıklı tabela ve totem tabela hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Küçükçekmece, İstanbul'un Avrupa Yakasi'nda E-5 otoyolu aksindaki yogun ticari hayati, Halkali, Atakent ve Sefakoy gibi genis yerlesim alanlariyla onemli bir ilce konumundadir. E-5 cephesindeki buyuk magazalar ve showroomlar, Halkali'daki ticaret merkezleri, Atakent'teki perakende isletmeleri ve Sefakoy cevresindeki dukkanlar profesyonel tabela çözümlerine surekli ihtiyac duymaktadir. Yogun nufusu ve genis ticari potansiyeliyle bolge, tabela sektorunde onemli bir pazardir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Küçükçekmece'ye duzenli hizmet sunuyoruz. E-5 aksindaki isletmelere buyuk ebatli kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri uretiyoruz. Halkali, Atakent ve Sefakoy'deki magazalara da kurumsal tabela ve dijital baski hizmetleri sağlıyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['E-5 Aksı', 'Halkalı', 'Atakent', 'Sefaköy'],
+      keyStreets: ['E-5 Küçükçekmece Mevkii', 'Halkalı Caddesi', 'Sefaköy Yolu'],
+      serviceHighlight: 'E-5 aksi, Halkali, Atakent ve Sefakoy isletmelerine ozel tabela çözümleri',
       faq: [
         {
           question: "Küçükçekmece'de tabela yaptirabilir miyim?",
           answer:
-            'Evet, Küçükçekmece ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Küçükçekmece ve cevresine duzenli hizmet veriyoruz. E-5 aksi, Halkali, Atakent, Sefakoy dahil tum ilceye ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Küçükçekmece Halkali'daki magazamiz icin ne tur tabela onerirsiniz?",
+          answer:
+            'Halkali gibi yogun yaya ve arac trafigine sahip bolgelerde kutu harf tabela ve ışıklı tabela en etkili çözümlerdir. Magaza cephenize uygun totem tabela ve cephe giydirme ile gorünurlugunuzu en ust duzeye cikarabilirsiniz.',
         },
       ],
     },
@@ -1223,15 +1283,20 @@ export const districts: District[] = [
     h1: 'Sancaktepe Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Sancaktepe, hizla buyuyen konut ve ticaret alanlariyla Anadolu Yakasi'nin yeni merkezlerinden biridir. A2 Reklam olarak Sancaktepe'deki işletmelere kutu harf, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Sancaktepe, İstanbul'un Anadolu Yakasi'nda hizla buyuyen yeni yerlesim alanlari ve gelişen ticaret merkezleriyle dikkat ceken bir ilcedir. Samandira bolgesindeki sanayi isletmeleri, Sarigazi'deki ticari magazalar ve carsı, yeni konut projelerinin cevresinde acilan dukkanlar profesyonel tabela çözümlerine artan bir talep gostermektedir. Bolgenin hizli kentlesme sureci, her gun yeni acilan isletmelerin tabela ihtiyacini artirmaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Sancaktepe'ye duzenli hizmet sunuyoruz. Samandira'daki sanayi isletmelerine dayanikli sanayi tabelasi, Sarigazi ticaret bolgesine kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri uretiyoruz. Yeni yerlesim alanlarindaki isletmelere de uygun fiyatli tabela secenekleri sağlıyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Samandıra Sanayi', 'Sarıgazi Ticaret', 'Sancaktepe Merkez'],
+      keyStreets: ['Sarıgazi Caddesi', 'Samandıra Yolu'],
+      serviceHighlight: 'Samandira sanayi ve Sarigazi ticaret bolgesine ozel tabela çözümleri',
       faq: [
         {
           question: "Sancaktepe'de tabela yaptirabilir miyim?",
           answer:
-            'Evet, Sancaktepe ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Sancaktepe ve cevresine duzenli hizmet veriyoruz. Samandira, Sarigazi ve tum Sancaktepe\'ye ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Sancaktepe'deki yeni acilan magazamiz icin tabela suresi ne kadar?",
+          answer:
+            'Yeni acilan magazalar icin genellikle 5-10 is gunu icerisinde tasarim, uretim ve montaj surecini tamamliyoruz. Acil projelerde daha kisa surede teslimat mumkundur. Kutu harf tabela, ışıklı tabela ve cephe giydirme hizmetleri sunuyoruz.',
         },
       ],
     },
@@ -1246,15 +1311,20 @@ export const districts: District[] = [
     h1: 'Silivri Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Silivri, İstanbul'un en bati ilçelerinden biri olarak tarim, turizm ve sanayi alanlarindaki işletmelere ev sahipliği yapmaktadir. A2 Reklam olarak Silivri'deki işletmelere kutu harf, ışıklı tabela ve sanayi tabelasi hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Silivri, İstanbul'un Avrupa Yakasi'nin en batisinda konumlanan, sahil turizmi, tarim isletmeleri ve sanayi alanlariyla cok yonlu bir ilcedir. Silivri Merkez'deki esnaf ve ticari isletmeler, sahil seridindeki restoran, otel ve turizm tesisleri, Selimpasa sanayi bolgesindeki fabrika ve atolyeler profesyonel tabela çözümlerine ihtiyac duymaktadir. Ozellikle yaz sezonunda artan turizm faaliyetleri, sahil isletmelerinin tabela talebini yukselten onemli bir faktor olmaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Silivri'ye ozel planlama ile hizmet veriyoruz. Ilce merkezindeki esnafa kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme, sahildeki turizm isletmelerine mevsimlik ve kalici tabela çözümleri, Selimpasa sanayideki firmalara dayanikli sanayi tabelasi uretiyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Silivri Merkez', 'Silivri Sahil Seridi', 'Selimpaşa Sanayi'],
+      keyStreets: ['Silivri Merkez Caddesi', 'Sahil Yolu', 'Selimpaşa Sanayi Yolu'],
+      serviceHighlight: 'Silivri Merkez, sahil turizm ve Selimpasa sanayi bolgesine tabela hizmeti',
       faq: [
         {
           question: "Silivri'ye tabela montaji yapiyor musunuz?",
           answer:
-            'Evet, Silivri ve cevresine hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Silivri ve cevresine ozel planlama ile hizmet veriyoruz. Ilce merkezi, sahil seridi ve Selimpasa sanayi bolgesi dahil tum Silivri\'ye ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Silivri sahilindeki restoranımız icin dis mekan tabelasi yapıyor musunuz?",
+          answer:
+            'Evet, Silivri sahilindeki restoran ve kafeler icin deniz havasina dayanikli ışıklı kutu harf tabela, totem tabela ve cephe giydirme çözümleri uretiyoruz. Tuzlu havaya karsi ozel kaplamali malzemeler kullaniyoruz.',
         },
       ],
     },
@@ -1269,15 +1339,20 @@ export const districts: District[] = [
     h1: 'Sultanbeyli Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Sultanbeyli, yogun nufusu ve hareketli ticari hayatiyla Anadolu Yakasi'nin dinamik ilçelerindendir. A2 Reklam olarak Sultanbeyli'deki işletmelere kutu harf, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Sultanbeyli, İstanbul'un Anadolu Yakasi'nda yogun nufusu ve hareketli ticari hayatiyla dinamik bir ilce konumundadir. Fatih Caddesi uzerindeki ticari isletmeler, yeni acilan dukkanlar ve perakende magazalar, bolgedeki restoran, kafe ve hizmet sektoru isletmeleri profesyonel tabela çözümlerine surekli ihtiyac duymaktadir. Kentsel donusum sureciyle birlikte yenilenen caddelerde modern tabela tasarimlari buyuk onem kazanmaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Sultanbeyli'ye duzenli hizmet sunuyoruz. Fatih Caddesi ve cevresindeki isletmelere kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri uretiyoruz. Yeni acilan dukkanlara uygun fiyatli magaza tabelasi, mevcut isletmelere tabela yenileme ve bakim hizmetleri sağlıyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Fatih Caddesi Ticaret', 'Sultanbeyli Merkez', 'Sultanbeyli Çarşı'],
+      keyStreets: ['Fatih Caddesi', 'Sultanbeyli Merkez Caddesi'],
+      serviceHighlight: 'Fatih Caddesi ticareti ve yeni acilan dukkanlara uygun fiyatli tabela çözümleri',
       faq: [
         {
           question: "Sultanbeyli'de tabela yaptirabilir miyim?",
           answer:
-            'Evet, Sultanbeyli ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Sultanbeyli ve cevresine duzenli hizmet veriyoruz. Fatih Caddesi ve tum Sultanbeyli\'ye ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Sultanbeyli'de yeni actigimiz dukkan icin uygun fiyatli tabela var mi?",
+          answer:
+            'Evet, yeni acilan dukkanlar icin butceye uygun kutu harf tabela, ışıklı tabela ve magaza tabelasi secenekleri sunuyoruz. Her butceye uygun çözümler uretiyoruz. Ucretsiz kesif ve fiyat teklifi icin bizi arayin.',
         },
       ],
     },
@@ -1292,15 +1367,20 @@ export const districts: District[] = [
     h1: 'Sultangazi Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Sultangazi, yogun nufusu ve perakende ticaret alanlariyla İstanbul'un hareketli ilçelerindendir. A2 Reklam olarak Sultangazi'deki işletmelere kutu harf, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Sultangazi, İstanbul'un Avrupa Yakasi'nda yogun nufusu ve hareketli perakende ticaretiyle dinamik bir ilce konumundadir. Cebeci bolgesindeki ticari alanlar, Esentepe'deki magazalar ve esnaf, kentsel donusum projeleriyle yenilenen caddelerdeki yeni dukkanlar profesyonel tabela çözümlerine surekli ihtiyac duymaktadir. Bolgenin hizli nufus artisi ve kentsel donusum sureci, isletmelerin gorünurlugunu artirmak icin modern tabela yatirimini zorunlu kilmaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Sultangazi'ye kisa surede ulasim sağlıyoruz. Cebeci ve Esentepe bolgelerindeki isletmelere kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri sunuyoruz. Kentsel donusum alanlarina tasinan yeni isletmelere de uygun fiyatli tabela secenekleri uretiyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Cebeci', 'Esentepe', 'Sultangazi Merkez'],
+      keyStreets: ['Cebeci Caddesi', 'Esentepe Yolu'],
+      serviceHighlight: 'Cebeci, Esentepe ve kentsel donusum bolgelerine hizli tabela hizmeti',
       faq: [
         {
           question: "Sultangazi'de tabela yaptirabilir miyim?",
           answer:
-            'Evet, Sultangazi ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Sultangazi ve cevresine duzenli hizmet veriyoruz. Cebeci, Esentepe ve tum Sultangazi\'ye ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Sultangazi'deki kentsel donusum bolgelerinde tabela hizmeti veriyor musunuz?",
+          answer:
+            'Evet, kentsel donusum projeleriyle yenilenen cadde ve sokaklardaki yeni isletmelere kutu harf tabela, ışıklı tabela ve cephe giydirme hizmetleri sunuyoruz. Yeni binalara uygun modern tabela tasarimlari uretiyoruz.',
         },
       ],
     },
@@ -1315,15 +1395,20 @@ export const districts: District[] = [
     h1: 'Sile Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Sile, Karadeniz kiyisindaki tatil ve turizm işletmeleriyle İstanbul'un dogal guzelliklerle dolu ilçesidir. A2 Reklam olarak Sile'deki işletmelere kutu harf, ışıklı tabela ve magaza tabelasi hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Şile, İstanbul'un Anadolu Yakasi'nda Karadeniz kiyisindaki essiz sahil seridi, butik otelleri ve dogal guzelliklerle dolu bir ilcedir. Şile Merkez'deki esnaf ve ticari isletmeler, sahildeki restoran, kafe ve butik oteller, yaz sezonunda yogunlasan turizm isletmeleri profesyonel tabela çözümlerine ihtiyac duymaktadir. Bolgenin dogal dokusuna uygun, estetik ve cevre dostu tabela tasarimlari buyuk onem tasimaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Şile'ye ozel planlama ile hizmet veriyoruz. Şile Merkez'deki isletmelere kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri sunuyoruz. Sahildeki butik otel ve restoranlara dis mekan dayanikli, Karadeniz iklimine uygun malzemelerle tabela uretiyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Şile Merkez', 'Şile Sahil Seridi', 'Ağva'],
+      keyStreets: ['Şile Merkez Caddesi', 'Sahil Yolu'],
+      serviceHighlight: 'Şile Merkez ve sahildeki turizm isletmelerine ozel tabela çözümleri',
       faq: [
         {
-          question: "Sile'ye tabela montaji yapiyor musunuz?",
+          question: "Şile'ye tabela montaji yapiyor musunuz?",
           answer:
-            'Evet, Sile ve cevresine hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Şile ve cevresine ozel planlama ile hizmet veriyoruz. Ilce merkezi, sahil seridi ve Agva dahil tum bolgeye ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Şile'deki butik otelimiz icin ne tur tabela onerirsiniz?",
+          answer:
+            'Şile\'deki butik oteller icin dogal dokuya uygun kutu harf tabela, ışıklı giris tabelasi ve yonlendirme tabelaları uretiyoruz. Karadeniz iklimine dayanikli malzemeler kullanarak uzun omurlu ve estetik çözümler sunuyoruz.',
         },
       ],
     },
@@ -1338,15 +1423,20 @@ export const districts: District[] = [
     h1: 'Tuzla Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Tuzla, organize sanayi bölgesi ve tersane alanlariyla İstanbul'un önemli sanayi merkezlerinden biridir. A2 Reklam olarak Tuzla'daki sanayi işletmelerine kutu harf, ışıklı tabela, sanayi tabelasi ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Tuzla, İstanbul'un Anadolu Yakasi'nda Tuzla Organize Sanayi Bolgesi, Aydinli sanayi alanlari, tersaneler ve gemi sanayisiyle Turkiye'nin en onemli sanayi merkezlerinden biridir. OSB'deki fabrikalar, Aydinli'daki imalat atolyeleri, tersane bolgesindeki gemi insaat firmalari ve lojistik isletmeleri profesyonel tabela çözümlerine surekli ihtiyac duymaktadir. Bolgenin agir sanayi karakteri, dis mekan kosullarına dayanikli ve buyuk ebatli tabela çözümlerini gerektirmektedir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Tuzla'ya duzenli hizmet sunuyoruz. Tuzla OSB ve Aydinli sanayideki fabrikalara buyuk ebatli kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri uretiyoruz. Tersane bolgesindeki isletmelere de dis mekan dayanikli sanayi tabelasi ve yonlendirme sistemleri sağlıyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Tuzla OSB', 'Aydınlı Sanayi', 'Tersaneler Bölgesi'],
+      keyStreets: ['Tuzla OSB Yolu', 'Aydınlı Sanayi Caddesi', 'Tersaneler Caddesi'],
+      serviceHighlight: 'Tuzla OSB, Aydinli sanayi ve tersane bolgesine ozel sanayi tabela çözümleri',
       faq: [
         {
           question: "Tuzla'da tabela yaptirabilir miyim?",
           answer:
-            'Evet, Tuzla ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Tuzla ve cevresine duzenli hizmet veriyoruz. Tuzla OSB, Aydinli sanayi ve tersaneler bolgesi dahil tum Tuzla\'ya ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Tuzla OSB'deki fabrikamiz icin ne tur tabela yapiyorsunuz?",
+          answer:
+            'Tuzla OSB\'deki fabrika ve sanayi tesisleri icin buyuk ebatli kutu harf tabela, ışıklı cephe tabelasi, totem tabela, sanayi yonlendirme levhalari ve bina giydirme projeleri uretiyoruz. Agir sanayi kosullarina dayanikli ozel malzemeler kullaniyoruz.',
         },
       ],
     },
@@ -1361,15 +1451,20 @@ export const districts: District[] = [
     h1: 'Zeytinburnu Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
     content: {
-      intro: `Zeytinburnu, tekstil ve deri sektorundeki yogun ticari faaliyetleriyle İstanbul'un merkezindeki önemli ilçelerdendir. A2 Reklam olarak Zeytinburnu'ndaki işletmelere kutu harf, ışıklı tabela, totem tabela ve cephe giydirme hizmetleri sunuyoruz.`,
-      commercialAreas: [],
-      keyStreets: [],
-      serviceHighlight: 'Tum tabela turlerinde profesyonel imalat ve montaj',
+      intro: `Zeytinburnu, İstanbul'un Avrupa Yakasi'nda Merter-Topkapi aksindaki yogun ticaret hayati, tekstil ve deri sektorundeki isletmeleriyle onemli bir ilce konumundadir. E-5 cephesindeki buyuk magazalar ve showroomlar, Merter'e yakin tekstil atolyeleri, deri isletmeleri ve toptan ticaret merkezleri profesyonel tabela çözümlerine surekli ihtiyac duymaktadir. Bolgenin merkezi konumu ve yogun trafigi, isletmelerin dikkat cekici tabelalarla gorünurluk saglamasini zorunlu kilmaktadir.\n\nA2 Reklam olarak Kağıthane'deki merkez ofisimizden Zeytinburnu'na kisa surede ulasim sağlıyoruz. Merter-Topkapi aksindaki isletmelere kutu harf tabela, ışıklı tabela, totem tabela ve cephe giydirme çözümleri sunuyoruz. E-5 cephesindeki magazalara buyuk ebatli tabela, tekstil ve deri sektorundeki firmalara kurumsal tabela çözümleri uretiyoruz. Ucretsiz kesif icin 0531 618 16 72 numarasından bize ulasabilirsiniz.`,
+      commercialAreas: ['Merter-Topkapı Aksı', 'E-5 Cephesi', 'Zeytinburnu Tekstil / Deri Bölgesi'],
+      keyStreets: ['E-5 Zeytinburnu Mevkii', 'Merter-Topkapı Yolu'],
+      serviceHighlight: 'Merter-Topkapi aksi ve E-5 cephesindeki isletmelere ozel tabela çözümleri',
       faq: [
         {
           question: "Zeytinburnu'nda tabela yaptirabilir miyim?",
           answer:
-            'Evet, Zeytinburnu ve cevresine duzenli hizmet veriyoruz. Ücretsiz keşif için bizi arayın.',
+            'Evet, Zeytinburnu ve cevresine duzenli hizmet veriyoruz. Merter-Topkapi aksi, E-5 cephesi ve tum Zeytinburnu\'na ücretsiz keşif yapiyoruz.',
+        },
+        {
+          question: "Zeytinburnu'ndaki tekstil magazamiz icin ne tur tabela onerirsiniz?",
+          answer:
+            'Tekstil magazalari icin kurumsal kutu harf tabela, ışıklı cephe tabelasi ve cam giydirme en etkili çözümlerdir. E-5 cephesindeki magazalar icin uzak mesafeden okunabilir buyuk ebatli tabela tasarimlari da uretiyoruz.',
         },
       ],
     },

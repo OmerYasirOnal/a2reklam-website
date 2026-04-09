@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt } from '../../utils/imageSeo';
 import { getServiceLabel } from '../../config/serviceLabels';
+import { sectors } from '../../data/sectors';
 
 const services = await getCollection('services');
 const sortedServices = services.sort((a, b) => a.data.title.localeCompare(b.data.title, 'tr'));
@@ -145,6 +146,26 @@ const faq = [
             </div>
           ))}
         </div>
+      </div>
+    </div>
+
+    <!-- Sektörel Tabelalar -->
+    <div class="mt-16 max-w-5xl mx-auto">
+      <h2 class="font-heading font-bold text-2xl text-white mb-6 uppercase tracking-tight">
+        Sektörel <span class="text-primary">Tabela Çözümleri</span>
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+        {sectors.slice(0, 10).map(s => (
+          <a href={`/sektorel/${s.slug}/`} class="group p-3 glass-card hover:border-primary/50 transition-all text-center">
+            <span class="text-xl block mb-1">{s.icon}</span>
+            <span class="block text-xs font-bold text-gray-300 group-hover:text-primary transition-colors">{s.name}</span>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-4">
+        <a href="/sektorel/" class="text-primary text-sm font-bold hover:text-white transition-colors">
+          Tüm Sektörleri Gör →
+        </a>
       </div>
     </div>
   </div>

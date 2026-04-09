@@ -450,6 +450,28 @@ const serviceSchema = Astro.site
             ))}
           </div>
         </div>
+
+        <!-- Sektörel Tabelalar Widget -->
+        <div class="glass-card p-5">
+          <h3 class="font-heading font-bold text-base text-heading mb-3">Sektörel Çözümler</h3>
+          <div class="space-y-2">
+            {[
+              { icon: '💈', label: 'Berber Tabelası', href: '/sektorel/berber-tabelasi/' },
+              { icon: '💊', label: 'Eczane Tabelası', href: '/sektorel/eczane-tabelasi/' },
+              { icon: '☕', label: 'Cafe Tabelası', href: '/sektorel/cafe-restoran-tabelasi/' },
+              { icon: '🏢', label: 'Plaza Tabelası', href: '/sektorel/plaza-tabelasi/' },
+              { icon: '🏭', label: 'Fabrika Tabelası', href: '/sektorel/fabrika-tabelasi/' },
+            ].map(s => (
+              <a href={s.href} class="flex items-center justify-between text-sm text-gray-300 hover:text-primary transition-colors py-1">
+                <span>{s.icon} {s.label}</span>
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+              </a>
+            ))}
+            <a href="/sektorel/" class="block text-primary text-sm font-bold hover:text-white transition-colors mt-2">
+              Tüm Sektörler →
+            </a>
+          </div>
+        </div>
       </div>
     </aside>
   </div>
