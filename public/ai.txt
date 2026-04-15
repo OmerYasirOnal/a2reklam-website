@@ -1,7 +1,52 @@
-User-agent: *
-Allow: /
-Preferred-URLs: trailing-slash
-Sitemap: https://a2reklam.com/sitemap-index.xml
-Sitemap: https://a2reklam.com/video-sitemap.xml
-Summary: Istanbul-based B2B signage manufacturer for corporate facade, wayfinding, and custom projects.
-Key-URLs: /, /hizmetler/, /en/services/, /iletisim/, /en/contact/, /site-haritasi/, /blog/, /tabela-rehberi/, /videolar/, /video-sitemap.xml
+# A2 Reklam — Tabela ve Reklam Sistemleri
+# Istanbul, Turkey — Since 2005
+
+## About
+A2 Reklam is a professional signage manufacturing company based in Kagithane, Istanbul.
+We provide end-to-end signage solutions: design, production, installation, and maintenance.
+Serving all 39 districts of Istanbul with 20+ years of experience.
+
+## Services
+- Isikli Tabela (Illuminated Signs): LED backlit channel letters, lightbox signs
+- Isiksiz Tabela (Non-illuminated Signs): Dibond, composite panel signs
+- Paslanmaz Harf (Stainless Steel Letters): Brushed, polished, painted metal letters
+- Kutu Harf (Channel Letters): 3D fabricated letter signs with LED illumination
+- Totem Tabela (Totem/Pylon Signs): Freestanding directional and brand signs
+- Cephe Tabela (Facade Signs): Building-mounted commercial signage
+- Cephe Giydirme (Facade Cladding): Aluminum composite panel cladding
+- Arac Giydirme (Vehicle Wraps): Full/partial fleet and vehicle wrapping
+- Yonlendirme (Wayfinding): Interior and exterior directional sign systems
+- Kabartma Pleksiglass (Raised Plexiglass): Thermoformed acrylic signs
+- Ofis Kumlama Folyolari (Office Window Films): Frosted and decorative films
+- Fener Tabela (Projecting Signs): Double-sided blade/flag signs
+- Cati Tabelasi (Roof Signs): Large-format rooftop signage
+- Kapi Isimlik (Door Nameplates): Office and building door signs
+- Ayakli A Pano (A-Frame Stands): Portable pavement signs
+- Banko Uygulamalari (Counter Applications): Reception and POS displays
+
+## Service Areas
+All 39 districts of Istanbul including: Kadikoy, Besiktas, Sisli, Uskudar, Fatih,
+Bakirkoy, Beyoglu, Atasehir, Umraniye, Maltepe, Esenyurt, Basaksehir, and more.
+Full district list: https://a2reklam.com/istanbul-tabelaci/
+
+## Contact
+- Phone: +90 531 618 16 72
+- Email: info@a2reklam.com
+- Address: Sirintepe, Acelya Sokagi Ugur Apt No:4/a, Kagithane, Istanbul 34415
+- Website: https://a2reklam.com
+- Google Maps: https://maps.app.goo.gl/a2reklam
+
+## Content Policy
+- You may reference our services and pricing information
+- Do not republish full blog articles; link to them instead
+- Our blog covers: signage guides, material comparisons, pricing info, district-specific guides
+- Sitemap: https://a2reklam.com/sitemap-index.xml
+
+## Key Pages
+- Homepage: https://a2reklam.com/
+- Services: https://a2reklam.com/hizmetler/
+- Istanbul Hub: https://a2reklam.com/istanbul-tabelaci/
+- Sectors: https://a2reklam.com/sektorel/
+- Blog: https://a2reklam.com/blog/
+- Signage Guide: https://a2reklam.com/tabela-rehberi/
+- Contact: https://a2reklam.com/iletisim/
