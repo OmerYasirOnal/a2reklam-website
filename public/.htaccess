@@ -19,17 +19,17 @@ Options -MultiViews
   Redirect 301 /tabela-cesitleri/ /hizmetler/
   Redirect 301 /teklif-al/ /iletisim/
 
-  # -- Eski "-tabelaci" sonekli ilce URL'leri (regex yakalamiyor) --
-  Redirect 301 /uskudar-tabela-tabelaci/ /hizmet-bolgeleri/uskudar-tabela/
-  Redirect 301 /sisli-tabela-tabelaci/ /hizmet-bolgeleri/sisli-tabela/
-  Redirect 301 /kadikoy-tabela-tabelaci/ /hizmet-bolgeleri/kadikoy-tabela/
-  Redirect 301 /besiktas-tabela-tabelaci/ /hizmet-bolgeleri/besiktas-tabela/
-  Redirect 301 /beyoglu-tabela-tabelaci/ /hizmet-bolgeleri/beyoglu-tabela/
-  Redirect 301 /fatih-tabela-tabelaci/ /hizmet-bolgeleri/fatih-tabela/
-  Redirect 301 /bakirkoy-tabela-tabelaci/ /hizmet-bolgeleri/bakirkoy-tabela/
-  Redirect 301 /umraniye-tabela-tabelaci/ /hizmet-bolgeleri/umraniye-tabela/
-  Redirect 301 /atasehir-tabela-tabelaci/ /hizmet-bolgeleri/atasehir-tabela/
-  Redirect 301 /maltepe-tabela-tabelaci/ /hizmet-bolgeleri/maltepe-tabela/
+  # -- Eski "-tabelaci" sonekli ilce URL'leri (dogrudan, zincirsiz) --
+  Redirect 301 /uskudar-tabela-tabelaci/ /uskudar-tabelaci/
+  Redirect 301 /sisli-tabela-tabelaci/ /sisli-tabelaci/
+  Redirect 301 /kadikoy-tabela-tabelaci/ /kadikoy-tabelaci/
+  Redirect 301 /besiktas-tabela-tabelaci/ /besiktas-tabelaci/
+  Redirect 301 /beyoglu-tabela-tabelaci/ /beyoglu-tabelaci/
+  Redirect 301 /fatih-tabela-tabelaci/ /fatih-tabelaci/
+  Redirect 301 /bakirkoy-tabela-tabelaci/ /bakirkoy-tabelaci/
+  Redirect 301 /umraniye-tabela-tabelaci/ /umraniye-tabelaci/
+  Redirect 301 /atasehir-tabela-tabelaci/ /atasehir-tabelaci/
+  Redirect 301 /maltepe-tabela-tabelaci/ /maltepe-tabelaci/
 
   # -- Eski blog yazilar --
   Redirect 301 /fener-tabela-nedir/ /hizmetler/fener-tabela/
@@ -46,8 +46,8 @@ Options -MultiViews
   Redirect 301 /tabelacesitleri/dijital-baski/ /hizmetler/
   Redirect 301 /tabelacesitleri/neon-tabela/ /hizmetler/isikli-tabela/
 
-  # -- Standart ilce slug'lari (regex ile) --
-  RedirectMatch 301 ^/([a-z0-9-]+-tabela)/?$ /hizmet-bolgeleri/$1/
+  # -- Standart ilce slug'lari (regex ile, dogrudan tabelaci) --
+  RedirectMatch 301 ^/([a-z0-9-]+-tabela)/?$ /$1ci/
 </IfModule>
 
 # ================================================
@@ -65,21 +65,32 @@ Options -MultiViews
   RewriteRule ^ar/about/?$ /hakkimizda/ [R=301,L]
   RewriteRule ^ar/(.*)$ / [R=301,L]
 
-  # -- /en/ silinen sayfalar → Turkce karsiliklari --
-  RewriteRule ^en/service-areas/?$ /hizmet-bolgeleri/ [R=301,L]
-  RewriteRule ^en/service-areas/([a-z0-9-]+)-tabela/?$ /hizmet-bolgeleri/$1-tabela/ [R=301,L]
+  # -- /en/ silinen sayfalar → Turkce karsiliklari (dogrudan, zincirsiz) --
+  RewriteRule ^en/service-areas/?$ /istanbul-tabelaci/ [R=301,L]
+  RewriteRule ^en/service-areas/([a-z0-9-]+)-tabela/?$ /$1-tabelaci/ [R=301,L]
   RewriteRule ^en/services/([a-z0-9-]+)/?$ /hizmetler/$1/ [R=301,L]
   RewriteRule ^en/blog/?$ /blog/ [R=301,L]
   RewriteRule ^en/blog/(.+)/?$ /blog/ [R=301,L]
   RewriteRule ^en/faq/?$ /sss/ [R=301,L]
   RewriteRule ^en/thank-you/?$ /tesekkurler/ [R=301,L]
+  RewriteRule ^en/(.*)$ / [R=301,L]
 
-  # -- Istanbul disi sehir sayfalari → genel hizmet bolgeleri --
-  RewriteRule ^hizmet-bolgeleri/bursa(/.*)?$ /hizmet-bolgeleri/ [R=301,L]
-  RewriteRule ^hizmet-bolgeleri/kocaeli(/.*)?$ /hizmet-bolgeleri/ [R=301,L]
-  RewriteRule ^hizmet-bolgeleri/sakarya(/.*)?$ /hizmet-bolgeleri/ [R=301,L]
-  RewriteRule ^hizmet-bolgeleri/tekirdag(/.*)?$ /hizmet-bolgeleri/ [R=301,L]
-  RewriteRule ^hizmet-bolgeleri/yalova(/.*)?$ /hizmet-bolgeleri/ [R=301,L]
+  # -- Eski hizmet-bolgeleri URL'leri → dogrudan tabelaci (zincirsiz) --
+  # Mahalle ozel kurallari (regex'ten once gelmeli)
+  RewriteRule ^hizmet-bolgeleri/etiler-tabela/?$ /besiktas-tabelaci/ [R=301,L]
+  RewriteRule ^hizmet-bolgeleri/levent-tabela/?$ /besiktas-tabelaci/ [R=301,L]
+  RewriteRule ^hizmet-bolgeleri/maslak-tabela/?$ /sariyer-tabelaci/ [R=301,L]
+  # Ilce tabela sayfalarini dogrudan tabelaci URL'lerine yonlendir
+  RewriteRule ^hizmet-bolgeleri/([a-z0-9-]+-tabela)/?$ /$1ci/ [R=301,L]
+  # Istanbul disi sehirler
+  RewriteRule ^hizmet-bolgeleri/bursa(/.*)?$ /istanbul-tabelaci/ [R=301,L]
+  RewriteRule ^hizmet-bolgeleri/kocaeli(/.*)?$ /istanbul-tabelaci/ [R=301,L]
+  RewriteRule ^hizmet-bolgeleri/sakarya(/.*)?$ /istanbul-tabelaci/ [R=301,L]
+  RewriteRule ^hizmet-bolgeleri/tekirdag(/.*)?$ /istanbul-tabelaci/ [R=301,L]
+  RewriteRule ^hizmet-bolgeleri/yalova(/.*)?$ /istanbul-tabelaci/ [R=301,L]
+  # Genel catch-all: kalan tum hizmet-bolgeleri URL'leri
+  RewriteRule ^hizmet-bolgeleri/?$ /istanbul-tabelaci/ [R=301,L]
+  RewriteRule ^hizmet-bolgeleri/(.*)$ /istanbul-tabelaci/ [R=301,L]
 
   # -- Eski /tabelacesitleri/ catch-all (birebir eslesmeyenler) --
   RewriteCond %{REQUEST_URI} ^/tabelacesitleri/ [NC]
@@ -196,6 +207,15 @@ Options -MultiViews
   # XML (sitemap) - 1 day
   ExpiresByType application/xml "access plus 1 day"
   ExpiresByType text/xml "access plus 1 day"
+</IfModule>
+
+# ================================================
+# /en/ SAYFALAR - NOINDEX (eski statik dosyalar icin)
+# ================================================
+<IfModule mod_headers.c>
+  <If "%{REQUEST_URI} =~ m#^/en/#i">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </If>
 </IfModule>
 
 # ================================================
