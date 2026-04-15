@@ -1,93 +1,92 @@
 ```markdown
-# API Documentation for A2 Reklam Platform
+# API Documentation for A2 Reklam
 
-## Endpoint: Contact Form Submission
-- **Path:** `/api/contact.php`
-- **Method:** `POST`
+## Contact Form Submission
+
+### Endpoint
+`POST /api/contact.php`
 
 ### Description
-This endpoint handles the submission of the contact form. It processes the user's input, performs validation and anti-spam checks, and then sends an email with the contact information to `info@a2reklam.com`.
+This endpoint allows users to submit contact form data, which is then processed to send an email to `info@a2reklam.com`.
 
 ### Request
-The request must be sent as a `POST` request with the following parameters:
-- **name** (string): The name of the person submitting the form.
-- **email** (string): The email address of the person submitting the form.
-- **message** (string): The message content from the user.
-- **honeypot** (string): A hidden field to prevent spam submissions.
+The request should be sent as a JSON object with the following parameters:
+
+- **name** (string, required): The name of the person submitting the form.
+- **email** (string, required): The email address of the person submitting the form.
+- **message** (string, required): The content of the message submitted through the form.
 
 **Example Request:**
-```javascript
-fetch('/api/contact.php', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-        name: 'John Doe',
-        email: 'john.doe@example.com',
-        message: 'Hello, I would like to inquire about your services.',
-        honeypot: ''
-    }),
-});
-```
-
-### Response
-The response will be a JSON object indicating the success or failure of the operation.
-
-**Success Response:**
 ```json
 {
-    "status": "success",
-    "message": "Form submission successful. Thank you!"
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "message": "I would like to inquire about your services."
 }
 ```
 
-**Error Response:**
+### Response
+The response will be in JSON format and may contain the following fields:
+
+- **status** (string): Indicates the success or failure of the request. Possible values: "success", "error".
+- **message** (string): A message providing additional context, e.g., "Email sent successfully!" or "Failed to send email."
+
+**Example Response on Success:**
 ```json
 {
-    "status": "error",
-    "message": "There was an error with your submission. Please try again."
+  "status": "success",
+  "message": "Email sent successfully!"
+}
+```
+
+**Example Response on Error:**
+```json
+{
+  "status": "error",
+  "message": "Invalid input data."
 }
 ```
 
 ### Authentication
 No authentication is required to access this endpoint.
 
-### Examples
-**cURL Example:**
+### Example Usage
+You can use the following `curl` command to test the API:
+
 ```bash
 curl -X POST https://a2reklam.com/api/contact.php \
 -H "Content-Type: application/json" \
--d '{
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "message": "Hello, I would like to inquire about your services.",
-    "honeypot": ""
-}'
+-d '{"name":"John Doe","email":"john.doe@example.com","message":"I would like to inquire about your services."}'
 ```
 
 ## Security Features
-- Same-origin CORS policy that only allows requests from `a2reklam.com` and localhost.
-- Honeypot field for spam prevention.
-- Rate limiting (5 requests per IP per hour).
-- Input validation and sanitization to prevent XSS and other attacks.
-- Referer header validation to ensure requests originate from valid sources.
+- **CORS Policy**: Same-origin policy is enforced, only allowing requests from `a2reklam.com` and localhost.
+- **Honeypot Field**: A field is included in the form to catch automated bots.
+- **Rate Limiting**: Limits the number of requests per IP to 5 requests per hour.
+- **Input Validation**: All input data is validated and sanitized before processing.
+- **Referer Header Validation**: Ensures that requests originate from allowed domains.
 
-## Testing Locally
-To test the contact form locally with PHP:
+## Local Testing Instructions
+To test the contact form locally, you can use PHP's built-in server:
+
 ```bash
-# Option 1: Use PHP's built-in server
 php -S localhost:8000 -t public
+```
+Or, if you are using Astro's development server (note that the contact form functionality will not work without a PHP server):
 
-# Option 2: Use Astro dev server (forms will fail locally without PHP)
+```bash
 pnpm run dev
 ```
 
-On production (cPanel), PHP is available by default and `/api/contact.php` will work automatically.
+## PHP Configuration
+The endpoint uses PHP's `mail()` function. For environments that require SMTP configuration, consider using PHPMailer for enhanced capabilities. Ensure you do not commit any sensitive SMTP credentials into the repository.
 
-## Notes
-- Ensure that the `mail()` function is configured correctly on your hosting server. For SMTP configuration, consider using PHPMailer.
-- Never commit SMTP credentials to the repository for security reasons.
+### Additional Notes
+- Ensure that you have the necessary permissions to send emails from the server.
+- The endpoint should be accessible at `https://a2reklam.com/api/contact.php` in the production environment.
 
-**For further assistance, please contact us at `info@a2reklam.com`.**
+---
+
+## Conclusion
+This API documentation provides an overview of the contact form submission functionality for the A2 Reklam website. Make sure to follow the required format for requests and responses to ensure proper functionality.
 ```
