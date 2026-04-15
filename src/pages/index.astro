@@ -9,6 +9,7 @@ import VideoProjectsSection from '../components/landing/VideoProjectsSection.ast
 import ClientLogos from '../components/common/ClientLogos.astro';
 import TabelaRehberiPreview from '../components/landing/TabelaRehberiPreview.astro';
 import FAQ from '../components/seo/FAQ.astro';
+import ScrollReveal from '../components/common/ScrollReveal.astro';
 import { districts } from '../data/districts';
 import { sectors } from '../data/sectors';
 
@@ -21,17 +22,18 @@ const topSectors = sectors.slice(0, 10);
   description="İstanbul'da profesyonel tabela imalatı: ışıklı tabela, kutu harf, cephe tabelası, totem tabela ve araç giydirme. 2005'ten beri 2.500+ proje. Ücretsiz keşif ve teklif alın."
 >
 	<Hero lang="tr" />
-  <ServicesGrid lang="tr" />
-  <KPISection lang="tr" />
-  <ReviewsSection lang="tr" />
-  <TabelaRehberiPreview lang="tr" />
-  <GallerySlider lang="tr" />
-  <VideoProjectsSection lang="tr" />
+  <ScrollReveal><ServicesGrid lang="tr" /></ScrollReveal>
+  <ScrollReveal delay={100}><KPISection lang="tr" /></ScrollReveal>
+  <ScrollReveal delay={150}><ReviewsSection lang="tr" /></ScrollReveal>
+  <ScrollReveal><TabelaRehberiPreview lang="tr" /></ScrollReveal>
+  <ScrollReveal><GallerySlider lang="tr" /></ScrollReveal>
+  <ScrollReveal><VideoProjectsSection lang="tr" /></ScrollReveal>
 
   <!-- Trust/Stats Section -->
+  <ScrollReveal>
   <section class="py-20 bg-secondary border-t border-white/5 relative">
     <div class="container mx-auto px-4 text-center relative z-10">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 reveal-stagger">
         <div class="p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
           <span class="block text-xl sm:text-2xl md:text-4xl font-heading font-bold text-primary mb-1 md:mb-2 group-hover:scale-105 transition-transform duration-300">Kurumsal</span>
           <span class="text-gray-400 text-[11px] sm:text-xs md:text-sm font-medium uppercase tracking-wider group-hover:text-white transition-colors">B2B Odaklı Üretim</span>
@@ -51,8 +53,10 @@ const topSectors = sectors.slice(0, 10);
       </div>
     </div>
   </section>
+  </ScrollReveal>
 
   <!-- Hizmet Bölgeleri Section -->
+  <ScrollReveal>
   <section class="py-16 bg-secondary border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-heading text-3xl font-bold text-white text-center mb-4 uppercase tracking-tight">
@@ -76,8 +80,10 @@ const topSectors = sectors.slice(0, 10);
       </div>
     </div>
   </section>
+  </ScrollReveal>
 
   <!-- Sektörel Tabela Çözümleri -->
+  <ScrollReveal>
   <section class="py-16 bg-secondary border-t border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-heading text-3xl font-bold text-white text-center mb-4 uppercase tracking-tight">
@@ -101,6 +107,7 @@ const topSectors = sectors.slice(0, 10);
       </div>
     </div>
   </section>
+  </ScrollReveal>
 
   <!-- Client Logos Section -->
   <ClientLogos lang="tr" />

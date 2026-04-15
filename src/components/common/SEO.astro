@@ -158,6 +158,8 @@ const articleSchema =
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 {articleMeta?.publishedTime && <meta property="article:published_time" content={articleMeta.publishedTime} />}
 {articleMeta?.modifiedTime && <meta property="article:modified_time" content={articleMeta.modifiedTime} />}
 {articleMeta?.authorName && <meta property="article:author" content={articleMeta.authorName} />}

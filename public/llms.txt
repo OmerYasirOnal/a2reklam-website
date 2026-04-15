@@ -1,24 +1,37 @@
-# A2 Reklam - Tabela ve Reklam Sistemleri
-Site: https://a2reklam.com
-Summary: Istanbul-based B2B signage manufacturer offering discovery, design, production, and installation.
+# A2 Reklam
+> Professional signage manufacturing in Istanbul since 2005. Design, production, installation.
 
-Primary services:
-- /hizmetler/
-- /en/services/
-- /ar/services/
+## Company Info
+- Location: Kagithane, Istanbul, Turkey
+- Phone: +90 531 618 16 72
+- Email: info@a2reklam.com
+- Website: https://a2reklam.com
 
-Service areas (Istanbul):
-- /hizmet-bolgeleri/
-- /en/service-areas/
+## What We Do
+A2 Reklam manufactures and installs commercial signage across Istanbul.
+Our core capabilities: illuminated signs, channel letters, totem signs, facade cladding,
+vehicle wraps, wayfinding systems, stainless steel letters, and custom fabrication.
 
-Lead & contact:
-- /iletisim/
-- /en/contact/
+## Pages
+- [Homepage](https://a2reklam.com/)
+- [All Services](https://a2reklam.com/hizmetler/)
+- [Illuminated Signs](https://a2reklam.com/hizmetler/isikli-tabela/)
+- [Channel Letters](https://a2reklam.com/hizmetler/paslanmaz-harfler/)
+- [Totem Signs](https://a2reklam.com/hizmetler/totem/)
+- [Facade Signs](https://a2reklam.com/hizmetler/cephe-tabela/)
+- [Vehicle Wraps](https://a2reklam.com/hizmetler/arac-giydirme/)
+- [Istanbul Districts](https://a2reklam.com/istanbul-tabelaci/)
+- [Industry Solutions](https://a2reklam.com/sektorel/)
+- [Blog](https://a2reklam.com/blog/)
+- [Signage Guide](https://a2reklam.com/tabela-rehberi/)
+- [Contact](https://a2reklam.com/iletisim/)
+- [Gallery](https://a2reklam.com/galeri/)
 
-About:
-- /hakkimizda/
-- /en/about/
+## Sectors Served
+Restaurants, pharmacies, hotels, factories, shopping malls, hospitals,
+schools, gas stations, gyms, law offices, barbers, car washes, and more.
 
-Blog:
-- /blog/
-- /en/blog/
+## Optional
+- [ai.txt](https://a2reklam.com/ai.txt) — detailed AI crawl guidance
+- [Sitemap](https://a2reklam.com/sitemap-index.xml)
+- [robots.txt](https://a2reklam.com/robots.txt)
