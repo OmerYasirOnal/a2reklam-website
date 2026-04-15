@@ -2,64 +2,69 @@
 # Contributing to A2 Reklam
 
 ## Welcome
-Welcome to the A2 Reklam project! We appreciate your interest in contributing to our codebase. Whether you're fixing bugs, adding features, or improving documentation, your contributions are vital to our success. Please follow the guidelines below to ensure a smooth and effective collaboration.
+Welcome to the A2 Reklam project! We're excited to have you join our community of contributors. Whether you're reporting bugs, suggesting features, or submitting code, your contributions are vital to our project's success.
 
 ## How to Contribute
-To contribute to the A2 Reklam project, please follow these steps:
+To contribute to the A2 Reklam project, please follow the steps below:
 
-1. **Fork the Repository**: Create your own copy of the repository on GitHub.
-2. **Clone Your Fork**: Clone your forked repository to your local machine.
+1. **Fork the repository**: Click the "Fork" button at the top right of the repository page.
+2. **Clone your fork**: Use the following command to clone your fork:
    ```bash
-   git clone https://github.com/your-username/a2reklam-website.git
+   git clone https://github.com/YOUR_USERNAME/a2reklam-website.git
    ```
-3. **Create a Branch**: Create a new branch for your changes.
+3. **Create a new branch**: Use descriptive names for your branch. For example:
    ```bash
-   git checkout -b feature/your-feature-name
+   git checkout -b feature/my-new-feature
    ```
-4. **Make Your Changes**: Implement your changes, ensuring to follow the coding standards.
-5. **Commit Your Changes**: Commit your changes with a clear message.
+4. **Make your changes**: Implement your feature or fix a bug.
+5. **Commit your changes**: Include a clear commit message. For example:
    ```bash
-   git commit -m "Add your descriptive commit message here"
+   git commit -m "Add my new feature"
    ```
-6. **Push to Your Fork**: Push your changes to your fork on GitHub.
+6. **Push to your fork**: Push your changes to your fork on GitHub:
    ```bash
-   git push origin feature/your-feature-name
+   git push origin feature/my-new-feature
    ```
-7. **Submit a Pull Request**: Go to the original repository and submit a pull request describing your changes.
+7. **Submit a pull request**: Go to the original repository and click "New pull request".
 
 ## Development Setup
-To set up the development environment for the A2 Reklam project, follow these instructions:
+To set up your development environment, please follow these steps:
 
-1. **Requirements**:
-   - Node.js 20.x
-   - pnpm 10.x (Install with: `npm install -g pnpm`)
-
-2. **Install Dependencies**:
+1. **Install Node.js and pnpm**: Ensure you have Node.js 20.x and pnpm 10.x installed. If you don’t have pnpm, you can install it globally using:
+   ```bash
+   npm install -g pnpm
+   ```
+2. **Install dependencies**: Run the following command in the project directory:
    ```bash
    pnpm install --frozen-lockfile
    ```
-
-3. **Develop Locally**:
+3. **Run the development server**: Start the local development server:
    ```bash
    pnpm run dev
    ```
-
-4. **Run Repo Safety Check**:
+4. **Safety check**: Perform a repository safety check to ensure private assets are not being tracked:
    ```bash
    pnpm run repo:safety
    ```
 
 ## Pull Request Process
-When submitting your pull request, please ensure:
+When you're ready to submit your pull request, please ensure:
 
-- Your code adheres to our coding standards and guidelines.
-- You have included tests for any new features or bug fixes.
-- You have updated any relevant documentation.
-- Your pull request description clearly explains your changes and why they are necessary.
+- Your code follows the project's coding standards.
+- Your changes are well-documented and include tests if applicable.
+- You have tested your changes locally.
 
-After submitting your pull request, the maintainers will review it and may request changes or provide feedback.
+After submitting your pull request, it will be reviewed by the maintainers. You may be asked to make further changes before it can be merged.
 
----
+## Code of Conduct
+We expect everyone to adhere to our [Code of Conduct](TODO: Add link to Code of Conduct).
 
-Thank you for contributing to A2 Reklam! We look forward to working with you.
+## Coding Standards
+Please ensure your code meets the following standards:
+
+- Follow the project's existing style.
+- Ensure all code is properly commented.
+- Use meaningful variable and function names.
+
+Thank you for contributing to A2 Reklam! We appreciate your help in making this project better.
 ```

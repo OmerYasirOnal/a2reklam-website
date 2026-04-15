@@ -1,90 +1,83 @@
 ```markdown
+# Architecture Documentation for A2 Reklam
+
 ## Overview
+The A2 Reklam platform is designed as a modern multilingual static-first website built with Astro 5. It serves as a comprehensive solution for advertising services, including signage and vehicle wrapping, with a focus on user engagement and functionality. The architecture supports multiple languages (TR/EN/AR) and is designed to be easily deployable and maintainable.
 
-The A2 Reklam platform is a modern multilingual static-first website designed for advertising and signage solutions, built with Astro 5. The architecture supports dynamic content rendering, ensuring that services are presented clearly and attractively to users across Turkish, English, and Arabic locales.
-
-The system is structured to provide a seamless experience for both users and administrators, with a focus on performance and security. The architecture incorporates a static site generator approach, ensuring fast load times and optimal SEO performance.
+### Component Diagram
+TODO: Add component diagram
 
 ## Components
-
 ### Major Components/Services
+1. **Frontend (Astro)**
+   - **Responsibilities**: Renders static pages; handles routing for different locales.
+   - **Key Files**: 
+     - `src/pages/index.astro`: Main entry point for the application.
+     - `src/components/`: Contains reusable UI components.
 
-1. **Frontend (Astro)**:
-   - Handles the rendering of the website, including pages, components, and layouts.
-   - Supports multilingual content with routing for TR, EN, and AR locales.
+2. **Backend (PHP)**
+   - **Responsibilities**: Processes form submissions and handles email notifications.
+   - **Key Files**:
+     - `public/api/contact.php`: PHP script for handling contact form submissions.
 
-2. **Contact Form API (PHP)**:
-   - Located at `public/api/contact.php`, this component manages form submissions, validation, and email sending to `info@a2reklam.com`.
+3. **Deployment Environment**
+   - **Responsibilities**: Hosts the static site and PHP backend.
+   - **Key Files**: 
+     - `.htaccess`: Manages URL rewriting and redirects.
+     - `public/`: Contains all publicly accessible assets.
 
-3. **Content Management**:
-   - Content is organized into collections for services, districts, and blogs, allowing easy management and updates.
-   - Markdown files are used for blog entries and service descriptions, enhancing flexibility in content presentation.
+4. **Image Processing**
+   - **Responsibilities**: Prepares and optimizes images for the website.
+   - **Key Commands**: 
+     ```bash
+     pnpm run process-images
+     ```
 
-4. **Image Processing**:
-   - Uses a script for processing images, ensuring that assets are optimized for the web.
-
-5. **Analytics and Tracking**:
-   - Integrates Google Tag Manager for tracking user interactions and conversions across the site.
+5. **Content Management**
+   - **Responsibilities**: Manages service and district content dynamically.
+   - **Key Files**:
+     - `src/content/`: Contains markdown files for services and blogs.
 
 ## Data Flow
+1. **User Interaction**
+   - Users access the website and navigate through various services (e.g., vehicle wrapping, signage).
+   - Contact forms are filled out on `/iletisim/` or language-specific contact pages.
 
-1. **User Interaction**:
-   - Users interact with the website through the frontend, navigating through service offerings and blog posts.
+2. **Form Submission**
+   - Form data is sent via JavaScript's `fetch()` method to the PHP endpoint (`/api/contact.php`).
+   - The PHP script validates input, performs anti-spam checks, and sends email notifications.
 
-2. **Form Submission**:
-   - When a user submits the contact form located on pages like `/iletisim/`, the frontend sends a request to the PHP endpoint at `/api/contact.php` using the `fetch()` API.
+3. **Image Handling**
+   - Images are processed via a script that generates optimized assets for the site.
+   - The site loads `images-manifest.json` for image references.
 
-3. **API Processing**:
-   - The PHP script processes the incoming data, performs validations, and sends an email on successful submission.
-
-4. **Content Delivery**:
-   - Static resources are served from the `dist/` folder after building the site using the command:
+4. **Static Site Generation**
+   - The static site is built using the command:
      ```bash
      pnpm run build
      ```
-
-5. **Analytics Tracking**:
-   - Events are pushed to Google Tag Manager for tracking user engagement, including form submissions and CTA clicks, leveraging the `dataLayer`.
+   - The output is deployed to the `dist/` folder for hosting.
 
 ## Technology Stack
-
-- **Frontend**: Astro 5, React
+- **Languages**: JavaScript, PHP, TypeScript
+- **Frameworks**: Astro 5, React
 - **Styling**: Tailwind CSS
-- **Image Processing**: Sharp
-- **Backend**: PHP (for contact form)
-- **Package Manager**: pnpm 10.x
-- **Node.js**: 20.x
+- **Package Manager**: pnpm
+- **Deployment**: cPanel for PHP, static hosting for HTML/CSS/JS
 
-## Setup Instructions
+## Additional Notes
+- Ensure to run the safety check to prevent private assets from being tracked:
+  ```bash
+  pnpm run repo:safety
+  ```
 
-To set up the project locally, follow these commands:
+- Follow the deployment instructions carefully to ensure all files are correctly placed in the hosting environment, especially the PHP scripts and `.htaccess` configuration.
 
-1. Install dependencies:
-   ```bash
-   pnpm install --frozen-lockfile
-   ```
+- For continuous integration, ensure that the build process is validated regularly to maintain the integrity of the application.
 
-2. Start the development server:
-   ```bash
-   pnpm run dev
-   ```
+## Security Considerations
+- The application implements a Same-origin CORS policy, input validation, and sanitization in the PHP script to ensure security against common web vulnerabilities.
 
-3. Build the project for production:
-   ```bash
-   pnpm run build
-   ```
+- All private assets must never be committed to the repository to avoid security breaches.
 
-4. Process images for deployment:
-   ```bash
-   pnpm run process-images
-   ```
-
-5. Run repo safety check:
-   ```bash
-   pnpm run repo:safety
-   ```
-
-## Conclusion
-
-The A2 Reklam architecture is designed to provide a robust and efficient platform for delivering high-quality signage and advertising solutions. By utilizing modern web technologies and a scalable architecture, the platform ensures a consistent and engaging user experience across multiple languages.
 ```
