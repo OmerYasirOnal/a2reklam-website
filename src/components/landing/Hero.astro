@@ -112,6 +112,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.webp';
         playsinline
         preload="metadata"
         poster={posterSrc}
+        fetchpriority="high"
         class="hero-video"
         aria-label={lang === 'en' ? 'Signage production showcase' : 'Tabela üretim tanıtımı'}
       >
@@ -129,7 +130,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.webp';
       muted
       loop
       playsinline
-      preload="metadata"
+      preload="none"
       poster={posterSrc}
       class="w-full h-full object-cover"
       aria-hidden="true"
@@ -274,6 +275,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.webp';
     opacity: 0;
     transform: translateX(-30px);
     animation: heroSlideInLeft 0.7s ease-out forwards;
+    will-change: transform, opacity;
   }
 
   .hero-anim-badge { animation-delay: 0.1s; }
@@ -285,6 +287,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.webp';
     opacity: 0;
     transform: translateX(30px);
     animation: heroSlideInRight 0.7s ease-out 0.2s forwards;
+    will-change: transform, opacity;
   }
 
   @keyframes heroSlideInLeft {
