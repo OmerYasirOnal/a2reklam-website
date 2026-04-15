@@ -15,6 +15,7 @@ Allow: /
 
 Disallow: /ar/
 Disallow: /en/
+Disallow: /hizmet-bolgeleri/
 Disallow: /thank-you/
 Disallow: /tesekkurler/
 Disallow: /api/
