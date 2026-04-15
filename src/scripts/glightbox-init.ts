@@ -1,10 +1,21 @@
-import GLightbox from 'glightbox';
-import 'glightbox/dist/css/glightbox.css';
-
+// Lazy-loaded GLightbox — only imports the library when gallery is visible
 // Track instances to prevent duplicates and allow cleanup
-const instances: Map<string, ReturnType<typeof GLightbox>> = new Map();
+const instances: Map<string, any> = new Map();
 
-function initLightbox(selector: string, galleryId: string) {
+let glightboxModule: typeof import('glightbox') | null = null;
+
+async function loadGLightbox() {
+  if (!glightboxModule) {
+    const [mod] = await Promise.all([
+      import('glightbox'),
+      import('glightbox/dist/css/glightbox.css'),
+    ]);
+    glightboxModule = mod;
+  }
+  return glightboxModule.default;
+}
+
+async function initLightbox(selector: string, galleryId: string) {
   // Destroy old instance if any (HMR/dev)
   if (instances.has(galleryId)) {
     instances.get(galleryId)?.destroy();
@@ -15,7 +26,9 @@ function initLightbox(selector: string, galleryId: string) {
   const elements = document.querySelectorAll(selector);
   if (elements.length === 0) return;
 
-  // Initialize GLightbox
+  // Lazy load GLightbox
+  const GLightbox = await loadGLightbox();
+
   const instance = GLightbox({
     selector,
     loop: true,
@@ -28,17 +41,14 @@ function initLightbox(selector: string, galleryId: string) {
   return instance;
 }
 
-// Initialize grid gallery
 function initGridLightbox() {
-  initLightbox('a.glightbox[data-gallery="a2-gallery-grid"]', 'grid');
+  return initLightbox('a.glightbox[data-gallery="a2-gallery-grid"]', 'grid');
 }
 
-// Initialize slider gallery
 function initSliderLightbox() {
-  initLightbox('a.glightbox[data-gallery="a2-gallery-slider"]', 'slider');
+  return initLightbox('a.glightbox[data-gallery="a2-gallery-slider"]', 'slider');
 }
 
-// Initialize all galleries on the page
 function initAllLightboxes() {
   initGridLightbox();
   initSliderLightbox();
@@ -53,11 +63,35 @@ declare global {
 
 window.__a2_glightbox_reinit__ = initAllLightboxes;
 
-// Initialize on DOM ready
+// Lazy init: wait until a gallery element is visible
+function lazyInit() {
+  const galleries = document.querySelectorAll('a.glightbox');
+  if (galleries.length === 0) return;
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            observer.disconnect();
+            initAllLightboxes();
+            return;
+          }
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    galleries.forEach((el) => observer.observe(el));
+  } else {
+    // Fallback: init immediately
+    initAllLightboxes();
+  }
+}
+
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initAllLightboxes);
+  document.addEventListener('DOMContentLoaded', lazyInit);
 } else {
-  initAllLightboxes();
+  lazyInit();
 }
 
 // HMR support for development

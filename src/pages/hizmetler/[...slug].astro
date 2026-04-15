@@ -9,6 +9,7 @@ import Gallery from '../../components/common/Gallery.astro';
 import { getServiceLabel } from '../../config/serviceLabels';
 import { getServiceSchema } from '../../utils/serviceSchema';
 import CallBand from '../../components/common/CallBand.astro';
+import HowToSchema from '../../components/seo/HowToSchema.astro';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
@@ -496,4 +497,11 @@ const serviceSchema = Astro.site
 {serviceSchema && (
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 )}
+
+<HowToSchema
+  name={`${displayTitle} Nasıl Yapılır?`}
+  description={`${displayTitle} için profesyonel üretim ve montaj süreci. A2 Reklam İstanbul.`}
+  steps={processSteps.map(step => ({ title: step, description: `${step} — ${displayTitle} projeleriniz için uzman ekibimiz tarafından gerçekleştirilir.` }))}
+  totalTime="P3D"
+/>
 </Layout>
