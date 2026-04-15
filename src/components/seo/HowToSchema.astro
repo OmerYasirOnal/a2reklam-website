@@ -1,0 +1,42 @@
+---
+interface Step {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  name: string;
+  description: string;
+  steps: Step[];
+  totalTime?: string; // ISO 8601 duration, e.g. "P3D" for 3 days
+  estimatedCost?: {
+    currency: string;
+    value: string;
+  };
+}
+
+const { name, description, steps, totalTime, estimatedCost } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name,
+  description,
+  ...(totalTime && { totalTime }),
+  ...(estimatedCost && {
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: estimatedCost.currency,
+      value: estimatedCost.value,
+    },
+  }),
+  step: steps.map((step, index) => ({
+    '@type': 'HowToStep',
+    position: index + 1,
+    name: step.title,
+    text: step.description,
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

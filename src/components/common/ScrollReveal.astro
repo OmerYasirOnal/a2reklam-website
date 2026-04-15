@@ -1,0 +1,78 @@
+---
+interface Props {
+  class?: string;
+  delay?: number;
+  direction?: 'up' | 'down' | 'left' | 'right' | 'none';
+  duration?: number;
+  once?: boolean;
+}
+
+const {
+  class: className = '',
+  delay = 0,
+  direction = 'up',
+  duration = 600,
+  once = true
+} = Astro.props;
+
+const directionMap = {
+  up: 'translateY(30px)',
+  down: 'translateY(-30px)',
+  left: 'translateX(30px)',
+  right: 'translateX(-30px)',
+  none: 'none',
+};
+---
+
+<div
+  class:list={['scroll-reveal', className]}
+  data-reveal
+  data-reveal-delay={delay}
+  data-reveal-direction={direction}
+  data-reveal-duration={duration}
+  data-reveal-once={once}
+  style={`opacity: 0; transform: ${directionMap[direction]}; transition: opacity ${duration}ms ease-out, transform ${duration}ms ease-out; transition-delay: ${delay}ms; will-change: transform, opacity;`}
+>
+  <slot />
+</div>
+
+<script>
+  function initScrollReveal() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const elements = document.querySelectorAll('[data-reveal]');
+
+    if (prefersReducedMotion) {
+      elements.forEach(el => {
+        (el as HTMLElement).style.opacity = '1';
+        (el as HTMLElement).style.transform = 'none';
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0) translateX(0)';
+
+            if (el.dataset.revealOnce !== 'false') {
+              observer.unobserve(el);
+            }
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  }
+
+  // Run on initial load
+  initScrollReveal();
+
+  // Re-run on Astro page transitions
+  document.addEventListener('astro:page-load', initScrollReveal);
+</script>

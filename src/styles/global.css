@@ -836,3 +836,87 @@
     transform: none;
   }
 }
+
+/* ============================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================ */
+
+/* Counter animation for KPI numbers */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Staggered children reveal */
+.reveal-stagger > [data-reveal] {
+  --stagger-index: 0;
+  transition-delay: calc(var(--stagger-index) * 100ms) !important;
+}
+
+.reveal-stagger > [data-reveal]:nth-child(1) { --stagger-index: 0; }
+.reveal-stagger > [data-reveal]:nth-child(2) { --stagger-index: 1; }
+.reveal-stagger > [data-reveal]:nth-child(3) { --stagger-index: 2; }
+.reveal-stagger > [data-reveal]:nth-child(4) { --stagger-index: 3; }
+.reveal-stagger > [data-reveal]:nth-child(5) { --stagger-index: 4; }
+.reveal-stagger > [data-reveal]:nth-child(6) { --stagger-index: 5; }
+
+/* Enhanced card hover — gold glow effect */
+.card-glow {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.3), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.card-glow:hover::after {
+  opacity: 1;
+}
+
+[data-theme="light"] .card-glow::after {
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.2), transparent 60%);
+}
+
+/* Smooth link underline animation */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .card-glow::after,
+  .link-underline::after {
+    transition: none;
+  }
+}

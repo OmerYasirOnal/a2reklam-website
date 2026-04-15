@@ -210,6 +210,15 @@ Options -MultiViews
 </IfModule>
 
 # ================================================
+# IMMUTABLE CACHE FOR HASHED ASSETS
+# ================================================
+<IfModule mod_headers.c>
+  <FilesMatch "\.[\w]{8}\.(js|css|woff2|woff|ttf|otf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# ================================================
 # /en/ SAYFALAR - NOINDEX (eski statik dosyalar icin)
 # ================================================
 <IfModule mod_headers.c>
