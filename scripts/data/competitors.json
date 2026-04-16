@@ -1,6 +1,6 @@
 {
   "_comment": "İstanbul tabela sektöründeki rakip şirketler. competitor-discovery.mjs tarafından otomatik güncellenir.",
-  "lastUpdated": null,
+  "lastUpdated": "2026-04-16T21:49:18.307Z",
   "seedKeywords": [
     "istanbul tabela",
     "istanbul tabela imalatı",
@@ -8,7 +8,277 @@
     "kutu harf tabela istanbul",
     "işıklı tabela istanbul"
   ],
-  "competitors": [],
+  "competitors": [
+    {
+      "domain": "ozgereklam.com",
+      "url": "https://ozgereklam.com",
+      "firstSeen": "2026-04-16T21:49:18.306Z",
+      "lastAnalyzed": "2026-04-16T21:49:18.352Z",
+      "metrics": {
+        "totalUrls": 500,
+        "titleLen": 36,
+        "wordCount": 28919
+      }
+    },
+    {
+      "domain": "sevareklam.com",
+      "url": "https://sevareklam.com",
+      "firstSeen": "2026-04-16T21:49:18.306Z",
+      "lastAnalyzed": "2026-04-16T21:49:18.411Z",
+      "metrics": {
+        "totalUrls": 93,
+        "titleLen": 65,
+        "wordCount": 1233
+      }
+    },
+    {
+      "domain": "soyofreklam.com",
+      "url": "https://soyofreklam.com",
+      "firstSeen": "2026-04-16T21:49:18.306Z",
+      "lastAnalyzed": "2026-04-16T21:49:18.413Z",
+      "metrics": {
+        "titleLen": 58,
+        "wordCount": 969
+      }
+    },
+    {
+      "domain": "tabeladunyasi.com",
+      "url": "https://tabeladunyasi.com",
+      "firstSeen": "2026-04-16T21:49:18.306Z",
+      "lastAnalyzed": "2026-04-16T21:49:18.414Z",
+      "metrics": {
+        "totalUrls": 0,
+        "titleLen": 66,
+        "wordCount": 1191
+      }
+    },
+    {
+      "domain": "ahdreklam.com",
+      "url": "https://ahdreklam.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:18.415Z",
+      "metrics": {
+        "totalUrls": 0,
+        "titleLen": 43,
+        "wordCount": 1433
+      }
+    },
+    {
+      "domain": "celiktabela.com",
+      "url": "https://celiktabela.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:28.845Z",
+      "metrics": {
+        "totalUrls": 231,
+        "titleLen": 49,
+        "wordCount": 3438
+      }
+    },
+    {
+      "domain": "cebireklam.com.tr",
+      "url": "https://cebireklam.com.tr",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:28.846Z",
+      "metrics": {
+        "totalUrls": 17,
+        "titleLen": 61,
+        "wordCount": 1420
+      }
+    },
+    {
+      "domain": "tabelamarka.com",
+      "url": "https://tabelamarka.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:28.847Z",
+      "metrics": {
+        "totalUrls": 0,
+        "titleLen": 49,
+        "wordCount": 2368
+      }
+    },
+    {
+      "domain": "ajansby.com",
+      "url": "https://ajansby.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:28.848Z",
+      "metrics": {}
+    },
+    {
+      "domain": "istanbulreklamtabela.com",
+      "url": "https://istanbulreklamtabela.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:28.849Z",
+      "metrics": {
+        "totalUrls": 26,
+        "titleLen": 52,
+        "wordCount": 7375
+      }
+    },
+    {
+      "domain": "vertexaisearch.cloud.google.com",
+      "url": "https://vertexaisearch.cloud.google.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:42.712Z",
+      "metrics": {}
+    },
+    {
+      "domain": "imrandijital.com",
+      "url": "https://imrandijital.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:42.713Z",
+      "metrics": {
+        "totalUrls": 3269,
+        "titleLen": 74,
+        "wordCount": 3723
+      }
+    },
+    {
+      "domain": "akmarmaratabela.com",
+      "url": "https://akmarmaratabela.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:42.714Z",
+      "metrics": {
+        "titleLen": 51,
+        "wordCount": 257
+      }
+    },
+    {
+      "domain": "istanbultabelacisi.com",
+      "url": "https://istanbultabelacisi.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:42.715Z",
+      "metrics": {
+        "totalUrls": 4
+      }
+    },
+    {
+      "domain": "a2reklam.com.tr",
+      "url": "https://a2reklam.com.tr",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:42.715Z",
+      "metrics": {}
+    },
+    {
+      "domain": "mortabela.com",
+      "url": "https://mortabela.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:50.633Z",
+      "metrics": {
+        "totalUrls": 55,
+        "titleLen": 55,
+        "wordCount": 3412
+      }
+    },
+    {
+      "domain": "nurtapetabela.com",
+      "url": "https://nurtapetabela.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:50.634Z",
+      "metrics": {}
+    },
+    {
+      "domain": "zeyreklam.com",
+      "url": "https://zeyreklam.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:50.635Z",
+      "metrics": {
+        "totalUrls": 8,
+        "titleLen": 54,
+        "wordCount": 4556
+      }
+    },
+    {
+      "domain": "classreklam.com.tr",
+      "url": "https://classreklam.com.tr",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:50.636Z",
+      "metrics": {
+        "totalUrls": 60,
+        "titleLen": 76,
+        "wordCount": 2067
+      }
+    },
+    {
+      "domain": "emirhanreklam.com",
+      "url": "https://emirhanreklam.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:49:50.636Z",
+      "metrics": {
+        "totalUrls": 1731,
+        "titleLen": 57,
+        "wordCount": 1061
+      }
+    },
+    {
+      "domain": "artastabela.com",
+      "url": "https://artastabela.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:50:00.921Z",
+      "metrics": {
+        "totalUrls": 16,
+        "titleLen": 23,
+        "wordCount": 1185
+      }
+    },
+    {
+      "domain": "istanbulkutuharf.com",
+      "url": "https://istanbulkutuharf.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:50:00.922Z",
+      "metrics": {
+        "totalUrls": 0,
+        "titleLen": 92,
+        "wordCount": 275
+      }
+    },
+    {
+      "domain": "dijitalbaskiistanbul.com",
+      "url": "https://dijitalbaskiistanbul.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:50:00.923Z",
+      "metrics": {}
+    },
+    {
+      "domain": "atiktabela.com",
+      "url": "https://atiktabela.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:50:00.924Z",
+      "metrics": {}
+    },
+    {
+      "domain": "aydemirler.com",
+      "url": "https://aydemirler.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:50:00.925Z",
+      "metrics": {
+        "totalUrls": 0,
+        "titleLen": 40,
+        "wordCount": 1299
+      }
+    },
+    {
+      "domain": "viptabelareklam.com",
+      "url": "https://viptabelareklam.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:50:19.068Z",
+      "metrics": {
+        "totalUrls": 135,
+        "titleLen": 72,
+        "wordCount": 1748
+      }
+    },
+    {
+      "domain": "tabelasanat.com",
+      "url": "https://tabelasanat.com",
+      "firstSeen": "2026-04-16T21:49:18.307Z",
+      "lastAnalyzed": "2026-04-16T21:50:19.069Z",
+      "metrics": {
+        "totalUrls": 1612,
+        "titleLen": 21,
+        "wordCount": 1105
+      }
+    }
+  ],
   "excludeList": [
     "a2reklam.com",
     "google.com",
