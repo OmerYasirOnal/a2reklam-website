@@ -24,8 +24,14 @@ const QUEUE_FILE = join(__dirname, 'data', 'blog-topic-queue.json');
 const BLOG_DIR = join(PROJECT_DIR, 'src', 'content', 'blog');
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const MODEL = 'gemini-1.5-flash';
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+// Birden fazla model dene (eskiden yeniye) — bazıları deprecate olabilir
+const MODEL_CANDIDATES = [
+  'gemini-2.5-flash',
+  'gemini-2.0-flash',
+  'gemini-2.0-flash-001',
+  'gemini-1.5-flash-latest',
+];
+const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 
 const DRY_RUN = process.argv.includes('--dry-run');
 
@@ -108,8 +114,9 @@ KURALLAR:
 SADECE markdown içeriğini döndür. İlk satır "## TL;DR" olmalı. YAML frontmatter YAZMA — onu ben ekleyeceğim.`;
 }
 
-async function callGemini(prompt) {
-  const response = await fetch(`${API_URL}?key=${GEMINI_API_KEY}`, {
+async function callGeminiModel(model, prompt) {
+  const url = `${API_BASE}/${model}:generateContent?key=${GEMINI_API_KEY}`;
+  const response = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -124,15 +131,31 @@ async function callGemini(prompt) {
 
   if (!response.ok) {
     const errText = await response.text();
-    throw new Error(`Gemini API hatası ${response.status}: ${errText}`);
+    throw new Error(`${response.status}: ${errText}`);
   }
 
   const data = await response.json();
   if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
-    throw new Error(`Gemini'den geçersiz yanıt: ${JSON.stringify(data)}`);
+    throw new Error(`Geçersiz yanıt: ${JSON.stringify(data)}`);
   }
-
   return data.candidates[0].content.parts[0].text.trim();
+}
+
+async function callGemini(prompt) {
+  // Model fallback — ilki çalışmazsa sırayla dene
+  let lastError;
+  for (const model of MODEL_CANDIDATES) {
+    try {
+      log(`Model denenyor: ${model}`);
+      const result = await callGeminiModel(model, prompt);
+      log(`✓ Model çalıştı: ${model}`);
+      return result;
+    } catch (e) {
+      warn(`  Başarısız (${model}): ${e.message.substring(0, 80)}`);
+      lastError = e;
+    }
+  }
+  throw new Error(`Tüm modeller başarısız oldu. Son hata: ${lastError?.message}`);
 }
 
 function generateFAQ(topic) {
