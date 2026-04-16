@@ -1,7 +1,7 @@
 # Rakip Analiz Raporu — 2026-04
 
-**Üretim:** 2026-04-16T21:50:30.954Z
-**Toplam Rakip:** 27
+**Üretim:** 2026-04-16T21:56:42.905Z
+**Toplam Rakip:** 34
 **A2 Reklam Referansı:** https://a2reklam.com
 
 ## Özet Tablo
@@ -11,36 +11,43 @@
 | 1 | [imrandijital.com](https://imrandijital.com) | 3269 | 74 | 3723 | - | Bilinmiyor |
 | 2 | [emirhanreklam.com](https://emirhanreklam.com) | 1731 | 57 | 1061 | 2026-03-01 | ~1.8 güncelleme/hafta (son 90 gün) |
 | 3 | [tabelasanat.com](https://tabelasanat.com) | 1612 | 21 | 1105 | - | Bilinmiyor |
-| 4 | [ozgereklam.com](https://ozgereklam.com) | 500 | 36 | 28919 | 2022-04-12 | Son 90 günde güncelleme yok |
-| 5 | [celiktabela.com](https://celiktabela.com) | 231 | 49 | 3438 | 2026-04-07 | ~2.5 güncelleme/hafta (son 90 gün) |
-| 6 | [viptabelareklam.com](https://viptabelareklam.com) | 135 | 72 | 1748 | 2023-02-18 | Son 90 günde güncelleme yok |
-| 7 | [sevareklam.com](https://sevareklam.com) | 93 | 65 | 1233 | 2026-04-16 | ~1.0 güncelleme/hafta (son 90 gün) |
-| 8 | [classreklam.com.tr](https://classreklam.com.tr) | 60 | 76 | 2067 | 2026-01-31 | ~3.1 güncelleme/hafta (son 90 gün) |
-| 9 | [mortabela.com](https://mortabela.com) | 55 | 55 | 3412 | 2024-01-07 | Son 90 günde güncelleme yok |
-| 10 | [istanbulreklamtabela.com](https://istanbulreklamtabela.com) | 26 | 52 | 7375 | 2024-08-02 | Son 90 günde güncelleme yok |
-| 11 | [cebireklam.com.tr](https://cebireklam.com.tr) | 17 | 61 | 1420 | 2023-05-11 | Son 90 günde güncelleme yok |
-| 12 | [artastabela.com](https://artastabela.com) | 16 | 23 | 1185 | 2026-01-30 | ~0.2 güncelleme/hafta (son 90 gün) |
-| 13 | [zeyreklam.com](https://zeyreklam.com) | 8 | 54 | 4556 | 2024-12-10 | Son 90 günde güncelleme yok |
-| 14 | [istanbultabelacisi.com](https://istanbultabelacisi.com) | 4 | 0 | 0 | 2025-04-04 | Son 90 günde güncelleme yok |
-| 15 | [soyofreklam.com](https://soyofreklam.com) | - | 58 | 969 | - | - |
-| 16 | [tabeladunyasi.com](https://tabeladunyasi.com) | - | 66 | 1191 | - | Bilinmiyor |
-| 17 | [ahdreklam.com](https://ahdreklam.com) | - | 43 | 1433 | - | Bilinmiyor |
-| 18 | [tabelamarka.com](https://tabelamarka.com) | - | 49 | 2368 | - | Bilinmiyor |
-| 19 | [ajansby.com](https://ajansby.com) | - | 0 | 0 | - | - |
-| 20 | [vertexaisearch.cloud.google.com](https://vertexaisearch.cloud.google.com) | - | 0 | 0 | - | - |
-| 21 | [akmarmaratabela.com](https://akmarmaratabela.com) | - | 51 | 257 | - | - |
-| 22 | [a2reklam.com.tr](https://a2reklam.com.tr) | - | 0 | 0 | - | - |
-| 23 | [nurtapetabela.com](https://nurtapetabela.com) | - | 0 | 0 | - | - |
-| 24 | [istanbulkutuharf.com](https://istanbulkutuharf.com) | - | 92 | 275 | - | Bilinmiyor |
-| 25 | [dijitalbaskiistanbul.com](https://dijitalbaskiistanbul.com) | - | 0 | 0 | - | - |
-| 26 | [atiktabela.com](https://atiktabela.com) | - | 0 | 0 | - | - |
-| 27 | [aydemirler.com](https://aydemirler.com) | - | 40 | 1299 | - | Bilinmiyor |
+| 4 | [boranreklam.com](https://boranreklam.com) | 1543 | 62 | 17325 | 2026-03-25 | ~1.2 güncelleme/hafta (son 90 gün) |
+| 5 | [ozgereklam.com](https://ozgereklam.com) | 500 | 36 | 28919 | 2022-04-12 | Son 90 günde güncelleme yok |
+| 6 | [celiktabela.com](https://celiktabela.com) | 231 | 49 | 3438 | 2026-04-07 | ~2.5 güncelleme/hafta (son 90 gün) |
+| 7 | [viptabelareklam.com](https://viptabelareklam.com) | 135 | 72 | 1748 | 2023-02-18 | Son 90 günde güncelleme yok |
+| 8 | [kutuharfmerkezi.com](https://kutuharfmerkezi.com) | 96 | 17 | 762 | 2026-02-12 | ~7.4 güncelleme/hafta (son 90 gün) |
+| 9 | [sevareklam.com](https://sevareklam.com) | 93 | 65 | 1233 | 2026-04-16 | ~1.0 güncelleme/hafta (son 90 gün) |
+| 10 | [aydemirler.com.tr](https://aydemirler.com.tr) | 72 | 44 | 1869 | 2026-04-11 | ~5.5 güncelleme/hafta (son 90 gün) |
+| 11 | [classreklam.com.tr](https://classreklam.com.tr) | 60 | 76 | 2067 | 2026-01-31 | ~3.1 güncelleme/hafta (son 90 gün) |
+| 12 | [hecereklam.com](https://hecereklam.com) | 59 | 53 | 3222 | 2026-03-25 | ~4.5 güncelleme/hafta (son 90 gün) |
+| 13 | [mortabela.com](https://mortabela.com) | 55 | 55 | 3412 | 2024-01-07 | Son 90 günde güncelleme yok |
+| 14 | [istanbulreklamtabela.com](https://istanbulreklamtabela.com) | 26 | 52 | 7375 | 2024-08-02 | Son 90 günde güncelleme yok |
+| 15 | [cebireklam.com.tr](https://cebireklam.com.tr) | 17 | 61 | 1420 | 2023-05-11 | Son 90 günde güncelleme yok |
+| 16 | [artastabela.com](https://artastabela.com) | 16 | 23 | 1185 | 2026-01-30 | ~0.2 güncelleme/hafta (son 90 gün) |
+| 17 | [zeyreklam.com](https://zeyreklam.com) | 8 | 54 | 4556 | 2024-12-10 | Son 90 günde güncelleme yok |
+| 18 | [istanbultabelacisi.com](https://istanbultabelacisi.com) | 5 | 82 | 22809 | 2025-04-04 | Son 90 günde güncelleme yok |
+| 19 | [soyofreklam.com](https://soyofreklam.com) | - | 58 | 969 | - | - |
+| 20 | [tabeladunyasi.com](https://tabeladunyasi.com) | - | 66 | 1191 | - | Bilinmiyor |
+| 21 | [ahdreklam.com](https://ahdreklam.com) | - | 43 | 1433 | - | Bilinmiyor |
+| 22 | [tabelamarka.com](https://tabelamarka.com) | - | 49 | 2368 | - | Bilinmiyor |
+| 23 | [ajansby.com](https://ajansby.com) | - | 0 | 0 | - | - |
+| 24 | [akmarmaratabela.com](https://akmarmaratabela.com) | - | 51 | 257 | - | - |
+| 25 | [nurtapetabela.com](https://nurtapetabela.com) | - | 0 | 0 | - | - |
+| 26 | [istanbulkutuharf.com](https://istanbulkutuharf.com) | - | 92 | 275 | - | Bilinmiyor |
+| 27 | [dijitalbaskiistanbul.com](https://dijitalbaskiistanbul.com) | - | 0 | 0 | - | - |
+| 28 | [atiktabela.com](https://atiktabela.com) | - | 0 | 0 | - | - |
+| 29 | [aydemirler.com](https://aydemirler.com) | - | 40 | 1299 | - | Bilinmiyor |
+| 30 | [fasonkutuharf.com.tr](https://fasonkutuharf.com.tr) | - | 24 | 408 | - | - |
+| 31 | [ezgireklamevi.com](https://ezgireklamevi.com) | - | 60 | 738 | - | Bilinmiyor |
+| 32 | [ozgereklam.com.tr](https://ozgereklam.com.tr) | - | 0 | 0 | - | - |
+| 33 | [genclertabela.com](https://genclertabela.com) | - | 44 | 8269 | - | - |
+| 34 | [istanbulreklam.com.tr](https://istanbulreklam.com.tr) | - | 0 | 0 | - | - |
 
 ## A2 Reklam ile Karşılaştırma
 
 | Metrik | A2 Reklam | En İyi Rakip | Ortalama Rakip |
 |---|---|---|---|
-| Sayfa sayısı | 193 | 3269 | 287 |
+| Sayfa sayısı | 193 | 3269 | 280 |
 | Blog sistemi | Haftada 2 otomatik | değişken | değişken |
 | AI/LLM desteği | ai.txt + llms.txt var | ? | ? |
 
@@ -70,7 +77,14 @@
 - **Blog sıklığı:** Bilinmiyor
 - **Anasayfa kelime sayısı:** 1105
 
-### 4. ozgereklam.com
+### 4. boranreklam.com
+- **URL:** https://boranreklam.com
+- **Başlık:** Boran Reklam Dijital Baskı | UV Baskı | Açık Hava Reklamcılığı
+- **Sitemap URL'leri:** 1543
+- **Blog sıklığı:** ~1.2 güncelleme/hafta (son 90 gün)
+- **Anasayfa kelime sayısı:** 17325
+
+### 5. ozgereklam.com
 - **URL:** https://ozgereklam.com
 - **Başlık:** İstanbul Tabela Üretim | Özge Reklam
 - **Meta Desc:** Işıklı - Işıksız Tabela, Pleksi harf, Kutu Harf, Paslanmaz harf, Alüminyum Tabela, Totem tabela ve Fason üretim gibi konularda reklam hizmeti vermekteyiz....
@@ -78,7 +92,7 @@
 - **Blog sıklığı:** Son 90 günde güncelleme yok
 - **Anasayfa kelime sayısı:** 28919
 
-### 5. celiktabela.com
+### 6. celiktabela.com
 - **URL:** https://celiktabela.com
 - **Başlık:** Çelik Reklam Tabela, İstanbul Arnavutköy Tabelacı
 - **Meta Desc:** Çelik Reklam Tabela, İstanbul Arnavutköy’de; ışıklı tabela, kutu harf tabela, totem tabela, cephe giydirme, dijital baskı, neon led tabela ve ofis isimlikleri a...
@@ -86,7 +100,7 @@
 - **Blog sıklığı:** ~2.5 güncelleme/hafta (son 90 gün)
 - **Anasayfa kelime sayısı:** 3438
 
-### 6. viptabelareklam.com
+### 7. viptabelareklam.com
 - **URL:** https://viptabelareklam.com
 - **Başlık:** Tabelacı, Tabela İmalatçısı, Reklam Hizmeti - Vip Tabela Reklam İstanbul
 - **Meta Desc:** Tabelacı - Tabela İmalatı ile pleksi tabela, alüminyum tabela, paslanmaz tabela, ahşap tabela, ofis tabelası, vinil germe, işyeri tabelası, ışıklı tabela vd...
@@ -94,7 +108,15 @@
 - **Blog sıklığı:** Son 90 günde güncelleme yok
 - **Anasayfa kelime sayısı:** 1748
 
-### 7. sevareklam.com
+### 8. kutuharfmerkezi.com
+- **URL:** https://kutuharfmerkezi.com
+- **Başlık:** KUTU HARF MERKEZİ
+- **Meta Desc:** Profesyonel Tabela Kutu Harf İmalatı Üretimi, Reklam Ajansları ve Tabelacılara Hizmet Vermekteyiz....
+- **Sitemap URL'leri:** 96
+- **Blog sıklığı:** ~7.4 güncelleme/hafta (son 90 gün)
+- **Anasayfa kelime sayısı:** 762
+
+### 9. sevareklam.com
 - **URL:** https://sevareklam.com
 - **Başlık:** Seva Reklam | İstanbul Tabela | Tabelacı | Ofis Kapı Tabela&nbsp;
 - **Meta Desc:** Ofis Kapı Tabelası- Paslanmaz Tabela - Pleksi Tabela - Kutu Harf Tabela - Hastane Tabelası - Eczane Tabelası- Pleksi Yönlendirme - Işıklı Tabela - Çatı Reklam...
@@ -102,28 +124,13 @@
 - **Blog sıklığı:** ~1.0 güncelleme/hafta (son 90 gün)
 - **Anasayfa kelime sayısı:** 1233
 
-### 8. classreklam.com.tr
-- **URL:** https://classreklam.com.tr
-- **Başlık:** Class Reklam &#8211; İstanbul Profesyonel Tabela &amp; Dijital Baskı Merkezi
-- **Sitemap URL'leri:** 60
-- **Blog sıklığı:** ~3.1 güncelleme/hafta (son 90 gün)
-- **Anasayfa kelime sayısı:** 2067
-
-### 9. mortabela.com
-- **URL:** https://mortabela.com
-- **Başlık:** Profesyonel İstanbul Tabela Reklam Firması | Mor Tabela
-- **Meta Desc:** İstanbul en iyi tabela reklam şirketi olarak ışıklı ve ışıksız bir çok tabela imalatı montajı gibi çözümler sunmaktayız. - Ücretsiz Keşif Montaj...
-- **Sitemap URL'leri:** 55
-- **Blog sıklığı:** Son 90 günde güncelleme yok
-- **Anasayfa kelime sayısı:** 3412
-
-### 10. istanbulreklamtabela.com
-- **URL:** https://istanbulreklamtabela.com
-- **Başlık:** İstanbul Reklam Tabela | Tabela Modelleri | Tabelacı
-- **Meta Desc:** Tabelacı olarak istediğiniz ölçülere uygun, kaliteli, uzun yıllar kullanabileceğiniz reklam ve tabela yapmaktayız. Firmanızı, şık tasarımlarla farklı kılıyoruz....
-- **Sitemap URL'leri:** 26
-- **Blog sıklığı:** Son 90 günde güncelleme yok
-- **Anasayfa kelime sayısı:** 7375
+### 10. aydemirler.com.tr
+- **URL:** https://aydemirler.com.tr
+- **Başlık:** Madalya - Plaket - Kupa ve Ödül - Aydemirler
+- **Meta Desc:** Madalya Plaket ve Kupa Ödül. Her bütçeye uygun ödül ve etiketler. Hemen tıkla uygun fiyat ve kaliteli ödüllere göz at....
+- **Sitemap URL'leri:** 72
+- **Blog sıklığı:** ~5.5 güncelleme/hafta (son 90 gün)
+- **Anasayfa kelime sayısı:** 1869
 
 ## Aksiyon Önerileri
 
