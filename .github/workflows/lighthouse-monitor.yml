@@ -1,0 +1,101 @@
+name: Lighthouse Performans Monitörü (Haftalık)
+
+# Her Cumartesi 10:00 UTC (13:00 Istanbul) Lighthouse çalıştırır.
+# Skor düşükse GitHub Issue açar.
+
+on:
+  schedule:
+    - cron: '0 10 * * 6'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.14
+
+      - name: Run Lighthouse on 5 critical pages
+        id: lighthouse
+        run: |
+          mkdir -p .lighthouse-reports
+          FAILED=0
+          for URL in \
+            "https://a2reklam.com/" \
+            "https://a2reklam.com/hizmetler/isikli-tabela/" \
+            "https://a2reklam.com/istanbul-tabelaci/" \
+            "https://a2reklam.com/kadikoy-tabelaci/" \
+            "https://a2reklam.com/blog/"
+          do
+            echo "=== Lighthouse: $URL ==="
+            SLUG=$(echo "$URL" | sed 's|https://||;s|/|_|g')
+            lhci collect --url="$URL" --numberOfRuns=1 --settings.preset=desktop \
+              --upload.target=filesystem --upload.outputDir=.lighthouse-reports || FAILED=1
+          done
+          # Skor özetini çıkar
+          for REPORT in .lighthouse-reports/lhr-*.json; do
+            URL=$(node -p "require('./${REPORT}').finalUrl")
+            PERF=$(node -p "Math.round(require('./${REPORT}').categories.performance.score * 100)")
+            SEO=$(node -p "Math.round(require('./${REPORT}').categories.seo.score * 100)")
+            A11Y=$(node -p "Math.round(require('./${REPORT}').categories.accessibility.score * 100)")
+            echo "$URL — Perf:$PERF SEO:$SEO A11Y:$A11Y"
+            echo "${URL}|${PERF}|${SEO}|${A11Y}" >> scores.txt
+          done
+          # Eğer herhangi bir sayfada Perf < 75 veya SEO < 90 ise uyarı ver
+          if awk -F'|' '$2<75 || $3<90' scores.txt | grep -q .; then
+            echo "low_scores=true" >> $GITHUB_OUTPUT
+            echo "Düşük skorlu sayfalar:"
+            awk -F'|' '$2<75 || $3<90 {print "  "$1" Perf:"$2" SEO:"$3" A11Y:"$4}' scores.txt
+          else
+            echo "low_scores=false" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: true
+
+      - name: Create issue for low scores
+        if: steps.lighthouse.outputs.low_scores == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const scores = fs.readFileSync('scores.txt', 'utf8').trim().split('\n');
+            const table = ['| URL | Perf | SEO | A11Y |', '|---|---|---|---|'];
+            let hasLow = false;
+            for (const line of scores) {
+              const [url, perf, seo, a11y] = line.split('|');
+              const lowPerf = parseInt(perf) < 75;
+              const lowSeo = parseInt(seo) < 90;
+              const marker = (lowPerf || lowSeo) ? '⚠️ ' : '';
+              if (lowPerf || lowSeo) hasLow = true;
+              table.push(`| ${marker}${url} | ${perf} | ${seo} | ${a11y} |`);
+            }
+
+            const today = new Date().toISOString().split('T')[0];
+            const body = `Haftalık Lighthouse kontrolünde düşük skorlu sayfalar bulundu.\n\n${table.join('\n')}\n\nHedef: Perf ≥ 75, SEO ≥ 90.\n\nDetaylı rapor: https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📉 Lighthouse Düşük Skor Uyarısı — ${today}`,
+              body,
+              labels: ['performance', 'lighthouse', 'automated'],
+            });
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouse-reports/
+          retention-days: 30

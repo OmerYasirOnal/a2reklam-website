@@ -1,0 +1,53 @@
+name: Blog Auto-Publish (Pzt + Prş)
+
+# Her Pazartesi ve Perşembe 09:00 Istanbul (06:00 UTC) yeni blog üretir.
+# Gemini API ile yazı yazılır, main branch'e commit edilir.
+
+on:
+  schedule:
+    # Pazartesi 06:00 UTC ve Perşembe 06:00 UTC
+    - cron: '0 6 * * 1,4'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-blog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate blog post with Gemini
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::GEMINI_API_KEY secret tanımlı değil!"
+            exit 1
+          fi
+          node scripts/generate-blog.mjs
+
+      - name: Commit new blog post
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/blog/*.md scripts/data/blog-topic-queue.json
+          if git diff --staged --quiet; then
+            echo "Yeni yazı üretilmedi (ya hata oldu ya da slug zaten vardı)."
+            exit 0
+          fi
+          # Commit mesajı için slug'ı al
+          NEW_FILE=$(git diff --staged --name-only --diff-filter=A src/content/blog/ | head -1)
+          SLUG=$(basename "$NEW_FILE" .md)
+          git commit -m "blog: $SLUG eklendi (Gemini otomatik)"
+          git push
