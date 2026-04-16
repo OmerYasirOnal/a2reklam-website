@@ -48,3 +48,10 @@ a2reklam_smtp_patch/
 
 # Deploy credentials
 .env.deploy
+
+# Google Indexing API
+service_account.json
+scripts/data/indexing-log.txt
+
+# Session prompts (runtime generated)
+docs/next-session-prompt.md
