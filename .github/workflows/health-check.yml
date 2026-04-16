@@ -1,0 +1,71 @@
+name: Site Health Check (Daily)
+
+# Her gün 08:00 UTC (11:00 Istanbul) kritik URL'lerin sağlığını kontrol eder.
+# Hata bulursa otomatik GitHub Issue açar.
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run health check
+        id: healthcheck
+        run: node scripts/health-check.mjs
+        continue-on-error: true
+
+      - name: Create issue if unhealthy
+        if: steps.healthcheck.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const today = new Date().toISOString().split('T')[0];
+            const title = `🚨 Site Sağlık Sorunu: ${today}`;
+            const body = `Otomatik sağlık kontrolü bugün başarısız oldu.\n\nAyrıntılar için workflow run'a bakın:\nhttps://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n\nBir yetkili sorunu inceleyene kadar bu issue açık kalacak.`;
+
+            // Mevcut açık "Site Sağlık Sorunu" issue var mı?
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'health-check',
+            });
+
+            if (issues.length > 0) {
+              // Mevcut issue'ya yorum ekle
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues[0].number,
+                body: `Bugün de (${today}) sağlık kontrolü başarısız. Run: ${context.runId}`,
+              });
+              console.log(`Mevcut issue #${issues[0].number}'e yorum eklendi.`);
+            } else {
+              // Yeni issue aç
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['health-check', 'automated'],
+              });
+              console.log('Yeni issue oluşturuldu.');
+            }
+
+            // Workflow'u failure olarak işaretle
+            core.setFailed('Health check failed');

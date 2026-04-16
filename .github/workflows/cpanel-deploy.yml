@@ -1,0 +1,74 @@
+name: cPanel Auto-Deploy
+
+# main'e push'ta (istisnalar hariç) otomatik cPanel FTP deploy.
+# Blog otomasyonu ile entegre — yeni yazı yayınlanır yayınlanmaz canlıya alınır.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'astro.config.mjs'
+      - 'package.json'
+  workflow_dispatch:
+
+concurrency:
+  group: cpanel-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Create dist.zip
+        run: |
+          cd dist
+          zip -r -q ../dist.zip .
+          cd ..
+          ls -lh dist.zip
+
+      - name: Upload to cPanel via FTP
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
+        run: |
+          curl -s -T dist.zip "ftp://${FTP_HOST}/dist.zip" \
+            --user "${FTP_USER}:${FTP_PASS}" \
+            --ftp-create-dirs
+
+      - name: Extract on server
+        env:
+          DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }}
+        run: |
+          RESULT=$(curl -s -m 120 "https://a2reklam.com/api/deploy-extract.php?secret=${DEPLOY_SECRET}")
+          echo "$RESULT"
+          echo "$RESULT" | grep -q '"ok":true' || (echo "::error::Extract başarısız" && exit 1)
+
+      - name: Purge cache
+        env:
+          DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }}
+        run: |
+          curl -s -m 30 "https://a2reklam.com/api/cache-purge.php?secret=${DEPLOY_SECRET}" || true
+          curl -s -m 60 "https://a2reklam.com/api/force-refresh.php?secret=${DEPLOY_SECRET}" || true
+          curl -s -m 30 "https://a2reklam.com/api/cleanup-stale.php?secret=${DEPLOY_SECRET}" || true
+
+      - name: Submit to IndexNow (Bing/Yandex)
+        run: node scripts/submit-indexnow.mjs || true
