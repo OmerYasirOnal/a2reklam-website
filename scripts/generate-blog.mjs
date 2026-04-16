@@ -217,6 +217,105 @@ function cleanMarkdown(md) {
   return md.trim();
 }
 
+/**
+ * Akıllı iç linkleme: metinde geçen anahtar kelimeleri ilgili sayfa linklerine dönüştürür.
+ * SEO'nun kalbi — her blog 4-8 iç link alır.
+ */
+function addInternalLinks(md, topic) {
+  // Linkleme sözlüğü: anahtar kelime → URL (önceliğe göre sıralı)
+  const LINK_MAP = [
+    // Hizmetler (en değerli, önce gelir)
+    { kw: /\b(ışıklı tabela)\b/gi, url: '/hizmetler/isikli-tabela/', priority: 1 },
+    { kw: /\b(ışıksız tabela)\b/gi, url: '/hizmetler/isiksiz-tabela/', priority: 1 },
+    { kw: /\b(paslanmaz harf(?:ler)?)\b/gi, url: '/hizmetler/paslanmaz-harfler/', priority: 1 },
+    { kw: /\b(totem tabela)\b/gi, url: '/hizmetler/totem/', priority: 1 },
+    { kw: /\b(cephe tabela(?:sı)?)\b/gi, url: '/hizmetler/cephe-tabela/', priority: 1 },
+    { kw: /\b(araç giydirme)\b/gi, url: '/hizmetler/arac-giydirme/', priority: 1 },
+    { kw: /\b(fener tabela)\b/gi, url: '/hizmetler/fener-tabela/', priority: 1 },
+    { kw: /\b(çatı tabela(?:sı)?)\b/gi, url: '/hizmetler/cati-tabelasi/', priority: 1 },
+    { kw: /\b(yönlendirme tabelaları?)\b/gi, url: '/hizmetler/yonlendirme/', priority: 1 },
+    { kw: /\b(kabartma pleksi(?:glass)?)\b/gi, url: '/hizmetler/kabartma-pleksiglass/', priority: 1 },
+    { kw: /\b(kumlama folyo(?:su|ları)?)\b/gi, url: '/hizmetler/ofis-kumlama-folyolari/', priority: 1 },
+    { kw: /\b(kapı isimlik(?:ler)?)\b/gi, url: '/hizmetler/kapi-isimlik/', priority: 1 },
+    { kw: /\b(banko uygulama(?:sı|ları)?)\b/gi, url: '/hizmetler/banko-uygulamalari/', priority: 1 },
+    { kw: /\b(özel imalat(?:lar)?)\b/gi, url: '/hizmetler/ozel-imalatlar/', priority: 1 },
+    // İlçeler
+    { kw: /\bKadıköy\b/g, url: '/kadikoy-tabelaci/', priority: 2 },
+    { kw: /\bBeşiktaş\b/g, url: '/besiktas-tabelaci/', priority: 2 },
+    { kw: /\bŞişli\b/g, url: '/sisli-tabelaci/', priority: 2 },
+    { kw: /\bÜsküdar\b/g, url: '/uskudar-tabelaci/', priority: 2 },
+    { kw: /\bBakırköy\b/g, url: '/bakirkoy-tabelaci/', priority: 2 },
+    { kw: /\bFatih\b/g, url: '/fatih-tabelaci/', priority: 2 },
+    { kw: /\bBeyoğlu\b/g, url: '/beyoglu-tabelaci/', priority: 2 },
+    { kw: /\bAtaşehir\b/g, url: '/atasehir-tabelaci/', priority: 2 },
+    { kw: /\bÜmraniye\b/g, url: '/umraniye-tabelaci/', priority: 2 },
+    { kw: /\bMaltepe\b/g, url: '/maltepe-tabelaci/', priority: 2 },
+    { kw: /\bBaşakşehir\b/g, url: '/basaksehir-tabelaci/', priority: 2 },
+    { kw: /\bKağıthane\b/g, url: '/kagithane-tabelaci/', priority: 2 },
+    // Sektörler
+    { kw: /\beczane tabela(?:sı)?\b/gi, url: '/sektorel/eczane-tabelasi/', priority: 3 },
+    { kw: /\bberber tabela(?:sı)?\b/gi, url: '/sektorel/berber-tabelasi/', priority: 3 },
+    { kw: /\bcafe tabela(?:sı)?\b/gi, url: '/sektorel/cafe-restoran-tabelasi/', priority: 3 },
+    { kw: /\brestoran tabela(?:sı)?\b/gi, url: '/sektorel/cafe-restoran-tabelasi/', priority: 3 },
+    { kw: /\botel tabela(?:sı)?\b/gi, url: '/sektorel/otel-tabelasi/', priority: 3 },
+    { kw: /\bAVM tabela(?:sı)?\b/gi, url: '/sektorel/avm-tabelasi/', priority: 3 },
+    { kw: /\bfabrika tabela(?:sı)?\b/gi, url: '/sektorel/fabrika-tabelasi/', priority: 3 },
+    { kw: /\bhastane tabela(?:sı)?\b/gi, url: '/sektorel/hastane-tabelasi/', priority: 3 },
+    { kw: /\bokul tabela(?:sı)?\b/gi, url: '/sektorel/okul-tabelasi/', priority: 3 },
+    // Ana hub sayfaları
+    { kw: /\b(39 ilçe|İstanbul'un 39 ilçe(?:si)?|tüm ilçeler)\b/gi, url: '/istanbul-tabelaci/', priority: 4 },
+    { kw: /\b(sektörel çözüm(?:ler)?|her sektöre özel)\b/gi, url: '/sektorel/', priority: 4 },
+    { kw: /\b(iletişim)\b/gi, url: '/iletisim/', priority: 5 },
+  ];
+
+  // Mevcut link olan yerleri değiştirme — [text](url) pattern'ini koru
+  // Ayrıca kendini linkleyen URL'yi eklemesin (mevcut topic)
+  const currentUrl = `/blog/${topic.slug}/`;
+
+  let linkCount = 0;
+  const MAX_LINKS = 6;
+  const usedUrls = new Set([currentUrl]);
+
+  // Markdown parse: sadece paragraf metnine dokun, kod bloğu/link/başlık atla
+  const lines = md.split('\n');
+  const resultLines = lines.map(line => {
+    if (linkCount >= MAX_LINKS) return line;
+    // Başlık, kod bloğu, link içeren satırları atla
+    if (/^\s*#{1,6}\s/.test(line)) return line;
+    if (/^\s*```/.test(line)) return line;
+    if (/^\s*!\[/.test(line)) return line; // image
+    if (/^\s*-\s/.test(line) && !/\w{20}/.test(line)) return line; // kısa liste
+
+    let newLine = line;
+    for (const { kw, url } of LINK_MAP) {
+      if (linkCount >= MAX_LINKS) break;
+      if (usedUrls.has(url)) continue;
+
+      // Mevcut link/HTML içinde değişmesin — basit kontrol
+      if (newLine.includes(`](${url})`)) continue;
+
+      // İlk eşleşmeyi linkle
+      const match = kw.exec(newLine);
+      if (match) {
+        const before = newLine.substring(0, match.index);
+        const after = newLine.substring(match.index + match[0].length);
+        // Eğer zaten bir link içindeyse atla
+        const openBrackets = (before.match(/\[/g) || []).length;
+        const closeBrackets = (before.match(/\]/g) || []).length;
+        if (openBrackets > closeBrackets) continue;
+        newLine = `${before}[${match[0]}](${url})${after}`;
+        usedUrls.add(url);
+        linkCount++;
+      }
+      kw.lastIndex = 0; // Regex state sıfırla
+    }
+    return newLine;
+  });
+
+  log(`İç link eklendi: ${linkCount}`);
+  return resultLines.join('\n');
+}
+
 async function main() {
   log('Blog üretim süreci başlatılıyor...');
 
@@ -267,7 +366,9 @@ async function main() {
 
   const faq = generateFAQ(topic);
   const frontmatter = buildFrontmatter(topic, faq);
-  const cleanedMd = cleanMarkdown(markdown);
+  let cleanedMd = cleanMarkdown(markdown);
+  // Akıllı iç linkleme — SEO için kritik
+  cleanedMd = addInternalLinks(cleanedMd, topic);
   const fullContent = frontmatter + cleanedMd + '\n';
 
   writeFileSync(outputPath, fullContent);

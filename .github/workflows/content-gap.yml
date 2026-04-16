@@ -1,0 +1,44 @@
+name: Content Gap Analizi (Aylık)
+
+# Her ayın 15'i 10:00 UTC rakip sitelerini tarayıp
+# eksik konuları blog queue'ya ekler.
+
+on:
+  schedule:
+    - cron: '0 10 15 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  content-gap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run content gap analysis
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/content-gap-analysis.mjs
+
+      - name: Commit new topics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/data/blog-topic-queue.json
+          if git diff --staged --quiet; then
+            echo "Yeni konu yok"
+            exit 0
+          fi
+          git commit -m "chore: content gap analizi — yeni konular eklendi [skip ci]"
+          git push
