@@ -60,7 +60,5 @@ jobs:
             exit 0
           fi
           git add scripts/data/indexed-urls.json
-          git commit -m "chore: günlük Google Indexing API — indexed-urls.json güncelle
-
-Co-Authored-By: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          git commit -m "chore: günlük Google Indexing API tracking güncellendi [skip ci]"
           git push
