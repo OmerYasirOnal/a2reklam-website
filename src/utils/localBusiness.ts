@@ -40,7 +40,7 @@ function pruneEmpty(value: unknown): unknown {
 export function getLocalBusinessSchema(siteUrl: URL): Record<string, unknown> {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'ProfessionalService', 'Organization'],
     '@id': `${siteUrl.toString()}#organization`,
     name: BUSINESS_NAME,
     alternateName: BUSINESS_SHORT_NAME,
@@ -50,6 +50,28 @@ export function getLocalBusinessSchema(siteUrl: URL): Record<string, unknown> {
     email: EMAIL,
     image: new URL(LOGO_PATH, siteUrl).toString(),
     logo: new URL(LOGO_PATH, siteUrl).toString(),
+    // E-E-A-T sinyalleri — Google'ın otorite değerlendirmesi için
+    foundingDate: '2005',
+    numberOfEmployees: {
+      '@type': 'QuantitativeValue',
+      minValue: 5,
+      maxValue: 20,
+    },
+    knowsAbout: [
+      'Tabela İmalatı',
+      'Işıklı Tabela',
+      'Kutu Harf',
+      'Totem Tabela',
+      'Cephe Tabela',
+      'Paslanmaz Harf',
+      'Araç Giydirme',
+      'Yönlendirme Sistemleri',
+      'Kumlama Folyo',
+      'Kurumsal Reklam',
+    ],
+    slogan: 'Premium Tabela ve Reklam Çözümleri',
+    paymentAccepted: ['Cash', 'Credit Card', 'Bank Transfer'],
+    currenciesAccepted: 'TRY',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Şirintepe, Açelya Sokağı Ugur Apt No:4/a',
