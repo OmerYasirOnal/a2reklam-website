@@ -54,17 +54,17 @@ jobs:
           script: |
             const fs = require('fs');
             const path = require('path');
-            const glob = fs.readdirSync('scripts/data')
+            const reports = fs.readdirSync('scripts/data')
               .filter(f => f.startsWith('competitor-report-') && f.endsWith('.md'))
               .sort()
               .reverse();
-            if (glob.length === 0) {
+            if (reports.length === 0) {
               console.log('Rapor dosyası yok');
               return;
             }
-            const reportFile = path.join('scripts/data', glob[0]);
+            const reportFile = path.join('scripts/data', reports[0]);
             const report = fs.readFileSync(reportFile, 'utf8');
-            const month = glob[0].replace('competitor-report-', '').replace('.md', '');
+            const month = reports[0].replace('competitor-report-', '').replace('.md', '');
 
             await github.rest.issues.create({
               owner: context.repo.owner,
