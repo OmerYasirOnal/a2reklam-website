@@ -115,13 +115,6 @@
       }
     },
     {
-      "domain": "vertexaisearch.cloud.google.com",
-      "url": "https://vertexaisearch.cloud.google.com",
-      "firstSeen": "2026-04-16T21:49:18.307Z",
-      "lastAnalyzed": "2026-04-16T21:49:42.712Z",
-      "metrics": {}
-    },
-    {
       "domain": "imrandijital.com",
       "url": "https://imrandijital.com",
       "firstSeen": "2026-04-16T21:49:18.307Z",
@@ -150,13 +143,6 @@
       "metrics": {
         "totalUrls": 4
       }
-    },
-    {
-      "domain": "a2reklam.com.tr",
-      "url": "https://a2reklam.com.tr",
-      "firstSeen": "2026-04-16T21:49:18.307Z",
-      "lastAnalyzed": "2026-04-16T21:49:42.715Z",
-      "metrics": {}
     },
     {
       "domain": "mortabela.com",
@@ -292,6 +278,16 @@
     "trendyol.com",
     "n11.com",
     "gittigidiyor.com",
-    "letgo.com"
+    "letgo.com",
+    "vertexaisearch.cloud.google.com",
+    "a2reklam.com.tr",
+    "googleusercontent.com",
+    "gstatic.com",
+    "twitter.com",
+    "x.com",
+    "blogspot.com",
+    "wordpress.com",
+    "medium.com",
+    "pinterest.com"
   ]
 }
