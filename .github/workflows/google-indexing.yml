@@ -1,0 +1,66 @@
+name: Google Indexing API (Daily)
+
+# Her gün 03:00 UTC'de çalışır (Istanbul 06:00)
+# Sitemap'teki yeni URL'leri Google Indexing API'ye günde 20 adet bildirir.
+# indexed-urls.json tracking dosyasını otomatik commit eder.
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # Her gün 03:00 UTC
+  workflow_dispatch:      # Manuel tetikleme için (Actions sekmesinden "Run workflow")
+
+permissions:
+  contents: write  # indexed-urls.json'u commit edebilmek için
+
+jobs:
+  submit-urls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site (sitemap için)
+        run: npm run build
+
+      - name: Write service account JSON
+        env:
+          SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ -z "$SERVICE_ACCOUNT" ]; then
+            echo "::error::GOOGLE_SERVICE_ACCOUNT_JSON secret tanımlı değil!"
+            exit 1
+          fi
+          echo "$SERVICE_ACCOUNT" > service_account.json
+
+      - name: Submit 20 URLs to Google Indexing API
+        run: npm run google-index
+
+      - name: Cleanup service account file
+        if: always()
+        run: rm -f service_account.json
+
+      - name: Commit updated tracking file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet scripts/data/indexed-urls.json; then
+            echo "indexed-urls.json'da değişiklik yok, commit atlanıyor."
+            exit 0
+          fi
+          git add scripts/data/indexed-urls.json
+          git commit -m "chore: günlük Google Indexing API — indexed-urls.json güncelle
+
+Co-Authored-By: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          git push
