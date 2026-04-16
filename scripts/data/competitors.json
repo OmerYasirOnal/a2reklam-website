@@ -1,0 +1,27 @@
+{
+  "_comment": "İstanbul tabela sektöründeki rakip şirketler. competitor-discovery.mjs tarafından otomatik güncellenir.",
+  "lastUpdated": null,
+  "seedKeywords": [
+    "istanbul tabela",
+    "istanbul tabela imalatı",
+    "tabela firması istanbul",
+    "kutu harf tabela istanbul",
+    "işıklı tabela istanbul"
+  ],
+  "competitors": [],
+  "excludeList": [
+    "a2reklam.com",
+    "google.com",
+    "youtube.com",
+    "facebook.com",
+    "instagram.com",
+    "linkedin.com",
+    "wikipedia.org",
+    "sahibinden.com",
+    "hepsiburada.com",
+    "trendyol.com",
+    "n11.com",
+    "gittigidiyor.com",
+    "letgo.com"
+  ]
+}
