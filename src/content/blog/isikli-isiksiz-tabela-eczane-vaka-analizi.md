@@ -1,6 +1,6 @@
 ---
 title: "Işıklı/ışıksız Tabelalar Vaka Analizi: eczane..."
-description: "eczane örneğinde Işıklı/ışıksız Tabelalar tasarımı, montaj ve sonuçlar."
+description: "eczane örneğinde Işıklı/ışıksız Tabelalar tasarımı, montaj ve sonuçlar. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-19"
 updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Vaka", "Sektör", "Uygulama"]

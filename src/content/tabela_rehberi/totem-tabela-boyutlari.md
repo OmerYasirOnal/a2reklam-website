@@ -1,6 +1,6 @@
 ---
 title: "Totem Tabela Boyutları ve Standartları: Detaylı Rehber"
-description: "Totem tabela boyut seçimi, standart ölçüler ve statik hesaplama rehberi. İhtiyacınıza uygun totem boyutunu belirleyin."
+description: "Totem tabela boyut seçimi, standart ölçüler ve statik hesaplama rehberi. İhtiyacınıza uygun totem boyutunu belirleyin. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: 2026-01-22
 category: "Totem"
 tags: ["totem tabela", "totem boyutları", "tabela ölçüleri", "statik hesap"]

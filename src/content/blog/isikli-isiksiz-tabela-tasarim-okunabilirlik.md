@@ -1,6 +1,6 @@
 ---
 title: "Işıklı/ışıksız Tabelalar Tasarımında Okunabilirlik:..."
-description: "Okunabilirlik ve marka tutarlılığı için Işıklı/ışıksız Tabelalar tasarım kriterleri ve pratik ipuçları."
+description: "Okunabilirlik ve marka tutarlılığı için Işıklı/ışıksız Tabelalar tasarım kriterleri ve pratik ipuçları. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: "2025-02-14"
 updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Tasarım", "Okunabilirlik", "Marka"]

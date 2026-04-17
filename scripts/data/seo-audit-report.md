@@ -1,16 +1,16 @@
 # A2 Reklam — SEO Audit Raporu
 
-**Tarih:** 2026-04-17T05:01:51.457Z
+**Tarih:** 2026-04-17T05:15:31.417Z
 **Toplam HTML:** 204
 **Indexable:** 201 (noindex olmayan)
-**Sorunlu sayfa:** 100 (%49)
+**Sorunlu sayfa:** 42 (%21)
 
 ## 📊 Sorun Özeti
 
 | Sorun | Sayı |
 |-------|------|
-| DESC_SHORT | 66 |
-| DESC_LONG | 21 |
+| DESC_LONG | 17 |
+| DESC_SHORT | 12 |
 | TITLE_SHORT | 11 |
 | TITLE_LONG | 8 |
 
@@ -49,30 +49,30 @@ Word count < 200 olan indexable sayfalar (içerik zenginleştir):
 | /videolar/ | Proje Videoları | A2 Reklam | 27 | TITLE_SHORT(27) |
 | /zeytinburnu-tabelaci/ | Zeytinburnu Tabelacı | Kurumsal Tabela İmalatı &amp; Montaj | A2 Rekla | 71 | TITLE_LONG(71) |
 
-## 📋 Meta Description Sorunları (86)
+## 📋 Meta Description Sorunları (28)
 
 | URL | Uzunluk | Problem |
 |-----|---------|---------|
-| /blog/arac-giydirme-bakim-rehberi/ | 86 | DESC_SHORT(86) |
-| /blog/arac-giydirme-dagitim-filosu-vaka-analizi/ | 68 | DESC_SHORT(68) |
-| /blog/arac-giydirme-enerji-verimliligi/ | 78 | DESC_SHORT(78) |
-| /blog/arac-giydirme-fiyat-rehberi/ | 112 | DESC_SHORT(112) |
-| /blog/arac-giydirme-izin-ruhsat/ | 97 | DESC_SHORT(97) |
-| /blog/arac-giydirme-malzeme-secimi/ | 89 | DESC_SHORT(89) |
-| /blog/arac-giydirme-montaj-guvenligi/ | 74 | DESC_SHORT(74) |
-| /blog/arac-giydirme-tasarim-okunabilirlik/ | 92 | DESC_SHORT(92) |
-| /blog/arac-giydirme-yatirim-getirisi/ | 78 | DESC_SHORT(78) |
-| /blog/atasehir-paslanmaz-harf-rehberi/ | 70 | DESC_SHORT(70) |
-| /blog/basaksehir-totem-tabela-rehberi/ | 67 | DESC_SHORT(67) |
-| /blog/beylikduzu-arac-giydirme-rehberi/ | 68 | DESC_SHORT(68) |
-| /blog/cephe-tabela-bakim-rehberi/ | 85 | DESC_SHORT(85) |
-| /blog/cephe-tabela-enerji-verimliligi/ | 77 | DESC_SHORT(77) |
-| /blog/cephe-tabela-fiyat-rehberi/ | 111 | DESC_SHORT(111) |
-| /blog/cephe-tabela-izin-ruhsat/ | 96 | DESC_SHORT(96) |
-| /blog/cephe-tabela-kafe-vaka-analizi/ | 57 | DESC_SHORT(57) |
-| /blog/cephe-tabela-malzeme-secimi/ | 88 | DESC_SHORT(88) |
-| /blog/cephe-tabela-montaj-guvenligi/ | 73 | DESC_SHORT(73) |
-| /blog/cephe-tabela-tasarim-okunabilirlik/ | 91 | DESC_SHORT(91) |
+| /blog/cephe-tabela-kafe-vaka-analizi/ | 116 | DESC_SHORT(116) |
+| /blog/cephe-tabela-saha-sureci-video-rehberi/ | 178 | DESC_LONG(178) |
+| /blog/ | 80 | DESC_SHORT(80) |
+| /blog/isikli-vs-isiksiz-tabela/ | 175 | DESC_LONG(175) |
+| /blog/istanbulda-en-cok-tercih-edilen-10-tabela-turu/ | 174 | DESC_LONG(174) |
+| /blog/led-tabela-enerji-tuketimi-2026-maliyet/ | 185 | DESC_LONG(185) |
+| /blog/paslanmaz-harf-vs-kutu-harf/ | 172 | DESC_LONG(172) |
+| /blog/paslanmaz-kutu-harf-vs-pleksi-kutu-harf/ | 178 | DESC_LONG(178) |
+| /blog/sariyer-cati-tabelasi-rehberi/ | 176 | DESC_LONG(176) |
+| /blog/tabela-bakimi-nasil-yapilir-omru-uzatma/ | 171 | DESC_LONG(171) |
+| /cerez-politikasi/ | 99 | DESC_SHORT(99) |
+| /galeri/ | 177 | DESC_LONG(177) |
+| /gizlilik-politikasi/ | 117 | DESC_SHORT(117) |
+| / | 171 | DESC_LONG(171) |
+| /kullanim-kosullari/ | 88 | DESC_SHORT(88) |
+| /kvkk/ | 93 | DESC_SHORT(93) |
+| /referanslar/ | 105 | DESC_SHORT(105) |
+| /tabela-rehberi/cephe-tabelasi-malzemeleri/ | 176 | DESC_LONG(176) |
+| /tabela-rehberi/ | 93 | DESC_SHORT(93) |
+| /tabela-rehberi/isikli-tabela-cesitleri/ | 176 | DESC_LONG(176) |
 
 ## 🏷 Schema Eksik (0)
 
@@ -82,9 +82,9 @@ Hepsi schema içeriyor ✅
 
 | URL | Words | Schema | İç Link |
 |-----|-------|--------|---------|
-| /blog/ | 2534 | 3 | 355 |
+| /blog/ | 3097 | 3 | 355 |
 | /sss/ | 1943 | 4 | 109 |
-| / | 1848 | 4 | 176 |
+| / | 1862 | 4 | 176 |
 | /blog/istanbulda-en-cok-tercih-edilen-10-tabela-turu/ | 1767 | 5 | 131 |
 | /blog/tabela-bakimi-nasil-yapilir-omru-uzatma/ | 1722 | 5 | 122 |
 | /hizmetler/isiksiz-tabela/ | 1584 | 6 | 137 |

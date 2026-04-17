@@ -1,6 +1,6 @@
 ---
 title: "Işıklı Tabela Enerji Tüketimi ve Maliyet Hesaplama Rehberi"
-description: "Işıklı tabela elektrik tüketimi, aylık maliyet hesaplama ve enerji tasarrufu ipuçları. LED tabela ile faturanızı %80 azaltın."
+description: "Işıklı tabela elektrik tüketimi, aylık maliyet hesaplama ve enerji tasarrufu ipuçları. LED tabela ile faturanızı %80 azaltın. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: 2026-01-22
 category: "Işıklı Tabela"
 tags: ["ışıklı tabela", "enerji tüketimi", "LED tabela", "elektrik faturası"]

@@ -1,6 +1,6 @@
 ---
 title: "Paslanmaz Harf mi Kutu Harf mi? Farkları ve Seçim Rehberi"
-description: "Paslanmaz harf ve kutu harf tabela karşılaştırması: malzeme, fiyat, dayanıklılık, estetik ve kullanım alanlarına göre doğru seçim."
+description: "Paslanmaz harf ve kutu harf tabela karşılaştırması: malzeme, fiyat, dayanıklılık, estetik ve kullanım alanlarına göre doğru seçim. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: "2026-03-10"
 updatedDate: "2026-03-10"
 tags: ["paslanmaz harf", "kutu harf", "tabela karşılaştırma", "tabela malzeme"]

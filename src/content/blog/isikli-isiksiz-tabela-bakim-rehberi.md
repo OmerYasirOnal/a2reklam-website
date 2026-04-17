@@ -1,6 +1,6 @@
 ---
 title: "Işıklı/ışıksız Tabelalar Bakım Rehberi: Ömür ve..."
-description: "Periyodik temizlik, aydınlatma kontrolleri ve Işıklı/ışıksız Tabelalar ömrünü uzatan bakım planı."
+description: "Periyodik temizlik, aydınlatma kontrolleri ve Işıklı/ışıksız Tabelalar ömrünü uzatan bakım planı. — A2 Reklam: ⭐5.0/90 Google yorum, 39 ilçede hizmet."
 pubDate: "2025-02-16"
 updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Bakım", "Ömür", "Servis"]

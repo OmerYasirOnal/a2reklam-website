@@ -1,6 +1,6 @@
 ---
 title: "İstanbul Genelinde Tabela Hizmeti: 40 İlçe Kapsamlı Hizmet"
-description: "İstanbul'un tüm ilçelerinde profesyonel tabela hizmeti. Avrupa ve Anadolu yakası tam kapsama, hızlı teslimat ve yerel destek."
+description: "İstanbul'un tüm ilçelerinde profesyonel tabela hizmeti. Avrupa ve Anadolu yakası tam kapsama, hızlı teslimat ve yerel destek. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: 2026-01-22
 category: "İlçe Rehberleri"
 tags: ["İstanbul tabela", "tüm ilçeler", "tabela hizmeti", "İstanbul tabelacı"]

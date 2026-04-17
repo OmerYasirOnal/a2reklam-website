@@ -1,6 +1,6 @@
 ---
 title: "Araç Giydirme İçin İzin ve Ruhsat Süreci: Adım Adım Rehber"
-description: "Belediye başvurusu, proje çizimi ve ilan reklam vergisi; Araç Giydirme için izin sürecinin özeti."
+description: "Belediye başvurusu, proje çizimi ve ilan reklam vergisi; Araç Giydirme için izin sürecinin özeti. — A2 Reklam: ⭐5.0/90 Google yorum, 39 ilçede hizmet."
 pubDate: "2025-03-15"
 updatedDate: "2026-03-10"
 tags: ["Araç Giydirme", "Ruhsat", "Yönetmelik", "Süreç"]

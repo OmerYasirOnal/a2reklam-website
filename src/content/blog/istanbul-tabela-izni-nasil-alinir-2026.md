@@ -1,6 +1,6 @@
 ---
 title: "İstanbul'da Tabela İzni Nasıl Alınır? 2026 Rehberi"
-description: "İstanbul'da tabela ruhsatı başvuru süreci, gerekli belgeler, belediye harçları ve 2026 güncel tabela izin prosedürü rehberi."
+description: "İstanbul'da tabela ruhsatı başvuru süreci, gerekli belgeler, belediye harçları ve 2026 güncel tabela izin prosedürü rehberi. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: "2026-04-09"
 tags: ["Tabela İzni", "Belediye Ruhsatı", "İstanbul", "2026 Rehber"]
 heroImage: "/assets/img/demo/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"

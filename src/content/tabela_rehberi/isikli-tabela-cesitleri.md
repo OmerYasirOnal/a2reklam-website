@@ -1,6 +1,6 @@
 ---
 title: "Işıklı Tabela Çeşitleri: LED vs Neon Karşılaştırması"
-description: "LED ve neon ışıklı tabela çeşitleri, fiyatları, enerji tüketimi ve avantajları. İşletmeniz için en uygun ışıklı tabela seçimi rehberi."
+description: "LED ve neon ışıklı tabela çeşitleri, fiyatları, enerji tüketimi ve avantajları. İşletmeniz için en uygun ışıklı tabela seçimi rehberi. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: 2026-01-22
 category: "Işıklı Tabela"
 tags: ["ışıklı tabela", "LED tabela", "neon tabela", "tabela ışıklandırma"]

@@ -1,6 +1,6 @@
 ---
 title: "Totem Tabela Nedir? Avantajları ve Fiyatları"
-description: "Totem tabela çeşitleri, avantajları ve 2026 güncel fiyatları. Tek yüz, çift yüz, LED ve dijital totem tabela karşılaştırması."
+description: "Totem tabela çeşitleri, avantajları ve 2026 güncel fiyatları. Tek yüz, çift yüz, LED ve dijital totem tabela karşılaştırması. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: "2026-04-09"
 tags: ["Totem Tabela", "Tabela Fiyatları", "Tabela Çeşitleri", "2026"]
 heroImage: "/assets/img/demo/a2reklam-cephe-tabela-001-960.webp"

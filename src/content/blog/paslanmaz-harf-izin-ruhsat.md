@@ -1,6 +1,6 @@
 ---
 title: "Paslanmaz Harfler İçin İzin ve Ruhsat Süreci: Adım..."
-description: "Belediye başvurusu, proje çizimi ve ilan reklam vergisi; Paslanmaz Harfler için izin sürecinin özeti."
+description: "Belediye başvurusu, proje çizimi ve ilan reklam vergisi; Paslanmaz Harfler için izin sürecinin özeti. — A2 Reklam: ⭐5.0/90 Google yorum, 39 ilçede hizmet."
 pubDate: "2025-03-05"
 updatedDate: "2026-03-10"
 tags: ["Paslanmaz Harf", "Ruhsat", "Yönetmelik", "Süreç"]

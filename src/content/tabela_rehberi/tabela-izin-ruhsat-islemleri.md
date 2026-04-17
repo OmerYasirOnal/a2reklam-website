@@ -1,6 +1,6 @@
 ---
 title: "İstanbul'da Tabela İzin ve Ruhsat İşlemleri: Kapsamlı..."
-description: "İstanbul'da tabela ruhsatı nasıl alınır? Gerekli belgeler, başvuru süreci ve yasal düzenlemeler hakkında detaylı rehber."
+description: "İstanbul'da tabela ruhsatı nasıl alınır? Gerekli belgeler, başvuru süreci ve yasal düzenlemeler hakkında detaylı rehber. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: 2026-01-22
 category: "Fiyatlandırma & Süreç"
 tags: ["tabela izni", "tabela ruhsatı", "İstanbul belediye", "yasal düzenlemeler"]

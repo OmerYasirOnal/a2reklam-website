@@ -1,6 +1,6 @@
 ---
 title: "Araç Giydirme Yatırım Getirisi: Performans Ölçümü ve KPI"
-description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Araç Giydirme ROI yaklaşımı."
+description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Araç Giydirme ROI yaklaşımı. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-03-20"
 updatedDate: "2026-03-10"
 tags: ["Araç Giydirme", "ROI", "Performans", "Pazarlama"]

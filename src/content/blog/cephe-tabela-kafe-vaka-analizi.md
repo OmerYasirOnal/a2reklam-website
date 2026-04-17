@@ -1,6 +1,6 @@
 ---
 title: "Cephe Tabela Vaka Analizi: kafe İşletmesinde Dönüşüm"
-description: "kafe örneğinde Cephe Tabela tasarımı, montaj ve sonuçlar."
+description: "kafe örneğinde Cephe Tabela tasarımı, montaj ve sonuçlar. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-09"
 updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Vaka", "Sektör", "Uygulama"]

@@ -1,6 +1,6 @@
 ---
 title: "Totem Tabela Enerji Verimliliği ve Görünürlük Dengesi"
-description: "LED modül seçimi, güç tüketimi ve görünürlük için Totem Tabela optimizasyonu."
+description: "LED modül seçimi, güç tüketimi ve görünürlük için Totem Tabela optimizasyonu. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-27"
 updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Enerji", "Verimlilik", "Görünürlük"]
