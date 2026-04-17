@@ -6,7 +6,6 @@ import SEO from '../components/common/SEO.astro';
 import MobileCTA from '../components/common/MobileCTA.astro';
 import StickyCallButton from '../components/common/StickyCallButton.astro';
 import WhatsAppAssistant from '../components/common/WhatsAppAssistant.astro';
-import BackToTopButton from '../components/common/BackToTopButton.astro';
 import CookieConsent from '../components/common/CookieConsent.astro';
 import Tracking from '../components/common/Tracking.astro';
 import TrackingEvents from '../components/common/TrackingEvents.astro';
@@ -113,7 +112,6 @@ const quoteLink = mobileCtaVariant === 'contact' ? '#contact-form' : '/iletisim/
     <Footer lang={lang} />
     <MobileCTA lang={lang} variant={mobileCtaVariant} whatsappLink={whatsappLink} quoteLink={quoteLink} />
     <StickyCallButton />
-    <BackToTopButton lang={lang === 'en' ? 'en' : 'tr'} />
     <TrackingEvents />
     <CookieConsent lang={lang === 'en' ? 'en' : 'tr'} />
   </body>
