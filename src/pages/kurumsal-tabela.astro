@@ -40,7 +40,7 @@ const faq = [
 ];
 
 const services = [
-  { title: 'AVM Tabela Uygulamaları', desc: 'Mağaza cephe tabelaları, içeride yönlendirme, food court ve reklam alanları.', icon: '🛍' },
+  { title: 'AVM Tabela Uygulamaları', desc: 'Mağaza cephe tabelaları, içeride yönlendirme, food court ve reklam alanları.', icon: '🛍', href: '/avm-tabelasi/' },
   { title: 'Plaza Tabela Çözümleri', desc: 'Kurumsal kimlik uyumlu dış cephe logosu, lobi yönlendirme, kat numaraları.', icon: '🏢' },
   { title: 'Fabrika & OSB', desc: 'Büyük ölçek dış cephe, paslanmaz harf, OSB giriş tabelaları, uzun ömürlü uygulama.', icon: '🏭' },
   { title: 'Hastane Yönlendirme', desc: 'Poliklinik, acil servis, eczane yönlendirme sistemleri. Hijyenik ve dayanıklı.', icon: '🏥' },
@@ -190,13 +190,18 @@ const referans = [
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        {services.map(s => (
-          <div class="p-6 glass-card hover:border-primary/50 transition-all">
-            <div class="text-4xl mb-4">{s.icon}</div>
-            <h3 class="text-white font-heading font-bold text-lg mb-2">{s.title}</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
-          </div>
-        ))}
+        {services.map(s => {
+          const Card = s.href ? 'a' : 'div';
+          const extraProps = s.href ? { href: s.href, class: 'p-6 glass-card hover:border-primary/50 transition-all block group' } : { class: 'p-6 glass-card hover:border-primary/50 transition-all' };
+          return (
+            <Card {...extraProps}>
+              <div class="text-4xl mb-4">{s.icon}</div>
+              <h3 class="text-white font-heading font-bold text-lg mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
+              <p class="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+              {s.href && <span class="mt-3 inline-block text-primary text-sm font-semibold">Detay →</span>}
+            </Card>
+          );
+        })}
       </div>
     </div>
   </section>

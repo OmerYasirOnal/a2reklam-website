@@ -612,6 +612,15 @@ Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmi
 
 ### Log
 - **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+- **İter #20** (08:35): **Yeni niche landing `/avm-tabelasi/`** yayında.
+  - "AVM Tabela İmalatı İstanbul | Mağaza, Food Court, Yönlendirme" (73 kar title).
+  - Desc: 163 kar. 6 AVM tabela türü (mağaza, food court, vitrin, yönlendirme, digital, promosyon).
+  - 6 aşamalı süreç (brief → keşif → 3D → üretim → mesai dışı montaj → garanti).
+  - 7 FAQ (izin, süre, fiyat, türler, gece montaj, kira sözleşmesi, zincir mağaza).
+  - 50+ AVM referansı: Cevahir, Zorlu, Kanyon, İstinye, Mall of, Forum, Marmara Forum, Akasya, Emaar, Vadistanbul.
+  - `/kurumsal-tabela/` AVM service card → `/avm-tabelasi/` linkli (internal link).
+  - **Gotcha**: `.htaccess` catch-all `RedirectMatch 301 ^/([a-z0-9-]+-tabela)/?$ /$1ci/` var → `/avm-tabela/` `/avm-tabelaci/`a redirect ediyordu. Sayfa URL'i `/avm-tabelasi/` olarak bilinçli seçildi.
+  - Deploy + IndexNow 195 URL.
 - **İter #19** (08:15): **Blog + Tabela Rehberi description enrich** + hizmet sayfası desc kısaltma.
   - `scripts/enrich-blog-descriptions.mjs`: 63 blog + 17 rehber = **80 dosya** description'ına "A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum" kurumsal suffix eklendi (130 kar altındaysa).
   - `src/pages/hizmetler/[...slug].astro`: Jenerik suffix yerine akıllı truncation (165 kar cap).

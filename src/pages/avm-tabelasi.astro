@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CallBand from '../components/common/CallBand.astro';
+import { PHONE_NUMBER, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../consts';
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Kurumsal Tabela', item: '/kurumsal-tabela/' },
+  { name: 'AVM Tabela', item: '/avm-tabelasi/' },
+];
+
+const faq = [
+  {
+    question: 'AVM tabelası için hangi izinler gerekir?',
+    answer: 'AVM tabelaları için öncelikle AVM yönetiminin onayı (kira sözleşmesinde belirtilen tabela kuralları ve ölçü sınırları dahilinde) gereklidir. Dış cephe tabelaları için ayrıca ilçe belediyesinin ilan-reklam müdürlüğünden izin almak gerekir. A2 Reklam olarak tüm izin süreçlerini müşterilerimiz adına takip ediyoruz.',
+  },
+  {
+    question: 'AVM mağaza tabelası ne kadar sürede teslim edilir?',
+    answer: 'Standart bir AVM mağaza tabelası 7-10 iş gününde, özel tasarım ve ışıklı versiyonlar 15-20 iş gününde teslim edilir. Acil projelerde 48-72 saatte ekspres üretim seçeneği sunuyoruz. Montaj AVM\'nin uyguladığı mesai dışı çalışma kurallarına göre planlanır.',
+  },
+  {
+    question: 'AVM tabela fiyatları nasıl belirlenir?',
+    answer: 'AVM tabela fiyatı; mağaza cephe uzunluğu, tabela yüksekliği, malzeme (pleksi, paslanmaz, kompozit), aydınlatma tipi (LED kutu harf, lightbox) ve montaj saatine (mesai içi/dışı) göre belirlenir. 12.000₺\'den başlayıp 500.000₺\'a kadar projeler yönetiyoruz. Ücretsiz keşif sonrası 48 saat içinde detaylı teklif.',
+  },
+  {
+    question: 'AVM içinde hangi tabela türleri yaygın?',
+    answer: 'En yaygın AVM tabela türleri: (1) Mağaza cephe kutu harf veya pleksi aydınlatmalı tabela, (2) Vitrin içi LED sliding/static pano, (3) Food court mağaza tabelası, (4) Yön levhaları ve kat planları, (5) Promosyon ve kampanya tabelaları. Her biri için AVM standart kurallarına uygun üretim yapıyoruz.',
+  },
+  {
+    question: 'Gece çalışma ve mesai dışı montaj yapıyor musunuz?',
+    answer: 'Evet. AVM\'lerin büyük çoğunluğu gündüz ziyaretçi yoğunluğu sebebiyle gece montajı zorunlu kılar. Sertifikalı montaj ekibimiz 22:00-06:00 arası tam kapasite çalışır. İş güvenliği sertifikamız + AVM\'ye özel ekipman girişleri + noise reduction uygulamaları standart.',
+  },
+  {
+    question: 'AVM kira sözleşmesindeki tabela kurallarına uygun üretim yapıyor musunuz?',
+    answer: 'Evet. Her AVM kendi tabela yönergesine sahip (max ölçüler, ışık parlaklık limiti, montaj yöntemi, malzeme kısıtlamaları). Projeye başlamadan önce AVM\'nin tabela brief dokümanını inceler, uyumlu üretim planı çıkarırız. Onaysız uygulama yapmıyoruz.',
+  },
+  {
+    question: 'Zincir mağaza için İstanbul\'daki tüm AVM şubelerinize aynı gün servis veriyor musunuz?',
+    answer: 'Evet. 39 İstanbul ilçesinde mobil montaj ekiplerimiz var. Zincir mağaza (örn: 20 AVM şube) projesi aynı anda 3-4 ekiple paralel yürütülebilir. Tüm şubelerde 1 hafta içinde tabela yenileme tamamlanabilir.',
+  },
+];
+
+const avmTypes = [
+  { icon: '🛍', title: 'Mağaza Cephe Tabelası', desc: 'LED kutu harf + pleksi aydınlatmalı cephe tabelası. Kurumsal kimlik uyumlu.' },
+  { icon: '🍽', title: 'Food Court Tabelası', desc: 'Menü pano + marka logosu + yönlendirme. AVM food court standartlarına uygun.' },
+  { icon: '🏷', title: 'Vitrin İçi Tabela', desc: 'Pleksi ışıklı, hareketli LED pano, promosyon tabelası. Cam arkası montaj.' },
+  { icon: '🗺', title: 'Yönlendirme Sistemi', desc: 'Kat planı, tuvalet/asansör/çıkış yönlendirme. Renkli ve okunabilir.' },
+  { icon: '📱', title: 'Dijital Display', desc: 'Video duvar, dokunmatik kiosk, dijital menü. İnteraktif AVM deneyimi.' },
+  { icon: '🎆', title: 'Promosyon & Event', desc: 'Kampanya pano, yeni sezon tabelası, açılış görseli. Hızlı kurulum + söküm.' },
+];
+
+const process = [
+  { n: 1, title: 'AVM Brief & Kira Sözleşmesi İncelemesi', desc: 'AVM\'nin tabela yönergesi + kira sözleşmesi ölçü/malzeme kısıtlamaları analiz edilir.' },
+  { n: 2, title: 'Keşif & Ölçüm (Ücretsiz)', desc: 'AVM\'ye mağaza açılış tarihinden önce kontrollü ziyaret. Net ölçü + foto.' },
+  { n: 3, title: '3D Tasarım + AVM Onayı', desc: '3-5 tasarım önerisi. AVM yönetimine revize sunum. Onay sonrası üretim başlar.' },
+  { n: 4, title: 'Üretim (7-20 iş günü)', desc: 'Kendi atölyemizde kontrollü üretim. Her aşamada AVM ile paylaşılan ilerleme fotoğrafı.' },
+  { n: 5, title: 'Mesai Dışı Montaj', desc: '22:00-06:00 arası AVM\'nin izin verdiği saatte profesyonel montaj. İş güvenliği tam.' },
+  { n: 6, title: 'Teslim + Garanti', desc: 'AVM yönetimi + müşteri ortak kontrolü. 2 yıl malzeme + işçilik garantisi.' },
+];
+
+const title = 'AVM Tabela İmalatı İstanbul | Mağaza, Food Court, Yönlendirme | A2 Reklam';
+const description = "İstanbul'da AVM tabela imalatı: mağaza cephe, food court, vitrin, yönlendirme. ⭐5.0/90 yorum, 50+ AVM projesi. Gece montaj, mesai dışı. ☎ 0531 618 16 72";
+---
+
+<Layout
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+  whatsappTitle="AVM Tabela"
+>
+  <!-- HERO -->
+  <section class="relative bg-secondary min-h-[60vh] flex items-center py-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 mb-4 text-primary text-sm font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+          AVM mağaza • Food court • Vitrin • Yönlendirme
+        </div>
+        <h1 class="font-heading font-bold text-4xl md:text-6xl text-white uppercase tracking-tight mb-4">
+          AVM TABELA <span class="text-primary">İMALATI</span>
+        </h1>
+        <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+          İstanbul'un önde gelen AVM'lerinde <strong class="text-white">50+ mağaza cephe projesi</strong>.
+          AVM yönergelerine uyumlu üretim. Mesai dışı gece montajı. <strong class="text-primary">⭐{GOOGLE_RATING}/{GOOGLE_REVIEW_COUNT} yorum</strong>.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} data-track="call" class="bg-primary text-secondary font-bold px-8 py-4 rounded-xl hover:bg-white transition-all">
+            ☎ {PHONE_NUMBER}
+          </a>
+          <a href="/iletisim/" data-track="quote" class="bg-white/10 border-2 border-primary/40 text-white font-bold px-8 py-4 rounded-xl hover:border-primary hover:bg-primary/10 transition-all">
+            Ücretsiz Keşif Al
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVM TABELA TÜRLERİ -->
+  <section class="py-16 bg-secondary">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-12 uppercase">
+        AVM'de <span class="text-primary">Tabela Türleri</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {avmTypes.map(t => (
+          <div class="p-6 glass-card hover:border-primary/50 transition-all">
+            <div class="text-4xl mb-3">{t.icon}</div>
+            <h3 class="font-heading font-bold text-xl text-white mb-2">{t.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SÜREÇ -->
+  <section class="py-16 bg-secondary/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-12 uppercase">
+        AVM Tabela <span class="text-primary">Süreci</span>
+      </h2>
+      <div class="space-y-4">
+        {process.map(s => (
+          <div class="flex gap-4 p-6 glass-card hover:border-primary/50 transition-all">
+            <div class="flex-shrink-0 w-12 h-12 bg-primary text-secondary rounded-full flex items-center justify-center font-bold text-xl">
+              {s.n}
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-1">{s.title}</h3>
+              <p class="text-gray-400 leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SOSYAL KANIT -->
+  <section class="py-16 bg-gradient-to-br from-primary/10 via-secondary to-secondary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="text-5xl md:text-6xl font-heading font-bold text-primary mb-4">50+</div>
+      <p class="text-xl text-white font-semibold mb-2">İstanbul AVM Mağaza Projesi</p>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Cevahir, Zorlu, Kanyon, İstinye Park, Mall of İstanbul, Forum İstanbul, Marmara Forum, Akasya, Emaar Square,
+        Vadistanbul ve daha birçok AVM'de başarıyla tamamlanan projelerimizle güvenilir bir kurumsal partneriz.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3 justify-center">
+        <span class="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-white">⭐ 5.0/90 Google Yorum</span>
+        <span class="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-white">2.500+ Toplam Proje</span>
+        <span class="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-white">20+ Yıl Deneyim</span>
+        <span class="px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-white">Gece Montaj Uzmanı</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-secondary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-10 uppercase">
+        Sıkça Sorulan <span class="text-primary">Sorular</span>
+      </h2>
+      <div class="space-y-4">
+        {faq.map(item => (
+          <details class="p-6 glass-card group">
+            <summary class="font-heading font-bold text-white cursor-pointer list-none flex justify-between items-center">
+              <span>{item.question}</span>
+              <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-gray-400 mt-4 leading-relaxed">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white mb-4 uppercase">
+        AVM Projeniz Mi Var?
+      </h2>
+      <p class="text-gray-300 text-lg mb-8">
+        Ücretsiz keşif, 3D tasarım, aynı gün detaylı teklif. AVM yönergelerine uygun üretim garantisi.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} data-track="call" class="bg-primary text-secondary font-bold px-8 py-4 rounded-xl hover:bg-white transition-all">
+          ☎ {PHONE_NUMBER}
+        </a>
+        <a href="https://wa.me/905316181672" target="_blank" rel="noopener" data-track="whatsapp_click" class="bg-[#25D366] text-white font-bold px-8 py-4 rounded-xl hover:bg-green-600 transition-all">
+          WhatsApp'tan Yaz
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CallBand />
+</Layout>
