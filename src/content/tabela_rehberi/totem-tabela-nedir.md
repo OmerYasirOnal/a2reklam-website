@@ -1,6 +1,6 @@
 ---
 title: "Totem Tabela Nedir? Kullanım Alanları ve Avantajları"
-description: "Totem tabela çeşitleri, kullanım alanları ve avantajları hakkında detaylı rehber. İstanbul'da profesyonel totem tabela imalatı."
+description: "Totem tabela çeşitleri, kullanım alanları ve avantajları hakkında detaylı rehber. İstanbul'da profesyonel totem tabela imalatı. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: 2026-01-22
 category: "Totem"
 tags: ["totem tabela", "totem", "yönlendirme tabelası", "İstanbul tabela"]

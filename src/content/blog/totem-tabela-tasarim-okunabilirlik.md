@@ -1,6 +1,6 @@
 ---
 title: "Totem Tabela Tasarımında Okunabilirlik: Tipografi ve..."
-description: "Okunabilirlik ve marka tutarlılığı için Totem Tabela tasarım kriterleri ve pratik ipuçları."
+description: "Okunabilirlik ve marka tutarlılığı için Totem Tabela tasarım kriterleri ve pratik ipuçları. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-24"
 updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Tasarım", "Okunabilirlik", "Marka"]

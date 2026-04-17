@@ -1,6 +1,6 @@
 ---
 title: "Araç Giydirme Tasarımında Okunabilirlik: Tipografi ve..."
-description: "Okunabilirlik ve marka tutarlılığı için Araç Giydirme tasarım kriterleri ve pratik ipuçları."
+description: "Okunabilirlik ve marka tutarlılığı için Araç Giydirme tasarım kriterleri ve pratik ipuçları. | 2.500+ tamamlanmış proje, 20+ yıl deneyim — A2 Reklam."
 pubDate: "2025-03-16"
 updatedDate: "2026-03-10"
 tags: ["Araç Giydirme", "Tasarım", "Okunabilirlik", "Marka"]

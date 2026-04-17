@@ -612,6 +612,11 @@ Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmi
 
 ### Log
 - **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+- **İter #19** (08:15): **Blog + Tabela Rehberi description enrich** + hizmet sayfası desc kısaltma.
+  - `scripts/enrich-blog-descriptions.mjs`: 63 blog + 17 rehber = **80 dosya** description'ına "A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum" kurumsal suffix eklendi (130 kar altındaysa).
+  - `src/pages/hizmetler/[...slug].astro`: Jenerik suffix yerine akıllı truncation (165 kar cap).
+  - **SEO audit sonuç**: 100 → **42 sorunlu (%49 → %21)**, DESC_SHORT 104 → 12 (90% düzeldi).
+  - Deploy + IndexNow 194 URL submit.
 - **İter #18** (08:05): **39 ilçe + 20 sektör title+metaDescription enrich** edildi (`scripts/enrich-seo-metadata.mjs`).
   - İlçe format: `X Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam` (63 kar) + desc `X'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72` (144 kar)
   - Sektör format: `X Tabelası | Kurumsal İmalat & Montaj | A2 Reklam` (56 kar)

@@ -1,6 +1,6 @@
 ---
 title: "Işıklı/ışıksız Tabelalar Montaj Güvenliği: Keşif,..."
-description: "Rüzgar yükü, bağlantı ve iş güvenliği odaklı Işıklı/ışıksız Tabelalar montaj rehberi."
+description: "Rüzgar yükü, bağlantı ve iş güvenliği odaklı Işıklı/ışıksız Tabelalar montaj rehberi. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-15"
 updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Montaj", "Güvenlik", "Uygulama"]

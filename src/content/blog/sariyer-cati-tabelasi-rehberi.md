@@ -1,6 +1,6 @@
 ---
 title: "Sarıyer Çatı Tabelası Rehberi: Yükseklik, Rüzgar ve..."
-description: "Sarıyer bölgesinde çatı tabelası planlama, ruhsat, montaj ve maliyet kalemleri. Boğaz hattında görünürlük için pratik kontrol listesi."
+description: "Sarıyer bölgesinde çatı tabelası planlama, ruhsat, montaj ve maliyet kalemleri. Boğaz hattında görünürlük için pratik kontrol listesi. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: "2025-02-20"
 updatedDate: "2026-03-10"
 tags: ["Çatı Tabelası", "Sarıyer", "Ruhsat", "Rehber"]

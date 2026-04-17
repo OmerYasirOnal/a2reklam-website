@@ -1,6 +1,6 @@
 ---
 title: "Totem Tabela Montaj Güvenliği: Keşif, Statik ve Uygulama"
-description: "Rüzgar yükü, bağlantı ve iş güvenliği odaklı Totem Tabela montaj rehberi."
+description: "Rüzgar yükü, bağlantı ve iş güvenliği odaklı Totem Tabela montaj rehberi. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-25"
 updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Montaj", "Güvenlik", "Uygulama"]

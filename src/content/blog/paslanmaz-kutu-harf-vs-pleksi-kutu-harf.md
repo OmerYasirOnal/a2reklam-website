@@ -1,6 +1,6 @@
 ---
 title: "Paslanmaz Kutu Harf vs Pleksi Kutu Harf — Hangisi Daha İyi?"
-description: "Paslanmaz kutu harf ile pleksi kutu harf arasındaki farklar: malzeme, dayanıklılık, görünüm, fiyat ve kullanım alanları karşılaştırması."
+description: "Paslanmaz kutu harf ile pleksi kutu harf arasındaki farklar: malzeme, dayanıklılık, görünüm, fiyat ve kullanım alanları karşılaştırması. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: "2026-04-09"
 tags: ["Kutu Harf", "Paslanmaz Harf", "Pleksi Tabela", "Tabela Karşılaştırma"]
 heroImage: "/assets/img/demo/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"

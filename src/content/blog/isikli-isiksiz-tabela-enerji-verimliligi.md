@@ -1,6 +1,6 @@
 ---
 title: "Işıklı/ışıksız Tabelalar Enerji Verimliliği ve..."
-description: "LED modül seçimi, güç tüketimi ve görünürlük için Işıklı/ışıksız Tabelalar optimizasyonu."
+description: "LED modül seçimi, güç tüketimi ve görünürlük için Işıklı/ışıksız Tabelalar optimizasyonu. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-17"
 updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Enerji", "Verimlilik", "Görünürlük"]

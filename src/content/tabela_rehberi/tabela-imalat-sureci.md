@@ -1,6 +1,6 @@
 ---
 title: "Tabela İmalat Süreci: Tasarımdan Montaja 7 Adım"
-description: "Profesyonel tabela imalat süreci, üretim aşamaları ve kalite kontrol adımları. Tabela yapım sürecinin tüm detayları."
+description: "Profesyonel tabela imalat süreci, üretim aşamaları ve kalite kontrol adımları. Tabela yapım sürecinin tüm detayları. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: 2026-01-22
 category: "Fiyatlandırma & Süreç"
 tags: ["tabela imalatı", "üretim süreci", "tabela yapımı", "kalite kontrol"]

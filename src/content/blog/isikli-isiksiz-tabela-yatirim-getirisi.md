@@ -1,6 +1,6 @@
 ---
 title: "Işıklı/ışıksız Tabelalar Yatırım Getirisi: Performans..."
-description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Işıklı/ışıksız Tabelalar ROI yaklaşımı."
+description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Işıklı/ışıksız Tabelalar ROI yaklaşımı. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-18"
 updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "ROI", "Performans", "Pazarlama"]

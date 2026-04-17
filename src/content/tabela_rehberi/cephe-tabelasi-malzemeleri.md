@@ -1,6 +1,6 @@
 ---
 title: "En İyi Cephe Tabelası Malzemeleri: Detaylı Karşılaştırma"
-description: "Cephe tabelası malzemelerinin karşılaştırması: Akrilik, paslanmaz çelik, alüminyum kompozit ve galvaniz sac. Hangisi sizin için ideal?"
+description: "Cephe tabelası malzemelerinin karşılaştırması: Akrilik, paslanmaz çelik, alüminyum kompozit ve galvaniz sac. Hangisi sizin için ideal? | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: 2026-01-22
 category: "Cephe Tabelası"
 tags: ["tabela malzemeleri", "cephe tabelası", "akrilik tabela", "paslanmaz harf"]

@@ -1,6 +1,6 @@
 ---
 title: "Cephe Tabela Montaj Güvenliği: Keşif, Statik ve Uygulama"
-description: "Rüzgar yükü, bağlantı ve iş güvenliği odaklı Cephe Tabela montaj rehberi."
+description: "Rüzgar yükü, bağlantı ve iş güvenliği odaklı Cephe Tabela montaj rehberi. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-05"
 updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "Montaj", "Güvenlik", "Uygulama"]

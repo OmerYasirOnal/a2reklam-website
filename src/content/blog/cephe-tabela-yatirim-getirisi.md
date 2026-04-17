@@ -1,6 +1,6 @@
 ---
 title: "Cephe Tabela Yatırım Getirisi: Performans Ölçümü ve KPI"
-description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Cephe Tabela ROI yaklaşımı."
+description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Cephe Tabela ROI yaklaşımı. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-08"
 updatedDate: "2026-03-10"
 tags: ["Cephe Tabela", "ROI", "Performans", "Pazarlama"]

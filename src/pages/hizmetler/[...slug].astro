@@ -36,7 +36,12 @@ const relatedPosts = (await getCollection('blog'))
   .slice(0, 3);
 
 const metaTitle = `${displayTitle} | Kurumsal Tabela Çözümleri - A2 Reklam`;
-const metaDescription = `${entry.data.description} İstanbul genelinde keşif, üretim ve montaj için hızlı teklif alın.`;
+// Description'ı 160 kar altında tut (DESC_LONG audit warning)
+const _rawDesc = entry.data.description.trim();
+const _suffix = ' ☎ 0531 618 16 72';
+const metaDescription = (_rawDesc + _suffix).length <= 165
+  ? _rawDesc + _suffix
+  : _rawDesc.length <= 165 ? _rawDesc : _rawDesc.slice(0, 162) + '...';
 const breadcrumbs = [
   { name: 'Anasayfa', item: '/' },
   { name: 'Hizmetler', item: '/hizmetler/' },
