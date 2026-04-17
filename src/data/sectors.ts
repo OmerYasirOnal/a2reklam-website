@@ -26,9 +26,9 @@ export const sectors: Sector[] = [
   {
     slug: 'berber-tabelasi',
     name: 'Berber Tabelasi',
-    title: 'Berber Tabelasi | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Berber Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul berber tabelası imalatı: döner ışıklı, LED ve kutu harf berber tabelaları. A2 Reklam profesyonel çözümler. ✆ 0531 618 16 72',
+      `Berber Tabelasi işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Berber Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '💈',
     content: {
@@ -91,9 +91,9 @@ export const sectors: Sector[] = [
   {
     slug: 'kuafor-tabelasi',
     name: 'Kuaför Tabelası',
-    title: 'Kuaför Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Kuaför Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul kuaför ve güzellik salonu tabelası imalatı. LED ışıklı, neon ve cam folyo uygulamaları. A2 Reklam ✆ 0531 618 16 72',
+      `Kuaför Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Kuaför Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '✂️',
     content: {
@@ -152,9 +152,9 @@ export const sectors: Sector[] = [
   {
     slug: 'eczane-tabelasi',
     name: 'Eczane Tabelası',
-    title: 'Eczane Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Eczane Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul eczane tabelası ve LED eczane haçı imalatı. Nöbetçi eczane panosu, eczane kreşi. A2 Reklam ✆ 0531 618 16 72',
+      `Eczane Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Eczane Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '💊',
     content: {
@@ -217,9 +217,9 @@ export const sectors: Sector[] = [
   {
     slug: 'cafe-restoran-tabelasi',
     name: 'Cafe & Restoran Tabelası',
-    title: 'Cafe & Restoran Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Cafe & Restoran Tabelası | Kurumsal İmalat | A2 Reklam`,
     metaDescription:
-      'İstanbul cafe ve restoran tabelası imalatı. Ahşap, neon, menü panosu ve ışıklı cephe tabelaları. A2 Reklam ✆ 0531 618 16 72',
+      `Cafe & Restoran Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Cafe & Restoran Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '☕',
     content: {
@@ -283,9 +283,9 @@ export const sectors: Sector[] = [
   {
     slug: 'market-tabelasi',
     name: 'Market Tabelası',
-    title: 'Market Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Market Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul market ve süpermarket tabelası imalatı. Işıklı cephe, totem ve fiyat panoları. A2 Reklam ✆ 0531 618 16 72',
+      `Market Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Market Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🛒',
     content: {
@@ -343,9 +343,9 @@ export const sectors: Sector[] = [
   {
     slug: 'dis-klinigi-tabelasi',
     name: 'Diş Kliniği Tabelası',
-    title: 'Diş Kliniği Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Diş Kliniği Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul diş kliniği ve diş hekimi tabelası imalatı. Paslanmaz harf, ışıklı tabela ve yönlendirme. A2 Reklam ✆ 0531 618 16 72',
+      `Diş Kliniği Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Diş Kliniği Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🦷',
     content: {
@@ -403,9 +403,9 @@ export const sectors: Sector[] = [
   {
     slug: 'otel-tabelasi',
     name: 'Otel Tabelası',
-    title: 'Otel Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Otel Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul otel ve apart otel tabelası imalatı. Çatı tabelası, giriş tabelaları ve yönlendirme sistemleri. A2 Reklam ✆ 0531 618 16 72',
+      `Otel Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Otel Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🏨',
     content: {
@@ -469,9 +469,9 @@ export const sectors: Sector[] = [
   {
     slug: 'magaza-tabelasi',
     name: 'Mağaza Tabelası',
-    title: 'Mağaza Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Mağaza Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul mağaza ve dükkan tabelası imalatı. Kutu harf, ışıklı tabela ve vitrin uygulamaları. A2 Reklam ✆ 0531 618 16 72',
+      `Mağaza Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Mağaza Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🏪',
     content: {
@@ -534,9 +534,9 @@ export const sectors: Sector[] = [
   {
     slug: 'fabrika-tabelasi',
     name: 'Fabrika Tabelası',
-    title: 'Fabrika Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Fabrika Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul fabrika ve sanayi tabelası imalatı. Büyük ebat cephe giydirme, totem ve yönlendirme. A2 Reklam ✆ 0531 618 16 72',
+      `Fabrika Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Fabrika Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🏭',
     content: {
@@ -595,9 +595,9 @@ export const sectors: Sector[] = [
   {
     slug: 'plaza-tabelasi',
     name: 'Plaza Tabelası',
-    title: 'Plaza Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Plaza Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul plaza ve iş merkezi tabelası imalatı. Paslanmaz harf, yönlendirme ve kapı isimlik. A2 Reklam ✆ 0531 618 16 72',
+      `Plaza Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Plaza Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🏢',
     content: {
@@ -655,9 +655,9 @@ export const sectors: Sector[] = [
   {
     slug: 'avm-tabelasi',
     name: 'AVM Tabelası',
-    title: 'AVM Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `AVM Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul AVM ve alışveriş merkezi tabelası imalatı. Mağaza cephe, yönlendirme ve totem tabela. A2 Reklam ✆ 0531 618 16 72',
+      `AVM Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'AVM Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🏬',
     content: {
@@ -720,9 +720,9 @@ export const sectors: Sector[] = [
   {
     slug: 'hastane-tabelasi',
     name: 'Hastane Tabelası',
-    title: 'Hastane Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Hastane Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul hastane ve sağlık merkezi tabelası imalatı. Yönlendirme, cephe tabela ve kapı isimlik. A2 Reklam ✆ 0531 618 16 72',
+      `Hastane Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Hastane Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🏥',
     content: {
@@ -786,9 +786,9 @@ export const sectors: Sector[] = [
   {
     slug: 'okul-tabelasi',
     name: 'Okul Tabelası',
-    title: 'Okul Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Okul Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul okul, kreş ve eğitim kurumu tabelası imalatı. Cephe tabela ve yönlendirme sistemleri. A2 Reklam ✆ 0531 618 16 72',
+      `Okul Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Okul Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🎓',
     content: {
@@ -847,9 +847,9 @@ export const sectors: Sector[] = [
     slug: 'benzin-istasyonu-tabelasi',
     name: 'Benzin İstasyonu Tabelası',
     title:
-      'Benzin İstasyonu Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+      `Benzin İstasyonu Tabelası | Kurumsal İmalat | A2 Reklam`,
     metaDescription:
-      'İstanbul benzin istasyonu tabelası imalatı. Totem tabela, LED fiyat göstergesi ve pano çözümleri. A2 Reklam ✆ 0531 618 16 72',
+      `Benzin İstasyonu Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Benzin İstasyonu Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '⛽',
     content: {
@@ -913,9 +913,9 @@ export const sectors: Sector[] = [
   {
     slug: 'kargo-lojistik-tabelasi',
     name: 'Kargo & Lojistik Tabelası',
-    title: 'Kargo & Lojistik Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Kargo & Lojistik Tabelası | Kurumsal İmalat | A2 Reklam`,
     metaDescription:
-      'İstanbul kargo ve lojistik tabelası imalatı. Işıklı cephe, depo tabelası ve araç giydirme. A2 Reklam ✆ 0531 618 16 72',
+      `Kargo & Lojistik Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Kargo & Lojistik Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '📦',
     content: {
@@ -973,9 +973,9 @@ export const sectors: Sector[] = [
   {
     slug: 'firin-pastane-tabelasi',
     name: 'Fırın & Pastane Tabelası',
-    title: 'Fırın & Pastane Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Fırın & Pastane Tabelası | Kurumsal İmalat | A2 Reklam`,
     metaDescription:
-      'İstanbul fırın ve pastane tabelası imalatı. Işıklı tabela, vitrin folyo ve menü panosu. A2 Reklam ✆ 0531 618 16 72',
+      `Fırın & Pastane Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Fırın & Pastane Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🍞',
     content: {
@@ -1038,9 +1038,9 @@ export const sectors: Sector[] = [
   {
     slug: 'veteriner-tabelasi',
     name: 'Veteriner Tabelası',
-    title: 'Veteriner Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Veteriner Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul veteriner kliniği ve pet shop tabelası imalatı. Işıklı, kutu harf ve fener tabela. A2 Reklam ✆ 0531 618 16 72',
+      `Veteriner Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Veteriner Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🐾',
     content: {
@@ -1099,9 +1099,9 @@ export const sectors: Sector[] = [
     slug: 'avukat-hukuk-tabelasi',
     name: 'Avukat & Hukuk Bürosu Tabelası',
     title:
-      'Avukat & Hukuk Bürosu Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+      `Avukat & Hukuk Bürosu Tabelası | Kurumsal İmalat | A2 Reklam`,
     metaDescription:
-      'İstanbul avukat ve hukuk bürosu tabelası imalatı. Paslanmaz harf, kapı isimlik ve yönlendirme. A2 Reklam ✆ 0531 618 16 72',
+      `Avukat & Hukuk Bürosu Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Avukat & Hukuk Bürosu Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '⚖️',
     content: {
@@ -1159,9 +1159,9 @@ export const sectors: Sector[] = [
   {
     slug: 'spor-salonu-tabelasi',
     name: 'Spor Salonu Tabelası',
-    title: 'Spor Salonu Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+    title: `Spor Salonu Tabelası | Kurumsal İmalat & Montaj | A2 Reklam`,
     metaDescription:
-      'İstanbul spor salonu ve fitness tabelası imalatı. Işıklı tabela, neon LED ve cephe giydirme. A2 Reklam ✆ 0531 618 16 72',
+      `Spor Salonu Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Spor Salonu Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '💪',
     content: {
@@ -1221,9 +1221,9 @@ export const sectors: Sector[] = [
     slug: 'oto-yikama-galeri-tabelasi',
     name: 'Oto Yıkama & Galeri Tabelası',
     title:
-      'Oto Yıkama & Galeri Tabelası | A2 Reklam — Profesyonel Tabela İmalatı',
+      `Oto Yıkama & Galeri Tabelası | Kurumsal İmalat | A2 Reklam`,
     metaDescription:
-      'İstanbul oto yıkama ve oto galeri tabelası imalatı. Totem, ışıklı tabela ve araç giydirme. A2 Reklam ✆ 0531 618 16 72',
+      `Oto Yıkama & Galeri Tabelası işletmeniz için özel tabela imalatı. Cephe, kutu harf, LED, yönlendirme. ⭐5.0/90 yorum, 2.500+ proje. Ücretsiz keşif. ☎ 0531 618 16 72`,
     h1: 'Oto Yıkama & Galeri Tabelası — İstanbul Profesyonel Tabela Çözümleri',
     icon: '🚗',
     content: {
