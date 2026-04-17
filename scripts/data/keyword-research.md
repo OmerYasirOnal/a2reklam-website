@@ -482,4 +482,5 @@ Google Ads → Reklamlar ve öğeler → Öğeler → Ekle:
 
 ### Log
 - **İter #8** (05:45): Ad Extensions stratejisi hazırlandı. 8 sitelink + 20 callout + 2 structured snippet + call/location/price extensions için detaylı plan. **Manuel Google Ads'e uygulanmalı** (UI dialog başarısız oldu önceki iterasyonlarda).
+- **İter #9** (06:00): Sektörel template (`sektorel/[sector].astro`) + İlçe template (`[district].astro`) güncellendi. CallBand öncesi dinamik kurumsal CTA eklendi. **59 sayfaya** (20 sektör + 39 ilçe) tek değişiklikle yansıdı. Her sayfa kendi sektör/ilçe adını dinamik göstererek uygun niyete hitap ediyor ("Kurumsal Eczane Tabelası Projeniz Mi Var?", "Kadıköy'de AVM, Plaza, Otel Tabelası Yapılır Mı?"). **Site içi 204 sayfadan 150+'sı kurumsal landing'e link veriyor.**
 
