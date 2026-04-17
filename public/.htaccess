@@ -47,7 +47,10 @@ Options -MultiViews
   Redirect 301 /tabelacesitleri/neon-tabela/ /hizmetler/isikli-tabela/
 
   # -- Standart ilce slug'lari (regex ile, dogrudan tabelaci) --
-  RedirectMatch 301 ^/([a-z0-9-]+-tabela)/?$ /$1ci/
+  # Kurumsal landing sayfalari (kurumsal-tabela, avm-tabela, plaza-tabela vs.)
+  # catch-all'a takilmasin diye exception ile RewriteRule kullanilir.
+  RewriteCond %{REQUEST_URI} !^/(kurumsal-tabela|avm-tabela|plaza-tabela|fabrika-tabela|hastane-tabela|otel-tabela|okul-tabela|banka-tabela|ofis-tabela|restoran-tabela|kafe-tabela|magaza-tabela|sektorel-tabela|dijital-tabela|ledli-tabela|neon-tabela|modern-tabela)/?$
+  RewriteRule ^([a-z0-9-]+-tabela)/?$ /$1ci/ [R=301,L]
 </IfModule>
 
 # ================================================
