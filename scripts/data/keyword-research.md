@@ -352,3 +352,134 @@ Google My Business'ta "Sorular" bölümüne kendi sorup kendi cevaplayın (sahte
 - **İter #6** (05:20): `/kurumsal-tabela/` site genelinde içe bağlandı. Header'da vurgulu "Kurumsal" menüsü (desktop + mobile, primary renk + pulse animation). Footer'a 3 yeni link (Kurumsal Tabela + Sektörel Çözümler + Yorum Bırakın). Blog generator'a 'kurumsal tabela', 'kurumsal çözüm', 'AVM ve plaza', 'büyük ölçekli tabela' keyword→URL mappingi eklendi. **204 sayfadan kurumsal landing'e iç link akıyor → Google authority aktarımı.**
 - **İter #7** (05:30): **Ana sayfaya kurumsal CTA band** eklendi (VideoProjects sonrası, yüksek engagement spotu). 4 sektör ikonu + primary gradient + conversion tracking (`kurumsal_cta_click`). Hizmetler index sayfasına da kurumsal CTA card eklendi. Her ziyaretçi artık kurumsal sayfadan 1 klik uzakta.
 
+---
+
+## 📢 AD EXTENSIONS STRATEJİSİ (İterasyon #8 — 2026-04-17 05:45)
+
+Google Ads'te Ad Extensions reklamın altında ek mesaj gösterir — **CTR +%10-20, Quality Score +1-2 puan**. Rakiplerimiz (brdreklamtabela vs.) zaten kullanıyor.
+
+### 1. SITELINKS (6-8 adet eklenecek)
+
+Her kampanyada reklamın altında gözükecek ek linkler. Site'de yeni oluşturulan sayfalara yönlendirerek **kurumsal trafiği artırır**.
+
+| # | Başlık (25 char) | URL | Açıklama 1 (35 char) | Açıklama 2 (35 char) |
+|---|------------------|-----|----------------------|----------------------|
+| 1 | Kurumsal Tabela | /kurumsal-tabela/ | AVM, Plaza, Hastane, Otel | 2.500+ Proje, 20 Yıl |
+| 2 | Ücretsiz Keşif | /iletisim/ | 48 Saatte Detaylı Teklif | İstanbul'un 39 İlçesi |
+| 3 | Proje Galerisi | /galeri/ | Kurumsal Projelerimiz | Gerçek Müşteri Uygulamaları |
+| 4 | Müşteri Yorumları | /yorum-birakin/ | ⭐ 5.0 / 90+ Yorum | Google'da Kanıtlı Kalite |
+| 5 | Tabela Rehberleri | /tabela-rehberi/ | 20+ Uzman İçerik | İzinler, Malzeme, Bakım |
+| 6 | Işıklı Tabela | /hizmetler/isikli-tabela/ | LED & Kutu Harf | Kurumsal Çözümler |
+| 7 | Cephe Tabelası | /hizmetler/cephe-tabela/ | Plaza & AVM Uygulamaları | Paslanmaz + Kompozit |
+| 8 | Araç Giydirme | /hizmetler/arac-giydirme/ | Ticari Filo Çözümleri | Tam/Yarım Kaplama |
+
+### 2. CALLOUT EXTENSIONS (20 adet)
+
+Reklamın altında virgülle ayrılmış kısa güven mesajları. Her biri 25 karakter max.
+
+**Güven / Otorite:**
+1. `2005'ten Beri Kurumsal`
+2. `2.500+ Başarılı Proje`
+3. `⭐ 5.0 Google Puanı`
+4. `90+ Müşteri Yorumu`
+5. `20+ Yıl Sektör Deneyimi`
+
+**Hizmet Özellikleri:**
+6. `Ücretsiz Keşif Hizmeti`
+7. `3D Tasarım Önizleme`
+8. `Aynı Gün Hızlı Teklif`
+9. `Uygun Fiyat Garantisi`
+10. `48 Saatte Detaylı Plan`
+
+**Üretim / Kalite:**
+11. `Kendi Atölye Üretimi`
+12. `CNC Lazer Kesim`
+13. `IP65 Sertifikalı LED`
+14. `Profesyonel Montaj Ekibi`
+15. `2 Yıl Malzeme Garantisi`
+
+**Servis Alanı:**
+16. `39 İlçeye Hizmet`
+17. `Aracı Yok, Direkt Üretim`
+18. `AVM & Plaza Uzmanı`
+19. `Hastane & Otel Çözümleri`
+20. `Belediye İzin Takibi`
+
+### 3. STRUCTURED SNIPPETS (2 adet)
+
+Reklama "şundan şunu yapıyoruz" listesi ekler. 2 kategori:
+
+**Kategori: Services (Hizmetler)**
+- Işıklı Tabela
+- Kutu Harf
+- Cephe Tabelası
+- Totem Tabela
+- Paslanmaz Harf
+- Araç Giydirme
+- Yönlendirme Sistemleri
+- Özel İmalat
+
+**Kategori: Types (Türler)**
+- AVM Tabelaları
+- Plaza Tabelaları
+- Hastane Yönlendirme
+- Otel Tabela Sistemleri
+- Fabrika Uygulamaları
+- Okul Kampüs
+
+### 4. CALL EXTENSION
+
+Mobil kullanıcılar direkt reklamda arayabilir:
+- **Telefon:** +90 531 618 16 72
+- **Mesai saatleri:** Pzt-Cum 09:00-18:00, Cmt 09:00-14:00
+- Mesai dışında: iletişim formu yönlendirmesi
+
+### 5. LOCATION EXTENSION
+
+Google My Business ile senkronize → reklamda adres + yol tarifi çıkar.
+- Şirintepe, Açelya Sokağı Uğur Apt No:4/a Kağıthane/İstanbul
+- Google Maps linki otomatik gelir
+- Yerel aramalarda yakın olanları önceler
+
+### 6. PRICE EXTENSION (yeni fikir)
+
+Belirli hizmetler için başlangıç fiyatı göster:
+| Hizmet | Başlangıç Fiyat | Link |
+|--------|-----------------|------|
+| Işıklı Tabela | ₺8.000'den | /hizmetler/isikli-tabela/ |
+| Kutu Harf | ₺15.000'den | /hizmetler/paslanmaz-harfler/ |
+| Totem Tabela | ₺25.000'den | /hizmetler/totem/ |
+| Cephe Tabelası | ₺12.000'den | /hizmetler/cephe-tabela/ |
+
+### 7. PROMOTION EXTENSION (opsiyonel)
+
+Sezonluk kampanyalar için:
+- "Yıl sonu tüm kurumsal projelerde %10 indirim"
+- "Yeni şube açılışlarına özel ücretsiz tasarım"
+
+---
+
+### UYGULAMA SIRASI (Google Ads'te manuel)
+
+Google Ads → Reklamlar ve öğeler → Öğeler → Ekle:
+
+1. **Sitelink extensions** (8 adet) — tüm kampanyalar
+2. **Callout extensions** (10-12 adet seç) — tüm kampanyalar
+3. **Structured snippets** (Services + Types) — tüm kampanyalar
+4. **Call extension** — tüm kampanyalar
+5. **Location extension** — GMB zaten hazır, tek tık
+
+### BEKLENEN ETKİ
+
+| Metrik | Şimdi | Extensions Sonrası |
+|--------|-------|-------------------|
+| CTR | %4.88 | **%5.5-6.0** (+%15) |
+| Ad Rank | orta | **yüksek** (daha üst pozisyon) |
+| Reklam alanı | 1 satır | **3-4 satır** |
+| Quality Score | 6-7 | **8-9** (ileride CPC -%10-15) |
+
+---
+
+### Log
+- **İter #8** (05:45): Ad Extensions stratejisi hazırlandı. 8 sitelink + 20 callout + 2 structured snippet + call/location/price extensions için detaylı plan. **Manuel Google Ads'e uygulanmalı** (UI dialog başarısız oldu önceki iterasyonlarda).
+
