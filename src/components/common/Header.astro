@@ -13,6 +13,7 @@ const { lang = 'tr' } = Astro.props;
 const items = [
   { label: 'Anasayfa', href: '/' },
   { label: 'Hizmetler', href: '/hizmetler/' },
+  { label: 'Kurumsal', href: '/kurumsal-tabela/', highlight: true },
   { label: 'Galeri', href: '/galeri/' },
   { label: 'Tabela Rehberleri', href: '/tabela-rehberi/' },
   { label: 'Hakkımızda', href: '/hakkimizda/' },
@@ -48,6 +49,10 @@ const closeLabel = 'Kapat';
     <nav class="hidden lg:flex items-center gap-4 xl:gap-6">
       <a href="/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">Anasayfa</a>
       <a href="/hizmetler/" class="text-sm font-medium text-gray-300 hover:text-primary transition-colors uppercase tracking-wide whitespace-nowrap">Hizmetler</a>
+      <a href="/kurumsal-tabela/" class="text-sm font-bold text-primary hover:text-white transition-colors uppercase tracking-wide whitespace-nowrap flex items-center gap-1">
+        <span class="inline-block w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+        Kurumsal
+      </a>
 
       <!-- Hizmet Bölgeleri Dropdown -->
       <div class="relative group">
@@ -177,6 +182,10 @@ const closeLabel = 'Kapat';
       <div class="flex-1 space-y-1 overflow-y-auto">
         <a href="/" class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">Anasayfa</a>
         <a href="/hizmetler/" class="block py-3 px-4 text-lg font-medium text-gray-200 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">Hizmetler</a>
+        <a href="/kurumsal-tabela/" class="block py-3 px-4 text-lg font-bold text-primary hover:text-white hover:bg-primary/10 rounded-lg transition-colors flex items-center gap-2">
+          <span class="inline-block w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+          Kurumsal Tabela
+        </a>
 
         <!-- Bölgeler Accordion -->
         <details class="group">

@@ -265,6 +265,8 @@ function addInternalLinks(md, topic) {
     // Ana hub sayfaları
     { kw: /\b(39 ilçe|İstanbul'un 39 ilçe(?:si)?|tüm ilçeler)\b/gi, url: '/istanbul-tabelaci/', priority: 4 },
     { kw: /\b(sektörel çözüm(?:ler)?|her sektöre özel)\b/gi, url: '/sektorel/', priority: 4 },
+    // Kurumsal landing (yüksek değer)
+    { kw: /\b(kurumsal tabela|kurumsal çözüm(?:ler)?|AVM ve plaza|büyük ölçek(?:li)? tabela)\b/gi, url: '/kurumsal-tabela/', priority: 2 },
     { kw: /\b(iletişim)\b/gi, url: '/iletisim/', priority: 5 },
   ];
 
