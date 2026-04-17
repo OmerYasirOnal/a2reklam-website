@@ -484,3 +484,82 @@ Google Ads → Reklamlar ve öğeler → Öğeler → Ekle:
 - **İter #8** (05:45): Ad Extensions stratejisi hazırlandı. 8 sitelink + 20 callout + 2 structured snippet + call/location/price extensions için detaylı plan. **Manuel Google Ads'e uygulanmalı** (UI dialog başarısız oldu önceki iterasyonlarda).
 - **İter #9** (06:00): Sektörel template (`sektorel/[sector].astro`) + İlçe template (`[district].astro`) güncellendi. CallBand öncesi dinamik kurumsal CTA eklendi. **59 sayfaya** (20 sektör + 39 ilçe) tek değişiklikle yansıdı. Her sayfa kendi sektör/ilçe adını dinamik göstererek uygun niyete hitap ediyor ("Kurumsal Eczane Tabelası Projeniz Mi Var?", "Kadıköy'de AVM, Plaza, Otel Tabelası Yapılır Mı?"). **Site içi 204 sayfadan 150+'sı kurumsal landing'e link veriyor.**
 
+---
+
+## 🔎 ARAMA TERİMLERİ DETAY ANALİZ (İterasyon #10 — 2026-04-17 06:15)
+
+Son 30 gün: 279 tıklama, 5,842 gösterim, %4.78 CTR, ₺27.65 CPC.
+
+### 💰 EKLENMESI GEREKEN ALTIN KELİMELER
+
+(Yüksek CTR, eklenmemiş, dönüşüm sinyali güçlü)
+
+| Kelime | Eşleme Türü | Kampanya | Tık | CTR | Neden |
+|--------|-------------|----------|-----|-----|-------|
+| **pleksi harf kutu** | Sıralı | Kutu-Harf-Tabela | 3 | **%100** | Her gösterim tıklıyor! |
+| **dukkan tabela tasarimlari** | Geniş | Cephe-Totem-Genel | 3 | **%37.5** | Yüksek ilgi |
+| **tabela imalatcilari** | Geniş | Cephe-Totem-Genel | 2 | **%50** | Profesyonel arayan |
+| **isikli tabela ornekleri** | Geniş | Isikli-Tabela-LED | 2 | **%200** | Görünürlük çok yüksek |
+| **esenyurt tabela** | Sıralı | Cephe-Totem-Genel | 5 | %13.89 | Lokal niş altın |
+| **arac kaplama esenyurt** | Sıralı | Dijital-Baski | 2 | **%100** | Lokal + hizmet |
+| **beylikduzu reklam tabela** | Sıralı | Cephe-Totem-Genel | 2 | %20 | Lokal, iyi CTR |
+| **tabelaci istanbul** | Sıralı | Cephe-Totem-Genel | 8 | - | Net niyet |
+| **elektrikli tabela** | Sıralı | Isikli-Tabela-LED | 2 | %200 | Niş, ciddi arayıcı |
+| **kuyumcu tabela ornekleri** | Geniş | Cephe-Totem-Genel | 2 | %200 | Sektör niş |
+
+### 🚫 NEGATİF YAPILMASI GEREKEN (para yakan)
+
+| Kelime | Eşleme | Problem |
+|--------|--------|---------|
+| **tabela tasarla** | Sıralı | Online tasarım aracı arayan (zaten negatif listesinde ama genişletilebilir) |
+| **tabela ornekleri** (standalone) | Sıralı | Sadece görsel arayan, dönüşüm verimsiz |
+| **arac kaplama malzemesi** | Sıralı | Malzeme satıcısı arayan, müşteri değil |
+| **lightbox** | Sıralı | Yazılım arayan (zaten negatif) ✓ |
+
+### 🎯 KRİTİK İÇ GÖRÜLER
+
+1. **Lokal (ilçe + hizmet) altın kombineler** — Google'da "beylikdüzü reklam tabela", "esenyurt tabela", "araç kaplama esenyurt" aratılıyor. 39 ilçe × 8 hizmet = 312 potansiyel kombinasyon. **İleride: ilçe-bazlı dinamik keyword generator script'i yazılabilir.**
+
+2. **Pleksi harf kutu** terimi %100 CTR'la uçuyor. Biz sadece "pleksi kutu harf"i eklemişiz — kelime sırası farklı olduğu için aynı şey eşleşmiyor. Sıralı eşleme olarak eklenmeli.
+
+3. **"Tabelacı"** 56 gösterim, 2 tıklama (%3.57) — gösterim var ama alakasız geniş eşlemeden geliyor. Sıralı olarak eklenirse hem CTR hem dönüşüm artar.
+
+4. **"Tabela tasarla"** hem Isikli-LED'de hem Cephe-Totem'de çıkıyor → genel negatifleyelim (zaten var ama güçlendirilmeli).
+
+### 📋 UYGULAMA PLANI (manuel)
+
+**Hemen eklenebilir (low-risk, yüksek değer):**
+
+Cephe-Totem-Genel kampanyasına:
+```
+dukkan tabela tasarimlari (geniş)
+tabela imalatcilari (geniş)
+"esenyurt tabela" (sıralı)
+"beylikduzu reklam tabela" (sıralı)
+"tabelaci istanbul" (sıralı)
+"kuyumcu tabela" (sıralı)
+```
+
+Kutu-Harf-Tabela kampanyasına:
+```
+"pleksi harf kutu" (sıralı)
+"pleksi harf" (sıralı)
+"isikli harf tabela" (sıralı)
+```
+
+Isikli-Tabela-LED kampanyasına:
+```
+"isikli tabela ornekleri" (sıralı)
+"elektrikli tabela" (sıralı)
+```
+
+Dijital-Baski kampanyasına:
+```
+"arac kaplama esenyurt" (sıralı)
+"arac giydirme reklam" (sıralı)
+"arac reklam giydirme" (sıralı)
+```
+
+### Log
+- **İter #10** (06:15): Arama terimleri raporu detay analizi. 279 tıklama / 5,842 gösterim verisinden 13 altın kelime + 3 ek negatif aday tespit edildi. 4 kampanya için özel kelime listeleri hazırlandı (manuel ekleme gerekli — UI dialog UI güvenilir değil).
+
