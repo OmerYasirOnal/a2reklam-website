@@ -612,6 +612,17 @@ Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmi
 
 ### Log
 - **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+- **İter #16** (07:40): **Google Ads Editor import paketi** tamamlandı — 5 CSV + 2 script.
+  - `generate-ads-extensions-csv.mjs` → 3 extension CSV:
+    - `google-ads-sitelinks.csv` (32 satır: 4 kampanya × 8 sitelink)
+    - `google-ads-callouts.csv` (80 satır: 4 × 20 callout)
+    - `google-ads-snippets.csv` (12 satır: 4 × 3 header)
+  - `generate-corporate-keywords-csv.mjs` → 2 CSV:
+    - `google-ads-corporate-keywords.csv` (128 satır: 104 systematic kurumsal×hizmet + 24 proven)
+    - `google-ads-negatives-import.csv` (100 satır: 25 negatif × 4 kampanya)
+  - 3 kampanyaya (Isikli-LED, Kutu-Harf, Dijital-Baski) eksik olan AVM/plaza/kurumsal/fabrika/hastane/otel/ofis/banka kombineleri eklendi.
+  - Tek seferde Ads Editor import → 4 kampanyaya uygulanır (iter#14'teki RSA copy-kit.md ile uyumlu).
+  - **Beklenen etki**: 3 kampanyanın da kurumsal aramalardan pay alması → toplam dönüşüm +%30.
 - **İter #15** (07:25): `scripts/data/gbp-optimization-kit.md` üretildi (Google Business Profile / Maps full optimization).
   - **Profil tamamlama**: 745 karakter açıklama, 1 primary + 8 secondary kategori (Tabela Mağazası, Tabela İmalatçısı, Grafik Tasarım, Reklam Malzemesi, Metal İşleme, Baskı, Araç Reklam, İç Dekoratör, Plastik).
   - **15 hizmet detayı** (min fiyat + 250 kar açıklama): AVM mağaza ₺8.000, plaza ₺20.000, fabrika ₺30.000, hastane ₺15.000, otel ₺25.000.
