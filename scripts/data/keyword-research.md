@@ -612,6 +612,15 @@ Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmi
 
 ### Log
 - **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+- **İter #15** (07:25): `scripts/data/gbp-optimization-kit.md` üretildi (Google Business Profile / Maps full optimization).
+  - **Profil tamamlama**: 745 karakter açıklama, 1 primary + 8 secondary kategori (Tabela Mağazası, Tabela İmalatçısı, Grafik Tasarım, Reklam Malzemesi, Metal İşleme, Baskı, Araç Reklam, İç Dekoratör, Plastik).
+  - **15 hizmet detayı** (min fiyat + 250 kar açıklama): AVM mağaza ₺8.000, plaza ₺20.000, fabrika ₺30.000, hastane ₺15.000, otel ₺25.000.
+  - **20 haftalık Google Posts taslağı** (Pzt proje + Prş ipucu, 10 hafta detaylı + 10 hafta taslak).
+  - **20 Q&A proaktif** (owner hesabından sor-cevapla stratejisi).
+  - **Yorum toplama stratejisi**: QR kod kartı, WhatsApp 3-gün template, e-posta template. Hedef 90 → 150+ yorum (ay 6).
+  - **Rakip GBP karşılaştırma**: Armut (4.6/240), Eray (4.8/180), brd (4.7/320). Bizim edge: 5.0 puan + kurumsal odak + direkt üretici.
+  - **KPI hedef** (6 ay): Yorum 90→150, aylık view 300→800, aylık tel 40→100.
+  - **7 günlük uygulama planı** (gün bazında checklist).
 - **İter #14** (07:10): `scripts/data/ads-copy-kit.md` üretildi (4 kampanya × RSA + tüm Ad Extensions).
   - **4 RSA set** (60 başlık + 16 açıklama toplam): Cephe-Totem-Genel→`/kurumsal-tabela/`, Isikli-Tabela-LED→`/hizmetler/isikli-tabela/`, Kutu-Harf-Tabela→`/hizmetler/paslanmaz-harfler/`, Dijital-Baski-Arac-Giydirme→`/hizmetler/arac-giydirme/`.
   - **8 Universal Sitelinks** (kurumsal-tabela, hizmetler, referans, iletişim, istanbul-tabelaci, sektörel, blog, galeri).
