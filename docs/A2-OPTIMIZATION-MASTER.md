@@ -59,23 +59,33 @@ Pasif çalışan 8 workflow:
 
 ## 📋 HAZIR PAKETLER (elle uygulanacak — yapmadık)
 
-### 1. Google Ads Paketi (`scripts/data/`)
+### 1. Google Ads Paketi v2 (`scripts/data/`) — İter#22, 2026-04-17, commit 8f264c8
+
+**v1 → v2 değişim:** Keywords 639→156 (%76 daraltma, Iter#10 CTR verisiyle). Negatives 100→564 (rakip+şehir+iş arayan+DIY filter). Sitelinks per-campaign. Snippets "Brands"→"Types"+"Service catalog" header fix. RSA UI-manuel → CSV import.
 
 | Dosya | İçerik |
 |-------|--------|
-| `google-ads-keywords-import.csv` | 639 keyword (15 proven + 624 long-tail 39 ilçe × 16 hizmet) |
-| `google-ads-corporate-keywords.csv` | 128 kurumsal (AVM/plaza/hastane × hizmet kombineler) |
-| `google-ads-negatives-import.csv` | 100 negatif (ankara, izmir, bedava, usta iş ilanı, template…) |
-| `google-ads-sitelinks.csv` | 32 sitelink (4 kampanya × 8) |
-| `google-ads-callouts.csv` | 80 callout (4 × 20) |
-| `google-ads-snippets.csv` | 12 snippet (4 × 3 header: Services, Brands, Neighborhoods) |
-| `ads-copy-kit.md` | 4 kampanya × RSA (60 başlık + 16 açıklama) + extension detayları |
+| `google-ads-keywords-import.csv` | 156 keyword (7 Champion Exact + 41 Core Phrase + 108 Long-tail: 18 top ilçe × 6 hizmet) |
+| `google-ads-corporate-keywords.csv` | 56 kurumsal (3 kampanyaya AVM/plaza/hastane/otel/fabrika kombineleri) |
+| `google-ads-negatives-import.csv` | 564 negatif (141 × 4 kampanya: rakip+şehir+iş+DIY+e-ticaret) |
+| `google-ads-rsa-import.csv` | 4 RSA (15 başlık + 4 açıklama + 2 path, pin 1+2) — yeni |
+| `google-ads-sitelinks.csv` | 32 sitelink (4 kampanya × 8, her kampanya kendi landing'ine özel) |
+| `google-ads-callouts.csv` | 48 callout (4 × 12 — Google 4-6 gösterir) |
+| `google-ads-snippets.csv` | 12 snippet (4 × 3 header: Service catalog, Types, Neighborhoods) |
+| `ads-copy-kit.md` | Arşiv/referans — copy spec detayı |
+| `ads-import-guide.md` | Editor import sırası + UI-only ayar rehberi — yeni |
+
+**Komutlar (otomatize üretim):**
+- `npm run ads:build` → 4 generator çalıştırır, 6 CSV üretir (872 satır)
+- `npm run ads:audit` → duplicate + char limit + kampanya tutarlılık validatörü
 
 **Nasıl uygulanır:**
-1. Google Ads Editor indir: https://ads.google.com/intl/tr/home/tools/ads-editor/
-2. Hesabı sync et
-3. Account → File → Import → Multiple CSVs → yukarıdaki 6 CSV'yi seç
-4. Preview → Post (30 saniye)
+1. `npm run ads:audit` — "Tum CSV'ler temiz" çıkarsa OK
+2. Google Ads Editor indir: https://ads.google.com/intl/tr/home/tools/ads-editor/
+3. A2 Reklam hesabını sync et → Download Recent Changes
+4. File → Import → Multiple files → 6 CSV seç (sıra: negatives → keywords → corporate → rsa → sitelinks → callouts → snippets)
+5. Her import sonrası Preview → Post
+6. UI-only ayarlar: `ads-import-guide.md` §"Google Ads UI'da MANUEL Ayarlar" (location İstanbul presence, mobile +%20, ad schedule, budget ₺1.000 %40/%25/%20/%15)
 
 ### 2. Google Business Profile (Maps) Paketi
 
@@ -200,10 +210,13 @@ curl -s 'https://a2reklam.com/api/force-refresh.php?secret=a2deploy_s3cr3t_2026'
 **Öncelik sırası:**
 
 ### 🥇 İlk Hafta (hemen etki)
-1. **Google Ads Editor import** (30 saniye)
-   - Editor'ı indir, hesabı sync et
-   - File → Import → 6 CSV seç → Post
-   - **Sonuç**: 752 keyword + 100 negatif + 32 sitelink + 80 callout + 12 snippet anında aktif
+1. **Google Ads Editor import** (v2 hazır — 2 dakika + UI ayarları)
+   - `npm run ads:audit` — temiz olmalı
+   - Editor'ı indir, A2 Reklam hesabını sync et (Download Recent Changes)
+   - File → Import → 6 CSV (sıra: negatives → keywords → corporate → rsa → sitelinks → callouts → snippets)
+   - Preview → Post
+   - UI-only ayarlar: `scripts/data/ads-import-guide.md`
+   - **Sonuç**: 156+56 keyword + 564 negatif + 4 RSA + 32 sitelink + 48 callout + 12 snippet anında aktif
 2. **GBP kategoriler + açıklama** (5 dakika)
    - business.google.com aç
    - Primary: Tabela Mağazası + 8 secondary (`gbp-optimization-kit.md`)
