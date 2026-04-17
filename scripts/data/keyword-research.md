@@ -612,6 +612,11 @@ Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmi
 
 ### Log
 - **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+- **İter #13** (06:55): Sitemap + structured data audit.
+  - `/yorum-birakin/` sitemap'ten excluded (noindex:true dönüşüm landing'i).
+  - `kurumsal-tabela` live schema doğrulama: LocalBusiness+ProfessionalService+Organization, BreadcrumbList, **FAQPage (7 soru)**, WebSite/Speakable → hepsi aktif.
+  - Deploy + IndexNow submit (194 URL Bing/Yandex'e bildirildi).
+  - Sitemap boyutu: 196 → 194 URL (yorum-birakin + istenmeyen page'ler filtered).
 - **İter #12** (06:45): Blog topic queue'ya 23 long-tail konu eklendi. Toplam 55 → 78 konu → haftada 2 yayınla **9.8 aylık otomatik blog buffer**. Konular İter#10 arama terimleri raporundan ilham alınmış:
   - İlçe+hizmet kombineler: "beylikdüzü reklam tabela rehberi 2026", "esenyurt tabela fiyatları 2026", "esenyurt arac kaplama filo rehberi"
   - Ürün niş: "pleksi harf kutu üretim süreci", "tabela imalatçıları nasıl seçilir", "dükkan tabelası tasarım örnekleri 2026", "kuyumcu tabela tasarım rehberi"
