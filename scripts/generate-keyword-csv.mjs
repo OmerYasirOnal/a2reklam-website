@@ -124,25 +124,30 @@ function esc(s) {
   return /[",\n]/.test(str) ? `"${str.replace(/"/g, '""')}"` : str;
 }
 
-function row({ campaign, group, keyword, match, notes }) {
+// Google Ads Editor formati: Match type sutunu ayri → keyword'e [] veya "" koyulmaz
+function row({ campaign, group, keyword, match, note }) {
   return [
     'Add',
     esc(campaign),
     esc(group),
-    match === 'Exact' ? `[${keyword}]` : match === 'Phrase' ? `"${keyword}"` : esc(keyword),
+    esc(keyword),
     esc(match),
     'Enabled',
-    esc(notes || ''),
+    esc(note || ''),
   ].join(',');
 }
 
 const rows = [CSV_HEADER];
 
 // 1) Champions (exact)
-for (const c of CHAMPIONS) rows.push(row(c));
+for (const c of CHAMPIONS) {
+  rows.push(row({ campaign: c.campaign, group: c.group, keyword: c.kw, match: c.match, note: c.note }));
+}
 
 // 2) Core phrase keywords
-for (const c of CORE) rows.push(row(c));
+for (const c of CORE) {
+  rows.push(row({ campaign: c.campaign, group: c.group, keyword: c.kw, match: c.match, note: c.note }));
+}
 
 // 3) Top district × service long-tail
 for (const d of TOP_DISTRICTS) {
@@ -152,7 +157,7 @@ for (const d of TOP_DISTRICTS) {
       group: s.group,
       keyword: `${d} ${s.kw}`,
       match: 'Phrase',
-      notes: 'top-ilce long-tail',
+      note: 'top-ilce long-tail',
     }));
   }
 }

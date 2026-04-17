@@ -13,7 +13,9 @@
     "content:lint": "node scripts/content-lint.js",
     "deploy": "bash scripts/deploy.sh",
     "indexnow": "node scripts/submit-indexnow.mjs",
-    "google-index": "node scripts/submit-google-indexing.mjs"
+    "google-index": "node scripts/submit-google-indexing.mjs",
+    "ads:build": "node scripts/generate-keyword-csv.mjs && node scripts/generate-corporate-keywords-csv.mjs && node scripts/generate-ads-extensions-csv.mjs && node scripts/generate-rsa-csv.mjs",
+    "ads:audit": "node scripts/audit-ads-csv.mjs"
   },
   "keywords": [],
   "author": "",

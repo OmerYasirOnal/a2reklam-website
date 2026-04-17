@@ -50,14 +50,13 @@ const PROVEN_CORPORATE = [
   { kw: 'kurumsal kimlik tabela',      campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel' },
   { kw: 'zincir magaza tabela',        campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel' },
   { kw: 'osb tabela imalati',          campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel' },
-  // Kampanya-ozel
-  { kw: 'kurumsal led tabela',   campaign: 'Isikli-Tabela-LED',           group: 'Isikli-Tabela-Genel' },
+  // Kampanya-ozel (systematic grid disindaki varyantlar)
   { kw: 'ip65 led tabela',       campaign: 'Isikli-Tabela-LED',           group: 'Isikli-Tabela-Genel' },
   { kw: 'otel led cephe',        campaign: 'Isikli-Tabela-LED',           group: 'Isikli-Tabela-Genel' },
   { kw: 'kurumsal pleksi harf',  campaign: 'Kutu-Harf-Tabela',            group: 'kutu-harf-genel' },
-  { kw: 'plaza paslanmaz harf',  campaign: 'Kutu-Harf-Tabela',            group: 'kutu-harf-genel' },
-  { kw: 'kurumsal filo giydirme',campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel' },
+  { kw: 'pvd kapli harf tabela', campaign: 'Kutu-Harf-Tabela',            group: 'kutu-harf-genel' },
   { kw: 'minibus reklam kaplama',campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel' },
+  { kw: 'servis araci giydirme', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel' },
 ];
 
 // ============================================================
@@ -139,7 +138,7 @@ for (const token of CORPORATE_TOKENS) {
     for (const svc of cfg.services) {
       kwRows.push([
         'Add', campaign, cfg.group,
-        `"${token} ${svc}"`, 'Phrase', 'Enabled',
+        `${token} ${svc}`, 'Phrase', 'Enabled',
         `corporate+${svc}`,
       ].map(esc).join(','));
     }
@@ -149,7 +148,7 @@ for (const token of CORPORATE_TOKENS) {
 // Proven corporate (manual kalite)
 for (const k of PROVEN_CORPORATE) {
   kwRows.push([
-    'Add', k.campaign, k.group, `"${k.kw}"`, 'Phrase', 'Enabled',
+    'Add', k.campaign, k.group, k.kw, 'Phrase', 'Enabled',
     'Iter#22 proven kurumsal',
   ].map(esc).join(','));
 }

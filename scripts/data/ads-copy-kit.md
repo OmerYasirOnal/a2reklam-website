@@ -1,7 +1,17 @@
 # A2 Reklam — Google Ads Copy Kit (4 Kampanya × RSA + Tüm Ad Extensions)
 
-**Üretim:** İter#14 (2026-04-17)
-**Kullanım:** Her kampanya bölümünü Google Ads'e direkt yapıştır.
+**Üretim:** İter#14 → v2 İter#22 (2026-04-17)
+**Kullanım:** Manuel giriş YERİNE artık CSV import kullan:
+- `npm run ads:build` — 6 CSV'yi üretir
+- `npm run ads:audit` — hata/duplicate kontrol
+- İzle: `scripts/data/ads-import-guide.md`
+
+**Bu dosya referans/arşiv**. v2 değişiklikleri:
+- Callouts 20 → 12 (Google 4-6 gösterir)
+- Sitelinks per-campaign (önceden 4 kampanya aynıydı)
+- Snippet header "Brands" → "Types" + "Service catalog" (Google spec)
+- RSA baslıklar emoji'siz (Google char counter güvenli)
+
 **Hedef:** AVM, plaza, fabrika, hastane, otel gibi kurumsal büyük işler + mevcut CTR liderleri.
 
 ---
@@ -204,8 +214,8 @@
 
 ## 📋 STRUCTURED SNIPPET EXTENSIONS
 
-### Snippet 1 — Services (Hizmetler)
-**Header:** Services
+### Snippet 1 — Service catalog (Hizmetler)
+**Header:** Service catalog  *(v2: "Services" Google valid header değil)*
 **Values:**
 - Cephe Tabela
 - Kutu Harf
@@ -216,8 +226,8 @@
 - Dijital Baskı
 - Yönlendirme Sistemleri
 
-### Snippet 2 — Brands (Servis Verilen Sektörler)
-**Header:** Brands
+### Snippet 2 — Types (Servis Verilen Sektörler)
+**Header:** Types  *(v2: "Brands" yanlıştı — o Samsung/Apple gibi gerçek markalar için)*
 **Values:**
 - AVM & Alışveriş Merkezi
 - Plaza & İş Merkezi
