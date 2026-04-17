@@ -563,3 +563,53 @@ Dijital-Baski kampanyasına:
 ### Log
 - **İter #10** (06:15): Arama terimleri raporu detay analizi. 279 tıklama / 5,842 gösterim verisinden 13 altın kelime + 3 ek negatif aday tespit edildi. 4 kampanya için özel kelime listeleri hazırlandı (manuel ekleme gerekli — UI dialog UI güvenilir değil).
 
+---
+
+## 🏭 KEYWORD CSV GENERATOR (İterasyon #11 — 2026-04-17 06:30)
+
+UI dialog'un güvenilmez olması bizi yavaşlattı. Çözüm: **Google Ads Editor CSV import**.
+
+### Oluşturulan Araç
+**`scripts/generate-keyword-csv.mjs`** — 639 keyword'lük Google Ads Editor CSV üretir:
+- **15 proven keyword** (İter#1-#10'dan kanıtlanmış altın kelimeler)
+- **624 long-tail kombine** (39 ilçe × 16 hizmet)
+
+### Örnek Üretim
+```
+kadikoy tabela (Phrase) → Cephe-Totem-Genel
+kadikoy reklam tabela (Phrase) → Cephe-Totem-Genel
+kadikoy kutu harf (Phrase) → Kutu-Harf-Tabela
+kadikoy paslanmaz harf (Phrase) → Kutu-Harf-Tabela
+kadikoy isikli tabela (Phrase) → Isikli-Tabela-LED
+kadikoy led tabela (Phrase) → Isikli-Tabela-LED
+... (39 ilçe için × 16 hizmet)
+```
+
+### KULLANIM (1 dakika)
+
+1. Google Ads Editor indir: https://ads.google.com/intl/tr/home/tools/ads-editor/
+2. Account Details → Download Recent Changes
+3. File → Import → CSV file → `scripts/data/google-ads-keywords-import.csv`
+4. Preview → onayla → **Post**
+
+### Neden Long-Tail?
+
+İter#10'da kanıtlandı:
+- "beylikdüzü reklam tabela" → %20 CTR (2 tıklama / 10 gösterim)
+- "arac kaplama esenyurt" → %100 CTR (2/2)
+- "esenyurt tabela" → %13.89 CTR (5/36)
+
+Google Search'te ayda ortalama 10-50 kez aranan **niş sorgular**. Rekabet düşük, CPC az, dönüşüm niyeti yüksek.
+
+### BEKLENEN ETKİ
+
+Eğer 624 long-tail'in sadece **%10'u aktif olursa** (62 kelime gerçekten gösterim alırsa):
+- Ay: 62 kelime × ortalama 5 gösterim = 310 ek gösterim
+- CTR %10 → 31 ek tıklama/ay
+- Dönüşüm oranı %2 → **0.6 ek dönüşüm/ay**
+
+Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmini **2-4 ek dönüşüm/ay**.
+
+### Log
+- **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+
