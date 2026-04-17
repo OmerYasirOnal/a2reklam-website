@@ -199,6 +199,35 @@ const serviceSchema = {
           </div>
         </section>
 
+        <!-- KURUMSAL CROSS-SELL -->
+        <section class="mb-10">
+          <a href="/kurumsal-tabela/" class="block group">
+            <div class="p-6 md:p-8 bg-gradient-to-br from-primary/15 via-secondary/50 to-primary/5 border-2 border-primary/40 rounded-2xl hover:border-primary transition-all">
+              <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
+                <div class="flex-1">
+                  <div class="inline-flex items-center gap-2 mb-2 text-primary text-xs font-semibold uppercase tracking-wider">
+                    <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                    Büyük Ölçek Projeler
+                  </div>
+                  <h3 class="font-heading font-bold text-xl md:text-2xl text-white mb-2 !mt-0">
+                    Kurumsal {sector.name} Projeniz Mi Var?
+                  </h3>
+                  <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                    AVM, plaza, fabrika, hastane ve otel ölçeğinde {sector.name.toLowerCase()} projeleri için
+                    <strong class="text-white">ücretsiz keşif + 3D tasarım + aynı gün teklif</strong>.
+                  </p>
+                </div>
+                <span class="flex-shrink-0 inline-flex items-center gap-2 bg-primary text-secondary font-bold py-3 px-6 rounded-lg group-hover:bg-white transition-all text-sm md:text-base whitespace-nowrap">
+                  Kurumsal Sayfa
+                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </a>
+        </section>
+
         <!-- Telefon CTA -->
         <CallBand context={sector.name} />
 
