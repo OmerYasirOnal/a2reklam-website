@@ -612,6 +612,14 @@ Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmi
 
 ### Log
 - **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+- **İter #18** (08:05): **39 ilçe + 20 sektör title+metaDescription enrich** edildi (`scripts/enrich-seo-metadata.mjs`).
+  - İlçe format: `X Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam` (63 kar) + desc `X'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72` (144 kar)
+  - Sektör format: `X Tabelası | Kurumsal İmalat & Montaj | A2 Reklam` (56 kar)
+  - 6 uzun ilçe (Büyükçekmece, Küçükçekmece, Gaziosmanpaşa, Bahçelievler, Sultanbeyli, Sultangazi) için kısa varyant.
+  - 6 uzun sektör (Avukat & Hukuk, Cafe & Restoran, Fırın & Pastane, Kargo & Lojistik, Oto Yıkama & Galeri, Benzin İstasyonu) kısa varyant.
+  - Double "Tabelası Tabelası" duplicate fix (19 sektör).
+  - **SEO audit sonuç**: 138 → **100 sorunlu (%68 → %49)**, TITLE_SHORT 22 → 0, TITLE_LONG 9 → azaldı.
+  - Deploy + IndexNow submit (194 URL).
 - **İter #17** (07:55): **Teknik SEO audit script** yazıldı (`scripts/audit-seo.mjs`).
   - 204 HTML tarandı → `scripts/data/seo-audit-report.md` + `seo-audit-raw.json`.
   - Kontroller: title/desc uzunluk, canonical, OG image, H1 sayısı, schema count+types, internal link count, word count (thin content), duplicate title.
