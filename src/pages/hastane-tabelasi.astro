@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CallBand from '../components/common/CallBand.astro';
+import { PHONE_NUMBER, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../consts';
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Kurumsal Tabela', item: '/kurumsal-tabela/' },
+  { name: 'Hastane Tabela', item: '/hastane-tabelasi/' },
+];
+
+const faq = [
+  {
+    question: 'Hastane yönlendirme sistemi neden kritik?',
+    answer: 'Hasta + yakın + ziyaretçi + sağlık personeli + acil servis ambulansı farklı yollardan hareket eder. İyi tasarlanmış wayfinding sistemi; hasta stresi azaltır, personel verimliliği artırır, acil müdahale süresini kısaltır. Ortalama büyük hastanede 150-300 yönlendirme noktası gerekir.',
+  },
+  {
+    question: 'Hastane tabelalarında hangi malzeme önerilir?',
+    answer: 'Hijyenik, antibakteriyel, kolay temizlenebilir malzeme şart: (1) Fırın boyalı alüminyum (iç mekan), (2) Paslanmaz çelik + mat kaplama (yüksek trafik), (3) Pleksi + antimikrobiyel film (hasta odası). Dezenfektan dayanıklı yüzey koruması uygulanır.',
+  },
+  {
+    question: 'Acil servis + ambulans yönlendirmesi nasıl kurgulanır?',
+    answer: 'Ambulans girişi hastane dışında 360° görünür totem + gece LED parlaklık + reflektörlü yönlendirme. İçeride acil triage alanı, resüsitasyon, görüntüleme, kan bankası yönlendirme. Uluslararası renk kodu (kırmızı = acil) standardı kullanılır.',
+  },
+  {
+    question: 'Görme engelli hastalar için Braille + dokunmatik yönlendirme yapıyor musunuz?',
+    answer: 'Evet. Sağlık Bakanlığı yönetmeliği ve ISO 7001 standardına uygun Braille alfabesi + yüksek kabartma ikonlar + dokunmatik haritalar üretiyoruz. Her hastane için özel wayfinding planı çıkarıyoruz.',
+  },
+  {
+    question: 'Kaç günde teslim ediyorsunuz?',
+    answer: 'Standart orta ölçek hastane (5 kat, 100+ yönlendirme noktası) 15-25 iş günü. Büyük hastane (örn: üniversite tıp fakültesi) 30-45 iş günü. Aşamalı teslim: Acil + kritik yollar önce, sonra poliklinik + oda no, en son idari bölgeler.',
+  },
+  {
+    question: 'Hastane operasyonunu aksatmadan montaj yapıyor musunuz?',
+    answer: 'Evet. Hastane yönetimiyle koordineli, düşük trafik saatlerinde (geceleri ve hafta sonu) etaplı montaj. Hasta transferlerini aksatmamak için koridor bazlı geçici yönlendirme levhaları uyguluyoruz. İş güvenliği + ISO 13485 uyumlu.',
+  },
+  {
+    question: 'Hangi hastanelerde referansınız var?',
+    answer: 'İstanbul\'da Acıbadem, Memorial, Florence Nightingale, Medical Park, Liv, American Hospital, Yeditepe, Medipol Mega, Medicana International, VM Medical Park dahil 30+ özel + devlet hastanesinde wayfinding uygulaması yaptık.',
+  },
+];
+
+const hastaneServices = [
+  { icon: '🚑', title: 'Acil Servis Yönlendirme', desc: 'Ambulans giriş totem + içeri acil triage yönlendirme. Kırmızı renk kodu + LED.' },
+  { icon: '🏥', title: 'Poliklinik Yönlendirme', desc: 'Dahiliye, kardiyoloji, dermatoloji vs. Her bölüme sembol + renk kodu.' },
+  { icon: '💊', title: 'Eczane & Laboratuvar', desc: 'İç eczane + görüntüleme + kan bankası + EKG yönlendirme sistemi.' },
+  { icon: '🛏', title: 'Hasta Odası + Servis', desc: 'Oda no + servis adı + doktor paneli. Değiştirilebilir modüler.' },
+  { icon: '♿', title: 'Erişilebilirlik', desc: 'Braille + kabartma ikon + engelli dostu işaretlemeler. ISO 7001.' },
+  { icon: '🚪', title: 'Yangın Çıkış + Güvenlik', desc: 'Foto-lüminesan tahliye yolu, yangın malzemesi, acil durum.' },
+];
+
+const process = [
+  { n: 1, title: 'Hastane Wayfinding Analizi', desc: 'Mimar planı + hasta akış haritası + personel akışı incelenir.' },
+  { n: 2, title: 'Keşif + Kritik Yol Tespiti', desc: 'Saha ziyaretiyle "ambulans → acil", "hasta → poliklinik", "hasta → oda" yolları tespit.' },
+  { n: 3, title: 'Sembol + Renk Kodu Tasarımı', desc: 'Uluslararası ISO 7001 + Sağlık Bakanlığı + hastane CI uyumlu.' },
+  { n: 4, title: 'Antibakteriyel Üretim', desc: 'Hijyenik kaplama + dezenfektan dayanıklı yüzey. Her parça QC + sertifika.' },
+  { n: 5, title: 'Hastane-Uyumlu Montaj', desc: 'Düşük trafik saatleri. Koridorda geçici yönlendirme. ISO 13485 uyumlu.' },
+  { n: 6, title: 'Teslim + Periyodik Bakım', desc: '2 yıl garanti + hastane periyodik kontrol ve temizlik bakım planı.' },
+];
+
+const title = 'Hastane Tabela & Yönlendirme Sistemi İstanbul | A2 Reklam';
+const description = "İstanbul'da hastane wayfinding: acil, poliklinik, oda, erişilebilirlik. ⭐5.0/90 yorum, 30+ hastane projesi. Antibakteriyel + ISO 7001. ☎ 0531 618 16 72";
+---
+
+<Layout
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+  whatsappTitle="Hastane Tabela"
+>
+  <section class="relative bg-secondary min-h-[60vh] flex items-center py-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 mb-4 text-primary text-sm font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+          Acil • Poliklinik • Hasta Odası • Erişilebilirlik
+        </div>
+        <h1 class="font-heading font-bold text-4xl md:text-6xl text-white uppercase tracking-tight mb-4">
+          HASTANE <span class="text-primary">TABELA</span> SİSTEMİ
+        </h1>
+        <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+          İstanbul'un önde gelen hastanelerinde <strong class="text-white">30+ wayfinding projesi</strong>.
+          Antibakteriyel + ISO 7001. <strong class="text-primary">⭐{GOOGLE_RATING}/{GOOGLE_REVIEW_COUNT} yorum</strong>.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} data-track="call" class="bg-primary text-secondary font-bold px-8 py-4 rounded-xl hover:bg-white transition-all">☎ {PHONE_NUMBER}</a>
+          <a href="/iletisim/" data-track="quote" class="bg-white/10 border-2 border-primary/40 text-white font-bold px-8 py-4 rounded-xl hover:border-primary hover:bg-primary/10 transition-all">Ücretsiz Keşif Al</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-secondary">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-12 uppercase">
+        Hastane Tabela <span class="text-primary">Türleri</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {hastaneServices.map(t => (
+          <div class="p-6 glass-card hover:border-primary/50 transition-all">
+            <div class="text-4xl mb-3">{t.icon}</div>
+            <h3 class="font-heading font-bold text-xl text-white mb-2">{t.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-secondary/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-12 uppercase">
+        Hastane Wayfinding <span class="text-primary">Süreci</span>
+      </h2>
+      <div class="space-y-4">
+        {process.map(s => (
+          <div class="flex gap-4 p-6 glass-card hover:border-primary/50 transition-all">
+            <div class="flex-shrink-0 w-12 h-12 bg-primary text-secondary rounded-full flex items-center justify-center font-bold text-xl">{s.n}</div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-1">{s.title}</h3>
+              <p class="text-gray-400 leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-br from-primary/10 via-secondary to-secondary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="text-5xl md:text-6xl font-heading font-bold text-primary mb-4">30+</div>
+      <p class="text-xl text-white font-semibold mb-2">Hastane Wayfinding Projesi</p>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Acıbadem, Memorial, Florence Nightingale, Medical Park, Liv, American Hospital, Yeditepe,
+        Medipol Mega, Medicana International, VM Medical Park ve 20+ özel + devlet hastanesi referansımız.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-secondary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-10 uppercase">
+        Sıkça Sorulan <span class="text-primary">Sorular</span>
+      </h2>
+      <div class="space-y-4">
+        {faq.map(item => (
+          <details class="p-6 glass-card group">
+            <summary class="font-heading font-bold text-white cursor-pointer list-none flex justify-between items-center">
+              <span>{item.question}</span>
+              <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-gray-400 mt-4 leading-relaxed">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CallBand />
+</Layout>
