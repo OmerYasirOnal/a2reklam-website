@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/landing/Hero.astro';
+import TabelaciIntro from '../components/landing/TabelaciIntro.astro';
 import ServicesGrid from '../components/landing/ServicesGrid.astro';
 import KPISection from '../components/landing/KPISection.astro';
 import ReviewsSection from '../components/landing/ReviewsSection.astro';
@@ -18,10 +19,20 @@ const topSectors = sectors.slice(0, 10);
 ---
 
 <Layout
-  title="A2 Reklam | İstanbul Tabela İmalatı ve Reklam Çözümleri"
-  description="İstanbul'da profesyonel tabela imalatı: ışıklı tabela, kutu harf, cephe tabelası, totem tabela ve araç giydirme. 2005'ten beri 2.500+ proje. Ücretsiz keşif ve teklif alın."
+  title="İstanbul Tabelacı | Tabela İmalatı & Kurumsal Reklam | A2 Reklam"
+  description="İstanbul tabelacı A2 Reklam: 2005'ten beri 2.500+ proje. Kurumsal tabela (AVM, plaza, hastane, otel), kutu harf, cephe giydirme, LED tabela, araç giydirme. ⭐5.0/90 Google yorum. Ücretsiz keşif + 3D. ☎ 0531 618 16 72"
+  faq={[
+    { question: "İstanbul'da en iyi tabelacı hangisidir?", answer: "A2 Reklam 2005'ten bu yana İstanbul'un önde gelen tabela imalatçılarından biridir. 2.500+ tamamlanmış proje, Google'da ⭐5.0/90 yorum, 39 ilçeye hizmet ve aracısız üretici fiyatıyla farklılaşıyoruz. AVM, plaza, hastane, otel ve dükkan tabelalarında uzmanız." },
+    { question: "İstanbul tabela fiyatları ne kadar?", answer: "Pleksi tabela 800₺'den, ışıklı kutu harf 1.200₺/harf'ten, cephe tabelası 5.000₺'den, totem tabela 25.000₺'den başlar. Kesin fiyat için ücretsiz keşif sonrası 48 saat içinde detaylı teklif sunarız. Aracısız üretici olduğumuz için piyasanın altında fiyat veriyoruz." },
+    { question: "Tabela kaç günde teslim edilir?", answer: "Pleksi isimlik 3-5 gün, ışıklı kutu harf 7-10 gün, cephe tabelası 10-15 gün, büyük AVM/plaza projesi 20-30 gün. Acil siparişler için 48 saatlik ekspres üretim seçeneğimiz de var." },
+    { question: "İstanbul'un hangi ilçelerine hizmet veriyorsunuz?", answer: "İstanbul'un tüm 39 ilçesine hizmet veriyoruz: Kadıköy, Beşiktaş, Şişli, Kâğıthane (merkez), Üsküdar, Fatih, Bakırköy, Beyoğlu, Ataşehir, Ümraniye, Maltepe, Esenyurt, Başakşehir, Pendik, Kartal ve daha fazlası. Ücretsiz keşif ve aynı gün dönüş garantisi." },
+    { question: "Ücretsiz keşif nasıl alınır?", answer: "0531 618 16 72 numaralı telefonu arayabilir veya WhatsApp'tan mesaj atabilirsiniz. Ekibimiz 24 saat içinde size geri dönüp sahaya gelir, ölçüm alır, ihtiyacınıza uygun tasarım çıkarır ve 48 saat içinde detaylı fiyat teklifi sunar." },
+    { question: "Tabela imalatı için garanti veriyor musunuz?", answer: "Evet. Malzeme ve işçilik için 2 yıl tam garanti, LED modülleri için ayrı 3 yıl garanti sağlıyoruz. Garanti süresi boyunca periyodik bakım ve teknik destek ücretsizdir." },
+    { question: "Kendi üretim atölyeniz var mı?", answer: "Evet, Kâğıthane ve Esenyurt'ta kendi CNC lazer kesim + PVD kaplama + LED montaj atölyelerimiz var. Aracısız üretici olarak fabrika çıkışı fiyatla çalışıyoruz." }
+  ]}
 >
 	<Hero lang="tr" />
+  <ScrollReveal><TabelaciIntro /></ScrollReveal>
   <ScrollReveal><ServicesGrid lang="tr" /></ScrollReveal>
   <ScrollReveal delay={100}><KPISection lang="tr" /></ScrollReveal>
   <ScrollReveal delay={150}><ReviewsSection lang="tr" /></ScrollReveal>
