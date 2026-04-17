@@ -612,6 +612,14 @@ Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmi
 
 ### Log
 - **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+- **İter #21** (09:20): **3 yeni niche landing** yayında — `/plaza-tabelasi/`, `/fabrika-tabelasi/`, `/hastane-tabelasi/`.
+  - **Plaza**: Metrocity, Levent 199, Sabancı Center, Istanbloom, Maya Akar, Wyndham, Palladium, Sun Plaza, Kapital, Şişli Plaza referans. 6 hizmet türü (dış cephe, lobi, kat, oda no, otopark, acil çıkış) + 7 FAQ (malzeme, logo boyutu, kat yönlendirme, süre, kiracı değişimi, plaza yönetim koordinasyonu, referans).
+  - **Fabrika/OSB**: Tuzla, Dudullu, İkitelli, Beylikdüzü, Hadımköy OSB odağı. ATEX + TSE sertifikalı. 6 hizmet (ana giriş, yönetim binası, trafik, güvenlik uyarı, bölüm no, totem) + 7 FAQ.
+  - **Hastane**: Acıbadem, Memorial, Florence Nightingale, Medical Park, Liv, American Hospital referans. 6 hizmet (acil, poliklinik, eczane, oda, erişilebilirlik Braille, yangın çıkış) + 7 FAQ (wayfinding, malzeme, acil triage, Braille, süre, hastane uyumlu montaj, referans).
+  - `/kurumsal-tabela/` service cards → 4 landing'e linklendi (AVM + Plaza + Fabrika + Hastane).
+  - Toplam sayfa: 205 → **208** (3 yeni).
+  - Deploy + IndexNow 198 URL submit.
+  - **Beklenen**: "plaza tabela", "hastane yönlendirme sistemi", "fabrika osb tabela" gibi yüksek niyetli spesifik kelimeler artık dedicated sayfaya landing.
 - **İter #20** (08:35): **Yeni niche landing `/avm-tabelasi/`** yayında.
   - "AVM Tabela İmalatı İstanbul | Mağaza, Food Court, Yönlendirme" (73 kar title).
   - Desc: 163 kar. 6 AVM tabela türü (mağaza, food court, vitrin, yönlendirme, digital, promosyon).

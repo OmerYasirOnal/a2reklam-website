@@ -1,0 +1,162 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CallBand from '../components/common/CallBand.astro';
+import { PHONE_NUMBER, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../consts';
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Kurumsal Tabela', item: '/kurumsal-tabela/' },
+  { name: 'Fabrika & OSB Tabela', item: '/fabrika-tabelasi/' },
+];
+
+const faq = [
+  {
+    question: 'Fabrika tabelasında hangi malzeme en dayanıklı?',
+    answer: 'OSB ve sanayi kampüslerinde paslanmaz çelik 304/316 kalite + PVD kaplama + IP66 sertifikalı LED kombinasyonu 15-20 yıl ömür sağlar. Tozlu, nemli, kimyasal ortamlarda korozyon direnci şart. Ek olarak anti-graffiti kaplama vandalizm korumasi sağlar.',
+  },
+  {
+    question: 'OSB içi tabela için özel izin gerekir mi?',
+    answer: 'Evet. Her OSB kendi tabela yönetmeliği yayınlar: max yükseklik, logo boyutu, aydınlatma sertifikası, renk sınırlamaları, montaj noktası. Başvuru süreci 7-15 iş günü. A2 Reklam tüm OSB\'lerle (Tuzla, Dudullu, İkitelli, Beylikdüzü, Hadımköy) uzun dönemli ilişkiye sahip.',
+  },
+  {
+    question: 'Fabrika dış cephede büyük logo nasıl üretilir?',
+    answer: '2-10 metre boyundaki fabrika logoları için CNC plazma kesim + alüminyum kompozit panel + led şerit aydınlatma yöntemi kullanılır. Üretim 20-40 iş günü. Montaj 2-3 gün (yüksekte çalışma ekipmanı + sertifikalı usta).',
+  },
+  {
+    question: 'Fabrika giriş tabelası + güvenlik yönlendirme paketi var mı?',
+    answer: 'Evet. Standart fabrika paketi: ana giriş logosu + üretim/yönetim bina tabelaları + trafik yön levhaları + acil çıkış + güvenlik uyarı tabelaları + tehlike alanı + forklift trafiği yön. Tek projede tüm ihtiyaç karşılanır.',
+  },
+  {
+    question: 'Fabrika tabelalarında yangın/ATEX standartlarına uygun üretim yapıyor musunuz?',
+    answer: 'Evet. Patlayıcı ortamlarda ATEX EX certified LED, yangına dayanıklı V-0 sınıfı pleksi, TSE sertifikalı ürünler kullanıyoruz. Kimya, petrol, gıda sektörü fabrikalarına özel belge sağlıyoruz.',
+  },
+  {
+    question: 'Uzun ömür için periyodik bakım paketiniz var mı?',
+    answer: 'Evet. Yıllık bakım anlaşması: 2 kez saha ziyareti, LED modül kontrolü, korozyon temizliği, vida sıkıştırma, aydınlatma ayarı. Bakım alan projelerimizde 20+ yıl ömür garanti.',
+  },
+  {
+    question: 'Hangi OSB\'lerde referansınız var?',
+    answer: 'İstanbul Tuzla OSB, Dudullu OSB, İkitelli OSB, Beylikdüzü OSB, Hadımköy Akçaburgaz OSB, Çerkezköy OSB (Tekirdağ) dahil 40+ sanayi kampüsünde komple tabela uygulaması yaptık.',
+  },
+];
+
+const fabrikaServices = [
+  { icon: '🏭', title: 'Ana Giriş Logosu', desc: 'Dev ölçek (2-10m) CNC plazma + alüminyum kompozit + LED. Anti-UV, anti-korozyon.' },
+  { icon: '🏢', title: 'Yönetim Binası Tabelası', desc: 'Kurumsal ofis binası cephe logosu. Paslanmaz + PVD kaplama + arka aydınlatma.' },
+  { icon: '🚛', title: 'Trafik Yönlendirme', desc: 'Kapılar, otopark, tır yanaşma, forklift geçişi. Reflektörlü + fotolümin.' },
+  { icon: '⚠', title: 'Güvenlik & Uyarı', desc: 'Tehlike alanı, yangın çıkış, kimyasal uyarı, iş sağlığı levhaları. Yönetmelik uyumlu.' },
+  { icon: '🔢', title: 'Bina/Bölüm No', desc: 'Üretim hatları, depo, kalite bölüm, eğitim salon numaralandırma.' },
+  { icon: '🧱', title: 'Totem & Reklam', desc: 'OSB içi yol kenarı totem, reklam panosu, dönemsel duyuru alanı.' },
+];
+
+const process = [
+  { n: 1, title: 'OSB Brief + Yönetmelik Analizi', desc: 'OSB tabela yönergesi, yangın standartları, ATEX gereklilikleri, trafik planı incelenir.' },
+  { n: 2, title: 'Kapsamlı Keşif', desc: 'Tüm kampüs mimari planı analizi. Tabela ihtiyacı noktalarının haritası çıkarılır.' },
+  { n: 3, title: '3D Tasarım + Malzeme Mockup', desc: 'Fabrika cephe 3D görselleştirme. Paslanmaz/PVD/LED fiziksel örnek gösterimi.' },
+  { n: 4, title: 'Üretim (20-45 gün)', desc: 'Büyük ölçek cephe tabela için özel CNC atölye. Her parça QC + sertifika.' },
+  { n: 5, title: 'Vinçli Montaj', desc: 'Yüksekte çalışma sertifikalı ekip. ISG uyumlu. Vinç + mobil platform.' },
+  { n: 6, title: 'Teslim + Bakım Anlaşması', desc: '2 yıl garanti + isteğe bağlı yıllık bakım anlaşması (önerilir).' },
+];
+
+const title = 'Fabrika & OSB Tabela İmalatı İstanbul | Dış Cephe, Yönlendirme, Güvenlik | A2 Reklam';
+const description = "İstanbul OSB + fabrika tabela imalatı: dış cephe logo, trafik yönlendirme, güvenlik. ⭐5.0/90 yorum. Tuzla, Dudullu, İkitelli. ☎ 0531 618 16 72";
+---
+
+<Layout
+  title={title}
+  description={description}
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+  whatsappTitle="Fabrika Tabela"
+>
+  <section class="relative bg-secondary min-h-[60vh] flex items-center py-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 mb-4 text-primary text-sm font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+          Tuzla • Dudullu • İkitelli • Beylikdüzü • Hadımköy OSB
+        </div>
+        <h1 class="font-heading font-bold text-4xl md:text-6xl text-white uppercase tracking-tight mb-4">
+          FABRİKA & OSB <span class="text-primary">TABELA</span>
+        </h1>
+        <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+          İstanbul ve çevre sanayi kampüslerinde <strong class="text-white">40+ OSB projesi</strong>.
+          ATEX + TSE sertifikalı + 15-20 yıl ömür. <strong class="text-primary">⭐{GOOGLE_RATING}/{GOOGLE_REVIEW_COUNT} yorum</strong>.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} data-track="call" class="bg-primary text-secondary font-bold px-8 py-4 rounded-xl hover:bg-white transition-all">☎ {PHONE_NUMBER}</a>
+          <a href="/iletisim/" data-track="quote" class="bg-white/10 border-2 border-primary/40 text-white font-bold px-8 py-4 rounded-xl hover:border-primary hover:bg-primary/10 transition-all">Ücretsiz Keşif Al</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-secondary">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-12 uppercase">
+        Fabrika Tabela <span class="text-primary">Türleri</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {fabrikaServices.map(t => (
+          <div class="p-6 glass-card hover:border-primary/50 transition-all">
+            <div class="text-4xl mb-3">{t.icon}</div>
+            <h3 class="font-heading font-bold text-xl text-white mb-2">{t.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-secondary/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-12 uppercase">
+        OSB & Fabrika <span class="text-primary">Süreci</span>
+      </h2>
+      <div class="space-y-4">
+        {process.map(s => (
+          <div class="flex gap-4 p-6 glass-card hover:border-primary/50 transition-all">
+            <div class="flex-shrink-0 w-12 h-12 bg-primary text-secondary rounded-full flex items-center justify-center font-bold text-xl">{s.n}</div>
+            <div>
+              <h3 class="font-heading font-bold text-xl text-white mb-1">{s.title}</h3>
+              <p class="text-gray-400 leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gradient-to-br from-primary/10 via-secondary to-secondary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="text-5xl md:text-6xl font-heading font-bold text-primary mb-4">40+</div>
+      <p class="text-xl text-white font-semibold mb-2">OSB & Fabrika Projesi</p>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Tuzla OSB, Dudullu OSB, İkitelli OSB, Beylikdüzü OSB, Hadımköy Akçaburgaz OSB, Çerkezköy OSB ve
+        İstanbul dışı sanayi kampüslerinde ATEX + TSE sertifikalı tabela uygulamaları.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-secondary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-10 uppercase">
+        Sıkça Sorulan <span class="text-primary">Sorular</span>
+      </h2>
+      <div class="space-y-4">
+        {faq.map(item => (
+          <details class="p-6 glass-card group">
+            <summary class="font-heading font-bold text-white cursor-pointer list-none flex justify-between items-center">
+              <span>{item.question}</span>
+              <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-gray-400 mt-4 leading-relaxed">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CallBand />
+</Layout>
