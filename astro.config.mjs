@@ -55,6 +55,8 @@ export default defineConfig({
           if (pathname.includes('/teklif-al/')) return false;
           if (pathname.startsWith('/videolar/')) return false;
           if (pathname.includes('/api/')) return false;
+          // Dönüşüm landing sayfaları (noindex: true)
+          if (pathname.includes('/yorum-birakin/')) return false;
           return true;
         } catch {
           return true;
