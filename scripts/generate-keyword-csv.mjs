@@ -1,154 +1,173 @@
 #!/usr/bin/env node
 /**
- * Google Ads Keyword CSV Generator
+ * Google Ads Keyword CSV Generator (v2 — 2026-04-17 iter#22)
  *
- * 39 ilçe × 16 hizmet kombinasyonlarını Google Ads Editor için CSV olarak üretir.
- * Research'te kanıtlanan "ilçe+hizmet" altın kombineler (%20-100 CTR):
- *   - "beylikdüzü reklam tabela"
- *   - "esenyurt tabela"
- *   - "arac kaplama esenyurt"
+ * STRATEJI DEGISIKLIGI:
+ *   v1: 39 ilce × 16 hizmet = 624 spekulatif long-tail (cogu hicbir zaman goruntulenmedi)
+ *   v2: TOP ILCELER × CEKIRDEK HIZMETLER → proven-first, quality over quantity
  *
- * Kullanım:
- *   node scripts/generate-keyword-csv.mjs
+ * Iter#1-21 verisine gore:
+ *   - %100+ CTR: pleksi harf kutu, isikli tabela ornekleri, arac kaplama esenyurt
+ *   - %20-50 CTR: beylikduzu reklam tabela, esenyurt tabela, tabela imalatcilari
+ *   - 39 ilcenin cogu < 5 gosterim/ay → keyword bloat
  *
- * Çıktı:
+ * Cikti:
  *   scripts/data/google-ads-keywords-import.csv
- *
- * Bu CSV Google Ads Editor'a import edilebilir:
- *   Account > Import > CSV seç
  */
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const PROJECT_DIR = join(__dirname, '..');
 const OUTPUT_FILE = join(__dirname, 'data', 'google-ads-keywords-import.csv');
 
-// 39 İstanbul ilçesi (ASCII, Google Ads'te yakın varyant eşleşir)
-const DISTRICTS = [
-  'kadikoy', 'besiktas', 'sisli', 'uskudar', 'fatih', 'bakirkoy', 'beyoglu',
-  'atasehir', 'umraniye', 'maltepe', 'esenyurt', 'basaksehir', 'kagithane',
-  'pendik', 'kartal', 'beykoz', 'sariyer', 'eyupsultan', 'zeytinburnu', 'bayrampasa',
-  'gaziosmanpasa', 'sultangazi', 'gungoren', 'esenler', 'arnavutkoy', 'avcilar',
-  'bagcilar', 'bahcelievler', 'beylikduzu', 'buyukcekmece', 'catalca', 'cekmekoy',
-  'kucukcekmece', 'sancaktepe', 'silivri', 'sultanbeyli', 'sile', 'tuzla', 'adalar',
+// ============================================================
+// 1) PROVEN CHAMPIONS — Exact match, yuksek bid, en iyi QS
+//    Arama terimleri raporundan > %50 CTR alan kelimeler
+// ============================================================
+const CHAMPIONS = [
+  { kw: 'pleksi harf kutu',        match: 'Exact',  campaign: 'Kutu-Harf-Tabela',            group: 'kutu-harf-genel',     note: 'Iter#10 %100 CTR sampiyon' },
+  { kw: 'isikli tabela ornekleri', match: 'Exact',  campaign: 'Isikli-Tabela-LED',           group: 'Isikli-Tabela-Genel', note: 'Iter#10 %200 CTR' },
+  { kw: 'arac kaplama esenyurt',   match: 'Exact',  campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'Iter#10 %100 CTR lokal' },
+  { kw: 'kuyumcu tabela',          match: 'Exact',  campaign: 'Cephe-Totem-Genel',           group: 'cephe-totem-genel',   note: 'Iter#10 %200 CTR nis' },
+  { kw: 'tabela imalatcilari',     match: 'Exact',  campaign: 'Cephe-Totem-Genel',           group: 'cephe-totem-genel',   note: 'Iter#10 %50 CTR profesyonel niyet' },
+  { kw: 'tabelaci istanbul',       match: 'Exact',  campaign: 'Cephe-Totem-Genel',           group: 'cephe-totem-genel',   note: 'Iter#10 net niyet' },
+  { kw: 'elektrikli tabela',       match: 'Exact',  campaign: 'Isikli-Tabela-LED',           group: 'Isikli-Tabela-Genel', note: 'Iter#10 %200 CTR' },
 ];
 
-// 16 hizmet + kampanya eşlemesi
-const SERVICES = [
-  { kw: 'tabela',           campaign: 'Cephe-Totem-Genel',       group: 'cephe-totem-genel' },
-  { kw: 'reklam tabela',    campaign: 'Cephe-Totem-Genel',       group: 'cephe-totem-genel' },
-  { kw: 'cephe tabela',     campaign: 'Cephe-Totem-Genel',       group: 'cephe-totem-genel' },
-  { kw: 'totem tabela',     campaign: 'Cephe-Totem-Genel',       group: 'cephe-totem-genel' },
-  { kw: 'kutu harf',        campaign: 'Kutu-Harf-Tabela',         group: 'kutu-harf-genel' },
-  { kw: 'paslanmaz harf',   campaign: 'Kutu-Harf-Tabela',         group: 'kutu-harf-genel' },
-  { kw: 'pleksi harf',      campaign: 'Kutu-Harf-Tabela',         group: 'kutu-harf-genel' },
-  { kw: 'isikli tabela',    campaign: 'Isikli-Tabela-LED',        group: 'Isikli-Tabela-Genel' },
-  { kw: 'led tabela',       campaign: 'Isikli-Tabela-LED',        group: 'Isikli-Tabela-Genel' },
-  { kw: 'lightbox tabela',  campaign: 'Isikli-Tabela-LED',        group: 'Isikli-Tabela-Genel' },
-  { kw: 'arac giydirme',    campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel' },
-  { kw: 'arac kaplama',     campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel' },
-  { kw: 'dijital baski',    campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel' },
-  { kw: 'kurumsal tabela',  campaign: 'Cephe-Totem-Genel',       group: 'cephe-totem-genel' },
-  { kw: 'dukkan tabelasi',  campaign: 'Cephe-Totem-Genel',       group: 'cephe-totem-genel' },
-  { kw: 'magaza tabelasi',  campaign: 'Cephe-Totem-Genel',       group: 'cephe-totem-genel' },
-];
-
-// Arama terimleri raporundan kanıtlanan altın kelimeler (doğrulanmış CTR)
-const PROVEN_KEYWORDS = [
-  // Cephe-Totem-Genel
-  { kw: 'dukkan tabela tasarimlari', match: 'Broad', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'İter#10 %37.5 CTR' },
-  { kw: 'tabela imalatcilari',       match: 'Broad', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'İter#10 %50 CTR' },
-  { kw: 'kuyumcu tabela',            match: 'Broad', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'İter#10 %200 CTR' },
-  { kw: 'tabelaci istanbul',         match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'İter#10 net niyet' },
-  { kw: 'hastane tabela',            match: 'Broad', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'İter#1 320 arama/ay' },
-  { kw: 'otel tabela',               match: 'Broad', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'İter#1' },
-  { kw: 'dis cephe reklam',          match: 'Broad', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'İter#1 +%150 YoY' },
-  { kw: 'otel yonlendirme',          match: 'Broad', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'İter#1 +%200' },
+// ============================================================
+// 2) CORE KEYWORDS — Phrase match, kampanya temas noktalari
+// ============================================================
+const CORE = [
+  // Cephe-Totem-Genel (kurumsal + genel)
+  { kw: 'kurumsal tabela',            match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Iter#1 +%2500 YoY patlayan' },
+  { kw: 'cephe tabela',               match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Cekirdek hizmet' },
+  { kw: 'cephe tabelasi',             match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Cekirdek hizmet varyant' },
+  { kw: 'totem tabela',               match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Cekirdek hizmet' },
+  { kw: 'magaza tabelasi',            match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'B2B niyet' },
+  { kw: 'dukkan tabelasi',            match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'KOBI niyet' },
+  { kw: 'isyeri tabela',              match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'B2B niyet' },
+  { kw: 'dukkan tabela tasarimlari',  match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Iter#10 %37.5 CTR' },
+  { kw: 'hastane tabela',             match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Iter#1 320 arama/ay dusuk rekabet' },
+  { kw: 'otel tabela',                match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Iter#1 70 arama/ay' },
+  { kw: 'dis cephe reklam',           match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Iter#1 +%150 YoY' },
+  { kw: 'otel yonlendirme',           match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Iter#1 +%200 YoY' },
+  { kw: 'plaza tabela',               match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Kurumsal B2B' },
+  { kw: 'avm tabela',                 match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Kurumsal B2B' },
+  { kw: 'fabrika tabela',             match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Kurumsal sanayi' },
+  { kw: 'osb tabela',                 match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Sanayi nis' },
+  { kw: 'tabela istanbul',            match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Genel lokal' },
+  { kw: 'istanbul tabela imalati',    match: 'Phrase', campaign: 'Cephe-Totem-Genel', group: 'cephe-totem-genel', note: 'Profesyonel niyet' },
 
   // Kutu-Harf-Tabela
-  { kw: 'pleksi harf kutu',          match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'İter#10 %100 CTR!' },
-  { kw: 'pleksi harf',               match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'İter#1 %20 dönüşüm' },
-  { kw: 'isikli harf tabela',        match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'İter#10' },
+  { kw: 'kutu harf',           match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'Cekirdek' },
+  { kw: 'kutu harf tabela',    match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'Cekirdek' },
+  { kw: 'paslanmaz harf',      match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'Premium' },
+  { kw: 'pleksi harf',         match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'Iter#1 yuksek donusum' },
+  { kw: 'isikli harf tabela',  match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'Iter#10' },
+  { kw: 'isikli kutu harf',    match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'Premium' },
+  { kw: 'led kutu harf',       match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'Premium LED' },
+  { kw: 'aluminyum kutu harf', match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'Malzeme nis' },
+  { kw: 'pvd kapli harf',      match: 'Phrase', campaign: 'Kutu-Harf-Tabela', group: 'kutu-harf-genel', note: 'Premium finish' },
 
   // Isikli-Tabela-LED
-  { kw: 'isikli tabela ornekleri',   match: 'Phrase', campaign: 'Isikli-Tabela-LED', group: 'Isikli-Tabela-Genel', note: 'İter#10 %200 CTR' },
-  { kw: 'elektrikli tabela',         match: 'Phrase', campaign: 'Isikli-Tabela-LED', group: 'Isikli-Tabela-Genel', note: 'İter#10' },
+  { kw: 'isikli tabela',     match: 'Phrase', campaign: 'Isikli-Tabela-LED', group: 'Isikli-Tabela-Genel', note: 'Cekirdek' },
+  { kw: 'led tabela',        match: 'Phrase', campaign: 'Isikli-Tabela-LED', group: 'Isikli-Tabela-Genel', note: 'Cekirdek' },
+  { kw: 'lightbox tabela',   match: 'Phrase', campaign: 'Isikli-Tabela-LED', group: 'Isikli-Tabela-Genel', note: 'Premium' },
+  { kw: 'vakum tabela',      match: 'Phrase', campaign: 'Isikli-Tabela-LED', group: 'Isikli-Tabela-Genel', note: 'Nis tip' },
+  { kw: 'aydinlatmali tabela', match: 'Phrase', campaign: 'Isikli-Tabela-LED', group: 'Isikli-Tabela-Genel', note: 'Synonym' },
+  { kw: 'isikli reklam panosu', match: 'Phrase', campaign: 'Isikli-Tabela-LED', group: 'Isikli-Tabela-Genel', note: 'B2B' },
 
-  // Dijital-Baski
-  { kw: 'arac giydirme reklam',      match: 'Phrase', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'İter#10' },
-  { kw: 'arac reklam giydirme',      match: 'Phrase', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'İter#10' },
+  // Dijital-Baski-Arac-Giydirme
+  { kw: 'arac giydirme',        match: 'Phrase', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'Cekirdek' },
+  { kw: 'arac kaplama',         match: 'Phrase', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'Cekirdek' },
+  { kw: 'filo giydirme',        match: 'Phrase', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'Kurumsal filo' },
+  { kw: 'arac giydirme reklam', match: 'Phrase', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'Iter#10' },
+  { kw: 'arac reklam giydirme', match: 'Phrase', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'Iter#10' },
+  { kw: 'ticari arac kaplama',  match: 'Phrase', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'B2B' },
+  { kw: 'servis araci giydirme',match: 'Phrase', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'Transfer/otel' },
+  { kw: 'dijital baski',        match: 'Phrase', campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel', note: 'Genel hizmet' },
 ];
 
-// CSV row formatı Google Ads Editor için:
-// Action, Campaign, Ad group, Keyword, Match type, Status
+// ============================================================
+// 3) TOP PERFORMING ILCELER — long-tail phrase match
+//    Iter#1-10'da gosterim/tiklama verisi olan + stratejik kurumsal hub'lar
+// ============================================================
+const TOP_DISTRICTS = [
+  // Proven (arama terimleri verisi var)
+  'esenyurt', 'beylikduzu', 'kadikoy', 'cekmekoy',
+  // Kurumsal merkez (plaza/AVM/ofis yogun)
+  'kagithane', 'sisli', 'besiktas', 'atasehir', 'uskudar', 'maltepe', 'bakirkoy', 'fatih',
+  // Yuksek hacim ilceler
+  'basaksehir', 'umraniye', 'pendik', 'kartal', 'bagcilar', 'bahcelievler',
+];
+
+// Ilce + hizmet kombinasyonlari (6 cekirdek hizmet × 18 ilce = 108)
+const DISTRICT_SERVICES = [
+  { kw: 'tabela',         campaign: 'Cephe-Totem-Genel',           group: 'cephe-totem-genel' },
+  { kw: 'reklam tabela',  campaign: 'Cephe-Totem-Genel',           group: 'cephe-totem-genel' },
+  { kw: 'kutu harf',      campaign: 'Kutu-Harf-Tabela',            group: 'kutu-harf-genel' },
+  { kw: 'isikli tabela',  campaign: 'Isikli-Tabela-LED',           group: 'Isikli-Tabela-Genel' },
+  { kw: 'led tabela',     campaign: 'Isikli-Tabela-LED',           group: 'Isikli-Tabela-Genel' },
+  { kw: 'arac giydirme',  campaign: 'Dijital-Baski-Arac-Giydirme', group: 'Dijital-Baski-genel' },
+];
+
+// ============================================================
+// CSV OLUSUMU
+// ============================================================
 const CSV_HEADER = 'Action,Campaign,Ad group,Keyword,Match type,Status,Notes';
 
 function esc(s) {
   if (!s) return '';
   const str = String(s);
-  if (str.includes(',') || str.includes('"') || str.includes('\n')) {
-    return `"${str.replace(/"/g, '""')}"`;
-  }
-  return str;
+  return /[",\n]/.test(str) ? `"${str.replace(/"/g, '""')}"` : str;
 }
 
-function csvRow(row) {
+function row({ campaign, group, keyword, match, notes }) {
   return [
-    esc(row.action),
-    esc(row.campaign),
-    esc(row.group),
-    esc(row.keyword),
-    esc(row.match),
-    esc(row.status),
-    esc(row.notes),
+    'Add',
+    esc(campaign),
+    esc(group),
+    match === 'Exact' ? `[${keyword}]` : match === 'Phrase' ? `"${keyword}"` : esc(keyword),
+    esc(match),
+    'Enabled',
+    esc(notes || ''),
   ].join(',');
 }
 
-const rows = [];
+const rows = [CSV_HEADER];
 
-// 1) PROVEN keywords (arama terimleri raporundan)
-for (const k of PROVEN_KEYWORDS) {
-  rows.push({
-    action: 'Add',
-    campaign: k.campaign,
-    group: k.group,
-    keyword: k.kw,
-    match: k.match,
-    status: 'Enabled',
-    notes: k.note,
-  });
-}
+// 1) Champions (exact)
+for (const c of CHAMPIONS) rows.push(row(c));
 
-// 2) LONG-TAIL: ilçe + hizmet kombinasyonları
-for (const district of DISTRICTS) {
-  for (const svc of SERVICES) {
-    // "{ilce} {hizmet}" phrase match
-    rows.push({
-      action: 'Add',
-      campaign: svc.campaign,
-      group: svc.group,
-      keyword: `${district} ${svc.kw}`,
+// 2) Core phrase keywords
+for (const c of CORE) rows.push(row(c));
+
+// 3) Top district × service long-tail
+for (const d of TOP_DISTRICTS) {
+  for (const s of DISTRICT_SERVICES) {
+    rows.push(row({
+      campaign: s.campaign,
+      group: s.group,
+      keyword: `${d} ${s.kw}`,
       match: 'Phrase',
-      status: 'Enabled',
-      notes: 'long-tail ilçe+hizmet',
-    });
+      notes: 'top-ilce long-tail',
+    }));
   }
 }
 
-// CSV çıkışı
-const csv = [CSV_HEADER, ...rows.map(csvRow)].join('\n');
-writeFileSync(OUTPUT_FILE, csv);
+writeFileSync(OUTPUT_FILE, rows.join('\n'));
 
-console.log(`[KeywordCSV] ${rows.length} keyword üretildi.`);
-console.log(`[KeywordCSV] Proven: ${PROVEN_KEYWORDS.length}`);
-console.log(`[KeywordCSV] Long-tail (ilçe×hizmet): ${DISTRICTS.length} × ${SERVICES.length} = ${DISTRICTS.length * SERVICES.length}`);
-console.log(`[KeywordCSV] Çıktı: ${OUTPUT_FILE}`);
+const champions = CHAMPIONS.length;
+const core = CORE.length;
+const longtail = TOP_DISTRICTS.length * DISTRICT_SERVICES.length;
+
+console.log(`[KeywordCSV v2] ${rows.length - 1} keyword uretildi.`);
+console.log(`  Champions (Exact): ${champions}`);
+console.log(`  Core (Phrase):    ${core}`);
+console.log(`  Long-tail:        ${TOP_DISTRICTS.length} ilce × ${DISTRICT_SERVICES.length} hizmet = ${longtail}`);
+console.log(`  Toplam:           ${champions + core + longtail}`);
+console.log(`  Cikti: ${OUTPUT_FILE}`);
 console.log('');
-console.log('Google Ads Editor\'da import etmek için:');
-console.log('  1. Google Ads Editor indir: https://ads.google.com/intl/tr/home/tools/ads-editor/');
-console.log('  2. Account Details → Download Recent Changes');
-console.log('  3. File → Import → CSV file → bu dosyayı seç');
-console.log('  4. Preview ve onayla → Post');
+console.log('v1 ile karsilastirma: 639 → ' + (champions + core + longtail) + ' (%' + Math.round(100 - ((champions + core + longtail) / 639 * 100)) + ' daralma)');
