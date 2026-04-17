@@ -672,7 +672,322 @@
       ],
       "heroImage": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp",
       "source": "competitor-gap"
+    },
+    {
+      "slug": "beylikduzu-reklam-tabela-rehberi-2026",
+      "title": "Beylikdüzü Reklam Tabela Rehberi 2026",
+      "description": "Beylikdüzü'nde reklam tabelası seçimi, belediye izinleri, fiyat aralıkları ve güvenilir üretici rehberi.",
+      "service": "Cephe Tabela",
+      "district": "Beylikdüzü",
+      "tags": [
+        "Beylikdüzü",
+        "Reklam",
+        "Rehber"
+      ],
+      "heroImage": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "esenyurt-tabela-fiyatlari-2026",
+      "title": "Esenyurt Tabela Fiyatları 2026 — Ne Kadar Tutar?",
+      "description": "Esenyurt'ta tabela fiyatları 2026: kutu harf, cephe, totem, ışıklı tabela için güncel fiyat aralıkları ve maliyet faktörleri.",
+      "service": "Işıklı Tabela",
+      "district": "Esenyurt",
+      "tags": [
+        "Esenyurt",
+        "Fiyat",
+        "2026"
+      ],
+      "heroImage": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "esenyurt-arac-kaplama-filo-rehberi",
+      "title": "Esenyurt'ta Araç Kaplama: Filo için Pratik Rehber",
+      "description": "Esenyurt'taki ticari filolarınızda araç kaplama seçenekleri, fiyatlar, kalite kriterleri.",
+      "service": "Araç Giydirme",
+      "district": "Esenyurt",
+      "tags": [
+        "Esenyurt",
+        "Araç Kaplama",
+        "Filo"
+      ],
+      "heroImage": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-002-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "pleksi-harf-kutu-uretim-sureci",
+      "title": "Pleksi Harf Kutu Üretim Süreci — Detaylı Rehber",
+      "description": "Pleksi harf kutu nasıl üretilir? Malzemeler, kesim teknikleri, LED montaj, bakım önerileri.",
+      "service": "Paslanmaz Harf",
+      "district": "İstanbul",
+      "tags": [
+        "Pleksi",
+        "Kutu Harf",
+        "Üretim"
+      ],
+      "heroImage": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "dukkan-tabelasi-tasarim-ornekleri-2026",
+      "title": "Dükkan Tabelası Tasarım Örnekleri — 2026 Trendler",
+      "description": "Dükkan tabelası tasarımında 2026 trendleri: minimalizm, LED aydınlatma, paslanmaz harf uygulamaları.",
+      "service": "Cephe Tabela",
+      "district": "İstanbul",
+      "tags": [
+        "Dükkan",
+        "Tasarım",
+        "Trend"
+      ],
+      "heroImage": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "tabela-imalatcilari-nasil-secilir",
+      "title": "Tabela İmalatçıları Nasıl Seçilir? Kriterler ve İpuçları",
+      "description": "İstanbul'da tabela imalatçısı seçerken dikkat edilecek 7 kritik nokta: deneyim, malzeme, garanti, fiyat.",
+      "service": "Özel İmalat",
+      "district": "İstanbul",
+      "tags": [
+        "İmalatçı",
+        "Seçim",
+        "Rehber"
+      ],
+      "heroImage": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-001-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "kuyumcu-tabela-tasarim-rehberi",
+      "title": "Kuyumcu Tabela Tasarımı: Prestiji Yansıtan Detaylar",
+      "description": "Kuyumcu tabelalarında altın detay, pleksi harf, lüks görünüm için malzeme ve tasarım ipuçları.",
+      "service": "Paslanmaz Harf",
+      "district": "İstanbul",
+      "tags": [
+        "Kuyumcu",
+        "Lüks",
+        "Prestij"
+      ],
+      "heroImage": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-002-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "isikli-tabela-ornekleri-modelleri-2026",
+      "title": "Işıklı Tabela Örnekleri ve Modelleri 2026",
+      "description": "Işıklı tabela örnekleri 2026: LED kutu harf, panel ışıklı, pleksi modeller. Her bütçeye uygun seçenekler.",
+      "service": "Işıklı Tabela",
+      "district": "İstanbul",
+      "tags": [
+        "Işıklı",
+        "Örnek",
+        "Model"
+      ],
+      "heroImage": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "elektrikli-tabela-nedir-avantajlari",
+      "title": "Elektrikli Tabela Nedir? LED vs Neon vs Panel Işıklı",
+      "description": "Elektrikli tabela türleri karşılaştırması: LED, neon, panel ışıklı. Enerji, ömür, maliyet tablosu.",
+      "service": "Işıklı Tabela",
+      "district": "İstanbul",
+      "tags": [
+        "Elektrikli",
+        "LED",
+        "Neon"
+      ],
+      "heroImage": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-003-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "avm-tabelasi-yonetmeligi-ruhsat",
+      "title": "AVM Tabelası Yönetmeliği 2026: Ruhsat ve İzinler",
+      "description": "AVM içi ve dışı tabela için gerekli izinler: AVM yönetimi, belediye ilan-reklam vergisi, başvuru süreci.",
+      "service": "Cephe Tabela",
+      "district": "İstanbul",
+      "tags": [
+        "AVM",
+        "Yönetmelik",
+        "Ruhsat"
+      ],
+      "heroImage": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-001-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "plaza-tabela-cozumleri-kurumsal",
+      "title": "Plaza Tabela Çözümleri: Kurumsal Kimlik Yansıması",
+      "description": "Plaza ve iş merkezlerinde kurumsal tabela çözümleri: lobi yönlendirme, dış cephe logosu, kat numaraları.",
+      "service": "Paslanmaz Harf",
+      "district": "İstanbul",
+      "tags": [
+        "Plaza",
+        "Kurumsal"
+      ],
+      "heroImage": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-003-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "hastane-tabela-sistemi-hijyenik-uygulamalar",
+      "title": "Hastane Tabela Sistemi: Hijyenik Uygulamalar",
+      "description": "Hastane yönlendirme sistemleri: antibakteriyel malzeme, kolay temizlenir yüzey, acil servis kriterleri.",
+      "service": "Yönlendirme",
+      "district": "İstanbul",
+      "tags": [
+        "Hastane",
+        "Hijyen"
+      ],
+      "heroImage": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-001-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "otel-tabela-sistemleri-wayfinding",
+      "title": "Otel Tabela Sistemleri: Wayfinding ve Misafir Deneyimi",
+      "description": "Otel tabela ve yönlendirme sistemleri: resepsiyon, restoran, SPA, oda numaraları için özel tasarım.",
+      "service": "Yönlendirme",
+      "district": "İstanbul",
+      "tags": [
+        "Otel",
+        "Wayfinding"
+      ],
+      "heroImage": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-003-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "fabrika-tabela-dayaniklilik-osb",
+      "title": "Fabrika Tabelasında Dayanıklılık: OSB ve Üretim Tesisi",
+      "description": "Fabrika ve OSB'de 10+ yıl dayanıklı tabelalar: paslanmaz yapı, PVD kaplama, IP65 LED.",
+      "service": "Cephe Tabela",
+      "district": "İstanbul",
+      "tags": [
+        "Fabrika",
+        "OSB",
+        "Dayanıklılık"
+      ],
+      "heroImage": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "dis-cephe-reklam-uygulamalari-izinler",
+      "title": "Dış Cephe Reklam Uygulamaları ve Belediye İzinleri",
+      "description": "Dış cephe reklam tabelası izin süreci, ilan-reklam vergisi hesaplama, uygunluk kriterleri.",
+      "service": "Cephe Tabela",
+      "district": "İstanbul",
+      "tags": [
+        "Dış Cephe",
+        "İzin"
+      ],
+      "heroImage": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "sariyer-plaza-kurumsal-tabela",
+      "title": "Sarıyer'de Plaza ve Kurumsal Tabela Çözümleri",
+      "description": "Sarıyer Maslak, İstinye, Tarabya bölgesinde plaza tabela projeleri ve kurumsal uygulamalar.",
+      "service": "Paslanmaz Harf",
+      "district": "Sarıyer",
+      "tags": [
+        "Sarıyer",
+        "Plaza"
+      ],
+      "heroImage": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-002-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "uskudar-sahil-tabela-korozyon",
+      "title": "Üsküdar Sahil Şeridi Tabela: Korozyon ve Tuzlu Hava",
+      "description": "Üsküdar, Çengelköy, Kandilli sahil tabelalarında korozyon önleme, uzun ömür malzeme seçimi.",
+      "service": "Cephe Tabela",
+      "district": "Üsküdar",
+      "tags": [
+        "Üsküdar",
+        "Sahil",
+        "Korozyon"
+      ],
+      "heroImage": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "bagcilar-kucuk-isletme-tabela",
+      "title": "Bağcılar'da Küçük İşletme İçin Tabela Rehberi",
+      "description": "Bağcılar'daki küçük işletmeler için uygun fiyatlı, kaliteli tabela seçenekleri.",
+      "service": "Işıklı Tabela",
+      "district": "Bağcılar",
+      "tags": [
+        "Bağcılar",
+        "Küçük İşletme"
+      ],
+      "heroImage": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-003-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "kagithane-ofis-plaza-tabela",
+      "title": "Kağıthane Ofis ve Plaza Tabelaları: Yerel Uzman",
+      "description": "Kağıthane'deki ofis ve plazalarda A2 Reklam'ın kurumsal tabela çözümleri ve referansları.",
+      "service": "Paslanmaz Harf",
+      "district": "Kağıthane",
+      "tags": [
+        "Kağıthane",
+        "Ofis"
+      ],
+      "heroImage": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "sisli-mecidiyekoy-kurumsal-tabela",
+      "title": "Şişli Mecidiyeköy'de Kurumsal Tabela",
+      "description": "Şişli, Mecidiyeköy, Zincirlikuyu bölgesindeki AVM ve plazalarda kurumsal tabela uygulamaları.",
+      "service": "Cephe Tabela",
+      "district": "Şişli",
+      "tags": [
+        "Şişli",
+        "Mecidiyeköy"
+      ],
+      "heroImage": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "magaza-acilis-tabela-checklist",
+      "title": "Mağaza Açılışı İçin Tabela Checklist'i",
+      "description": "Yeni mağaza açarken tabela planlaması: ölçü, izin, bütçe, zamanlama — tam liste.",
+      "service": "Cephe Tabela",
+      "district": "İstanbul",
+      "tags": [
+        "Mağaza",
+        "Açılış",
+        "Checklist"
+      ],
+      "heroImage": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "tabela-hizli-teklif-48-saat",
+      "title": "Tabela Teklifi Nasıl Hızlı Alınır? 48 Saat Süreç",
+      "description": "Tabela teklifi için hızlı sürecin adımları: keşif, ölçüm, malzeme seçimi, fiyatlandırma.",
+      "service": "Özel İmalat",
+      "district": "İstanbul",
+      "tags": [
+        "Teklif",
+        "Hızlı",
+        "Süreç"
+      ],
+      "heroImage": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-002-960.webp",
+      "source": "iter12"
+    },
+    {
+      "slug": "tabela-marka-kimlik-uyumu",
+      "title": "Tabela ve Marka Kimliği Uyumu: CI Detayları",
+      "description": "Kurumsal kimliğinize uygun tabela: logo, font, renk, malzeme tutarlılığı için CI rehberi.",
+      "service": "Özel İmalat",
+      "district": "İstanbul",
+      "tags": [
+        "Marka",
+        "CI",
+        "Kimlik"
+      ],
+      "heroImage": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-004-960.webp",
+      "source": "iter12"
     }
   ],
-  "lastCompetitorGap": "2026-04-17T04:15:00Z"
+  "lastCompetitorGap": "2026-04-17T04:15:00Z",
+  "lastLongTailExpansion": "2026-04-17T06:45:00Z"
 }
