@@ -149,8 +149,12 @@ function auditNegatives() {
   let dupCount = 0;
   for (const row of csv.data) {
     const camp = row.Campaign;
-    const kw = row['Negative keyword'];
+    const group = row['Ad group'];
+    const kw = row.Keyword;
+    const match = row['Match type'];
     if (!VALID_CAMPAIGNS.has(camp)) warn(`Gecersiz kampanya: ${camp}`);
+    if (!VALID_GROUPS.has(group)) warn(`Gecersiz ad group: "${group}" (negatif: ${kw})`);
+    if (!/^Negative (exact|phrase|broad)$/.test(match)) err(`Negatif match type gecersiz: "${match}" (kw: ${kw}). "Negative phrase" gibi olmali.`);
     const key = `${camp}::${kw}`;
     if (seen.has(key)) { err(`Negatif duplicate: ${kw} → ${camp}`); dupCount++; }
     seen.set(key, true);

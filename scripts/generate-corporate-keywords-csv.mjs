@@ -156,17 +156,22 @@ for (const k of PROVEN_CORPORATE) {
 writeFileSync(join(DATA_DIR, 'google-ads-corporate-keywords.csv'), kwRows.join('\n'));
 
 // === Negatives CSV ===
-const negHeader = 'Action,Campaign,Negative keyword,Match type';
+// Google Ads Editor format: ad group-level negatives with "Keyword" column + "Negative phrase" match type.
+// "Negative keyword" as column header is NOT recognized by Editor → falls back to positive Keyword parsing
+// and creates duplicate ad groups named after the campaign. Ad group-level negatives with proper match type avoid this.
+const negHeader = 'Action,Campaign,Ad group,Keyword,Match type';
 const negRows = [negHeader];
-const ALL_CAMPAIGNS = [
-  'Cephe-Totem-Genel',
-  'Isikli-Tabela-LED',
-  'Kutu-Harf-Tabela',
-  'Dijital-Baski-Arac-Giydirme',
-];
+const AD_GROUP_MAP = {
+  'Cephe-Totem-Genel': 'cephe-totem-genel',
+  'Isikli-Tabela-LED': 'Isikli-Tabela-Genel',
+  'Kutu-Harf-Tabela': 'kutu-harf-genel',
+  'Dijital-Baski-Arac-Giydirme': 'Dijital-Baski-genel',
+};
+const ALL_CAMPAIGNS = Object.keys(AD_GROUP_MAP);
 for (const camp of ALL_CAMPAIGNS) {
+  const adGroup = AD_GROUP_MAP[camp];
   for (const n of NEGATIVES) {
-    negRows.push(['Add', camp, n, 'Phrase'].map(esc).join(','));
+    negRows.push(['Add', camp, adGroup, n, 'Negative phrase'].map(esc).join(','));
   }
 }
 writeFileSync(join(DATA_DIR, 'google-ads-negatives-import.csv'), negRows.join('\n'));
