@@ -612,4 +612,9 @@ Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmi
 
 ### Log
 - **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+- **İter #12** (06:45): Blog topic queue'ya 23 long-tail konu eklendi. Toplam 55 → 78 konu → haftada 2 yayınla **9.8 aylık otomatik blog buffer**. Konular İter#10 arama terimleri raporundan ilham alınmış:
+  - İlçe+hizmet kombineler: "beylikdüzü reklam tabela rehberi 2026", "esenyurt tabela fiyatları 2026", "esenyurt arac kaplama filo rehberi"
+  - Ürün niş: "pleksi harf kutu üretim süreci", "tabela imalatçıları nasıl seçilir", "dükkan tabelası tasarım örnekleri 2026", "kuyumcu tabela tasarım rehberi"
+  - Kurumsal sektörel: "AVM tabelası yönetmeliği/ruhsat", "plaza tabela çözümleri kurumsal", "hastane tabela sistemi hijyenik uygulamalar", "otel tabela sistemleri wayfinding", "fabrika tabela dayanıklılık OSB"
+  - Her konuyu `generate-blog.mjs` Pzt+Prş 09:00 cron'unda otomatik işler, hero image kategorisine göre seçilir, dahili link otomatik.
 
