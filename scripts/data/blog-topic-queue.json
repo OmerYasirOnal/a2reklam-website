@@ -1,8 +1,6 @@
 {
   "_comment": "Blog konu havuzu. Her turda bir konu seçilir, 'used' dizisine eklenir. Tamamlanınca resetlenir.",
-  "used": [
-    "vinyl-folyo-cesitleri-uv-dayanim"
-  ],
+  "used": [],
   "topics": [
     {
       "slug": "istanbul-tabela-fiyatlari-2026-guncel",
@@ -604,7 +602,77 @@
         "Tasarım"
       ],
       "heroImage": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-005-960.webp"
+    },
+    {
+      "slug": "avm-tabela-yonetmeligi-2026-izinler",
+      "title": "AVM Tabelası Yönetmeliği 2026: Kurallar, İzinler, Montaj",
+      "description": "AVM tabela yönetmeliği 2026: izin süreci, ölçü kuralları, güvenlik standartları ve başarılı AVM tabela projeleri.",
+      "service": "Cephe Tabela",
+      "district": "İstanbul",
+      "tags": [
+        "AVM",
+        "Yönetmelik",
+        "Kurumsal"
+      ],
+      "heroImage": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-001-960.webp",
+      "source": "competitor-gap"
+    },
+    {
+      "slug": "plaza-tabelasi-en-iyi-malzemeler-kurumsal",
+      "title": "Plaza Tabelasında En İyi Malzemeler: Kurumsal Firma İçin Rehber",
+      "description": "Plaza tabelası için en uygun malzemeler: paslanmaz çelik, kompozit panel, LED aydınlatma. Kurumsal kimlik uyumu.",
+      "service": "Paslanmaz Harf",
+      "district": "İstanbul",
+      "tags": [
+        "Plaza",
+        "Malzeme",
+        "Kurumsal"
+      ],
+      "heroImage": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-002-960.webp",
+      "source": "competitor-gap"
+    },
+    {
+      "slug": "hastane-tabelasinda-hijyen-ve-gorunurluk",
+      "title": "Hastane Tabelasında Hijyen ve Görünürlük: Pratik Rehber",
+      "description": "Hastane tabelaları: hijyenik malzeme seçimi, yönlendirme sistemleri, acil servis kriterleri. 320 arama/ay altın kelime.",
+      "service": "Yönlendirme",
+      "district": "İstanbul",
+      "tags": [
+        "Hastane",
+        "Hijyen",
+        "Yönlendirme"
+      ],
+      "heroImage": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-001-960.webp",
+      "source": "competitor-gap"
+    },
+    {
+      "slug": "otel-tabela-tasariminda-5-altin-kural",
+      "title": "Otel Tabela Tasarımında 5 Altın Kural",
+      "description": "Otel tabela tasarımı için kurumsal kimlik, wayfinding, gece görünürlüğü, malzeme dayanıklılığı ve misafir deneyimi.",
+      "service": "Yönlendirme",
+      "district": "İstanbul",
+      "tags": [
+        "Otel",
+        "Kurumsal",
+        "Tasarım"
+      ],
+      "heroImage": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-003-960.webp",
+      "source": "competitor-gap"
+    },
+    {
+      "slug": "fabrika-dis-cephe-tabela-imalati-kurumsal",
+      "title": "Fabrika Dış Cephe Tabela İmalatı: Kurumsal OSB Rehberi",
+      "description": "Fabrika ve OSB tabelaları: dayanıklılık, uzun ömür, hava şartları, büyük ölçek uygulama, kurumsal kimlik yansıması.",
+      "service": "Cephe Tabela",
+      "district": "İstanbul",
+      "tags": [
+        "Fabrika",
+        "OSB",
+        "Kurumsal"
+      ],
+      "heroImage": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp",
+      "source": "competitor-gap"
     }
   ],
-  "lastGenerated": "2026-04-16T21:15:03.140Z"
+  "lastCompetitorGap": "2026-04-17T04:15:00Z"
 }
