@@ -178,8 +178,56 @@ Rakip analizine göre sitemizde olmayan/zayıf olan sayfalar:
 
 ---
 
+---
+
+## 🎯 AUCTION INSIGHTS (İterasyon #3 — 2026-04-17 04:30)
+
+Son 30 gün bütün kampanyalar için rakip görünürlük analizi:
+
+| # | Rakip | Gösterim Payı | Sayfa Üst | Çakışma | Kategori |
+|---|-------|---------------|-----------|---------|----------|
+| 1 | **armut.com** | %20.38 🥇 | %75.52 | %17.99 | Aracı platform |
+| 2 | **SİZ (A2 Reklam)** | **%15.76** 🥈 | %57.40 | — | |
+| 3 | dogauneon.com | %13.35 🥉 | %65.53 | %10.89 | Direkt rakip (YENİ!) |
+| 4 | eraytabela.com | %12.06 | %63.68 | %16.91 | Direkt rakip |
+| 5 | 3mreklam.com | <%10 | %57.16 | %5.39 | Küçük |
+| 6 | evok.com.tr | <%10 | %65.53 | %5.74 | Küçük |
+| 7 | cebireklam.com.tr | <%10 | %66.69 | %13.32 | Küçük |
+| 8 | eymenreklam.com | <%10 | %63.01 | %6.75 | Küçük |
+| 9 | artastabela.com | <%10 | %73.11 | %7.16 | Küçük |
+| 10 | protabela.com | <%10 | %55.42 | %4.40 | Küçük |
+| 11 | neuneon.com | <%10 | %66.37 | %5.01 | Küçük |
+
+### KRITIK GÖZLEMLER
+
+**1. Armut.com bizi %4.62 dövüyor** (%20.38 vs %15.76)
+- Aracı platform, büyük bütçe
+- "%98 memnuniyet, 1150 tabelacı" sosyal kanıt
+- **Stratejik cevap:** "Aracı yok, direkt ustayla konuş. 20+ yıl doğrudan üretim."
+
+**2. Eraytabela ile %16.91 çakışma** → aynı kelimelerde kapışıyoruz
+- Onlar lightbox + totem odaklı
+- **Stratejik cevap:** Kurumsal + AVM/plaza mesajıyla ayrışmak
+
+**3. Dogauneon.com YENİ rakip** (%13.35)
+- Henüz profil araştırılmamış. İterasyon #4'te SERP'te incelenecek.
+
+**4. Sayfa üstü oranı düşük (%57.40)**
+- Rakiplerin çoğu %60-75 arasında
+- **Aksiyon:** Kalite puanı iyileştir, ad rank düşük kelimelerde CPC yükselt
+
+### ÖNCELİKLİ RAKIPLER (çakışma yüksek)
+1. **armut.com** — %17.99 çakışma
+2. **eraytabela.com** — %16.91 çakışma
+3. **cebireklam.com.tr** — %13.32 çakışma
+
+Bu 3 rakiple aynı açık artırmada yarışıyoruz. Onları incelemek ve farklılaşmak **en yüksek öncelik**.
+
+---
+
 ## Log
 
-- **İter #1** (04:00): Keyword Planner — 9 altın kelime tespit edildi.
-- **İter #2** (04:15): Rakip SERP analizi — Armut, Eray Tabela, brdreklamtabela incelendi. Yeni RSA taslağı + landing page önerileri hazırlandı.
+- **İter #1** (04:00): Keyword Planner — 9 altın kelime.
+- **İter #2** (04:15): Rakip SERP — Armut, Eray, brdreklamtabela. RSA taslak + 5 blog konusu.
+- **İter #3** (04:30): Auction Insights — 10 gerçek rakip. Armut %20.38 ile #1, biz %15.76 ile #2. Dogauneon yeni keşfedildi. 13 rakip marka ismi negatif listesine eklendi (eraytabela, cebireklam, protabela, artastabela, dogauneon, eymenreklam, evokreklam, neuneon, brdreklamtabela, 3mreklam, armut tabela, armut teklif).
 
