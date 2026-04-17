@@ -1,0 +1,334 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { PHONE_NUMBER, PHONE_TEL, WHATSAPP_LINK, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../consts';
+import CallBand from '../components/common/CallBand.astro';
+
+const breadcrumbs = [
+  { name: 'Anasayfa', item: '/' },
+  { name: 'Kurumsal Tabela', item: '/kurumsal-tabela/' },
+];
+
+const faq = [
+  {
+    question: 'AVM tabelası için belediye izni nasıl alınır?',
+    answer: 'AVM iç cephe ve vitrin tabelaları için genelde AVM yönetimine başvuru yeterlidir. Dış cephe tabelaları için ise bağlı olunan ilçe belediyesinin ilan-reklam birimine başvuru gerekir. A2 Reklam olarak tüm izin süreçlerini müşterilerimiz adına takip ediyoruz.',
+  },
+  {
+    question: 'Plaza tabelasında hangi malzemeler tercih edilmeli?',
+    answer: 'Plaza ve iş merkezlerinde paslanmaz çelik harf, kompozit panel ve LED aydınlatmalı kutu harf en çok tercih edilenlerdir. Dayanıklılık, kurumsal görünüm ve uzun ömür açısından en iyi seçeneklerdir. Marka renginize göre PVD kaplama seçenekleri de sunuyoruz.',
+  },
+  {
+    question: 'Hastane tabela sistemleri ne kadar sürede kurulur?',
+    answer: 'Hastane yönlendirme sistemleri projenin ölçeğine göre 10-30 iş günü arasında tamamlanır. Hizmet alanı, kat sayısı ve acil servis gereksinimlerine göre planlanır. Aşamalı montaj ile hastane operasyonunu aksatmadan uygulama yapıyoruz.',
+  },
+  {
+    question: 'Otel tabelasında neye dikkat edilmeli?',
+    answer: 'Otel tabelalarında 3 kritik nokta: (1) kurumsal kimlik uyumu, (2) gece görünürlüğü (LED aydınlatma), (3) misafir wayfinding sistemi. Özellikle 4-5 yıldızlı otellerde tabela kalitesi misafir algısını doğrudan etkiler.',
+  },
+  {
+    question: 'Kurumsal tabela fiyatları nasıl belirlenir?',
+    answer: 'Kurumsal projelerde fiyat; metraj, malzeme kalitesi, aydınlatma tipi, montaj yüksekliği ve garanti süresine göre belirlenir. 20.000₺\'den başlayıp milyonlara kadar çıkabilen projeler yönetiyoruz. Ücretsiz keşif sonrası 48 saat içinde detaylı teklif sunuyoruz.',
+  },
+  {
+    question: 'Fabrika ve OSB tabelalarında ömür ne kadar?',
+    answer: 'Uygun malzeme seçimiyle 10-15 yıl ömürlü uygulamalar yapıyoruz. Paslanmaz çelik yapı + PVD kaplama + IP65 sertifikalı LED kombinasyonu en dayanıklı çözümdür. Periyodik bakım planı ile ömür uzar.',
+  },
+  {
+    question: 'Daha önce hangi kurumsal firmalar için çalıştınız?',
+    answer: '2005\'ten bu yana İstanbul\'un önde gelen AVM\'leri, plazaları, hastaneleri, otelleri ve fabrikaları için 2500+ proje tamamladık. Referans listesi ve portföy için iletişime geçin.',
+  },
+];
+
+const services = [
+  { title: 'AVM Tabela Uygulamaları', desc: 'Mağaza cephe tabelaları, içeride yönlendirme, food court ve reklam alanları.', icon: '🛍' },
+  { title: 'Plaza Tabela Çözümleri', desc: 'Kurumsal kimlik uyumlu dış cephe logosu, lobi yönlendirme, kat numaraları.', icon: '🏢' },
+  { title: 'Fabrika & OSB', desc: 'Büyük ölçek dış cephe, paslanmaz harf, OSB giriş tabelaları, uzun ömürlü uygulama.', icon: '🏭' },
+  { title: 'Hastane Yönlendirme', desc: 'Poliklinik, acil servis, eczane yönlendirme sistemleri. Hijyenik ve dayanıklı.', icon: '🏥' },
+  { title: 'Otel Tabela Sistemleri', desc: 'Otel cephe logosu, giriş tabelası, oda numaraları, restoran ve SPA tabelası.', icon: '🏨' },
+  { title: 'Okul & Kampüs', desc: 'Giriş tabelası, kat yönlendirme, spor salonu, kafeterya tabela çözümleri.', icon: '🎓' },
+  { title: 'Bankacılık & Finans', desc: 'Şube tabelaları, kurumsal kimlik, güvenlik ışıklı uyarılar.', icon: '🏦' },
+  { title: 'Sanayi Kampüsleri', desc: 'Büyük holdingler için tesis tabelaları, yönetim binası uygulamaları.', icon: '🏗' },
+];
+
+const processSteps = [
+  { n: 1, title: 'Keşif & Proje Analizi', desc: 'Ekibimiz sahayı ziyaret eder, ölçüm alır, kurumsal kimlik ve belediye kriterlerini inceler. 24-48 saatte ayrıntılı rapor.' },
+  { n: 2, title: 'Tasarım & 3D Önizleme', desc: 'Markanızın CI\'sine uygun 3-5 farklı tasarım önerisi. 3D render ile bitmiş haline bakıp karar verin. 2 revizyon ücretsiz.' },
+  { n: 3, title: 'Malzeme Temini & Üretim', desc: 'Onaylanan tasarım kendi atölyemizde üretilir. CNC lazer kesim, PVD kaplama, IP65 sertifikalı LED. Her aşamada kalite kontrol.' },
+  { n: 4, title: 'Montaj & Uygulama', desc: 'Sertifikalı montaj ekibi. İş sağlığı & güvenliği uyumlu. Operasyonu aksatmayan gece/hafta sonu uygulama seçeneği.' },
+  { n: 5, title: 'Garanti & Bakım', desc: '2 yıl malzeme + işçilik garantisi. LED için ayrı garanti. Periyodik bakım planı ile tabelanızın ömrünü uzatın.' },
+];
+
+const whyUs = [
+  { title: '2005\'ten Beri Kurumsal', desc: '20+ yıl deneyim. 2.500+ başarıyla tamamlanmış proje.', icon: '🏆' },
+  { title: '⭐ 5.0 / 5 — 90 Yorum', desc: 'Google\'da kanıtlanmış müşteri memnuniyeti.', icon: '⭐' },
+  { title: 'Aracı Yok, Direkt Üretici', desc: 'Siz ve biz — arada hiçbir firma yok. En hızlı iletişim, en uygun fiyat.', icon: '🔧' },
+  { title: 'Ücretsiz Keşif & 3D', desc: 'Sahaya gelip ölçüm alıyor, 3D tasarım çıkarıyoruz — ücretsiz.', icon: '🎨' },
+  { title: 'Uygun Fiyat Garantisi', desc: 'Benzer kalitede başka bir firma daha düşük fiyat verirse biz eşleriz.', icon: '💰' },
+  { title: 'Aynı Gün Hızlı Teklif', desc: '48 saat değil — aynı gün detaylı fiyat teklifi.', icon: '⚡' },
+  { title: '39 İlçeye Hizmet', desc: 'İstanbul\'un tamamı. Yeni şube, bayi, AVM açılışları için ideal.', icon: '🗺' },
+  { title: '2 Yıl Garanti + Bakım', desc: 'Malzeme ve işçilik için tam garanti. Sonrasında bakım anlaşması opsiyonu.', icon: '✅' },
+];
+
+const referans = [
+  'AVM mağaza tabelaları (50+ proje)',
+  'Plaza ve iş merkezi cephe uygulamaları',
+  'Hastane ve sağlık kuruluşu wayfinding',
+  'Otel tabela ve yönlendirme sistemleri',
+  'Fabrika ve OSB dış cephe uygulamaları',
+  'Bankacılık şube tabelaları',
+  'Okul ve kampüs tabela sistemleri',
+  'Kurumsal ofis iç yönlendirme',
+];
+---
+
+<Layout
+  title="Kurumsal Tabela İmalatı İstanbul | AVM, Plaza, Hastane, Otel Çözümleri | A2 Reklam"
+  description="İstanbul'da kurumsal tabela imalatı: AVM, plaza, fabrika, hastane, otel için özel tasarım. 2.500+ proje, ⭐ 5.0 / 90 yorum. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72"
+  breadcrumbs={breadcrumbs}
+  faq={faq}
+  whatsappTitle="Kurumsal Tabela"
+>
+  <!-- HERO -->
+  <section class="relative bg-secondary min-h-[70vh] flex items-center py-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Sol: Metin + CTA -->
+        <div>
+          <div class="inline-flex items-center gap-2 mb-5 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
+            <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+            <span class="text-primary text-sm font-semibold uppercase tracking-wider">
+              Kurumsal & Büyük Ölçek
+            </span>
+          </div>
+
+          <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+            Kurumsal <span class="text-primary">Tabela</span><br />
+            İmalatı İstanbul
+          </h1>
+
+          <p class="text-xl text-gray-400 mb-8 leading-relaxed">
+            AVM, plaza, fabrika, hastane, otel — kurumsal kimliğinize özel tasarım,
+            CNC lazer kesim atölyemizde üretim, sertifikalı ekip ile montaj.
+            <strong class="text-white">2.500+ proje ile İstanbul'un kurumsal tabela uzmanıyız.</strong>
+          </p>
+
+          <!-- Güven Göstergeleri -->
+          <div class="flex flex-wrap gap-3 mb-8">
+            <div class="flex items-center gap-2 px-4 py-2 bg-accent-light rounded-lg border border-white/5">
+              <span class="text-primary text-xl">⭐</span>
+              <span class="text-white font-bold">{GOOGLE_RATING}</span>
+              <span class="text-gray-400 text-sm">({GOOGLE_REVIEW_COUNT}+ yorum)</span>
+            </div>
+            <div class="flex items-center gap-2 px-4 py-2 bg-accent-light rounded-lg border border-white/5">
+              <span class="text-primary text-xl">🏆</span>
+              <span class="text-white font-bold text-sm">2005'ten Beri</span>
+            </div>
+            <div class="flex items-center gap-2 px-4 py-2 bg-accent-light rounded-lg border border-white/5">
+              <span class="text-primary text-xl">🗺</span>
+              <span class="text-white font-bold text-sm">39 İlçe</span>
+            </div>
+          </div>
+
+          <!-- CTA Butonlar -->
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href={`tel:${PHONE_TEL}`}
+              data-track="call"
+              data-lang="tr"
+              class="inline-flex items-center justify-center bg-primary text-secondary font-bold py-4 px-8 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-xl shadow-primary/20"
+            >
+              ☎ Hemen Ara — Aynı Gün Teklif
+            </a>
+            <a
+              href="/iletisim/"
+              data-track="quote"
+              data-lang="tr"
+              class="inline-flex items-center justify-center border-2 border-white/30 text-white font-bold py-4 px-8 rounded-lg hover:border-white hover:bg-white/10 transition-all"
+            >
+              Ücretsiz Keşif Talep Et
+            </a>
+          </div>
+        </div>
+
+        <!-- Sağ: İstatistik kutuları -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-6 bg-accent-light rounded-2xl border border-white/5 text-center">
+            <div class="text-4xl font-bold text-primary mb-2">2.500+</div>
+            <div class="text-gray-400 text-sm uppercase tracking-wider">Tamamlanan Proje</div>
+          </div>
+          <div class="p-6 bg-accent-light rounded-2xl border border-white/5 text-center">
+            <div class="text-4xl font-bold text-primary mb-2">20+ YIL</div>
+            <div class="text-gray-400 text-sm uppercase tracking-wider">Sektör Deneyimi</div>
+          </div>
+          <div class="p-6 bg-accent-light rounded-2xl border border-white/5 text-center">
+            <div class="text-4xl font-bold text-primary mb-2">⭐ 5.0</div>
+            <div class="text-gray-400 text-sm uppercase tracking-wider">Google Puanı</div>
+          </div>
+          <div class="p-6 bg-accent-light rounded-2xl border border-white/5 text-center">
+            <div class="text-4xl font-bold text-primary mb-2">48 SAAT</div>
+            <div class="text-gray-400 text-sm uppercase tracking-wider">Detaylı Teklif</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTÖR BAZLI HİZMETLER -->
+  <section class="py-20 bg-secondary border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
+          Sektöre Özel <span class="text-primary">Kurumsal Çözümler</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-3xl mx-auto">
+          Her sektörün tabela ihtiyaçları farklıdır. İşinize özel optimize edilmiş çözümler.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {services.map(s => (
+          <div class="p-6 glass-card hover:border-primary/50 transition-all">
+            <div class="text-4xl mb-4">{s.icon}</div>
+            <h3 class="text-white font-heading font-bold text-lg mb-2">{s.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- NEDEN BIZ -->
+  <section class="py-20 bg-secondary border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
+          Neden <span class="text-primary">A2 Reklam</span>?
+        </h2>
+        <p class="text-gray-400 text-lg">
+          Kurumsal müşterilerin bizi tercih etme sebepleri.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {whyUs.map(item => (
+          <div class="p-6 bg-accent-light rounded-2xl border border-white/5 hover:border-primary/40 transition-all">
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h3 class="text-white font-heading font-bold text-base mb-2">{item.title}</h3>
+            <p class="text-gray-400 text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SÜREÇ -->
+  <section class="py-20 bg-secondary border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-4xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
+          5 Adımda <span class="text-primary">Sizin Projeniz</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6">
+        {processSteps.map(s => (
+          <div class="flex gap-6 items-start p-6 bg-accent-light rounded-2xl border border-white/5">
+            <div class="flex-shrink-0 w-14 h-14 bg-primary text-secondary rounded-full flex items-center justify-center text-2xl font-bold">
+              {s.n}
+            </div>
+            <div>
+              <h3 class="text-white font-heading font-bold text-xl mb-2">{s.title}</h3>
+              <p class="text-gray-400 leading-relaxed">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Referans Alanları -->
+  <section class="py-20 bg-secondary border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-heading font-bold text-white mb-10 text-center uppercase tracking-tight">
+        Çalıştığımız <span class="text-primary">Kurumsal Alanlar</span>
+      </h2>
+
+      <div class="grid sm:grid-cols-2 gap-3">
+        {referans.map(ref => (
+          <div class="flex items-center gap-3 p-4 bg-accent-light rounded-lg border border-white/5">
+            <span class="w-2 h-2 bg-primary rounded-full shrink-0"></span>
+            <span class="text-gray-300">{ref}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <CallBand context="Kurumsal Tabela Projesi" />
+
+  <!-- FAQ -->
+  <section class="py-20 bg-secondary border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-heading font-bold text-white mb-10 text-center uppercase tracking-tight">
+        Sık Sorulan Sorular
+      </h2>
+
+      <div class="space-y-4">
+        {faq.map(item => (
+          <details class="p-6 bg-accent-light rounded-2xl border border-white/5 group">
+            <summary class="text-white font-heading font-bold cursor-pointer list-none flex justify-between items-center">
+              <span>{item.question}</span>
+              <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="text-gray-400 leading-relaxed mt-4">{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 bg-secondary border-t border-white/5">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+        Projenizi <span class="text-primary">Birlikte Planlayalım</span>
+      </h2>
+      <p class="text-xl text-gray-400 mb-10 leading-relaxed">
+        Ücretsiz keşif, 3D tasarım, aynı gün detaylı teklif. Sadece arayın — gerisini biz yaparız.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a
+          href={`tel:${PHONE_TEL}`}
+          data-track="call"
+          data-lang="tr"
+          class="inline-flex items-center justify-center bg-primary text-secondary font-bold py-4 px-8 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-xl shadow-primary/20"
+        >
+          ☎ {PHONE_NUMBER}
+        </a>
+        <a
+          href={WHATSAPP_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-track="whatsapp"
+          data-lang="tr"
+          class="inline-flex items-center justify-center bg-green-600 text-white font-bold py-4 px-8 rounded-lg hover:bg-green-500 transition-all transform hover:-translate-y-1"
+        >
+          💬 WhatsApp
+        </a>
+        <a
+          href="/iletisim/"
+          data-track="quote"
+          data-lang="tr"
+          class="inline-flex items-center justify-center border-2 border-white/30 text-white font-bold py-4 px-8 rounded-lg hover:border-white hover:bg-white/10 transition-all"
+        >
+          Formdan Yaz
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
