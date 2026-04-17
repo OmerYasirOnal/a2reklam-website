@@ -1,0 +1,129 @@
+Action,Campaign,Ad group,Keyword,Match type,Status,Notes
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,avm isikli tabela,Phrase,Enabled,corporate+isikli tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,avm led tabela,Phrase,Enabled,corporate+led tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,avm lightbox tabela,Phrase,Enabled,corporate+lightbox tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,avm led kutu harf,Phrase,Enabled,corporate+led kutu harf
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,avm aydinlatmali tabela,Phrase,Enabled,corporate+aydinlatmali tabela
+Add,Kutu-Harf-Tabela,kutu-harf-genel,avm kutu harf,Phrase,Enabled,corporate+kutu harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,avm pleksi harf,Phrase,Enabled,corporate+pleksi harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,avm paslanmaz harf,Phrase,Enabled,corporate+paslanmaz harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,avm isikli harf,Phrase,Enabled,corporate+isikli harf
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,avm arac giydirme,Phrase,Enabled,corporate+arac giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,avm arac kaplama,Phrase,Enabled,corporate+arac kaplama
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,avm filo giydirme,Phrase,Enabled,corporate+filo giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,avm dijital baski,Phrase,Enabled,corporate+dijital baski
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,plaza isikli tabela,Phrase,Enabled,corporate+isikli tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,plaza led tabela,Phrase,Enabled,corporate+led tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,plaza lightbox tabela,Phrase,Enabled,corporate+lightbox tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,plaza led kutu harf,Phrase,Enabled,corporate+led kutu harf
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,plaza aydinlatmali tabela,Phrase,Enabled,corporate+aydinlatmali tabela
+Add,Kutu-Harf-Tabela,kutu-harf-genel,plaza kutu harf,Phrase,Enabled,corporate+kutu harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,plaza pleksi harf,Phrase,Enabled,corporate+pleksi harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,plaza paslanmaz harf,Phrase,Enabled,corporate+paslanmaz harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,plaza isikli harf,Phrase,Enabled,corporate+isikli harf
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,plaza arac giydirme,Phrase,Enabled,corporate+arac giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,plaza arac kaplama,Phrase,Enabled,corporate+arac kaplama
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,plaza filo giydirme,Phrase,Enabled,corporate+filo giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,plaza dijital baski,Phrase,Enabled,corporate+dijital baski
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,kurumsal isikli tabela,Phrase,Enabled,corporate+isikli tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,kurumsal led tabela,Phrase,Enabled,corporate+led tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,kurumsal lightbox tabela,Phrase,Enabled,corporate+lightbox tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,kurumsal led kutu harf,Phrase,Enabled,corporate+led kutu harf
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,kurumsal aydinlatmali tabela,Phrase,Enabled,corporate+aydinlatmali tabela
+Add,Kutu-Harf-Tabela,kutu-harf-genel,kurumsal kutu harf,Phrase,Enabled,corporate+kutu harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,kurumsal pleksi harf,Phrase,Enabled,corporate+pleksi harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,kurumsal paslanmaz harf,Phrase,Enabled,corporate+paslanmaz harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,kurumsal isikli harf,Phrase,Enabled,corporate+isikli harf
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,kurumsal arac giydirme,Phrase,Enabled,corporate+arac giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,kurumsal arac kaplama,Phrase,Enabled,corporate+arac kaplama
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,kurumsal filo giydirme,Phrase,Enabled,corporate+filo giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,kurumsal dijital baski,Phrase,Enabled,corporate+dijital baski
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,fabrika isikli tabela,Phrase,Enabled,corporate+isikli tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,fabrika led tabela,Phrase,Enabled,corporate+led tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,fabrika lightbox tabela,Phrase,Enabled,corporate+lightbox tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,fabrika led kutu harf,Phrase,Enabled,corporate+led kutu harf
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,fabrika aydinlatmali tabela,Phrase,Enabled,corporate+aydinlatmali tabela
+Add,Kutu-Harf-Tabela,kutu-harf-genel,fabrika kutu harf,Phrase,Enabled,corporate+kutu harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,fabrika pleksi harf,Phrase,Enabled,corporate+pleksi harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,fabrika paslanmaz harf,Phrase,Enabled,corporate+paslanmaz harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,fabrika isikli harf,Phrase,Enabled,corporate+isikli harf
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,fabrika arac giydirme,Phrase,Enabled,corporate+arac giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,fabrika arac kaplama,Phrase,Enabled,corporate+arac kaplama
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,fabrika filo giydirme,Phrase,Enabled,corporate+filo giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,fabrika dijital baski,Phrase,Enabled,corporate+dijital baski
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,hastane isikli tabela,Phrase,Enabled,corporate+isikli tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,hastane led tabela,Phrase,Enabled,corporate+led tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,hastane lightbox tabela,Phrase,Enabled,corporate+lightbox tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,hastane led kutu harf,Phrase,Enabled,corporate+led kutu harf
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,hastane aydinlatmali tabela,Phrase,Enabled,corporate+aydinlatmali tabela
+Add,Kutu-Harf-Tabela,kutu-harf-genel,hastane kutu harf,Phrase,Enabled,corporate+kutu harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,hastane pleksi harf,Phrase,Enabled,corporate+pleksi harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,hastane paslanmaz harf,Phrase,Enabled,corporate+paslanmaz harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,hastane isikli harf,Phrase,Enabled,corporate+isikli harf
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,hastane arac giydirme,Phrase,Enabled,corporate+arac giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,hastane arac kaplama,Phrase,Enabled,corporate+arac kaplama
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,hastane filo giydirme,Phrase,Enabled,corporate+filo giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,hastane dijital baski,Phrase,Enabled,corporate+dijital baski
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,otel isikli tabela,Phrase,Enabled,corporate+isikli tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,otel led tabela,Phrase,Enabled,corporate+led tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,otel lightbox tabela,Phrase,Enabled,corporate+lightbox tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,otel led kutu harf,Phrase,Enabled,corporate+led kutu harf
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,otel aydinlatmali tabela,Phrase,Enabled,corporate+aydinlatmali tabela
+Add,Kutu-Harf-Tabela,kutu-harf-genel,otel kutu harf,Phrase,Enabled,corporate+kutu harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,otel pleksi harf,Phrase,Enabled,corporate+pleksi harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,otel paslanmaz harf,Phrase,Enabled,corporate+paslanmaz harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,otel isikli harf,Phrase,Enabled,corporate+isikli harf
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,otel arac giydirme,Phrase,Enabled,corporate+arac giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,otel arac kaplama,Phrase,Enabled,corporate+arac kaplama
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,otel filo giydirme,Phrase,Enabled,corporate+filo giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,otel dijital baski,Phrase,Enabled,corporate+dijital baski
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,ofis isikli tabela,Phrase,Enabled,corporate+isikli tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,ofis led tabela,Phrase,Enabled,corporate+led tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,ofis lightbox tabela,Phrase,Enabled,corporate+lightbox tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,ofis led kutu harf,Phrase,Enabled,corporate+led kutu harf
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,ofis aydinlatmali tabela,Phrase,Enabled,corporate+aydinlatmali tabela
+Add,Kutu-Harf-Tabela,kutu-harf-genel,ofis kutu harf,Phrase,Enabled,corporate+kutu harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,ofis pleksi harf,Phrase,Enabled,corporate+pleksi harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,ofis paslanmaz harf,Phrase,Enabled,corporate+paslanmaz harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,ofis isikli harf,Phrase,Enabled,corporate+isikli harf
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,ofis arac giydirme,Phrase,Enabled,corporate+arac giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,ofis arac kaplama,Phrase,Enabled,corporate+arac kaplama
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,ofis filo giydirme,Phrase,Enabled,corporate+filo giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,ofis dijital baski,Phrase,Enabled,corporate+dijital baski
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,banka isikli tabela,Phrase,Enabled,corporate+isikli tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,banka led tabela,Phrase,Enabled,corporate+led tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,banka lightbox tabela,Phrase,Enabled,corporate+lightbox tabela
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,banka led kutu harf,Phrase,Enabled,corporate+led kutu harf
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,banka aydinlatmali tabela,Phrase,Enabled,corporate+aydinlatmali tabela
+Add,Kutu-Harf-Tabela,kutu-harf-genel,banka kutu harf,Phrase,Enabled,corporate+kutu harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,banka pleksi harf,Phrase,Enabled,corporate+pleksi harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,banka paslanmaz harf,Phrase,Enabled,corporate+paslanmaz harf
+Add,Kutu-Harf-Tabela,kutu-harf-genel,banka isikli harf,Phrase,Enabled,corporate+isikli harf
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,banka arac giydirme,Phrase,Enabled,corporate+arac giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,banka arac kaplama,Phrase,Enabled,corporate+arac kaplama
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,banka filo giydirme,Phrase,Enabled,corporate+filo giydirme
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,banka dijital baski,Phrase,Enabled,corporate+dijital baski
+Add,Cephe-Totem-Genel,cephe-totem-genel,avm tabela imalati,Phrase,Enabled,İter#16 kurumsal altın
+Add,Cephe-Totem-Genel,cephe-totem-genel,plaza tabela imalati,Phrase,Enabled,İter#16 kurumsal altın
+Add,Cephe-Totem-Genel,cephe-totem-genel,hastane yonlendirme sistemi,Phrase,Enabled,İter#16 kurumsal altın
+Add,Cephe-Totem-Genel,cephe-totem-genel,otel tabela sistemi,Phrase,Enabled,İter#16 kurumsal altın
+Add,Cephe-Totem-Genel,cephe-totem-genel,fabrika cephe tabela,Phrase,Enabled,İter#16 kurumsal altın
+Add,Cephe-Totem-Genel,cephe-totem-genel,kurumsal kimlik tabela,Phrase,Enabled,İter#16 kurumsal altın
+Add,Cephe-Totem-Genel,cephe-totem-genel,magaza tabela fiyatlari,Phrase,Enabled,İter#16 kurumsal altın
+Add,Cephe-Totem-Genel,cephe-totem-genel,zincir magaza tabela,Phrase,Enabled,İter#16 kurumsal altın
+Add,Cephe-Totem-Genel,cephe-totem-genel,osb tabela imalati,Phrase,Enabled,İter#16 kurumsal altın
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,avm led tabela,Phrase,Enabled,İter#16 kurumsal altın
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,plaza led tabela,Phrase,Enabled,İter#16 kurumsal altın
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,otel led cephe,Phrase,Enabled,İter#16 kurumsal altın
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,kurumsal led tabela,Phrase,Enabled,İter#16 kurumsal altın
+Add,Isikli-Tabela-LED,Isikli-Tabela-Genel,ip65 led tabela,Phrase,Enabled,İter#16 kurumsal altın
+Add,Kutu-Harf-Tabela,kutu-harf-genel,avm kutu harf,Phrase,Enabled,İter#16 kurumsal altın
+Add,Kutu-Harf-Tabela,kutu-harf-genel,plaza paslanmaz harf,Phrase,Enabled,İter#16 kurumsal altın
+Add,Kutu-Harf-Tabela,kutu-harf-genel,kurumsal pleksi harf,Phrase,Enabled,İter#16 kurumsal altın
+Add,Kutu-Harf-Tabela,kutu-harf-genel,pvd kapli harf,Phrase,Enabled,İter#16 kurumsal altın
+Add,Kutu-Harf-Tabela,kutu-harf-genel,isikli kutu harf fiyat,Phrase,Enabled,İter#16 kurumsal altın
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,kurumsal filo giydirme,Phrase,Enabled,İter#16 kurumsal altın
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,servis araci giydirme,Phrase,Enabled,İter#16 kurumsal altın
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,ticari arac kaplama,Phrase,Enabled,İter#16 kurumsal altın
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,minibus reklam kaplama,Phrase,Enabled,İter#16 kurumsal altın
+Add,Dijital-Baski-Arac-Giydirme,Dijital-Baski-genel,orajet folyo uygulama,Phrase,Enabled,İter#16 kurumsal altın

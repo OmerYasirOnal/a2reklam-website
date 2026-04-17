@@ -1,0 +1,13 @@
+Action,Campaign,Header,Values
+Add,Cephe-Totem-Genel,Services,Cephe Tabela;Kutu Harf;LED Işıklı Tabela;Totem Tabela;Paslanmaz Harf;Araç Giydirme;Dijital Baskı;Yönlendirme Sistemleri
+Add,Cephe-Totem-Genel,Brands,AVM & Alışveriş Merkezi;Plaza & İş Merkezi;Hastane & Sağlık;Otel & Turizm;Fabrika & Sanayi;Okul & Kampüs;Restoran & Kafe;Banka & Finans
+Add,Cephe-Totem-Genel,Neighborhoods,Kâğıthane;Şişli;Beşiktaş;Kadıköy;Beylikdüzü;Esenyurt;Başakşehir;Ümraniye
+Add,Isikli-Tabela-LED,Services,Cephe Tabela;Kutu Harf;LED Işıklı Tabela;Totem Tabela;Paslanmaz Harf;Araç Giydirme;Dijital Baskı;Yönlendirme Sistemleri
+Add,Isikli-Tabela-LED,Brands,AVM & Alışveriş Merkezi;Plaza & İş Merkezi;Hastane & Sağlık;Otel & Turizm;Fabrika & Sanayi;Okul & Kampüs;Restoran & Kafe;Banka & Finans
+Add,Isikli-Tabela-LED,Neighborhoods,Kâğıthane;Şişli;Beşiktaş;Kadıköy;Beylikdüzü;Esenyurt;Başakşehir;Ümraniye
+Add,Kutu-Harf-Tabela,Services,Cephe Tabela;Kutu Harf;LED Işıklı Tabela;Totem Tabela;Paslanmaz Harf;Araç Giydirme;Dijital Baskı;Yönlendirme Sistemleri
+Add,Kutu-Harf-Tabela,Brands,AVM & Alışveriş Merkezi;Plaza & İş Merkezi;Hastane & Sağlık;Otel & Turizm;Fabrika & Sanayi;Okul & Kampüs;Restoran & Kafe;Banka & Finans
+Add,Kutu-Harf-Tabela,Neighborhoods,Kâğıthane;Şişli;Beşiktaş;Kadıköy;Beylikdüzü;Esenyurt;Başakşehir;Ümraniye
+Add,Dijital-Baski-Arac-Giydirme,Services,Cephe Tabela;Kutu Harf;LED Işıklı Tabela;Totem Tabela;Paslanmaz Harf;Araç Giydirme;Dijital Baskı;Yönlendirme Sistemleri
+Add,Dijital-Baski-Arac-Giydirme,Brands,AVM & Alışveriş Merkezi;Plaza & İş Merkezi;Hastane & Sağlık;Otel & Turizm;Fabrika & Sanayi;Okul & Kampüs;Restoran & Kafe;Banka & Finans
+Add,Dijital-Baski-Arac-Giydirme,Neighborhoods,Kâğıthane;Şişli;Beşiktaş;Kadıköy;Beylikdüzü;Esenyurt;Başakşehir;Ümraniye
