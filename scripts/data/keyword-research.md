@@ -348,4 +348,5 @@ Google My Business'ta "Sorular" bölümüne kendi sorup kendi cevaplayın (sahte
 
 ### Log
 - **İter #4** (04:45): Google Maps profil analizi + yorum landing sayfası oluşturuldu. 5 GMB kategori + 15 hizmet + 3 Q&A taslağı hazırlandı. /yorum-birakin/ canlıya çıkacak.
+- **İter #5** (05:00): `/kurumsal-tabela/` SEO+PPC landing sayfası oluşturuldu. 8 sektör (AVM, plaza, hastane, otel, fabrika, okul, banka, sanayi) + 8 güven göstergesi + 5 adım süreç + 7 FAQ. Google Ads kurumsal kampanyaları bu sayfayı landing olarak kullanacak.
 
