@@ -612,6 +612,14 @@ Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmi
 
 ### Log
 - **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+- **İter #14** (07:10): `scripts/data/ads-copy-kit.md` üretildi (4 kampanya × RSA + tüm Ad Extensions).
+  - **4 RSA set** (60 başlık + 16 açıklama toplam): Cephe-Totem-Genel→`/kurumsal-tabela/`, Isikli-Tabela-LED→`/hizmetler/isikli-tabela/`, Kutu-Harf-Tabela→`/hizmetler/paslanmaz-harfler/`, Dijital-Baski-Arac-Giydirme→`/hizmetler/arac-giydirme/`.
+  - **8 Universal Sitelinks** (kurumsal-tabela, hizmetler, referans, iletişim, istanbul-tabelaci, sektörel, blog, galeri).
+  - **20 Callout** (2005'ten beri, 2500+ proje, ⭐5.0/90, aracısız fabrika, IP65, PVD, CNC, AVM projeleri…)
+  - **3 Structured Snippet header** (Services, Brands, Neighborhoods).
+  - **Call + Location + Promotion (10% / Ücretsiz 3D) + Image + Price extension** detayları.
+  - Pinning stratejisi: Başlık #1 pin Position 1 (marka+lokasyon), #3 pin Position 2 (social proof).
+  - Beklenen etki: CTR +%20-30, Quality Score +1-2 puan, CPC -%10-15.
 - **İter #13** (06:55): Sitemap + structured data audit.
   - `/yorum-birakin/` sitemap'ten excluded (noindex:true dönüşüm landing'i).
   - `kurumsal-tabela` live schema doğrulama: LocalBusiness+ProfessionalService+Organization, BreadcrumbList, **FAQPage (7 soru)**, WebSite/Speakable → hepsi aktif.
