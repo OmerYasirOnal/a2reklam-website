@@ -33,9 +33,9 @@ export const YANDEX_VERIFICATION = '023f91b1b8d630ba';
 
 // Google Reviews (direct place URL to avoid search/deep-link fallback redirects)
 export const GOOGLE_REVIEWS_URL = MAPS_URL;
-// Google Business Profile real data (87 reviews, 5.0 rating)
+// Google Business Profile real data (90 reviews, 5.0 rating) - güncel: 2026-04-17
 export const GOOGLE_RATING: number | null = 5.0;
-export const GOOGLE_REVIEW_COUNT: number | null = 87;
+export const GOOGLE_REVIEW_COUNT: number | null = 90;
 
 // Stats Section Configuration
 // Set to true to show, false/null to hide
