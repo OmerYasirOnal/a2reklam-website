@@ -612,6 +612,17 @@ Gerçekte daha yüksek olabilir çünkü long-tail daha net niyet taşır. Tahmi
 
 ### Log
 - **İter #11** (06:30): `scripts/generate-keyword-csv.mjs` oluşturuldu. 639 keyword'lük Google Ads Editor CSV üretildi (`scripts/data/google-ads-keywords-import.csv`). 15 proven + 624 long-tail (39 ilçe × 16 hizmet). UI dialog güvenilmez olduğu için Ads Editor CSV yöntemi daha etkili.
+- **İter #17** (07:55): **Teknik SEO audit script** yazıldı (`scripts/audit-seo.mjs`).
+  - 204 HTML tarandı → `scripts/data/seo-audit-report.md` + `seo-audit-raw.json`.
+  - Kontroller: title/desc uzunluk, canonical, OG image, H1 sayısı, schema count+types, internal link count, word count (thin content), duplicate title.
+  - **Ana bulgular** (201 indexable):
+    - 0 kritik issue (schema/h1/thin content/title_missing hepsi temiz) ✅
+    - **104 sayfa DESC_SHORT** (<120 kar) → 39 ilçe desc'i 80-100 kar, blog'lar 68-112 (ideal 130-160)
+    - **22 TITLE_SHORT** (<30 kar) → ilçe sayfaları "X Tabelacı | A2 Reklam" (27-30 kar) - çok jenerik
+    - **9 TITLE_LONG** (>70 kar) → kurumsal-tabela (82), galeri (86), avukat-hukuk (75), oto-yıkama (73)
+    - **21 DESC_LONG** (>170) → kesilecek
+  - **Schema coverage**: 100% (hepsi schema içeriyor — iter#13 schema audit'i doğruladı).
+  - **Next step iter#18**: `src/data/districts.ts` + `src/data/sectors.ts` description'larını kurumsal + sosyal kanıt ile zenginleştir (150 kar ideal).
 - **İter #16** (07:40): **Google Ads Editor import paketi** tamamlandı — 5 CSV + 2 script.
   - `generate-ads-extensions-csv.mjs` → 3 extension CSV:
     - `google-ads-sitelinks.csv` (32 satır: 4 kampanya × 8 sitelink)
