@@ -29,7 +29,7 @@ const BASE = 'https://a2reklam.com';
 const UNIVERSAL = [
   { title: 'Ücretsiz Keşif Al', desc1: 'Sahada ölçüm + 3D tasarım', desc2: 'Aynı gün teklif',          url: `${BASE}/iletisim/` },
   { title: 'Referanslarımız',   desc1: '2.500+ tamamlanmış proje',  desc2: 'AVM, plaza, kurumsal',    url: `${BASE}/referans/` },
-  { title: '⭐ 5.0 / 90 Yorum',  desc1: 'Google onaylı müşteri',     desc2: 'Gerçek yorumları oku',    url: `${BASE}/yorum-birakin/` },
+  { title: '5.0 / 90 Google Yorum', desc1: 'Gerçek müşteri yorumları', desc2: '90 onaylı yorum, 5.0 puan', url: `${BASE}/yorum-birakin/` },
   { title: 'Proje Galerisi',    desc1: '2.500+ gerçek tabela',      desc2: 'Video + foto arşiv',      url: `${BASE}/galeri/` },
 ];
 
@@ -72,7 +72,7 @@ const CALLOUTS = [
   // GUVEN / OTORITE (4)
   "2005'ten Beri Üretici",
   '2.500+ Tamamlanmış Proje',
-  '⭐ 5.0 / 90 Google Yorum',
+  '5.0 / 90 Google Yorum',
   'Kendi Atölyemiz',
   // FARK / DIFFERENTIATOR (3)
   'Aracısız Fabrika Fiyatı',
