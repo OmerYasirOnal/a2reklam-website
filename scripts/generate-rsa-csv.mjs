@@ -51,13 +51,13 @@ const CAMPAIGNS = [
       { text: 'Aracı Yok Direkt Üretici' },
       { text: '2 Yıl Garanti + Bakım' },
       { text: 'Cephe Giydirme Uzmanı' },
-      { text: 'Hemen Ara 0531 618 16 72' },
+      { text: 'Ücretsiz Teklif Alın' },
     ],
     descriptions: [
       '20+ yıl deneyim. AVM, plaza, fabrika kurumsal tabela. Keşif, üretim, montaj tek adres.',
       '2.500+ proje. 5.0/90 Google yorum. 39 ilçeye hizmet. Aynı gün detaylı teklif alın.',
       'Uygun fiyat garantisi. LED kutu harf, cephe, totem, paslanmaz. Kurumsal kimliğe özel.',
-      'Ücretsiz keşif + 3D tasarım. 2 yıl garanti. Hemen ara: 0531 618 16 72.',
+      'Ücretsiz keşif + 3D tasarım. 2 yıl garanti. Aynı gün detaylı teklif alın.',
     ],
   },
   {
@@ -81,13 +81,13 @@ const CAMPAIGNS = [
       { text: 'Ücretsiz Keşif + Ölçüm' },
       { text: 'İstanbul 39 İlçe Hizmet' },
       { text: 'Aracısız Fabrika Fiyatı' },
-      { text: '0531 618 16 72 Ara' },
+      { text: 'Ücretsiz LED Teklif Alın' },
     ],
     descriptions: [
       'Enerji verimli LED kutu harf ve ışıklı tabela. IP65 sertifikalı, 3 yıl LED garantili.',
       'AVM, plaza, otel için gece parlayan dikkat çeken tabela. 2.500+ proje, 5.0/90 yorum.',
       'Pleksi harf, lightbox, vakum tabela hepsi kendi atölyemizde üretilir. Aracısız fiyat.',
-      'Ücretsiz keşif + 3D tasarım. Aynı gün teklif. Hemen ara: 0531 618 16 72.',
+      'Ücretsiz keşif + 3D tasarım. Aynı gün detaylı teklif alın.',
     ],
   },
   {
@@ -111,13 +111,13 @@ const CAMPAIGNS = [
       { text: '2.500+ Proje Deneyimi' },
       { text: 'Ücretsiz Keşif + Ölçü' },
       { text: 'AVM & Plaza Harfler' },
-      { text: 'Hemen Ara 0531 618 16 72' },
+      { text: 'Kutu Harf Teklif Alın' },
     ],
     descriptions: [
       'Pleksi, paslanmaz, alüminyum kutu harf. CNC hassas kesim. 3D render + gönderim.',
       'Işıklı LED kutu harf. AVM, plaza, kurumsal cephe için özel üretim. 2.500+ proje.',
       'Kendi atölyemizde üretim. Aracısız fabrika fiyatı. 2 yıl işçilik + malzeme garantisi.',
-      'Ücretsiz keşif + 3D tasarım. Aynı gün teklif. Hemen ara: 0531 618 16 72.',
+      'Ücretsiz keşif + 3D tasarım. Aynı gün detaylı teklif alın.',
     ],
   },
   {
@@ -141,13 +141,13 @@ const CAMPAIGNS = [
       { text: 'Transfer Servis Araçları' },
       { text: 'Ticari Araç + Minibüs' },
       { text: 'Ücretsiz Keşif + Tasarım' },
-      { text: 'Hemen Ara 0531 618 16 72' },
+      { text: 'Araç Kaplama Teklif Alın' },
     ],
     descriptions: [
       'Tek araç veya filo kaplama. Orajet/3M folyo, 3 yıl garanti. 2.500+ tamamlanmış proje.',
       'Kurumsal logo, renk, yönlendirme + reklam tasarımı. Atölyemizde aynı gün uygulama.',
       'Esenyurt ve Kâğıthane atölyelerimizden İstanbul geneli. Servis aracı uzmanı.',
-      'Ücretsiz keşif + 3D tasarım. Hızlı teklif: 0531 618 16 72.',
+      'Ücretsiz keşif + 3D tasarım. Aynı gün hızlı teklif alın.',
     ],
   },
 ];

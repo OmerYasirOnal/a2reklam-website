@@ -42,6 +42,19 @@ const LIMITS = {
   keyword: 80,
 };
 
+// Google Ads policy checks - reklam metninde YASAK
+const PHONE_REGEX = /\d{2,4}[\s\-\.\/]*\d{3,4}[\s\-\.\/]*\d{2,4}/;  // 0531 618 16 72 gibi desenler
+const EMOJI_REGEX = /[\u2600-\u27BF]|[\u{1F300}-\u{1FAFF}]|[\u{1F000}-\u{1F2FF}]/u;
+
+function checkPolicy(text, label) {
+  if (PHONE_REGEX.test(text)) {
+    err(`POLICY (Phone in ad text): ${label}: "${text}" - telefon numaralari Call Extension'a eklenmeli, metinde YASAK`);
+  }
+  if (EMOJI_REGEX.test(text)) {
+    err(`POLICY (Non-standard character): ${label}: "${text}" - emoji/ozel karakterler Google Ads'te reddedilir`);
+  }
+}
+
 let warnings = 0;
 let errors = 0;
 
@@ -182,6 +195,9 @@ function auditSitelinks() {
     if (d1.length > LIMITS.sitelinkDesc) err(`Sitelink desc1 uzun: "${d1}" (${d1.length}/${LIMITS.sitelinkDesc})`);
     if (d2.length > LIMITS.sitelinkDesc) err(`Sitelink desc2 uzun: "${d2}" (${d2.length}/${LIMITS.sitelinkDesc})`);
     if (!/^https?:\/\//.test(url)) err(`Sitelink URL http(s)// ile baslamali: ${url}`);
+    checkPolicy(title, `Sitelink title (${camp})`);
+    checkPolicy(d1, `Sitelink desc1 (${camp})`);
+    checkPolicy(d2, `Sitelink desc2 (${camp})`);
 
     perCampaign.set(camp, (perCampaign.get(camp) || 0) + 1);
   }
@@ -204,6 +220,7 @@ function auditCallouts() {
     const camp = row.Campaign;
     const text = row['Callout text'];
     if (text.length > LIMITS.callout) err(`Callout uzun: "${text}" (${text.length}/${LIMITS.callout})`);
+    checkPolicy(text, `Callout (${camp})`);
     perCampaign.set(camp, (perCampaign.get(camp) || 0) + 1);
   }
   for (const [c, n] of perCampaign) {
@@ -232,13 +249,17 @@ function auditRSA() {
       if (h) {
         headlines++;
         if (h.length > LIMITS.headline) err(`${camp} Headline ${i}: "${h}" (${h.length}/${LIMITS.headline})`);
+        checkPolicy(h, `${camp} Headline ${i}`);
       }
       const p = row[`Headline ${i} position`];
       if (p) pins++;
     }
     for (let i = 1; i <= 4; i++) {
       const d = row[`Description ${i}`];
-      if (d && d.length > LIMITS.description) err(`${camp} Description ${i}: "${d}" (${d.length}/${LIMITS.description})`);
+      if (d) {
+        if (d.length > LIMITS.description) err(`${camp} Description ${i}: "${d}" (${d.length}/${LIMITS.description})`);
+        checkPolicy(d, `${camp} Description ${i}`);
+      }
     }
     const p1 = row['Path 1'] || '';
     const p2 = row['Path 2'] || '';
