@@ -257,7 +257,7 @@
 - **Ülke:** TR
 - **Numara:** +90 531 618 16 72
 - **Raporlama:** Google Forwarding Number (tıklama takibi için)
-- **Saatler:** Pzt-Cuma 09:00-18:00, Cumartesi 09:00-14:00
+- **Saatler:** Pzt-Cuma 09:00-18:00 (Cumartesi + Pazar KAPALI)
 - **Cihaz:** Mobil tercih
 
 ---
