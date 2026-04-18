@@ -99,11 +99,11 @@ Bunlar UI'dan yapılır:
 - Excluded: **Hiçbir şey** (negatif listedeki şehirler zaten sorguları filtreliyor)
 
 ### Zaman Planlaması (Ad schedule)
-Mesai saatleri dışı telefon kapalı — o saatlerde bid'i düşür:
-- Pzt-Cuma 09:00-18:00 → **+%0** (normal)
-- Cumartesi 09:00-14:00 → **+%0**
-- Cmt 14:00 sonrası, Pazar → **-%50** (düşük bid)
-- Gece 22:00-08:00 → **-%50**
+**A2 Reklam sadece Pzt-Cuma çalışır. Cumartesi + Pazar KAPALI → reklamlar o günler gösterilmemeli.**
+- Pzt-Cuma 09:00-18:00 → **+%0** (normal, aktif)
+- Pzt-Cuma 18:00-22:00 → **-%30** (düşük bid, düşük dönüşüm)
+- Pzt-Cuma 22:00-08:00 → **schedule'dan çıkar** (gece gösterme)
+- Cumartesi + Pazar → **schedule'dan çıkar** (telefon cevaplanmaz, gösterme)
 
 ### Cihaz Bid Ayarı
 - Mobile → **+%20** (telefon araması ana dönüşüm)
