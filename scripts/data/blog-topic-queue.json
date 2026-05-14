@@ -2,7 +2,8 @@
   "_comment": "Blog konu havuzu. Her turda bir konu seçilir, 'used' dizisine eklenir. Tamamlanınca resetlenir.",
   "used": [
     "spor-salonu-tabelasi-motivasyon-tasarimi",
-    "beylikduzu-reklam-tabela-rehberi-2026"
+    "beylikduzu-reklam-tabela-rehberi-2026",
+    "avm-tabela-yonetmeligi-2026-izinler"
   ],
   "topics": [
     {
@@ -993,5 +994,5 @@
   ],
   "lastCompetitorGap": "2026-04-17T04:15:00Z",
   "lastLongTailExpansion": "2026-04-17T06:45:00Z",
-  "lastGenerated": "2026-05-11T09:56:41.601Z"
+  "lastGenerated": "2026-05-14T08:47:57.382Z"
 }
