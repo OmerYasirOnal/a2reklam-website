@@ -19,7 +19,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
   {
     id: 'babas-gastropub-01',
     file: '/assets/videos/babas-gastropub-01.mp4',
-    poster: '/assets/videos/posters/babas-gastropub-01.webp',
+    poster: '/assets/videos/posters/babas-gastropub-01.jpg',
     uploadDate: '2026-02-13T00:00:00+03:00',
     duration: 'PT14S',
     title: {
@@ -34,7 +34,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
   {
     id: 'babas-gastropub-02',
     file: '/assets/videos/babas-gastropub-02.mp4',
-    poster: '/assets/videos/posters/babas-gastropub-02.webp',
+    poster: '/assets/videos/posters/babas-gastropub-02.jpg',
     uploadDate: '2026-02-13T00:00:00+03:00',
     duration: 'PT48S',
     title: {
@@ -49,7 +49,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
   {
     id: 'babas-gastropub-03',
     file: '/assets/videos/babas-gastropub-03.mp4',
-    poster: '/assets/videos/posters/babas-gastropub-03.webp',
+    poster: '/assets/videos/posters/babas-gastropub-03.jpg',
     uploadDate: '2026-02-13T00:00:00+03:00',
     duration: 'PT30S',
     title: {
@@ -64,7 +64,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
   {
     id: 'cephe-tabela-01',
     file: '/assets/videos/cephe-tabela-01.mp4',
-    poster: '/assets/videos/posters/cephe-tabela-01.webp',
+    poster: '/assets/videos/posters/cephe-tabela-01.jpg',
     uploadDate: '2026-02-14T00:00:00+03:00',
     duration: 'PT30S',
     title: {
@@ -79,7 +79,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
   {
     id: 'cephe-tabela-02',
     file: '/assets/videos/cephe-tabela-02.mp4',
-    poster: '/assets/videos/posters/cephe-tabela-02.webp',
+    poster: '/assets/videos/posters/cephe-tabela-02.jpg',
     uploadDate: '2026-02-14T00:00:00+03:00',
     duration: 'PT17S',
     title: {
@@ -94,7 +94,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
   {
     id: 'kutu-harf-01',
     file: '/assets/videos/kutu-harf-01.mp4',
-    poster: '/assets/videos/posters/kutu-harf-01.webp',
+    poster: '/assets/videos/posters/kutu-harf-01.jpg',
     uploadDate: '2026-02-14T00:00:00+03:00',
     duration: 'PT14S',
     title: {
