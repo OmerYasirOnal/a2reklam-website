@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import { districts } from '../data/districts';
 import { PHONE_TEL } from '../consts';
-import CallBand from '../components/common/CallBand.astro';
 
 export function getStaticPaths() {
   return districts.map((district) => ({
@@ -84,45 +83,6 @@ const serviceSchema = {
   }
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://a2reklam.com/#organization",
-  "name": "A2 Reklam",
-  "url": "https://a2reklam.com",
-  "telephone": "+905316181672",
-  "image": "https://a2reklam.com/brand/a2reklam-logo.png",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Şirintepe, Açelya Sokağı Ugur Apt No:4/a",
-    "addressLocality": "Kağıthane",
-    "addressRegion": "İstanbul",
-    "postalCode": "34415",
-    "addressCountry": "TR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 41.0820,
-    "longitude": 28.9730
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": district.name + ", İstanbul"
-  },
-  "priceRange": "₺₺",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "127",
-    "bestRating": "5"
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "09:00",
-    "closes": "18:00"
-  }
-};
 ---
 
 <Layout
@@ -133,7 +93,6 @@ const localBusinessSchema = {
   whatsappTitle={district.title}
   whatsappLocation={district.name}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -187,7 +146,7 @@ const localBusinessSchema = {
         </div>
 
         <!-- BÜYÜK TELEFON CTA (tüm ekranlarda, lokasyon odaklı) -->
-        <div class="mb-10 p-6 md:p-8 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border-2 border-primary/40 rounded-2xl">
+        <div class="mb-10 p-6 md:p-8 bg-surface bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border-2 border-primary/40 rounded-2xl">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
             <div class="text-center md:text-left">
               <p class="text-white font-heading font-bold text-xl md:text-2xl mb-1">
@@ -222,14 +181,14 @@ const localBusinessSchema = {
         </div>
 
         <!-- İçerik -->
-        <div class="prose prose-invert prose-lg max-w-none mb-12">
+        <div class="prose prose-invert prose-lg max-w-none mb-10">
           {district.content.intro.split('\n\n').map((paragraph: string) => (
             <p class="text-gray-300 leading-relaxed mb-4">{paragraph}</p>
           ))}
         </div>
 
         <!-- Hizmetlerimiz Grid -->
-        <section class="mb-12">
+        <section class="mb-10">
           <h2 class="font-heading text-2xl font-bold text-white mb-6">
             {district.name}'de Sunduğumuz Tabela Hizmetleri
           </h2>
@@ -245,7 +204,7 @@ const localBusinessSchema = {
 
         <!-- Ticari Bölgeler -->
         {district.content.commercialAreas.length > 0 && (
-          <section class="mb-12">
+          <section class="mb-10">
             <h2 class="font-heading text-2xl font-bold text-white mb-4">
               {district.name}'de Hizmet Verdiğimiz Bölgeler
             </h2>
@@ -260,28 +219,24 @@ const localBusinessSchema = {
         )}
 
         <!-- Neden A2 Reklam? -->
-        <section class="mb-12">
+        <section class="mb-10">
           <h2 class="font-heading text-2xl font-bold text-white mb-6">
             {district.name}'de Neden A2 Reklam?
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="glass-card p-5">
-              <div class="text-primary text-2xl mb-2">🏭</div>
               <h3 class="font-bold text-white mb-2">Kendi Üretim Tesisimiz</h3>
               <p class="text-gray-400 text-sm">Aracı firma olmadan, kendi atölyemizde üretim yapıyoruz. Bu sayede hem fiyat hem kalite avantajı sağlıyoruz.</p>
             </div>
             <div class="glass-card p-5">
-              <div class="text-primary text-2xl mb-2">📐</div>
               <h3 class="font-bold text-white mb-2">Ücretsiz Keşif ve Tasarım</h3>
               <p class="text-gray-400 text-sm">{district.name} bölgesine ücretsiz keşif ekibi gönderiyoruz. Yerinde ölçüm ve 3D tasarım sunuyoruz.</p>
             </div>
             <div class="glass-card p-5">
-              <div class="text-primary text-2xl mb-2">⚡</div>
               <h3 class="font-bold text-white mb-2">Hızlı Teslimat</h3>
               <p class="text-gray-400 text-sm">Keşiften montaja ortalama 7-15 iş günü. Acil projeleriniz için ekspres üretim seçeneğimiz mevcut.</p>
             </div>
             <div class="glass-card p-5">
-              <div class="text-primary text-2xl mb-2">🛡️</div>
               <h3 class="font-bold text-white mb-2">2 Yıl Garanti</h3>
               <p class="text-gray-400 text-sm">Tüm tabela projelerimizde 2 yıl malzeme ve işçilik garantisi. Montaj sonrası destek hattımız 7/24 aktif.</p>
             </div>
@@ -289,7 +244,7 @@ const localBusinessSchema = {
         </section>
 
         <!-- Süreç Nasıl İşliyor? -->
-        <section class="mb-12">
+        <section class="mb-10">
           <h2 class="font-heading text-2xl font-bold text-white mb-6">
             Süreç Nasıl İşliyor?
           </h2>
@@ -326,9 +281,9 @@ const localBusinessSchema = {
         </section>
 
         <!-- KURUMSAL CROSS-SELL -->
-        <section class="mb-12">
+        <section class="mb-10">
           <a href="/kurumsal-tabela/" class="block group">
-            <div class="p-6 md:p-8 bg-gradient-to-br from-primary/15 via-secondary/50 to-primary/5 border-2 border-primary/40 rounded-2xl hover:border-primary transition-all">
+            <div class="p-6 md:p-8 bg-surface bg-gradient-to-br from-primary/15 via-transparent to-primary/5 border-2 border-primary/40 rounded-2xl hover:border-primary transition-all">
               <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 justify-between">
                 <div class="flex-1">
                   <div class="inline-flex items-center gap-2 mb-2 text-primary text-xs font-semibold uppercase tracking-wider">
@@ -354,11 +309,8 @@ const localBusinessSchema = {
           </a>
         </section>
 
-        <!-- Telefon CTA Band -->
-        <CallBand context={`${district.name} tabela`} />
-
         <!-- SSS -->
-        <section class="mb-12">
+        <section class="mb-10">
           <h2 class="font-heading text-2xl font-bold text-white mb-6">
             Sıkça Sorulan Sorular
           </h2>
@@ -378,7 +330,7 @@ const localBusinessSchema = {
         </section>
 
         <!-- Google Map Embed -->
-        <section class="mb-12">
+        <section class="mb-10">
           <h2 class="font-heading text-2xl font-bold text-white mb-4">
             {district.name} Konum
           </h2>

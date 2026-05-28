@@ -298,11 +298,11 @@ Uzun yıllar sorunsuz kullanım:
 
 A2 Reklam olarak İstanbul'un tüm ilçelerinde, özellikle Beşiktaş, Kadıköy ve Kağıthane bölgelerinde profesyonel totem tabela hizmeti sunuyoruz:
 
-✅ Ücretsiz statik proje ve keşif
-✅ Belediye izin süreçlerinde destek
-✅ 20 yıl tecrübe
-✅ Anahtar teslim çözüm
-✅ 2 yıl garanti
+Ücretsiz statik proje ve keşif
+Belediye izin süreçlerinde destek
+20 yıl tecrübe
+Anahtar teslim çözüm
+2 yıl garanti
 
 ## Totem Tabela Teklifi Alın
 

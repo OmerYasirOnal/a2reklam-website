@@ -345,16 +345,16 @@ C: Evet, tüm İstanbul'da hizmetimiz var. Kadıköy'de ek avantajlarımız mevc
 
 ## Kadıköy Hizmet Alanlarımız
 
-✅ Kadıköy Merkez
-✅ Moda
-✅ Caferağa
-✅ Rasimpaşa
-✅ Fenerbahçe
-✅ Göztepe
-✅ Bostancı
-✅ Suadiye
-✅ Erenköy
-✅ Kozyatağı
+Kadıköy Merkez
+Moda
+Caferağa
+Rasimpaşa
+Fenerbahçe
+Göztepe
+Bostancı
+Suadiye
+Erenköy
+Kozyatağı
 
 ![Kadıköy hizmet haritası](/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-960.webp)
 

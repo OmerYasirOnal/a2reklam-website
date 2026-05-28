@@ -238,19 +238,19 @@ Gelen malzemeler kontrol edilir.
 ### Görsel Kontrol
 
 **Kontrol Listesi:**
-✅ Renk uyumu
-✅ Yüzey düzgünlüğü
-✅ Grafik/yazı hataları
-✅ Leke ve çizik kontrolü
-✅ Kenar ve köşe bitimi
+Renk uyumu
+Yüzey düzgünlüğü
+Grafik/yazı hataları
+Leke ve çizik kontrolü
+Kenar ve köşe bitimi
 
 ### Fonksiyonel Test
 
 **LED Tabelalar İçin:**
-✅ Tüm LED'ler yanıyor mu?
-✅ Parlaklık homojen mi?
-✅ Trafo düzgün çalışıyor mu?
-✅ Timer/sensör testi (varsa)
+Tüm LED'ler yanıyor mu?
+Parlaklık homojen mi?
+Trafo düzgün çalışıyor mu?
+Timer/sensör testi (varsa)
 
 ### Dayanıklılık Testleri
 
@@ -321,11 +321,11 @@ Müşteri, teslimattan önce ürünü görebilir.
 ### 7.4. Nihai Kontrol
 
 **Montaj Sonrası Checklist:**
-✅ Sabitleme sağlam mı?
-✅ Seviye doğru mu?
-✅ LED'ler çalışıyor mu?
-✅ Kablolar gizli ve düzenli mi?
-✅ Çevre temiz mi?
+Sabitleme sağlam mı?
+Seviye doğru mu?
+LED'ler çalışıyor mu?
+Kablolar gizli ve düzenli mi?
+Çevre temiz mi?
 
 ### 7.5. Teslim
 
@@ -375,12 +375,12 @@ Müşteri, teslimattan önce ürünü görebilir.
 
 ## A2 Reklam Üretim Avantajları
 
-✅ 20+ yıl üretim tecrübesi
-✅ Kendi üretim tesisimiz
-✅ Son teknoloji CNC makinaları
-✅ Kalite kontrollü her aşama
-✅ Zamanında teslimat garantisi
-✅ Şeffaf süreç takibi
+20+ yıl üretim tecrübesi
+Kendi üretim tesisimiz
+Son teknoloji CNC makinaları
+Kalite kontrollü her aşama
+Zamanında teslimat garantisi
+Şeffaf süreç takibi
 
 ## Sürecinizi Başlatın
 

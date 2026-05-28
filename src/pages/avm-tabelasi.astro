@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CallBand from '../components/common/CallBand.astro';
 import { PHONE_NUMBER, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../consts';
 
 const breadcrumbs = [
@@ -41,12 +40,12 @@ const faq = [
 ];
 
 const avmTypes = [
-  { icon: '🛍', title: 'Mağaza Cephe Tabelası', desc: 'LED kutu harf + pleksi aydınlatmalı cephe tabelası. Kurumsal kimlik uyumlu.' },
-  { icon: '🍽', title: 'Food Court Tabelası', desc: 'Menü pano + marka logosu + yönlendirme. AVM food court standartlarına uygun.' },
-  { icon: '🏷', title: 'Vitrin İçi Tabela', desc: 'Pleksi ışıklı, hareketli LED pano, promosyon tabelası. Cam arkası montaj.' },
-  { icon: '🗺', title: 'Yönlendirme Sistemi', desc: 'Kat planı, tuvalet/asansör/çıkış yönlendirme. Renkli ve okunabilir.' },
-  { icon: '📱', title: 'Dijital Display', desc: 'Video duvar, dokunmatik kiosk, dijital menü. İnteraktif AVM deneyimi.' },
-  { icon: '🎆', title: 'Promosyon & Event', desc: 'Kampanya pano, yeni sezon tabelası, açılış görseli. Hızlı kurulum + söküm.' },
+  { title: 'Mağaza Cephe Tabelası', desc: 'LED kutu harf + pleksi aydınlatmalı cephe tabelası. Kurumsal kimlik uyumlu.' },
+  { title: 'Food Court Tabelası', desc: 'Menü pano + marka logosu + yönlendirme. AVM food court standartlarına uygun.' },
+  { title: 'Vitrin İçi Tabela', desc: 'Pleksi ışıklı, hareketli LED pano, promosyon tabelası. Cam arkası montaj.' },
+  { title: 'Yönlendirme Sistemi', desc: 'Kat planı, tuvalet/asansör/çıkış yönlendirme. Renkli ve okunabilir.' },
+  { title: 'Dijital Display', desc: 'Video duvar, dokunmatik kiosk, dijital menü. İnteraktif AVM deneyimi.' },
+  { title: 'Promosyon & Event', desc: 'Kampanya pano, yeni sezon tabelası, açılış görseli. Hızlı kurulum + söküm.' },
 ];
 
 const process = [
@@ -84,11 +83,11 @@ const description = "İstanbul'da AVM tabela imalatı: mağaza cephe, food court
         </h1>
         <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
           İstanbul'un önde gelen AVM'lerinde <strong class="text-white">50+ mağaza cephe projesi</strong>.
-          AVM yönergelerine uyumlu üretim. Mesai dışı gece montajı. <strong class="text-primary">⭐{GOOGLE_RATING}/{GOOGLE_REVIEW_COUNT} yorum</strong>.
+          AVM yönergelerine uyumlu üretim. Mesai dışı gece montajı. <strong class="text-primary">{GOOGLE_RATING}/{GOOGLE_REVIEW_COUNT} yorum</strong>.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} data-track="call" class="bg-primary text-secondary font-bold px-8 py-4 rounded-xl hover:bg-white transition-all">
-            ☎ {PHONE_NUMBER}
+            {PHONE_NUMBER}
           </a>
           <a href="/iletisim/" data-track="quote" class="bg-white/10 border-2 border-primary/40 text-white font-bold px-8 py-4 rounded-xl hover:border-primary hover:bg-primary/10 transition-all">
             Ücretsiz Keşif Al
@@ -107,7 +106,6 @@ const description = "İstanbul'da AVM tabela imalatı: mağaza cephe, food court
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {avmTypes.map(t => (
           <div class="p-6 glass-card hover:border-primary/50 transition-all">
-            <div class="text-4xl mb-3">{t.icon}</div>
             <h3 class="font-heading font-bold text-xl text-white mb-2">{t.title}</h3>
             <p class="text-gray-400 text-sm leading-relaxed">{t.desc}</p>
           </div>
@@ -139,8 +137,9 @@ const description = "İstanbul'da AVM tabela imalatı: mağaza cephe, food court
   </section>
 
   <!-- SOSYAL KANIT -->
-  <section class="py-16 bg-gradient-to-br from-primary/10 via-secondary to-secondary">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="py-16 bg-secondary relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="text-5xl md:text-6xl font-heading font-bold text-primary mb-4">50+</div>
       <p class="text-xl text-white font-semibold mb-2">İstanbul AVM Mağaza Projesi</p>
       <p class="text-gray-400 max-w-2xl mx-auto">
@@ -177,8 +176,9 @@ const description = "İstanbul'da AVM tabela imalatı: mağaza cephe, food court
   </section>
 
   <!-- CTA -->
-  <section class="py-16 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="py-16 bg-secondary relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent pointer-events-none"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-heading font-bold text-3xl md:text-4xl text-white mb-4 uppercase">
         AVM Projeniz Mi Var?
       </h2>
@@ -187,7 +187,7 @@ const description = "İstanbul'da AVM tabela imalatı: mağaza cephe, food court
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} data-track="call" class="bg-primary text-secondary font-bold px-8 py-4 rounded-xl hover:bg-white transition-all">
-          ☎ {PHONE_NUMBER}
+          {PHONE_NUMBER}
         </a>
         <a href="https://wa.me/905316181672" target="_blank" rel="noopener" data-track="whatsapp_click" class="bg-[#25D366] text-white font-bold px-8 py-4 rounded-xl hover:bg-green-600 transition-all">
           WhatsApp'tan Yaz
@@ -196,5 +196,4 @@ const description = "İstanbul'da AVM tabela imalatı: mağaza cephe, food court
     </div>
   </section>
 
-  <CallBand />
 </Layout>

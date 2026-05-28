@@ -112,7 +112,7 @@ const faq = [
         ))}
       </div>
 
-      <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div class="glass-card p-8">
           <h2 class="font-heading font-bold text-3xl text-white mb-4">Kurumsal Projeler İçin Tek Nokta</h2>
           <p class="text-gray-400 mb-6">
@@ -136,7 +136,7 @@ const faq = [
         </div>
       </div>
 
-      <div class="mt-16 glass-card p-8">
+      <div class="mt-12 glass-card p-8">
         <h2 class="font-heading font-bold text-3xl text-white mb-6">Sık Sorulan Sorular</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           {faq.map((item) => (
@@ -150,9 +150,9 @@ const faq = [
     </div>
 
     <!-- KURUMSAL CTA -->
-    <div class="mt-16 max-w-5xl mx-auto">
+    <div class="mt-12 max-w-5xl mx-auto">
       <a href="/kurumsal-tabela/" class="block group">
-        <div class="p-8 md:p-10 bg-gradient-to-br from-primary/20 via-primary/5 to-transparent border-2 border-primary/40 rounded-2xl hover:border-primary transition-all">
+        <div class="p-8 md:p-10 bg-surface bg-gradient-to-br from-primary/20 via-primary/5 to-transparent border-2 border-primary/40 rounded-2xl hover:border-primary transition-all">
           <div class="flex flex-col md:flex-row items-start md:items-center gap-6 justify-between">
             <div class="flex-1">
               <div class="inline-flex items-center gap-2 mb-3 text-primary text-sm font-semibold uppercase tracking-wider">
@@ -181,14 +181,13 @@ const faq = [
     </div>
 
     <!-- Sektörel Tabelalar -->
-    <div class="mt-16 max-w-5xl mx-auto">
+    <div class="mt-12 max-w-5xl mx-auto">
       <h2 class="font-heading font-bold text-2xl text-white mb-6 uppercase tracking-tight">
         Sektörel <span class="text-primary">Tabela Çözümleri</span>
       </h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {sectors.slice(0, 10).map(s => (
           <a href={`/sektorel/${s.slug}/`} class="group p-3 glass-card hover:border-primary/50 transition-all text-center">
-            <span class="text-xl block mb-1">{s.icon}</span>
             <span class="block text-xs font-bold text-gray-300 group-hover:text-primary transition-colors">{s.name}</span>
           </a>
         ))}

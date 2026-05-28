@@ -233,13 +233,13 @@ Komşu işletme ve sokak lambaları parlaklık ihtiyacını artırır.
 
 Tabelanız montaj sonrası bu testleri yapın:
 
-✅ 50m mesafeden kolay okunuyor mu?
-✅ Yan açılardan (±45°) görünüyor mu?
-✅ Parlama (glare) göz rahatsız ediyor mu?
-✅ Komşu ışıklar görünürlüğü azaltıyor mu?
-✅ LED modülleri ayrı ayrı belli oluyor mu?
-✅ Renk tonu markanıza uygun mu?
-✅ Gece fotoğrafta etkileyici görünüyor mu?
+50m mesafeden kolay okunuyor mu?
+Yan açılardan (±45°) görünüyor mu?
+Parlama (glare) göz rahatsız ediyor mu?
+Komşu ışıklar görünürlüğü azaltıyor mu?
+LED modülleri ayrı ayrı belli oluyor mu?
+Renk tonu markanıza uygun mu?
+Gece fotoğrafta etkileyici görünüyor mu?
 
 ![Gece test edilen tabela](/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-960.webp)
 
@@ -247,11 +247,11 @@ Tabelanız montaj sonrası bu testleri yapın:
 
 A2 Reklam olarak, 20+ yıllık tecrübemizle İstanbul genelinde, özellikle Beşiktaş, Kadıköy ve Kağıthane'de maksimum gece görünürlüğü sağlayan tabelalar üretiyoruz:
 
-✅ Ücretsiz gece görünürlük analizi
-✅ Işık ölçümü ve raporlama
-✅ 3D gece simülasyonu
-✅ Belediye onaylı parlaklık değerleri
-✅ 2 yıl LED garanti
+Ücretsiz gece görünürlük analizi
+Işık ölçümü ve raporlama
+3D gece simülasyonu
+Belediye onaylı parlaklık değerleri
+2 yıl LED garanti
 
 ## Teklif ve Danışmanlık
 

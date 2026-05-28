@@ -8,7 +8,6 @@ import { buildWhatsAppLink, buildWhatsAppMessage } from '../../utils/whatsapp';
 import Gallery from '../../components/common/Gallery.astro';
 import { getServiceLabel } from '../../config/serviceLabels';
 import { getServiceSchema } from '../../utils/serviceSchema';
-import CallBand from '../../components/common/CallBand.astro';
 import HowToSchema from '../../components/seo/HowToSchema.astro';
 
 export async function getStaticPaths() {
@@ -199,10 +198,10 @@ const serviceSchema = Astro.site
     }
   </style>
 
-  <div class="container mx-auto px-4 py-20 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-8 lg:gap-12">
+  <div class="container mx-auto px-4 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px] gap-8 lg:gap-12">
     <!-- Main Content -->
     <div class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:font-semibold prose-a:text-primary prose-strong:text-white">
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h2 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Hızlı Yanıt
@@ -227,7 +226,7 @@ const serviceSchema = Astro.site
 
       <!-- Gallery Grid - Positioned high for visual impact -->
       {images.length > 0 && (
-        <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
           <h2 class="font-heading font-bold text-2xl mb-6 text-white flex items-center gap-2">
             <span class="w-1 h-8 bg-primary block rounded-full"></span>
             Proje Galerisi
@@ -249,7 +248,7 @@ const serviceSchema = Astro.site
       <Content />
       
       {entry.data.features && (
-        <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+        <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
           <h3 class="font-heading font-bold text-2xl mb-6 text-white flex items-center gap-2">
             <span class="w-1 h-8 bg-primary block rounded-full"></span>
             Özellikler
@@ -267,12 +266,7 @@ const serviceSchema = Astro.site
         </div>
       )}
 
-      <!-- Telefon CTA Band -->
-      <div class="not-prose">
-        <CallBand context={entry.data.title} />
-      </div>
-
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Hızlı Bilgiler
@@ -287,7 +281,7 @@ const serviceSchema = Astro.site
         </div>
       </div>
 
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Kurumsal Kullanım Alanları
@@ -302,7 +296,7 @@ const serviceSchema = Astro.site
         </ul>
       </div>
 
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Malzeme ve Seçenekler
@@ -317,7 +311,7 @@ const serviceSchema = Astro.site
         </ul>
       </div>
 
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Süreç
@@ -329,7 +323,7 @@ const serviceSchema = Astro.site
         </ol>
       </div>
 
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Garanti ve Bakım
@@ -337,7 +331,7 @@ const serviceSchema = Astro.site
         <p class="text-gray-300 text-sm">{warrantyNote}</p>
       </div>
 
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Fiyatı Etkileyen Unsurlar
@@ -352,7 +346,7 @@ const serviceSchema = Astro.site
         </ul>
       </div>
 
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-6 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Sık Sorulan Sorular
@@ -367,7 +361,7 @@ const serviceSchema = Astro.site
         </div>
       </div>
 
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           İstanbul'da Öne Çıkan Hizmet Bölgeleri
@@ -381,7 +375,7 @@ const serviceSchema = Astro.site
         </div>
       </div>
 
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           İlgili Blog Yazıları
@@ -397,7 +391,7 @@ const serviceSchema = Astro.site
       </div>
 
       <!-- Hizmet Bölgeleri -->
-      <div class="my-10 not-prose">
+      <div class="my-6 not-prose">
         <h3 class="font-heading font-bold text-xl mb-4 text-white">
           Bu Hizmeti Verdiğimiz İlçeler
         </h3>
@@ -413,7 +407,7 @@ const serviceSchema = Astro.site
         </div>
       </div>
 
-      <div class="my-10 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
+      <div class="my-6 bg-accent-light p-8 rounded-xl border border-white/5 shadow-inner not-prose">
         <h3 class="font-heading font-bold text-2xl mb-4 text-white flex items-center gap-2">
           <span class="w-1 h-8 bg-primary block rounded-full"></span>
           Hemen Teklif ve Keşif
@@ -479,14 +473,14 @@ const serviceSchema = Astro.site
           <h3 class="font-heading font-bold text-base text-heading mb-3">Sektörel Çözümler</h3>
           <div class="space-y-2">
             {[
-              { icon: '💈', label: 'Berber Tabelası', href: '/sektorel/berber-tabelasi/' },
-              { icon: '💊', label: 'Eczane Tabelası', href: '/sektorel/eczane-tabelasi/' },
-              { icon: '☕', label: 'Cafe Tabelası', href: '/sektorel/cafe-restoran-tabelasi/' },
-              { icon: '🏢', label: 'Plaza Tabelası', href: '/sektorel/plaza-tabelasi/' },
-              { icon: '🏭', label: 'Fabrika Tabelası', href: '/sektorel/fabrika-tabelasi/' },
+              { label: 'Berber Tabelası', href: '/sektorel/berber-tabelasi/' },
+              { label: 'Eczane Tabelası', href: '/sektorel/eczane-tabelasi/' },
+              { label: 'Cafe Tabelası', href: '/sektorel/cafe-restoran-tabelasi/' },
+              { label: 'Plaza Tabelası', href: '/sektorel/plaza-tabelasi/' },
+              { label: 'Fabrika Tabelası', href: '/sektorel/fabrika-tabelasi/' },
             ].map(s => (
               <a href={s.href} class="flex items-center justify-between text-sm text-gray-300 hover:text-primary transition-colors py-1">
-                <span>{s.icon} {s.label}</span>
+                <span>{s.label}</span>
                 <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
               </a>
             ))}

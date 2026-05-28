@@ -366,11 +366,11 @@ Kimle çalıştığınız, hem fiyat hem kaliteyi etkiler.
 
 20 yılı aşkın tecrübemizle:
 
-✅ Gizli maliyet yok
-✅ Detaylı fiyat kırılımı
-✅ Ücretsiz keşif ve danışmanlık
-✅ En uygun malzeme önerisi
-✅ Rekabetçi fiyat garantisi
+Gizli maliyet yok
+Detaylı fiyat kırılımı
+Ücretsiz keşif ve danışmanlık
+En uygun malzeme önerisi
+Rekabetçi fiyat garantisi
 
 ## Ücretsiz Fiyat Analizi
 

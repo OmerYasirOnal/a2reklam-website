@@ -20,7 +20,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
     id: 'babas-gastropub-01',
     file: '/assets/videos/babas-gastropub-01.mp4',
     poster: '/assets/videos/posters/babas-gastropub-01.webp',
-    uploadDate: '2026-02-13',
+    uploadDate: '2026-02-13T00:00:00+03:00',
     duration: 'PT14S',
     title: {
       tr: 'Neon LED Tabela Uygulaması – Genel Görünüm',
@@ -35,7 +35,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
     id: 'babas-gastropub-02',
     file: '/assets/videos/babas-gastropub-02.mp4',
     poster: '/assets/videos/posters/babas-gastropub-02.webp',
-    uploadDate: '2026-02-13',
+    uploadDate: '2026-02-13T00:00:00+03:00',
     duration: 'PT48S',
     title: {
       tr: 'Alüminyum Kutu Harf LED Kalite Detayı',
@@ -50,7 +50,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
     id: 'babas-gastropub-03',
     file: '/assets/videos/babas-gastropub-03.mp4',
     poster: '/assets/videos/posters/babas-gastropub-03.webp',
-    uploadDate: '2026-02-13',
+    uploadDate: '2026-02-13T00:00:00+03:00',
     duration: 'PT30S',
     title: {
       tr: 'Kutu Harf İmalat Süreci – Adım Adım Üretim',
@@ -65,7 +65,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
     id: 'cephe-tabela-01',
     file: '/assets/videos/cephe-tabela-01.mp4',
     poster: '/assets/videos/posters/cephe-tabela-01.webp',
-    uploadDate: '2026-02-14',
+    uploadDate: '2026-02-14T00:00:00+03:00',
     duration: 'PT30S',
     title: {
       tr: 'Cephe Tabelası Montaj Süreci – Saha Uygulaması',
@@ -80,7 +80,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
     id: 'cephe-tabela-02',
     file: '/assets/videos/cephe-tabela-02.mp4',
     poster: '/assets/videos/posters/cephe-tabela-02.webp',
-    uploadDate: '2026-02-14',
+    uploadDate: '2026-02-14T00:00:00+03:00',
     duration: 'PT17S',
     title: {
       tr: 'Cephe Tabelası Son Kontrol – Kalite Güvence',
@@ -95,7 +95,7 @@ export const PROJECT_VIDEOS: ProjectVideo[] = [
     id: 'kutu-harf-01',
     file: '/assets/videos/kutu-harf-01.mp4',
     poster: '/assets/videos/posters/kutu-harf-01.webp',
-    uploadDate: '2026-02-14',
+    uploadDate: '2026-02-14T00:00:00+03:00',
     duration: 'PT14S',
     title: {
       tr: 'Kutu Harf Tabela Detayı – Malzeme ve İşçilik',

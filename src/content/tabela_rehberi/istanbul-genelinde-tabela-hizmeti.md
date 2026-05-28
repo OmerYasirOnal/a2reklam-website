@@ -140,11 +140,11 @@ Silivri, Çatalca, Şile, Arnavutköy
 
 ### Hızlı İzin Veren İlçeler (7-12 gün)
 
-✅ Kadıköy
-✅ Maltepe
-✅ Kartal
-✅ Bahçelievler
-✅ Bağcılar
+Kadıköy
+Maltepe
+Kartal
+Bahçelievler
+Bağcılar
 
 **Özellikler:**
 - Online başvuru sistemi
@@ -153,11 +153,11 @@ Silivri, Çatalca, Şile, Arnavutköy
 
 ### Standart İzin Süreçleri (12-20 gün)
 
-🔶 Beşiktaş
-🔶 Şişli
-🔶 Bakırköy
-🔶 Kağıthane
-🔶 Ataşehir
+Beşiktaş
+Şişli
+Bakırköy
+Kağıthane
+Ataşehir
 
 **Özellikler:**
 - Estetik kurul öneriliyor
@@ -213,10 +213,10 @@ Silivri, Çatalca, Şile, Arnavutköy
 ### Kalite Garantilerimiz
 
 **Tüm İlçelerde Aynı Kalite:**
-✅ Aynı malzeme standartları
-✅ Aynı üretim kalitesi
-✅ Aynı montaj profesyonelliği
-✅ Aynı garanti koşulları
+Aynı malzeme standartları
+Aynı üretim kalitesi
+Aynı montaj profesyonelliği
+Aynı garanti koşulları
 
 **2 Yıl Garanti (Tüm İstanbul):**
 - Malzeme garantisi

@@ -282,23 +282,23 @@ Standart dışı formlar:
 
 İdeal totem boyutu için sorular:
 
-✅ Ana hedef mesafe nedir? (20m / 50m / 100m+)
-✅ Lokasyon tipi nedir? (Cadde / Otoyol / Mahalle)
-✅ Çevrede rakip tabelalar var mı?
-✅ Belediye yükseklik limiti nedir?
-✅ Bütçeniz nedir?
-✅ Göstermek istediğiniz bilgi miktarı?
-✅ Işıklı sistem gerekli mi?
+Ana hedef mesafe nedir? (20m / 50m / 100m+)
+Lokasyon tipi nedir? (Cadde / Otoyol / Mahalle)
+Çevrede rakip tabelalar var mı?
+Belediye yükseklik limiti nedir?
+Bütçeniz nedir?
+Göstermek istediğiniz bilgi miktarı?
+Işıklı sistem gerekli mi?
 
 ## A2 Reklam Totem Boyut Danışmanlığı
 
 20 yılı aşkın tecrübemizle, lokasyonunuza özel totem boyutu belirliyoruz:
 
-✅ Ücretsiz saha keşfi ve analiz
-✅ Statik hesaplama ve mühendislik
-✅ Belediye limit kontrolü
-✅ 3D görselleştirme
-✅ Maliyet optimizasyonu
+Ücretsiz saha keşfi ve analiz
+Statik hesaplama ve mühendislik
+Belediye limit kontrolü
+3D görselleştirme
+Maliyet optimizasyonu
 
 ## Ücretsiz Keşif ve Teklif
 

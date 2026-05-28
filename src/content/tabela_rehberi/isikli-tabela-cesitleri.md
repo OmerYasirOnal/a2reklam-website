@@ -48,22 +48,22 @@ Her harf ayrı ayrı ışıklandırılır. Lüks ve şık görünüm sunar.
 
 ### LED Tabela Avantajları
 
-✅ **Enerji Verimliliği:** Neon'a göre %80 daha az enerji tüketimi
-✅ **Uzun Ömür:** 50.000-100.000 saat çalışma ömrü
-✅ **Düşük Isınma:** Güvenli ve malzemeyi yormaz
-✅ **Dayanıklılık:** Titreşim ve darbelere karşı dirençli
-✅ **Anında Açılma:** Isınma süresi yok
-✅ **Dimmer Özelliği:** Parlaklık ayarlanabilir
-✅ **Düşük Bakım:** Çok nadir arıza yapar
-✅ **Ekonomik:** İlk yatırım ve işletme maliyeti düşük
+**Enerji Verimliliği:** Neon'a göre %80 daha az enerji tüketimi
+**Uzun Ömür:** 50.000-100.000 saat çalışma ömrü
+**Düşük Isınma:** Güvenli ve malzemeyi yormaz
+**Dayanıklılık:** Titreşim ve darbelere karşı dirençli
+**Anında Açılma:** Isınma süresi yok
+**Dimmer Özelliği:** Parlaklık ayarlanabilir
+**Düşük Bakım:** Çok nadir arıza yapar
+**Ekonomik:** İlk yatırım ve işletme maliyeti düşük
 
 ![LED ışıklı kutu harf tabela](/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-960.webp)
 
 ### LED Tabela Dezavantajları
 
-❌ **Işık Noktalama:** Düşük kalite modüllerde LED noktaları görülebilir
-❌ **Renk Değişimi:** Zamanla LED'ler arasında renk farklılığı oluşabilir
-❌ **Elektronik Arıza:** Trafo veya driver arızası tüm sistemi etkiler
+**Işık Noktalama:** Düşük kalite modüllerde LED noktaları görülebilir
+**Renk Değişimi:** Zamanla LED'ler arasında renk farklılığı oluşabilir
+**Elektronik Arıza:** Trafo veya driver arızası tüm sistemi etkiler
 
 ## Neon Işıklı Tabela Sistemleri
 
@@ -81,20 +81,20 @@ Neon tabelalar, cam tüp içindeki neon gazının elektrikle uyarılarak ışık
 
 ### Neon Tabela Avantajları
 
-✅ **Homojen Işık:** Kesintisiz, sürekli ışık çizgisi
-✅ **Nostaljik Estetik:** Vintage ve retro tasarımlar için eşsiz
-✅ **Görüş Açısı:** 360 derece eşit parlaklık
-✅ **Renk Kalıcılığı:** Yıllar boyunca aynı ton
-✅ **Uzun Ömür:** İyi bakımla 15-20 yıl
+**Homojen Işık:** Kesintisiz, sürekli ışık çizgisi
+**Nostaljik Estetik:** Vintage ve retro tasarımlar için eşsiz
+**Görüş Açısı:** 360 derece eşit parlaklık
+**Renk Kalıcılığı:** Yıllar boyunca aynı ton
+**Uzun Ömür:** İyi bakımla 15-20 yıl
 
 ### Neon Tabela Dezavantajları
 
-❌ **Yüksek Enerji Tüketimi:** LED'den 5-8 kat daha fazla
-❌ **Kırılganlık:** Cam olduğu için darbelere duyarlı
-❌ **Pahalı Onarım:** Kırılan tüp değişimi maliyetli
-❌ **Yüksek Gerilim:** Güvenlik riski
-❌ **Isınma:** Yüzey sıcaklığı 40-60°C'ye çıkabilir
-❌ **Uzman İhtiyacı:** Montaj ve onarım için uzman gerekir
+**Yüksek Enerji Tüketimi:** LED'den 5-8 kat daha fazla
+**Kırılganlık:** Cam olduğu için darbelere duyarlı
+**Pahalı Onarım:** Kırılan tüp değişimi maliyetli
+**Yüksek Gerilim:** Güvenlik riski
+**Isınma:** Yüzey sıcaklığı 40-60°C'ye çıkabilir
+**Uzman İhtiyacı:** Montaj ve onarım için uzman gerekir
 
 ![Neon efektli tabela](/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp)
 
@@ -143,20 +143,20 @@ Neon tabelalar, cam tüp içindeki neon gazının elektrikle uyarılarak ışık
 
 ### LED Tabela Tercih Edilmeli
 
-✔ Enerji maliyetini minimize etmek istiyorsanız
-✔ Düşük bakım maliyeti önceliğinizse
-✔ Modern ve teknolojik bir imaj hedefliyorsanız
-✔ Geniş yüzey alanları için
-✔ Animasyonlu veya değişken içerik istiyorsanız
-✔ Hızlı yatırım geri dönüşü bekliyorsanız
+Enerji maliyetini minimize etmek istiyorsanız
+Düşük bakım maliyeti önceliğinizse
+Modern ve teknolojik bir imaj hedefliyorsanız
+Geniş yüzey alanları için
+Animasyonlu veya değişken içerik istiyorsanız
+Hızlı yatırım geri dönüşü bekliyorsanız
 
 ### Neon (veya LED Neon Flex) Tercih Edilmeli
 
-✔ Vintage veya retro tasarım istiyorsanız
-✔ Butik, bar, cafe gibi atmosferik mekanlar için
-✔ Sanatsal ve özel tasarımlar için
-✔ Homojen, kesintisiz ışık çizgisi önemliyse
-✔ Marka kimliğiniz nostaljik temayı gerektiriyorsa
+Vintage veya retro tasarım istiyorsanız
+Butik, bar, cafe gibi atmosferik mekanlar için
+Sanatsal ve özel tasarımlar için
+Homojen, kesintisiz ışık çizgisi önemliyse
+Marka kimliğiniz nostaljik temayı gerektiriyorsa
 
 ## LED Neon Flex: İki Dünyanın En İyisi
 

@@ -214,11 +214,11 @@ Elektrik olmayan yerlerde ideal, 2-3 yılda kendini amorti eder.
 
 20 yılı aşkın tecrübemizle, size en enerji verimli tabela çözümlerini sunuyoruz:
 
-✅ Ücretsiz enerji tüketim analizi
-✅ 3 yıllık maliyet projeksiyonu
-✅ Timer ve sensör kurulumu
-✅ Yüksek verimli LED garantisi
-✅ %30'a varan enerji tasarrufu
+Ücretsiz enerji tüketim analizi
+3 yıllık maliyet projeksiyonu
+Timer ve sensör kurulumu
+Yüksek verimli LED garantisi
+%30'a varan enerji tasarrufu
 
 ## Enerji Hesaplama ve Teklif
 
