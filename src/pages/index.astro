@@ -21,15 +21,6 @@ const topSectors = sectors.slice(0, 10);
 <Layout
   title="İstanbul Tabelacı | Tabela İmalatı & Kurumsal Reklam | A2 Reklam"
   description="İstanbul tabelacı A2 Reklam: 2005'ten beri 2.500+ proje. Kurumsal tabela (AVM, plaza, hastane, otel), kutu harf, cephe giydirme, LED tabela, araç giydirme. ⭐5.0/90 Google yorum. Ücretsiz keşif + 3D. ☎ 0531 618 16 72"
-  faq={[
-    { question: "İstanbul'da en iyi tabelacı hangisidir?", answer: "A2 Reklam 2005'ten bu yana İstanbul'un önde gelen tabela imalatçılarından biridir. 2.500+ tamamlanmış proje, Google'da ⭐5.0/90 yorum, 39 ilçeye hizmet ve aracısız üretici fiyatıyla farklılaşıyoruz. AVM, plaza, hastane, otel ve dükkan tabelalarında uzmanız." },
-    { question: "İstanbul tabela fiyatları ne kadar?", answer: "Pleksi tabela 800₺'den, ışıklı kutu harf 1.200₺/harf'ten, cephe tabelası 5.000₺'den, totem tabela 25.000₺'den başlar. Kesin fiyat için ücretsiz keşif sonrası 48 saat içinde detaylı teklif sunarız. Aracısız üretici olduğumuz için piyasanın altında fiyat veriyoruz." },
-    { question: "Tabela kaç günde teslim edilir?", answer: "Pleksi isimlik 3-5 gün, ışıklı kutu harf 7-10 gün, cephe tabelası 10-15 gün, büyük AVM/plaza projesi 20-30 gün. Acil siparişler için 48 saatlik ekspres üretim seçeneğimiz de var." },
-    { question: "İstanbul'un hangi ilçelerine hizmet veriyorsunuz?", answer: "İstanbul'un tüm 39 ilçesine hizmet veriyoruz: Kadıköy, Beşiktaş, Şişli, Kâğıthane (merkez), Üsküdar, Fatih, Bakırköy, Beyoğlu, Ataşehir, Ümraniye, Maltepe, Esenyurt, Başakşehir, Pendik, Kartal ve daha fazlası. Ücretsiz keşif ve aynı gün dönüş garantisi." },
-    { question: "Ücretsiz keşif nasıl alınır?", answer: "0531 618 16 72 numaralı telefonu arayabilir veya WhatsApp'tan mesaj atabilirsiniz. Ekibimiz 24 saat içinde size geri dönüp sahaya gelir, ölçüm alır, ihtiyacınıza uygun tasarım çıkarır ve 48 saat içinde detaylı fiyat teklifi sunar." },
-    { question: "Tabela imalatı için garanti veriyor musunuz?", answer: "Evet. Malzeme ve işçilik için 2 yıl tam garanti, LED modülleri için ayrı 3 yıl garanti sağlıyoruz. Garanti süresi boyunca periyodik bakım ve teknik destek ücretsizdir." },
-    { question: "Kendi üretim atölyeniz var mı?", answer: "Evet, Kâğıthane ve Esenyurt'ta kendi CNC lazer kesim + PVD kaplama + LED montaj atölyelerimiz var. Aracısız üretici olarak fabrika çıkışı fiyatla çalışıyoruz." }
-  ]}
 >
 	<Hero lang="tr" />
   <ScrollReveal><TabelaciIntro /></ScrollReveal>
@@ -42,8 +33,9 @@ const topSectors = sectors.slice(0, 10);
 
   <!-- KURUMSAL CTA BAND -->
   <ScrollReveal>
-  <section class="py-20 bg-gradient-to-br from-primary/10 via-secondary to-primary/5 border-t border-white/5 relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,162,39,0.15),transparent_50%)]"></div>
+  <section class="py-14 md:py-16 bg-secondary border-t border-white/5 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,162,39,0.18),transparent_55%)] pointer-events-none"></div>
 
     <div class="relative max-w-6xl mx-auto px-4 text-center">
       <div class="inline-flex items-center gap-2 mb-5 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
@@ -60,20 +52,16 @@ const topSectors = sectors.slice(0, 10);
       </p>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-4xl mx-auto">
-        <div class="p-4 bg-secondary/60 rounded-xl border border-white/5">
-          <div class="text-3xl mb-1">🛍</div>
+        <div class="p-4 bg-surface rounded-xl border border-white/10">
           <div class="text-white font-bold text-sm">AVM</div>
         </div>
-        <div class="p-4 bg-secondary/60 rounded-xl border border-white/5">
-          <div class="text-3xl mb-1">🏢</div>
+        <div class="p-4 bg-surface rounded-xl border border-white/10">
           <div class="text-white font-bold text-sm">Plaza</div>
         </div>
-        <div class="p-4 bg-secondary/60 rounded-xl border border-white/5">
-          <div class="text-3xl mb-1">🏥</div>
+        <div class="p-4 bg-surface rounded-xl border border-white/10">
           <div class="text-white font-bold text-sm">Hastane</div>
         </div>
-        <div class="p-4 bg-secondary/60 rounded-xl border border-white/5">
-          <div class="text-3xl mb-1">🏨</div>
+        <div class="p-4 bg-surface rounded-xl border border-white/10">
           <div class="text-white font-bold text-sm">Otel</div>
         </div>
       </div>
@@ -94,7 +82,7 @@ const topSectors = sectors.slice(0, 10);
 
   <!-- Trust/Stats Section -->
   <ScrollReveal>
-  <section class="py-20 bg-secondary border-t border-white/5 relative">
+  <section class="py-14 md:py-16 bg-secondary border-t border-white/5 relative">
     <div class="container mx-auto px-4 text-center relative z-10">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 reveal-stagger">
         <div class="p-4 md:p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/5 hover:border-primary/50 transition-all group">
@@ -158,7 +146,6 @@ const topSectors = sectors.slice(0, 10);
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {topSectors.map(s => (
           <a href={`/sektorel/${s.slug}/`} class="group p-4 glass-card hover:border-primary/50 transition-all text-center">
-            <span class="text-2xl block mb-1">{s.icon}</span>
             <span class="block text-xs font-bold text-gray-300 group-hover:text-primary transition-colors">{s.name}</span>
           </a>
         ))}
@@ -201,6 +188,14 @@ const topSectors = sectors.slice(0, 10);
   </section>
 
   <!-- Sık Sorulan Sorular -->
-  <FAQ />
+  <FAQ faqs={[
+    { question: "İstanbul'da en iyi tabelacı hangisidir?", answer: "A2 Reklam 2005'ten bu yana İstanbul'un önde gelen tabela imalatçılarından biridir. 2.500+ tamamlanmış proje, Google'da ⭐5.0/90 yorum, 39 ilçeye hizmet ve aracısız üretici fiyatıyla farklılaşıyoruz. AVM, plaza, hastane, otel ve dükkan tabelalarında uzmanız." },
+    { question: "İstanbul tabela fiyatları ne kadar?", answer: "Pleksi tabela 800₺'den, ışıklı kutu harf 1.200₺/harf'ten, cephe tabelası 5.000₺'den, totem tabela 25.000₺'den başlar. Kesin fiyat için ücretsiz keşif sonrası 48 saat içinde detaylı teklif sunarız. Aracısız üretici olduğumuz için piyasanın altında fiyat veriyoruz." },
+    { question: "Tabela kaç günde teslim edilir?", answer: "Pleksi isimlik 3-5 gün, ışıklı kutu harf 7-10 gün, cephe tabelası 10-15 gün, büyük AVM/plaza projesi 20-30 gün. Acil siparişler için 48 saatlik ekspres üretim seçeneğimiz de var." },
+    { question: "İstanbul'un hangi ilçelerine hizmet veriyorsunuz?", answer: "İstanbul'un tüm 39 ilçesine hizmet veriyoruz: Kadıköy, Beşiktaş, Şişli, Kâğıthane (merkez), Üsküdar, Fatih, Bakırköy, Beyoğlu, Ataşehir, Ümraniye, Maltepe, Esenyurt, Başakşehir, Pendik, Kartal ve daha fazlası. Ücretsiz keşif ve aynı gün dönüş garantisi." },
+    { question: "Ücretsiz keşif nasıl alınır?", answer: "0531 618 16 72 numaralı telefonu arayabilir veya WhatsApp'tan mesaj atabilirsiniz. Ekibimiz 24 saat içinde size geri dönüp sahaya gelir, ölçüm alır, ihtiyacınıza uygun tasarım çıkarır ve 48 saat içinde detaylı fiyat teklifi sunar." },
+    { question: "Tabela imalatı için garanti veriyor musunuz?", answer: "Evet. Malzeme ve işçilik için 2 yıl tam garanti, LED modülleri için ayrı 3 yıl garanti sağlıyoruz. Garanti süresi boyunca periyodik bakım ve teknik destek ücretsizdir." },
+    { question: "Kendi üretim atölyeniz var mı?", answer: "Evet, Kâğıthane ve Esenyurt'ta kendi CNC lazer kesim + PVD kaplama + LED montaj atölyelerimiz var. Aracısız üretici olarak fabrika çıkışı fiyatla çalışıyoruz." }
+  ]} />
 
 </Layout>

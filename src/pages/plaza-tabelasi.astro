@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CallBand from '../components/common/CallBand.astro';
 import { PHONE_NUMBER, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../consts';
 
 const breadcrumbs = [
@@ -41,12 +40,12 @@ const faq = [
 ];
 
 const plazaServices = [
-  { icon: '🏢', title: 'Dış Cephe Logo', desc: 'Paslanmaz PVD kaplama harf + LED arka aydınlatma. Kurumsal kimlik uyumlu.' },
-  { icon: '🪟', title: 'Lobi Tabelası', desc: 'Giriş resepsiyon tabelası, firma listesi, kat endeksi. Premium malzeme.' },
-  { icon: '🔢', title: 'Kat Yönlendirme', desc: 'Asansör lobi + kat holü yönlendirme. Modüler, değiştirilebilir.' },
-  { icon: '🚪', title: 'Oda & Ofis No', desc: 'Kapı no plakaları, ofis isimlik. Fırın boya veya pleksi.' },
-  { icon: '🅿️', title: 'Otopark Yönlendirme', desc: 'Kat, yön, çıkış. Reflektörlü görünürlük, anti-korozyon.' },
-  { icon: '⚠', title: 'Acil Çıkış + Güvenlik', desc: 'Foto-lüminesan, yangın yönetmeliğine uygun.' },
+  { title: 'Dış Cephe Logo', desc: 'Paslanmaz PVD kaplama harf + LED arka aydınlatma. Kurumsal kimlik uyumlu.' },
+  { title: 'Lobi Tabelası', desc: 'Giriş resepsiyon tabelası, firma listesi, kat endeksi. Premium malzeme.' },
+  { title: 'Kat Yönlendirme', desc: 'Asansör lobi + kat holü yönlendirme. Modüler, değiştirilebilir.' },
+  { title: 'Oda & Ofis No', desc: 'Kapı no plakaları, ofis isimlik. Fırın boya veya pleksi.' },
+  { title: 'Otopark Yönlendirme', desc: 'Kat, yön, çıkış. Reflektörlü görünürlük, anti-korozyon.' },
+  { title: 'Acil Çıkış + Güvenlik', desc: 'Foto-lüminesan, yangın yönetmeliğine uygun.' },
 ];
 
 const process = [
@@ -82,10 +81,10 @@ const description = "İstanbul'da plaza tabela imalatı: dış cephe logo, lobi,
         </h1>
         <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
           İstanbul'un önde gelen plazalarında <strong class="text-white">50+ komple proje</strong>.
-          Paslanmaz PVD + IP65 LED. <strong class="text-primary">⭐{GOOGLE_RATING}/{GOOGLE_REVIEW_COUNT} yorum</strong>.
+          Paslanmaz PVD + IP65 LED. <strong class="text-primary">{GOOGLE_RATING}/{GOOGLE_REVIEW_COUNT} yorum</strong>.
         </p>
         <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-          <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} data-track="call" class="bg-primary text-secondary font-bold px-8 py-4 rounded-xl hover:bg-white transition-all">☎ {PHONE_NUMBER}</a>
+          <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} data-track="call" class="bg-primary text-secondary font-bold px-8 py-4 rounded-xl hover:bg-white transition-all">{PHONE_NUMBER}</a>
           <a href="/iletisim/" data-track="quote" class="bg-white/10 border-2 border-primary/40 text-white font-bold px-8 py-4 rounded-xl hover:border-primary hover:bg-primary/10 transition-all">Ücretsiz Keşif Al</a>
         </div>
       </div>
@@ -100,7 +99,6 @@ const description = "İstanbul'da plaza tabela imalatı: dış cephe logo, lobi,
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {plazaServices.map(t => (
           <div class="p-6 glass-card hover:border-primary/50 transition-all">
-            <div class="text-4xl mb-3">{t.icon}</div>
             <h3 class="font-heading font-bold text-xl text-white mb-2">{t.title}</h3>
             <p class="text-gray-400 text-sm leading-relaxed">{t.desc}</p>
           </div>
@@ -128,8 +126,9 @@ const description = "İstanbul'da plaza tabela imalatı: dış cephe logo, lobi,
     </div>
   </section>
 
-  <section class="py-16 bg-gradient-to-br from-primary/10 via-secondary to-secondary">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section class="py-16 bg-secondary relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="text-5xl md:text-6xl font-heading font-bold text-primary mb-4">50+</div>
       <p class="text-xl text-white font-semibold mb-2">İstanbul Plaza Projesi</p>
       <p class="text-gray-400 max-w-2xl mx-auto">
@@ -158,5 +157,4 @@ const description = "İstanbul'da plaza tabela imalatı: dış cephe logo, lobi,
     </div>
   </section>
 
-  <CallBand />
 </Layout>

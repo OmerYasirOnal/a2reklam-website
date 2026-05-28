@@ -102,15 +102,15 @@ En yaygın ve güvenli yöntemdir. Harfler cepheye vidalanır.
 ![Ankraj montaj detayı](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-003-960.webp)
 
 **Avantajları:**
-✅ Çok güvenli ve kalıcı
-✅ Ağır harfler için ideal
-✅ Rüzgar ve titreşime dayanıklı
-✅ Uzun ömürlü
+Çok güvenli ve kalıcı
+Ağır harfler için ideal
+Rüzgar ve titreşime dayanıklı
+Uzun ömürlü
 
 **Dezavantajları:**
-❌ Cepheye delik açılır
-❌ Söküm zorlu
-❌ Kiralık mekanlarda sakıncalı olabilir
+Cepheye delik açılır
+Söküm zorlu
+Kiralık mekanlarda sakıncalı olabilir
 
 ### Teknik 2: Yapıştırıcı Montajı
 
@@ -146,15 +146,15 @@ Cepheye zarar vermeden montaj.
 ![Yapıştırıcı montaj](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-004-960.webp)
 
 **Avantajları:**
-✅ Cepheye zarar yok
-✅ Söküm kolay
-✅ Estetik (görünür vida/dübel yok)
-✅ Hızlı uygulama
+Cepheye zarar yok
+Söküm kolay
+Estetik (görünür vida/dübel yok)
+Hızlı uygulama
 
 **Dezavantajları:**
-❌ Çok ağır harfler için uygun değil (max 2-3 kg/harf)
-❌ Gözenekli yüzeylerde zayıf tutunma
-❌ Sıcaklık değişimlerinden etkilenebilir
+Çok ağır harfler için uygun değil (max 2-3 kg/harf)
+Gözenekli yüzeylerde zayıf tutunma
+Sıcaklık değişimlerinden etkilenebilir
 
 ### Teknik 3: Askılı Sistem Montajı
 
@@ -172,14 +172,14 @@ Değiştirilebilir ve esnek montaj.
 4. Yükseklik ve mesafe ayarı
 
 **Avantajlar:**
-✅ Kolay değiştirilebilir
-✅ Kiralık mekanlarda ideal
-✅ Bakım ve temizlik kolay
+Kolay değiştirilebilir
+Kiralık mekanlarda ideal
+Bakım ve temizlik kolay
 
 **Dezavantajlar:**
-❌ Ray görünür olabilir (estetik sorun)
-❌ Sadece iç mekanlarda
-❌ Ağır harfler için güçlü ray gerekir
+Ray görünür olabilir (estetik sorun)
+Sadece iç mekanlarda
+Ağır harfler için güçlü ray gerekir
 
 ### Teknik 4: Stand-Off (Spacer) Montajı
 
@@ -198,15 +198,15 @@ Harfler duvardan 1-5cm mesafeli durur, 3D efekt.
 ![Stand-off montaj detayı](/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-005-960.webp)
 
 **Avantajları:**
-✅ 3D derinlik efekti
-✅ Halo aydınlatma için mükemmel
-✅ Prestijli görünüm
-✅ Temizlik kolay
+3D derinlik efekti
+Halo aydınlatma için mükemmel
+Prestijli görünüm
+Temizlik kolay
 
 **Dezavantajları:**
-❌ Daha pahalı
-❌ Montaj süresi uzun
-❌ Elektrik kabloları gizlenmeli
+Daha pahalı
+Montaj süresi uzun
+Elektrik kabloları gizlenmeli
 
 ## Özel Durumlarda Montaj
 
@@ -280,13 +280,13 @@ Harfler duvardan 1-5cm mesafeli durur, 3D efekt.
 
 ### Kalite Kontrol Checklist
 
-✅ Tüm harfler aynı hizada mı?
-✅ Harfler arası mesafeler eşit mi?
-✅ Sabitleme sağlam mı? (hafif çekme testi)
-✅ Görünür vida/dübel var mı?
-✅ Yüzey temiz ve lekesiz mi?
-✅ Işıklı sistemde tüm LED'ler çalışıyor mu?
-✅ Kablolar gizli ve düzenli mi?
+Tüm harfler aynı hizada mı?
+Harfler arası mesafeler eşit mi?
+Sabitleme sağlam mı? (hafif çekme testi)
+Görünür vida/dübel var mı?
+Yüzey temiz ve lekesiz mi?
+Işıklı sistemde tüm LED'ler çalışıyor mu?
+Kablolar gizli ve düzenli mi?
 
 ### Garanti Kapsamı
 
@@ -314,11 +314,11 @@ A2 Reklam montaj garantisi:
 
 A2 Reklam olarak İstanbul genelinde, özellikle Beşiktaş, Kadıköy ve Kağıthane bölgelerinde profesyonel paslanmaz harf montajı yapıyoruz:
 
-✅ 20+ yıl montaj tecrübesi
-✅ İş güvenliği sertifikalı ekip
-✅ Garantili montaj işçiliği
-✅ Yüksek bina montaj ekipmanları
-✅ Hızlı ve temiz çalışma
+20+ yıl montaj tecrübesi
+İş güvenliği sertifikalı ekip
+Garantili montaj işçiliği
+Yüksek bina montaj ekipmanları
+Hızlı ve temiz çalışma
 
 ## Montaj Talebi
 

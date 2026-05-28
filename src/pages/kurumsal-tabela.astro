@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { PHONE_NUMBER, PHONE_TEL, WHATSAPP_LINK, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from '../consts';
-import CallBand from '../components/common/CallBand.astro';
 
 const breadcrumbs = [
   { name: 'Anasayfa', item: '/' },
@@ -40,14 +39,14 @@ const faq = [
 ];
 
 const services = [
-  { title: 'AVM Tabela Uygulamaları', desc: 'Mağaza cephe tabelaları, içeride yönlendirme, food court ve reklam alanları.', icon: '🛍', href: '/avm-tabelasi/' },
-  { title: 'Plaza Tabela Çözümleri', desc: 'Kurumsal kimlik uyumlu dış cephe logosu, lobi yönlendirme, kat numaraları.', icon: '🏢', href: '/plaza-tabelasi/' },
-  { title: 'Fabrika & OSB', desc: 'Büyük ölçek dış cephe, paslanmaz harf, OSB giriş tabelaları, uzun ömürlü uygulama.', icon: '🏭', href: '/fabrika-tabelasi/' },
-  { title: 'Hastane Yönlendirme', desc: 'Poliklinik, acil servis, eczane yönlendirme sistemleri. Hijyenik ve dayanıklı.', icon: '🏥', href: '/hastane-tabelasi/' },
-  { title: 'Otel Tabela Sistemleri', desc: 'Otel cephe logosu, giriş tabelası, oda numaraları, restoran ve SPA tabelası.', icon: '🏨' },
-  { title: 'Okul & Kampüs', desc: 'Giriş tabelası, kat yönlendirme, spor salonu, kafeterya tabela çözümleri.', icon: '🎓' },
-  { title: 'Bankacılık & Finans', desc: 'Şube tabelaları, kurumsal kimlik, güvenlik ışıklı uyarılar.', icon: '🏦' },
-  { title: 'Sanayi Kampüsleri', desc: 'Büyük holdingler için tesis tabelaları, yönetim binası uygulamaları.', icon: '🏗' },
+  { title: 'AVM Tabela Uygulamaları', desc: 'Mağaza cephe tabelaları, içeride yönlendirme, food court ve reklam alanları.', href: '/avm-tabelasi/' },
+  { title: 'Plaza Tabela Çözümleri', desc: 'Kurumsal kimlik uyumlu dış cephe logosu, lobi yönlendirme, kat numaraları.', href: '/plaza-tabelasi/' },
+  { title: 'Fabrika & OSB', desc: 'Büyük ölçek dış cephe, paslanmaz harf, OSB giriş tabelaları, uzun ömürlü uygulama.', href: '/fabrika-tabelasi/' },
+  { title: 'Hastane Yönlendirme', desc: 'Poliklinik, acil servis, eczane yönlendirme sistemleri. Hijyenik ve dayanıklı.', href: '/hastane-tabelasi/' },
+  { title: 'Otel Tabela Sistemleri', desc: 'Otel cephe logosu, giriş tabelası, oda numaraları, restoran ve SPA tabelası.' },
+  { title: 'Okul & Kampüs', desc: 'Giriş tabelası, kat yönlendirme, spor salonu, kafeterya tabela çözümleri.' },
+  { title: 'Bankacılık & Finans', desc: 'Şube tabelaları, kurumsal kimlik, güvenlik ışıklı uyarılar.' },
+  { title: 'Sanayi Kampüsleri', desc: 'Büyük holdingler için tesis tabelaları, yönetim binası uygulamaları.' },
 ];
 
 const processSteps = [
@@ -59,14 +58,14 @@ const processSteps = [
 ];
 
 const whyUs = [
-  { title: '2005\'ten Beri Kurumsal', desc: '20+ yıl deneyim. 2.500+ başarıyla tamamlanmış proje.', icon: '🏆' },
-  { title: '⭐ 5.0 / 5 — 90 Yorum', desc: 'Google\'da kanıtlanmış müşteri memnuniyeti.', icon: '⭐' },
-  { title: 'Aracı Yok, Direkt Üretici', desc: 'Siz ve biz — arada hiçbir firma yok. En hızlı iletişim, en uygun fiyat.', icon: '🔧' },
-  { title: 'Ücretsiz Keşif & 3D', desc: 'Sahaya gelip ölçüm alıyor, 3D tasarım çıkarıyoruz — ücretsiz.', icon: '🎨' },
-  { title: 'Uygun Fiyat Garantisi', desc: 'Benzer kalitede başka bir firma daha düşük fiyat verirse biz eşleriz.', icon: '💰' },
-  { title: 'Aynı Gün Hızlı Teklif', desc: '48 saat değil — aynı gün detaylı fiyat teklifi.', icon: '⚡' },
-  { title: '39 İlçeye Hizmet', desc: 'İstanbul\'un tamamı. Yeni şube, bayi, AVM açılışları için ideal.', icon: '🗺' },
-  { title: '2 Yıl Garanti + Bakım', desc: 'Malzeme ve işçilik için tam garanti. Sonrasında bakım anlaşması opsiyonu.', icon: '✅' },
+  { title: '2005\'ten Beri Kurumsal', desc: '20+ yıl deneyim. 2.500+ başarıyla tamamlanmış proje.' },
+  { title: '5.0 / 5 — 90 Yorum', desc: 'Google\'da kanıtlanmış müşteri memnuniyeti.' },
+  { title: 'Aracı Yok, Direkt Üretici', desc: 'Siz ve biz — arada hiçbir firma yok. En hızlı iletişim, en uygun fiyat.' },
+  { title: 'Ücretsiz Keşif & 3D', desc: 'Sahaya gelip ölçüm alıyor, 3D tasarım çıkarıyoruz — ücretsiz.' },
+  { title: 'Uygun Fiyat Garantisi', desc: 'Benzer kalitede başka bir firma daha düşük fiyat verirse biz eşleriz.' },
+  { title: 'Aynı Gün Hızlı Teklif', desc: '48 saat değil — aynı gün detaylı fiyat teklifi.' },
+  { title: '39 İlçeye Hizmet', desc: 'İstanbul\'un tamamı. Yeni şube, bayi, AVM açılışları için ideal.' },
+  { title: '2 Yıl Garanti + Bakım', desc: 'Malzeme ve işçilik için tam garanti. Sonrasında bakım anlaşması opsiyonu.' },
 ];
 
 const referans = [
@@ -118,16 +117,13 @@ const referans = [
           <!-- Güven Göstergeleri -->
           <div class="flex flex-wrap gap-3 mb-8">
             <div class="flex items-center gap-2 px-4 py-2 bg-accent-light rounded-lg border border-white/5">
-              <span class="text-primary text-xl">⭐</span>
               <span class="text-white font-bold">{GOOGLE_RATING}</span>
               <span class="text-gray-400 text-sm">({GOOGLE_REVIEW_COUNT}+ yorum)</span>
             </div>
             <div class="flex items-center gap-2 px-4 py-2 bg-accent-light rounded-lg border border-white/5">
-              <span class="text-primary text-xl">🏆</span>
               <span class="text-white font-bold text-sm">2005'ten Beri</span>
             </div>
             <div class="flex items-center gap-2 px-4 py-2 bg-accent-light rounded-lg border border-white/5">
-              <span class="text-primary text-xl">🗺</span>
               <span class="text-white font-bold text-sm">39 İlçe</span>
             </div>
           </div>
@@ -140,7 +136,7 @@ const referans = [
               data-lang="tr"
               class="inline-flex items-center justify-center bg-primary text-secondary font-bold py-4 px-8 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-xl shadow-primary/20"
             >
-              ☎ Hemen Ara — Aynı Gün Teklif
+              Hemen Ara — Aynı Gün Teklif
             </a>
             <a
               href="/iletisim/"
@@ -178,9 +174,9 @@ const referans = [
   </section>
 
   <!-- SEKTÖR BAZLI HİZMETLER -->
-  <section class="py-20 bg-secondary border-t border-white/5">
+  <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
+      <div class="text-center mb-10">
         <h2 class="text-4xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
           Sektöre Özel <span class="text-primary">Kurumsal Çözümler</span>
         </h2>
@@ -195,7 +191,6 @@ const referans = [
           const extraProps = s.href ? { href: s.href, class: 'p-6 glass-card hover:border-primary/50 transition-all block group' } : { class: 'p-6 glass-card hover:border-primary/50 transition-all' };
           return (
             <Card {...extraProps}>
-              <div class="text-4xl mb-4">{s.icon}</div>
               <h3 class="text-white font-heading font-bold text-lg mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
               <p class="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
               {s.href && <span class="mt-3 inline-block text-primary text-sm font-semibold">Detay →</span>}
@@ -207,9 +202,9 @@ const referans = [
   </section>
 
   <!-- NEDEN BIZ -->
-  <section class="py-20 bg-secondary border-t border-white/5">
+  <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
+      <div class="text-center mb-10">
         <h2 class="text-4xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
           Neden <span class="text-primary">A2 Reklam</span>?
         </h2>
@@ -221,7 +216,6 @@ const referans = [
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         {whyUs.map(item => (
           <div class="p-6 bg-accent-light rounded-2xl border border-white/5 hover:border-primary/40 transition-all">
-            <div class="text-3xl mb-3">{item.icon}</div>
             <h3 class="text-white font-heading font-bold text-base mb-2">{item.title}</h3>
             <p class="text-gray-400 text-sm">{item.desc}</p>
           </div>
@@ -231,9 +225,9 @@ const referans = [
   </section>
 
   <!-- SÜREÇ -->
-  <section class="py-20 bg-secondary border-t border-white/5">
+  <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14">
+      <div class="text-center mb-10">
         <h2 class="text-4xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
           5 Adımda <span class="text-primary">Sizin Projeniz</span>
         </h2>
@@ -256,7 +250,7 @@ const referans = [
   </section>
 
   <!-- Referans Alanları -->
-  <section class="py-20 bg-secondary border-t border-white/5">
+  <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-4xl font-heading font-bold text-white mb-10 text-center uppercase tracking-tight">
         Çalıştığımız <span class="text-primary">Kurumsal Alanlar</span>
@@ -273,11 +267,8 @@ const referans = [
     </div>
   </section>
 
-  <!-- CTA Band -->
-  <CallBand context="Kurumsal Tabela Projesi" />
-
   <!-- FAQ -->
-  <section class="py-20 bg-secondary border-t border-white/5">
+  <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-4xl font-heading font-bold text-white mb-10 text-center uppercase tracking-tight">
         Sık Sorulan Sorular
@@ -298,7 +289,7 @@ const referans = [
   </section>
 
   <!-- Final CTA -->
-  <section class="py-20 bg-secondary border-t border-white/5">
+  <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-3xl mx-auto px-4 text-center">
       <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
         Projenizi <span class="text-primary">Birlikte Planlayalım</span>
@@ -313,7 +304,7 @@ const referans = [
           data-lang="tr"
           class="inline-flex items-center justify-center bg-primary text-secondary font-bold py-4 px-8 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-xl shadow-primary/20"
         >
-          ☎ {PHONE_NUMBER}
+          {PHONE_NUMBER}
         </a>
         <a
           href={WHATSAPP_LINK}
@@ -323,7 +314,7 @@ const referans = [
           data-lang="tr"
           class="inline-flex items-center justify-center bg-green-600 text-white font-bold py-4 px-8 rounded-lg hover:bg-green-500 transition-all transform hover:-translate-y-1"
         >
-          💬 WhatsApp
+          WhatsApp
         </a>
         <a
           href="/iletisim/"

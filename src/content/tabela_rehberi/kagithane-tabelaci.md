@@ -361,16 +361,16 @@ C: Evet, özellikle sanayi bölgesinde hafta sonu çalışmak daha pratik. Ek ü
 
 ## Kağıthane Hizmet Alanları
 
-✅ Çelik Yollar
-✅ Merkez Mahalle
-✅ Gürsel Mahallesi
-✅ Ayazağa (Kağıthane tarafı)
-✅ Nurtepe
-✅ Harmantepe
-✅ Yeşilce
-✅ Hamidiye
-✅ Telsizler
-✅ Seyrantepe
+Çelik Yollar
+Merkez Mahalle
+Gürsel Mahallesi
+Ayazağa (Kağıthane tarafı)
+Nurtepe
+Harmantepe
+Yeşilce
+Hamidiye
+Telsizler
+Seyrantepe
 
 ## Aynı Gün Keşif Garantisi
 

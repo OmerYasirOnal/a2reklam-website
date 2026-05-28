@@ -41,7 +41,12 @@ public/images-manifest.json
 # Tool directories
 .claude/
 .playwright-cli/
+.playwright-mcp/
 .review/
+
+# Local analiz çıktıları (awstats/cpanel screenshot'ları, deploy debug)
+awstats-*.png
+cpanel-*.png
 
 # SMTP patch (deployed separately)
 a2reklam_smtp_patch/

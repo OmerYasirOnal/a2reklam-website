@@ -39,14 +39,12 @@ const referencesJsonLd = references.map((reference, index) => ({
 ---
 
 <Layout title={title} description={description} lang="tr">
-  <script type="application/ld+json">
-    {JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      name: 'A2 Reklam Referansları',
-      itemListElement: referencesJsonLd,
-    })}
-  </script>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'A2 Reklam Referansları',
+    itemListElement: referencesJsonLd,
+  })} />
 
   <div class="relative py-24 bg-secondary overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>

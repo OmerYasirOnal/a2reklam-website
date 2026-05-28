@@ -86,7 +86,7 @@ const closeLabel = 'Kapat';
           <div class="bg-secondary/95 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl p-4 w-56">
             {topSectors.map(s => (
               <a href={`/sektorel/${s.slug}/`} class="block py-1.5 px-3 text-sm text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">
-                {s.icon} {s.name}
+                {s.name}
               </a>
             ))}
             <div class="border-t border-white/10 mt-2 pt-2">
@@ -224,7 +224,7 @@ const closeLabel = 'Kapat';
           <div class="pl-4 space-y-0.5 mt-1">
             {topSectors.map(s => (
               <a href={`/sektorel/${s.slug}/`} class="block py-2 px-4 text-sm text-gray-400 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">
-                {s.icon} {s.name}
+                {s.name}
               </a>
             ))}
             <a href="/sektorel/" class="block py-2 px-4 text-sm text-primary font-bold hover:text-white transition-colors">

@@ -278,12 +278,12 @@ Periyodik kontroller yapılır:
 20+ yıllık tecrübemizle, tüm İstanbul ilçelerinde izin süreçlerini biliyoruz.
 
 **Sunduğumuz Hizmetler:**
-✅ Ücretsiz teknik proje hazırlama
-✅ Belge kontrolü ve eksik tespit
-✅ Belediye başvuru desteği
-✅ Estetik kurul sunumları
-✅ Red durumunda çözüm önerileri
-✅ Ruhsat takip hizmeti
+Ücretsiz teknik proje hazırlama
+Belge kontrolü ve eksik tespit
+Belediye başvuru desteği
+Estetik kurul sunumları
+Red durumunda çözüm önerileri
+Ruhsat takip hizmeti
 
 **Başarı Oranımız:** %95+ ilk başvuruda onay
 
@@ -291,12 +291,12 @@ Periyodik kontroller yapılır:
 
 Başvurunuzdan önce kontrol edin:
 
-✅ Tüm belgeler hazır mı?
-✅ Teknik proje ölçülü mü?
-✅ Boyut ilçe limitleri içinde mi?
-✅ Komşu tabelaya mesafe yeterli mi?
-✅ Kat malikleri onayı alındı mı?
-✅ Ruhsat ücreti biliniyor mu?
+Tüm belgeler hazır mı?
+Teknik proje ölçülü mü?
+Boyut ilçe limitleri içinde mi?
+Komşu tabelaya mesafe yeterli mi?
+Kat malikleri onayı alındı mı?
+Ruhsat ücreti biliniyor mu?
 
 ![İzin belgesi örneği](/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-960.webp)
 

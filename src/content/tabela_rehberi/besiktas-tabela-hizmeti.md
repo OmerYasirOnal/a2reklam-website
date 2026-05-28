@@ -330,16 +330,16 @@ C: Paslanmaz çelik harf, minimal tasarım, halo efekt.
 
 ## Beşiktaş'ta Hizmet Alanlarımız
 
-✅ Levent
-✅ Etiler
-✅ Nişantaşı
-✅ Beşiktaş Merkez
-✅ Ortaköy
-✅ Bebek
-✅ Arnavutköy
-✅ Gayrettepe
-✅ Esentepe
-✅ Balmumcu
+Levent
+Etiler
+Nişantaşı
+Beşiktaş Merkez
+Ortaköy
+Bebek
+Arnavutköy
+Gayrettepe
+Esentepe
+Balmumcu
 
 ![Beşiktaş hizmet alanları](/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-960.webp)
 

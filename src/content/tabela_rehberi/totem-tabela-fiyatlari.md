@@ -318,12 +318,12 @@ Totem tabela, işletmenize nasıl katkı sağlar?
 
 20 yıllık tecrübe ve büyük üretim kapasitemiz ile:
 
-✅ Fabrika fiyatı garantisi
-✅ Gizli maliyet yok
-✅ Ücretsiz tasarım ve keşif
-✅ 2 yıl garanti dahil
-✅ Şeffaf fiyatlandırma
-✅ Taksit seçenekleri
+Fabrika fiyatı garantisi
+Gizli maliyet yok
+Ücretsiz tasarım ve keşif
+2 yıl garanti dahil
+Şeffaf fiyatlandırma
+Taksit seçenekleri
 
 ## Ücretsiz Fiyat Teklifi Alın
 

@@ -291,11 +291,11 @@ Gayrimenkule değer katar.
 A2 Reklam olarak İstanbul genelinde, özellikle Beşiktaş, Kadıköy ve Kağıthane'de 20+ yıldır paslanmaz harf tabela üretimi yapıyoruz.
 
 **Hizmetlerimiz:**
-✅ Ücretsiz tasarım ve 3D görselleştirme
-✅ 304/316 kalite garanti belgeli malzeme
-✅ Lazer kesim hassasiyeti
-✅ Profesyonel montaj ekibi
-✅ 2 yıl garanti
+Ücretsiz tasarım ve 3D görselleştirme
+304/316 kalite garanti belgeli malzeme
+Lazer kesim hassasiyeti
+Profesyonel montaj ekibi
+2 yıl garanti
 
 ## Yatırım Değerlendirmesi
 
