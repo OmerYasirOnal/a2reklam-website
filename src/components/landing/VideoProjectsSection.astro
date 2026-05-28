@@ -80,7 +80,7 @@ const videoGraph = videos.map((video) => ({
               id={`video-${video.id}`}
               class="w-full h-full object-cover"
               controls
-              preload="metadata"
+              preload="none"
               playsinline
               poster={video.poster}
               aria-label={`${t.watchLabel}: ${video.title[currentLang]}`}
