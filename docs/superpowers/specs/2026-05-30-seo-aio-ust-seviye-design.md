@@ -13,7 +13,15 @@ SEO temelleri olgun (202 sayfa, zengin şema, IndexNow, Consent Mode v2, llms.tx
 3. Şema düğümleri `@id` ile bağlı değil → AI entity anlamlandırması zayıf.
 
 ## Korunacak Güçlü Yanlar (dokunma)
-Zengin şema seti, IndexNow otomasyonu, Consent Mode v2, llms.txt/ai.txt temeli, temiz URL yapısı (trailingSlash + file format), dengeli CTA mimarisi (header + sticky mobil + sidebar — **fazla in-content CTA kartı EKLENMEYECEK**, memory kuralı).
+Zengin şema seti, IndexNow otomasyonu, Consent Mode v2, llms.txt/ai.txt temeli, temiz URL yapısı (trailingSlash + file format), dengeli CTA mimarisi (header + sticky mobil + sidebar — **fazla in-content CTA kartı EKLENMEYECEK**, memory kuralı). `HowToSchema.astro` zaten mevcut (yaygınlaştırılacak). AggregateRating **gerçek GBP verisi** (`consts.ts`: 90 yorum, 5.0).
+
+## UI / UX Tasarım İlkeleri (yeni — kullanıcı şartı)
+Tüm yeni görsel bileşenler (cevap kutuları, tanım blokları, yazar bio, açık/kapalı rozeti, vaka kartları) şu ilkelere uyacak:
+- **Sade ve göz yormayan:** düşük görsel gürültü, bol beyaz/negatif alan, mevcut renk paleti ve tipografiyle (Inter + Montserrat) tutarlı, koyu/açık tema uyumlu. Yeni renk/komponent dili icat etme.
+- **Performanslı:** sıfır veya minimum client-side JS (Astro statik bileşen tercih); CLS yaratmayan sabit ölçüler; ek font/ağır kütüphane yok; CSS Tailwind utility'leriyle, mevcut `global.css` token'larıyla.
+- **Güzel ve okunabilir:** net hiyerarşi, yeterli kontrast (WCAG AA), tutarlı `mb-10` (40px) bölüm aralığı, mobil-öncelikli. Cevap kutuları taranabilir (kısa, kalın başlık + net cevap).
+- **Erişilebilir:** semantik HTML, uygun başlık seviyesi, aria nitelikleri, focus görünürlüğü.
+- Yeni bileşenler `src/components/seo/` (şema) ve `src/components/common/` (görsel) altında, mevcut bileşen idiomuyla yazılacak. Görsel bileşen yazımında `frontend-design` skill'i kullanılacak.
 
 ## Hızlı Kazanımlar
 - [x] `robots.txt` + 18 AI-tarayıcı izni + sitemap referansı (etki 5 / efor 1) — `public/robots.txt`
@@ -39,7 +47,7 @@ Zengin şema seti, IndexNow otomasyonu, Consent Mode v2, llms.txt/ai.txt temeli,
 - [ ] İçerik boşluğu blog kümeleri: tabela fiyat rehberi, tabela izni/ruhsat süreci, bakım/onarım, malzeme karşılaştırma (4/4); hizmet pillar sayfalarına bağla.
 
 ### Dalga 3 — Dönüşüm & güven
-- [ ] Gerçek müşteri yorumları + Review şeması (4/3) — **KRİTİK RİSK:** mevcut AggregateRating gerçek yoruma dayanmıyorsa ya kaldır ya gerçek veriyle besle (Google yapılandırılmış veri cezası).
+- [ ] Sayfa içi gerçek yorum vitrini + `Review` şeması (4/3) — AggregateRating zaten gerçek GBP verisi (90/5.0). Risk DÜŞÜK; yine de Google politikası gereği aggregate'i destekleyen birkaç gerçek yorumu sayfada `Review` schema ile göstermek ideal. Uydurma yorum EKLENMEYECEK.
 - [ ] Mobilde "şu an açık/kapalı" rozeti (Pzt-Cuma 09-18) (3/2).
 - [ ] Proje referansları / vaka çalışmaları (4/4).
 
@@ -50,7 +58,7 @@ Zengin şema seti, IndexNow otomasyonu, Consent Mode v2, llms.txt/ai.txt temeli,
 
 ## Riskler
 - İlçe sayfaları farklılaştırılmazsa doorway/thin-content cezası.
-- AggregateRating gerçek yoruma dayanmıyorsa Google cezası (kaldır veya gerçek veriyle besle).
+- AggregateRating gerçek GBP verisi (90/5.0) — düşük risk; sayfada destekleyici gerçek yorum göstermek politika açısından ideal.
 - AI-tarayıcılar `.htaccess`/sunucu seviyesinde engelliyse robots.txt tek başına yetmez — sunucu doğrulaması gerekli.
 - Cloudflare eklenirken cPanel kaldırılmamalı (sadece front).
 
