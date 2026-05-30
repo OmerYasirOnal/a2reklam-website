@@ -60,3 +60,7 @@ scripts/data/indexing-log.txt
 
 # Session prompts (runtime generated)
 docs/next-session-prompt.md
+
+# Video re-encode yedekleri (scripts/optimize-videos.sh)
+public/assets/videos/.originals/
+public/assets/videos/.*.tmp.mp4
