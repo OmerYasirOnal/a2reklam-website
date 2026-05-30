@@ -30,9 +30,39 @@ export async function getStaticPaths() {
 const { entry, images } = Astro.props;
 const { Content } = await entry.render();
 const displayTitle = getServiceLabel(entry.slug, 'tr') ?? entry.data.title;
-const relatedPosts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
-  .slice(0, 3);
+// İlgili blog yazıları — KONU eşleşmeli (slug-prefix + tag), eksikse en güncelle doldurulur.
+// Önceden site geneli en yeni 3 çekiliyordu → pillar'lar konu-dışı (Sapanca/Yalova) yazılara link veriyordu.
+const deburr = (s: string) =>
+  s.toLocaleLowerCase('tr-TR')
+    .replace(/ı/g, 'i').replace(/ç/g, 'c').replace(/ş/g, 's')
+    .replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ö/g, 'o')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+const serviceSlugNorm = deburr(entry.slug);
+const serviceLabelNorm = deburr(displayTitle);
+
+const _allBlog = await getCollection('blog');
+const _scored = _allBlog
+  .map((post) => {
+    const slugPrefix = post.slug.startsWith(entry.slug) ? 3 : 0;
+    const tagHit = (post.data.tags ?? []).some((tag) => {
+      const t = deburr(tag);
+      return (
+        t.includes(serviceSlugNorm) ||
+        serviceSlugNorm.includes(t) ||
+        t.includes(serviceLabelNorm) ||
+        serviceLabelNorm.includes(t)
+      );
+    })
+      ? 1
+      : 0;
+    return { post, score: slugPrefix + tagHit, date: post.data.pubDate.getTime() };
+  })
+  .sort((a, b) => b.score - a.score || b.date - a.date);
+
+const _matched = _scored.filter((s) => s.score > 0).slice(0, 3);
+const _fillers = _scored.filter((s) => s.score === 0).slice(0, Math.max(0, 3 - _matched.length));
+const relatedPosts = [..._matched, ..._fillers].map((s) => s.post);
 
 const metaTitle = `${displayTitle} | Kurumsal Tabela Çözümleri - A2 Reklam`;
 // Description'ı 160 kar altında tut (DESC_LONG audit warning)
