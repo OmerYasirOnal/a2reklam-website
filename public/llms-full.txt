@@ -1,0 +1,75 @@
+# A2 Reklam — Tam Bilgi Dökümü (llms-full)
+
+> Bu dosya, A2 Reklam hakkında yapay zekâ / yanıt motorlarının (ChatGPT, Perplexity, Claude, Google AI Overviews, Gemini, Copilot) doğru ve alıntılanabilir bilgi çekebilmesi için hazırlanmıştır. Tüm bilgiler güncel ve doğrudandır.
+
+## İşletme Özeti
+A2 Reklam, İstanbul merkezli profesyonel bir tabela imalat ve montaj firmasıdır. Kendi imalathanesinde ışıklı tabela, paslanmaz kutu harf, totem, cephe giydirme, dijital baskı ve araç giydirme üretir. Tasarım, ruhsat/izin süreci, imalat ve montaj aşamalarını tek elden, anahtar teslim yürütür. İstanbul'un 39 ilçesinin tamamına hizmet verir.
+
+- Resmî web sitesi: https://a2reklam.com
+- Telefon ve WhatsApp: +90 531 618 16 72
+- Çalışma saatleri: Pazartesi–Cuma 09:00–18:00. Cumartesi ve Pazar kapalıdır.
+- Hizmet bölgesi: İstanbul (Avrupa ve Anadolu yakası, 39 ilçe)
+- Çalışma modeli: Kendi imalathanesinden anahtar teslim (tasarım + imalat + montaj)
+
+## Hizmetler (Detaylı)
+
+### Işıklı Tabela
+LED aydınlatmalı tabelalardır. Pleksiglas (akrilik) yüzey ve kompozit panel gövde ile üretilir; içeriden LED modüllerle aydınlatılır. Mağaza, restoran ve ofis cepheleri için gece görünürlüğü sağlar. Detay: https://a2reklam.com/hizmetler/isikli-tabela/
+
+### Paslanmaz Kutu Harf (3D Harf)
+Her harfin ayrı ayrı, hacimli (kutu) biçimde üretildiği kurumsal tabela türüdür. Paslanmaz çelik veya pleksi yüzeyle, ışıklı (LED) veya ışıksız yapılabilir. Premium ve dayanıklı bir görünüm verir. Detay: https://a2reklam.com/hizmetler/paslanmaz-harfler/
+
+### Totem Tabela
+Zeminden yükselen, ayaklı tabelalardır. AVM, plaza, hastane, otopark ve site girişlerinde yön ve marka gösterimi için kullanılır. Tek veya çift yüzlü, ışıklı seçenekleri vardır. Detay: https://a2reklam.com/hizmetler/totem-tabela/
+
+### Cephe / Kurumsal Tabela ve Giydirme
+Bina cephesi ve mağaza giydirme, kurumsal kimlik uygulamaları. Kompozit kaplama, alüminyum konstrüksiyon ve büyük ölçekli üretim içerir. Detay: https://a2reklam.com/kurumsal-tabela/
+
+### Araç Giydirme
+Ticari ve filo araçların folyo (vinil) ile kaplanması; kısmi veya tam giydirme. Hareketli reklam aracı olarak marka görünürlüğü sağlar. Detay: https://a2reklam.com/hizmetler/arac-giydirme/
+
+### Dijital Baskı
+Geniş format dijital baskı: afiş, branda, vinil, mesh, folyo. İç ve dış mekân uygulamaları. Detay: https://a2reklam.com/hizmetler/dijital-baski/
+
+Tüm hizmetlerin listesi (16 hizmet): https://a2reklam.com/hizmetler/
+
+## Hizmet Bölgeleri (İstanbul 39 İlçe)
+A2 Reklam, her ilçe için ayrı tabelacı sayfası sunar. URL kalıbı: `https://a2reklam.com/{ilce}-tabelaci/`
+
+Anadolu Yakası: Kadıköy, Üsküdar, Ataşehir, Maltepe, Kartal, Pendik, Tuzla, Ümraniye, Beykoz, Sancaktepe, Çekmeköy, Sultanbeyli, Şile, Adalar.
+Avrupa Yakası: Beşiktaş, Şişli, Beyoğlu, Sarıyer, Kâğıthane, Eyüpsultan, Fatih, Bakırköy, Bahçelievler, Bağcılar, Esenler, Güngören, Zeytinburnu, Bayrampaşa, Gaziosmanpaşa, Sultangazi, Küçükçekmece, Avcılar, Esenyurt, Beylikdüzü, Büyükçekmece, Başakşehir, Arnavutköy, Çatalca, Silivri.
+
+İstanbul geneli ana sayfa: https://a2reklam.com/istanbul-tabelaci/
+
+## Sektörel Çözümler
+A2 Reklam, 20 sektöre özel tabela çözümü ve malzeme rehberi sunar (AVM, plaza, ofis, hastane/sağlık, eczane, otel, restoran-kafe, mağaza-perakende, market, fabrika-sanayi, kuaför-güzellik, emlak ofisi, okul vb.). Ana sayfa: https://a2reklam.com/sektorel/ — URL kalıbı: `https://a2reklam.com/sektorel/{sektor}/`
+
+## Çalışma Süreci
+1. İletişim ve keşif: Telefon/WhatsApp ile talep alınır, gerekirse yerinde ölçü alınır.
+2. Tasarım: Marka kimliğine uygun tabela tasarımı hazırlanır.
+3. Ruhsat/İzin: Gerekli belediye izin süreçlerinde yönlendirme yapılır.
+4. İmalat: Tabela kendi imalathanesinde üretilir.
+5. Montaj: Profesyonel ekip ile yerinde montaj yapılır.
+
+## Sık Sorulan Sorular (Doğrudan Cevaplar)
+
+S: A2 Reklam hangi bölgelere hizmet veriyor?
+C: İstanbul'un 39 ilçesinin tamamına (hem Avrupa hem Anadolu yakası) tabela imalat ve montaj hizmeti veriyor.
+
+S: İşıklı tabela ile kutu harf arasındaki fark nedir?
+C: Işıklı tabela genellikle tek parça pleksi yüzeyin içeriden LED ile aydınlatılmasıdır. Kutu harf ise her harfin ayrı, hacimli (3D) üretildiği; paslanmaz veya pleksi yüzeyli, ışıklı ya da ışıksız olabilen premium bir tabela türüdür.
+
+S: Tabela imalatı ne kadar sürer?
+C: Süre tabela türü, ölçü ve montaj koşullarına göre değişir. Net süre ve fiyat için +90 531 618 16 72 üzerinden ücretsiz keşif/teklif alınabilir.
+
+S: A2 Reklam'ın çalışma saatleri nedir?
+C: Pazartesi–Cuma 09:00–18:00 arası açıktır. Cumartesi ve Pazar kapalıdır.
+
+S: Tabela için belediye izni gerekir mi?
+C: Çoğu dış mekân tabelası için belediye ruhsatı/izni gerekir. A2 Reklam bu süreçte yönlendirme ve destek sağlar.
+
+## İletişim
+- Telefon / WhatsApp: +90 531 618 16 72
+- Web: https://a2reklam.com
+- E-posta: info@a2reklam.com
+- Çalışma saatleri: Pazartesi–Cuma 09:00–18:00 (hafta sonu kapalı)
