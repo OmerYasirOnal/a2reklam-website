@@ -1,68 +1,79 @@
-# A2 Reklam — SEO / AIO "En Üst Seviye" Optimizasyon Yol Haritası
+# A2 Reklam — SEO / AIO "En Üst Seviye" Optimizasyon — Tasarım & Yol Haritası
 
-**Tarih:** 2026-05-30
-**Dal:** `seo-aio-ust-seviye`
-**Hedef (eşit ağırlıkta):** (1) organik trafik/sıralama, (2) AI görünürlük (AEO/AIO), (3) dönüşüm, (4) teknik CWV.
+**Tarih:** 2026-05-30 · **Dal:** `seo-aio-ust-seviye`
+**Hedef (eşit ağırlıkta):** (1) organik trafik/sıralama · (2) AI görünürlük (AEO/AIO) · (3) dönüşüm · (4) teknik CWV.
+**Kaynak:** 6 boyutlu, 22-ajanlı adversarial denetim (1.8M token) → 11 doğrulanmış yüksek/kritik + 29 orta/düşük bulgu.
 
-Kaynak: 6 boyutlu çok-ajanlı denetim (technical-seo, structured-data, aeo-aio, performance-cwv, content-links, conversion-ux) → 14 doğrulanmış yüksek/kritik bulgu, 23 orta/düşük bulgu.
+> ⚠️ **Düzeltme notu:** İlk hızlı taramam birkaç şeyi yanlış varsaydı (robots eksik sandım, @id graph gerekiyor sandım — ikisi de zaten vardı). Derin denetim düzeltti. Bu spec **doğrulanmış gerçeği** yansıtır.
 
-## Mevcut Durum
-SEO temelleri olgun (202 sayfa, zengin şema, IndexNow, Consent Mode v2, llms.txt/ai.txt). "En üst seviye" için 3 kritik açık:
-1. `robots.txt` fiziksel olarak yoktu → AI-tarayıcı izni + sitemap referansı eksikti.
-2. İlçe sayfaları şablon-ağırlıklı → doorway/thin-content riski.
-3. Şema düğümleri `@id` ile bağlı değil → AI entity anlamlandırması zayıf.
+## Yönetici Özeti
+Site SEO/AIO altyapısı zaten **ileri seviye** — temel eksik yok. "En üst seviye" artık temel kurmak değil, ileri boşlukları kapatmak. Dört eşit hedefteki en büyük kaldıraçlar:
+1. **Teknik/şema doğruluğu:** (✅ düzeltildi) `localBusiness.ts` Cumartesi açık ilan ediyordu — Pzt-Cuma-only kuralına aykırı.
+2. **Dönüşüm:** WhatsApp qualification paneli mobilde gizli (`hidden md:block`) — en güçlü lead aracı ziyaretçi çoğunluğundan saklı; lead formu hem e-posta hem telefon zorunlu tutarak funnel'ı daraltıyor.
+3. **İçerik kalitesi:** ~52 "spun" blog yazısı Helpful-Content riski; hizmet pillar'larının "İlgili Bloglar" bloğu konu-dışı (Sapanca/Yalova) en yeni yazıları çekiyor.
+4. **AIO:** answer-box, veri-senkronlu llms-full, fiyatı cümleye gömme gibi alıntılanabilirlik hamleleri henüz yok.
 
-## Korunacak Güçlü Yanlar (dokunma)
-Zengin şema seti, IndexNow otomasyonu, Consent Mode v2, llms.txt/ai.txt temeli, temiz URL yapısı (trailingSlash + file format), dengeli CTA mimarisi (header + sticky mobil + sidebar — **fazla in-content CTA kartı EKLENMEYECEK**, memory kuralı). `HowToSchema.astro` zaten mevcut (yaygınlaştırılacak). AggregateRating **gerçek GBP verisi** (`consts.ts`: 90 yorum, 5.0).
+## Korunacak Güçlü Yanlar (DOKUNMA — zaten en üst seviye)
+- **Graf @id JSON-LD:** `src/utils/localBusiness.ts` `#organization` (LocalBusiness+ProfessionalService+Organization triple-type, geo, foundingDate 2005, `makesOffer`→15 `#service`), `SiteSchemas.astro` `#website` (publisher @id + speakable), `serviceSchema.ts` `#service`+`#webpage`. **@id graph zaten var.**
+- **AggregateRating sorumlu:** koşullu (gerçek veri varsa), `consts.ts` tek kaynak (5.0/90 gerçek GBP), `reviews.ts`'te 7 isimli yorum. **Ceza riski YOK — güç.**
+- **HowTo şeması 16 hizmet sayfasında zaten aktif.**
+- **CWV temeli güçlü:** self-host variable woff2 (CDN yok) + font-display:swap, click-to-play hero LCP + fetchpriority, **0 `client:` directive** (tarayıcıya 0 byte JS), glightbox sadece galeride.
+- **robots.txt dinamik route** (`src/pages/robots.txt.ts`): tüm AI crawler'lar wildcard Allow altında açık + `/api//en//ar//hizmet-bolgeleri/` Disallow + 2 sitemap + Bing/Yandex verification.
+- Sitemap tip-bazlı priority; katmanlı çakışmasız CTA (mobil≠desktop); Priority-1/2 ilçeler gerçekten farklılaştırılmış; gerçek isimli vaka analizleri (E-E-A-T); iyi contact form UX.
 
-## UI / UX Tasarım İlkeleri (yeni — kullanıcı şartı)
-Tüm yeni görsel bileşenler (cevap kutuları, tanım blokları, yazar bio, açık/kapalı rozeti, vaka kartları) şu ilkelere uyacak:
-- **Sade ve göz yormayan:** düşük görsel gürültü, bol beyaz/negatif alan, mevcut renk paleti ve tipografiyle (Inter + Montserrat) tutarlı, koyu/açık tema uyumlu. Yeni renk/komponent dili icat etme.
-- **Performanslı:** sıfır veya minimum client-side JS (Astro statik bileşen tercih); CLS yaratmayan sabit ölçüler; ek font/ağır kütüphane yok; CSS Tailwind utility'leriyle, mevcut `global.css` token'larıyla.
-- **Güzel ve okunabilir:** net hiyerarşi, yeterli kontrast (WCAG AA), tutarlı `mb-10` (40px) bölüm aralığı, mobil-öncelikli. Cevap kutuları taranabilir (kısa, kalın başlık + net cevap).
-- **Erişilebilir:** semantik HTML, uygun başlık seviyesi, aria nitelikleri, focus görünürlüğü.
-- Yeni bileşenler `src/components/seo/` (şema) ve `src/components/common/` (görsel) altında, mevcut bileşen idiomuyla yazılacak. Görsel bileşen yazımında `frontend-design` skill'i kullanılacak.
+## ⚠️ Ölü Kod Notu
+`src/components/seo/LocalBusinessSchema.astro` + `ServiceSchema.astro` **hiçbir sayfa tarafından import edilmiyor** (ölü). Canlı şema `src/utils/*.ts`. Bunları düzenleme; opsiyonel temizlik.
 
-## Hızlı Kazanımlar
-- [x] `robots.txt` + 18 AI-tarayıcı izni + sitemap referansı (etki 5 / efor 1) — `public/robots.txt`
-- [ ] `openingHoursSpecification` → Pzt-Cuma 09:00-18:00, hafta sonu kapalı (3/1) — `src/components/seo/`
-- [ ] Blog yazarı → `Person` entity + yazar bio kutusu (E-E-A-T) (3/2)
+## UI / UX Tasarım İlkeleri (kullanıcı şartı)
+Yeni görsel bileşenler: **sade/göz yormayan** (mevcut palet + Inter/Montserrat, dark/light, bol negatif alan), **performanslı** (0/min client JS — Astro statik; CLS yok; ek font/lib yok), **güzel/erişilebilir** (WCAG AA, net hiyerarşi, `mb-10` standardı, mobil-öncelikli). `frontend-design` skill ile.
 
-## Seçilen AIO İnisiyatifleri (4'ü de onaylandı)
-- [x] **robots.txt AI-izinleri** (5/1) — TAMAM
-- [ ] **Alıntılanabilir cevap kutuları + tanım blokları** (5/3) — sektör/hizmet sayfalarına TL;DR özet, tanım blokları, soru-cevap. Yeni bileşen: `AnswerBox.astro` benzeri.
-- [ ] **Şema `@id` knowledge graph** (4/3) — Organization/LocalBusiness/WebSite düğümlerini `@id` ile bağla, sayfalar arası tutarlı referans.
-- [x] **`llms-full.txt` + genişletilmiş `llms.txt`** (4/2) — TAMAM (`public/llms.txt`, `public/llms-full.txt`)
-- [ ] **HowTo + QAPage şema** (3/3) — 20 rehbere HowTo, SSS'lere QAPage.
+## Bu Turda TAMAMLANANLAR
+- ✅ `localBusiness.ts` — Cumartesi 09:00-14:00 bloğu silindi (KRİTİK, memory kuralı). Build doğrulandı: Saturday=0, Mon-Fri=1, geo+aggregateRating sağlam.
+- ✅ `public/robots.txt` kaldırıldı (generated route'u gölgeliyor + Disallow'ları düşürüyordu).
+- ✅ `public/llms.txt` Türkçe kapsamlı yeniden yazım + `public/llms-full.txt` (route yok, çakışma yok; veri-senkronlu generator AIO opsiyonu olarak sonraya).
 
-## Yol Haritası (Dalga)
+---
 
-### Dalga 1 — AI görünürlük & tarama temelleri
-- [x] AI-tarayıcı erişimini aç (robots.txt) — TAMAM. Kalan: `.htaccess`/sunucu tarafı AI-bot engeli olmadığını doğrula.
-- [ ] Şema `@id` graph kur (4/3).
+## Quick Wins (doğrulanmış, impact/effort)
+| # | İş | I/E | Dosya |
+|---|----|-----|-------|
+| ✅1 | Cumartesi açılış bloğunu sil | 4/1 | `localBusiness.ts` (DONE) |
+| 2 | WhatsApp panelini mobilde erişilebilir yap | 4/2 | `WhatsAppAssistant.astro` / `MobileCTA.astro` |
+| 3 | Hizmet pillar "İlgili Bloglar"ı konu-eşleşmeli yap | 4/2 | `hizmetler/[...slug].astro` + frontmatter `topicCluster` |
+| 4 | Lead formunda e-postayı opsiyonel yap | 3/1 | `iletisim.astro` (önce `api/contact.php` doğrula) |
+| 5 | AggregateRating'i görünür yıldız + sayı + link yap | 3/2 | `[district].astro` sidebar/trust strip |
+| 6 | Türkçe latin-ext font subset preload | 3/1 | `SEO.astro` |
+| 7 | Hizmet Türü select'e boş placeholder | 2/1 | `iletisim.astro` |
 
-### Dalga 2 — İçerik derinliği & thin-content giderme
-- [ ] İlçe sayfalarını farklılaştır: yerel referans projeler, ilçeye özel SSS, mahalle listesi, yerel landmark (5/4) — `src/data/districts.ts`.
-- [ ] Alıntılanabilir cevap kutuları + tanım blokları (4/3).
-- [ ] İçerik boşluğu blog kümeleri: tabela fiyat rehberi, tabela izni/ruhsat süreci, bakım/onarım, malzeme karşılaştırma (4/4); hizmet pillar sayfalarına bağla.
+## AIO/AEO Menüsü (kullanıcı 4'ünü onayladı — ⭐)
+| İş | I/E | Durum |
+|----|-----|-------|
+| ⭐ **AnswerBox** (sektör/hizmet/ilçe: tek-cümle tanım + Kısa Bilgiler) | 4/3 | Onaylı |
+| ⭐ **Veri-senkronlu llms.txt + llms-full.txt generator** (`scripts/`, deploy'da) | 4/3 | Onaylı (interim statik var) |
+| ⭐ Malzeme/fiyat tablolarını **alıntılanabilir cümleyle** sar (`priceSummary`) | 4/2 | Onaylı |
+| ⭐ `tabela-rehberi`'ye **HowTo + speakable** şema | 3/3 | Onaylı |
+| Görünür "Son güncelleme" + page-level dateModified | 2/2 | Düşük öncelik |
+| İlçe/sektör Service node @id graph + OfferCatalog | 2/3 | Düşük (zaten valid) |
 
-### Dalga 3 — Dönüşüm & güven
-- [ ] Sayfa içi gerçek yorum vitrini + `Review` şeması (4/3) — AggregateRating zaten gerçek GBP verisi (90/5.0). Risk DÜŞÜK; yine de Google politikası gereği aggregate'i destekleyen birkaç gerçek yorumu sayfada `Review` schema ile göstermek ideal. Uydurma yorum EKLENMEYECEK.
-- [ ] Mobilde "şu an açık/kapalı" rozeti (Pzt-Cuma 09-18) (3/2).
-- [ ] Proje referansları / vaka çalışmaları (4/4).
-
-### Dalga 4 — Performans / CWV
-- [ ] Görselleri `astro:assets` `<Image>`'e taşı, AVIF/WebP + responsive srcset + lazy (4/3).
-- [ ] Cloudflare CDN front (cPanel iptal etmeden — memory kuralı) (4/3).
-- [ ] Font subset (latin-ext: ş/ğ/ı), preload, font-display swap doğrula (2/2).
+## Phased Roadmap (quick win + AIO dışı orta öncelik)
+**Dalga A — Dönüşüm & altyapı:** Cloudflare CDN front (cPanel kalır; 509/bandwidth) · off-hours "Açık/Kapalı" rozeti + Call→WhatsApp emphasis swap (yeni kart DEĞİL) · quote link'lere hizmet/ilçe context prefill · contact form hata yoluna WhatsApp fallback.
+**Dalga B — Teknik SEO + şema:** `.htaccess` Brotli/immutable doğrula · sitemap `lastmod` gerçek updatedDate · video-sitemap.xml geçerlilik · ai.txt temizliği · thank-you noindex doğrula · OG image boyut/type/alt · Person author (E-E-A-T) · BlogPosting publisher→@id ref · logo ImageObject width/height.
+**Dalga C — İçerik kalitesi & iç link:** ~52 spun blog konsolide/orijinalleştir (Helpful-Content) · İBB tabela yönetmeliği pillar'ı · 39 ilçe metaDescription de-dupe + priority-3 intro farklılaştır · 38-link ilçe bandını contextual yap · yüksek-niyet keyword boşlukları (tabela tamiri/LED arıza, pleksi, tente, vitrin folyo) · blog↔rehber cannibalization · galeri görsel SEO.
+**Dalga D — Performans:** görseller→`astro:assets <Picture>` AVIF/srcset + boyutsuz `<img>` width/height · `global.css` scope.
 
 ## Riskler
-- İlçe sayfaları farklılaştırılmazsa doorway/thin-content cezası.
-- AggregateRating gerçek GBP verisi (90/5.0) — düşük risk; sayfada destekleyici gerçek yorum göstermek politika açısından ideal.
-- AI-tarayıcılar `.htaccess`/sunucu seviyesinde engelliyse robots.txt tek başına yetmez — sunucu doğrulaması gerekli.
-- Cloudflare eklenirken cPanel kaldırılmamalı (sadece front).
+- **Helpful-Content/scaled-content:** ~52 near-dup blog. Konsolide etmeden DAHA FAZLA üretme; 301'lerken iç link+sitemap güncelle.
+- AggregateRating gerçek veri — bozma; yeni rating'de asla uydurma sayı.
+- Cloudflare nameserver geçişi propagation riski (Haziran 1 sonrası; DNS/SSL Full-strict).
+- E-postayı opsiyonel yapmadan `api/contact.php`'nin eksik email kabul ettiğini doğrula.
+- Off-hours rozeti **client-side** olmalı (statik HTML + edge cache).
+- AVIF migration markdown `<img>`'leri rehype olmadan kapsamaz — ucuz win'i ağır migration'dan ayır.
 
-## Bu Turda Yapılanlar
-- `public/robots.txt` oluşturuldu (18 AI-bot Allow + sitemap referansı).
-- `public/llms.txt` kapsamlı yeniden yazıldı (hizmetler + bölgeler + sektörler + bilgi kaynakları + işletme bilgileri).
-- `public/llms-full.txt` oluşturuldu (detaylı, alıntılanabilir döküm + doğrudan-cevap SSS).
+## Açık Kullanıcı/Sunucu Görevi
+- cPanel `.htaccess`'te AI-bot engeli OLMADIĞINI doğrula (repo'da .htaccess yok).
+- Şema değişiklikleri sonrası Google Rich Results Test.
+
+## References
+- Denetim: workflow `wf_62a8d82e-24e` (task `wssrh682j`), sonuç `/private/tmp/.../wssrh682j.output`
+- Canlı şema: `src/utils/localBusiness.ts`, `serviceSchema.ts`, `SiteSchemas.astro`, `SEO.astro`
+- Generated route'lar: `src/pages/{robots.txt,video-sitemap.xml}.ts`
