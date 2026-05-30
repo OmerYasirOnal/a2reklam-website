@@ -1,37 +1,35 @@
-# A2 Reklam
-> Professional signage manufacturing in Istanbul since 2005. Design, production, installation.
+# A2 Reklam — Profesyonel Tabela İmalatı ve Montajı
 
-## Company Info
-- Location: Kagithane, Istanbul, Turkey
-- Phone: +90 531 618 16 72
-- Email: info@a2reklam.com
-- Website: https://a2reklam.com
+> A2 Reklam, İstanbul merkezli profesyonel tabela imalat ve montaj firmasıdır. Işıklı tabela, paslanmaz kutu harf, totem, cephe giydirme, dijital baskı ve araç giydirme alanlarında, İstanbul'un 39 ilçesine kendi imalathanesinden anahtar teslim hizmet verir. Tasarım, ruhsat süreci, imalat ve montaj tek elden yürütülür.
 
-## What We Do
-A2 Reklam manufactures and installs commercial signage across Istanbul.
-Our core capabilities: illuminated signs, channel letters, totem signs, facade cladding,
-vehicle wraps, wayfinding systems, stainless steel letters, and custom fabrication.
+## Hizmetler
+- [Işıklı Tabela](https://a2reklam.com/hizmetler/isikli-tabela/): LED aydınlatmalı pleksi ve kompozit ışıklı tabela imalatı
+- [Paslanmaz Kutu Harf](https://a2reklam.com/hizmetler/paslanmaz-harfler/): Paslanmaz çelik ve pleksi kutu harf (3D harf) imalatı
+- [Totem Tabela](https://a2reklam.com/hizmetler/totem-tabela/): Ayaklı, zemin ve yön totem tabelalar
+- [Araç Giydirme](https://a2reklam.com/hizmetler/arac-giydirme/): Ticari ve filo araç folyo kaplama
+- [Cephe / Kurumsal Tabela](https://a2reklam.com/kurumsal-tabela/): Bina cephesi, mağaza ve kurumsal giydirme
+- [Dijital Baskı](https://a2reklam.com/hizmetler/dijital-baski/): Geniş format dijital baskı (afiş, branda, vinil)
+- [Tüm Hizmetler](https://a2reklam.com/hizmetler/): 16 tabela ve reklam hizmetinin tam listesi
 
-## Pages
-- [Homepage](https://a2reklam.com/)
-- [All Services](https://a2reklam.com/hizmetler/)
-- [Illuminated Signs](https://a2reklam.com/hizmetler/isikli-tabela/)
-- [Channel Letters](https://a2reklam.com/hizmetler/paslanmaz-harfler/)
-- [Totem Signs](https://a2reklam.com/hizmetler/totem/)
-- [Facade Signs](https://a2reklam.com/hizmetler/cephe-tabela/)
-- [Vehicle Wraps](https://a2reklam.com/hizmetler/arac-giydirme/)
-- [Istanbul Districts](https://a2reklam.com/istanbul-tabelaci/)
-- [Industry Solutions](https://a2reklam.com/sektorel/)
-- [Blog](https://a2reklam.com/blog/)
-- [Signage Guide](https://a2reklam.com/tabela-rehberi/)
-- [Contact](https://a2reklam.com/iletisim/)
-- [Gallery](https://a2reklam.com/galeri/)
+## Hizmet Bölgeleri
+- [İstanbul Tabelacı](https://a2reklam.com/istanbul-tabelaci/): İstanbul geneli tabela hizmeti ana sayfası
+- Anadolu Yakası: Kadıköy, Üsküdar, Ataşehir, Maltepe, Kartal, Pendik, Tuzla, Ümraniye, Beykoz, Sancaktepe, Çekmeköy, Sultanbeyli, Şile, Adalar
+- Avrupa Yakası: Beşiktaş, Şişli, Beyoğlu, Sarıyer, Kâğıthane, Eyüpsultan, Fatih, Bakırköy, Bahçelievler, Bağcılar, Esenler, Güngören, Zeytinburnu, Bayrampaşa, Gaziosmanpaşa, Sultangazi, Küçükçekmece, Avcılar, Esenyurt, Beylikdüzü, Büyükçekmece, Başakşehir, Arnavutköy, Çatalca, Silivri
+- URL kalıbı: `https://a2reklam.com/{ilce}-tabelaci/` (örn. `/kadikoy-tabelaci/`)
 
-## Sectors Served
-Restaurants, pharmacies, hotels, factories, shopping malls, hospitals,
-schools, gas stations, gyms, law offices, barbers, car washes, and more.
+## Sektörel Çözümler
+- [Sektörel Tabela Çözümleri](https://a2reklam.com/sektorel/): AVM, plaza, hastane, otel, restoran, mağaza, fabrika, eczane ve daha fazlası için 20 sektöre özel tabela rehberi
+- URL kalıbı: `https://a2reklam.com/sektorel/{sektor}/`
 
-## Optional
-- [ai.txt](https://a2reklam.com/ai.txt) — detailed AI crawl guidance
-- [Sitemap](https://a2reklam.com/sitemap-index.xml)
-- [robots.txt](https://a2reklam.com/robots.txt)
+## Bilgi Kaynakları
+- [Tabela Rehberi](https://a2reklam.com/tabela-rehberi/): Tabela türleri, malzeme seçimi ve montaj rehberleri (20 içerik)
+- [Blog](https://a2reklam.com/blog/): Tabela imalatı, fiyat, izin ve bakım üzerine 80+ makale
+- [Galeri](https://a2reklam.com/galeri/): Tamamlanmış proje görselleri
+
+## İşletme Bilgileri
+- Firma: A2 Reklam (tabela imalat ve montaj)
+- Telefon / WhatsApp: +90 531 618 16 72
+- Web: https://a2reklam.com
+- Hizmet alanı: İstanbul (39 ilçe)
+- Çalışma saatleri: Pazartesi–Cuma 09:00–18:00 (Cumartesi ve Pazar kapalı)
+- Detaylı döküm: https://a2reklam.com/llms-full.txt
