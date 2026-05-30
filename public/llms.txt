@@ -5,10 +5,11 @@
 ## Hizmetler
 - [Işıklı Tabela](https://a2reklam.com/hizmetler/isikli-tabela/): LED aydınlatmalı pleksi ve kompozit ışıklı tabela imalatı
 - [Paslanmaz Kutu Harf](https://a2reklam.com/hizmetler/paslanmaz-harfler/): Paslanmaz çelik ve pleksi kutu harf (3D harf) imalatı
-- [Totem Tabela](https://a2reklam.com/hizmetler/totem-tabela/): Ayaklı, zemin ve yön totem tabelalar
+- [Totem Tabela](https://a2reklam.com/hizmetler/totem/): Ayaklı, zemin ve yön totem tabelalar
 - [Araç Giydirme](https://a2reklam.com/hizmetler/arac-giydirme/): Ticari ve filo araç folyo kaplama
-- [Cephe / Kurumsal Tabela](https://a2reklam.com/kurumsal-tabela/): Bina cephesi, mağaza ve kurumsal giydirme
-- [Dijital Baskı](https://a2reklam.com/hizmetler/dijital-baski/): Geniş format dijital baskı (afiş, branda, vinil)
+- [Cephe Tabela](https://a2reklam.com/hizmetler/cephe-tabela/): Bina cephesi tabela ve kompozit kaplama
+- [Kurumsal Tabela](https://a2reklam.com/kurumsal-tabela/): Mağaza ve kurumsal kimlik giydirme
+- [Yönlendirme Sistemleri](https://a2reklam.com/hizmetler/yonlendirme/): İç/dış mekân yönlendirme ve wayfinding
 - [Tüm Hizmetler](https://a2reklam.com/hizmetler/): 16 tabela ve reklam hizmetinin tam listesi
 
 ## Hizmet Bölgeleri
