@@ -35,15 +35,15 @@ Yeni görsel bileşenler: **sade/göz yormayan** (mevcut palet + Inter/Montserra
 ---
 
 ## Quick Wins (doğrulanmış, impact/effort)
-| # | İş | I/E | Dosya |
+| # | İş | I/E | Durum |
 |---|----|-----|-------|
-| ✅1 | Cumartesi açılış bloğunu sil | 4/1 | `localBusiness.ts` (DONE) |
-| 2 | WhatsApp panelini mobilde erişilebilir yap | 4/2 | `WhatsAppAssistant.astro` / `MobileCTA.astro` |
-| 3 | Hizmet pillar "İlgili Bloglar"ı konu-eşleşmeli yap | 4/2 | `hizmetler/[...slug].astro` + frontmatter `topicCluster` |
-| 4 | Lead formunda e-postayı opsiyonel yap | 3/1 | `iletisim.astro` (önce `api/contact.php` doğrula) |
-| 5 | AggregateRating'i görünür yıldız + sayı + link yap | 3/2 | `[district].astro` sidebar/trust strip |
-| 6 | Türkçe latin-ext font subset preload | 3/1 | `SEO.astro` |
-| 7 | Hizmet Türü select'e boş placeholder | 2/1 | `iletisim.astro` |
+| 1 | Cumartesi açılış bloğunu sil | 4/1 | ✅ DONE (`localBusiness.ts`, commit 45c27cc) |
+| 2 | WhatsApp panelini mobilde erişilebilir yap | 4/2 | ⏸ BEKLİYOR — mobilde BackToTop (`bottom-20`) ile çakışma var; yeniden konumlandırma + **görsel doğrulama** gerek |
+| 3 | Hizmet pillar "İlgili Bloglar"ı konu-eşleşmeli yap | 4/2 | ✅ DONE (`hizmetler/[...slug].astro`, commit 2f3a0c7) |
+| 4 | Lead formunda e-postayı opsiyonel yap | 3/1 | 🚫 BLOKE — sunucu tarafı `api/contact.php` doğrulaması gerek (repo'da yok) |
+| 5 | Rating'i görünür yıldız + 90 yorum + link yap | 3/2 | ✅ DONE (`[district].astro`, commit a8f9c2e) |
+| 6 | Türkçe latin-ext font subset preload | 3/1 | ✅ DONE (`SEO.astro`, commit 26bf832) |
+| 7 | Hizmet Türü select'e boş placeholder | 2/1 | ✅ ZATEN MEVCUT (`iletisim.astro` — placeholder vardı) |
 
 ## AIO/AEO Menüsü (kullanıcı 4'ünü onayladı — ⭐)
 | İş | I/E | Durum |
