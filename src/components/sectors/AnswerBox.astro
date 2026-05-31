@@ -1,0 +1,63 @@
+---
+/**
+ * AnswerBox — AEO/AIO alıntılanabilir özet kutusu.
+ * AI yanıt motorlarının (AI Overviews, Perplexity, ChatGPT) doğrudan çekebileceği
+ * tek-cümle tanım + kısa bilgiler + (varsa) fiyat cümlesi.
+ * Sade/performanslı: sıfır client JS, mevcut palet (primary/surface), dark/light uyumlu.
+ * speakable şeması için stabil seçiciler: .answerbox-definition / .answerbox-facts
+ */
+import type { QuickFact } from '../../utils/sectorFacts';
+
+interface Props {
+  /** Alıntılanabilir tek-cümle tanım (zorunlu) */
+  definition: string;
+  /** "Kısa Bilgiler" satırları */
+  facts?: QuickFact[];
+  /** Tek-cümle fiyat özeti (opsiyonel) */
+  priceSummary?: string | null;
+  /** Başlık etiketi */
+  heading?: string;
+}
+
+const { definition, facts = [], priceSummary = null, heading = 'Kısa Cevap' } = Astro.props;
+---
+
+<aside
+  class="answerbox glass-card not-prose mb-10 p-5 md:p-6"
+  aria-label={heading}
+>
+  <div class="flex items-center gap-2 mb-3">
+    <span class="inline-flex h-6 w-6 items-center justify-center rounded-md bg-primary/15 text-primary" aria-hidden="true">
+      <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+    </span>
+    <span class="text-[11px] font-semibold uppercase tracking-widest text-primary">{heading}</span>
+  </div>
+
+  <p class="answerbox-definition text-base md:text-lg font-medium leading-relaxed text-gray-100">
+    {definition}
+    {priceSummary && <span class="block mt-2 text-sm md:text-base font-normal text-gray-300">{priceSummary}</span>}
+  </p>
+
+  {facts.length > 0 && (
+    <dl class="answerbox-facts mt-5 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-white/10 pt-5 sm:grid-cols-2 lg:grid-cols-4">
+      {facts.map((fact) => (
+        <div>
+          <dt class="text-[11px] uppercase tracking-wide text-gray-500">{fact.label}</dt>
+          <dd class="mt-1 text-sm font-semibold text-white leading-snug">{fact.value}</dd>
+        </div>
+      ))}
+    </dl>
+  )}
+</aside>
+
+<style>
+  /* Light tema: AnswerBox metin kontrastı (glass-card zaten bg/border'ı çevirir) */
+  .answerbox:where([data-theme='light'] *) .answerbox-definition {
+    color: #1a1f26;
+  }
+  .answerbox:where([data-theme='light'] *) dd {
+    color: #11161d;
+  }
+</style>
