@@ -38,12 +38,12 @@ Yeni görsel bileşenler: **sade/göz yormayan** (mevcut palet + Inter/Montserra
 | # | İş | I/E | Durum |
 |---|----|-----|-------|
 | 1 | Cumartesi açılış bloğunu sil | 4/1 | ✅ DONE (`localBusiness.ts`, commit 45c27cc) |
-| 2 | WhatsApp panelini mobilde erişilebilir yap | 4/2 | ⏸ BEKLİYOR — mobilde BackToTop (`bottom-20`) ile çakışma var; yeniden konumlandırma + **görsel doğrulama** gerek |
-| 3 | Hizmet pillar "İlgili Bloglar"ı konu-eşleşmeli yap | 4/2 | ✅ DONE (`hizmetler/[...slug].astro`, commit 2f3a0c7) |
+| 2 | WhatsApp panelini mobilde erişilebilir yap | 4/2 | ⏸ BEKLİYOR — mobilde BackToTop (`bottom-36`) + MobileCTA bar ile çakışma; yeniden konumlandırma + **görsel (Playwright) doğrulama** gerek |
+| 3 | Hizmet pillar "İlgili Bloglar"ı konu-eşleşmeli yap | 4/2 | ✅ DONE (`hizmetler/[...slug].astro`, commit 6178b2f) |
 | 4 | Lead formunda e-postayı opsiyonel yap | 3/1 | 🚫 BLOKE — sunucu tarafı `api/contact.php` doğrulaması gerek (repo'da yok) |
-| 5 | Rating'i görünür yıldız + 90 yorum + link yap | 3/2 | ✅ DONE (`[district].astro`, commit a8f9c2e) |
-| 6 | Türkçe latin-ext font subset preload | 3/1 | ✅ DONE (`SEO.astro`, commit 26bf832) |
-| 7 | Hizmet Türü select'e boş placeholder | 2/1 | ✅ ZATEN MEVCUT (`iletisim.astro` — placeholder vardı) |
+| 5 | Rating'i görünür yıldız + 90 yorum + link yap | 3/2 | ✅ DONE (`[district].astro`, commit 1932d44) |
+| 6 | Türkçe latin-ext font subset preload | 3/1 | ✅ DONE (`SEO.astro`, Vite ?url ile hash-bağımsız, commit 4cb1c7f) |
+| 7 | Hizmet Türü select'e boş placeholder | 2/1 | ⚪ ATLANDI — select'te placeholder yok ama `Diğer` fallback var + ilk hizmet otomatik seçili; düşük öncelik, gerekirse sonra |
 
 ## AIO/AEO Menüsü (kullanıcı 4'ünü onayladı — ⭐)
 | İş | I/E | Durum |
