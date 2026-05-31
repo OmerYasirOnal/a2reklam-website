@@ -36,10 +36,12 @@
 - [ ] Session 3.1 + 3.2: Cloudflare hesabı + a2reklam.com ekle + DNS scan (nameserver switch YOK)
 
 ### June 1'de yapılacak
-- [ ] Site otomatik 200 dönmeye başlar (kota yenilenir)
-- [ ] `npm run deploy` (Session 1 kodu canlıya gider)
-- [ ] Session 3.3: Cloudflare nameserver switch (registrar'da)
-- [ ] Google Ads kampanyaları resume
+- [x] Site otomatik 200 dönmeye başladı (kota yenilendi) — doğrulandı 01:07 TR, HTTP 200
+- [x] **Deploy yapıldı** (01:07 TR): Session 1 (hero click-to-play) + Session 1.5 (video re-encode 15.3 MB) + SEO/AIO (15 commit) + 6 otomatik blog → 215 sayfa canlıda. Bandwidth fix canlıda doğrulandı (sayfa-yükü autoplay YOK, cephe-01.mp4=2.38 MB).
+- [x] **main reconcile + push** (7d519e4): 3 dal (seo-aio-ust-seviye + origin/main + worktree video) birleştirildi → main artık bandwidth fix içeriyor → `cpanel-deploy.yml` otomatik deploy'u artık fix'li tabandan çalışır (CI run 26725975034 success, 37s). Pzt/Prş otomatik blog cron'u artık 509'u geri getirmez.
+- [ ] Session 3.3: Cloudflare nameserver switch (registrar'da) ← SIRADAKİ
+- [ ] Google Ads kampanyaları resume (manuel — Ads UI)
+- [ ] Session 2: cPanel Hotlink uzantı listesini tamamla (5 dk)
 
 ---
 
@@ -243,10 +245,11 @@ npm run deploy
 - [x] Session 0 — Option B (June 1 bekleniyor)
   - [x] Google Ads pause
   - [x] Session 1 kodu commit'lendi (0eda894)
-  - [ ] Cloudflare hesabı + DNS scan (nameserver switch'siz) ← 🎯 ŞİMDİ
+  - [ ] Cloudflare hesabı + DNS scan (nameserver switch'siz) ← 🎯 SIRADAKİ
   - [x] DNS yedeği screenshot
 - [x] Session 1 — Hero click-to-play + preload fixes
 - [x] Session 1.5 — Video H.264 re-encode (27→15.3 MB −%43, worktree `bandwidth-video-opt`, deploy June 1)
+- [x] **June 1 DEPLOY + main reconcile** ✅ — 3 dal birleşti, 215 sayfa canlıda, bandwidth fix main'de, CI auto-deploy fix'li tabandan çalışıyor (commit 7d519e4)
 - [ ] Session 2 — Hotlink uzantı listesi
 - [ ] Session 3 — Cloudflare Free kurulumu (3.1/3.2 şimdi, 3.3+ June 1 sonrası)
 - [ ] Session 4 — Cloudflare doğrulama
@@ -255,5 +258,5 @@ npm run deploy
 
 ---
 
-*Last updated: 2026-05-30 (araştırma + video re-encode + bağımsız 3-boyutlu review; worktree `bandwidth-video-opt`)*
-*Next: "Roadmap'teki Session 3.1 + 3.2'ye başlamak istiyorum" diyerek yeni chat aç.*
+*Last updated: 2026-06-01 (3 dal birleşti → deploy + main reconcile; 215 sayfa canlıda, bandwidth fix main'de)*
+*Next: "Roadmap'teki Session 3.1 + 3.2'ye (Cloudflare) başlamak istiyorum" diyerek yeni chat aç.*
