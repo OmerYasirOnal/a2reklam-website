@@ -4,6 +4,21 @@
 Options -MultiViews
 
 # ================================================
+# HOTLINK KORUMASI (deploy-durable — kaynakta tutulur)
+# Yabanci sitelerin gorsel/video hotlink'ini engeller (bant genisligi korumasi).
+# Bos-referer (gizlilik tarayicilari/bazi istemciler) + same-origin (a2reklam.com
+# iceren her referer) GECER -> kendi sitemiz etkilenmez, video 403 riski yok.
+# NOT: cPanel Hotlink UI'i her deploy'da silinir (dist/.htaccess ezer); kural burada.
+# cPanel UI "disabled" gorunse bile bu kural AKTIF.
+# ================================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_REFERER} !^$
+  RewriteCond %{HTTP_REFERER} !a2reklam\.com [NC]
+  RewriteRule \.(jpe?g|gif|png|bmp|webp|avif|svg|mp4|mov|webm|m4v|pdf)$ - [F,NC]
+</IfModule>
+
+# ================================================
 # LEGACY WORDPRESS REDIRECTS
 # ================================================
 <IfModule mod_alias.c>
