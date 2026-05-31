@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import { sectors } from '../../data/sectors';
 import { districts } from '../../data/districts';
 import { PHONE_TEL } from '../../consts';
+import AnswerBox from '../../components/sectors/AnswerBox.astro';
+import { getDefinition, getQuickFacts, getPriceSummary } from '../../utils/sectorFacts';
 
 export function getStaticPaths() {
   return sectors.map((sector) => ({
@@ -39,6 +41,11 @@ const topDistricts = districts.filter(d => d.priority <= 2).slice(0, 12);
 
 const whatsappLink = `https://wa.me/905316181672?text=${encodeURIComponent(`Merhaba, ${sector.name} hakkında bilgi almak istiyorum.`)}`;
 
+// AEO/AIO: alıntılanabilir özet — sektör verisinden türetilir (manuel giriş yok)
+const answerDefinition = getDefinition(sector);
+const answerFacts = getQuickFacts(sector);
+const priceSummary = getPriceSummary(sector);
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -58,6 +65,14 @@ const serviceSchema = {
     "lowPrice": "5000",
     "highPrice": "150000",
     "offerCount": sector.materialTable?.length ?? 4
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://a2reklam.com/sektorel/${sector.slug}/#webpage`,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".answerbox-definition", ".answerbox-facts"]
+    }
   }
 };
 ---
@@ -108,6 +123,11 @@ const serviceSchema = {
             {sector.h1}
           </h1>
         </div>
+
+        <!-- AEO/AIO: Alıntılanabilir Hızlı Cevap (AI yanıt motorları için) -->
+        {answerDefinition && (
+          <AnswerBox definition={answerDefinition} facts={answerFacts} priceSummary={priceSummary} />
+        )}
 
         <!-- İçerik -->
         <div class="prose prose-invert prose-lg max-w-none mb-10">
