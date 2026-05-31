@@ -88,18 +88,14 @@ export function getLocalBusinessSchema(siteUrl: URL): Record<string, unknown> {
     sameAs: [SOCIAL_INSTAGRAM_URL, SOCIAL_FACEBOOK_URL, SOCIAL_LINKEDIN_URL],
     geo: GEO,
     priceRange: '₺₺',
+    // Çalışma saatleri: Pazartesi–Cuma 09:00–18:00 (Cumartesi + Pazar KAPALI).
+    // Hafta sonu bloğu eklenmez — eklemek müşteriyi kapalı işyerine yönlendirir.
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
         opens: '09:00',
         closes: '18:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '09:00',
-        closes: '14:00',
       },
     ],
     // Only include AggregateRating if we have real data
