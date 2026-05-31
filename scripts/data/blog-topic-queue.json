@@ -1,6 +1,13 @@
 {
   "_comment": "Blog konu havuzu. Her turda bir konu seçilir, 'used' dizisine eklenir. Tamamlanınca resetlenir.",
-  "used": [],
+  "used": [
+    "spor-salonu-tabelasi-motivasyon-tasarimi",
+    "beylikduzu-reklam-tabela-rehberi-2026",
+    "avm-tabela-yonetmeligi-2026-izinler",
+    "tabela-marka-kimlik-uyumu",
+    "3d-tabela-tasarim-onizleme-sureci",
+    "fener-tabela-vs-kutu-harf-karsilastirma"
+  ],
   "topics": [
     {
       "slug": "istanbul-tabela-fiyatlari-2026-guncel",
@@ -989,5 +996,6 @@
     }
   ],
   "lastCompetitorGap": "2026-04-17T04:15:00Z",
-  "lastLongTailExpansion": "2026-04-17T06:45:00Z"
+  "lastLongTailExpansion": "2026-04-17T06:45:00Z",
+  "lastGenerated": "2026-05-25T07:52:44.187Z"
 }
