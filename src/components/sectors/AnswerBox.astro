@@ -37,8 +37,8 @@ const { definition, facts = [], priceSummary = null, heading = 'Kısa Cevap' } =
 
   <p class="answerbox-definition text-base md:text-lg font-medium leading-relaxed text-gray-100">
     {definition}
-    {priceSummary && <span class="block mt-2 text-sm md:text-base font-normal text-gray-300">{priceSummary}</span>}
   </p>
+  {priceSummary && <p class="answerbox-price mt-2 text-sm md:text-base font-normal text-gray-300">{priceSummary}</p>}
 
   {facts.length > 0 && (
     <dl class="answerbox-facts mt-5 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-white/10 pt-5 sm:grid-cols-2 lg:grid-cols-4">
