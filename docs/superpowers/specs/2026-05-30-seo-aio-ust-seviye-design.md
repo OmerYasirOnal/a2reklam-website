@@ -48,10 +48,10 @@ Yeni görsel bileşenler: **sade/göz yormayan** (mevcut palet + Inter/Montserra
 ## AIO/AEO Menüsü (kullanıcı 4'ünü onayladı — ⭐)
 | İş | I/E | Durum |
 |----|-----|-------|
-| ⭐ **AnswerBox** (sektör/hizmet/ilçe: tek-cümle tanım + Kısa Bilgiler) | 4/3 | Onaylı |
-| ⭐ **Veri-senkronlu llms.txt + llms-full.txt generator** (`scripts/`, deploy'da) | 4/3 | Onaylı (interim statik var) |
-| ⭐ Malzeme/fiyat tablolarını **alıntılanabilir cümleyle** sar (`priceSummary`) | 4/2 | Onaylı |
-| ⭐ `tabela-rehberi`'ye **HowTo + speakable** şema | 3/3 | Onaylı |
+| ⭐ **AnswerBox** (sektör: tek-cümle tanım + Kısa Bilgiler + fiyat) | 4/3 | ✅ DONE 20/20 sektör (commit 3d70d51) — `AnswerBox.astro`+`sectorFacts.ts`+speakable |
+| ⭐ Malzeme/fiyat tablolarını **alıntılanabilir cümleyle** sar (`priceSummary`) | 4/2 | ✅ DONE — AnswerBox içinde sektör min–max ₺ cümlesi (commit 3d70d51) |
+| ⭐ **Veri-senkronlu llms.txt + llms-full.txt generator** (`scripts/`, deploy'da) | 4/3 | ⏳ BEKLİYOR (interim statik var) |
+| ⭐ `tabela-rehberi`'ye **HowTo + speakable** şema | 3/3 | ⏳ BEKLİYOR (HowToSchema.astro mevcut, rehbere bağlanacak) |
 | Görünür "Son güncelleme" + page-level dateModified | 2/2 | Düşük öncelik |
 | İlçe/sektör Service node @id graph + OfferCatalog | 2/3 | Düşük (zaten valid) |
 
