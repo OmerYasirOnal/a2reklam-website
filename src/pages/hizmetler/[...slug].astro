@@ -79,7 +79,7 @@ const breadcrumbs = [
 ];
 
 const microAnswerLines = [
-  { text: `${entry.data.title} markanızın görünürlüğünü artıran kurumsal tabela çözümüdür.` },
+  { text: `${displayTitle} markanızın görünürlüğünü artıran kurumsal tabela çözümüdür.` },
   { text: 'Perakende, ofis, üretim tesisi ve kurumsal kampüs projeleri için uygundur.' },
   { text: 'Keşif, tasarım, üretim ve montaj sürecini tek ekip yönetir.' },
   { text: 'Teslim takvimi ölçü ve malzeme netleşince planlanır.' },
@@ -121,7 +121,7 @@ const pricingFactors = [
 const warrantyNote = 'Malzeme ve işçilik için proje bazlı garanti ve bakım planı sunarız; koşullar uygulama ihtiyaçlarına göre netleştirilir.';
 const faq = [
   {
-    question: `${entry.data.title} için üretim süresi ne kadar?`,
+    question: `${displayTitle} için üretim süresi ne kadar?`,
     answer: 'Keşif ve teknik detaylar netleşince üretim planı çıkarılır; acil projeler için hızlandırılmış süreç sunabiliriz.',
   },
   {
@@ -155,7 +155,7 @@ const whatsappLink = buildWhatsAppLink(whatsappMessage);
 const serviceSchema = Astro.site
   ? getServiceSchema({
       slug: entry.slug,
-      title: entry.data.title,
+      title: displayTitle,
       description: entry.data.description,
       heroImage: entry.data.heroImage,
       siteUrl: Astro.site.toString(),

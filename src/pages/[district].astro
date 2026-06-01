@@ -4,6 +4,8 @@ import ResponsiveHeroImage from '../components/common/ResponsiveHeroImage.astro'
 import { districts } from '../data/districts';
 import { sectors } from '../data/sectors';
 import { autolinkServices } from '../utils/autolink';
+import AnswerBox from '../components/sectors/AnswerBox.astro';
+import { getDistrictDefinition, getDistrictQuickFacts, getDistrictPriceSummary, getDistrictSharedFaq } from '../utils/districtFacts';
 import { PHONE_TEL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_URL } from '../consts';
 
 export function getStaticPaths() {
@@ -69,6 +71,22 @@ const serviceLinks = [
   { title: 'Yönlendirme', href: '/hizmetler/yonlendirme/', desc: 'İç ve dış mekan yönlendirme' },
 ];
 
+// AEO/AIO: alıntılanabilir özet + kısa bilgiler + zenginleştirilmiş FAQ (ilçe)
+const answerDefinition = getDistrictDefinition(district);
+const answerFacts = getDistrictQuickFacts(district);
+const priceSummary = getDistrictPriceSummary(district);
+const existingQ = district.content.faq.map((f: { question: string }) => f.question.toLowerCase());
+const sharedFaq = getDistrictSharedFaq(district).filter((s) => {
+  const k = s.question.toLowerCase();
+  return !existingQ.some((e) =>
+    (k.includes('fiyat') && e.includes('fiyat')) ||
+    (k.includes('sürer') && e.includes('sürer')) ||
+    (k.includes('izin') && e.includes('izin')) ||
+    (k.includes('garanti') && e.includes('garanti'))
+  );
+});
+const mergedFaq = [...district.content.faq, ...sharedFaq];
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -89,6 +107,14 @@ const serviceSchema = {
     "priceCurrency": "TRY",
     "lowPrice": "8000",
     "highPrice": "150000"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://a2reklam.com/${district.slug}/#webpage`,
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".answerbox-definition", ".answerbox-facts"]
+    }
   }
 };
 
@@ -98,7 +124,7 @@ const serviceSchema = {
   title={district.title}
   description={district.metaDescription}
   breadcrumbs={breadcrumbs}
-  faq={district.content.faq}
+  faq={mergedFaq}
   whatsappTitle={district.title}
   whatsappLocation={district.name}
 >
@@ -185,6 +211,9 @@ const serviceSchema = {
             </div>
           </div>
         </div>
+
+        <!-- AEO/AIO: Alıntılanabilir Hızlı Cevap (speakable) -->
+        <AnswerBox definition={answerDefinition} facts={answerFacts} priceSummary={priceSummary} />
 
         <!-- İçerik -->
         <div class="prose prose-invert prose-lg max-w-none mb-10">
@@ -321,7 +350,7 @@ const serviceSchema = {
             Sıkça Sorulan Sorular
           </h2>
           <div class="space-y-4">
-            {district.content.faq.map((item: { question: string; answer: string }) => (
+            {mergedFaq.map((item: { question: string; answer: string }) => (
               <details class="glass-card p-5 group">
                 <summary class="font-bold text-white cursor-pointer list-none flex justify-between items-center">
                   {item.question}
