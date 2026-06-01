@@ -151,6 +151,9 @@ export default defineConfig({
   },
   trailingSlash: 'always',
   build: {
-    format: 'file',
+    // Cloudflare Pages: 'directory' generates /foo/index.html so /foo/ serves 200
+    // (matching trailingSlash:'always'). 'file' produced flat /foo.html which Pages
+    // 308-redirects /foo/ -> /foo, breaking the canonical trailing-slash convention.
+    format: 'directory',
   },
 });
