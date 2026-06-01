@@ -37,12 +37,14 @@ const breadcrumbs = [
   { name: sector.name, item: `/sektorel/${sector.slug}/` },
 ];
 
-const topDistricts = districts.filter(d => d.priority <= 2).slice(0, 12);
+// Tüm ilçeleri (öncelik sırasıyla) listele → her ilçe sektör sayfalarından inbound link alır
+// (topical cluster: ilçe↔sektör çift yönlü; önceki priority<=2 .slice(0,12) 27 ilçeyi orphan bırakıyordu)
+const topDistricts = [...districts].sort((a, b) => a.priority - b.priority);
 
 const whatsappLink = `https://wa.me/905316181672?text=${encodeURIComponent(`Merhaba, ${sector.name} hakkında bilgi almak istiyorum.`)}`;
 
-// AEO/AIO: alıntılanabilir özet — sektör verisinden türetilir (manuel giriş yok)
-const answerDefinition = getDefinition(sector);
+// AEO/AIO: alıntılanabilir özet — elle yazılmış faktüel aeoDefinition önce, yoksa heuristic fallback
+const answerDefinition = sector.aeoDefinition ?? getDefinition(sector);
 const answerFacts = getQuickFacts(sector);
 const priceSummary = getPriceSummary(sector);
 

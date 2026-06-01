@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { districts } from '../data/districts';
+import { sectors } from '../data/sectors';
 import { PHONE_TEL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_URL } from '../consts';
 
 export function getStaticPaths() {
@@ -325,6 +326,24 @@ const serviceSchema = {
                 </summary>
                 <p class="text-gray-300 mt-3 leading-relaxed">{item.answer}</p>
               </details>
+            ))}
+          </div>
+        </section>
+
+        <!-- İlçe → Sektör iç linkleme (topical cluster: ilçe↔sektör çift yönlü) -->
+        <section class="mb-10">
+          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+            {district.name}'de Sektörel Tabela Çözümleri
+          </h2>
+          <p class="text-gray-400 mb-5 leading-relaxed">
+            {district.name} bölgesinde işletmenizin sektörüne özel tabela imalatı ve montajı yapıyoruz. Size uygun çözümü inceleyin:
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {sectors.map((s) => (
+              <a href={`/sektorel/${s.slug}/`} class="glass-card px-4 py-3 text-sm text-gray-300 hover:text-white hover:border-primary/40 transition-colors flex items-center gap-2">
+                <svg class="w-4 h-4 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                {s.name}
+              </a>
             ))}
           </div>
         </section>
