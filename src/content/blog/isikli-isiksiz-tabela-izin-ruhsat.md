@@ -2,7 +2,6 @@
 title: "Işıklı/ışıksız Tabelalar İçin İzin ve Ruhsat Süreci:..."
 description: "Belediye başvurusu, proje çizimi ve ilan reklam vergisi; Işıklı/ışıksız Tabelalar için izin sürecinin özeti. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: "2025-02-13"
-updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Ruhsat", "Yönetmelik", "Süreç"]
 heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"

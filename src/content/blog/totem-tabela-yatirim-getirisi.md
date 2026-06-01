@@ -2,7 +2,6 @@
 title: "Totem Tabela Yatırım Getirisi: Performans Ölçümü ve KPI"
 description: "Görünürlük, çağrı artışı ve dönüşüm metrikleriyle Totem Tabela ROI yaklaşımı. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-02-28"
-updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "ROI", "Performans", "Pazarlama"]
 heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
 author: "A2 Reklam Ekibi"

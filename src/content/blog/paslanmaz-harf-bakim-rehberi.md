@@ -2,7 +2,6 @@
 title: "Paslanmaz Harfler Bakım Rehberi: Ömür ve Performans..."
 description: "Periyodik temizlik, aydınlatma kontrolleri ve Paslanmaz Harfler ömrünü uzatan bakım planı. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-03-08"
-updatedDate: "2026-03-10"
 tags: ["Paslanmaz Harf", "Bakım", "Ömür", "Servis"]
 heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp"
 author: "A2 Reklam Ekibi"

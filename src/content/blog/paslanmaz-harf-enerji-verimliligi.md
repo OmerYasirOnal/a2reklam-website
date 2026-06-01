@@ -2,7 +2,6 @@
 title: "Paslanmaz Harfler Enerji Verimliliği ve Görünürlük Dengesi"
 description: "LED modül seçimi, güç tüketimi ve görünürlük için Paslanmaz Harfler optimizasyonu. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-03-09"
-updatedDate: "2026-03-10"
 tags: ["Paslanmaz Harf", "Enerji", "Verimlilik", "Görünürlük"]
 heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp"
 author: "A2 Reklam Ekibi"

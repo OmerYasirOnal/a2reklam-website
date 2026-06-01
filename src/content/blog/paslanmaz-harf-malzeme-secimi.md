@@ -2,7 +2,6 @@
 title: "Paslanmaz Harfler Malzeme Seçimi: Dayanıklılık ve Görünüm"
 description: "Paslanmaz Harfler için malzeme karşılaştırması, dış ortam dayanımı ve bakım maliyeti rehberi. | 2.500+ tamamlanmış proje, 20+ yıl deneyim — A2 Reklam."
 pubDate: "2025-03-04"
-updatedDate: "2026-03-10"
 tags: ["Paslanmaz Harf", "Malzeme", "Dayanıklılık", "Rehber"]
 heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp"
 author: "A2 Reklam Ekibi"

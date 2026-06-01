@@ -65,31 +65,31 @@ export default defineConfig({
       serialize(item) {
         // Anasayfa
         if (item.url === 'https://a2reklam.com/' || item.url === 'https://a2reklam.com') {
-          return { ...item, changefreq: 'daily', priority: 1.0, lastmod: new Date() };
+          return { ...item, changefreq: 'daily', priority: 1.0 };
         }
         // Hizmet sayfaları
         if (/\/hizmetler\//.test(item.url)) {
-          return { ...item, changefreq: 'monthly', priority: 0.9, lastmod: new Date() };
+          return { ...item, changefreq: 'monthly', priority: 0.9 };
         }
         // Istanbul hub sayfası
         if (item.url.includes('/istanbul-tabelaci/')) {
-          return { ...item, changefreq: 'weekly', priority: 0.9, lastmod: new Date() };
+          return { ...item, changefreq: 'weekly', priority: 0.9 };
         }
         // Sektörel tabela sayfaları
         if (/\/sektorel\//.test(item.url)) {
-          return { ...item, changefreq: 'monthly', priority: 0.8, lastmod: new Date() };
+          return { ...item, changefreq: 'monthly', priority: 0.8 };
         }
         // İlçe tabelacı sayfaları
         if (/-tabelaci\//.test(item.url)) {
-          return { ...item, changefreq: 'monthly', priority: 0.8, lastmod: new Date() };
+          return { ...item, changefreq: 'monthly', priority: 0.8 };
         }
         // Tabela rehberi
         if (/\/tabela-rehberi\//.test(item.url)) {
-          return { ...item, changefreq: 'monthly', priority: 0.8, lastmod: new Date() };
+          return { ...item, changefreq: 'monthly', priority: 0.8 };
         }
         // Blog
         if (/\/blog\//.test(item.url)) {
-          return { ...item, changefreq: 'monthly', priority: 0.7, lastmod: new Date() };
+          return { ...item, changefreq: 'monthly', priority: 0.7 };
         }
         return item;
       },

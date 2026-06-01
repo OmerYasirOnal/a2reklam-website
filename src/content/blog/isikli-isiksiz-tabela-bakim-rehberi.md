@@ -2,7 +2,6 @@
 title: "Işıklı/ışıksız Tabelalar Bakım Rehberi: Ömür ve..."
 description: "Periyodik temizlik, aydınlatma kontrolleri ve Işıklı/ışıksız Tabelalar ömrünü uzatan bakım planı. — A2 Reklam: ⭐5.0/90 Google yorum, 39 ilçede hizmet."
 pubDate: "2025-02-16"
-updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Bakım", "Ömür", "Servis"]
 heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"

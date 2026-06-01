@@ -2,7 +2,6 @@
 title: "Totem Tabela İçin İzin ve Ruhsat Süreci: Adım Adım Rehber"
 description: "Belediye başvurusu, proje çizimi ve ilan reklam vergisi; Totem Tabela için izin sürecinin özeti. — A2 Reklam: ⭐5.0/90 Google yorum, 39 ilçede hizmet."
 pubDate: "2025-02-23"
-updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Ruhsat", "Yönetmelik", "Süreç"]
 heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
 author: "A2 Reklam Ekibi"

@@ -2,7 +2,6 @@
 title: "Tabela Malzeme Seçim Rehberi: 7 Malzemenin Karşılaştırması"
 description: "Tabela imalatında kullanılan 7 temel malzemenin detaylı karşılaştırması: paslanmaz çelik, alüminyum, pleksiglas, kompozit panel, galvaniz, PVC ve ahşap."
 pubDate: "2026-03-10"
-updatedDate: "2026-03-10"
 tags: ["tabela malzeme", "tabela seçimi", "paslanmaz tabela", "alüminyum tabela", "pleksiglas tabela"]
 heroImage: "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp"
 author: "A2 Reklam Ekibi"

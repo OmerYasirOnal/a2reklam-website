@@ -2,7 +2,6 @@
 title: "Baba's Gastropub Cephe Tabela Uygulaması: Tasarım,..."
 description: "İstanbul'da restoran cephesi için uygulanan kutu harf ve cephe tabela projesinin tasarım, üretim ve montaj adımlarını gerçek saha videosu ile inceleyin."
 pubDate: 2026-02-16
-updatedDate: "2026-03-10"
 heroImage: /assets/videos/posters/babas-gastropub-01.jpg
 tags: ["cephe tabela", "kutu harf", "restoran tabelası", "vaka analizi", "istanbul"]
 faq:

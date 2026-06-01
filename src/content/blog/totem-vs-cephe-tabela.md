@@ -2,7 +2,6 @@
 title: "Totem mi Cephe Tabela mı? Hangisi İşletmenize Uygun?"
 description: "Totem tabela ve cephe tabela karşılaştırması. Avantajları, dezavantajları ve işletme türüne göre doğru tabela seçimi rehberi. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: "2025-01-15"
-updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Cephe Tabela", "Tabela Seçimi", "İşletme"]
 heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
 author: "A2 Reklam Ekibi"
