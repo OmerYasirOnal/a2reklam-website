@@ -5,6 +5,7 @@ import { districts } from '../../data/districts';
 import { PHONE_TEL } from '../../consts';
 import AnswerBox from '../../components/sectors/AnswerBox.astro';
 import { getDefinition, getQuickFacts, getPriceSummary } from '../../utils/sectorFacts';
+import { autolinkServices } from '../../utils/autolink';
 
 export function getStaticPaths() {
   return sectors.map((sector) => ({
@@ -47,6 +48,10 @@ const whatsappLink = `https://wa.me/905316181672?text=${encodeURIComponent(`Merh
 const answerDefinition = sector.aeoDefinition ?? getDefinition(sector);
 const answerFacts = getQuickFacts(sector);
 const priceSummary = getPriceSummary(sector);
+
+// Gövde-içi contextual iç link (rank 9): intro'daki hizmet terimlerini /hizmetler/'e bağla (sayfa başı dedup)
+const introLinked = new Set<string>();
+const introParas = sector.content.intro.split('\n\n').map((p: string) => autolinkServices(p, introLinked));
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -133,8 +138,8 @@ const serviceSchema = {
 
         <!-- İçerik -->
         <div class="prose prose-invert prose-lg max-w-none mb-10">
-          {sector.content.intro.split('\n\n').map((paragraph: string) => (
-            <p class="text-gray-300 leading-relaxed mb-4">{paragraph}</p>
+          {introParas.map((paragraph: string) => (
+            <p class="text-gray-300 leading-relaxed mb-4" set:html={paragraph} />
           ))}
         </div>
 
