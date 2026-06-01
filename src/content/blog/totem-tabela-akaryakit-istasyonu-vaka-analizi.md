@@ -2,7 +2,6 @@
 title: "Totem Tabela Vaka Analizi: akaryakıt istasyonu..."
 description: "akaryakıt istasyonu örneğinde Totem Tabela tasarımı, montaj ve sonuçlar. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-03-01"
-updatedDate: "2026-03-10"
 tags: ["Totem Tabela", "Vaka", "Sektör", "Uygulama"]
 heroImage: "/assets/img/totem/a2reklam-totem-001-960.webp"
 author: "A2 Reklam Ekibi"

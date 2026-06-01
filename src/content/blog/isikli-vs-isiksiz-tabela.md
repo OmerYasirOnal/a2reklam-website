@@ -2,7 +2,6 @@
 title: "Işıklı Tabela mı Işıksız Tabela mı? Karşılaştırma Rehberi"
 description: "Işıklı ve ışıksız tabela arasındaki farklar: maliyet, dayanıklılık, enerji tüketimi, görünürlük ve kullanım alanları karşılaştırması. | A2 Reklam: 2.500+ proje, ⭐5.0/90 yorum."
 pubDate: "2026-03-10"
-updatedDate: "2026-03-10"
 tags: ["ışıklı tabela", "ışıksız tabela", "tabela karşılaştırma", "LED tabela"]
 heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"

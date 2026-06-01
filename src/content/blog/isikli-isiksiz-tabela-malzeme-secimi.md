@@ -2,7 +2,6 @@
 title: "Işıklı/ışıksız Tabelalar Malzeme Seçimi: Dayanıklılık..."
 description: "Işıklı/ışıksız Tabelalar için malzeme karşılaştırması, dış ortam dayanımı ve bakım maliyeti rehberi. — A2 Reklam: ⭐5.0/90 Google yorum, 39 ilçede hizmet."
 pubDate: "2025-02-12"
-updatedDate: "2026-03-10"
 tags: ["Işıklı Tabela", "Malzeme", "Dayanıklılık", "Rehber"]
 heroImage: "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp"
 author: "A2 Reklam Ekibi"

@@ -2,7 +2,6 @@
 title: "Paslanmaz Harfler Montaj Güvenliği: Keşif, Statik ve..."
 description: "Rüzgar yükü, bağlantı ve iş güvenliği odaklı Paslanmaz Harfler montaj rehberi. — 2.500+ proje deneyimi, ⭐5.0/90 Google yorum | A2 Reklam."
 pubDate: "2025-03-07"
-updatedDate: "2026-03-10"
 tags: ["Paslanmaz Harf", "Montaj", "Güvenlik", "Uygulama"]
 heroImage: "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp"
 author: "A2 Reklam Ekibi"
