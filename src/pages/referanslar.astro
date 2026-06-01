@@ -115,7 +115,7 @@ const referencesJsonLd = references.map((reference, index) => ({
         {categories.map(cat => (
           <a href={`/hizmetler/${cat.category}/`} class="group relative block bg-accent-light rounded-2xl overflow-hidden border border-white/5 shadow-2xl transition-all hover:border-primary/50">
             <div class="aspect-video overflow-hidden">
-              <img src={cat.sampleImage} alt={cat.sampleAlt} class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
+              <img src={cat.sampleImage} alt={cat.sampleAlt} loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
               <div class="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent"></div>
             </div>
             <div class="p-8 relative">
