@@ -70,9 +70,9 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: 'Invalid JSON' }, 400);
   }
 
-  // Honeypot — doluysa bot
+  // Honeypot — doluysa bot: maili GÖNDERME ama başarılı gibi davran (botu uyarma/eğitme)
   if (data.website) {
-    return json({ ok: false, error: 'Spam detected' }, 400);
+    return json({ ok: true, message: 'Email sent successfully' }, 200);
   }
 
   // Zorunlu alanlar
@@ -82,10 +82,12 @@ export async function onRequestPost(context) {
     }
   }
 
-  const fullName = String(data.fullName).trim();
+  // Tek satırlık alanlardan CRLF temizle (header/gövde enjeksiyonu yüzeyini kapat). message çok satırlı kalır.
+  const oneLine = (s) => String(s).trim().replace(/[\r\n]+/g, ' ');
+  const fullName = oneLine(data.fullName);
   const email = String(data.email).trim();
-  const phone = String(data.phone).trim();
-  const serviceType = String(data.serviceType).trim();
+  const phone = oneLine(data.phone);
+  const serviceType = oneLine(data.serviceType);
   const message = String(data.message || '').trim();
 
   // Doğrulamalar (PHP ile aynı eşikler)
@@ -103,8 +105,8 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: 'Mail servisi yapılandırılmamış.' }, 500);
   }
 
-  // Başlık enjeksiyonuna karşı serviceType'ı tek satıra indir
-  const safeSubject = `[A2 Reklam] Yeni İletişim Formu - ${serviceType.replace(/[\r\n]+/g, ' ')}`;
+  // serviceType yukarıda oneLine() ile temizlendi → başlık enjeksiyonu güvenli
+  const safeSubject = `[A2 Reklam] Yeni İletişim Formu - ${serviceType}`;
   const body =
     `Yeni İletişim Formu Mesajı\n\n` +
     `Ad Soyad: ${fullName}\n` +

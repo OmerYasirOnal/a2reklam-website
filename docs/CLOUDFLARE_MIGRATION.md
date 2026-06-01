@@ -29,7 +29,11 @@ Site Astro ile üretilen **statik** bir site. Bu kılavuz GuzelHosting (cPanel/L
    - `RESEND_API_KEY = re_...` (Production)
 4. **Resend kurulumu:** resend.com'da `a2reklam.com` domainini doğrula (DNS kayıtları:
    SPF/DKIM). Gönderen `noreply@a2reklam.com`, alıcı `info@a2reklam.com`.
-5. **(Opsiyonel) Rate limit:** KV namespace oluştur, Pages'e `RATE_LIMIT` adıyla bağla.
+5. **⚠️ Rate limit (ÖNEMLİ — deploy önkoşulu, opsiyonel değil):** KV namespace oluştur, Pages'e
+   `RATE_LIMIT` adıyla bağla (Settings > Functions > KV namespace bindings).
+   **Bağlanmazsa form rate-limit'i SESSİZCE devre dışı kalır** (`contact.js` `if (env.RATE_LIMIT)`) —
+   eski PHP her zaman 5/saat/IP uyguluyordu; binding yoksa form spam/mail-bombing'e açık olur.
+   `npx wrangler kv namespace create RATE_LIMIT` → çıkan id'yi Pages binding'i olarak ekle.
 6. **Panel ayarları:**
    - SSL/TLS > "Always Use HTTPS" → açık
    - Scrape Shield > Hotlink Protection → açık (bant genişliği koruması)

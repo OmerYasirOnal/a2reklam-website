@@ -13,3 +13,11 @@
 # Astro hash'li asset'ler (içerik-adresli) — kalıcı, değişmez cache
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Statik medya (img/video/font) — uzun browser+edge cache. Hash'siz olduğu için 30 gün
+# (aynı dosya adıyla değişirse en geç 30 günde tazelenir). .htaccess'teki 1 yıl kuralının karşılığı.
+/assets/*
+  Cache-Control: public, max-age=2592000
+# Marka / OG / favicon görselleri
+/brand/*
+  Cache-Control: public, max-age=2592000
