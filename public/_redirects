@@ -51,6 +51,7 @@
 
 # --- /en/ (İngilizce) spesifik → Türkçe ---
 /en/blog/         /blog/             301
+/en/blog/*        /blog/             301
 /en/faq/          /sss/              301
 /en/thank-you/    /tesekkurler/      301
 /en/gallery/      /galeri/           301
