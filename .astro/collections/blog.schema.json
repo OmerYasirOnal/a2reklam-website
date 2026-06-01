@@ -51,6 +51,12 @@
             "type": "string"
           }
         },
+        "author": {
+          "type": "string"
+        },
+        "reviewedBy": {
+          "type": "string"
+        },
         "faq": {
           "type": "array",
           "items": {
