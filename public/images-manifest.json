@@ -1,0 +1,2342 @@
+[
+  {
+    "id": "arac-giydirme-001",
+    "category": "arac-giydirme",
+    "category_tr": "ARAÇ GİYDİRME",
+    "category_en": "Vehicle Wrapping",
+    "paths": {
+      "480": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-001-480.webp",
+      "960": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-001-960.webp",
+      "1600": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ARAÇ GİYDİRME - Örnek 1",
+    "alt_en": "A2 Advertising Vehicle Wrapping - Example 1"
+  },
+  {
+    "id": "arac-giydirme-002",
+    "category": "arac-giydirme",
+    "category_tr": "ARAÇ GİYDİRME",
+    "category_en": "Vehicle Wrapping",
+    "paths": {
+      "480": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-002-480.webp",
+      "960": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-002-960.webp",
+      "1600": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ARAÇ GİYDİRME - Örnek 2",
+    "alt_en": "A2 Advertising Vehicle Wrapping - Example 2"
+  },
+  {
+    "id": "arac-giydirme-003",
+    "category": "arac-giydirme",
+    "category_tr": "ARAÇ GİYDİRME",
+    "category_en": "Vehicle Wrapping",
+    "paths": {
+      "480": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-003-480.webp",
+      "960": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-003-960.webp",
+      "1600": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ARAÇ GİYDİRME - Örnek 3",
+    "alt_en": "A2 Advertising Vehicle Wrapping - Example 3"
+  },
+  {
+    "id": "arac-giydirme-004",
+    "category": "arac-giydirme",
+    "category_tr": "ARAÇ GİYDİRME",
+    "category_en": "Vehicle Wrapping",
+    "paths": {
+      "480": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-004-480.webp",
+      "960": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-004-960.webp",
+      "1600": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ARAÇ GİYDİRME - Örnek 4",
+    "alt_en": "A2 Advertising Vehicle Wrapping - Example 4"
+  },
+  {
+    "id": "arac-giydirme-005",
+    "category": "arac-giydirme",
+    "category_tr": "ARAÇ GİYDİRME",
+    "category_en": "Vehicle Wrapping",
+    "paths": {
+      "480": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-005-480.webp",
+      "960": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-005-960.webp",
+      "1600": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ARAÇ GİYDİRME - Örnek 5",
+    "alt_en": "A2 Advertising Vehicle Wrapping - Example 5"
+  },
+  {
+    "id": "arac-giydirme-006",
+    "category": "arac-giydirme",
+    "category_tr": "ARAÇ GİYDİRME",
+    "category_en": "Vehicle Wrapping",
+    "paths": {
+      "480": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-006-480.webp",
+      "960": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-006-960.webp",
+      "1600": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-006-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ARAÇ GİYDİRME - Örnek 6",
+    "alt_en": "A2 Advertising Vehicle Wrapping - Example 6"
+  },
+  {
+    "id": "arac-giydirme-007",
+    "category": "arac-giydirme",
+    "category_tr": "ARAÇ GİYDİRME",
+    "category_en": "Vehicle Wrapping",
+    "paths": {
+      "480": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-007-480.webp",
+      "960": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-007-960.webp",
+      "1600": "/assets/img/arac-giydirme/a2reklam-arac-giydirme-007-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ARAÇ GİYDİRME - Örnek 7",
+    "alt_en": "A2 Advertising Vehicle Wrapping - Example 7"
+  },
+  {
+    "id": "ayakli-a-pano-001",
+    "category": "ayakli-a-pano",
+    "category_tr": "AYAKLI A PANO",
+    "category_en": "Ayakli A Pano",
+    "paths": {
+      "480": "/assets/img/ayakli-a-pano/a2reklam-ayakli-a-pano-001-480.webp",
+      "960": "/assets/img/ayakli-a-pano/a2reklam-ayakli-a-pano-001-960.webp",
+      "1600": "/assets/img/ayakli-a-pano/a2reklam-ayakli-a-pano-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam AYAKLI A PANO - Örnek 1",
+    "alt_en": "A2 Advertising Ayakli A Pano - Example 1"
+  },
+  {
+    "id": "ayakli-a-pano-002",
+    "category": "ayakli-a-pano",
+    "category_tr": "AYAKLI A PANO",
+    "category_en": "Ayakli A Pano",
+    "paths": {
+      "480": "/assets/img/ayakli-a-pano/a2reklam-ayakli-a-pano-002-480.webp",
+      "960": "/assets/img/ayakli-a-pano/a2reklam-ayakli-a-pano-002-960.webp",
+      "1600": "/assets/img/ayakli-a-pano/a2reklam-ayakli-a-pano-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam AYAKLI A PANO - Örnek 2",
+    "alt_en": "A2 Advertising Ayakli A Pano - Example 2"
+  },
+  {
+    "id": "banko-uygulamalari-001",
+    "category": "banko-uygulamalari",
+    "category_tr": "BANKO UYGULAMALARI",
+    "category_en": "Counter Branding",
+    "paths": {
+      "480": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-001-480.webp",
+      "960": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-001-960.webp",
+      "1600": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam BANKO UYGULAMALARI - Örnek 1",
+    "alt_en": "A2 Advertising Counter Branding - Example 1"
+  },
+  {
+    "id": "banko-uygulamalari-002",
+    "category": "banko-uygulamalari",
+    "category_tr": "BANKO UYGULAMALARI",
+    "category_en": "Counter Branding",
+    "paths": {
+      "480": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-002-480.webp",
+      "960": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-002-960.webp",
+      "1600": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam BANKO UYGULAMALARI - Örnek 2",
+    "alt_en": "A2 Advertising Counter Branding - Example 2"
+  },
+  {
+    "id": "banko-uygulamalari-003",
+    "category": "banko-uygulamalari",
+    "category_tr": "BANKO UYGULAMALARI",
+    "category_en": "Counter Branding",
+    "paths": {
+      "480": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-003-480.webp",
+      "960": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-003-960.webp",
+      "1600": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam BANKO UYGULAMALARI - Örnek 3",
+    "alt_en": "A2 Advertising Counter Branding - Example 3"
+  },
+  {
+    "id": "banko-uygulamalari-004",
+    "category": "banko-uygulamalari",
+    "category_tr": "BANKO UYGULAMALARI",
+    "category_en": "Counter Branding",
+    "paths": {
+      "480": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-004-480.webp",
+      "960": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-004-960.webp",
+      "1600": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam BANKO UYGULAMALARI - Örnek 4",
+    "alt_en": "A2 Advertising Counter Branding - Example 4"
+  },
+  {
+    "id": "banko-uygulamalari-005",
+    "category": "banko-uygulamalari",
+    "category_tr": "BANKO UYGULAMALARI",
+    "category_en": "Counter Branding",
+    "paths": {
+      "480": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-005-480.webp",
+      "960": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-005-960.webp",
+      "1600": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam BANKO UYGULAMALARI - Örnek 5",
+    "alt_en": "A2 Advertising Counter Branding - Example 5"
+  },
+  {
+    "id": "banko-uygulamalari-006",
+    "category": "banko-uygulamalari",
+    "category_tr": "BANKO UYGULAMALARI",
+    "category_en": "Counter Branding",
+    "paths": {
+      "480": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-006-480.webp",
+      "960": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-006-960.webp",
+      "1600": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-006-1600.webp"
+    },
+    "alt_tr": "A2 Reklam BANKO UYGULAMALARI - Örnek 6",
+    "alt_en": "A2 Advertising Counter Branding - Example 6"
+  },
+  {
+    "id": "banko-uygulamalari-007",
+    "category": "banko-uygulamalari",
+    "category_tr": "BANKO UYGULAMALARI",
+    "category_en": "Counter Branding",
+    "paths": {
+      "480": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-007-480.webp",
+      "960": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-007-960.webp",
+      "1600": "/assets/img/banko-uygulamalari/a2reklam-banko-uygulamalari-007-1600.webp"
+    },
+    "alt_tr": "A2 Reklam BANKO UYGULAMALARI - Örnek 7",
+    "alt_en": "A2 Advertising Counter Branding - Example 7"
+  },
+  {
+    "id": "cati-tabelasi-001",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-001-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-001-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 1",
+    "alt_en": "A2 Advertising Roof Signage - Example 1"
+  },
+  {
+    "id": "cati-tabelasi-002",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-002-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-002-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 2",
+    "alt_en": "A2 Advertising Roof Signage - Example 2"
+  },
+  {
+    "id": "cati-tabelasi-003",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-003-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-003-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 3",
+    "alt_en": "A2 Advertising Roof Signage - Example 3"
+  },
+  {
+    "id": "cati-tabelasi-004",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-004-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-004-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 4",
+    "alt_en": "A2 Advertising Roof Signage - Example 4"
+  },
+  {
+    "id": "cati-tabelasi-005",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-005-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-005-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 5",
+    "alt_en": "A2 Advertising Roof Signage - Example 5"
+  },
+  {
+    "id": "cati-tabelasi-006",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-006-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-006-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-006-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 6",
+    "alt_en": "A2 Advertising Roof Signage - Example 6"
+  },
+  {
+    "id": "cati-tabelasi-007",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-007-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-007-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-007-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 7",
+    "alt_en": "A2 Advertising Roof Signage - Example 7"
+  },
+  {
+    "id": "cati-tabelasi-008",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-008-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-008-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-008-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 8",
+    "alt_en": "A2 Advertising Roof Signage - Example 8"
+  },
+  {
+    "id": "cati-tabelasi-009",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-009-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-009-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-009-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 9",
+    "alt_en": "A2 Advertising Roof Signage - Example 9"
+  },
+  {
+    "id": "cati-tabelasi-010",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-010-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-010-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-010-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 10",
+    "alt_en": "A2 Advertising Roof Signage - Example 10"
+  },
+  {
+    "id": "cati-tabelasi-011",
+    "category": "cati-tabelasi",
+    "category_tr": "ÇATI TABELASI",
+    "category_en": "Roof Signage",
+    "paths": {
+      "480": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-011-480.webp",
+      "960": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-011-960.webp",
+      "1600": "/assets/img/cati-tabelasi/a2reklam-cati-tabelasi-011-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÇATI TABELASI - Örnek 11",
+    "alt_en": "A2 Advertising Roof Signage - Example 11"
+  },
+  {
+    "id": "cephe-tabela-001",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 1",
+    "alt_en": "A2 Advertising Facade Signage - Example 1"
+  },
+  {
+    "id": "cephe-tabela-002",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 2",
+    "alt_en": "A2 Advertising Facade Signage - Example 2"
+  },
+  {
+    "id": "cephe-tabela-003",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 3",
+    "alt_en": "A2 Advertising Facade Signage - Example 3"
+  },
+  {
+    "id": "cephe-tabela-004",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 4",
+    "alt_en": "A2 Advertising Facade Signage - Example 4"
+  },
+  {
+    "id": "cephe-tabela-005",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 5",
+    "alt_en": "A2 Advertising Facade Signage - Example 5"
+  },
+  {
+    "id": "cephe-tabela-006",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-006-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 6",
+    "alt_en": "A2 Advertising Facade Signage - Example 6"
+  },
+  {
+    "id": "cephe-tabela-007",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-007-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 7",
+    "alt_en": "A2 Advertising Facade Signage - Example 7"
+  },
+  {
+    "id": "cephe-tabela-008",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-008-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-008-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-008-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 8",
+    "alt_en": "A2 Advertising Facade Signage - Example 8"
+  },
+  {
+    "id": "cephe-tabela-009",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-009-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-009-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-009-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 9",
+    "alt_en": "A2 Advertising Facade Signage - Example 9"
+  },
+  {
+    "id": "cephe-tabela-010",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-010-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-010-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-010-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 10",
+    "alt_en": "A2 Advertising Facade Signage - Example 10"
+  },
+  {
+    "id": "cephe-tabela-011",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-011-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-011-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-011-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 11",
+    "alt_en": "A2 Advertising Facade Signage - Example 11"
+  },
+  {
+    "id": "cephe-tabela-012",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-012-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-012-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-012-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 12",
+    "alt_en": "A2 Advertising Facade Signage - Example 12"
+  },
+  {
+    "id": "cephe-tabela-013",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-013-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-013-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-013-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 13",
+    "alt_en": "A2 Advertising Facade Signage - Example 13"
+  },
+  {
+    "id": "cephe-tabela-014",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-014-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-014-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-014-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 14",
+    "alt_en": "A2 Advertising Facade Signage - Example 14"
+  },
+  {
+    "id": "cephe-tabela-015",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-015-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-015-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-015-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 15",
+    "alt_en": "A2 Advertising Facade Signage - Example 15"
+  },
+  {
+    "id": "cephe-tabela-016",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-016-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-016-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-016-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 16",
+    "alt_en": "A2 Advertising Facade Signage - Example 16"
+  },
+  {
+    "id": "cephe-tabela-017",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-017-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-017-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-017-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 17",
+    "alt_en": "A2 Advertising Facade Signage - Example 17"
+  },
+  {
+    "id": "cephe-tabela-018",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-018-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-018-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-018-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 18",
+    "alt_en": "A2 Advertising Facade Signage - Example 18"
+  },
+  {
+    "id": "cephe-tabela-019",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-019-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-019-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-019-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 19",
+    "alt_en": "A2 Advertising Facade Signage - Example 19"
+  },
+  {
+    "id": "cephe-tabela-020",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-020-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-020-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-020-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 20",
+    "alt_en": "A2 Advertising Facade Signage - Example 20"
+  },
+  {
+    "id": "cephe-tabela-021",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-021-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-021-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-021-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 21",
+    "alt_en": "A2 Advertising Facade Signage - Example 21"
+  },
+  {
+    "id": "cephe-tabela-022",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-022-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-022-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-022-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 22",
+    "alt_en": "A2 Advertising Facade Signage - Example 22"
+  },
+  {
+    "id": "cephe-tabela-023",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-023-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-023-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-023-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 23",
+    "alt_en": "A2 Advertising Facade Signage - Example 23"
+  },
+  {
+    "id": "cephe-tabela-024",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-024-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-024-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-024-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 24",
+    "alt_en": "A2 Advertising Facade Signage - Example 24"
+  },
+  {
+    "id": "cephe-tabela-024",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-024-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-024-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-024-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 24",
+    "alt_en": "A2 Advertising Facade Signage - Example 24"
+  },
+  {
+    "id": "cephe-tabela-025",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-025-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-025-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-025-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 25",
+    "alt_en": "A2 Advertising Facade Signage - Example 25"
+  },
+  {
+    "id": "cephe-tabela-026",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-026-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-026-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-026-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 26",
+    "alt_en": "A2 Advertising Facade Signage - Example 26"
+  },
+  {
+    "id": "cephe-tabela-027",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-027-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-027-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-027-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 27",
+    "alt_en": "A2 Advertising Facade Signage - Example 27"
+  },
+  {
+    "id": "cephe-tabela-028",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-028-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-028-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-028-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 28",
+    "alt_en": "A2 Advertising Facade Signage - Example 28"
+  },
+  {
+    "id": "cephe-tabela-029",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-029-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-029-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-029-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 29",
+    "alt_en": "A2 Advertising Facade Signage - Example 29"
+  },
+  {
+    "id": "cephe-tabela-030",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-030-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-030-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-030-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 30",
+    "alt_en": "A2 Advertising Facade Signage - Example 30"
+  },
+  {
+    "id": "cephe-tabela-031",
+    "category": "cephe-tabela",
+    "category_tr": "CEPHE TABELA",
+    "category_en": "Facade Signage",
+    "paths": {
+      "480": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-031-480.webp",
+      "960": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-031-960.webp",
+      "1600": "/assets/img/cephe-tabela/a2reklam-cephe-tabela-031-1600.webp"
+    },
+    "alt_tr": "A2 Reklam CEPHE TABELA - Örnek 31",
+    "alt_en": "A2 Advertising Facade Signage - Example 31"
+  },
+  {
+    "id": "fener-tabela-001",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-001-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-001-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 1",
+    "alt_en": "A2 Advertising Blade Signs - Example 1"
+  },
+  {
+    "id": "fener-tabela-002",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-002-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-002-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 2",
+    "alt_en": "A2 Advertising Blade Signs - Example 2"
+  },
+  {
+    "id": "fener-tabela-003",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-003-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-003-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 3",
+    "alt_en": "A2 Advertising Blade Signs - Example 3"
+  },
+  {
+    "id": "fener-tabela-004",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-004-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-004-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 4",
+    "alt_en": "A2 Advertising Blade Signs - Example 4"
+  },
+  {
+    "id": "fener-tabela-005",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-005-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-005-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 5",
+    "alt_en": "A2 Advertising Blade Signs - Example 5"
+  },
+  {
+    "id": "fener-tabela-006",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-006-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-006-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-006-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 6",
+    "alt_en": "A2 Advertising Blade Signs - Example 6"
+  },
+  {
+    "id": "fener-tabela-007",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-007-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-007-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-007-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 7",
+    "alt_en": "A2 Advertising Blade Signs - Example 7"
+  },
+  {
+    "id": "fener-tabela-008",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-008-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-008-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-008-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 8",
+    "alt_en": "A2 Advertising Blade Signs - Example 8"
+  },
+  {
+    "id": "fener-tabela-009",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-009-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-009-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-009-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 9",
+    "alt_en": "A2 Advertising Blade Signs - Example 9"
+  },
+  {
+    "id": "fener-tabela-010",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-010-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-010-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-010-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 10",
+    "alt_en": "A2 Advertising Blade Signs - Example 10"
+  },
+  {
+    "id": "fener-tabela-011",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-011-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-011-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-011-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 11",
+    "alt_en": "A2 Advertising Blade Signs - Example 11"
+  },
+  {
+    "id": "fener-tabela-012",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-012-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-012-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-012-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 12",
+    "alt_en": "A2 Advertising Blade Signs - Example 12"
+  },
+  {
+    "id": "fener-tabela-013",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-013-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-013-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-013-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 13",
+    "alt_en": "A2 Advertising Blade Signs - Example 13"
+  },
+  {
+    "id": "fener-tabela-014",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-014-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-014-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-014-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 14",
+    "alt_en": "A2 Advertising Blade Signs - Example 14"
+  },
+  {
+    "id": "fener-tabela-015",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-015-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-015-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-015-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 15",
+    "alt_en": "A2 Advertising Blade Signs - Example 15"
+  },
+  {
+    "id": "fener-tabela-016",
+    "category": "fener-tabela",
+    "category_tr": "FENER TABELA",
+    "category_en": "Blade Signs",
+    "paths": {
+      "480": "/assets/img/fener-tabela/a2reklam-fener-tabela-016-480.webp",
+      "960": "/assets/img/fener-tabela/a2reklam-fener-tabela-016-960.webp",
+      "1600": "/assets/img/fener-tabela/a2reklam-fener-tabela-016-1600.webp"
+    },
+    "alt_tr": "A2 Reklam FENER TABELA - Örnek 16",
+    "alt_en": "A2 Advertising Blade Signs - Example 16"
+  },
+  {
+    "id": "isikli-tabela-001",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 1",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 1"
+  },
+  {
+    "id": "isikli-tabela-002",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 2",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 2"
+  },
+  {
+    "id": "isikli-tabela-003",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-003-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-003-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 3",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 3"
+  },
+  {
+    "id": "isikli-tabela-004",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-004-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-004-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 4",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 4"
+  },
+  {
+    "id": "isikli-tabela-005",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-005-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-005-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 5",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 5"
+  },
+  {
+    "id": "isikli-tabela-006",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-006-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-006-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-006-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 6",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 6"
+  },
+  {
+    "id": "isikli-tabela-007",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-007-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-007-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-007-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 7",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 7"
+  },
+  {
+    "id": "isikli-tabela-008",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-008-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-008-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-008-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 8",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 8"
+  },
+  {
+    "id": "isikli-tabela-009",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-009-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-009-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-009-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 9",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 9"
+  },
+  {
+    "id": "isikli-tabela-010",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-010-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-010-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-010-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 10",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 10"
+  },
+  {
+    "id": "isikli-tabela-011",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-011-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-011-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-011-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 11",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 11"
+  },
+  {
+    "id": "isikli-tabela-012",
+    "category": "isikli-tabela",
+    "category_tr": "IŞIKLI TABELALAR",
+    "category_en": "Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-012-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-012-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-012-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKLI TABELALAR - Örnek 12",
+    "alt_en": "A2 Advertising Illuminated Signage - Example 12"
+  },
+  {
+    "id": "isiksiz-tabela-001",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-013-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-013-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-013-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 1",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 1"
+  },
+  {
+    "id": "isiksiz-tabela-002",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-014-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-014-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-014-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 2",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 2"
+  },
+  {
+    "id": "isiksiz-tabela-003",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-015-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-015-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-015-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 3",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 3"
+  },
+  {
+    "id": "isiksiz-tabela-004",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-016-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-016-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-016-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 4",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 4"
+  },
+  {
+    "id": "isiksiz-tabela-005",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-017-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-017-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-017-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 5",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 5"
+  },
+  {
+    "id": "isiksiz-tabela-006",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-018-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-018-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-018-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 6",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 6"
+  },
+  {
+    "id": "isiksiz-tabela-007",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-019-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-019-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-019-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 7",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 7"
+  },
+  {
+    "id": "isiksiz-tabela-008",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-020-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-020-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-020-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 8",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 8"
+  },
+  {
+    "id": "isiksiz-tabela-009",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-021-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-021-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-021-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 9",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 9"
+  },
+  {
+    "id": "isiksiz-tabela-010",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-022-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-022-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-022-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 10",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 10"
+  },
+  {
+    "id": "isiksiz-tabela-011",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-023-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-023-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-023-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 11",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 11"
+  },
+  {
+    "id": "isiksiz-tabela-012",
+    "category": "isiksiz-tabela",
+    "category_tr": "IŞIKSIZ TABELALAR",
+    "category_en": "Non-Illuminated Signage",
+    "paths": {
+      "480": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-024-480.webp",
+      "960": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-024-960.webp",
+      "1600": "/assets/img/isikli-isiksiz-tabelalar/a2reklam-isikli-isiksiz-tabelalar-024-1600.webp"
+    },
+    "alt_tr": "A2 Reklam IŞIKSIZ TABELALAR - Örnek 12",
+    "alt_en": "A2 Advertising Non-Illuminated Signage - Example 12"
+  },
+  {
+    "id": "kabartma-pleksiglass-001",
+    "category": "kabartma-pleksiglass",
+    "category_tr": "KABARTMA PLEKSİGLASS",
+    "category_en": "Kabartma Pleksiglass",
+    "paths": {
+      "480": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-001-480.webp",
+      "960": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-001-960.webp",
+      "1600": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KABARTMA PLEKSİGLASS - Örnek 1",
+    "alt_en": "A2 Advertising Kabartma Pleksiglass - Example 1"
+  },
+  {
+    "id": "kabartma-pleksiglass-002",
+    "category": "kabartma-pleksiglass",
+    "category_tr": "KABARTMA PLEKSİGLASS",
+    "category_en": "Kabartma Pleksiglass",
+    "paths": {
+      "480": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-002-480.webp",
+      "960": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-002-960.webp",
+      "1600": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KABARTMA PLEKSİGLASS - Örnek 2",
+    "alt_en": "A2 Advertising Kabartma Pleksiglass - Example 2"
+  },
+  {
+    "id": "kabartma-pleksiglass-003",
+    "category": "kabartma-pleksiglass",
+    "category_tr": "KABARTMA PLEKSİGLASS",
+    "category_en": "Kabartma Pleksiglass",
+    "paths": {
+      "480": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-003-480.webp",
+      "960": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-003-960.webp",
+      "1600": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KABARTMA PLEKSİGLASS - Örnek 3",
+    "alt_en": "A2 Advertising Kabartma Pleksiglass - Example 3"
+  },
+  {
+    "id": "kabartma-pleksiglass-004",
+    "category": "kabartma-pleksiglass",
+    "category_tr": "KABARTMA PLEKSİGLASS",
+    "category_en": "Kabartma Pleksiglass",
+    "paths": {
+      "480": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-004-480.webp",
+      "960": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-004-960.webp",
+      "1600": "/assets/img/kabartma-pleksiglass/a2reklam-kabartma-pleksiglass-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KABARTMA PLEKSİGLASS - Örnek 4",
+    "alt_en": "A2 Advertising Kabartma Pleksiglass - Example 4"
+  },
+  {
+    "id": "kapi-isimlik-001",
+    "category": "kapi-isimlik",
+    "category_tr": "KAPI İSİMLİK",
+    "category_en": "Kapi Isimlik",
+    "paths": {
+      "480": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-001-480.webp",
+      "960": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-001-960.webp",
+      "1600": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KAPI İSİMLİK - Örnek 1",
+    "alt_en": "A2 Advertising Kapi Isimlik - Example 1"
+  },
+  {
+    "id": "kapi-isimlik-002",
+    "category": "kapi-isimlik",
+    "category_tr": "KAPI İSİMLİK",
+    "category_en": "Kapi Isimlik",
+    "paths": {
+      "480": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-002-480.webp",
+      "960": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-002-960.webp",
+      "1600": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KAPI İSİMLİK - Örnek 2",
+    "alt_en": "A2 Advertising Kapi Isimlik - Example 2"
+  },
+  {
+    "id": "kapi-isimlik-003",
+    "category": "kapi-isimlik",
+    "category_tr": "KAPI İSİMLİK",
+    "category_en": "Kapi Isimlik",
+    "paths": {
+      "480": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-003-480.webp",
+      "960": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-003-960.webp",
+      "1600": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KAPI İSİMLİK - Örnek 3",
+    "alt_en": "A2 Advertising Kapi Isimlik - Example 3"
+  },
+  {
+    "id": "kapi-isimlik-004",
+    "category": "kapi-isimlik",
+    "category_tr": "KAPI İSİMLİK",
+    "category_en": "Kapi Isimlik",
+    "paths": {
+      "480": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-004-480.webp",
+      "960": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-004-960.webp",
+      "1600": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KAPI İSİMLİK - Örnek 4",
+    "alt_en": "A2 Advertising Kapi Isimlik - Example 4"
+  },
+  {
+    "id": "kapi-isimlik-005",
+    "category": "kapi-isimlik",
+    "category_tr": "KAPI İSİMLİK",
+    "category_en": "Kapi Isimlik",
+    "paths": {
+      "480": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-005-480.webp",
+      "960": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-005-960.webp",
+      "1600": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KAPI İSİMLİK - Örnek 5",
+    "alt_en": "A2 Advertising Kapi Isimlik - Example 5"
+  },
+  {
+    "id": "kapi-isimlik-006",
+    "category": "kapi-isimlik",
+    "category_tr": "KAPI İSİMLİK",
+    "category_en": "Kapi Isimlik",
+    "paths": {
+      "480": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-006-480.webp",
+      "960": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-006-960.webp",
+      "1600": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-006-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KAPI İSİMLİK - Örnek 6",
+    "alt_en": "A2 Advertising Kapi Isimlik - Example 6"
+  },
+  {
+    "id": "kapi-isimlik-007",
+    "category": "kapi-isimlik",
+    "category_tr": "KAPI İSİMLİK",
+    "category_en": "Kapi Isimlik",
+    "paths": {
+      "480": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-007-480.webp",
+      "960": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-007-960.webp",
+      "1600": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-007-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KAPI İSİMLİK - Örnek 7",
+    "alt_en": "A2 Advertising Kapi Isimlik - Example 7"
+  },
+  {
+    "id": "kapi-isimlik-008",
+    "category": "kapi-isimlik",
+    "category_tr": "KAPI İSİMLİK",
+    "category_en": "Kapi Isimlik",
+    "paths": {
+      "480": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-008-480.webp",
+      "960": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-008-960.webp",
+      "1600": "/assets/img/kapi-isimlik/a2reklam-kapi-isimlik-008-1600.webp"
+    },
+    "alt_tr": "A2 Reklam KAPI İSİMLİK - Örnek 8",
+    "alt_en": "A2 Advertising Kapi Isimlik - Example 8"
+  },
+  {
+    "id": "ofis-kumlama-folyolari-001",
+    "category": "ofis-kumlama-folyolari",
+    "category_tr": "OFİS KUMLAMA FOLYOLARI",
+    "category_en": "Ofis Kumlama Folyolari",
+    "paths": {
+      "480": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-001-480.webp",
+      "960": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-001-960.webp",
+      "1600": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam OFİS KUMLAMA FOLYOLARI - Örnek 1",
+    "alt_en": "A2 Advertising Ofis Kumlama Folyolari - Example 1"
+  },
+  {
+    "id": "ofis-kumlama-folyolari-002",
+    "category": "ofis-kumlama-folyolari",
+    "category_tr": "OFİS KUMLAMA FOLYOLARI",
+    "category_en": "Ofis Kumlama Folyolari",
+    "paths": {
+      "480": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-002-480.webp",
+      "960": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-002-960.webp",
+      "1600": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam OFİS KUMLAMA FOLYOLARI - Örnek 2",
+    "alt_en": "A2 Advertising Ofis Kumlama Folyolari - Example 2"
+  },
+  {
+    "id": "ofis-kumlama-folyolari-003",
+    "category": "ofis-kumlama-folyolari",
+    "category_tr": "OFİS KUMLAMA FOLYOLARI",
+    "category_en": "Ofis Kumlama Folyolari",
+    "paths": {
+      "480": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-003-480.webp",
+      "960": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-003-960.webp",
+      "1600": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam OFİS KUMLAMA FOLYOLARI - Örnek 3",
+    "alt_en": "A2 Advertising Ofis Kumlama Folyolari - Example 3"
+  },
+  {
+    "id": "ofis-kumlama-folyolari-004",
+    "category": "ofis-kumlama-folyolari",
+    "category_tr": "OFİS KUMLAMA FOLYOLARI",
+    "category_en": "Ofis Kumlama Folyolari",
+    "paths": {
+      "480": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-004-480.webp",
+      "960": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-004-960.webp",
+      "1600": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam OFİS KUMLAMA FOLYOLARI - Örnek 4",
+    "alt_en": "A2 Advertising Ofis Kumlama Folyolari - Example 4"
+  },
+  {
+    "id": "ofis-kumlama-folyolari-005",
+    "category": "ofis-kumlama-folyolari",
+    "category_tr": "OFİS KUMLAMA FOLYOLARI",
+    "category_en": "Ofis Kumlama Folyolari",
+    "paths": {
+      "480": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-005-480.webp",
+      "960": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-005-960.webp",
+      "1600": "/assets/img/ofis-kumlama-folyolari/a2reklam-ofis-kumlama-folyolari-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam OFİS KUMLAMA FOLYOLARI - Örnek 5",
+    "alt_en": "A2 Advertising Ofis Kumlama Folyolari - Example 5"
+  },
+  {
+    "id": "ozel-imalatlar-001",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-001-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-001-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 1",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 1"
+  },
+  {
+    "id": "ozel-imalatlar-002",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-002-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-002-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 2",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 2"
+  },
+  {
+    "id": "ozel-imalatlar-003",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-003-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-003-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 3",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 3"
+  },
+  {
+    "id": "ozel-imalatlar-004",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-004-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-004-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 4",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 4"
+  },
+  {
+    "id": "ozel-imalatlar-005",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-005-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-005-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 5",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 5"
+  },
+  {
+    "id": "ozel-imalatlar-006",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-006-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-006-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-006-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 6",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 6"
+  },
+  {
+    "id": "ozel-imalatlar-007",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-007-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-007-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-007-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 7",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 7"
+  },
+  {
+    "id": "ozel-imalatlar-008",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-008-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-008-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-008-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 8",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 8"
+  },
+  {
+    "id": "ozel-imalatlar-009",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-009-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-009-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-009-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 9",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 9"
+  },
+  {
+    "id": "ozel-imalatlar-010",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-010-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-010-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-010-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 10",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 10"
+  },
+  {
+    "id": "ozel-imalatlar-011",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-011-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-011-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-011-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 11",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 11"
+  },
+  {
+    "id": "ozel-imalatlar-012",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-012-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-012-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-012-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 12",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 12"
+  },
+  {
+    "id": "ozel-imalatlar-013",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-013-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-013-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-013-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 13",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 13"
+  },
+  {
+    "id": "ozel-imalatlar-014",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-014-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-014-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-014-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 14",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 14"
+  },
+  {
+    "id": "ozel-imalatlar-015",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-015-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-015-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-015-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 15",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 15"
+  },
+  {
+    "id": "ozel-imalatlar-016",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-016-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-016-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-016-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 16",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 16"
+  },
+  {
+    "id": "ozel-imalatlar-017",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-017-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-017-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-017-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 17",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 17"
+  },
+  {
+    "id": "ozel-imalatlar-018",
+    "category": "ozel-imalatlar",
+    "category_tr": "ÖZEL İMALATLAR",
+    "category_en": "Custom Manufacturing",
+    "paths": {
+      "480": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-018-480.webp",
+      "960": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-018-960.webp",
+      "1600": "/assets/img/ozel-imalatlar/a2reklam-ozel-imalatlar-018-1600.webp"
+    },
+    "alt_tr": "A2 Reklam ÖZEL İMALATLAR - Örnek 18",
+    "alt_en": "A2 Advertising Custom Manufacturing - Example 18"
+  },
+  {
+    "id": "paslanmaz-harfler-001",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 1",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 1"
+  },
+  {
+    "id": "paslanmaz-harfler-002",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-002-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-002-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 2",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 2"
+  },
+  {
+    "id": "paslanmaz-harfler-003",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-003-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-003-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 3",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 3"
+  },
+  {
+    "id": "paslanmaz-harfler-004",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-004-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-004-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 4",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 4"
+  },
+  {
+    "id": "paslanmaz-harfler-005",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-005-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-005-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 5",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 5"
+  },
+  {
+    "id": "paslanmaz-harfler-006",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-006-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-006-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-006-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 6",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 6"
+  },
+  {
+    "id": "paslanmaz-harfler-007",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-007-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-007-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-007-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 7",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 7"
+  },
+  {
+    "id": "paslanmaz-harfler-008",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-008-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-008-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-008-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 8",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 8"
+  },
+  {
+    "id": "paslanmaz-harfler-009",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-009-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-009-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-009-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 9",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 9"
+  },
+  {
+    "id": "paslanmaz-harfler-010",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-010-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-010-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-010-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 10",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 10"
+  },
+  {
+    "id": "paslanmaz-harfler-011",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-011-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-011-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-011-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 11",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 11"
+  },
+  {
+    "id": "paslanmaz-harfler-012",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-012-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-012-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-012-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 12",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 12"
+  },
+  {
+    "id": "paslanmaz-harfler-013",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-013-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-013-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-013-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 13",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 13"
+  },
+  {
+    "id": "paslanmaz-harfler-014",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-014-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-014-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-014-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 14",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 14"
+  },
+  {
+    "id": "paslanmaz-harfler-015",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-015-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-015-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-015-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 15",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 15"
+  },
+  {
+    "id": "paslanmaz-harfler-016",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-016-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-016-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-016-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 16",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 16"
+  },
+  {
+    "id": "paslanmaz-harfler-017",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-017-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-017-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-017-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 17",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 17"
+  },
+  {
+    "id": "paslanmaz-harfler-018",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-018-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-018-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-018-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 18",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 18"
+  },
+  {
+    "id": "paslanmaz-harfler-019",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-019-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-019-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-019-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 19",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 19"
+  },
+  {
+    "id": "paslanmaz-harfler-020",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-020-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-020-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-020-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 20",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 20"
+  },
+  {
+    "id": "paslanmaz-harfler-021",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-021-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-021-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-021-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 21",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 21"
+  },
+  {
+    "id": "paslanmaz-harfler-022",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-022-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-022-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-022-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 22",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 22"
+  },
+  {
+    "id": "paslanmaz-harfler-023",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-023-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-023-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-023-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 23",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 23"
+  },
+  {
+    "id": "paslanmaz-harfler-024",
+    "category": "paslanmaz-harfler",
+    "category_tr": "PASLANMAZ HARFLER",
+    "category_en": "Paslanmaz Harfler",
+    "paths": {
+      "480": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-024-480.webp",
+      "960": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-024-960.webp",
+      "1600": "/assets/img/paslanmaz-harfler/a2reklam-paslanmaz-harfler-024-1600.webp"
+    },
+    "alt_tr": "A2 Reklam PASLANMAZ HARFLER - Örnek 24",
+    "alt_en": "A2 Advertising Paslanmaz Harfler - Example 24"
+  },
+  {
+    "id": "totem-001",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-001-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-001-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 1",
+    "alt_en": "A2 Advertising Totem Pylon - Example 1"
+  },
+  {
+    "id": "totem-002",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-002-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-002-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 2",
+    "alt_en": "A2 Advertising Totem Pylon - Example 2"
+  },
+  {
+    "id": "totem-003",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-003-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-003-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 3",
+    "alt_en": "A2 Advertising Totem Pylon - Example 3"
+  },
+  {
+    "id": "totem-004",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-004-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-004-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-004-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 4",
+    "alt_en": "A2 Advertising Totem Pylon - Example 4"
+  },
+  {
+    "id": "totem-005",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-005-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-005-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-005-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 5",
+    "alt_en": "A2 Advertising Totem Pylon - Example 5"
+  },
+  {
+    "id": "totem-006",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-006-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-006-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-006-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 6",
+    "alt_en": "A2 Advertising Totem Pylon - Example 6"
+  },
+  {
+    "id": "totem-007",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-007-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-007-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-007-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 7",
+    "alt_en": "A2 Advertising Totem Pylon - Example 7"
+  },
+  {
+    "id": "totem-008",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-008-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-008-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-008-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 8",
+    "alt_en": "A2 Advertising Totem Pylon - Example 8"
+  },
+  {
+    "id": "totem-009",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-009-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-009-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-009-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 9",
+    "alt_en": "A2 Advertising Totem Pylon - Example 9"
+  },
+  {
+    "id": "totem-010",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-010-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-010-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-010-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 10",
+    "alt_en": "A2 Advertising Totem Pylon - Example 10"
+  },
+  {
+    "id": "totem-011",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-011-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-011-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-011-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 11",
+    "alt_en": "A2 Advertising Totem Pylon - Example 11"
+  },
+  {
+    "id": "totem-012",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-012-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-012-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-012-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 12",
+    "alt_en": "A2 Advertising Totem Pylon - Example 12"
+  },
+  {
+    "id": "totem-013",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-013-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-013-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-013-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 13",
+    "alt_en": "A2 Advertising Totem Pylon - Example 13"
+  },
+  {
+    "id": "totem-014",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-014-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-014-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-014-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 14",
+    "alt_en": "A2 Advertising Totem Pylon - Example 14"
+  },
+  {
+    "id": "totem-015",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-015-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-015-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-015-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 15",
+    "alt_en": "A2 Advertising Totem Pylon - Example 15"
+  },
+  {
+    "id": "totem-016",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-016-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-016-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-016-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 16",
+    "alt_en": "A2 Advertising Totem Pylon - Example 16"
+  },
+  {
+    "id": "totem-017",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-017-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-017-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-017-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 17",
+    "alt_en": "A2 Advertising Totem Pylon - Example 17"
+  },
+  {
+    "id": "totem-018",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-018-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-018-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-018-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 18",
+    "alt_en": "A2 Advertising Totem Pylon - Example 18"
+  },
+  {
+    "id": "totem-019",
+    "category": "totem",
+    "category_tr": "TOTEM",
+    "category_en": "Totem Pylon",
+    "paths": {
+      "480": "/assets/img/totem/a2reklam-totem-019-480.webp",
+      "960": "/assets/img/totem/a2reklam-totem-019-960.webp",
+      "1600": "/assets/img/totem/a2reklam-totem-019-1600.webp"
+    },
+    "alt_tr": "A2 Reklam TOTEM - Örnek 19",
+    "alt_en": "A2 Advertising Totem Pylon - Example 19"
+  },
+  {
+    "id": "yonlendirme-001",
+    "category": "yonlendirme",
+    "category_tr": "YÖNLENDİRME",
+    "category_en": "Wayfinding",
+    "paths": {
+      "480": "/assets/img/yonlendirme/a2reklam-yonlendirme-001-480.webp",
+      "960": "/assets/img/yonlendirme/a2reklam-yonlendirme-001-960.webp",
+      "1600": "/assets/img/yonlendirme/a2reklam-yonlendirme-001-1600.webp"
+    },
+    "alt_tr": "A2 Reklam YÖNLENDİRME - Örnek 1",
+    "alt_en": "A2 Advertising Wayfinding - Example 1"
+  },
+  {
+    "id": "yonlendirme-002",
+    "category": "yonlendirme",
+    "category_tr": "YÖNLENDİRME",
+    "category_en": "Wayfinding",
+    "paths": {
+      "480": "/assets/img/yonlendirme/a2reklam-yonlendirme-002-480.webp",
+      "960": "/assets/img/yonlendirme/a2reklam-yonlendirme-002-960.webp",
+      "1600": "/assets/img/yonlendirme/a2reklam-yonlendirme-002-1600.webp"
+    },
+    "alt_tr": "A2 Reklam YÖNLENDİRME - Örnek 2",
+    "alt_en": "A2 Advertising Wayfinding - Example 2"
+  },
+  {
+    "id": "yonlendirme-003",
+    "category": "yonlendirme",
+    "category_tr": "YÖNLENDİRME",
+    "category_en": "Wayfinding",
+    "paths": {
+      "480": "/assets/img/yonlendirme/a2reklam-yonlendirme-003-480.webp",
+      "960": "/assets/img/yonlendirme/a2reklam-yonlendirme-003-960.webp",
+      "1600": "/assets/img/yonlendirme/a2reklam-yonlendirme-003-1600.webp"
+    },
+    "alt_tr": "A2 Reklam YÖNLENDİRME - Örnek 3",
+    "alt_en": "A2 Advertising Wayfinding - Example 3"
+  }
+]

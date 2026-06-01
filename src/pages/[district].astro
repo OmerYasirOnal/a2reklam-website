@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ResponsiveHeroImage from '../components/common/ResponsiveHeroImage.astro';
 import { districts } from '../data/districts';
 import { sectors } from '../data/sectors';
 import { autolinkServices } from '../utils/autolink';
@@ -123,15 +124,12 @@ const serviceSchema = {
 
         <!-- Hero Görsel -->
         <div class="mb-8 rounded-xl overflow-hidden border border-white/10">
-          <img
+          <ResponsiveHeroImage
             src={heroImage}
             alt={`${district.name} tabela imalatı — A2 Reklam proje örneği`}
-            width="960"
-            height="540"
             class="w-full h-48 md:h-64 object-cover"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
+            sizes="(min-width: 1024px) 66vw, 100vw"
+            eager
           />
         </div>
 

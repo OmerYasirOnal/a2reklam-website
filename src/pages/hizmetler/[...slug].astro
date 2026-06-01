@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import ResponsiveHeroImage from '../../components/common/ResponsiveHeroImage.astro';
 import { loadImagesManifest } from '../../utils/imagesManifest';
 import { buildImageAlt } from '../../utils/imageSeo';
 import { PHONE_NUMBER, PHONE_TEL } from '../../consts';
@@ -174,7 +175,7 @@ const serviceSchema = Astro.site
   <!-- Hero Section - Theme-agnostic styling for consistent readability -->
   <div class="service-hero relative h-[50vh] flex items-center justify-center">
     <div class="absolute inset-0 z-0">
-      <img src={entry.data.heroImage} alt={`${displayTitle} - İstanbul profesyonel tabela hizmeti | A2 Reklam`} class="w-full h-full object-cover service-hero-img" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080" />
+      <ResponsiveHeroImage src={entry.data.heroImage} alt={`${displayTitle} - İstanbul profesyonel tabela hizmeti | A2 Reklam`} class="w-full h-full object-cover service-hero-img" sizes="100vw" eager />
       <!-- Theme-agnostic dark gradient overlay for text readability -->
       <div class="service-hero-overlay absolute inset-0"></div>
     </div>

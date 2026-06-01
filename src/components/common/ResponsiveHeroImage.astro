@@ -1,0 +1,54 @@
+---
+/**
+ * ResponsiveHeroImage — tek noktadan responsive hero <img>.
+ *
+ * Tüm hero görselleri `-480/-960/-1600.webp` varyantlarına sahiptir (scripts/process-images.js).
+ * Bu component, verilen bir `-<width>.webp` yolundan tabanı çıkarıp 3 genişlikli srcset + sizes
+ * üretir; böylece mobil cihaz 1600px (≈400-765KB) yerine 480/960 varyantını indirir (LCP/bandwidth).
+ * Gerçek piksel boyutu HERO_SIZES'ta varsa width/height verilir (CLS); yoksa graceful atlanır
+ * (hero kapsayıcıları zaten sabit yükseklikli + object-cover olduğundan layout kaymaz).
+ */
+import { HERO_SIZES } from '../../utils/heroImageSizes';
+
+interface Props {
+  src: string; // bir "-<width>.webp" yolu (örn. -960 veya -1600)
+  alt: string;
+  class?: string;
+  sizes?: string;
+  eager?: boolean; // above-the-fold LCP hero'su için true
+  widths?: number[];
+}
+
+const {
+  src,
+  alt,
+  class: className,
+  sizes = '100vw',
+  eager = false,
+  widths = [480, 960, 1600],
+} = Astro.props;
+
+// "-<width>.webp" sonekini sök → varyant tabanı. Eşleşmezse graceful (tek src).
+const match = src.match(/^(.*)-(\d+)\.webp$/);
+const base = match ? match[1] : null;
+
+const srcset = base ? widths.map((w) => `${base}-${w}.webp ${w}w`).join(', ') : undefined;
+// Kararlı fallback = 960 varyantı (çoğu viewport'u karşılar).
+const fallbackSrc = base ? `${base}-960.webp` : src;
+
+// Gerçek intrinsic boyut (CLS): 960 varyantını boyut haritasında ara.
+const dim = base ? HERO_SIZES[`${base}-960.webp`] : undefined;
+---
+
+<img
+  src={fallbackSrc}
+  srcset={srcset}
+  sizes={srcset ? sizes : undefined}
+  alt={alt}
+  class={className}
+  width={dim?.w}
+  height={dim?.h}
+  loading={eager ? 'eager' : 'lazy'}
+  fetchpriority={eager ? 'high' : undefined}
+  decoding="async"
+/>

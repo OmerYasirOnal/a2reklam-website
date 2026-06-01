@@ -1,0 +1,23 @@
+# A2 REKLAM — Cloudflare Pages Headers
+# .htaccess güvenlik + cache header'larından port edildi.
+# Hotlink koruması: Cloudflare panel > Scrape Shield > Hotlink Protection (toggle) ile yapılır.
+# HTML edge cache: Cloudflare varsayılanı HTML'i edge'de cache'lemez (içerik tazeliği korunur).
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+  X-XSS-Protection: 1; mode=block
+
+# Astro hash'li asset'ler (içerik-adresli) — kalıcı, değişmez cache
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Statik medya (img/video/font) — uzun browser+edge cache. Hash'siz olduğu için 30 gün
+# (aynı dosya adıyla değişirse en geç 30 günde tazelenir). .htaccess'teki 1 yıl kuralının karşılığı.
+/assets/*
+  Cache-Control: public, max-age=2592000
+# Marka / OG / favicon görselleri
+/brand/*
+  Cache-Control: public, max-age=2592000
