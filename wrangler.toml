@@ -1,0 +1,13 @@
+# Cloudflare Pages yapılandırması
+# Build komutu: npm run build  | Çıktı dizini: dist
+# Functions: functions/ (otomatik algılanır)
+name = "a2reklam-website"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-11-01"
+
+# Ortam değişkenleri panelden (Settings > Environment variables) eklenir:
+#   RESEND_API_KEY = re_...   (gizli)
+# İsteğe bağlı KV binding (rate limit için): RATE_LIMIT
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "<kv_namespace_id>"

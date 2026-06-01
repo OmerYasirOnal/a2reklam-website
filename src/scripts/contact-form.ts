@@ -81,8 +81,8 @@ async function handleSubmit(event: Event): Promise<void> {
       website: formData.get('website') as string, // Honeypot
     };
 
-    // Submit to PHP endpoint
-    const response = await fetch('/api/contact.php', {
+    // Submit to Cloudflare Pages Function (functions/api/contact.js)
+    const response = await fetch('/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

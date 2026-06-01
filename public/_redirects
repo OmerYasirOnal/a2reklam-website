@@ -1,0 +1,80 @@
+# A2 REKLAM — Cloudflare Pages Redirects
+# .htaccess + astro.config redirects'ten port edildi. Gerçek 301'ler.
+# Sıra önemli: spesifik kurallar üstte, splat/catch-all'lar altta (ilk eşleşen kazanır).
+# Suffix dönüşümleri (X-tabela -> X-tabelaci) functions/_middleware.js'te (placeholder ile yapılamaz).
+# HTTPS zorlaması: Cloudflare panel > SSL/TLS > "Always Use HTTPS". www->non-www: _middleware.js.
+
+# --- Sitemap eski yollar ---
+/sitemap.xml          /sitemap-index.xml   301
+/sitemap_index.xml    /sitemap-index.xml   301
+/post-sitemap.xml     /sitemap-0.xml       301
+/page-sitemap.xml     /sitemap-0.xml       301
+
+# --- Statik sayfa eski yollar ---
+/iletisim-tabela/     /iletisim/           301
+/hakkinda/            /hakkimizda/         301
+/tabela-cesitleri/    /hizmetler/          301
+/teklif-al/           /iletisim/           301
+/fener-tabela-nedir/  /hizmetler/fener-tabela/   301
+
+# --- Eski /tabelacesitleri/ hizmet URL'leri (spesifik) ---
+/tabelacesitleri/folyo-baski-uygulama/  /hizmetler/ofis-kumlama-folyolari/  301
+/tabelacesitleri/pleksi-kutu-harf/      /hizmetler/kabartma-pleksiglass/    301
+/tabelacesitleri/kutu-harf/             /hizmetler/paslanmaz-harfler/       301
+/tabelacesitleri/isikli-tabela/         /hizmetler/isikli-tabela/           301
+/tabelacesitleri/totem-tabela/          /hizmetler/totem/                   301
+/tabelacesitleri/cephe-tabela/          /hizmetler/cephe-tabela/            301
+/tabelacesitleri/arac-giydirme/         /hizmetler/arac-giydirme/           301
+/tabelacesitleri/paslanmaz-harf/        /hizmetler/paslanmaz-harfler/       301
+/tabelacesitleri/dijital-baski/         /hizmetler/                         301
+/tabelacesitleri/neon-tabela/           /hizmetler/isikli-tabela/           301
+
+# --- Eski "-tabela-tabelaci" sonekli ilçe URL'leri ---
+/uskudar-tabela-tabelaci/   /uskudar-tabelaci/    301
+/sisli-tabela-tabelaci/     /sisli-tabelaci/      301
+/kadikoy-tabela-tabelaci/   /kadikoy-tabelaci/    301
+/besiktas-tabela-tabelaci/  /besiktas-tabelaci/   301
+/beyoglu-tabela-tabelaci/   /beyoglu-tabelaci/    301
+/fatih-tabela-tabelaci/     /fatih-tabelaci/      301
+/bakirkoy-tabela-tabelaci/  /bakirkoy-tabelaci/   301
+/umraniye-tabela-tabelaci/  /umraniye-tabelaci/   301
+/atasehir-tabela-tabelaci/  /atasehir-tabelaci/   301
+/maltepe-tabela-tabelaci/   /maltepe-tabelaci/    301
+
+# --- /ar/ (Arapça) spesifik → Türkçe ---
+/ar/services/    /hizmetler/     301
+/ar/gallery/     /galeri/        301
+/ar/contact/     /iletisim/      301
+/ar/get-quote/   /iletisim/      301
+/ar/about/       /hakkimizda/    301
+/ar/thank-you/   /tesekkurler/   301
+
+# --- /en/ (İngilizce) spesifik → Türkçe ---
+/en/blog/         /blog/             301
+/en/faq/          /sss/              301
+/en/thank-you/    /tesekkurler/      301
+/en/gallery/      /galeri/           301
+/en/contact/      /iletisim/         301
+/en/about/        /hakkimizda/       301
+/en/portfolio/    /referanslar/      301
+/en/get-quote/    /iletisim/         301
+/en/service-areas/   /istanbul-tabelaci/   301
+/en/services/:slug/  /hizmetler/:slug/     301
+
+# --- hizmet-bolgeleri: mahalle özel + il dışı (-tabela dönüşümleri middleware'de) ---
+/hizmet-bolgeleri/bursa     /istanbul-tabelaci/   301
+/hizmet-bolgeleri/bursa/*   /istanbul-tabelaci/   301
+/hizmet-bolgeleri/kocaeli   /istanbul-tabelaci/   301
+/hizmet-bolgeleri/kocaeli/* /istanbul-tabelaci/   301
+/hizmet-bolgeleri/sakarya   /istanbul-tabelaci/   301
+/hizmet-bolgeleri/sakarya/* /istanbul-tabelaci/   301
+/hizmet-bolgeleri/tekirdag  /istanbul-tabelaci/   301
+/hizmet-bolgeleri/tekirdag/* /istanbul-tabelaci/  301
+/hizmet-bolgeleri/yalova    /istanbul-tabelaci/   301
+/hizmet-bolgeleri/yalova/*  /istanbul-tabelaci/   301
+
+# --- Catch-all'lar (en sonda) ---
+/tabelacesitleri/*    /hizmetler/           301
+/hizmet-bolgeleri/*   /istanbul-tabelaci/   301
+/en/*                 /                     301
+/ar/*                 /                     301

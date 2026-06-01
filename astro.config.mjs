@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel';
 import rehypeRemoveFirstH1 from './src/utils/rehype-remove-first-h1.mjs';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -33,7 +32,9 @@ function videoSitemapIndex() {
 export default defineConfig({
   site: 'https://a2reklam.com',
   output: 'static',
-  adapter: vercel(),
+  // Cloudflare Pages: saf statik build (adapter gerekmez).
+  // Yönlendirmeler public/_redirects + functions/_middleware.js ile yapılır;
+  // aşağıdaki `redirects` bloğu statik meta-refresh fallback olarak kalır.
   server: {
     host: '0.0.0.0',
     port: 4321,
