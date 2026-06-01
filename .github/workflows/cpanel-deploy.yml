@@ -58,7 +58,7 @@ jobs:
         env:
           DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }}
         run: |
-          RESULT=$(curl -s -m 120 "https://a2reklam.com/api/deploy-extract.php?secret=${DEPLOY_SECRET}")
+          RESULT=$(curl --resolve a2reklam.com:443:89.252.183.211 -s -m120 "https://a2reklam.com/api/deploy-extract.php?secret=${DEPLOY_SECRET}")
           echo "$RESULT"
           echo "$RESULT" | grep -q '"ok":true' || (echo "::error::Extract başarısız" && exit 1)
 
@@ -66,9 +66,9 @@ jobs:
         env:
           DEPLOY_SECRET: ${{ secrets.DEPLOY_SECRET }}
         run: |
-          curl -s -m 30 "https://a2reklam.com/api/cache-purge.php?secret=${DEPLOY_SECRET}" || true
-          curl -s -m 60 "https://a2reklam.com/api/force-refresh.php?secret=${DEPLOY_SECRET}" || true
-          curl -s -m 30 "https://a2reklam.com/api/cleanup-stale.php?secret=${DEPLOY_SECRET}" || true
+          curl --resolve a2reklam.com:443:89.252.183.211 -s -m30 "https://a2reklam.com/api/cache-purge.php?secret=${DEPLOY_SECRET}" || true
+          curl --resolve a2reklam.com:443:89.252.183.211 -s -m60 "https://a2reklam.com/api/force-refresh.php?secret=${DEPLOY_SECRET}" || true
+          curl --resolve a2reklam.com:443:89.252.183.211 -s -m30 "https://a2reklam.com/api/cleanup-stale.php?secret=${DEPLOY_SECRET}" || true
 
       - name: Submit to IndexNow (Bing/Yandex)
         run: node scripts/submit-indexnow.mjs || true

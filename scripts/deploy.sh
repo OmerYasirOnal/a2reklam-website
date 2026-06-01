@@ -62,7 +62,7 @@ log "Upload complete"
 # ---- Step 4: Extract on server ----
 log "Extracting on server..."
 EXTRACT_URL="https://a2reklam.com/api/deploy-extract.php?secret=${DEPLOY_SECRET}"
-RESULT=$(curl -s -m 60 "$EXTRACT_URL")
+RESULT=$(curl --resolve a2reklam.com:443:89.252.183.211 -s -m60 "$EXTRACT_URL")
 
 if echo "$RESULT" | grep -q '"ok":true'; then
   log "Server extraction successful"
@@ -74,14 +74,14 @@ fi
 # ---- Step 5: Purge LiteSpeed cache ----
 log "Purging server cache..."
 PURGE_URL="https://a2reklam.com/api/cache-purge.php?secret=${DEPLOY_SECRET}"
-PURGE_RESULT=$(curl -s -m 30 "$PURGE_URL" 2>/dev/null || echo '{"ok":false}')
+PURGE_RESULT=$(curl --resolve a2reklam.com:443:89.252.183.211 -s -m30 "$PURGE_URL" 2>/dev/null || echo '{"ok":false}')
 if echo "$PURGE_RESULT" | grep -q '"ok":true'; then
   log "Cache purge signal sent"
 fi
 
 # Force-refresh: touch HTML files + .htaccess modification
 REFRESH_URL="https://a2reklam.com/api/force-refresh.php?secret=${DEPLOY_SECRET}"
-REFRESH_RESULT=$(curl -s -m 60 "$REFRESH_URL" 2>/dev/null || echo '{"ok":false}')
+REFRESH_RESULT=$(curl --resolve a2reklam.com:443:89.252.183.211 -s -m60 "$REFRESH_URL" 2>/dev/null || echo '{"ok":false}')
 if echo "$REFRESH_RESULT" | grep -q '"ok":true'; then
   log "Force refresh completed"
   echo -e "${CYAN}$REFRESH_RESULT${NC}"
@@ -91,7 +91,7 @@ fi
 
 # Cleanup stale .html files that conflict with directory/index.html
 CLEANUP_URL="https://a2reklam.com/api/cleanup-stale.php?secret=${DEPLOY_SECRET}"
-CLEANUP_RESULT=$(curl -s -m 30 "$CLEANUP_URL" 2>/dev/null || echo '{"ok":false}')
+CLEANUP_RESULT=$(curl --resolve a2reklam.com:443:89.252.183.211 -s -m30 "$CLEANUP_URL" 2>/dev/null || echo '{"ok":false}')
 if echo "$CLEANUP_RESULT" | grep -q '"ok":true'; then
   log "Stale file cleanup done"
   echo -e "${CYAN}$CLEANUP_RESULT${NC}"
