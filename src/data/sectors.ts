@@ -19,6 +19,8 @@ export interface Sector {
   };
   relatedServices: string[];
   materialTable?: MaterialRow[];
+  // AEO: alıntılanabilir faktüel tanım — getDefinition heuristic yerine elle yazıldı
+  aeoDefinition?: string;
 }
 
 export const sectors: Sector[] = [
@@ -78,6 +80,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Berber tabelası, berber ve erkek kuaförlerinin cepheden tanıtımı için kullanılan, klasik kırmızı-beyaz-mavi döner ışıklı silindir (barber pole) ya da LED kutu harf biçimindeki tabela uygulamasıdır. 2026 itibarıyla İstanbul’da döner ışıklı modeller ₺3.500–₺12.000, LED kutu harf tabelalar ₺8.000–₺25.000 aralığındadır; LED kutu harf 15+ yıl dayanır. A2 Reklam, Kağıthane atölyesinde üretim yapıp İstanbul’un 39 ilçesinde montaj sağlar.',
     relatedServices: ['isikli-tabela', 'paslanmaz-harfler', 'fener-tabela'],
     materialTable: [
       { name: 'Döner Işıklı (Barber Pole)', durability: '5-8 yıl', lighting: 'LED motorlu', priceRange: '₺3.500 – ₺12.000' },
@@ -138,6 +142,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Kuaför tabelası, kadın, erkek ve unisex güzellik salonlarının cephe tanıtımı için kullanılan, genellikle ışıklı LED kutu harf, neon LED yazı veya vitrin cam folyosu biçimindeki tabela uygulamasıdır. 2026’da İstanbul’da LED kutu harf modeller ₺10.000–₺30.000, neon LED tabelalar ₺6.000–₺20.000 aralığındadır; kutu harf 15+ yıl, cam folyo 5-7 yıl dayanır. A2 Reklam, İstanbul’un 39 ilçesinde kuaför tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'paslanmaz-harfler', 'cephe-tabela'],
     materialTable: [
       { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺10.000 – ₺30.000' },
@@ -202,6 +208,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Eczane tabelası, eczanelerin cephe tanıtımı ve yön gösterimi için kullanılan, genellikle yeşil LED haç sembolü ile ışıklı kutu harf eczane adından oluşan tabela uygulamasıdır. 2026’da İstanbul’da tek renkli LED haç tabelalar ₺8.000–₺25.000, çift renkli modeller ₺12.000–₺35.000 aralığındadır ve 7-10 yıl dayanır. A2 Reklam, Türk Eczacıları Birliği standartlarına uygun olarak İstanbul’un 39 ilçesinde eczane tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'fener-tabela', 'cephe-tabela'],
     materialTable: [
       { name: 'LED Haç Tabela (Tek Renk)', durability: '7-10 yıl', lighting: 'Yeşil LED', priceRange: '₺8.000 – ₺25.000' },
@@ -267,6 +275,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Cafe ve restoran tabelası, yeme-içme işletmelerinin cephe ve atmosfer tanıtımı için kullanılan; neon LED yazı, ahşap görünümlü tabela, paslanmaz kutu harf veya ışıklı menü panosu biçimindeki tabela uygulamasıdır. 2026’da İstanbul’da neon LED tabelalar ₺5.000–₺25.000, ahşap tabelalar ₺6.000–₺18.000, paslanmaz kutu harf ₺15.000–₺50.000 aralığındadır; kutu harf 15+ yıl dayanır. A2 Reklam, İstanbul’un 39 ilçesinde cafe-restoran tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'cephe-tabela', 'fener-tabela', 'yonlendirme'],
     materialTable: [
       { name: 'Neon LED Tabela', durability: '5+ yıl', lighting: 'Neon flex LED', priceRange: '₺5.000 – ₺25.000' },
@@ -326,6 +336,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Market tabelası, market, bakkal ve süpermarketlerin cephe tanıtımı için kullanılan; ışıklı light box pano, LED kutu harf veya yol kenarı totem tabela biçimindeki tabela uygulamasıdır. 2026’da İstanbul’da ışıklı lightbox tabelalar ₺10.000–₺35.000, LED kutu harf ₺12.000–₺40.000, totem tabelalar ₺25.000–₺80.000 aralığındadır; totem 15+ yıl dayanır. A2 Reklam, İstanbul’un 39 ilçesinde market tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'totem', 'cephe-tabela'],
     materialTable: [
       { name: 'Işıklı Lightbox', durability: '10+ yıl', lighting: 'Arka LED panel', priceRange: '₺10.000 – ₺35.000' },
@@ -385,6 +397,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Diş kliniği tabelası, ağız ve diş sağlığı kliniklerinin cephe tanıtımı için kullanılan, genellikle hijyenik ve güven veren paslanmaz çelik kutu harf, ışıklı light box veya pleksi kapı isimlik biçimindeki tabela uygulamasıdır. 2026’da İstanbul’da paslanmaz kutu harf tabelalar ₺12.000–₺35.000, ışıklı lightbox ₺8.000–₺25.000, pleksi kapı isimlikler ₺2.000–₺6.000 aralığındadır; paslanmaz harf 15+ yıl dayanır. A2 Reklam, Sağlık Bakanlığı düzenlemelerine uygun olarak İstanbul’un 39 ilçesinde diş kliniği tabelası imalat ve montajı yapar.',
     relatedServices: ['paslanmaz-harfler', 'isikli-tabela', 'yonlendirme', 'kapi-isimlik'],
     materialTable: [
       { name: 'Paslanmaz Kutu Harf', durability: '15+ yıl', lighting: 'Halo LED aydınlatma', priceRange: '₺12.000 – ₺35.000' },
@@ -450,6 +464,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Otel tabelası, konaklama tesislerinin çatı, giriş cephesi ve iç mekân yönlendirmesi için kullanılan; paslanmaz/bronz kutu harf, cephe giydirme, totem ve oda numaralandırma sistemlerinden oluşan tabela uygulamasıdır. 2026’da İstanbul’da paslanmaz kutu harf tabelalar ₺20.000–₺80.000, cephe giydirme ₺30.000–₺120.000, totem tabelalar ₺30.000–₺100.000 aralığındadır; paslanmaz harf 20+ yıl dayanır. A2 Reklam, rüzgar-deprem statik hesabıyla İstanbul’un 39 ilçesinde otel tabelası imalat ve montajı yapar.',
     relatedServices: ['cati-tabelasi', 'yonlendirme', 'paslanmaz-harfler', 'kapi-isimlik'],
     materialTable: [
       { name: 'Paslanmaz Kutu Harf', durability: '20+ yıl', lighting: 'Halo LED / ön LED', priceRange: '₺20.000 – ₺80.000' },
@@ -514,6 +530,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Mağaza tabelası, perakende dükkan ve mağazaların cephe tanıtımı için kullanılan; LED kutu harf, ışıklı light box, vitrin folyosu veya cephe giydirme biçimindeki tabela uygulamasıdır. 2026’da İstanbul’da LED kutu harf tabelalar ₺12.000–₺50.000, ışıklı lightbox ₺8.000–₺30.000, neon LED tabelalar ₺5.000–₺22.000 aralığındadır; kutu harf 15+ yıl dayanır. A2 Reklam, Pantone/RAL renk eşleştirmesiyle İstanbul’un 39 ilçesinde mağaza tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'paslanmaz-harfler', 'cephe-tabela', 'fener-tabela'],
     materialTable: [
       { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺12.000 – ₺50.000' },
@@ -574,6 +592,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Fabrika tabelası, sanayi tesislerinin kurumsal kimlik, ziyaretçi yönlendirmesi ve iş güvenliği için kullanılan; büyük ebat kompozit panel cephe giydirme, totem ve OSGB uyumlu güvenlik tabelalarından oluşan tabela uygulamasıdır. 2026’da İstanbul’da kompozit panel cephe ₺800–₺1.400/m², galvaniz trapez sac ₺500–₺900/m², çatı/cephe kutu harf ₺20.000–₺80.000 aralığındadır; kompozit cephe 15-20 yıl dayanır. A2 Reklam, çelik konstrüksiyon ve statik hesapla İstanbul’un 39 ilçesinde fabrika tabelası imalat ve montajı yapar.',
     relatedServices: ['cephe-tabela', 'totem', 'yonlendirme'],
     materialTable: [
       { name: 'Kompozit Panel Cephe', durability: '15-20 yıl', lighting: 'LED spot / şerit', priceRange: '₺800 – ₺1.400 /m²' },
@@ -633,6 +653,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Plaza tabelası, iş merkezi ve plazaların dış cephe tanıtımı ile lobi-kat yönlendirmesi için kullanılan; paslanmaz/krom cephe harfi, kiracı bilgilendirme panosu ve kapı isimlik sistemlerinden oluşan tabela uygulamasıdır. 2026’da İstanbul’da paslanmaz kutu harf tabelalar ₺20.000–₺70.000, ACP cephe giydirme ₺25.000–₺90.000, totem tabelalar ₺30.000–₺100.000 aralığındadır; paslanmaz harf 20+ yıl dayanır. A2 Reklam, İstanbul’un 39 ilçesinde plaza tabelası imalat ve montajı yapar.',
     relatedServices: ['paslanmaz-harfler', 'yonlendirme', 'kapi-isimlik', 'cephe-tabela'],
     materialTable: [
       { name: 'Paslanmaz Kutu Harf', durability: '20+ yıl', lighting: 'Halo LED aydınlatma', priceRange: '₺20.000 – ₺70.000' },
@@ -697,6 +719,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'AVM tabelası, alışveriş merkezlerindeki mağaza cephesi tanıtımı ve ziyaretçi yönlendirmesi için kullanılan; AVM yönetim standartlarına uygun ışıklı kutu harf, light box, dijital LED ekran ve kat yönlendirme sistemlerinden oluşan tabela uygulamasıdır. 2026’da İstanbul’da mağaza LED kutu harf tabelaları ₺15.000–₺60.000, dijital LED ekranlar ₺40.000–₺150.000, yönlendirme sistemleri ₺8.000–₺30.000 aralığındadır; kutu harf 15+ yıl dayanır. A2 Reklam, mesai dışı montaj planlamasıyla İstanbul’un 39 ilçesinde AVM tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'totem', 'yonlendirme', 'paslanmaz-harfler'],
     materialTable: [
       { name: 'LED Kutu Harf (Mağaza)', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺15.000 – ₺60.000' },
@@ -762,6 +786,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Hastane tabelası, sağlık tesislerinin dış cephe tanıtımı ve hasta yönlendirmesi için kullanılan; Sağlık Bakanlığı ve JCI standartlarına uygun renk kodlamalı yönlendirme, paslanmaz kutu harf, acil ışıklı tabela ve poliklinik kapı isimliklerinden oluşan tabela uygulamasıdır. 2026’da İstanbul’da paslanmaz kutu harf tabelalar ₺15.000–₺60.000, LED yönlendirme tabelaları ₺3.000–₺12.000, totem/pylon tabelalar ₺30.000–₺100.000 aralığındadır; paslanmaz harf 20+ yıl dayanır. A2 Reklam, İstanbul’un 39 ilçesinde hastane tabelası imalat ve montajı yapar.',
     relatedServices: ['yonlendirme', 'cephe-tabela', 'kapi-isimlik', 'isikli-tabela'],
     materialTable: [
       { name: 'Paslanmaz Kutu Harf', durability: '20+ yıl', lighting: 'Halo LED aydınlatma', priceRange: '₺15.000 – ₺60.000' },
@@ -821,6 +847,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Okul tabelası, okul, kreş ve eğitim kurumlarının cephe tanıtımı, bahçe girişi ve iç mekân yönlendirmesi için kullanılan; MEB düzenlemelerine uygun ışıklı kutu harf, light box, bahçe kapısı tabelası ve sınıf kapı isimliklerinden oluşan tabela uygulamasıdır. 2026’da İstanbul’da LED kutu harf tabelalar ₺10.000–₺35.000, ışıklı lightbox ₺8.000–₺25.000, totem tabelalar ₺20.000–₺60.000 aralığındadır; kutu harf 15+ yıl dayanır. A2 Reklam, çocuk güvenliğine uygun keskin kenarsız malzemeyle İstanbul’un 39 ilçesinde okul tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'cephe-tabela', 'yonlendirme', 'kapi-isimlik'],
     materialTable: [
       { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺10.000 – ₺35.000' },
@@ -887,6 +915,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Benzin istasyonu tabelası, akaryakıt bayilerinin sürücülere uzaktan tanıtımı ve fiyat gösterimi için kullanılan; 6-12 metre yüksekliğinde çelik konstrüksiyonlu totem (pylon), LED akaryakıt fiyat panosu ve kanopi altı tabelalardan oluşan tabela uygulamasıdır. 2026’da İstanbul’da totem/pylon tabelalar ₺40.000–₺150.000, kanopi aydınlatma ₺20.000–₺60.000, cephe kutu harf ₺15.000–₺50.000 aralığındadır; totem 15+ yıl dayanır. A2 Reklam, IP65 dayanım ve statik hesapla İstanbul’un 39 ilçesinde benzin istasyonu tabelası imalat ve montajı yapar.',
     relatedServices: ['totem', 'isikli-tabela', 'cephe-tabela'],
     materialTable: [
       { name: 'Totem / Pylon Tabela', durability: '15+ yıl', lighting: 'Dahili LED panel', priceRange: '₺40.000 – ₺150.000' },
@@ -946,6 +976,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Kargo ve lojistik tabelası, kargo şubeleri ile depo-dağıtım tesislerinin cephe tanıtımı ve filo görünürlüğü için kullanılan; ışıklı cephe tabelası, kompozit panel depo giydirme, totem ve araç giydirmeden oluşan tabela uygulamasıdır. 2026’da İstanbul’da ACP cephe giydirme ₺20.000–₺80.000, totem tabelalar ₺25.000–₺80.000, araç giydirme ₺8.000–₺30.000/araç aralığındadır; cephe giydirme 15+ yıl, araç folyosu 3-5 yıl dayanır. A2 Reklam, kurumsal bayilik standartlarıyla İstanbul’un 39 ilçesinde kargo-lojistik tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'cephe-tabela', 'arac-giydirme', 'totem'],
     materialTable: [
       { name: 'Cephe Giydirme (ACP)', durability: '15+ yıl', lighting: 'LED spot', priceRange: '₺20.000 – ₺80.000' },
@@ -1010,6 +1042,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Fırın ve pastane tabelası, ekmek fırını ve pastanelerin cephe tanıtımı için kullanılan; ışıklı cephe tabelası, çift yüzlü fener tabela, vitrin folyosu ve neon LED yazıdan oluşan tabela uygulamasıdır. 2026’da İstanbul’da neon LED tabelalar ₺5.000–₺18.000, ahşap görünümlü tabelalar ₺5.000–₺15.000, fener tabelalar ₺4.000–₺12.000, ışıklı lightbox ₺8.000–₺22.000 aralığındadır; fener tabela 10+ yıl dayanır. A2 Reklam, sıcaklık ve buhara dayanıklı malzemeyle İstanbul’un 39 ilçesinde fırın-pastane tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'fener-tabela', 'cephe-tabela'],
     materialTable: [
       { name: 'Neon LED Tabela', durability: '5+ yıl', lighting: 'Neon flex LED', priceRange: '₺5.000 – ₺18.000' },
@@ -1069,6 +1103,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Veteriner tabelası, veteriner klinikleri ve pet shop’ların cephe tanıtımı için kullanılan; genellikle pati izi ve hayvan figürleri içeren ışıklı kutu harf, light box, çift yüzlü fener tabela ve vitrin folyosundan oluşan tabela uygulamasıdır. 2026’da İstanbul’da LED kutu harf tabelalar ₺8.000–₺25.000, ışıklı lightbox ₺6.000–₺18.000, fener tabelalar ₺4.000–₺12.000 aralığındadır; kutu harf 15+ yıl dayanır. A2 Reklam, hijyenik ve kolay temizlenebilir malzemeyle İstanbul’un 39 ilçesinde veteriner tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'fener-tabela', 'paslanmaz-harfler'],
     materialTable: [
       { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺8.000 – ₺25.000' },
@@ -1129,6 +1165,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Avukat ve hukuk bürosu tabelası, avukatlık, hukuk ve noter ofislerinin ciddiyet ve güven vurgulu kimliğini yansıtan; baro düzenlemelerine uygun paslanmaz/krom harf, kapı isimlik ve bina giriş yönlendirmesinden oluşan tabela uygulamasıdır. 2026’da İstanbul’da paslanmaz kutu harf tabelalar ₺12.000–₺40.000, pleksi kapı isimlikler ₺2.000–₺6.000, kumlama cam folyo ₺1.500–₺5.000 aralığındadır; paslanmaz harf 20+ yıl dayanır. A2 Reklam, İstanbul’un 39 ilçesinde avukat-hukuk bürosu tabelası imalat ve montajı yapar.',
     relatedServices: ['paslanmaz-harfler', 'kapi-isimlik', 'yonlendirme'],
     materialTable: [
       { name: 'Paslanmaz Kutu Harf', durability: '20+ yıl', lighting: 'Halo LED aydınlatma', priceRange: '₺12.000 – ₺40.000' },
@@ -1189,6 +1227,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Spor salonu tabelası, fitness merkezi, gym ve CrossFit işletmelerinin enerjik marka kimliğini yansıtan; cesur renk ve kalın fontlu ışıklı kutu harf, neon LED motivasyon yazısı ve büyük format cephe giydirmeden oluşan tabela uygulamasıdır. 2026’da İstanbul’da LED kutu harf tabelalar ₺12.000–₺40.000, neon LED tabelalar ₺6.000–₺22.000, cephe giydirme ₺20.000–₺60.000 aralığındadır; kutu harf 15+ yıl, neon LED ise 30.000-50.000 saat ömürlüdür. A2 Reklam, İstanbul’un 39 ilçesinde spor salonu tabelası imalat ve montajı yapar.',
     relatedServices: ['isikli-tabela', 'cephe-tabela', 'fener-tabela'],
     materialTable: [
       { name: 'LED Kutu Harf', durability: '15+ yıl', lighting: 'Dahili LED modül', priceRange: '₺12.000 – ₺40.000' },
@@ -1260,6 +1300,8 @@ export const sectors: Sector[] = [
         },
       ],
     },
+    aeoDefinition:
+      'Oto yıkama ve galeri tabelası, oto yıkama, oto galeri ve araç bakım merkezlerinin yol üzerinden sürücülere tanıtımı için kullanılan; yol kenarı totem, ışıklı cephe tabelası, fiyat panosu ve araç giydirmeden oluşan tabela uygulamasıdır. 2026’da İstanbul’da totem tabelalar ₺25.000–₺80.000, ışıklı lightbox ₺8.000–₺30.000, LED kutu harf ₺10.000–₺35.000, araç üstü reklam ₺5.000–₺15.000 aralığındadır; totem 15+ yıl dayanır. A2 Reklam, su ve kimyasala dayanıklı IP65 malzemeyle İstanbul’un 39 ilçesinde oto yıkama-galeri tabelası imalat ve montajı yapar.',
     relatedServices: ['totem', 'isikli-tabela', 'arac-giydirme', 'cephe-tabela'],
     materialTable: [
       { name: 'Totem Tabela', durability: '15+ yıl', lighting: 'Dahili LED panel', priceRange: '₺25.000 – ₺80.000' },
