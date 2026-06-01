@@ -1,0 +1,14 @@
+# Cloudflare Pages yapılandırması
+# Build komutu: npm run build  | Çıktı dizini: dist
+# Functions: functions/ (otomatik algılanır)
+name = "a2reklam-website"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-11-01"
+
+# Ortam değişkenleri panelden (Settings > Environment variables) eklenir:
+#   RESEND_API_KEY = re_...   (gizli — secret, toml'a YAZILMAZ)
+# KV binding (rate limit için): RATE_LIMIT — wrangler.toml'da OLMAK ZORUNDA,
+# yoksa `wrangler pages deploy` her deploy'da binding'i siler (secret'lar hariç).
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "8e1a7dc4a85c48099190952a206b02a2"

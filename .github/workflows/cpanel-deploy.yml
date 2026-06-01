@@ -1,16 +1,11 @@
-name: cPanel Auto-Deploy
+name: cPanel Auto-Deploy (DEPRECATED — Cloudflare'e taşındı)
 
-# main'e push'ta (istisnalar hariç) otomatik cPanel FTP deploy.
-# Blog otomasyonu ile entegre — yeni yazı yayınlanır yayınlanmaz canlıya alınır.
+# DEPRECATED: Site Cloudflare Pages'e taşındı (bkz. docs/CLOUDFLARE_MIGRATION.md).
+# Otomatik push tetikleyicisi KALDIRILDI; aksi halde main'e merge GuzelHosting'e
+# eski PHP'siz kodu deploy edip canlı formu bozardı. Yalnızca manuel (rollback) için durur.
+# DNS Cloudflare'e geçtikten ve her şey doğrulandıktan sonra bu dosya tamamen silinebilir.
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'src/**'
-      - 'public/**'
-      - 'astro.config.mjs'
-      - 'package.json'
   workflow_dispatch:
 
 concurrency:
