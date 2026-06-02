@@ -43,7 +43,7 @@ const allOtherDistricts = districts.filter(d => d.slug !== district.slug);
 const introLinked = new Set<string>();
 const introParas = district.content.intro.split('\n\n').map((p: string) => autolinkServices(p, introLinked));
 
-const whatsappLink = `https://wa.me/905316181672?text=Merhaba, ${encodeURIComponent(district.name)} bölgesinde tabela hizmeti almak istiyorum.`;
+const whatsappLink = `https://wa.me/905316181672?text=${encodeURIComponent(`Merhaba, ${district.name} bölgesinde tabela hizmeti almak istiyorum.`)}`;
 
 // Hero görseli — ilçe slug hash'ine göre gerçek proje fotoğrafından seçilir
 const heroImages = [
