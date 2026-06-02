@@ -76,7 +76,7 @@ const description = "İstanbul'da hastane wayfinding: acil, poliklinik, oda, eri
           <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
           Acil • Poliklinik • Hasta Odası • Erişilebilirlik
         </div>
-        <h1 class="font-heading font-bold text-4xl md:text-6xl text-white uppercase tracking-tight mb-4">
+        <h1 class="font-heading font-semibold text-4xl md:text-6xl text-white uppercase tracking-tight mb-4">
           HASTANE <span class="text-primary">TABELA</span> SİSTEMİ
         </h1>
         <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
@@ -93,13 +93,13 @@ const description = "İstanbul'da hastane wayfinding: acil, poliklinik, oda, eri
 
   <section class="py-16 bg-secondary">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-12 uppercase">
+      <h2 class="font-heading font-semibold text-3xl md:text-4xl text-white text-center mb-12 uppercase">
         Hastane Tabela <span class="text-primary">Türleri</span>
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {hastaneServices.map(t => (
           <div class="p-6 glass-card hover:border-primary/50 transition-all">
-            <h3 class="font-heading font-bold text-xl text-white mb-2">{t.title}</h3>
+            <h3 class="font-heading font-semibold text-xl text-white mb-2">{t.title}</h3>
             <p class="text-gray-400 text-sm leading-relaxed">{t.desc}</p>
           </div>
         ))}
@@ -109,7 +109,7 @@ const description = "İstanbul'da hastane wayfinding: acil, poliklinik, oda, eri
 
   <section class="py-16 bg-secondary/80">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-12 uppercase">
+      <h2 class="font-heading font-semibold text-3xl md:text-4xl text-white text-center mb-12 uppercase">
         Hastane Wayfinding <span class="text-primary">Süreci</span>
       </h2>
       <div class="space-y-4">
@@ -117,7 +117,7 @@ const description = "İstanbul'da hastane wayfinding: acil, poliklinik, oda, eri
           <div class="flex gap-4 p-6 glass-card hover:border-primary/50 transition-all">
             <div class="flex-shrink-0 w-12 h-12 bg-primary text-secondary rounded-full flex items-center justify-center font-bold text-xl">{s.n}</div>
             <div>
-              <h3 class="font-heading font-bold text-xl text-white mb-1">{s.title}</h3>
+              <h3 class="font-heading font-semibold text-xl text-white mb-1">{s.title}</h3>
               <p class="text-gray-400 leading-relaxed">{s.desc}</p>
             </div>
           </div>
@@ -129,7 +129,7 @@ const description = "İstanbul'da hastane wayfinding: acil, poliklinik, oda, eri
   <section class="py-16 bg-secondary relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none"></div>
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="text-5xl md:text-6xl font-heading font-bold text-primary mb-4">30+</div>
+      <div class="text-5xl md:text-6xl font-heading font-semibold text-primary mb-4">30+</div>
       <p class="text-xl text-white font-semibold mb-2">Hastane Wayfinding Projesi</p>
       <p class="text-gray-400 max-w-2xl mx-auto">
         Acıbadem, Memorial, Florence Nightingale, Medical Park, Liv, American Hospital, Yeditepe,
@@ -140,13 +140,13 @@ const description = "İstanbul'da hastane wayfinding: acil, poliklinik, oda, eri
 
   <section class="py-16 bg-secondary">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-heading font-bold text-3xl md:text-4xl text-white text-center mb-10 uppercase">
+      <h2 class="font-heading font-semibold text-3xl md:text-4xl text-white text-center mb-10 uppercase">
         Sıkça Sorulan <span class="text-primary">Sorular</span>
       </h2>
       <div class="space-y-4">
         {faq.map(item => (
           <details class="p-6 glass-card group">
-            <summary class="font-heading font-bold text-white cursor-pointer list-none flex justify-between items-center">
+            <summary class="font-heading font-semibold text-white cursor-pointer list-none flex justify-between items-center">
               <span>{item.question}</span>
               <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
             </summary>

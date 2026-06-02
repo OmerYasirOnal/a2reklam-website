@@ -43,6 +43,9 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
   class="hero-split relative min-h-[75vh] flex items-stretch overflow-hidden bg-[#0B0F14]"
   aria-label={lang === 'en' ? 'Hero section' : 'Ana banner'}
 >
+  <!-- Kozmik atmosfer (dekoratif, metin arkasında) -->
+  <div class="cosmic-panel" aria-hidden="true"></div>
+
   <!-- LEFT SIDE: Text Content -->
   <div class="hero-left relative z-10 flex flex-col justify-center w-full lg:w-[55%] px-6 sm:px-10 lg:px-16 xl:px-24 py-16 lg:py-20">
     <!-- Badge -->
@@ -53,7 +56,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
     </div>
 
     <!-- Title with typewriter -->
-    <h1 class="hero-anim hero-anim-title font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white mb-6">
+    <h1 class="hero-anim hero-anim-title font-heading font-semibold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white mb-6">
       {t.titleBefore}{' '}
       <span class="hero-typewriter-wrapper inline-flex items-baseline">
         <span id="hero-typewriter" class="text-primary">{t.words[0]}</span>
@@ -84,8 +87,8 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
           <span class="absolute inset-0 rounded-full bg-secondary/30 animate-ping" style="animation-duration:1.8s;" aria-hidden="true"></span>
         </span>
         <div class="flex flex-col items-start leading-tight">
-          <span class="text-xs uppercase tracking-widest opacity-80 font-bold">{t.call} ·  ücretsiz keşif</span>
-          <span class="text-2xl md:text-3xl font-black">{PHONE_NUMBER}</span>
+          <span class="text-xs uppercase tracking-widest opacity-70 font-semibold">{t.call} ·  ücretsiz keşif</span>
+          <span class="text-2xl md:text-3xl font-bold">{PHONE_NUMBER}</span>
         </div>
       </a>
     </div>
@@ -98,7 +101,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
         rel="noopener noreferrer"
         data-track="whatsapp"
         data-lang={lang}
-        class="hero-cta-whatsapp px-6 py-3 text-sm font-bold uppercase tracking-wide"
+        class="hero-cta-whatsapp px-6 py-3 text-sm font-semibold uppercase tracking-wide"
       >
         {t.whatsapp}
       </a>
@@ -106,7 +109,7 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
         href={t.quoteLink}
         data-track="quote"
         data-lang={lang}
-        class="hero-cta-secondary px-6 py-3 text-sm font-bold uppercase tracking-wide"
+        class="hero-cta-secondary px-6 py-3 text-sm font-semibold uppercase tracking-wide"
       >
         {t.quote}
       </a>
