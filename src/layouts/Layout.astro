@@ -148,8 +148,11 @@ const quoteLink = mobileCtaVariant === 'contact' ? '#contact-form' : '/iletisim/
           },
           { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
         );
-        targets.forEach(function (el) {
-          var r = el.getBoundingClientRect();
+        // READ → WRITE ayrımı: tüm rect'leri önce oku (tek forced reflow),
+        // sonra is-in/observe yaz → layout thrash yok, ilk-ekran flash'ı da yok
+        var rects = targets.map(function (el) { return el.getBoundingClientRect(); });
+        targets.forEach(function (el, idx) {
+          var r = rects[idx];
           if (r.top < vh * 0.92 && r.bottom > 0) el.classList.add('is-in');
           else obs.observe(el);
         });

@@ -948,6 +948,8 @@
 .anim-ready [data-animate].is-in {
   opacity: 1;
   transform: none;
+  /* Animasyon bitince compositing katmanını serbest bırak (kalıcı will-change birikimini önle) */
+  will-change: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

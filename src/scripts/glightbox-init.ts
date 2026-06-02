@@ -2,15 +2,25 @@
 // Track instances to prevent duplicates and allow cleanup
 const instances: Map<string, any> = new Map();
 
+// CSS'i ?url ile al → Vite asset olarak emit eder, <head>'e render-blocking <link>
+// HOIST ETMEZ. Gerçek <link> sadece lightbox ilk gerektiğinde JS ile enjekte edilir.
+import glightboxCssUrl from 'glightbox/dist/css/glightbox.css?url';
+
 let glightboxModule: typeof import('glightbox') | null = null;
+
+function ensureGlightboxCss() {
+  if (document.querySelector('link[data-glightbox-css]')) return;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = glightboxCssUrl;
+  link.setAttribute('data-glightbox-css', '');
+  document.head.appendChild(link);
+}
 
 async function loadGLightbox() {
   if (!glightboxModule) {
-    const [mod] = await Promise.all([
-      import('glightbox'),
-      import('glightbox/dist/css/glightbox.css'),
-    ]);
-    glightboxModule = mod;
+    ensureGlightboxCss(); // non-blocking, JS ile paralel yüklenir
+    glightboxModule = await import('glightbox');
   }
   return glightboxModule.default;
 }
