@@ -94,6 +94,18 @@ const quoteLink = mobileCtaVariant === 'contact' ? '#contact-form' : '/iletisim/
       faq={faq}
     />
     <SiteSchemas />
+    <script is:inline>
+      // theme-color meta'yı ilk paint ÖNCESİ doğru renge ayarla (SEO meta'sı DOM'da hazır artık,
+      // erken boot script'te değildi). Mobil tarayıcı çubuğunun koyu→light flash'ını önler.
+      (function() {
+        try {
+          var stored = localStorage.getItem('a2-theme');
+          var theme = (stored === 'light' || stored === 'dark') ? stored : 'light';
+          var m = document.getElementById('theme-color');
+          if (m) m.setAttribute('content', theme === 'light' ? '#F8F9FA' : '#0B0F14');
+        } catch (err) {}
+      })();
+    </script>
     <!-- No-JS fallback: reveal animasyonu JS gerektirir; JS yoksa içerik daima görünür kalsın -->
     <noscript><style>.scroll-reveal,[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 	</head>
