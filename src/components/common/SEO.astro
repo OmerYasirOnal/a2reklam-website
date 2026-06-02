@@ -4,8 +4,6 @@ import { BING_VERIFICATION, YANDEX_VERIFICATION } from '../../consts';
 // Font preload URL'leri — Vite ?url ile hash'li yolu build'de türetir (elle hash yazma; güncellemede kırılmaz)
 import interLatinUrl from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import interLatinExtUrl from '@fontsource-variable/inter/files/inter-latin-ext-wght-normal.woff2?url';
-import montserratLatinUrl from '@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2?url';
-import montserratLatinExtUrl from '@fontsource-variable/montserrat/files/montserrat-latin-ext-wght-normal.woff2?url';
 
 interface BreadcrumbItem {
   name: string;
@@ -136,11 +134,9 @@ const articleSchema =
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-<!-- Font preloading for faster LCP -->
+<!-- Font preloading for faster LCP — yalnız Inter (tüm gövde+başlıklar Inter; Montserrat kullanılmıyordu, 109KB preload kaldırıldı) -->
 <link rel="preload" href={interLatinUrl} as="font" type="font/woff2" crossorigin />
-<link rel="preload" href={montserratLatinUrl} as="font" type="font/woff2" crossorigin />
 {/* latin-ext subset: Türkçe glyph'ler (ş/ğ/ı/İ) ayrı dosyada — hero H1 + başlıklar bunu kullanır */}
-<link rel="preload" href={montserratLatinExtUrl} as="font" type="font/woff2" crossorigin />
 <link rel="preload" href={interLatinExtUrl} as="font" type="font/woff2" crossorigin />
 
 {/* Hero video poster preload — anasayfada LCP iyileştirmesi */}

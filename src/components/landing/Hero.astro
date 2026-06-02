@@ -366,15 +366,23 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
   }
 
   .hero-anim-badge { animation-delay: 0.1s; }
-  .hero-anim-title { animation-delay: 0.25s; }
+  /* LCP: H1 başlık opacity-gate'siz boyanır (opacity:0 element LCP olarak sayılmaz;
+     transform'lu element paint anında sayılır). Sadece transform animasyonu kalır,
+     gecikme yok → mobil LCP ~0.25-0.95s erken. */
+  .hero-anim-title {
+    opacity: 1;
+    transform: translateX(-30px);
+    animation: heroSlideInLeftT 0.7s ease-out 0s forwards;
+  }
   .hero-anim-subtitle { animation-delay: 0.4s; }
   .hero-anim-cta { animation-delay: 0.55s; }
 
+  /* LCP (desktop): hero poster img de opacity-gate'siz boyanır, sadece transform kayar */
   .hero-right {
-    opacity: 0;
+    opacity: 1;
     transform: translateX(30px);
-    animation: heroSlideInRight 0.7s ease-out 0.2s forwards;
-    will-change: transform, opacity;
+    animation: heroSlideInRightT 0.7s ease-out 0.2s forwards;
+    will-change: transform;
   }
 
   @keyframes heroSlideInLeft {
@@ -389,6 +397,17 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
       opacity: 1;
       transform: translateX(0);
     }
+  }
+
+  /* Transform-only varyantlar (opacity'ye dokunmaz — LCP elementleri için) */
+  @keyframes heroSlideInLeftT {
+    from { transform: translateX(-30px); }
+    to { transform: translateX(0); }
+  }
+
+  @keyframes heroSlideInRightT {
+    from { transform: translateX(30px); }
+    to { transform: translateX(0); }
   }
 
   /* CTA Buttons — always on dark bg, theme-agnostic */

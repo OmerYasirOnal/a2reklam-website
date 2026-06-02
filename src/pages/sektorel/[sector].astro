@@ -58,6 +58,8 @@ const introParas = sector.content.intro.split('\n\n').map((p: string) => autolin
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": `https://a2reklam.com/sektorel/${sector.slug}/#service`,
+  "name": `${sector.name} İmalatı ve Montaj`,
   "serviceType": sector.name,
   "provider": {
     "@type": "LocalBusiness",
@@ -95,7 +97,7 @@ const serviceSchema = {
 >
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
     <!-- Breadcrumb -->
     <nav class="mb-8 text-sm" aria-label="Breadcrumb">
@@ -352,5 +354,5 @@ const serviceSchema = {
       </aside>
     </div>
 
-  </main>
+  </div>
 </Layout>
