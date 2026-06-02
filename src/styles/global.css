@@ -110,6 +110,12 @@
     background-color: var(--bg-base);
   }
 
+  /* Yatay-taşma emniyet supabı — clip (hidden değil) sticky header'ı bozmadan kırpar */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   html[data-theme="light"] {
     color-scheme: light;
   }
@@ -265,6 +271,10 @@
   .article-prose h2 {
     margin-top: 3rem;
     margin-bottom: 1.25rem;
+    /* Rehber/blog h2 sol-altın aksanı — prose-h2:border-l-4 prose sınıfları ölüydü
+       (typography plugin yok); tema-uyumlu var(--accent-primary) ile gerçek stil */
+    border-left: 4px solid var(--accent-primary);
+    padding-left: 1rem;
   }
 
   .article-prose h3 {
@@ -1045,7 +1055,18 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
   body::after,
-  .cosmic-panel::after {
-    animation: none;
+  .cosmic-panel::after,
+  .animate-pulse,
+  .animate-ping,
+  .animate-bounce,
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-scale-in {
+    animation: none !important;
+  }
+
+  /* Global yumuşak kaydırmayı kapat (WCAG 2.3.3) — html + sayfa-içi scrollIntoView/scrollTo */
+  html {
+    scroll-behavior: auto !important;
   }
 }

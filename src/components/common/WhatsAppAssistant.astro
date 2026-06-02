@@ -57,7 +57,7 @@ const quoteLink =
 ---
 
 <div
-  class="fixed right-3 md:right-4 z-40 bottom-[4.5rem] md:bottom-6 hidden md:block"
+  class="fixed right-3 md:right-4 z-40 bottom-[4.5rem] md:bottom-6 hidden lg:block"
   data-chat-widget
 >
   <div class="relative flex flex-col gap-3 items-end">
@@ -87,6 +87,8 @@ const quoteLink =
       id="chat-widget-panel"
       data-chat-panel
       role="dialog"
+      aria-label={t.title}
+      aria-modal="true"
       aria-hidden="true"
       hidden
       class="glass-card w-[calc(100vw-1.5rem)] sm:w-72 max-w-80 p-4 md:p-5 text-left text-white shadow-2xl animate-fade-in-up"

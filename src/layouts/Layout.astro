@@ -97,7 +97,7 @@ const quoteLink = mobileCtaVariant === 'contact' ? '#contact-form' : '/iletisim/
     <!-- No-JS fallback: reveal animasyonu JS gerektirir; JS yoksa içerik daima görünür kalsın -->
     <noscript><style>.scroll-reveal,[data-animate]{opacity:1!important;transform:none!important}</style></noscript>
 	</head>
-	<body class="bg-secondary text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-primary selection:text-white pb-12 md:pb-0">
+	<body class="bg-secondary text-gray-300 font-sans antialiased flex flex-col min-h-screen selection:bg-primary selection:text-white pb-[calc(3.5rem+env(safe-area-inset-bottom))] lg:pb-0">
     {TRACKING_ENABLED && (
       <noscript>
         <iframe

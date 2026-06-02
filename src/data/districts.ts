@@ -22,7 +22,7 @@ export const districts: District[] = [
   {
     slug: 'kagithane-tabelaci',
     name: 'Kağıthane',
-    title: 'Kağıthane Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Kağıthane Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Kağıthane'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Kağıthane Tabelacı \u2014 Profesyonel Tabela İmalatı',
     priority: 1,
@@ -77,7 +77,7 @@ export const districts: District[] = [
   {
     slug: 'sisli-tabelaci',
     name: 'Şişli',
-    title: 'Şişli Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Şişli Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Şişli'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Şişli Tabelacı \u2014 Kurumsal Tabela Çözümleri',
     priority: 1,
@@ -123,7 +123,7 @@ export const districts: District[] = [
   {
     slug: 'beyoglu-tabelaci',
     name: 'Beyoğlu',
-    title: 'Beyoğlu Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Beyoğlu Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Beyoğlu'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Beyoğlu Tabelacı \u2014 Tarihi Dokuya Uygun Tabela Çözümleri',
     priority: 1,
@@ -164,7 +164,7 @@ export const districts: District[] = [
   {
     slug: 'besiktas-tabelaci',
     name: 'Beşiktaş',
-    title: 'Beşiktaş Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Beşiktaş Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Beşiktaş'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Beşiktaş Tabelacı \u2014 Kurumsal ve Ticari Tabela Çözümleri',
     priority: 1,
@@ -205,7 +205,7 @@ export const districts: District[] = [
   {
     slug: 'kadikoy-tabelaci',
     name: 'Kadıköy',
-    title: 'Kadıköy Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Kadıköy Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Kadıköy'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Kadıköy Tabelacı \u2014 Anadolu Yakasi Tabela Çözümleri',
     priority: 1,
@@ -247,7 +247,7 @@ export const districts: District[] = [
   {
     slug: 'bakirkoy-tabelaci',
     name: 'Bakırköy',
-    title: 'Bakırköy Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Bakırköy Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Bakırköy'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Bakırköy Tabelacı \u2014 Profesyonel Tabela Çözümleri',
     priority: 1,
@@ -277,7 +277,7 @@ export const districts: District[] = [
   {
     slug: 'atasehir-tabelaci',
     name: 'Ataşehir',
-    title: 'Ataşehir Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Ataşehir Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Ataşehir'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Ataşehir Tabelacı \u2014 Finans Merkezi Tabela Çözümleri',
     priority: 1,
@@ -310,7 +310,7 @@ export const districts: District[] = [
   {
     slug: 'basaksehir-tabelaci',
     name: 'Başakşehir',
-    title: 'Başakşehir Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Başakşehir Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Başakşehir'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Başakşehir Tabelacı \u2014 Sanayi ve Ticari Tabela Çözümleri',
     priority: 1,
@@ -382,7 +382,7 @@ export const districts: District[] = [
   {
     slug: 'beylikduzu-tabelaci',
     name: 'Beylikdüzü',
-    title: 'Beylikdüzü Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Beylikdüzü Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Beylikdüzü'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Beylikdüzü Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 1,
@@ -414,7 +414,7 @@ export const districts: District[] = [
   {
     slug: 'fatih-tabelaci',
     name: 'Fatih',
-    title: 'Fatih Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Fatih Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Fatih'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Fatih Tabelacı \u2014 Profesyonel Tabela Çözümleri',
     priority: 2,
@@ -465,7 +465,7 @@ export const districts: District[] = [
   {
     slug: 'uskudar-tabelaci',
     name: 'Üsküdar',
-    title: 'Üsküdar Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Üsküdar Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Üsküdar'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Üsküdar Tabelacı \u2014 Profesyonel Tabela Çözümleri',
     priority: 2,
@@ -516,7 +516,7 @@ export const districts: District[] = [
   {
     slug: 'umraniye-tabelaci',
     name: 'Ümraniye',
-    title: 'Ümraniye Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Ümraniye Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Ümraniye'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Ümraniye Tabelacı \u2014 Profesyonel Tabela Çözümleri',
     priority: 2,
@@ -566,7 +566,7 @@ export const districts: District[] = [
   {
     slug: 'maltepe-tabelaci',
     name: 'Maltepe',
-    title: 'Maltepe Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Maltepe Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Maltepe'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Maltepe Tabelacı \u2014 Profesyonel Tabela Çözümleri',
     priority: 2,
@@ -616,7 +616,7 @@ export const districts: District[] = [
   {
     slug: 'esenyurt-tabelaci',
     name: 'Esenyurt',
-    title: 'Esenyurt Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Esenyurt Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Esenyurt'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Esenyurt Tabelacı \u2014 Profesyonel Tabela Çözümleri',
     priority: 2,
@@ -666,7 +666,7 @@ export const districts: District[] = [
   {
     slug: 'bagcilar-tabelaci',
     name: 'Bağcılar',
-    title: 'Bağcılar Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Bağcılar Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Bağcılar'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Bağcılar Tabelacı \u2014 Profesyonel Tabela Çözümleri',
     priority: 2,
@@ -766,7 +766,7 @@ export const districts: District[] = [
   {
     slug: 'eyupsultan-tabelaci',
     name: 'Eyüpsultan',
-    title: 'Eyüpsultan Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Eyüpsultan Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Eyüpsultan'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Eyüpsultan Tabelacı \u2014 Profesyonel Tabela Çözümleri',
     priority: 2,
@@ -816,7 +816,7 @@ export const districts: District[] = [
   {
     slug: 'sariyer-tabelaci',
     name: 'Sarıyer',
-    title: 'Sarıyer Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Sarıyer Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Sarıyer'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Sarıyer Tabelacı \u2014 Profesyonel Tabela Çözümleri',
     priority: 2,
@@ -867,7 +867,7 @@ export const districts: District[] = [
   {
     slug: 'pendik-tabelaci',
     name: 'Pendik',
-    title: 'Pendik Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Pendik Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Pendik'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Pendik Tabelacı \u2014 Profesyonel Tabela Çözümleri',
     priority: 2,
@@ -921,7 +921,7 @@ export const districts: District[] = [
   {
     slug: 'adalar-tabelaci',
     name: 'Adalar',
-    title: 'Adalar Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Adalar Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Adalar'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Adalar Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -948,7 +948,7 @@ export const districts: District[] = [
   {
     slug: 'arnavutkoy-tabelaci',
     name: 'Arnavutköy',
-    title: 'Arnavutköy Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Arnavutköy Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Arnavutköy'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Arnavutköy Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -975,7 +975,7 @@ export const districts: District[] = [
   {
     slug: 'avcilar-tabelaci',
     name: 'Avcılar',
-    title: 'Avcılar Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Avcılar Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Avcılar'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Avcılar Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1002,7 +1002,7 @@ export const districts: District[] = [
   {
     slug: 'bayrampasa-tabelaci',
     name: 'Bayrampaşa',
-    title: 'Bayrampaşa Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Bayrampaşa Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Bayrampaşa'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Bayrampaşa Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1029,7 +1029,7 @@ export const districts: District[] = [
   {
     slug: 'beykoz-tabelaci',
     name: 'Beykoz',
-    title: 'Beykoz Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Beykoz Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Beykoz'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Beykoz Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1083,7 +1083,7 @@ export const districts: District[] = [
   {
     slug: 'catalca-tabelaci',
     name: 'Çatalca',
-    title: 'Çatalca Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Çatalca Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Çatalca'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Çatalca Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1110,7 +1110,7 @@ export const districts: District[] = [
   {
     slug: 'cekmekoy-tabelaci',
     name: 'Çekmeköy',
-    title: 'Çekmeköy Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Çekmeköy Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Çekmeköy'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Çekmeköy Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1137,7 +1137,7 @@ export const districts: District[] = [
   {
     slug: 'esenler-tabelaci',
     name: 'Esenler',
-    title: 'Esenler Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Esenler Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Esenler'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Esenler Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1164,7 +1164,7 @@ export const districts: District[] = [
   {
     slug: 'gungoren-tabelaci',
     name: 'Güngören',
-    title: 'Güngören Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Güngören Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Güngören'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Güngören Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1191,7 +1191,7 @@ export const districts: District[] = [
   {
     slug: 'kartal-tabelaci',
     name: 'Kartal',
-    title: 'Kartal Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Kartal Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Kartal'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Kartal Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1245,7 +1245,7 @@ export const districts: District[] = [
   {
     slug: 'sancaktepe-tabelaci',
     name: 'Sancaktepe',
-    title: 'Sancaktepe Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Sancaktepe Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Sancaktepe'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Sancaktepe Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1272,7 +1272,7 @@ export const districts: District[] = [
   {
     slug: 'silivri-tabelaci',
     name: 'Silivri',
-    title: 'Silivri Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Silivri Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Silivri'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Silivri Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1353,7 +1353,7 @@ export const districts: District[] = [
   {
     slug: 'sile-tabelaci',
     name: 'Şile',
-    title: 'Şile Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Şile Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Şile'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Sile Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1380,7 +1380,7 @@ export const districts: District[] = [
   {
     slug: 'tuzla-tabelaci',
     name: 'Tuzla',
-    title: 'Tuzla Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Tuzla Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Tuzla'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Tuzla Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,
@@ -1407,7 +1407,7 @@ export const districts: District[] = [
   {
     slug: 'zeytinburnu-tabelaci',
     name: 'Zeytinburnu',
-    title: 'Zeytinburnu Tabelacı | Kurumsal Tabela İmalatı & Montaj | A2 Reklam',
+    title: 'Zeytinburnu Tabelacı | Kurumsal Tabela İmalatı | A2 Reklam',
     metaDescription: "Zeytinburnu'de kurumsal tabela imalatı: AVM, plaza, hastane, otel. ⭐5.0/90 Google yorum, 2.500+ proje. Ücretsiz keşif + 3D tasarım. ☎ 0531 618 16 72",
     h1: 'Zeytinburnu Tabelacı \u2014 Tabela İmalatı ve Montaj',
     priority: 3,

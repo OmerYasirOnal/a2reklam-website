@@ -37,6 +37,20 @@ const faq = [
 ];
 
 const whatsappLink = `https://wa.me/905316181672?text=${encodeURIComponent("Merhaba, İstanbul'da tabela hizmeti almak istiyorum.")}`;
+
+// Hub→ilçe ilişkisini makine-okunur yap (AIO/SEO): 39 ilçeyi ItemList olarak ilan et
+const districtListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "İstanbul İlçe Tabelacıları",
+  "numberOfItems": districts.length,
+  "itemListElement": districts.map((d, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": `${d.name} Tabelacı`,
+    "url": `https://a2reklam.com/${d.slug}/`,
+  })),
+};
 ---
 
 <Layout
@@ -47,6 +61,7 @@ const whatsappLink = `https://wa.me/905316181672?text=${encodeURIComponent("Merh
   whatsappTitle="İstanbul Tabelacı"
   whatsappLocation="İstanbul"
 >
+  <script type="application/ld+json" set:html={JSON.stringify(districtListSchema)} />
 
   <section class="py-16 md:py-20 bg-secondary">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
