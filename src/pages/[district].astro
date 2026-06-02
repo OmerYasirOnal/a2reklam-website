@@ -5,6 +5,7 @@ import { districts } from '../data/districts';
 import { sectors } from '../data/sectors';
 import { autolinkServices } from '../utils/autolink';
 import AnswerBox from '../components/sectors/AnswerBox.astro';
+import RelatedGuides from '../components/common/RelatedGuides.astro';
 import { getDistrictDefinition, getDistrictQuickFacts, getDistrictPriceSummary, getDistrictSharedFaq } from '../utils/districtFacts';
 import { PHONE_TEL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_URL } from '../consts';
 
@@ -159,7 +160,7 @@ const serviceSchema = {
           />
         </div>
 
-        <h1 class="font-heading text-3xl md:text-4xl font-bold text-white mb-6">
+        <h1 class="font-heading text-3xl md:text-4xl font-semibold text-white mb-6">
           {district.h1}
         </h1>
 
@@ -224,7 +225,7 @@ const serviceSchema = {
 
         <!-- Hizmetlerimiz Grid -->
         <section class="mb-10">
-          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+          <h2 class="font-heading text-2xl font-semibold text-white mb-6">
             {district.name}'de Sunduğumuz Tabela Hizmetleri
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -240,7 +241,7 @@ const serviceSchema = {
         <!-- Ticari Bölgeler -->
         {district.content.commercialAreas.length > 0 && (
           <section class="mb-10">
-            <h2 class="font-heading text-2xl font-bold text-white mb-4">
+            <h2 class="font-heading text-2xl font-semibold text-white mb-4">
               {district.name}'de Hizmet Verdiğimiz Bölgeler
             </h2>
             <div class="flex flex-wrap gap-2">
@@ -255,7 +256,7 @@ const serviceSchema = {
 
         <!-- Neden A2 Reklam? -->
         <section class="mb-10">
-          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+          <h2 class="font-heading text-2xl font-semibold text-white mb-6">
             {district.name}'de Neden A2 Reklam?
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -280,7 +281,7 @@ const serviceSchema = {
 
         <!-- Süreç Nasıl İşliyor? -->
         <section class="mb-10">
-          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+          <h2 class="font-heading text-2xl font-semibold text-white mb-6">
             Süreç Nasıl İşliyor?
           </h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -344,9 +345,12 @@ const serviceSchema = {
           </a>
         </section>
 
+        <!-- İlgili Rehberler (blog/rehber cluster'ına iç link) -->
+        <RelatedGuides />
+
         <!-- SSS -->
         <section class="mb-10">
-          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+          <h2 class="font-heading text-2xl font-semibold text-white mb-6">
             Sıkça Sorulan Sorular
           </h2>
           <div class="space-y-4">
@@ -366,7 +370,7 @@ const serviceSchema = {
 
         <!-- İlçe → Sektör iç linkleme (topical cluster: ilçe↔sektör çift yönlü) -->
         <section class="mb-10">
-          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+          <h2 class="font-heading text-2xl font-semibold text-white mb-6">
             {district.name}'de Sektörel Tabela Çözümleri
           </h2>
           <p class="text-gray-400 mb-5 leading-relaxed">
@@ -384,7 +388,7 @@ const serviceSchema = {
 
         <!-- Google Map Embed -->
         <section class="mb-10">
-          <h2 class="font-heading text-2xl font-bold text-white mb-4">
+          <h2 class="font-heading text-2xl font-semibold text-white mb-4">
             {district.name} Konum
           </h2>
           <div class="rounded-xl overflow-hidden border border-white/10">
@@ -465,7 +469,7 @@ const serviceSchema = {
 
     <!-- B3: Tüm İlçe Linkleri (Internal Linking Boost) -->
     <section class="py-12 border-t border-white/10 mt-8">
-      <h2 class="font-heading text-xl font-bold text-white mb-4 text-center">
+      <h2 class="font-heading text-xl font-semibold text-white mb-4 text-center">
         İstanbul'da Tabela Hizmet Bölgelerimiz
       </h2>
       <div class="flex flex-wrap justify-center gap-2">
