@@ -227,7 +227,7 @@ const serviceSchema = {
                     <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
                     Büyük Ölçek Projeler
                   </div>
-                  <h3 class="font-heading font-bold text-xl md:text-2xl text-white mb-2 !mt-0">
+                  <h3 class="font-heading font-semibold text-xl md:text-2xl text-white mb-2 !mt-0">
                     Kurumsal {sector.name} Projeniz Mi Var?
                   </h3>
                   <p class="text-gray-300 text-sm md:text-base leading-relaxed">
@@ -303,13 +303,13 @@ const serviceSchema = {
         <div class="sticky top-24 space-y-6">
           <!-- CTA -->
           <div class="bg-accent-light p-6 rounded-xl border border-white/5 shadow-2xl text-center">
-            <h3 class="font-heading font-bold text-lg mb-3 text-white uppercase tracking-tight">
+            <h3 class="font-heading font-semibold text-lg mb-3 text-white uppercase tracking-tight">
               <span class="text-primary">{sector.name}</span> Teklif Alın
             </h3>
             <p class="text-gray-400 mb-5 text-sm leading-relaxed">
               Ücretsiz keşif ve fiyat teklifi
             </p>
-            <a href="/iletisim/" class="block w-full text-center bg-primary text-secondary font-black py-3 rounded-lg hover:bg-white transition-all uppercase tracking-widest text-sm mb-3">
+            <a href="/iletisim/" class="block w-full text-center bg-primary text-secondary font-semibold py-3 rounded-lg hover:bg-white transition-all uppercase tracking-widest text-sm mb-3">
               Teklif İste
             </a>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full text-center bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-500 transition-all text-sm mb-3">
@@ -323,7 +323,7 @@ const serviceSchema = {
 
           <!-- İlgili Hizmetler -->
           <div class="glass-card p-5">
-            <h3 class="font-heading font-bold text-base text-white mb-3">İlgili Hizmetler</h3>
+            <h3 class="font-heading font-semibold text-base text-white mb-3">İlgili Hizmetler</h3>
             <div class="space-y-2">
               {sector.relatedServices.map(slug => (
                 <a href={`/hizmetler/${slug}/`} class="block text-sm text-gray-400 hover:text-primary transition-colors py-1">
@@ -335,7 +335,7 @@ const serviceSchema = {
 
           <!-- Popüler Sektörler -->
           <div class="glass-card p-5">
-            <h3 class="font-heading font-bold text-base text-white mb-3">Popüler Sektörler</h3>
+            <h3 class="font-heading font-semibold text-base text-white mb-3">Popüler Sektörler</h3>
             <div class="space-y-2">
               {sectors.filter(s => s.slug !== sector.slug).slice(0, 8).map(s => (
                 <a href={`/sektorel/${s.slug}/`} class="block text-sm text-gray-400 hover:text-primary transition-colors py-1">

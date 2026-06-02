@@ -181,7 +181,7 @@ const serviceSchema = {
         <div class="mb-10 p-6 md:p-8 bg-surface bg-gradient-to-br from-primary/20 via-primary/10 to-transparent border-2 border-primary/40 rounded-2xl">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
             <div class="text-center md:text-left">
-              <p class="text-white font-heading font-bold text-xl md:text-2xl mb-1">
+              <p class="text-white font-heading font-semibold text-xl md:text-2xl mb-1">
                 {district.name} Tabelacı · <span class="text-primary">Hemen Arayın</span>
               </p>
               <p class="text-gray-300 text-sm md:text-base">
@@ -193,7 +193,7 @@ const serviceSchema = {
                 href={`tel:${PHONE_TEL}`}
                 data-track="call"
                 data-lang="tr"
-                class="group inline-flex items-center justify-center gap-3 bg-primary text-secondary font-black px-5 py-4 rounded-xl shadow-lg shadow-primary/40 hover:bg-white transition-all"
+                class="group inline-flex items-center justify-center gap-3 bg-primary text-secondary font-semibold px-5 py-4 rounded-xl shadow-lg shadow-primary/40 hover:bg-white transition-all"
                 aria-label="Hemen ara"
               >
                 <svg class="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -201,7 +201,7 @@ const serviceSchema = {
                 </svg>
                 <div class="flex flex-col items-start leading-tight">
                   <span class="text-[10px] uppercase tracking-widest opacity-80">Hemen Ara</span>
-                  <span class="text-lg md:text-xl font-black">0531 618 16 72</span>
+                  <span class="text-lg md:text-xl font-semibold">0531 618 16 72</span>
                 </div>
               </a>
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-green-600 text-white font-bold px-5 py-4 rounded-xl hover:bg-green-700 transition-all">
@@ -286,28 +286,28 @@ const serviceSchema = {
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div class="text-center">
               <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                <span class="text-primary font-heading font-bold text-lg">1</span>
+                <span class="text-primary font-heading font-semibold text-lg">1</span>
               </div>
               <h3 class="font-bold text-white text-sm mb-1">Keşif</h3>
               <p class="text-gray-400 text-xs">{district.name}'ye ekip gönderiyoruz, yerinde ölçüm alıyoruz</p>
             </div>
             <div class="text-center">
               <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                <span class="text-primary font-heading font-bold text-lg">2</span>
+                <span class="text-primary font-heading font-semibold text-lg">2</span>
               </div>
               <h3 class="font-bold text-white text-sm mb-1">Tasarım</h3>
               <p class="text-gray-400 text-xs">3D görselleştirme ve malzeme seçimi yapıyoruz</p>
             </div>
             <div class="text-center">
               <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                <span class="text-primary font-heading font-bold text-lg">3</span>
+                <span class="text-primary font-heading font-semibold text-lg">3</span>
               </div>
               <h3 class="font-bold text-white text-sm mb-1">Üretim</h3>
               <p class="text-gray-400 text-xs">Kendi atölyemizde profesyonel üretim gerçekleştiriyoruz</p>
             </div>
             <div class="text-center">
               <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                <span class="text-primary font-heading font-bold text-lg">4</span>
+                <span class="text-primary font-heading font-semibold text-lg">4</span>
               </div>
               <h3 class="font-bold text-white text-sm mb-1">Montaj</h3>
               <p class="text-gray-400 text-xs">Uzman ekibimiz ile güvenli montaj ve teslim</p>
@@ -325,7 +325,7 @@ const serviceSchema = {
                     <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
                     {district.name} • Kurumsal Projeler
                   </div>
-                  <h3 class="font-heading font-bold text-xl md:text-2xl text-white mb-2 !mt-0">
+                  <h3 class="font-heading font-semibold text-xl md:text-2xl text-white mb-2 !mt-0">
                     {district.name}'de AVM, Plaza, Otel Tabelası Yapılır Mı?
                   </h3>
                   <p class="text-gray-300 text-sm md:text-base leading-relaxed">
@@ -406,7 +406,7 @@ const serviceSchema = {
         <div class="sticky top-24 space-y-6">
           <!-- CTA -->
           <div class="bg-accent-light p-6 rounded-xl border border-white/5 shadow-2xl text-center">
-            <h3 class="font-heading font-bold text-lg mb-3 text-white uppercase tracking-tight">
+            <h3 class="font-heading font-semibold text-lg mb-3 text-white uppercase tracking-tight">
               {district.name}'de <span class="text-primary">Tabela</span> Yaptırın
             </h3>
             <p class="text-gray-400 mb-4 text-sm leading-relaxed">
@@ -421,7 +421,7 @@ const serviceSchema = {
               <span>2500+ Proje</span>
               <span>20+ Yıl</span>
             </div>
-            <a href="/iletisim/" class="block w-full text-center bg-primary text-secondary font-black py-3 rounded-lg hover:bg-white transition-all uppercase tracking-widest text-sm mb-3">
+            <a href="/iletisim/" class="block w-full text-center bg-primary text-secondary font-semibold py-3 rounded-lg hover:bg-white transition-all uppercase tracking-widest text-sm mb-3">
               Teklif İste
             </a>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full text-center bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-500 transition-all text-sm">
@@ -435,7 +435,7 @@ const serviceSchema = {
 
           <!-- Diğer İlçeler -->
           <div class="glass-card p-5">
-            <h3 class="font-heading font-bold text-base text-white mb-3">Diğer Hizmet Bölgeleri</h3>
+            <h3 class="font-heading font-semibold text-base text-white mb-3">Diğer Hizmet Bölgeleri</h3>
             <div class="space-y-2">
               {nearbyDistricts.map((d) => (
                 <a href={`/${d.slug}/`} class="block text-sm text-gray-400 hover:text-primary transition-colors py-1">
@@ -450,7 +450,7 @@ const serviceSchema = {
 
           <!-- Hizmetler -->
           <div class="glass-card p-5">
-            <h3 class="font-heading font-bold text-base text-white mb-3">Hizmetlerimiz</h3>
+            <h3 class="font-heading font-semibold text-base text-white mb-3">Hizmetlerimiz</h3>
             <div class="space-y-2">
               {serviceLinks.map(service => (
                 <a href={service.href} class="block text-sm text-gray-400 hover:text-primary transition-colors py-1">

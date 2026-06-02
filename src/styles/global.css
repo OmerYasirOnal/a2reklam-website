@@ -138,7 +138,7 @@
 
   h1 {
     font-size: var(--font-size-h1);
-    @apply font-bold;
+    @apply font-semibold;
     margin-bottom: 1.25rem;
     letter-spacing: -0.03em;
   }
@@ -914,5 +914,132 @@
   .card-glow::after,
   .link-underline::after {
     transition: none;
+  }
+}
+
+/* ============================================
+   GLOBAL SCROLL REVEAL — site geneli yumuşak giriş.
+   .anim-ready yalnızca JS varsa <html>'e eklenir → JS yoksa içerik DAİMA görünür
+   (SEO/CLS güvenli, gizli kalma riski yok). prefers-reduced-motion kapatır.
+   ============================================ */
+.anim-ready [data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--anim-delay, 0ms);
+  will-change: opacity, transform;
+}
+.anim-ready [data-animate].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-ready [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Component micro-interaction: daha akıcı kart/buton geçişleri */
+.glass-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.45s ease, box-shadow 0.45s ease;
+}
+a, button {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================
+   COSMIC ATMOSPHERE (prototype) — CSS-only, GPU-light, reduced-motion safe.
+   Koyu temada hafif derin-uzay dokusu; açık temada kapalı (sade kalır).
+   İçeriğin arkasında sabit katman → CWV'yi (LCP/CLS) etkilemez, JS yok.
+   ============================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(62% 48% at 50% -8%, rgba(201, 162, 39, 0.10), transparent 60%),
+    radial-gradient(46% 42% at 88% 6%, rgba(124, 122, 214, 0.07), transparent 56%),
+    radial-gradient(52% 46% at 4% 94%, rgba(56, 189, 248, 0.045), transparent 56%);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 18%, rgba(255, 255, 255, 0.7), transparent 55%),
+    radial-gradient(1px 1px at 28% 62%, rgba(255, 255, 255, 0.5), transparent 55%),
+    radial-gradient(1px 1px at 47% 28%, rgba(255, 255, 255, 0.45), transparent 55%),
+    radial-gradient(1.5px 1.5px at 66% 78%, rgba(255, 255, 255, 0.6), transparent 55%),
+    radial-gradient(1px 1px at 82% 16%, rgba(255, 255, 255, 0.55), transparent 55%),
+    radial-gradient(1px 1px at 92% 52%, rgba(255, 255, 255, 0.4), transparent 55%),
+    radial-gradient(1px 1px at 38% 88%, rgba(255, 255, 255, 0.4), transparent 55%),
+    radial-gradient(1.4px 1.4px at 74% 40%, rgba(201, 162, 39, 0.55), transparent 55%);
+  background-repeat: repeat;
+  background-size: 440px 560px;
+  animation: cosmicDrift 150s linear infinite;
+}
+
+@keyframes cosmicDrift {
+  from { background-position: 0 0; }
+  to { background-position: -440px -560px; }
+}
+
+/* Bölüm-içi kozmik panel (hero gibi öne çıkan alanlar için) */
+.cosmic-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 75% at 14% 20%, rgba(201, 162, 39, 0.22), transparent 56%),
+    radial-gradient(52% 72% at 88% 84%, rgba(120, 130, 230, 0.22), transparent 58%),
+    radial-gradient(60% 70% at 72% 26%, rgba(56, 189, 248, 0.10), transparent 56%),
+    radial-gradient(95% 120% at 50% -12%, rgba(58, 66, 124, 0.40), transparent 60%),
+    linear-gradient(158deg, #15193a 0%, #11132a 48%, #0e0f1e 100%);
+}
+
+.cosmic-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.62;
+  background-image:
+    radial-gradient(2.4px 2.4px at 18% 24%, rgba(255, 255, 255, 1), transparent 46%),
+    radial-gradient(1.8px 1.8px at 33% 62%, rgba(255, 255, 255, 0.9), transparent 48%),
+    radial-gradient(2.6px 2.6px at 70% 30%, rgba(255, 226, 150, 1), transparent 46%),
+    radial-gradient(1.8px 1.8px at 86% 64%, rgba(255, 255, 255, 0.85), transparent 48%),
+    radial-gradient(2px 2px at 52% 84%, rgba(255, 255, 255, 0.8), transparent 48%),
+    radial-gradient(1.6px 1.6px at 9% 78%, rgba(255, 255, 255, 0.8), transparent 48%),
+    radial-gradient(2.2px 2.2px at 44% 16%, rgba(255, 226, 150, 0.9), transparent 46%),
+    radial-gradient(1.6px 1.6px at 62% 54%, rgba(255, 255, 255, 0.75), transparent 48%),
+    radial-gradient(1.4px 1.4px at 28% 40%, rgba(255, 255, 255, 0.7), transparent 48%);
+  background-size: 280px 280px;
+  animation: cosmicDrift 110s linear infinite reverse;
+}
+
+/* Açık tema: SADECE global body atmosferi kapanır (sayfa zemini beyaz kalır).
+   .cosmic-panel hero gibi DAİMA koyu bölümlerde kullanılır → light sayfada da görünür. */
+[data-theme="light"] body::before,
+[data-theme="light"] body::after {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after,
+  .cosmic-panel::after {
+    animation: none;
   }
 }
