@@ -100,6 +100,13 @@
   --accent-hover: #E0B945;
   --accent-text: #C9A227; /* kozmik hero koyu → parlak altın metni geçerli */
   --border-subtle: rgba(255, 255, 255, 0.1);
+  /* Kozmik koyu hero içindeki bg-token'lı kartlar (bg-accent-light/bg-secondary/bg-surface)
+     light temada da KOYU kalsın — yoksa beyaz kart + parlak metin = light-on-light okunamaz
+     (örn. kurumsal-tabela hero'sundaki güven pill'leri + istatistik kutuları). */
+  --bg-base: #0B0F14;
+  --bg-base-rgb: 11, 15, 20;
+  --bg-surface: #121826;
+  --bg-card: #1A1F2E;
 }
 
 /* Base Styles */
