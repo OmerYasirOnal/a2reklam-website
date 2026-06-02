@@ -170,7 +170,7 @@ const serviceSchema = Astro.site
   image={entry.data.heroImage}
   breadcrumbs={breadcrumbs}
   faq={faq}
-  whatsappTitle={entry.data.title}
+  whatsappTitle={displayTitle}
 >
   <!-- Hero Section - Theme-agnostic styling for consistent readability -->
   <div class="service-hero relative h-[50vh] flex items-center justify-center">
@@ -467,7 +467,7 @@ const serviceSchema = Astro.site
         <div class="bg-accent-light p-6 rounded-xl border border-white/5 shadow-2xl text-center">
           <h3 class="font-heading font-semibold text-lg mb-3 text-white uppercase tracking-tight">Hemen Teklif <span class="text-primary">Alın</span></h3>
           <p class="text-gray-400 mb-5 text-sm leading-relaxed">
-            {entry.data.title} için profesyonel destek ve fiyat teklifi alın.
+            {displayTitle} için profesyonel destek ve fiyat teklifi alın.
           </p>
           <a href="/iletisim/" data-track="quote" data-lang="tr" class="block w-full text-center bg-primary text-secondary font-semibold py-3 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 uppercase tracking-widest text-sm mb-3">
             Teklif İste
