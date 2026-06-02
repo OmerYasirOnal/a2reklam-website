@@ -22,6 +22,8 @@
   --accent-primary: #C9A227;
   --accent-primary-rgb: 201, 162, 39;
   --accent-hover: #E0B945;
+  /* Metin için altın (WCAG AA). Dark'ta #C9A227 7.9:1 geçer; light'ta override. */
+  --accent-text: #C9A227;
 
   /* Borders & Shadows */
   --border-subtle: rgba(255, 255, 255, 0.1);
@@ -80,6 +82,9 @@
   --accent-primary: #B8860B;
   --accent-primary-rgb: 184, 134, 11;
   --accent-hover: #996B08;
+  /* Light tema metin altını: #7A5A00 → #F8F9FA'da 6.06:1, beyazda 6.38:1 (AA geçer).
+     Buton dolgusu/border/ikon hâlâ #B8860B kullanır (büyük/dolgu alan → AA Large yeter). */
+  --accent-text: #7A5A00;
 
   --border-subtle: rgba(0, 0, 0, 0.08);
   --shadow-color: rgba(0, 0, 0, 0.1);
@@ -93,6 +98,7 @@
   --text-muted: #94A3B8;
   --accent-primary: #C9A227;
   --accent-hover: #E0B945;
+  --accent-text: #C9A227; /* kozmik hero koyu → parlak altın metni geçerli */
   --border-subtle: rgba(255, 255, 255, 0.1);
 }
 
@@ -509,7 +515,7 @@
   }
 
   .text-primary {
-    color: var(--accent-primary);
+    color: var(--accent-text);
   }
 
   .text-primary-hover {
