@@ -34,7 +34,7 @@ const waLink = buildWhatsAppLink(waMessage);
     href={`tel:${PHONE_TEL}`}
     data-track="call"
     data-lang="tr"
-    class="group flex items-center gap-3 bg-primary text-secondary font-black px-5 py-4 rounded-2xl shadow-2xl shadow-primary/50 hover:bg-white transition-all transform hover:scale-105 border-2 border-white/20"
+    class="group flex items-center gap-3 bg-primary text-secondary font-semibold px-5 py-4 rounded-2xl shadow-2xl shadow-primary/50 hover:bg-white transition-all transform hover:scale-105 border-2 border-white/20"
     aria-label={`${PHONE_NUMBER} numarasını ara`}
   >
     <span class="relative flex h-10 w-10 items-center justify-center rounded-full bg-secondary/20">
@@ -45,7 +45,7 @@ const waLink = buildWhatsAppLink(waMessage);
     </span>
     <div class="flex flex-col leading-tight">
       <span class="text-xs uppercase tracking-wider opacity-80 font-bold">Hemen Ara</span>
-      <span class="text-lg font-black">{PHONE_NUMBER}</span>
+      <span class="text-lg font-semibold">{PHONE_NUMBER}</span>
     </div>
   </a>
 </div>

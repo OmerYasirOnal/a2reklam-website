@@ -138,7 +138,7 @@
 
   h1 {
     font-size: var(--font-size-h1);
-    @apply font-bold;
+    @apply font-semibold;
     margin-bottom: 1.25rem;
     letter-spacing: -0.03em;
   }
@@ -918,6 +918,40 @@
 }
 
 /* ============================================
+   GLOBAL SCROLL REVEAL — site geneli yumuşak giriş.
+   .anim-ready yalnızca JS varsa <html>'e eklenir → JS yoksa içerik DAİMA görünür
+   (SEO/CLS güvenli, gizli kalma riski yok). prefers-reduced-motion kapatır.
+   ============================================ */
+.anim-ready [data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--anim-delay, 0ms);
+  will-change: opacity, transform;
+}
+.anim-ready [data-animate].is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-ready [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Component micro-interaction: daha akıcı kart/buton geçişleri */
+.glass-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.45s ease, box-shadow 0.45s ease;
+}
+a, button {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================
    COSMIC ATMOSPHERE (prototype) — CSS-only, GPU-light, reduced-motion safe.
    Koyu temada hafif derin-uzay dokusu; açık temada kapalı (sade kalır).
    İçeriğin arkasında sabit katman → CWV'yi (LCP/CLS) etkilemez, JS yok.
@@ -970,10 +1004,11 @@ body::after {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(55% 75% at 14% 20%, rgba(201, 162, 39, 0.24), transparent 56%),
-    radial-gradient(55% 75% at 88% 84%, rgba(126, 104, 214, 0.22), transparent 58%),
-    radial-gradient(95% 120% at 50% -12%, rgba(46, 38, 92, 0.42), transparent 60%),
-    linear-gradient(158deg, #100e26 0%, #0c0a1a 48%, #08080e 100%);
+    radial-gradient(55% 75% at 14% 20%, rgba(201, 162, 39, 0.22), transparent 56%),
+    radial-gradient(52% 72% at 88% 84%, rgba(120, 130, 230, 0.22), transparent 58%),
+    radial-gradient(60% 70% at 72% 26%, rgba(56, 189, 248, 0.10), transparent 56%),
+    radial-gradient(95% 120% at 50% -12%, rgba(58, 66, 124, 0.40), transparent 60%),
+    linear-gradient(158deg, #15193a 0%, #11132a 48%, #0e0f1e 100%);
 }
 
 .cosmic-panel::after {

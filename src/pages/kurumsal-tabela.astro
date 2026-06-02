@@ -103,7 +103,7 @@ const referans = [
             </span>
           </div>
 
-          <h1 class="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
+          <h1 class="font-heading font-semibold text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
             Kurumsal <span class="text-primary">Tabela</span><br />
             İmalatı İstanbul
           </h1>
@@ -177,7 +177,7 @@ const referans = [
   <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
-        <h2 class="text-4xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
+        <h2 class="text-4xl font-heading font-semibold text-white mb-4 uppercase tracking-tight">
           Sektöre Özel <span class="text-primary">Kurumsal Çözümler</span>
         </h2>
         <p class="text-gray-400 text-lg max-w-3xl mx-auto">
@@ -191,7 +191,7 @@ const referans = [
           const extraProps = s.href ? { href: s.href, class: 'p-6 glass-card hover:border-primary/50 transition-all block group' } : { class: 'p-6 glass-card hover:border-primary/50 transition-all' };
           return (
             <Card {...extraProps}>
-              <h3 class="text-white font-heading font-bold text-lg mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
+              <h3 class="text-white font-heading font-semibold text-lg mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
               <p class="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
               {s.href && <span class="mt-3 inline-block text-primary text-sm font-semibold">Detay →</span>}
             </Card>
@@ -205,7 +205,7 @@ const referans = [
   <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
-        <h2 class="text-4xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
+        <h2 class="text-4xl font-heading font-semibold text-white mb-4 uppercase tracking-tight">
           Neden <span class="text-primary">A2 Reklam</span>?
         </h2>
         <p class="text-gray-400 text-lg">
@@ -216,7 +216,7 @@ const referans = [
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
         {whyUs.map(item => (
           <div class="p-6 bg-accent-light rounded-2xl border border-white/5 hover:border-primary/40 transition-all">
-            <h3 class="text-white font-heading font-bold text-base mb-2">{item.title}</h3>
+            <h3 class="text-white font-heading font-semibold text-base mb-2">{item.title}</h3>
             <p class="text-gray-400 text-sm">{item.desc}</p>
           </div>
         ))}
@@ -228,7 +228,7 @@ const referans = [
   <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
-        <h2 class="text-4xl font-heading font-bold text-white mb-4 uppercase tracking-tight">
+        <h2 class="text-4xl font-heading font-semibold text-white mb-4 uppercase tracking-tight">
           5 Adımda <span class="text-primary">Sizin Projeniz</span>
         </h2>
       </div>
@@ -240,7 +240,7 @@ const referans = [
               {s.n}
             </div>
             <div>
-              <h3 class="text-white font-heading font-bold text-xl mb-2">{s.title}</h3>
+              <h3 class="text-white font-heading font-semibold text-xl mb-2">{s.title}</h3>
               <p class="text-gray-400 leading-relaxed">{s.desc}</p>
             </div>
           </div>
@@ -252,7 +252,7 @@ const referans = [
   <!-- Referans Alanları -->
   <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-heading font-bold text-white mb-10 text-center uppercase tracking-tight">
+      <h2 class="text-4xl font-heading font-semibold text-white mb-10 text-center uppercase tracking-tight">
         Çalıştığımız <span class="text-primary">Kurumsal Alanlar</span>
       </h2>
 
@@ -270,14 +270,14 @@ const referans = [
   <!-- FAQ -->
   <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-heading font-bold text-white mb-10 text-center uppercase tracking-tight">
+      <h2 class="text-4xl font-heading font-semibold text-white mb-10 text-center uppercase tracking-tight">
         Sık Sorulan Sorular
       </h2>
 
       <div class="space-y-4">
         {faq.map(item => (
           <details class="p-6 bg-accent-light rounded-2xl border border-white/5 group">
-            <summary class="text-white font-heading font-bold cursor-pointer list-none flex justify-between items-center">
+            <summary class="text-white font-heading font-semibold cursor-pointer list-none flex justify-between items-center">
               <span>{item.question}</span>
               <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
             </summary>
@@ -291,7 +291,7 @@ const referans = [
   <!-- Final CTA -->
   <section class="py-14 md:py-16 bg-secondary border-t border-white/5">
     <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+      <h2 class="text-4xl md:text-5xl font-heading font-semibold text-white mb-6">
         Projenizi <span class="text-primary">Birlikte Planlayalım</span>
       </h2>
       <p class="text-xl text-gray-400 mb-10 leading-relaxed">
