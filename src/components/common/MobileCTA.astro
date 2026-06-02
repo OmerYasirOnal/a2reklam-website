@@ -30,8 +30,15 @@ const gridClass = variant === 'contact' ? 'grid-cols-3' : 'grid-cols-2';
   >
     <svg class="w-5 h-5 animate-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.58l2.2-2.21c.27-.27.35-.67.24-1.02A11.36 11.36 0 013.5 4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1 0 10.51 8.49 19 19 19 .55 0 1-.45 1-1v-1.5c0-.55-.45-1-1-1z"/></svg>
     <div class="flex flex-col items-start leading-tight">
-      <span class="text-[9px] uppercase tracking-wider opacity-85">{t.call}</span>
-      <span class="text-sm font-semibold">{PHONE_NUMBER}</span>
+      {variant === 'contact' ? (
+        /* 3 sütun (yalnız /iletisim/): dar hücreye numara sığmıyor → sadece etiket (numara tel: + aria-label'da zaten var) */
+        <span class="text-sm font-semibold">{t.call}</span>
+      ) : (
+        <>
+          <span class="text-[9px] uppercase tracking-wider opacity-85">{t.call}</span>
+          <span class="text-sm font-semibold">{PHONE_NUMBER}</span>
+        </>
+      )}
     </div>
   </a>
   <a

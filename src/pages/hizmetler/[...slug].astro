@@ -9,7 +9,6 @@ import { buildWhatsAppLink, buildWhatsAppMessage } from '../../utils/whatsapp';
 import Gallery from '../../components/common/Gallery.astro';
 import { getServiceLabel } from '../../config/serviceLabels';
 import { getServiceSchema } from '../../utils/serviceSchema';
-import HowToSchema from '../../components/seo/HowToSchema.astro';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
@@ -527,11 +526,5 @@ const serviceSchema = Astro.site
 {serviceSchema && (
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 )}
-
-<HowToSchema
-  name={`${displayTitle} Nasıl Yapılır?`}
-  description={`${displayTitle} için profesyonel üretim ve montaj süreci. A2 Reklam İstanbul.`}
-  steps={processSteps.map(step => ({ title: step, description: `${step} — ${displayTitle} projeleriniz için uzman ekibimiz tarafından gerçekleştirilir.` }))}
-  totalTime="P3D"
-/>
+{/* HowTo şeması kaldırıldı — Google HowTo zengin sonucunu 2023'te tamamen kaldırdı (SERP kazancı yok, sadece ağırlık). Süreç adımları görünür içerikte + Service şemasında zaten var. */}
 </Layout>
