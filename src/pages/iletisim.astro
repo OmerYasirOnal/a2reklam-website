@@ -35,21 +35,21 @@ const description = "İstanbul'da tabela ve reklam çözümleri için bizimle il
           <form id="contact-form" class="space-y-6" data-track="lead-submit" data-lead-type="contact" data-lang="tr">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label class="form-label">Ad Soyad</label>
-              <input type="text" name="fullName" autocomplete="name" class="form-input" placeholder="Adınız Soyadınız" required />
+              <label for="cf-fullName" class="form-label">Ad Soyad</label>
+              <input id="cf-fullName" type="text" name="fullName" autocomplete="name" class="form-input" placeholder="Adınız Soyadınız" required />
             </div>
               <div>
-                <label class="form-label">E-posta</label>
-                <input type="email" name="email" autocomplete="email" class="form-input" placeholder="ornek@mail.com" required />
+                <label for="cf-email" class="form-label">E-posta</label>
+                <input id="cf-email" type="email" name="email" autocomplete="email" class="form-input" placeholder="ornek@mail.com" required />
               </div>
             </div>
             <div>
-              <label class="form-label">Telefon</label>
-              <input type="tel" name="phone" autocomplete="tel" class="form-input" placeholder="05XX XXX XX XX" required />
+              <label for="cf-phone" class="form-label">Telefon</label>
+              <input id="cf-phone" type="tel" name="phone" autocomplete="tel" class="form-input" placeholder="05XX XXX XX XX" required />
             </div>
             <div>
-              <label class="form-label">Hizmet Türü</label>
-              <select name="serviceType" class="form-select">
+              <label for="cf-serviceType" class="form-label">Hizmet Türü</label>
+              <select id="cf-serviceType" name="serviceType" class="form-select">
                 {Object.keys(SERVICE_LABELS).map((slug) => (
                   <option value={slug}>{getServiceLabel(slug as keyof typeof SERVICE_LABELS, 'tr')}</option>
                 ))}
@@ -57,8 +57,8 @@ const description = "İstanbul'da tabela ve reklam çözümleri için bizimle il
               </select>
             </div>
             <div>
-              <label class="form-label">Mesajınız</label>
-              <textarea rows="4" name="message" class="form-input" placeholder="Projeniz detaylarını buraya yazabilirsiniz..."></textarea>
+              <label for="cf-message" class="form-label">Mesajınız</label>
+              <textarea id="cf-message" rows="4" name="message" class="form-input" placeholder="Projeniz detaylarını buraya yazabilirsiniz..."></textarea>
             </div>
             <button type="submit" class="w-full bg-primary text-secondary font-semibold py-4 rounded-lg hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20 uppercase tracking-widest">
               GÖNDER
