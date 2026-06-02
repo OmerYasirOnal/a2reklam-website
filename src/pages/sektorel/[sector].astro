@@ -5,6 +5,7 @@ import { sectors } from '../../data/sectors';
 import { districts } from '../../data/districts';
 import { PHONE_TEL } from '../../consts';
 import AnswerBox from '../../components/sectors/AnswerBox.astro';
+import RelatedGuides from '../../components/common/RelatedGuides.astro';
 import { getDefinition, getQuickFacts, getPriceSummary } from '../../utils/sectorFacts';
 import { autolinkServices } from '../../utils/autolink';
 
@@ -124,7 +125,7 @@ const serviceSchema = {
         </div>
 
         <div class="mb-6">
-          <h1 class="font-heading text-3xl md:text-4xl font-bold text-white">
+          <h1 class="font-heading text-3xl md:text-4xl font-semibold text-white">
             {sector.h1}
           </h1>
         </div>
@@ -143,7 +144,7 @@ const serviceSchema = {
 
         <!-- Avantajlar -->
         <section class="mb-10">
-          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+          <h2 class="font-heading text-2xl font-semibold text-white mb-6">
             {sector.name} Avantajlarımız
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -160,7 +161,7 @@ const serviceSchema = {
 
         <!-- Popüler Tabela Tipleri -->
         <section class="mb-10">
-          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+          <h2 class="font-heading text-2xl font-semibold text-white mb-6">
             En Çok Tercih Edilen {sector.name} Modelleri
           </h2>
           <div class="space-y-4">
@@ -175,7 +176,7 @@ const serviceSchema = {
 
         <!-- Malzeme Karşılaştırma Tablosu -->
         <section class="mb-10">
-          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+          <h2 class="font-heading text-2xl font-semibold text-white mb-6">
             {sector.name} Malzeme Seçenekleri
           </h2>
           <div class="overflow-x-auto rounded-xl border border-white/10">
@@ -246,9 +247,12 @@ const serviceSchema = {
           </a>
         </section>
 
+        <!-- İlgili Rehberler (blog/rehber cluster'ına iç link) -->
+        <RelatedGuides />
+
         <!-- SSS -->
         <section class="mb-10">
-          <h2 class="font-heading text-2xl font-bold text-white mb-6">
+          <h2 class="font-heading text-2xl font-semibold text-white mb-6">
             Sıkça Sorulan Sorular
           </h2>
           <div class="space-y-4">
@@ -268,7 +272,7 @@ const serviceSchema = {
 
         <!-- Hangi İlçelerde Hizmet Veriyoruz -->
         <section class="mb-10">
-          <h2 class="font-heading text-xl font-bold text-white mb-4">
+          <h2 class="font-heading text-xl font-semibold text-white mb-4">
             {sector.name} Hizmet Verdiğimiz İlçeler
           </h2>
           <div class="flex flex-wrap gap-2">
@@ -285,7 +289,7 @@ const serviceSchema = {
 
         <!-- Diğer Sektörler -->
         <section class="py-8 border-t border-white/10">
-          <h2 class="font-heading text-xl font-bold text-white mb-4 text-center">
+          <h2 class="font-heading text-xl font-semibold text-white mb-4 text-center">
             Diğer Sektörel Tabela Çözümlerimiz
           </h2>
           <div class="flex flex-wrap justify-center gap-2">
