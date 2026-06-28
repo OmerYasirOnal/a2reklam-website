@@ -57,13 +57,14 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
 
     <!-- Title with typewriter -->
     <h1 class="hero-anim hero-anim-title font-heading font-semibold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-tight text-white mb-6">
-      {t.titleBefore}{' '}
-      <span class="hero-typewriter-wrapper inline-flex items-baseline">
-        <span id="hero-typewriter" class="text-primary">{t.words[0]}</span>
-        <span class="hero-cursor" aria-hidden="true">|</span>
+      <span class="block">{t.titleBefore}</span>
+      <span class="hero-typewriter-line block">
+        <span class="hero-typewriter-wrapper inline-flex items-baseline">
+          <span id="hero-typewriter" class="text-primary">{t.words[0]}</span>
+          <span class="hero-cursor" aria-hidden="true">|</span>
+        </span>
       </span>
-      <br />
-      {t.titleAfter}
+      <span class="block">{t.titleAfter}</span>
     </h1>
 
     <!-- Subtitle -->
@@ -128,8 +129,8 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
         class="hero-video"
         fetchpriority="high"
         decoding="async"
-        width="800"
-        height="600"
+        width="720"
+        height="1291"
       />
       <button
         type="button"
@@ -152,6 +153,8 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
       alt=""
       class="w-full h-full object-cover"
       decoding="async"
+      width="720"
+      height="1291"
       aria-hidden="true"
     />
     <div class="absolute inset-0 bg-gradient-to-b from-[#0B0F14]/70 via-[#0B0F14]/85 to-[#0B0F14]/95 z-10 pointer-events-none"></div>
@@ -170,11 +173,27 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
   let wordIndex = 0;
   let charIndex = words[0].length;
   let isDeleting = false;
+  let timer = 0;
+  let scheduled = false;
+  let onScreen = true;
 
   const TYPE_SPEED = 80;
   const DELETE_SPEED = 50;
   const PAUSE_AFTER_TYPE = 3000;
   const PAUSE_AFTER_DELETE = 400;
+
+  const canRun = () => onScreen && !document.hidden;
+
+  function schedule(delay) {
+    scheduled = true;
+    timer = window.setTimeout(run, delay);
+  }
+
+  function run() {
+    scheduled = false;
+    if (!canRun()) return; // duraklatıldı → zincir durur, resume() yeniden başlatır
+    tick();
+  }
 
   function tick() {
     const currentWord = words[wordIndex];
@@ -185,10 +204,10 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
 
       if (charIndex > currentWord.length) {
         isDeleting = true;
-        setTimeout(tick, PAUSE_AFTER_TYPE);
+        schedule(PAUSE_AFTER_TYPE);
         return;
       }
-      setTimeout(tick, TYPE_SPEED);
+      schedule(TYPE_SPEED);
     } else {
       charIndex--;
       el.textContent = currentWord.slice(0, charIndex);
@@ -196,18 +215,39 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
       if (charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(tick, PAUSE_AFTER_DELETE);
+        schedule(PAUSE_AFTER_DELETE);
         return;
       }
-      setTimeout(tick, DELETE_SPEED);
+      schedule(DELETE_SPEED);
     }
   }
 
-  // Start after initial display pause
-  setTimeout(() => {
-    isDeleting = true;
-    tick();
-  }, PAUSE_AFTER_TYPE);
+  function resume() {
+    if (!canRun() || scheduled) return;
+    schedule(0);
+  }
+
+  function pause() {
+    if (timer) { clearTimeout(timer); timer = 0; }
+    scheduled = false;
+  }
+
+  const sync = () => (canRun() ? resume() : pause());
+
+  // Hero ekran dışına çıkınca döngüyü durdur (boşa CPU/paint harcama)
+  const target = el.closest('h1') || el;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      onScreen = entries[0].isIntersecting;
+      sync();
+    }, { threshold: 0 }).observe(target);
+  }
+  // Sekme gizliyken duraklat
+  document.addEventListener('visibilitychange', sync);
+
+  // İlk gösterim: words[0] tam kalsın, PAUSE_AFTER_TYPE sonra silmeye başla.
+  isDeleting = true;
+  schedule(PAUSE_AFTER_TYPE);
 })();
 </script>
 
@@ -246,10 +286,31 @@ const posterSrc = '/assets/videos/posters/cephe-tabela-01.jpg';
   });
 </script>
 
+<script>
+  // Giriş animasyonu bitince compositing katmanını serbest bırak (kalıcı will-change birikmesini önle).
+  (() => {
+    const els = document.querySelectorAll('.hero-anim, .hero-right');
+    const release = (el: Element) => { (el as HTMLElement).style.willChange = 'auto'; };
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // animation:none → animationend hiç tetiklenmez, hemen serbest bırak
+      els.forEach(release);
+      return;
+    }
+    els.forEach((el) => el.addEventListener('animationend', () => release(el), { once: true }));
+  })();
+</script>
+
 <style>
   /* ============================================
      HERO SPLIT - Diagonal Layout
      ============================================ */
+
+  /* Rotating-word line: locked to one line so changing words never push the
+     layout up/down (CLS). Each word sits on its own line — matching the
+     desktop 3-line render — so "İstanbul" and "İmalatçısı" stay fixed. */
+  .hero-typewriter-line {
+    min-height: 1lh;
+  }
 
   /* Typewriter cursor blink */
   .hero-cursor {

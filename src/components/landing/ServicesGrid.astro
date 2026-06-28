@@ -134,10 +134,15 @@ categories = categories.sort((a: any, b: any) => {
           <!-- Image Container -->
           <div class="relative aspect-[4/3] overflow-hidden">
             <img
-              src={cat.paths['960']}
+              src={cat.paths['480']}
+              srcset={`${cat.paths['480']} 480w, ${cat.paths['960']} 960w`}
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              width="480"
+              height="360"
               alt={buildImageAlt({ category: cat.category, lang: altLang })}
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               loading="lazy"
+              decoding="async"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:from-primary/20 transition-all duration-300"></div>
           </div>

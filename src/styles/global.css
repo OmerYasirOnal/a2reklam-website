@@ -720,10 +720,13 @@
 /* Light mode header styling */
 [data-theme="light"] .glass-bar,
 [data-theme="light"] .header-modern {
-  background: rgba(255, 255, 255, 0.95);
+  /* Light tema arka planı zaten ~%97 opak → sticky header'ın arkasındaki şeridi
+     her scroll karesinde yeniden blur'lamanın görsel karşılığı yok ama mobilde
+     scroll jank'ının başlıca kaynağı. backdrop-filter kaldırıldı (light default). */
+  background: rgba(255, 255, 255, 0.97);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  backdrop-filter: blur(12px) saturate(120%);
-  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
@@ -808,6 +811,11 @@
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* Kart zaten %95 opak beyaz → blur görünmez ama her kart bir GPU katmanı +
+     backdrop yeniden örnekleme demek. Anasayfada ~90 kart var. Light (default)
+     temada kaldırılıyor: görsel olarak piksel-aynı, mobil compositing maliyeti sıfır. */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 [data-theme="light"] .glass-card:hover {
@@ -826,7 +834,7 @@
 
 /* Glass card for stats/KPIs */
 .glass-card.kpi-card {
-  @apply p-8 text-center;
+  @apply p-5 sm:p-6 md:p-8 text-center;
 }
 
 .glass-card.kpi-card:hover .kpi-value {
@@ -1011,12 +1019,9 @@ body::after {
     radial-gradient(1.4px 1.4px at 74% 40%, rgba(201, 162, 39, 0.55), transparent 55%);
   background-repeat: repeat;
   background-size: 440px 560px;
-  animation: cosmicDrift 150s linear infinite;
-}
-
-@keyframes cosmicDrift {
-  from { background-position: 0 0; }
-  to { background-position: -440px -560px; }
+  /* Sonsuz background-position animasyonu kaldırıldı: compositor-dostu değil,
+     full-viewport sabit katmanı sayfa ömrü boyunca her karede yeniden boyatıyordu.
+     150s'de sürüklenme zaten algılanamıyordu → statik yıldız alanı görsel olarak aynı. */
 }
 
 /* Bölüm-içi kozmik panel (hero gibi öne çıkan alanlar için) */
@@ -1052,7 +1057,7 @@ body::after {
     radial-gradient(1.6px 1.6px at 62% 54%, rgba(255, 255, 255, 0.75), transparent 48%),
     radial-gradient(1.4px 1.4px at 28% 40%, rgba(255, 255, 255, 0.7), transparent 48%);
   background-size: 280px 280px;
-  animation: cosmicDrift 110s linear infinite reverse;
+  /* Sürekli repaint kaynağı sonsuz animasyon kaldırıldı (yukarıdaki body::after ile aynı gerekçe). */
 }
 
 /* Açık tema: SADECE global body atmosferi kapanır (sayfa zemini beyaz kalır).

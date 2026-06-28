@@ -167,32 +167,11 @@ const t = {
     const scrollAmount = 320;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
-    let scrollRaf = null;
-
-    function getCurrentIndex() {
-      if (!slider || sliderItems.length === 0) return 0;
-      const sliderRect = slider.getBoundingClientRect();
-      const edge = sliderRect.left;
-      let closestIndex = 0;
-      let minDistance = Infinity;
-
-      sliderItems.forEach((item, idx) => {
-        const rect = item.getBoundingClientRect();
-        const itemEdge = rect.left;
-        const distance = Math.abs(itemEdge - edge);
-        if (distance < minDistance) {
-          minDistance = distance;
-          closestIndex = idx;
-        }
-      });
-
-      return closestIndex;
-    }
+    let currentIndex = 0;
 
     function updateSliderStatus() {
       if (!sliderStatus || totalImages <= 0) return;
-      const idx = getCurrentIndex();
-      sliderStatus.textContent = `${t.image} ${idx + 1} / ${totalImages}`;
+      sliderStatus.textContent = `${t.image} ${currentIndex + 1} / ${totalImages}`;
     }
 
     function scrollSlider(direction) {
@@ -220,10 +199,26 @@ const t = {
       }
     });
 
-    slider?.addEventListener('scroll', () => {
-      if (scrollRaf) cancelAnimationFrame(scrollRaf);
-      scrollRaf = requestAnimationFrame(updateSliderStatus);
-    });
+    // En görünür slide'ı IntersectionObserver ile izle: scroll sırasında
+    // getBoundingClientRect taraması (forced sync layout) yok → kaydırmada jank yok.
+    if (slider && sliderItems.length && 'IntersectionObserver' in window) {
+      const itemList = Array.prototype.slice.call(sliderItems);
+      const ratios = new Map();
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          const idx = itemList.indexOf(e.target);
+          if (idx !== -1) ratios.set(idx, e.isIntersecting ? e.intersectionRatio : 0);
+        }
+        let best = currentIndex;
+        let bestRatio = -1;
+        ratios.forEach((r, idx) => { if (r > bestRatio) { bestRatio = r; best = idx; } });
+        if (best !== currentIndex) {
+          currentIndex = best;
+          updateSliderStatus();
+        }
+      }, { root: slider, threshold: [0.25, 0.5, 0.75, 1] });
+      itemList.forEach((item) => io.observe(item));
+    }
 
     updateSliderStatus();
   })();

@@ -95,7 +95,7 @@ const getGridClass = (count: number) => {
           data-target={kpi.value}
           data-suffix={kpi.suffix || ''}
         >
-          <span class="block text-5xl md:text-6xl font-heading font-semibold text-primary mb-2 kpi-value">
+          <span class="block text-4xl sm:text-5xl md:text-6xl font-heading font-semibold text-primary mb-2 kpi-value whitespace-nowrap tabular-nums leading-none">
             0{kpi.suffix || ''}
           </span>
           <span class="block text-white font-bold text-lg uppercase tracking-wider mb-1">
@@ -114,21 +114,22 @@ const getGridClass = (count: number) => {
   // Count-up animation with IntersectionObserver
   function animateCount(element: HTMLElement, target: number, suffix: string) {
     const duration = 2000; // 2 seconds
-    const start = 0;
-    const increment = target / (duration / 16); // ~60fps
-    let current = start;
-    
-    const updateCount = () => {
-      current += increment;
-      if (current < target) {
-        element.textContent = Math.floor(current) + suffix;
-        requestAnimationFrame(updateCount);
+    let startTime = 0;
+
+    // Zaman tabanlı: ilerleme gerçek geçen süreye bağlı, kare hızına değil.
+    // Böylece düşük FPS'li mobilde de süre tutarlı ~2sn olur (sabit increment ~4-6sn'ye uzuyordu).
+    const step = (ts: number) => {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      if (progress < 1) {
+        element.textContent = Math.floor(target * progress) + suffix;
+        requestAnimationFrame(step);
       } else {
         element.textContent = target + suffix;
       }
     };
-    
-    updateCount();
+
+    requestAnimationFrame(step);
   }
   
   // Check for reduced motion preference

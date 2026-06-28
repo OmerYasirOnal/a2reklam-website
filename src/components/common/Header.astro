@@ -61,7 +61,7 @@ const closeLabel = 'Kapat';
           <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </a>
         <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <div class="bg-secondary/95 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl p-4 w-56">
+          <div class="bg-secondary/95 border border-white/10 rounded-xl shadow-2xl p-4 w-56">
             {topDistricts.map(d => (
               <a href={`/${d.slug}/`} class="block py-1.5 px-3 text-sm text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">
                 {d.name} Tabelacı
@@ -83,7 +83,7 @@ const closeLabel = 'Kapat';
           <svg class="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </a>
         <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <div class="bg-secondary/95 backdrop-blur-lg border border-white/10 rounded-xl shadow-2xl p-4 w-56">
+          <div class="bg-secondary/95 border border-white/10 rounded-xl shadow-2xl p-4 w-56">
             {topSectors.map(s => (
               <a href={`/sektorel/${s.slug}/`} class="block py-1.5 px-3 text-sm text-gray-300 hover:text-primary hover:bg-white/5 rounded-lg transition-colors">
                 {s.name}
@@ -166,7 +166,7 @@ const closeLabel = 'Kapat';
   <!-- Drawer Panel -->
   <div
     id="mobile-menu-panel"
-    class="absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-secondary/95 backdrop-blur-lg border-l border-white/10 p-6"
+    class="absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-secondary/95 border-l border-white/10 p-6"
     role="dialog"
     aria-modal="true"
     aria-labelledby="mobile-menu-title"

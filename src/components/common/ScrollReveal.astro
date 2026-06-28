@@ -64,7 +64,10 @@ const directionMap = {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      // threshold 0: element ekrana girer girmez tetiklenir. 0.1 kullanılırsa
+      // mobilde tek sütuna düşüp ekrandan uzun olan bölümlerin %10'u asla
+      // viewport'a sığmadığı için observer hiç fire etmez ve bölüm gizli kalır.
+      { threshold: 0, rootMargin: '0px 0px -50px 0px' }
     );
 
     elements.forEach((el) => observer.observe(el));

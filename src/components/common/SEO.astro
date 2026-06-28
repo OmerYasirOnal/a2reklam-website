@@ -132,7 +132,11 @@ const articleSchema =
 
 <!-- Preconnect to critical third-party origins -->
 <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+{/* GA4 + Google Ads beacon kökenleri: consent 'denied' başladığı için TLS soketi
+    ayırmayan dns-prefetch (preconnect değil) — dönüşüm anında DNS gecikmesini düşürür. */}
+<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+<link rel="dns-prefetch" href="https://www.googleadservices.com" />
+<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
 
 <!-- Font preloading for faster LCP — yalnız Inter (tüm gövde+başlıklar Inter; Montserrat kullanılmıyordu, 109KB preload kaldırıldı) -->
 <link rel="preload" href={interLatinUrl} as="font" type="font/woff2" crossorigin />
