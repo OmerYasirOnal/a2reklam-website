@@ -13,7 +13,8 @@
     "vinyl-folyo-cesitleri-uv-dayanim",
     "kuyumcu-tabela-tasarim-rehberi",
     "otel-tabela-sistemleri-wayfinding",
-    "led-tabela-enerji-maliyeti-hesaplama-2026"
+    "led-tabela-enerji-maliyeti-hesaplama-2026",
+    "hastane-tabela-sistemi-hijyenik-uygulamalar"
   ],
   "topics": [
     {
@@ -1004,5 +1005,5 @@
   ],
   "lastCompetitorGap": "2026-04-17T04:15:00Z",
   "lastLongTailExpansion": "2026-04-17T06:45:00Z",
-  "lastGenerated": "2026-06-29T08:04:05.351Z"
+  "lastGenerated": "2026-07-02T07:20:40.935Z"
 }
